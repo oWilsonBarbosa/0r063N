@@ -262,6 +262,8 @@ export function indexReadme(meta, results, partitionNote) {
     L.push('');
     L.push('Terrain/ocean colors: [legend](maps/legend.png).');
     L.push('');
+    L.push('**See also the [Physical Atlas](atlas/README.md)** — 13 global plates (relief, erosion, tectonics, climate, ocean currents, drainage basins, vegetation) plus a planetary records gazetteer.');
+    L.push('');
     L.push('## The 20 regions');
     L.push('');
     L.push(partitionNote);

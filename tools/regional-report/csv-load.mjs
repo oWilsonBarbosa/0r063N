@@ -9,18 +9,22 @@ import readline from 'node:readline';
 export const EXPECTED_HEADER = 'id,lat,lon,x,y,z,elev,elev_km,prePost,eroD,plate,isOcPlate,superPlate,plateSpeed,isLand,isCoastal,isMountain,stress,orogPow,tecAct,base,tectonic,noise,interior,coastal_l,ocean_l,hotspot,margins,backArc,foldRidge,basin,koppen,contality,tempContality,tS,tW,pS,pW,wsS,wsW,prS,prW,windES,windNS,windEW,windNW,owS,owW,ocSpeedS,ocSpeedW,ocEastS,ocNorthS,ocEastW,ocNorthW,rsSummer,rsWinter';
 
 // column name -> { array kind } ; indices resolved from the header at load time
-// NOTE: pS/pW are PRECIPITATION half-year totals (meta: precip_mm = pS*1000);
-// the prS/prW columns are sea-level pressure and are not used here.
+// NOTE: pS/pW are PRECIPITATION half-year totals (meta: precip_mm = pS*1000)
+// and prS/prW are sea-level PRESSURE, despite what the names suggest.
 const FLOAT_COLS = ['lat', 'lon', 'x', 'y', 'z', 'elev_km', 'tS', 'tW', 'wsS', 'wsW',
-    'pS', 'pW', 'windES', 'windNS', 'windEW', 'windNW', 'rsSummer', 'rsWinter'];
-const BYTE_COLS = ['isLand', 'isCoastal', 'isMountain', 'koppen'];
+    'pS', 'pW', 'windES', 'windNS', 'windEW', 'windNW', 'rsSummer', 'rsWinter',
+    // atlas columns: erosion, tectonics, pressure, ocean currents
+    'prePost', 'eroD', 'plate', 'stress', 'orogPow', 'tecAct', 'hotspot',
+    'margins', 'backArc', 'foldRidge', 'prS', 'prW',
+    'ocEastS', 'ocNorthS', 'ocEastW', 'ocNorthW', 'ocSpeedS', 'ocSpeedW', 'owS', 'owW'];
+const BYTE_COLS = ['isLand', 'isCoastal', 'isMountain', 'koppen', 'superPlate'];
 
 export function loadMeta(dataDir) {
     return JSON.parse(fs.readFileSync(path.join(dataDir, 'orogen_meta_full.json'), 'utf8'));
 }
 
 const CACHE_MAGIC = 0x4f524f47; // "OROG"
-const CACHE_VERSION = 3;
+const CACHE_VERSION = 4;
 
 function cacheColumns() { return [...FLOAT_COLS, ...BYTE_COLS]; }
 

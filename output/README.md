@@ -14,6 +14,8 @@ Chapter-style physical-geography write-ups (after Chapter 3, *Continents and Geo
 
 Terrain/ocean colors: [legend](maps/legend.png).
 
+**See also the [Physical Atlas](atlas/README.md)** — 13 global plates (relief, erosion, tectonics, climate, ocean currents, drainage basins, vegetation) plus a planetary records gazetteer.
+
 ## The 20 regions
 
 The globe is divided into the 20 triangular faces of an icosahedron with one vertex at each pole (the book's "polyhedral mapping system"): regions 01–05 ring the north pole, 06–15 span the equatorial belt, and 16–20 ring the south pole. Faces are numbered by descending center latitude, then ascending longitude; the partition's rotation about the polar axis is arbitrary (a north-cap face is centered on the 36° E meridian). Each face covers ~25.5 M km².

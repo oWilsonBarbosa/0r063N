@@ -261,7 +261,7 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
     for (const lake of lakes) if (lake.endorheic) saltyLake[lake.id] = 1;
 
     return {
-        fill, receiver, discharge, riverPx, lakeId, saltyLake, lakeVisible,
+        fill, receiver, discharge, riverPx, lakeId, saltyLake, lakeVisible, popOrder,
         lakes: keptLakes, rivers,
         thresholds: { RIVER_KM3, MAJOR_RIVER_KM3, MIN_LAKE_KM2 },
     };
