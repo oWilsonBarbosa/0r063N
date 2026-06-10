@@ -96,6 +96,8 @@ Notable expanses (largest contiguous areas):
 
 ## Water Bodies
 
+Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly saline):
+
 | Body | Kind | Area | Max. depth | Quadrant |
 |---|---|---|---|---|
 | 1 | great lake | 25,016 km² | 1.9 km | NW |
@@ -105,4 +107,14 @@ Notable expanses (largest contiguous areas):
 | 5 | great lake | 3,268 km² | 0.6 km | NW |
 | 6 | great lake | 2,331 km² | 0.1 km | NE |
 
-> **Limitations.** The export models no rivers and no above-sea-level lake water; the water bodies above are below-sea-level basins not connected to the World Ocean. River statements are qualitative inferences from precipitation, relief and the direction of the nearest coast.
+Lakes (computed hydrology — depressions in the terrain holding water above sea level):
+
+| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|---|
+| 1 | freshwater (with outlet) | 2,094 km² | 169 m | 127 m | NE |
+
+## Rivers
+
+No major river reaches the sea within this region — the land here is too arid, too fragmented, or drains into neighboring regions.
+
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

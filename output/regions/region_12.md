@@ -108,6 +108,8 @@ Notable expanses (largest contiguous areas):
 
 ## Water Bodies
 
+Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly saline):
+
 | Body | Kind | Area | Max. depth | Quadrant |
 |---|---|---|---|---|
 | 1 | great lake | 12,322 km² | 1.4 km | NE |
@@ -118,20 +120,43 @@ Notable expanses (largest contiguous areas):
 | 6 | great lake | 3,685 km² | 2.7 km | SW |
 | 7 | great lake | 3,646 km² | 0.3 km | SE |
 | 8 | great lake | 3,617 km² | 0.1 km | SE |
-| 9 | great lake | 3,237 km² | 0.2 km | NE |
-| 10 | great lake | 3,179 km² | 0.2 km | SW |
-| 11 | great lake | 3,016 km² | 0.1 km | NW |
-| 12 | great lake | 2,876 km² | 0.3 km | NE |
-| 13 | great lake | 2,870 km² | 0.4 km | NE |
-| 14 | great lake | 2,792 km² | 0.3 km | SW |
-| 15 | great lake | 2,446 km² | 0.7 km | SE |
-| 16 | great lake | 2,422 km² | 0.2 km | SE |
-| 17 | great lake | 2,297 km² | 0.7 km | NE |
 
-**Likely river systems** (inference — see limitations):
+…plus 9 smaller enclosed water bodies.
 
-- The NW ranges receive ~1,864 mm of rain a year and likely drain west toward the nearby coast as one or more major river systems.
-- The SW ranges receive ~655 mm of rain a year and likely drain north-west toward the coast ≈ 390 km away as one or more major river systems.
-- The NE ranges receive ~1,282 mm of rain a year and likely drain south toward the nearby coast as one or more major river systems.
+Lakes (computed hydrology — depressions in the terrain holding water above sea level):
 
-> **Limitations.** The export models no rivers and no above-sea-level lake water; the water bodies above are below-sea-level basins not connected to the World Ocean. River statements are qualitative inferences from precipitation, relief and the direction of the nearest coast.
+| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|---|
+| 1 | freshwater (with outlet) | 87,899 km² | 563 m | 317 m | NW |
+| 2 | freshwater (with outlet) | 34,572 km² | 1,736 m | 645 m | NW |
+| 3 | freshwater (with outlet) | 18,722 km² | 1,170 m | 113 m | NW |
+| 4 | freshwater (with outlet) | 18,270 km² | 268 m | 182 m | SW |
+| 5 | freshwater (with outlet) | 16,488 km² | 240 m | 174 m | SW |
+| 6 | freshwater (with outlet) | 12,166 km² | 845 m | 126 m | NE |
+| 7 | freshwater (with outlet) | 11,887 km² | 241 m | 164 m | SE |
+| 8 | freshwater (with outlet) | 10,939 km² | 952 m | 469 m | NW |
+| 9 | freshwater (with outlet) | 10,475 km² | 393 m | 95 m | SW |
+| 10 | freshwater (with outlet) | 8,701 km² | 241 m | 166 m | SE |
+
+…plus 77 smaller lakes.
+
+## Rivers
+
+33 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+
+| River | Discharge | Main-stem length | Source | Mouth | Empties into |
+|---|---|---|---|---|---|
+| 1 | 1,484 km³/yr | 7,904 km | SE quadrant | SW, 16.6°S 152.7°W | sea |
+| 2 | 834 km³/yr | 2,578 km | NW quadrant | NW, 12.4°N 153.2°W | sea |
+| 3 | 456 km³/yr | 2,824 km | NW quadrant | NE, 5.3°S 135.7°W | sea |
+| 4 | 310 km³/yr | 2,082 km | NW quadrant | NE, 8.3°S 138.6°W | sea |
+| 5 | 229 km³/yr | 1,432 km | NE quadrant | NE, 9.1°N 137.9°W | sea |
+| 6 | 203 km³/yr | 881 km | NE quadrant | NE, 4.6°N 143.3°W | sea |
+| 7 | 126 km³/yr | 1,254 km | SE quadrant | SE, 21.4°S 131.6°W | sea |
+| 8 | 121 km³/yr | 691 km | NE quadrant | NE, 3.7°N 133.8°W | sea |
+| 9 | 88 km³/yr | 517 km | NW quadrant | NW, 4.6°N 144.6°W | sea |
+| 10 | 88 km³/yr | 791 km | NE quadrant | NE, 1.3°S 130.7°W | sea |
+
+…plus 23 lesser major rivers.
+
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

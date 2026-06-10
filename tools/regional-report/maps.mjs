@@ -11,6 +11,9 @@ const OCEAN_SHALLOW = [137, 175, 209];
 const OCEAN_MID = [93, 135, 178];
 const OCEAN_DEEP = [58, 96, 142];
 const COAST = [40, 40, 40];
+const LAKE = [96, 150, 198];
+const SALT_LAKE = [148, 178, 198];
+const RIVER = [52, 106, 168];
 
 function oceanColor(elevKm) {
     if (elevKm > -2) return OCEAN_SHALLOW;
@@ -41,9 +44,13 @@ function rasterPixel(grid, lat, lon) {
     return py * W + px;
 }
 
-function basePixelColor(p, grid, data, pxf) {
+function basePixelColor(p, grid, data, pxf, hydro) {
     const c = grid.cellGrid[p];
     if (pxf.landPx[p]) {
+        if (hydro && hydro.lakeId[p] !== -1 && hydro.lakeVisible[hydro.lakeId[p]]) {
+            return hydro.saltyLake[hydro.lakeId[p]] ? SALT_LAKE : LAKE;
+        }
+        if (hydro && hydro.riverPx[p]) return RIVER;
         let col = terrainColor(pxf.terrainPx[p]);
         if (pxf.mountainPx[p]) col = shade(col, 0.8);
         return col;
@@ -52,7 +59,7 @@ function basePixelColor(p, grid, data, pxf) {
 }
 
 export function renderRegionMap(regionId, ctx, size = 1100) {
-    const { grid, data, px: pxf, faces } = ctx;
+    const { grid, data, px: pxf, faces, hydro } = ctx;
     const face = faces[regionId];
     const titleH = 34;
     const cv = makeCanvas(size, size + titleH, [248, 248, 246]);
@@ -67,7 +74,7 @@ export function renderRegionMap(regionId, ctx, size = 1100) {
             const [lat, lon] = gnomonicInverse(face, X, Y);
             const p = rasterPixel(grid, lat, lon);
             const inside = pxf.regionPx[p] === regionId;
-            let col = basePixelColor(p, grid, data, pxf);
+            let col = basePixelColor(p, grid, data, pxf, hydro);
             if (!inside) col = toGray(col);
             inRegion[my * size + mx] = inside ? 1 : 0;
             isLandMap[my * size + mx] = pxf.landPx[p];
@@ -107,12 +114,11 @@ export function renderRegionMap(regionId, ctx, size = 1100) {
 }
 
 export function renderOverview(ctx) {
-    const { grid, data, px: pxf, faces } = ctx;
+    const { grid, data, px: pxf, faces, hydro } = ctx;
     const { W, H } = grid;
     const cv = makeCanvas(W, H);
     for (let p = 0; p < W * H; p++) {
-        const py = (p / W) | 0, mx = p - py * W;
-        cv.rgb.set(basePixelColor(p, grid, data, pxf), p * 3);
+        cv.rgb.set(basePixelColor(p, grid, data, pxf, hydro), p * 3);
     }
     // coastline
     for (let py = 0; py < H - 1; py++) {
@@ -158,6 +164,9 @@ export function renderLegend() {
         { color: OCEAN_SHALLOW, label: 'Ocean (shelf, above -2 km)' },
         { color: OCEAN_MID, label: 'Ocean (-2 to -5 km)' },
         { color: OCEAN_DEEP, label: 'Ocean (below -5 km)' },
+        { color: LAKE, label: 'Lake (freshwater)' },
+        { color: SALT_LAKE, label: 'Salt lake (endorheic)' },
+        { color: RIVER, label: 'River' },
     ];
     const rowH = 22, w = 430;
     const cv = makeCanvas(w, rows.length * rowH + 16, [250, 250, 248]);

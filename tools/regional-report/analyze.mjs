@@ -1,7 +1,7 @@
 // Per-region geography analysis on the raster grid.
 // All statistics are area-weighted (pixel area ~ cos latitude).
 
-import { labelComponents, greatCircleKm, EARTH_R } from './grid.mjs';
+import { labelComponents, EARTH_R } from './grid.mjs';
 import { fromLatLon, gnomonicForward, QUADRANT_NAMES } from './icosahedron.mjs';
 import {
     TERRAIN_CLASSES, TERRAIN_OCEAN, BANDS, BAND_OCEAN, KOPPEN_CLASSES,
@@ -57,30 +57,6 @@ export function globalWaterBodies(grid, data, px) {
     return { oceanLabels: labels, worldOceanId, enclosed };
 }
 
-// Multi-source BFS from World-Ocean pixels: nearest ocean pixel for every
-// pixel (used only to phrase "likely drains <direction>" river inferences).
-export function nearestOceanField(grid, oceanLabels, worldOceanId) {
-    const { W, H } = grid;
-    const N = W * H;
-    const nearest = new Int32Array(N).fill(-1);
-    const queue = new Int32Array(N);
-    let head = 0, tail = 0;
-    for (let p = 0; p < N; p++) {
-        if (oceanLabels[p] === worldOceanId) { nearest[p] = p; queue[tail++] = p; }
-    }
-    while (head < tail) {
-        const p = queue[head++];
-        const py = (p / W) | 0, px = p - py * W;
-        const left = px === 0 ? p + W - 1 : p - 1;
-        const right = px === W - 1 ? p - W + 1 : p + 1;
-        const visit = q => { if (nearest[q] === -1) { nearest[q] = nearest[p]; queue[tail++] = q; } };
-        visit(left); visit(right);
-        if (py > 0) visit(p - W);
-        if (py < H - 1) visit(p + W);
-    }
-    return nearest;
-}
-
 // planet-wide area-weighted mean wind speed per season (normalizes the
 // export's simulation-unit speeds for qualitative strength labels)
 export function planetMeanWindSpeed(grid, data) {
@@ -110,13 +86,6 @@ export function compassFrom(eMean, nMean) {
     return dirs[Math.round(bearing / 22.5) % 16];
 }
 
-export function compassToward(eMean, nMean) {
-    const dirs = ['north', 'north-east', 'east', 'south-east',
-        'south', 'south-west', 'west', 'north-west'];
-    const bearing = (Math.atan2(eMean, nMean) * 180 / Math.PI + 360) % 360;
-    return dirs[Math.round(bearing / 45) % 8];
-}
-
 function humidityClass(pannMm) {
     if (pannMm < 250) return 'arid';
     if (pannMm < 500) return 'semi-arid';
@@ -134,7 +103,7 @@ const trendName = (angleDeg) => {
 };
 
 export function analyzeRegion(regionId, ctx) {
-    const { grid, data, px, faces, water, nearestOcean } = ctx;
+    const { grid, data, px, faces, water, hydro } = ctx;
     const { W, H, cellGrid, rowArea } = grid;
     const N = W * H;
     const face = faces[regionId];
@@ -284,31 +253,27 @@ export function analyzeRegion(regionId, ctx) {
         };
     });
 
-    // ---- river inference for humid mountain systems ----
-    const rivers = [];
-    const riverKeys = new Set();
-    for (const m of mountainSystems.slice(0, 5)) {
-        if (m.meanPannMm < 600) continue;
-        // centroid pixel -> nearest world-ocean pixel -> drainage direction
-        let cpx = Math.floor((m.centroidLon + 180) / grid.resDeg);
-        if (cpx >= W) cpx -= W; if (cpx < 0) cpx += W;
-        let cpy = Math.floor((90 - m.centroidLat) / grid.resDeg);
-        cpy = Math.max(0, Math.min(H - 1, cpy));
-        const target = nearestOcean[cpy * W + cpx];
-        if (target < 0) continue;
-        const [tlat, tlon] = pxLatLon(grid, target);
-        let dLon = tlon - m.centroidLon;
-        if (dLon > 180) dLon -= 360; else if (dLon < -180) dLon += 360;
-        const e = dLon * Math.cos(m.centroidLat * Math.PI / 180);
-        const nrt = tlat - m.centroidLat;
-        const distKm = greatCircleKm(m.centroidLat, m.centroidLon, tlat, tlon);
-        const toward = compassToward(e, nrt);
-        const key = `${m.quadrant}:${toward}`;
-        if (riverKeys.has(key)) continue;   // one statement per quadrant+direction
-        riverKeys.add(key);
-        rivers.push({ system: m, toward, coastKm: distKm });
-        if (rivers.length >= 3) break;
-    }
+    // ---- rivers (computed hydrology): mouths inside this region ----
+    const rivers = hydro.rivers
+        .filter(rv => px.regionPx[rv.mouthPx] === regionId)
+        .map(rv => ({
+            ...rv,
+            mouthQuadrant: QUADRANT_NAMES[quadrantOfLatLon(face, rv.mouthLat, rv.mouthLon)],
+            srcQuadrant: QUADRANT_NAMES[quadrantOfLatLon(face, rv.srcLat, rv.srcLon)],
+        }));
+
+    // ---- lakes (computed hydrology): centroid inside this region ----
+    const lakes = hydro.lakes
+        .filter(lk => {
+            let cpx = Math.floor((lk.centroidLon + 180) / grid.resDeg);
+            if (cpx >= W) cpx -= W; if (cpx < 0) cpx += W;
+            const cpy = Math.max(0, Math.min(H - 1, Math.floor((90 - lk.centroidLat) / grid.resDeg)));
+            return px.regionPx[cpy * W + cpx] === regionId;
+        })
+        .map(lk => ({
+            ...lk,
+            quadrant: QUADRANT_NAMES[quadrantOfLatLon(face, lk.centroidLat, lk.centroidLon)],
+        }));
 
     // ---- enclosed water bodies in this region ----
     const regionWaters = [];
@@ -394,7 +359,7 @@ export function analyzeRegion(regionId, ctx) {
         meanPannMm: areaLand > 0 ? pannSum / areaLand : null,
         quadrants,
         regionWaters, enclosedWaterArea,
-        rivers, expanses,
+        rivers, lakes, expanses,
     };
 }
 

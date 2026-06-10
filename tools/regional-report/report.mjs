@@ -183,26 +183,63 @@ export function regionReport(r) {
     L.push('## Water Bodies');
     L.push('');
     if (r.regionWaters.length) {
+        L.push('Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly saline):');
+        L.push('');
         L.push('| Body | Kind | Area | Max. depth | Quadrant |');
         L.push('|---|---|---|---|---|');
-        r.regionWaters.forEach((wb, i) => {
+        r.regionWaters.slice(0, 8).forEach((wb, i) => {
             L.push(`| ${i + 1} | ${wb.kind} | ${fmtKm2(wb.areaKm2)} | ${wb.maxDepthKm.toFixed(1)} km | ${wb.quadrant} |`);
         });
-        L.push('');
-    } else {
-        L.push('No enclosed seas or great lakes detected in this region.');
-        L.push('');
-    }
-    if (r.rivers.length) {
-        L.push('**Likely river systems** (inference — see limitations):');
-        L.push('');
-        for (const riv of r.rivers) {
-            const dist = riv.coastKm >= 200 ? `the coast ≈ ${fmtInt(riv.coastKm)} km away` : 'the nearby coast';
-            L.push(`- The ${riv.system.quadrant} ranges receive ~${fmtInt(riv.system.meanPannMm)} mm of rain a year and likely drain ${riv.toward} toward ${dist} as one or more major river systems.`);
+        if (r.regionWaters.length > 8) {
+            L.push('');
+            L.push(`…plus ${r.regionWaters.length - 8} smaller enclosed water bodies.`);
         }
         L.push('');
     }
-    L.push('> **Limitations.** The export models no rivers and no above-sea-level lake water; the water bodies above are below-sea-level basins not connected to the World Ocean. River statements are qualitative inferences from precipitation, relief and the direction of the nearest coast.');
+    if (r.lakes.length) {
+        L.push('Lakes (computed hydrology — depressions in the terrain holding water above sea level):');
+        L.push('');
+        L.push('| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |');
+        L.push('|---|---|---|---|---|---|');
+        r.lakes.slice(0, 10).forEach((lk, i) => {
+            const type = lk.endorheic ? 'salt (no outlet)' : 'freshwater (with outlet)';
+            L.push(`| ${i + 1} | ${type} | ${fmtKm2(lk.areaKm2)} | ${fmtInt(lk.surfaceKm * 1000)} m | ${fmtInt(lk.maxDepthKm * 1000)} m | ${lk.quadrant} |`);
+        });
+        if (r.lakes.length > 10) {
+            L.push('');
+            L.push(`…plus ${r.lakes.length - 10} smaller lakes.`);
+        }
+        L.push('');
+    }
+    if (!r.regionWaters.length && !r.lakes.length) {
+        L.push('No enclosed seas or significant lakes detected in this region.');
+        L.push('');
+    }
+
+    // Rivers
+    L.push('## Rivers');
+    L.push('');
+    if (r.rivers.length) {
+        L.push(`${r.rivers.length} major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.`);
+        L.push('');
+        L.push('| River | Discharge | Main-stem length | Source | Mouth | Empties into |');
+        L.push('|---|---|---|---|---|---|');
+        r.rivers.slice(0, 10).forEach((rv, i) => {
+            L.push(`| ${i + 1} | ${fmtInt(rv.dischargeKm3)} km³/yr | ${fmtInt(rv.lengthKm)} km | ${rv.srcQuadrant} quadrant | ${rv.mouthQuadrant}, ${fmtDeg(rv.mouthLat, rv.mouthLon)} | ${rv.terminus} |`);
+        });
+        if (r.rivers.length > 10) {
+            L.push('');
+            L.push(`…plus ${r.rivers.length - 10} lesser major rivers.`);
+        }
+        L.push('');
+    } else if (r.areaLand > 0) {
+        L.push('No major river reaches the sea within this region — the land here is too arid, too fragmented, or drains into neighboring regions.');
+        L.push('');
+    } else {
+        L.push('No land, no rivers.');
+        L.push('');
+    }
+    L.push('> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol\'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export\'s elevation field.');
     L.push('');
     return L.join('\n');
 }
@@ -229,16 +266,16 @@ export function indexReadme(meta, results, partitionNote) {
     L.push('');
     L.push(partitionNote);
     L.push('');
-    L.push('| Region | Character | Hydrography | Land | Dominant band | Dominant terrain | Mtn. systems |');
-    L.push('|---|---|---|---|---|---|---|');
+    L.push('| Region | Character | Hydrography | Land | Dominant band | Dominant terrain | Mtn. systems | Major rivers | Lakes |');
+    L.push('|---|---|---|---|---|---|---|---|---|');
     for (const r of results) {
         const nn = String(r.regionId + 1).padStart(2, '0');
-        L.push(`| [${nn}](regions/region_${nn}.md) | ${regionEpithet(r)} | ${r.hydrography.label} | ${fmtPct(r.landFrac)} | ${dominantBand(r)} | ${dominantTerrain(r)} | ${r.mountainSystems.length} |`);
+        L.push(`| [${nn}](regions/region_${nn}.md) | ${regionEpithet(r)} | ${r.hydrography.label} | ${fmtPct(r.landFrac)} | ${dominantBand(r)} | ${dominantTerrain(r)} | ${r.mountainSystems.length} | ${r.rivers.length} | ${r.lakes.length} |`);
     }
     L.push('');
     L.push('## How this was generated');
     L.push('');
-    L.push('Generated by `tools/regional-report` (zero-dependency Node.js). Pipeline: stream the 13 gzipped CSV parts into typed arrays → assign each cell to an icosahedral face → rasterize to a 0.125° equirectangular grid (area-weighted) → classify climate bands and Table-18 terrain from Köppen class, elevation and precipitation → per-region connected-component analysis for landmasses, mountain systems and enclosed waters → render maps and write these reports.');
+    L.push('Generated by `tools/regional-report` (zero-dependency Node.js). Pipeline: stream the 13 gzipped CSV parts into typed arrays → assign each cell to an icosahedral face → rasterize to a 0.125° equirectangular grid (area-weighted) → classify climate bands and Table-18 terrain from Köppen class, elevation and precipitation → derive hydrology (priority-flood depression filling, precipitation-driven flow accumulation, rivers, and water-balanced lakes — freshwater where inflow beats evaporation, endorheic salt lakes otherwise) → per-region connected-component analysis for landmasses, mountain systems and enclosed waters → render maps and write these reports.');
     L.push('');
     L.push('Regenerate with:');
     L.push('');

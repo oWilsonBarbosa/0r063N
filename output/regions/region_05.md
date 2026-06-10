@@ -104,6 +104,8 @@ Notable expanses (largest contiguous areas):
 
 ## Water Bodies
 
+Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly saline):
+
 | Body | Kind | Area | Max. depth | Quadrant |
 |---|---|---|---|---|
 | 1 | great lake | 10,652 km² | 0.3 km | SW |
@@ -114,15 +116,43 @@ Notable expanses (largest contiguous areas):
 | 6 | great lake | 4,713 km² | 0.6 km | SW |
 | 7 | great lake | 3,480 km² | 1.0 km | NE |
 | 8 | great lake | 2,626 km² | 0.6 km | NE |
-| 9 | great lake | 2,604 km² | 0.2 km | SW |
-| 10 | great lake | 2,462 km² | 1.1 km | NE |
-| 11 | great lake | 2,273 km² | 2.3 km | NE |
-| 12 | great lake | 2,124 km² | 0.3 km | SW |
 
-**Likely river systems** (inference — see limitations):
+…plus 4 smaller enclosed water bodies.
 
-- The NW ranges receive ~936 mm of rain a year and likely drain north toward the nearby coast as one or more major river systems.
-- The SW ranges receive ~782 mm of rain a year and likely drain south-west toward the coast ≈ 889 km away as one or more major river systems.
-- The NE ranges receive ~1,570 mm of rain a year and likely drain south toward the nearby coast as one or more major river systems.
+Lakes (computed hydrology — depressions in the terrain holding water above sea level):
 
-> **Limitations.** The export models no rivers and no above-sea-level lake water; the water bodies above are below-sea-level basins not connected to the World Ocean. River statements are qualitative inferences from precipitation, relief and the direction of the nearest coast.
+| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|---|
+| 1 | freshwater (with outlet) | 62,383 km² | 526 m | 229 m | NE |
+| 2 | freshwater (with outlet) | 53,973 km² | 654 m | 209 m | SW |
+| 3 | freshwater (with outlet) | 43,018 km² | 629 m | 471 m | NE |
+| 4 | freshwater (with outlet) | 40,611 km² | 2,847 m | 445 m | NW |
+| 5 | freshwater (with outlet) | 38,074 km² | 2,166 m | 666 m | NW |
+| 6 | freshwater (with outlet) | 36,717 km² | 394 m | 126 m | SW |
+| 7 | freshwater (with outlet) | 35,724 km² | 628 m | 362 m | NE |
+| 8 | freshwater (with outlet) | 35,312 km² | 1,972 m | 524 m | NW |
+| 9 | freshwater (with outlet) | 31,926 km² | 635 m | 548 m | SW |
+| 10 | freshwater (with outlet) | 21,259 km² | 627 m | 355 m | NE |
+
+…plus 110 smaller lakes.
+
+## Rivers
+
+29 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+
+| River | Discharge | Main-stem length | Source | Mouth | Empties into |
+|---|---|---|---|---|---|
+| 1 | 1,397 km³/yr | 2,801 km | NW quadrant | NE, 67.4°N 132.8°E | sea |
+| 2 | 621 km³/yr | 2,037 km | NW quadrant | NE, 52.9°N 119.8°E | sea |
+| 3 | 427 km³/yr | 1,672 km | SW quadrant | NW, 49.6°N 77.9°E | sea |
+| 4 | 245 km³/yr | 903 km | SW quadrant | SW, 44.1°N 83.2°E | sea |
+| 5 | 236 km³/yr | 686 km | NE quadrant | NE, 69.8°N 130.6°E | sea |
+| 6 | 200 km³/yr | 1,206 km | NE quadrant | NE, 53.3°N 121.8°E | sea |
+| 7 | 179 km³/yr | 438 km | NE quadrant | NE, 54.8°N 127.8°E | sea |
+| 8 | 101 km³/yr | 1,835 km | SW quadrant | SW, 41.7°N 105.8°E | sea |
+| 9 | 82 km³/yr | 515 km | NE quadrant | NE, 55.8°N 127.6°E | sea |
+| 10 | 62 km³/yr | 448 km | SW quadrant | SW, 44.1°N 81.8°E | sea |
+
+…plus 19 lesser major rivers.
+
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

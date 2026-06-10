@@ -11,7 +11,8 @@ import { loadData, loadMeta, verifyData, tryLoadCache, saveCache } from './csv-l
 import { buildIcosahedron, assignAllRegions } from './icosahedron.mjs';
 import { buildGrid } from './grid.mjs';
 import { classifyAll } from './classify.mjs';
-import { pixelFields, globalWaterBodies, nearestOceanField, analyzeRegion, planetMeanWindSpeed } from './analyze.mjs';
+import { pixelFields, globalWaterBodies, analyzeRegion, planetMeanWindSpeed } from './analyze.mjs';
+import { buildHydrology } from './hydrology.mjs';
 import { renderRegionMap, renderOverview, renderLegend } from './maps.mjs';
 import { regionReport, indexReadme } from './report.mjs';
 
@@ -105,9 +106,11 @@ async function main() {
     log('detecting water bodies (global ocean components) ...');
     const water = globalWaterBodies(grid, data, px);
     log(`world ocean + ${water.enclosed.length} enclosed water bodies ≥ 2,000 km²`);
-    const nearestOcean = nearestOceanField(grid, water.oceanLabels, water.worldOceanId);
 
-    const ctx = { grid, data, px, faces, water, nearestOcean, meanWindSpeed: planetMeanWindSpeed(grid, data) };
+    log('computing hydrology (depression filling, flow routing, lakes, rivers) ...');
+    const hydro = buildHydrology(grid, data, px, { log });
+
+    const ctx = { grid, data, px, faces, water, hydro, meanWindSpeed: planetMeanWindSpeed(grid, data) };
 
     // ---- output ----
     const regionsDir = path.join(args.out, 'regions');

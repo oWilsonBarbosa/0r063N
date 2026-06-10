@@ -75,6 +75,10 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 ## Water Bodies
 
-No enclosed seas or great lakes detected in this region.
+No enclosed seas or significant lakes detected in this region.
 
-> **Limitations.** The export models no rivers and no above-sea-level lake water; the water bodies above are below-sea-level basins not connected to the World Ocean. River statements are qualitative inferences from precipitation, relief and the direction of the nearest coast.
+## Rivers
+
+No major river reaches the sea within this region — the land here is too arid, too fragmented, or drains into neighboring regions.
+
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.
