@@ -28,6 +28,9 @@ python3 scripts/30_render_present.py     # -> maps/present/*.png
 python3 scripts/50_render_stages.py      # -> maps/stages/*.png
 python3 scripts/60_validate.py           # -> out/VALIDATION.md (exit 0 = valid)
 python3 scripts/70_build_doc.py          # -> ../docs/GEOLOGICAL_HISTORY.md
+python3 scripts/80_paleoclimate.py       # per-stage climate + T-0 calibration (exit 0 = valid)
+python3 scripts/85_render_climate.py     # -> maps/climate/*.png (Koppen stages + curve)
+python3 scripts/90_build_climate_doc.py  # -> ../docs/PALEOCLIMATE.md
 ```
 
 `scripts/40_init_history.py` regenerates a blank `history.yaml` skeleton from the
@@ -45,11 +48,16 @@ are committed.
 | `lib/spherical.py` | lat/lon↔xyz, Rodrigues rotations, great-circle distance |
 | `lib/history_schema.py` | history.yaml schema, keyframe interpolation, block rotations |
 | `lib/mapstyle.py` | shared map styling |
+| `lib/climate.py` | zonal climate model (temp/precip/Köppen), generator-calibrated |
+| `lib/paleoclimate_schema.py` | forcing-curve schema + validation |
 | `history/history.yaml` | **the authored timeline** — edit this to revise the history |
+| `history/paleoclimate.yaml` | **the authored climate forcing curve** (dT per stage, eras) |
 | `out/INVENTORY.md` | present-day tectonic inventory (human-readable) |
 | `out/VALIDATION.md` | validation report against the rules of thumb |
+| `out/climate_summary.json` | climate calibration + per-stage stats |
 | `maps/present/` | 5 present-day tectonic maps |
 | `maps/stages/` | 16 paleogeographic stage maps |
+| `maps/climate/` | 16 paleo-Köppen maps + climate curve + calibration figure |
 
 ## How the history is encoded
 
@@ -68,3 +76,14 @@ block overlaps, craton conservation, hotspot/LIP timing).
 *directions* are inferred heuristically; the absolute paleo-longitudes are one
 self-consistent solution among several that fit the present map. The relative
 sequence of rift→drift→collision and the feature provenance are data-constrained.
+
+## Paleoclimate
+
+A simplified zonal climate model (`lib/climate.py`, constants transcribed from
+the generator's own climate code) runs on every stage's paleogeography under
+the authored forcing curve `history/paleoclimate.yaml` (LIPs warm, orogenic
+weathering cools; dT must be 0 at present). Ice ages are emergent from forcing
+× polar land position. The model is calibrated at T-0 against the generator's
+real Köppen output (±10 pp per major class; deviations documented in
+`../docs/PALEOCLIMATE.md`). Orogen belts carry age-scaled elevations into the
+past using the same erosion model the tectonic validator enforces.

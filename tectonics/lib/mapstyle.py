@@ -48,6 +48,40 @@ def save(fig, path, dpi=128):
     print(f"wrote {path}")
 
 
+# Standard Koppen-Geiger colors keyed by the generator's numeric codes (1..30);
+# 0 = ocean.
+KOPPEN_COLORS = {
+    0: "#d4e6f1",
+    1: "#0000fe", 2: "#00777d", 3: "#46a9fa",            # Af Am Aw
+    4: "#fe0000", 5: "#fe9695", 6: "#f5a300", 7: "#ffdb63",  # BWh BWk BSh BSk
+    8: "#c6ff4e", 9: "#66ff33", 10: "#33c701",           # Cfa Cfb Cfc
+    11: "#ffff00", 12: "#c6c700", 13: "#969600",         # Csa Csb Csc
+    14: "#96ff96", 15: "#63c764", 16: "#329633",         # Cwa Cwb Cwc
+    17: "#00ffff", 18: "#38c7ff", 19: "#007e7d", 20: "#00455e",  # Dfa-Dfd
+    21: "#ff00fe", 22: "#c600c7", 23: "#963295", 24: "#966495",  # Dsa-Dsd
+    25: "#aabfff", 26: "#5a77db", 27: "#4c51b5", 28: "#320087",  # Dwa-Dwd
+    29: "#b2b2b2", 30: "#686868",                        # ET EF
+}
+
+
+def koppen_rgb(codes):
+    """RGB image from a grid of Koppen codes (0..30)."""
+    lut = np.ones((31, 3))
+    for k, hexc in KOPPEN_COLORS.items():
+        lut[k] = [int(hexc[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+    return lut[np.clip(codes, 0, 30)]
+
+
+def koppen_legend_handles(codes_present):
+    """Legend patches for the Koppen classes present in a map."""
+    import matplotlib.patches as mpatches
+
+    from lib.climate import KOPPEN_CODES
+
+    return [mpatches.Patch(color=KOPPEN_COLORS[c], label=KOPPEN_CODES[c])
+            for c in sorted(set(int(c) for c in codes_present) - {0})]
+
+
 def coastline_overlay(ax, land_mask):
     ax.contour(np.linspace(-180, 180, land_mask.shape[1]),
                np.linspace(90, -90, land_mask.shape[0]),

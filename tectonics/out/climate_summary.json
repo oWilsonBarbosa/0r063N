@@ -1,0 +1,398 @@
+{
+ "model": "zonal-v1",
+ "zone_thresholds_km": [
+  150.0,
+  600.0,
+  1200.0,
+  2200.0
+ ],
+ "anchor_t0": {
+  "global_mean_C": 16.22,
+  "land_mean_C": 14.12,
+  "koppen_major_land_fractions": {
+   "A": 0.2334,
+   "B": 0.2704,
+   "C": 0.1784,
+   "D": 0.1634,
+   "E": 0.1545
+  }
+ },
+ "calibration_formula_only": {
+  "tS_rmse_C": 7.57,
+  "tW_rmse_C": 7.38,
+  "pAnn_rmse_mm": 468.0,
+  "major_class_agreement": 0.559,
+  "model_fractions": {
+   "A": 0.1733,
+   "B": 0.1602,
+   "C": 0.3651,
+   "D": 0.1643,
+   "E": 0.1371
+  }
+ },
+ "calibration_full_t0": {
+  "stats": {
+   "koppen_major": {
+    "A": 0.1296,
+    "B": 0.1787,
+    "C": 0.2959,
+    "D": 0.1636,
+    "E": 0.2322
+   },
+   "global_mean_C": 18.16,
+   "ice_land_frac": 0.1339,
+   "EF_land_frac": 0.0253,
+   "sea_ice_frac": 0.0123,
+   "land_lat_range": [
+    -80.3,
+    82.6
+   ]
+  },
+  "deviation_pp": {
+   "A": 10.4,
+   "B": 9.2,
+   "C": 11.8,
+   "D": 0.0,
+   "E": 7.8
+  }
+ },
+ "t0_land_iou": 0.982,
+ "stages": [
+  {
+   "koppen_major": {
+    "A": 0.194,
+    "B": 0.2419,
+    "C": 0.2949,
+    "D": 0.1074,
+    "E": 0.1618
+   },
+   "global_mean_C": 17.56,
+   "ice_land_frac": 0.084,
+   "EF_land_frac": 0.0027,
+   "sea_ice_frac": 0.0162,
+   "land_lat_range": [
+    -88.9,
+    46.6
+   ],
+   "t": -750,
+   "dT_global": -1.0,
+   "ice_hint": "polar",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.2152,
+    "B": 0.2014,
+    "C": 0.3427,
+    "D": 0.1015,
+    "E": 0.1393
+   },
+   "global_mean_C": 16.1,
+   "ice_land_frac": 0.0804,
+   "EF_land_frac": 0.0019,
+   "sea_ice_frac": 0.0239,
+   "land_lat_range": [
+    -83.9,
+    47.5
+   ],
+   "t": -700,
+   "dT_global": -2.5,
+   "ice_hint": "polar",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.1022,
+    "B": 0.156,
+    "C": 0.4822,
+    "D": 0.1002,
+    "E": 0.1594
+   },
+   "global_mean_C": 13.17,
+   "ice_land_frac": 0.106,
+   "EF_land_frac": 0.0036,
+   "sea_ice_frac": 0.0417,
+   "land_lat_range": [
+    -83.0,
+    48.4
+   ],
+   "t": -650,
+   "dT_global": -5.5,
+   "ice_hint": "polar",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.0148,
+    "B": 0.1267,
+    "C": 0.537,
+    "D": 0.0943,
+    "E": 0.2273
+   },
+   "global_mean_C": 10.67,
+   "ice_land_frac": 0.1623,
+   "EF_land_frac": 0.0105,
+   "sea_ice_frac": 0.0588,
+   "land_lat_range": [
+    -83.0,
+    48.4
+   ],
+   "t": -600,
+   "dT_global": -8.0,
+   "ice_hint": "major_glaciation",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.1998,
+    "B": 0.1799,
+    "C": 0.4023,
+    "D": 0.1049,
+    "E": 0.1131
+   },
+   "global_mean_C": 15.17,
+   "ice_land_frac": 0.0711,
+   "EF_land_frac": 0.0016,
+   "sea_ice_frac": 0.0294,
+   "land_lat_range": [
+    -83.0,
+    48.4
+   ],
+   "t": -550,
+   "dT_global": -3.5,
+   "ice_hint": "polar",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.286,
+    "B": 0.2119,
+    "C": 0.3383,
+    "D": 0.1049,
+    "E": 0.0589
+   },
+   "global_mean_C": 17.67,
+   "ice_land_frac": 0.0342,
+   "EF_land_frac": 0.0007,
+   "sea_ice_frac": 0.0162,
+   "land_lat_range": [
+    -83.0,
+    48.4
+   ],
+   "t": -500,
+   "dT_global": -1.0,
+   "ice_hint": "polar",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.3312,
+    "B": 0.266,
+    "C": 0.2968,
+    "D": 0.0856,
+    "E": 0.0204
+   },
+   "global_mean_C": 20.67,
+   "ice_land_frac": 0.0105,
+   "EF_land_frac": 0.0,
+   "sea_ice_frac": 0.0069,
+   "land_lat_range": [
+    -83.0,
+    48.4
+   ],
+   "t": -450,
+   "dT_global": 2.0,
+   "ice_hint": "none",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.3228,
+    "B": 0.3029,
+    "C": 0.2882,
+    "D": 0.0758,
+    "E": 0.0102
+   },
+   "global_mean_C": 22.57,
+   "ice_land_frac": 0.0046,
+   "EF_land_frac": 0.0,
+   "sea_ice_frac": 0.0025,
+   "land_lat_range": [
+    -84.8,
+    49.3
+   ],
+   "t": -400,
+   "dT_global": 4.0,
+   "ice_hint": "none",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.2946,
+    "B": 0.3269,
+    "C": 0.2907,
+    "D": 0.0771,
+    "E": 0.0107
+   },
+   "global_mean_C": 23.01,
+   "ice_land_frac": 0.0047,
+   "EF_land_frac": 0.0,
+   "sea_ice_frac": 0.002,
+   "land_lat_range": [
+    -88.4,
+    50.6
+   ],
+   "t": -350,
+   "dT_global": 4.5,
+   "ice_hint": "none",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.258,
+    "B": 0.3224,
+    "C": 0.3147,
+    "D": 0.0853,
+    "E": 0.0196
+   },
+   "global_mean_C": 21.97,
+   "ice_land_frac": 0.01,
+   "EF_land_frac": 0.0002,
+   "sea_ice_frac": 0.0031,
+   "land_lat_range": [
+    -85.3,
+    55.6
+   ],
+   "t": -300,
+   "dT_global": 3.5,
+   "ice_hint": "none",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.2269,
+    "B": 0.296,
+    "C": 0.3459,
+    "D": 0.0925,
+    "E": 0.0387
+   },
+   "global_mean_C": 20.42,
+   "ice_land_frac": 0.0228,
+   "EF_land_frac": 0.0006,
+   "sea_ice_frac": 0.0069,
+   "land_lat_range": [
+    -84.8,
+    61.0
+   ],
+   "t": -250,
+   "dT_global": 2.0,
+   "ice_hint": "none",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.2082,
+    "B": 0.2582,
+    "C": 0.3506,
+    "D": 0.1065,
+    "E": 0.0764
+   },
+   "global_mean_C": 18.86,
+   "ice_land_frac": 0.0494,
+   "EF_land_frac": 0.0014,
+   "sea_ice_frac": 0.0111,
+   "land_lat_range": [
+    -81.7,
+    67.3
+   ],
+   "t": -200,
+   "dT_global": 0.5,
+   "ice_hint": "none",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.1865,
+    "B": 0.1977,
+    "C": 0.3681,
+    "D": 0.1267,
+    "E": 0.121
+   },
+   "global_mean_C": 17.81,
+   "ice_land_frac": 0.0788,
+   "EF_land_frac": 0.0031,
+   "sea_ice_frac": 0.0149,
+   "land_lat_range": [
+    -79.0,
+    73.1
+   ],
+   "t": -150,
+   "dT_global": -0.5,
+   "ice_hint": "polar",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.1614,
+    "B": 0.1643,
+    "C": 0.344,
+    "D": 0.1404,
+    "E": 0.19
+   },
+   "global_mean_C": 16.73,
+   "ice_land_frac": 0.1244,
+   "EF_land_frac": 0.0086,
+   "sea_ice_frac": 0.0192,
+   "land_lat_range": [
+    -79.0,
+    77.6
+   ],
+   "t": -100,
+   "dT_global": -1.5,
+   "ice_hint": "polar",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.1468,
+    "B": 0.1643,
+    "C": 0.3089,
+    "D": 0.1614,
+    "E": 0.2186
+   },
+   "global_mean_C": 17.15,
+   "ice_land_frac": 0.1373,
+   "EF_land_frac": 0.0152,
+   "sea_ice_frac": 0.0163,
+   "land_lat_range": [
+    -79.9,
+    79.4
+   ],
+   "t": -50,
+   "dT_global": -1.0,
+   "ice_hint": "polar",
+   "ice_hint_met": true
+  },
+  {
+   "koppen_major": {
+    "A": 0.1308,
+    "B": 0.1825,
+    "C": 0.2824,
+    "D": 0.1706,
+    "E": 0.2337
+   },
+   "global_mean_C": 18.12,
+   "ice_land_frac": 0.1339,
+   "EF_land_frac": 0.0261,
+   "sea_ice_frac": 0.0123,
+   "land_lat_range": [
+    -80.3,
+    82.6
+   ],
+   "t": 0,
+   "dT_global": 0.0,
+   "ice_hint": "polar",
+   "ice_hint_met": true
+  }
+ ]
+}
