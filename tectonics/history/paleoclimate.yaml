@@ -82,8 +82,8 @@ stages:
       - {event: "orogeny at T-650 (G docking completes the supercontinent, assembled)", effect: cool}
       - {event: "supercontinent tenure begins: minimum ridge length", effect: cool}
   - t: -600
-    dT_global: -8.0
-    co2_ppm: 45
+    dT_global: -8.8
+    co2_ppm: 38
     ice_hint: major_glaciation
     narrative: Glacial maximum of the S1 icehouse.
     drivers:

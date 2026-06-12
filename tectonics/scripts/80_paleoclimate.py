@@ -196,7 +196,22 @@ land0, elev0 = bin_cells(lat_c[land_c], lon_c[land_c], cols["elev_km"][land_c])
 res0 = run_grid(land0, elev0, dT=0.0)
 st0 = land_stats(res0, land0)
 dev = {m: round(abs(st0["koppen_major"][m] - truth_fracs[m]) * 100, 1) for m in "ABCDE"}
-summary["calibration_full_t0"] = {"stats": st0, "deviation_pp": dev}
+# per-pixel agreement against the rasterized ground truth
+truth_grid = raster.fill_gaps_categorical(
+    raster.rasterize_mode(lat_c, lon_c, true_kop, w=CW, h=CH))
+truth_grid[truth_grid < 0] = 0
+both = land0 & (truth_grid > 0)
+major_lut = np.zeros(31, dtype="U1")
+for k, v in climate.KOPPEN_MAJOR.items():
+    major_lut[k] = v
+grid_major_agree = float(np.mean(major_lut[res0["koppen"][both]]
+                                 == major_lut[truth_grid[both]]))
+grid_full_agree = float(np.mean(res0["koppen"][both] == truth_grid[both]))
+summary["calibration_full_t0"] = {"stats": st0, "deviation_pp": dev,
+                                  "grid_major_agreement": round(grid_major_agree, 3),
+                                  "grid_full_agreement": round(grid_full_agree, 3)}
+print(f"per-pixel agreement vs truth: major {grid_major_agree:.3f}, "
+      f"full class {grid_full_agree:.3f}")
 print(f"calibration B (full pipeline T-0): {st0['koppen_major']}")
 print(f"deviation vs truth (pp): {dev}")
 fail = [m for m, d in dev.items() if d > 20]

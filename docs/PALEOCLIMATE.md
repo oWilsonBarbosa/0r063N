@@ -12,27 +12,37 @@ a global temperature curve, and emergent ice ages.
 The model transcribes the planet generator's own climate rules (verified
 against its source) and runs them on each stage's rotated geography:
 
-- **Temperature**: base profile `28 − 47·((|lat−ITCZ|−13°)/77°)^1.4` °C with a
-  flat ±8° seasonal ITCZ; the generator's continentality swing table (annual
-  swing up to 60 °C for hypercontinental polar interiors, latitude-gated as in
-  the generator); only the *extra* swing beyond the ITCZ seasonality is added
-  (40 % to summer, 60 % to winter); +5 °C hyperoceanic offset at mid-high
-  latitudes; moisture-dependent lapse on an effective-elevation scale fitted
-  at T-0; the stage's `dT_global` forcing added uniformly.
+- **ITCZ**: land-following and per-longitude, like the generator's — candidate
+  latitudes within ±32° scored by solar insolation, an ocean prior, and local
+  land thermal boost, then smoothed along longitude (the rain belt bulges
+  poleward over large summer landmasses).
+- **Ocean currents**: parameterized gyres derived from each stage's land mask —
+  warm western-boundary currents poleward along the west side of every ocean
+  basin, cold eastern-boundary currents equatorward on the east side, and a
+  polar warm drift (North-Atlantic-Drift analog) past ~50°. The field feeds up
+  to ±16 °C over ocean and diffuses ±14 °C into coastal land, fading inland.
+- **Temperature**: base profile `28 − 47·((|lat−ITCZ|−13°)/77°)^1.4` °C on the
+  local ITCZ; the generator's continentality swing table (latitude-gated);
+  only the *extra* swing beyond ITCZ seasonality is added (40 % summer / 60 %
+  winter); current warmth and the +5 °C hyperoceanic offset; moisture-dependent
+  lapse on an effective-elevation scale fitted at T-0; the stage's `dT_global`
+  forcing added uniformly.
 - **Precipitation**: the generator's zonal curve (ITCZ core → trade-wind
-  falloff → subtropical desert factory → westerlies plateau → polar desert),
-  ITCZ convective uplift, fixed-latitude subtropical-high suppression,
-  continental interior drying (`1 − cont²·0.65`), Mediterranean dry summers
-  and an eastern-boundary cold-current drying proxy on subtropical west coasts.
+  falloff → subtropical desert factory → westerlies plateau → polar desert)
+  with ITCZ convective uplift and fixed-latitude subtropical-high suppression;
+  **downwind moisture advection** (trades and polar easterlies carry ocean
+  moisture westward, westerlies eastward, relative to the local ITCZ) with
+  ITCZ convective recycling over land; Mediterranean dry summers; coastal
+  drying wherever the gyre field puts a cold current offshore.
 - **Köppen classification**: the generator's exact thresholds (30 classes).
 - **Per-stage inputs**: land cells rotated by the tectonic block rotations;
   per-cell elevation carried from the present, with **orogen belts scaled by
   age** using the same erosion model as the tectonic validator (belts rise as
-  they form and decay afterwards; absent before their orogeny); continentality
-  recomputed by distance-to-coast on each stage's geography.
-- **Simplifications** (documented, not hidden): no ocean currents, no
-  wind-direction orography, a two-season year, uniform (non-amplified)
-  forcing, and a flat ITCZ. These mostly affect east/west coast asymmetries.
+  they form and decay afterwards; absent before their orogeny); continentality,
+  ITCZ, gyres and moisture all recomputed from each stage's geography.
+- **Simplifications** (documented, not hidden): no orographic wind shadowing,
+  a two-season year, uniform (non-amplified) forcing, and parameterized rather
+  than dynamic currents.
 
 Ice ages are **emergent**: the forcing curve only sets `dT_global`; ice
 appears where cold air meets land (Köppen EF/ET), so glaciations require
@@ -46,26 +56,32 @@ climate solution (2,560,001 cells):
 
 | Köppen major class | generator (truth) | zonal model | deviation |
 |---|---:|---:|---:|
-| A | 23.3% | 13.0% | 10.4 pp |
-| B | 27.0% | 17.9% | 9.2 pp |
-| C | 17.8% | 29.6% | 11.8 pp |
-| D | 16.3% | 16.4% | 0.0 pp |
-| E | 15.4% | 23.2% | 7.8 pp |
+| A | 23.3% | 14.6% | 8.8 pp |
+| B | 27.0% | 26.4% | 0.6 pp |
+| C | 17.8% | 23.9% | 6.0 pp |
+| D | 16.3% | 19.6% | 3.3 pp |
+| E | 15.4% | 15.5% | 0.1 pp |
 
-Per-cell checks (formula-only run on the true per-cell geography):
-seasonal temperature RMSE **7.6 / 7.4 °C**
-(summer/winter), annual precipitation RMSE 468 mm,
-major-class agreement 56%.
+Per-pixel agreement of the full pipeline against the rasterized ground truth:
+**49%** on major class
+(20% on the exact 30-class code — a harsh
+metric, since one-class boundary shifts count as misses). Formula-only run on
+the true per-cell geography: seasonal temperature RMSE
+**7.6 / 7.4 °C** (summer/winter),
+annual precipitation RMSE 468 mm.
 Global mean temperature from the data: **16.22 °C**
-(modeled at T-0: 18.16 °C).
+(modeled at T-0: 17.24 °C).
 
 ![model vs truth](../tectonics/maps/climate/koppen_present_model_vs_truth.png)
 
-The deviations are the expected signature of a zonal model: without warm/cold
-ocean currents the model under-predicts A and over-cools some coasts (excess
-C/E at high latitude), and without advection it misses the generator's wetter
-east coasts. The desert belts, tropical band, continental interiors and polar
-zones all land in the right places, which is what the paleo-stages need.
+With the parameterized gyres, land-following ITCZ and moisture advection in
+place, every major class lands within ~9 pp of the generator (B, D and E
+within ~3 pp). The residual gap is concentrated in A vs C around the
+subtropical margins, where the generator's dynamic wind/advection solution
+draws slightly different monsoon boundaries than the parameterized bands. The
+formula-only RMSE row above measures the zonal temperature core alone
+(without the grid-derived currents/advection fields, which need a map, not a
+cell).
 
 ## 3. The 750-Myr climate curve
 
@@ -73,22 +89,22 @@ zones all land in the right places, which is what the paleo-stages need.
 
 | stage | dT (°C) | CO₂ (ppm)* | global mean (°C) | land ice+tundra | ice state |
 |---|---:|---:|---:|---:|---|
-| T-750 | -1.0 | 230 | 17.6 | 8% | polar |
-| T-700 | -2.5 | 155 | 16.1 | 8% | polar |
-| T-650 | -5.5 | 85 | 13.2 | 11% | polar |
-| T-600 | -8.0 | 45 | 10.7 | 16% | major_glaciation |
-| T-550 | -3.5 | 125 | 15.2 | 7% | polar |
-| T-500 | -1.0 | 220 | 17.7 | 3% | polar |
-| T-450 | +2.0 | 445 | 20.7 | 1% | none |
-| T-400 | +4.0 | 700 | 22.6 | 0% | none |
-| T-350 | +4.5 | 790 | 23.0 | 0% | none |
-| T-300 | +3.5 | 630 | 22.0 | 1% | none |
-| T-250 | +2.0 | 445 | 20.4 | 2% | none |
-| T-200 | +0.5 | 315 | 18.9 | 5% | none |
-| T-150 | -0.5 | 250 | 17.8 | 8% | polar |
-| T-100 | -1.5 | 200 | 16.7 | 12% | polar |
-| T-50 | -1.0 | 222 | 17.1 | 14% | polar |
-| T0 | +0.0 | 280 | 18.1 | 13% | polar |
+| T-750 | -1.0 | 230 | 16.9 | 5% | polar |
+| T-700 | -2.5 | 155 | 15.7 | 6% | polar |
+| T-650 | -5.5 | 85 | 12.9 | 9% | polar |
+| T-600 | -8.8 | 38 | 9.6 | 17% | major_glaciation |
+| T-550 | -3.5 | 125 | 14.9 | 5% | polar |
+| T-500 | -1.0 | 220 | 17.4 | 3% | polar |
+| T-450 | +2.0 | 445 | 20.4 | 1% | none |
+| T-400 | +4.0 | 700 | 22.2 | 0% | none |
+| T-350 | +4.5 | 790 | 22.6 | 1% | none |
+| T-300 | +3.5 | 630 | 21.6 | 1% | none |
+| T-250 | +2.0 | 445 | 20.1 | 2% | none |
+| T-200 | +0.5 | 315 | 18.4 | 3% | none |
+| T-150 | -0.5 | 250 | 17.3 | 4% | polar |
+| T-100 | -1.5 | 200 | 16.2 | 7% | polar |
+| T-50 | -1.0 | 222 | 16.4 | 8% | polar |
+| T0 | +0.0 | 280 | 17.2 | 9% | polar |
 
 \* illustrative, ~3 °C per CO₂ doubling from a 280 ppm anchor.
 
@@ -189,8 +205,8 @@ The present regime: a moderately cold world with permanent polar ice on the far-
 ## 5. The S1 glaciation
 
 The modeled history's one major ice age peaks at **T-600** with
-16% of all land under ice or tundra and global
-mean temperature 10.7 °C. It is the textbook
+17% of all land under ice or tundra and global
+mean temperature 9.6 °C. It is the textbook
 supercontinent glaciation: S1's assembly killed most subduction-ridge systems
 (minimum CO₂ outgassing) while its fresh collisional sutures weathered at
 maximum rate, and the D/micro_10/micro_11 flank of the supercontinent sat

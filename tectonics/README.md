@@ -79,11 +79,16 @@ sequence of rift→drift→collision and the feature provenance are data-constra
 
 ## Paleoclimate
 
-A simplified zonal climate model (`lib/climate.py`, constants transcribed from
-the generator's own climate code) runs on every stage's paleogeography under
-the authored forcing curve `history/paleoclimate.yaml` (LIPs warm, orogenic
-weathering cools; dT must be 0 at present). Ice ages are emergent from forcing
-× polar land position. The model is calibrated at T-0 against the generator's
-real Köppen output (±10 pp per major class; deviations documented in
-`../docs/PALEOCLIMATE.md`). Orogen belts carry age-scaled elevations into the
-past using the same erosion model the tectonic validator enforces.
+A simplified climate model (`lib/climate.py`, constants transcribed from the
+generator's own climate code) runs on every stage's paleogeography under the
+authored forcing curve `history/paleoclimate.yaml` (LIPs warm, orogenic
+weathering cools; dT must be 0 at present). Beyond the zonal core it computes,
+from each stage's land mask alone: a land-following per-longitude ITCZ,
+parameterized gyre ocean currents (warm western-boundary / cold
+eastern-boundary, ±16 °C, diffused into coasts), and downwind moisture
+advection with ITCZ convective recycling. Ice ages are emergent from forcing
+× polar land position. Calibrated at T-0 against the generator's real Köppen
+output: every major class within 9 pp (B, D, E within ~3 pp); deviations
+documented in `../docs/PALEOCLIMATE.md`. Orogen belts carry age-scaled
+elevations into the past using the same erosion model the tectonic validator
+enforces.

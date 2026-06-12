@@ -33,43 +33,45 @@
  "calibration_full_t0": {
   "stats": {
    "koppen_major": {
-    "A": 0.1296,
-    "B": 0.1787,
-    "C": 0.2959,
-    "D": 0.1636,
-    "E": 0.2322
+    "A": 0.1459,
+    "B": 0.2642,
+    "C": 0.2387,
+    "D": 0.1963,
+    "E": 0.155
    },
-   "global_mean_C": 18.16,
-   "ice_land_frac": 0.1339,
-   "EF_land_frac": 0.0253,
-   "sea_ice_frac": 0.0123,
+   "global_mean_C": 17.24,
+   "ice_land_frac": 0.0875,
+   "EF_land_frac": 0.0375,
+   "sea_ice_frac": 0.0082,
    "land_lat_range": [
     -80.3,
     82.6
    ]
   },
   "deviation_pp": {
-   "A": 10.4,
-   "B": 9.2,
-   "C": 11.8,
-   "D": 0.0,
-   "E": 7.8
-  }
+   "A": 8.8,
+   "B": 0.6,
+   "C": 6.0,
+   "D": 3.3,
+   "E": 0.1
+  },
+  "grid_major_agreement": 0.493,
+  "grid_full_agreement": 0.2
  },
  "t0_land_iou": 0.982,
  "stages": [
   {
    "koppen_major": {
-    "A": 0.194,
-    "B": 0.2419,
-    "C": 0.2949,
-    "D": 0.1074,
-    "E": 0.1618
+    "A": 0.1535,
+    "B": 0.2508,
+    "C": 0.3241,
+    "D": 0.171,
+    "E": 0.1006
    },
-   "global_mean_C": 17.56,
-   "ice_land_frac": 0.084,
-   "EF_land_frac": 0.0027,
-   "sea_ice_frac": 0.0162,
+   "global_mean_C": 16.93,
+   "ice_land_frac": 0.0533,
+   "EF_land_frac": 0.0009,
+   "sea_ice_frac": 0.0059,
    "land_lat_range": [
     -88.9,
     46.6
@@ -81,16 +83,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.2152,
-    "B": 0.2014,
-    "C": 0.3427,
-    "D": 0.1015,
-    "E": 0.1393
+    "A": 0.1593,
+    "B": 0.2169,
+    "C": 0.3732,
+    "D": 0.1572,
+    "E": 0.0933
    },
-   "global_mean_C": 16.1,
-   "ice_land_frac": 0.0804,
-   "EF_land_frac": 0.0019,
-   "sea_ice_frac": 0.0239,
+   "global_mean_C": 15.67,
+   "ice_land_frac": 0.0576,
+   "EF_land_frac": 0.0011,
+   "sea_ice_frac": 0.0103,
    "land_lat_range": [
     -83.9,
     47.5
@@ -102,16 +104,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.1022,
-    "B": 0.156,
-    "C": 0.4822,
-    "D": 0.1002,
-    "E": 0.1594
+    "A": 0.1074,
+    "B": 0.1906,
+    "C": 0.4505,
+    "D": 0.1234,
+    "E": 0.1281
    },
-   "global_mean_C": 13.17,
-   "ice_land_frac": 0.106,
-   "EF_land_frac": 0.0036,
-   "sea_ice_frac": 0.0417,
+   "global_mean_C": 12.89,
+   "ice_land_frac": 0.0893,
+   "EF_land_frac": 0.005,
+   "sea_ice_frac": 0.0286,
    "land_lat_range": [
     -83.0,
     48.4
@@ -123,37 +125,37 @@
   },
   {
    "koppen_major": {
-    "A": 0.0148,
-    "B": 0.1267,
-    "C": 0.537,
-    "D": 0.0943,
-    "E": 0.2273
+    "A": 0.0067,
+    "B": 0.1184,
+    "C": 0.5416,
+    "D": 0.1064,
+    "E": 0.2269
    },
-   "global_mean_C": 10.67,
-   "ice_land_frac": 0.1623,
-   "EF_land_frac": 0.0105,
-   "sea_ice_frac": 0.0588,
+   "global_mean_C": 9.6,
+   "ice_land_frac": 0.1716,
+   "EF_land_frac": 0.0132,
+   "sea_ice_frac": 0.0486,
    "land_lat_range": [
     -83.0,
     48.4
    ],
    "t": -600,
-   "dT_global": -8.0,
+   "dT_global": -8.8,
    "ice_hint": "major_glaciation",
    "ice_hint_met": true
   },
   {
    "koppen_major": {
-    "A": 0.1998,
-    "B": 0.1799,
-    "C": 0.4023,
-    "D": 0.1049,
-    "E": 0.1131
+    "A": 0.1992,
+    "B": 0.2397,
+    "C": 0.3554,
+    "D": 0.1261,
+    "E": 0.0796
    },
-   "global_mean_C": 15.17,
-   "ice_land_frac": 0.0711,
-   "EF_land_frac": 0.0016,
-   "sea_ice_frac": 0.0294,
+   "global_mean_C": 14.89,
+   "ice_land_frac": 0.0539,
+   "EF_land_frac": 0.0023,
+   "sea_ice_frac": 0.0193,
    "land_lat_range": [
     -83.0,
     48.4
@@ -165,16 +167,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.286,
-    "B": 0.2119,
-    "C": 0.3383,
-    "D": 0.1049,
-    "E": 0.0589
+    "A": 0.3083,
+    "B": 0.2835,
+    "C": 0.248,
+    "D": 0.1203,
+    "E": 0.0399
    },
-   "global_mean_C": 17.67,
-   "ice_land_frac": 0.0342,
-   "EF_land_frac": 0.0007,
-   "sea_ice_frac": 0.0162,
+   "global_mean_C": 17.39,
+   "ice_land_frac": 0.0261,
+   "EF_land_frac": 0.0006,
+   "sea_ice_frac": 0.0107,
    "land_lat_range": [
     -83.0,
     48.4
@@ -186,16 +188,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.3312,
-    "B": 0.266,
-    "C": 0.2968,
-    "D": 0.0856,
-    "E": 0.0204
+    "A": 0.3769,
+    "B": 0.3363,
+    "C": 0.1872,
+    "D": 0.082,
+    "E": 0.0176
    },
-   "global_mean_C": 20.67,
-   "ice_land_frac": 0.0105,
-   "EF_land_frac": 0.0,
-   "sea_ice_frac": 0.0069,
+   "global_mean_C": 20.39,
+   "ice_land_frac": 0.0102,
+   "EF_land_frac": 0.0001,
+   "sea_ice_frac": 0.0043,
    "land_lat_range": [
     -83.0,
     48.4
@@ -207,15 +209,15 @@
   },
   {
    "koppen_major": {
-    "A": 0.3228,
-    "B": 0.3029,
-    "C": 0.2882,
-    "D": 0.0758,
-    "E": 0.0102
+    "A": 0.3566,
+    "B": 0.3934,
+    "C": 0.163,
+    "D": 0.0779,
+    "E": 0.0091
    },
-   "global_mean_C": 22.57,
-   "ice_land_frac": 0.0046,
-   "EF_land_frac": 0.0,
+   "global_mean_C": 22.23,
+   "ice_land_frac": 0.005,
+   "EF_land_frac": 0.0002,
    "sea_ice_frac": 0.0025,
    "land_lat_range": [
     -84.8,
@@ -228,16 +230,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.2946,
-    "B": 0.3269,
-    "C": 0.2907,
-    "D": 0.0771,
-    "E": 0.0107
+    "A": 0.3354,
+    "B": 0.4075,
+    "C": 0.1579,
+    "D": 0.0877,
+    "E": 0.0115
    },
-   "global_mean_C": 23.01,
-   "ice_land_frac": 0.0047,
-   "EF_land_frac": 0.0,
-   "sea_ice_frac": 0.002,
+   "global_mean_C": 22.6,
+   "ice_land_frac": 0.0062,
+   "EF_land_frac": 0.0002,
+   "sea_ice_frac": 0.0025,
    "land_lat_range": [
     -88.4,
     50.6
@@ -249,16 +251,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.258,
-    "B": 0.3224,
-    "C": 0.3147,
-    "D": 0.0853,
-    "E": 0.0196
+    "A": 0.266,
+    "B": 0.3944,
+    "C": 0.2223,
+    "D": 0.0954,
+    "E": 0.0219
    },
-   "global_mean_C": 21.97,
-   "ice_land_frac": 0.01,
-   "EF_land_frac": 0.0002,
-   "sea_ice_frac": 0.0031,
+   "global_mean_C": 21.55,
+   "ice_land_frac": 0.012,
+   "EF_land_frac": 0.001,
+   "sea_ice_frac": 0.0029,
    "land_lat_range": [
     -85.3,
     55.6
@@ -270,16 +272,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.2269,
-    "B": 0.296,
-    "C": 0.3459,
-    "D": 0.0925,
-    "E": 0.0387
+    "A": 0.2167,
+    "B": 0.3759,
+    "C": 0.2459,
+    "D": 0.1332,
+    "E": 0.0283
    },
-   "global_mean_C": 20.42,
-   "ice_land_frac": 0.0228,
-   "EF_land_frac": 0.0006,
-   "sea_ice_frac": 0.0069,
+   "global_mean_C": 20.06,
+   "ice_land_frac": 0.0168,
+   "EF_land_frac": 0.0015,
+   "sea_ice_frac": 0.0054,
    "land_lat_range": [
     -84.8,
     61.0
@@ -291,16 +293,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.2082,
-    "B": 0.2582,
-    "C": 0.3506,
-    "D": 0.1065,
-    "E": 0.0764
+    "A": 0.1754,
+    "B": 0.3315,
+    "C": 0.27,
+    "D": 0.1788,
+    "E": 0.0441
    },
-   "global_mean_C": 18.86,
-   "ice_land_frac": 0.0494,
-   "EF_land_frac": 0.0014,
-   "sea_ice_frac": 0.0111,
+   "global_mean_C": 18.44,
+   "ice_land_frac": 0.0295,
+   "EF_land_frac": 0.0023,
+   "sea_ice_frac": 0.0073,
    "land_lat_range": [
     -81.7,
     67.3
@@ -312,16 +314,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.1865,
-    "B": 0.1977,
-    "C": 0.3681,
-    "D": 0.1267,
-    "E": 0.121
+    "A": 0.1486,
+    "B": 0.3182,
+    "C": 0.266,
+    "D": 0.2051,
+    "E": 0.0622
    },
-   "global_mean_C": 17.81,
-   "ice_land_frac": 0.0788,
-   "EF_land_frac": 0.0031,
-   "sea_ice_frac": 0.0149,
+   "global_mean_C": 17.29,
+   "ice_land_frac": 0.0437,
+   "EF_land_frac": 0.0034,
+   "sea_ice_frac": 0.0089,
    "land_lat_range": [
     -79.0,
     73.1
@@ -333,16 +335,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.1614,
-    "B": 0.1643,
-    "C": 0.344,
-    "D": 0.1404,
-    "E": 0.19
+    "A": 0.1439,
+    "B": 0.2521,
+    "C": 0.2654,
+    "D": 0.2444,
+    "E": 0.0941
    },
-   "global_mean_C": 16.73,
-   "ice_land_frac": 0.1244,
-   "EF_land_frac": 0.0086,
-   "sea_ice_frac": 0.0192,
+   "global_mean_C": 16.19,
+   "ice_land_frac": 0.0659,
+   "EF_land_frac": 0.0055,
+   "sea_ice_frac": 0.0116,
    "land_lat_range": [
     -79.0,
     77.6
@@ -354,16 +356,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.1468,
-    "B": 0.1643,
-    "C": 0.3089,
-    "D": 0.1614,
-    "E": 0.2186
+    "A": 0.1311,
+    "B": 0.2686,
+    "C": 0.2664,
+    "D": 0.2068,
+    "E": 0.1269
    },
-   "global_mean_C": 17.15,
-   "ice_land_frac": 0.1373,
-   "EF_land_frac": 0.0152,
-   "sea_ice_frac": 0.0163,
+   "global_mean_C": 16.36,
+   "ice_land_frac": 0.0835,
+   "EF_land_frac": 0.0277,
+   "sea_ice_frac": 0.0098,
    "land_lat_range": [
     -79.9,
     79.4
@@ -375,16 +377,16 @@
   },
   {
    "koppen_major": {
-    "A": 0.1308,
-    "B": 0.1825,
-    "C": 0.2824,
-    "D": 0.1706,
-    "E": 0.2337
+    "A": 0.1454,
+    "B": 0.2691,
+    "C": 0.2357,
+    "D": 0.1946,
+    "E": 0.1552
    },
-   "global_mean_C": 18.12,
-   "ice_land_frac": 0.1339,
-   "EF_land_frac": 0.0261,
-   "sea_ice_frac": 0.0123,
+   "global_mean_C": 17.21,
+   "ice_land_frac": 0.0875,
+   "EF_land_frac": 0.0371,
+   "sea_ice_frac": 0.008,
    "land_lat_range": [
     -80.3,
     82.6
