@@ -1,0 +1,1847 @@
+{
+ "unit": "superPlate",
+ "plates": {
+  "0": {
+   "area_Mkm2": 63.83,
+   "land_fraction": 0.007,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    -18.3,
+    114.1
+   ],
+   "boundaries": {
+    "0-7": {
+     "with": 7,
+     "type": "divergent",
+     "px": 610
+    },
+    "0-8": {
+     "with": 8,
+     "type": "divergent",
+     "px": 1118
+    },
+    "0-9": {
+     "with": 9,
+     "type": "convergent",
+     "px": 428,
+     "role": "overriding"
+    },
+    "0-11": {
+     "with": 11,
+     "type": "divergent",
+     "px": 571
+    },
+    "0-13": {
+     "with": 13,
+     "type": "divergent",
+     "px": 135,
+     "role": "overriding"
+    },
+    "0-18": {
+     "with": 18,
+     "type": "convergent",
+     "px": 129,
+     "role": "subducting"
+    },
+    "0-19": {
+     "with": 19,
+     "type": "convergent",
+     "px": 591,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 262.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.49
+   },
+   "name": "i"
+  },
+  "1": {
+   "area_Mkm2": 6.1,
+   "land_fraction": 0.091,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    29.5,
+    -74.8
+   ],
+   "boundaries": {
+    "1-10": {
+     "with": 10,
+     "type": "divergent",
+     "px": 382
+    },
+    "1-14": {
+     "with": 14,
+     "type": "divergent",
+     "px": 316
+    },
+    "1-17": {
+     "with": 17,
+     "type": "convergent",
+     "px": 376,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 234.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.81
+   },
+   "name": "xvi"
+  },
+  "2": {
+   "area_Mkm2": 19.2,
+   "land_fraction": 0.059,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    -17.5,
+    -112.3
+   ],
+   "boundaries": {
+    "2-5": {
+     "with": 5,
+     "type": "divergent",
+     "px": 104
+    },
+    "2-6": {
+     "with": 6,
+     "type": "divergent",
+     "px": 181
+    },
+    "2-8": {
+     "with": 8,
+     "type": "divergent",
+     "px": 478
+    },
+    "2-12": {
+     "with": 12,
+     "type": "divergent",
+     "px": 450,
+     "role": "subducting"
+    },
+    "2-16": {
+     "with": 16,
+     "type": "convergent",
+     "px": 618,
+     "role": "subducting"
+    },
+    "2-17": {
+     "with": 17,
+     "type": "convergent",
+     "px": 209,
+     "role": "overriding"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 276.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.79
+   },
+   "name": "x"
+  },
+  "3": {
+   "area_Mkm2": 24.44,
+   "land_fraction": 0.033,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    -44.1,
+    -2.9
+   ],
+   "boundaries": {
+    "3-6": {
+     "with": 6,
+     "type": "convergent",
+     "px": 558,
+     "role": "overriding"
+    },
+    "3-8": {
+     "with": 8,
+     "type": "divergent",
+     "px": 1522
+    },
+    "3-10": {
+     "with": 10,
+     "type": "divergent",
+     "px": 613
+    },
+    "3-19": {
+     "with": 19,
+     "type": "convergent",
+     "px": 1142,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 102.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.58
+   },
+   "name": "vii"
+  },
+  "4": {
+   "area_Mkm2": 26.11,
+   "land_fraction": 0.01,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    47.2,
+    7.1
+   ],
+   "boundaries": {
+    "4-9": {
+     "with": 9,
+     "type": "divergent",
+     "px": 165,
+     "role": "overriding"
+    },
+    "4-10": {
+     "with": 10,
+     "type": "divergent",
+     "px": 665
+    },
+    "4-13": {
+     "with": 13,
+     "type": "divergent",
+     "px": 418
+    },
+    "4-14": {
+     "with": 14,
+     "type": "divergent",
+     "px": 301
+    },
+    "4-15": {
+     "with": 15,
+     "type": "divergent",
+     "px": 517
+    },
+    "4-18": {
+     "with": 18,
+     "type": "convergent",
+     "px": 601,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 53.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.49
+   },
+   "name": "v"
+  },
+  "5": {
+   "area_Mkm2": 23.06,
+   "land_fraction": 0.035,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    42.8,
+    -165.6
+   ],
+   "boundaries": {
+    "2-5": {
+     "with": 2,
+     "type": "divergent",
+     "px": 104
+    },
+    "5-7": {
+     "with": 7,
+     "type": "divergent",
+     "px": 225,
+     "role": "overriding"
+    },
+    "5-11": {
+     "with": 11,
+     "type": "transform",
+     "px": 397,
+     "role": "overriding"
+    },
+    "5-14": {
+     "with": 14,
+     "type": "divergent",
+     "px": 83
+    },
+    "5-15": {
+     "with": 15,
+     "type": "divergent",
+     "px": 430
+    },
+    "5-16": {
+     "with": 16,
+     "type": "convergent",
+     "px": 665,
+     "role": "subducting"
+    },
+    "5-17": {
+     "with": 17,
+     "type": "convergent",
+     "px": 665,
+     "role": "subducting"
+    },
+    "5-18": {
+     "with": 18,
+     "type": "convergent",
+     "px": 619,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 120.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.32
+   },
+   "name": "viii"
+  },
+  "6": {
+   "area_Mkm2": 16.24,
+   "land_fraction": 0.019,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    -30.5,
+    -56.3
+   ],
+   "boundaries": {
+    "2-6": {
+     "with": 2,
+     "type": "divergent",
+     "px": 181
+    },
+    "3-6": {
+     "with": 3,
+     "type": "convergent",
+     "px": 558,
+     "role": "subducting"
+    },
+    "6-8": {
+     "with": 8,
+     "type": "divergent",
+     "px": 651
+    },
+    "6-10": {
+     "with": 10,
+     "type": "convergent",
+     "px": 263,
+     "role": "subducting"
+    },
+    "6-12": {
+     "with": 12,
+     "type": "divergent",
+     "px": 349
+    }
+   },
+   "motion": {
+    "azimuth_deg": 81.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.63
+   },
+   "name": "xiii"
+  },
+  "7": {
+   "area_Mkm2": 32.45,
+   "land_fraction": 0.014,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    -2.9,
+    176.7
+   ],
+   "boundaries": {
+    "0-7": {
+     "with": 0,
+     "type": "divergent",
+     "px": 610
+    },
+    "5-7": {
+     "with": 5,
+     "type": "divergent",
+     "px": 225,
+     "role": "subducting"
+    },
+    "7-8": {
+     "with": 8,
+     "type": "divergent",
+     "px": 210
+    },
+    "7-11": {
+     "with": 11,
+     "type": "divergent",
+     "px": 485,
+     "role": "subducting"
+    },
+    "7-16": {
+     "with": 16,
+     "type": "convergent",
+     "px": 744,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 105.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.84
+   },
+   "name": "iv"
+  },
+  "8": {
+   "area_Mkm2": 51.35,
+   "land_fraction": 0.017,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    -78.7,
+    -133.0
+   ],
+   "boundaries": {
+    "0-8": {
+     "with": 0,
+     "type": "divergent",
+     "px": 1118
+    },
+    "2-8": {
+     "with": 2,
+     "type": "divergent",
+     "px": 478
+    },
+    "3-8": {
+     "with": 3,
+     "type": "divergent",
+     "px": 1522
+    },
+    "6-8": {
+     "with": 6,
+     "type": "divergent",
+     "px": 651
+    },
+    "7-8": {
+     "with": 7,
+     "type": "divergent",
+     "px": 210
+    },
+    "8-16": {
+     "with": 16,
+     "type": "convergent",
+     "px": 954,
+     "role": "subducting"
+    },
+    "8-19": {
+     "with": 19,
+     "type": "convergent",
+     "px": 413,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 330.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.45
+   },
+   "name": "ii"
+  },
+  "9": {
+   "area_Mkm2": 25.76,
+   "land_fraction": 0.03,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    23.1,
+    64.6
+   ],
+   "boundaries": {
+    "0-9": {
+     "with": 0,
+     "type": "convergent",
+     "px": 428,
+     "role": "subducting"
+    },
+    "4-9": {
+     "with": 4,
+     "type": "divergent",
+     "px": 165,
+     "role": "subducting"
+    },
+    "9-13": {
+     "with": 13,
+     "type": "divergent",
+     "px": 597
+    },
+    "9-18": {
+     "with": 18,
+     "type": "convergent",
+     "px": 604,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 60.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.65
+   },
+   "name": "vi"
+  },
+  "10": {
+   "area_Mkm2": 42.64,
+   "land_fraction": 0.003,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    12.3,
+    -30.8
+   ],
+   "boundaries": {
+    "1-10": {
+     "with": 1,
+     "type": "divergent",
+     "px": 382
+    },
+    "3-10": {
+     "with": 3,
+     "type": "divergent",
+     "px": 613
+    },
+    "4-10": {
+     "with": 4,
+     "type": "divergent",
+     "px": 665
+    },
+    "6-10": {
+     "with": 6,
+     "type": "convergent",
+     "px": 263,
+     "role": "overriding"
+    },
+    "10-12": {
+     "with": 12,
+     "type": "divergent",
+     "px": 317
+    },
+    "10-13": {
+     "with": 13,
+     "type": "divergent",
+     "px": 415
+    },
+    "10-14": {
+     "with": 14,
+     "type": "divergent",
+     "px": 386
+    },
+    "10-17": {
+     "with": 17,
+     "type": "convergent",
+     "px": 41,
+     "role": "overriding"
+    },
+    "10-19": {
+     "with": 19,
+     "type": "convergent",
+     "px": 83,
+     "role": "overriding"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 185.0,
+    "speed_class": "<1 cm/yr (passive)",
+    "confidence": 0.19
+   },
+   "name": "iii"
+  },
+  "11": {
+   "area_Mkm2": 17.65,
+   "land_fraction": 0.033,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    31.7,
+    136.4
+   ],
+   "boundaries": {
+    "0-11": {
+     "with": 0,
+     "type": "divergent",
+     "px": 571
+    },
+    "5-11": {
+     "with": 5,
+     "type": "transform",
+     "px": 397,
+     "role": "subducting"
+    },
+    "7-11": {
+     "with": 7,
+     "type": "divergent",
+     "px": 485,
+     "role": "overriding"
+    },
+    "11-18": {
+     "with": 18,
+     "type": "convergent",
+     "px": 530
+    }
+   },
+   "motion": {
+    "azimuth_deg": 343.0,
+    "speed_class": "<1 cm/yr (passive)",
+    "confidence": 0.65
+   },
+   "name": "xi"
+  },
+  "12": {
+   "area_Mkm2": 12.85,
+   "land_fraction": 0.032,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    -3.1,
+    -84.5
+   ],
+   "boundaries": {
+    "2-12": {
+     "with": 2,
+     "type": "divergent",
+     "px": 450,
+     "role": "overriding"
+    },
+    "6-12": {
+     "with": 6,
+     "type": "divergent",
+     "px": 349
+    },
+    "10-12": {
+     "with": 10,
+     "type": "divergent",
+     "px": 317
+    },
+    "12-17": {
+     "with": 17,
+     "type": "convergent",
+     "px": 809,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 6.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.74
+   },
+   "name": "xiv"
+  },
+  "13": {
+   "area_Mkm2": 20.6,
+   "land_fraction": 0.048,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    4.5,
+    29.6
+   ],
+   "boundaries": {
+    "0-13": {
+     "with": 0,
+     "type": "divergent",
+     "px": 135,
+     "role": "subducting"
+    },
+    "4-13": {
+     "with": 4,
+     "type": "divergent",
+     "px": 418
+    },
+    "9-13": {
+     "with": 9,
+     "type": "divergent",
+     "px": 597
+    },
+    "10-13": {
+     "with": 10,
+     "type": "divergent",
+     "px": 415
+    },
+    "13-19": {
+     "with": 19,
+     "type": "convergent",
+     "px": 725,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 157.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.68
+   },
+   "name": "ix"
+  },
+  "14": {
+   "area_Mkm2": 17.51,
+   "land_fraction": 0.041,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    64.8,
+    -87.7
+   ],
+   "boundaries": {
+    "1-14": {
+     "with": 1,
+     "type": "divergent",
+     "px": 316
+    },
+    "4-14": {
+     "with": 4,
+     "type": "divergent",
+     "px": 301
+    },
+    "5-14": {
+     "with": 5,
+     "type": "divergent",
+     "px": 83
+    },
+    "10-14": {
+     "with": 10,
+     "type": "divergent",
+     "px": 386
+    },
+    "14-15": {
+     "with": 15,
+     "type": "divergent",
+     "px": 1875
+    },
+    "14-17": {
+     "with": 17,
+     "type": "convergent",
+     "px": 1081,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 228.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.68
+   },
+   "name": "xii"
+  },
+  "15": {
+   "area_Mkm2": 8.21,
+   "land_fraction": 0.025,
+   "is_oceanic": true,
+   "kind": "oceanic",
+   "centroid": [
+    87.2,
+    -171.9
+   ],
+   "boundaries": {
+    "4-15": {
+     "with": 4,
+     "type": "divergent",
+     "px": 517
+    },
+    "5-15": {
+     "with": 5,
+     "type": "divergent",
+     "px": 430
+    },
+    "14-15": {
+     "with": 14,
+     "type": "divergent",
+     "px": 1875
+    },
+    "15-18": {
+     "with": 18,
+     "type": "convergent",
+     "px": 1399,
+     "role": "subducting"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 266.0,
+    "speed_class": "10-20 cm/yr (subducting oceanic)",
+    "confidence": 0.83
+   },
+   "name": "xv"
+  },
+  "16": {
+   "area_Mkm2": 27.94,
+   "land_fraction": 0.942,
+   "is_oceanic": false,
+   "kind": "continental",
+   "centroid": [
+    -20.4,
+    -145.8
+   ],
+   "boundaries": {
+    "2-16": {
+     "with": 2,
+     "type": "convergent",
+     "px": 618,
+     "role": "overriding"
+    },
+    "5-16": {
+     "with": 5,
+     "type": "convergent",
+     "px": 665,
+     "role": "overriding"
+    },
+    "7-16": {
+     "with": 7,
+     "type": "convergent",
+     "px": 744,
+     "role": "overriding"
+    },
+    "8-16": {
+     "with": 8,
+     "type": "convergent",
+     "px": 954,
+     "role": "overriding"
+    }
+   },
+   "motion": {
+    "azimuth_deg": null,
+    "speed_class": "2-5 cm/yr (active-margin)",
+    "confidence": 0.0
+   },
+   "name": "P16(CEF)"
+  },
+  "17": {
+   "area_Mkm2": 27.19,
+   "land_fraction": 0.983,
+   "is_oceanic": false,
+   "kind": "continental",
+   "centroid": [
+    30.1,
+    -105.5
+   ],
+   "boundaries": {
+    "1-17": {
+     "with": 1,
+     "type": "convergent",
+     "px": 376,
+     "role": "overriding"
+    },
+    "2-17": {
+     "with": 2,
+     "type": "convergent",
+     "px": 209,
+     "role": "subducting"
+    },
+    "5-17": {
+     "with": 5,
+     "type": "convergent",
+     "px": 665,
+     "role": "overriding"
+    },
+    "10-17": {
+     "with": 10,
+     "type": "convergent",
+     "px": 41,
+     "role": "subducting"
+    },
+    "12-17": {
+     "with": 12,
+     "type": "convergent",
+     "px": 809,
+     "role": "overriding"
+    },
+    "14-17": {
+     "with": 14,
+     "type": "convergent",
+     "px": 1081,
+     "role": "overriding"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 193.0,
+    "speed_class": "2-5 cm/yr (active-margin)",
+    "confidence": 0.83
+   },
+   "name": "P17(AIJ)"
+  },
+  "18": {
+   "area_Mkm2": 20.78,
+   "land_fraction": 0.928,
+   "is_oceanic": false,
+   "kind": "continental",
+   "centroid": [
+    58.1,
+    94.8
+   ],
+   "boundaries": {
+    "0-18": {
+     "with": 0,
+     "type": "convergent",
+     "px": 129,
+     "role": "overriding"
+    },
+    "4-18": {
+     "with": 4,
+     "type": "convergent",
+     "px": 601,
+     "role": "overriding"
+    },
+    "5-18": {
+     "with": 5,
+     "type": "convergent",
+     "px": 619,
+     "role": "overriding"
+    },
+    "9-18": {
+     "with": 9,
+     "type": "convergent",
+     "px": 604,
+     "role": "overriding"
+    },
+    "11-18": {
+     "with": 11,
+     "type": "convergent",
+     "px": 530
+    },
+    "15-18": {
+     "with": 15,
+     "type": "convergent",
+     "px": 1399,
+     "role": "overriding"
+    }
+   },
+   "motion": {
+    "azimuth_deg": null,
+    "speed_class": "2-5 cm/yr (active-margin)",
+    "confidence": 0.0
+   },
+   "name": "P18(G)"
+  },
+  "19": {
+   "area_Mkm2": 26.14,
+   "land_fraction": 0.981,
+   "is_oceanic": false,
+   "kind": "continental",
+   "centroid": [
+    -35.8,
+    43.3
+   ],
+   "boundaries": {
+    "0-19": {
+     "with": 0,
+     "type": "convergent",
+     "px": 591,
+     "role": "overriding"
+    },
+    "3-19": {
+     "with": 3,
+     "type": "convergent",
+     "px": 1142,
+     "role": "overriding"
+    },
+    "8-19": {
+     "with": 8,
+     "type": "convergent",
+     "px": 413,
+     "role": "overriding"
+    },
+    "10-19": {
+     "with": 10,
+     "type": "convergent",
+     "px": 83,
+     "role": "subducting"
+    },
+    "13-19": {
+     "with": 13,
+     "type": "convergent",
+     "px": 725,
+     "role": "overriding"
+    }
+   },
+   "motion": {
+    "azimuth_deg": 300.0,
+    "speed_class": "2-5 cm/yr (active-margin)",
+    "confidence": 1.0
+   },
+   "name": "P19(BDH)"
+  }
+ },
+ "cratons": {
+  "A": {
+   "area_Mkm2": 2.57,
+   "centroid": [
+    26.3,
+    -105.0
+   ],
+   "super_plate": 17
+  },
+  "B": {
+   "area_Mkm2": 1.42,
+   "centroid": [
+    -29.1,
+    46.3
+   ],
+   "super_plate": 19
+  },
+  "C": {
+   "area_Mkm2": 1.14,
+   "centroid": [
+    -47.7,
+    -142.9
+   ],
+   "super_plate": 16
+  },
+  "D": {
+   "area_Mkm2": 0.63,
+   "centroid": [
+    -47.0,
+    60.6
+   ],
+   "super_plate": 19
+  },
+  "E": {
+   "area_Mkm2": 0.55,
+   "centroid": [
+    -25.8,
+    -138.8
+   ],
+   "super_plate": 16
+  },
+  "F": {
+   "area_Mkm2": 0.31,
+   "centroid": [
+    0.3,
+    -140.3
+   ],
+   "super_plate": 16
+  },
+  "G": {
+   "area_Mkm2": 0.29,
+   "centroid": [
+    38.9,
+    102.2
+   ],
+   "super_plate": 18
+  },
+  "H": {
+   "area_Mkm2": 0.28,
+   "centroid": [
+    -33.3,
+    28.8
+   ],
+   "super_plate": 19
+  },
+  "I": {
+   "area_Mkm2": 0.25,
+   "centroid": [
+    34.0,
+    -138.5
+   ],
+   "super_plate": 17
+  },
+  "J": {
+   "area_Mkm2": 0.22,
+   "centroid": [
+    57.5,
+    -113.2
+   ],
+   "super_plate": 17
+  }
+ },
+ "continents": {
+  "G": {
+   "area_Mkm2": 20.17,
+   "cratons": [
+    "G"
+   ],
+   "centroid": [
+    59.3,
+    93.1
+   ],
+   "super_plates": [
+    0,
+    4,
+    5,
+    9,
+    11,
+    15,
+    18
+   ]
+  },
+  "AIJ": {
+   "area_Mkm2": 28.34,
+   "cratons": [
+    "A",
+    "I",
+    "J"
+   ],
+   "centroid": [
+    30.4,
+    -105.3
+   ],
+   "super_plates": [
+    1,
+    2,
+    5,
+    6,
+    10,
+    12,
+    14,
+    17
+   ]
+  },
+  "CEF": {
+   "area_Mkm2": 27.33,
+   "cratons": [
+    "C",
+    "E",
+    "F"
+   ],
+   "centroid": [
+    -21.8,
+    -145.6
+   ],
+   "super_plates": [
+    2,
+    5,
+    7,
+    8,
+    16
+   ]
+  },
+  "BDH": {
+   "area_Mkm2": 27.5,
+   "cratons": [
+    "B",
+    "D",
+    "H"
+   ],
+   "centroid": [
+    -35.2,
+    42.7
+   ],
+   "super_plates": [
+    0,
+    3,
+    8,
+    10,
+    13,
+    19
+   ]
+  }
+ },
+ "microcontinents": {
+  "1": {
+   "area_Mkm2": 0.19,
+   "centroid": [
+    40.1,
+    51.9
+   ],
+   "super_plate": 9
+  },
+  "2": {
+   "area_Mkm2": 0.09,
+   "centroid": [
+    40.1,
+    -93.0
+   ],
+   "super_plate": 14
+  },
+  "3": {
+   "area_Mkm2": 0.07,
+   "centroid": [
+    39.9,
+    168.3
+   ],
+   "super_plate": 11
+  },
+  "4": {
+   "area_Mkm2": 0.14,
+   "centroid": [
+    33.2,
+    114.0
+   ],
+   "super_plate": 18
+  },
+  "5": {
+   "area_Mkm2": 0.05,
+   "centroid": [
+    29.4,
+    150.6
+   ],
+   "super_plate": 11
+  },
+  "6": {
+   "area_Mkm2": 0.17,
+   "centroid": [
+    26.9,
+    86.7
+   ],
+   "super_plate": 9
+  },
+  "7": {
+   "area_Mkm2": 0.39,
+   "centroid": [
+    1.5,
+    -114.3
+   ],
+   "super_plate": 2
+  },
+  "8": {
+   "area_Mkm2": 0.12,
+   "centroid": [
+    -16.6,
+    -156.1
+   ],
+   "super_plate": 16
+  },
+  "9": {
+   "area_Mkm2": 0.09,
+   "centroid": [
+    -32.2,
+    -104.1
+   ],
+   "super_plate": 2
+  },
+  "10": {
+   "area_Mkm2": 0.12,
+   "centroid": [
+    -41.9,
+    -24.7
+   ],
+   "super_plate": 6
+  },
+  "11": {
+   "area_Mkm2": 0.08,
+   "centroid": [
+    -78.6,
+    25.6
+   ],
+   "super_plate": 3
+  }
+ },
+ "block_names": {
+  "1": "A",
+  "2": "B",
+  "3": "C",
+  "4": "D",
+  "5": "E",
+  "6": "F",
+  "7": "G",
+  "8": "H",
+  "9": "I",
+  "10": "J",
+  "11": "micro_1",
+  "12": "micro_2",
+  "13": "micro_3",
+  "14": "micro_4",
+  "15": "micro_5",
+  "16": "micro_6",
+  "17": "micro_7",
+  "18": "micro_8",
+  "19": "micro_9",
+  "20": "micro_10",
+  "21": "micro_11"
+ },
+ "features": {
+  "orogens": [
+   {
+    "area_Mkm2": 3.22,
+    "centroid": [
+     54.3,
+     -118.6
+    ],
+    "mean_elev_km": 1.58,
+    "max_elev_km": 7.54,
+    "blocks": [
+     "A",
+     "I",
+     "J"
+    ]
+   },
+   {
+    "area_Mkm2": 3.046,
+    "centroid": [
+     -42.9,
+     35.7
+    ],
+    "mean_elev_km": 1.89,
+    "max_elev_km": 5.18,
+    "blocks": [
+     "B",
+     "D",
+     "H"
+    ]
+   },
+   {
+    "area_Mkm2": 3.035,
+    "centroid": [
+     -43.9,
+     -160.7
+    ],
+    "mean_elev_km": 1.53,
+    "max_elev_km": 6.65,
+    "blocks": [
+     "C"
+    ]
+   },
+   {
+    "area_Mkm2": 2.529,
+    "centroid": [
+     57.9,
+     79.3
+    ],
+    "mean_elev_km": 1.15,
+    "max_elev_km": 5.09,
+    "blocks": [
+     "G"
+    ]
+   },
+   {
+    "area_Mkm2": 2.148,
+    "centroid": [
+     33.9,
+     -135.3
+    ],
+    "mean_elev_km": 2.65,
+    "max_elev_km": 8.43,
+    "blocks": [
+     "I"
+    ]
+   },
+   {
+    "area_Mkm2": 0.569,
+    "centroid": [
+     55.9,
+     135.4
+    ],
+    "mean_elev_km": 2.34,
+    "max_elev_km": 7.15,
+    "blocks": [
+     "G"
+    ]
+   },
+   {
+    "area_Mkm2": 0.238,
+    "centroid": [
+     3.0,
+     -114.1
+    ],
+    "mean_elev_km": 0.4,
+    "max_elev_km": 1.68,
+    "blocks": [
+     "micro_7"
+    ]
+   }
+  ],
+  "trenches": [
+   {
+    "area_Mkm2": 0.481,
+    "centroid": [
+     11.5,
+     72.5
+    ],
+    "min_elev_km": -4.26
+   },
+   {
+    "area_Mkm2": 0.346,
+    "centroid": [
+     2.5,
+     -119.1
+    ],
+    "min_elev_km": -3.28
+   },
+   {
+    "area_Mkm2": 0.309,
+    "centroid": [
+     29.0,
+     146.2
+    ],
+    "min_elev_km": -4.21
+   },
+   {
+    "area_Mkm2": 0.303,
+    "centroid": [
+     14.1,
+     160.0
+    ],
+    "min_elev_km": -4.06
+   },
+   {
+    "area_Mkm2": 0.214,
+    "centroid": [
+     -55.9,
+     -39.6
+    ],
+    "min_elev_km": -4.36
+   },
+   {
+    "area_Mkm2": 0.179,
+    "centroid": [
+     32.0,
+     86.7
+    ],
+    "min_elev_km": -3.27
+   },
+   {
+    "area_Mkm2": 0.167,
+    "centroid": [
+     44.8,
+     132.5
+    ],
+    "min_elev_km": -3.0
+   },
+   {
+    "area_Mkm2": 0.127,
+    "centroid": [
+     -25.7,
+     3.8
+    ],
+    "min_elev_km": -3.33
+   },
+   {
+    "area_Mkm2": 0.112,
+    "centroid": [
+     26.4,
+     168.5
+    ],
+    "min_elev_km": -4.44
+   },
+   {
+    "area_Mkm2": 0.107,
+    "centroid": [
+     -27.4,
+     -25.9
+    ],
+    "min_elev_km": -4.64
+   }
+  ],
+  "backarcs": [
+   {
+    "area_Mkm2": 3.289,
+    "centroid": [
+     25.6,
+     -105.3
+    ]
+   },
+   {
+    "area_Mkm2": 2.223,
+    "centroid": [
+     -47.5,
+     -144.5
+    ]
+   },
+   {
+    "area_Mkm2": 2.046,
+    "centroid": [
+     48.3,
+     -117.5
+    ]
+   },
+   {
+    "area_Mkm2": 1.691,
+    "centroid": [
+     -30.0,
+     50.3
+    ]
+   },
+   {
+    "area_Mkm2": 1.319,
+    "centroid": [
+     -15.4,
+     29.1
+    ]
+   },
+   {
+    "area_Mkm2": 1.195,
+    "centroid": [
+     4.4,
+     -118.7
+    ]
+   },
+   {
+    "area_Mkm2": 1.153,
+    "centroid": [
+     37.0,
+     37.1
+    ]
+   },
+   {
+    "area_Mkm2": 1.118,
+    "centroid": [
+     11.8,
+     72.1
+    ]
+   },
+   {
+    "area_Mkm2": 1.097,
+    "centroid": [
+     35.7,
+     -130.8
+    ]
+   },
+   {
+    "area_Mkm2": 1.058,
+    "centroid": [
+     -35.9,
+     29.6
+    ]
+   }
+  ],
+  "hotspots": [
+   {
+    "area_Mkm2": 0.05,
+    "centroid": [
+     52.2,
+     10.5
+    ]
+   },
+   {
+    "area_Mkm2": 0.035,
+    "centroid": [
+     -32.4,
+     -105.3
+    ]
+   },
+   {
+    "area_Mkm2": 0.023,
+    "centroid": [
+     -36.8,
+     -103.9
+    ]
+   },
+   {
+    "area_Mkm2": 0.022,
+    "centroid": [
+     3.5,
+     121.7
+    ]
+   },
+   {
+    "area_Mkm2": 0.021,
+    "centroid": [
+     -60.0,
+     40.6
+    ]
+   },
+   {
+    "area_Mkm2": 0.011,
+    "centroid": [
+     -59.1,
+     37.3
+    ]
+   },
+   {
+    "area_Mkm2": 0.007,
+    "centroid": [
+     -57.8,
+     35.0
+    ]
+   },
+   {
+    "area_Mkm2": 0.006,
+    "centroid": [
+     5.8,
+     -9.0
+    ]
+   },
+   {
+    "area_Mkm2": 0.005,
+    "centroid": [
+     5.7,
+     -5.2
+    ]
+   },
+   {
+    "area_Mkm2": 0.004,
+    "centroid": [
+     -54.4,
+     29.6
+    ]
+   },
+   {
+    "area_Mkm2": 0.002,
+    "centroid": [
+     53.4,
+     7.1
+    ]
+   },
+   {
+    "area_Mkm2": 0.001,
+    "centroid": [
+     -27.9,
+     -103.7
+    ]
+   },
+   {
+    "area_Mkm2": 0.001,
+    "centroid": [
+     20.5,
+     -87.6
+    ]
+   },
+   {
+    "area_Mkm2": 0.001,
+    "centroid": [
+     -27.5,
+     -103.3
+    ]
+   },
+   {
+    "area_Mkm2": 0.001,
+    "centroid": [
+     35.9,
+     -93.9
+    ]
+   }
+  ],
+  "ridges": [
+   {
+    "plates": [
+     0,
+     7
+    ],
+    "mean_lat": -12.449923155737705,
+    "mean_lon": 156.01219902663934,
+    "px": 610
+   },
+   {
+    "plates": [
+     0,
+     8
+    ],
+    "mean_lat": -51.785502152280856,
+    "mean_lon": 122.04706018000894,
+    "px": 1118
+   },
+   {
+    "plates": [
+     0,
+     11
+    ],
+    "mean_lat": 14.59369185091944,
+    "mean_lon": 127.38953384960595,
+    "px": 571
+   },
+   {
+    "plates": [
+     0,
+     13
+    ],
+    "mean_lat": -13.142578125,
+    "mean_lon": 68.20377604166667,
+    "px": 135
+   },
+   {
+    "plates": [
+     1,
+     10
+    ],
+    "mean_lat": 27.222165412303664,
+    "mean_lon": -61.753977830497384,
+    "px": 382
+   },
+   {
+    "plates": [
+     1,
+     14
+    ],
+    "mean_lat": 39.821128362341774,
+    "mean_lon": -79.82360067246836,
+    "px": 316
+   },
+   {
+    "plates": [
+     2,
+     5
+    ],
+    "mean_lat": 16.310471754807693,
+    "mean_lon": -126.49151141826923,
+    "px": 104
+   },
+   {
+    "plates": [
+     2,
+     6
+    ],
+    "mean_lat": -28.369248532458563,
+    "mean_lon": -84.84164580455801,
+    "px": 181
+   },
+   {
+    "plates": [
+     2,
+     8
+    ],
+    "mean_lat": -41.44723293671548,
+    "mean_lon": -98.13337637290795,
+    "px": 478
+   },
+   {
+    "plates": [
+     2,
+     12
+    ],
+    "mean_lat": -6.615625,
+    "mean_lon": -105.515234375,
+    "px": 450
+   },
+   {
+    "plates": [
+     3,
+     8
+    ],
+    "mean_lat": -73.56537707375165,
+    "mean_lon": -0.42582488091327203,
+    "px": 1522
+   },
+   {
+    "plates": [
+     3,
+     10
+    ],
+    "mean_lat": -17.392450678017944,
+    "mean_lon": -11.047120335440457,
+    "px": 613
+   },
+   {
+    "plates": [
+     4,
+     9
+    ],
+    "mean_lat": 38.72780539772727,
+    "mean_lon": 44.49236505681818,
+    "px": 165
+   },
+   {
+    "plates": [
+     4,
+     10
+    ],
+    "mean_lat": 39.79198484492481,
+    "mean_lon": -25.313953829887218,
+    "px": 665
+   },
+   {
+    "plates": [
+     4,
+     13
+    ],
+    "mean_lat": 24.372196471291865,
+    "mean_lon": 18.732057416267942,
+    "px": 418
+   },
+   {
+    "plates": [
+     4,
+     14
+    ],
+    "mean_lat": 63.45849122715947,
+    "mean_lon": -26.544428727159467,
+    "px": 301
+   },
+   {
+    "plates": [
+     4,
+     15
+    ],
+    "mean_lat": 76.35451296542553,
+    "mean_lon": 15.003456691247582,
+    "px": 517
+   },
+   {
+    "plates": [
+     5,
+     7
+    ],
+    "mean_lat": 27.064453125,
+    "mean_lon": -13.507421875,
+    "px": 225
+   },
+   {
+    "plates": [
+     5,
+     15
+    ],
+    "mean_lat": 67.27025799418605,
+    "mean_lon": 38.114280523255815,
+    "px": 430
+   },
+   {
+    "plates": [
+     6,
+     8
+    ],
+    "mean_lat": -42.622362831221196,
+    "mean_lon": -55.33693656394009,
+    "px": 651
+   },
+   {
+    "plates": [
+     6,
+     12
+    ],
+    "mean_lat": -13.45985740508596,
+    "mean_lon": -72.55711071812321,
+    "px": 349
+   },
+   {
+    "plates": [
+     7,
+     8
+    ],
+    "mean_lat": -33.864676339285715,
+    "mean_lon": 59.42075892857143,
+    "px": 210
+   },
+   {
+    "plates": [
+     7,
+     11
+    ],
+    "mean_lat": 23.661787210051546,
+    "mean_lon": 157.42515705541237,
+    "px": 485
+   },
+   {
+    "plates": [
+     9,
+     13
+    ],
+    "mean_lat": 9.081589588567839,
+    "mean_lon": 46.41964706344221,
+    "px": 597
+   },
+   {
+    "plates": [
+     10,
+     12
+    ],
+    "mean_lat": 5.492193661277603,
+    "mean_lon": -58.81546357452682,
+    "px": 317
+   },
+   {
+    "plates": [
+     10,
+     13
+    ],
+    "mean_lat": 2.0710419804216866,
+    "mean_lon": 3.9470303087349397,
+    "px": 415
+   },
+   {
+    "plates": [
+     10,
+     14
+    ],
+    "mean_lat": 51.39688916774612,
+    "mean_lon": -59.71371033031088,
+    "px": 386
+   },
+   {
+    "plates": [
+     14,
+     15
+    ],
+    "mean_lat": 75.413859375,
+    "mean_lon": -97.976015625,
+    "px": 1875
+   }
+  ]
+ }
+}

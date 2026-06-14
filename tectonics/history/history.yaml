@@ -1,0 +1,459 @@
+# Plate tectonic history of planet 06cy8w6z6a89kow6psje93 ("Orogen seed 10673275")
+#
+# One full supercontinent cycle, T-750 Myr to present, 50-Myr stages.
+# Functional nomenclature: cratons A-J, microcontinents micro_1..micro_11,
+# ocean PLATES i..xvi (present-day), named ocean BASINS below.
+# Times in Myr (negative = before present). Block kinematics are keyframed
+# paleo-centroids + spin; see lib/history_schema.py.
+#
+# Cycle style: mixed, predominantly EXTROVERSION. The supercontinent S1
+# (all ten cratons, centered near 25S 0E) broke up at ~T-450; the western
+# flank blocks (A,I,J + C,E,F) dispersed westward over the old exterior
+# ocean, while the core blocks (B,D,H) stayed near home and ran a local
+# introverted Wilson cycle (the H-B Seaway opened and closed again, O2).
+
+meta:
+  cycle_style: mixed (predominantly extroversion)
+  supercontinent: S1 (ABCDEFGHIJ)
+  assembled: -650
+  breakup: -450
+  t_present: 0
+
+# Authored interpretation of each present-day orogen belt (from 25_inventory):
+# the stage at which it last formed, and whether it is still tectonically
+# active. The validator checks each inactive belt's present height against the
+# erosion model (2500 m - 5 m/Myr x age); active belts are exempt.
+orogen_ages:
+  O1: {formed: -200, active: false, note: "AIJ assembly (himalayan), eroding"}
+  O2: {formed: -100, active: false, note: "H-B seaway closure (himalayan), eroding"}
+  O3: {formed: -200, active: true,  note: "sustained Andean margin on C"}
+  O4: {formed: -250, active: false, note: "laramide flat-slab on G, eroding"}
+  O5: {formed: -50,  active: true,  note: "active margin orogeny on I"}
+  O6: {formed: -50,  active: true,  note: "young arc accretion on G"}
+  O7: {formed: -50, active: true,  note: "active intra-oceanic arc (micro_7), built since subduction at T-100"}
+
+oceans:
+  - name: EXT (Exterior Ocean)
+    born: null            # predates the cycle; the old world-ocean
+    died: null
+    note: >
+      Eastern world basin. The basin is ancient but its crust is young:
+      continuously renewed at exterior ridges and consumed at the T3/T4/T9
+      trench cluster. Present plates xi, iii, xiv occupy it.
+  - name: CENTRAL (Central Ocean)
+    born: -450
+    died: null
+    note: Opened along rift R1 between the S1 west flank and the B-D-H core.
+  - name: WESTERN (Western Ocean)
+    born: -400
+    died: null
+    note: Opened along rift R3, splitting the west flank into AJ-I and C-E-F groups.
+  - name: NORTHERN (Northern Ocean)
+    born: -400
+    died: null
+    note: Opened when G detached northeast from the core.
+  - name: HB (H-B Seaway)
+    born: -450
+    died: -100
+    note: Introverted Wilson cycle; closed at the O2 collision.
+
+blocks:
+  # ---- cratons ----
+  A:
+    type: craton
+    present_centroid: [26.3, -105.0]
+    keyframes:
+      - {t: -750, c: [-11, -25], spin: 25}
+      - {t: -650, c: [-3, -31], spin: 20}
+      - {t: -450, c: [-3, -31], spin: 20}
+      - {t: -200, c: [8, -72], spin: 10}
+      - {t: 0, c: [26.3, -105.0], spin: 0}
+  B:
+    type: craton
+    present_centroid: [-29.1, 46.3]
+    keyframes:
+      - {t: -750, c: [-19, 30], spin: -10}
+      - {t: -650, c: [-26, 18], spin: -8}
+      - {t: -450, c: [-26, 18], spin: -8}
+      - {t: -150, c: [-27, 38], spin: -2}
+      - {t: 0, c: [-29.1, 46.3], spin: 0}
+  C:
+    type: craton
+    present_centroid: [-47.7, -142.9]
+    keyframes:
+      - {t: -750, c: [-52, -18], spin: -15}
+      - {t: -650, c: [-45, -30], spin: -10}
+      - {t: -450, c: [-45, -30], spin: -10}
+      - {t: -200, c: [-48, -90], spin: -5}
+      - {t: 0, c: [-47.7, -142.9], spin: 0}
+  D:
+    type: craton
+    present_centroid: [-47.0, 60.6]
+    keyframes:
+      - {t: -750, c: [-52, 38], spin: 8}
+      - {t: -650, c: [-45, 25], spin: 6}
+      - {t: -450, c: [-45, 25], spin: 6}
+      - {t: -150, c: [-46, 48], spin: 2}
+      - {t: 0, c: [-47.0, 60.6], spin: 0}
+  E:
+    type: craton
+    present_centroid: [-25.8, -138.8]
+    keyframes:
+      - {t: -750, c: [-42, -30], spin: -12}
+      - {t: -650, c: [-35, -42], spin: -10}
+      - {t: -450, c: [-35, -42], spin: -10}
+      - {t: -200, c: [-32, -90], spin: -4}
+      - {t: 0, c: [-25.8, -138.8], spin: 0}
+  F:
+    type: craton
+    present_centroid: [0.3, -140.3]
+    keyframes:
+      - {t: -750, c: [-28, -38], spin: -10}
+      - {t: -650, c: [-22, -50], spin: -8}
+      - {t: -450, c: [-22, -50], spin: -8}
+      - {t: -200, c: [-12, -95], spin: -3}
+      - {t: 0, c: [0.3, -140.3], spin: 0}
+  G:
+    type: craton
+    present_centroid: [38.9, 102.2]
+    keyframes:
+      - {t: -750, c: [-20, 55], spin: 15}
+      - {t: -650, c: [-10, 45], spin: 12}
+      - {t: -450, c: [-10, 45], spin: 12}
+      - {t: -250, c: [12, 68], spin: 5}
+      - {t: 0, c: [38.9, 102.2], spin: 0}
+  H:
+    type: craton
+    present_centroid: [-33.3, 28.8]
+    keyframes:
+      - {t: -750, c: [-25, -8], spin: 5}
+      - {t: -650, c: [-30, 5], spin: 4}
+      - {t: -450, c: [-30, 5], spin: 4}
+      - {t: -300, c: [-40, -5], spin: 3}   # rifted away across the H-B Seaway
+      - {t: -150, c: [-35, 20], spin: 1}   # reversed, seaway closing
+      - {t: -100, c: [-33.5, 25], spin: 0.5}
+      - {t: 0, c: [-33.3, 28.8], spin: 0}
+  I:
+    type: craton
+    present_centroid: [34.0, -138.5]
+    keyframes:
+      - {t: -750, c: [18, -50], spin: -15}
+      - {t: -650, c: [5, -38], spin: -10}
+      - {t: -450, c: [5, -38], spin: -10}
+      - {t: -250, c: [20, -95], spin: -3}
+      - {t: -200, c: [22, -103], spin: -2}
+      - {t: 0, c: [34.0, -138.5], spin: 0}
+  J:
+    type: craton
+    present_centroid: [57.5, -113.2]
+    keyframes:
+      - {t: -750, c: [20, -8], spin: 12}
+      - {t: -650, c: [10, -20], spin: 10}
+      - {t: -450, c: [10, -20], spin: 10}
+      - {t: -200, c: [35, -85], spin: 4}
+      - {t: 0, c: [57.5, -113.2], spin: 0}
+  # ---- microcontinents ----
+  micro_1:
+    type: microcontinent
+    home: B                                # margin terrane of B until rifted off
+    present_centroid: [40.1, 51.9]
+    keyframes:
+      - {t: -750, c: [-16, 24], spin: 0}
+      - {t: -650, c: [-22, 20], spin: 0}
+      - {t: -450, c: [-22, 20], spin: 0}
+      - {t: -200, c: [-10, 28], spin: 0}   # detaches from B's northern margin
+      - {t: 0, c: [40.1, 51.9], spin: 0}
+  micro_2:
+    type: microcontinent
+    home: A                                # fragment of A's northeastern margin
+    present_centroid: [40.1, -93.0]
+    keyframes:
+      - {t: -750, c: [1, -14], spin: 0}
+      - {t: -650, c: [-4, -18], spin: 0}
+      - {t: -450, c: [-4, -18], spin: 0}
+      - {t: -200, c: [16, -58], spin: 0}
+      - {t: 0, c: [40.1, -93.0], spin: 0}
+  micro_3:
+    type: microcontinent
+    present_centroid: [39.9, 168.3]
+    keyframes:
+      - {t: -750, c: [30, 150], spin: 0}
+      - {t: 0, c: [39.9, 168.3], spin: 0}
+  micro_4:
+    type: microcontinent
+    home: G                                # terrane of G's southeastern margin
+    present_centroid: [33.2, 114.0]
+    keyframes:
+      - {t: -750, c: [-22, 58], spin: 0}
+      - {t: -650, c: [-14, 50], spin: 0}
+      - {t: -450, c: [-14, 50], spin: 0}
+      - {t: -100, c: [25, 105], spin: 0}
+      - {t: 0, c: [33.2, 114.0], spin: 0}
+  micro_5:
+    type: microcontinent
+    present_centroid: [29.4, 150.6]
+    keyframes:
+      - {t: -750, c: [20, 135], spin: 0}
+      - {t: 0, c: [29.4, 150.6], spin: 0}
+  micro_6:
+    type: microcontinent
+    home: G                                # rifted from G's trailing edge
+    present_centroid: [26.9, 86.7]
+    keyframes:
+      - {t: -750, c: [-22, 66], spin: 0}
+      - {t: -650, c: [-14, 58], spin: 0}
+      - {t: -450, c: [-14, 58], spin: 0}
+      - {t: -200, c: [4, 64], spin: 0}
+      - {t: 0, c: [26.9, 86.7], spin: 0}
+  micro_7:
+    type: microcontinent
+    appears: -100                          # intra-oceanic arc, built above trench T2
+    present_centroid: [1.5, -114.3]
+    keyframes:
+      - {t: -100, c: [-6, -100], spin: 0}
+      - {t: 0, c: [1.5, -114.3], spin: 0}
+  micro_8:
+    type: microcontinent
+    home: F                                # accreted terrane west of F
+    present_centroid: [-16.6, -156.1]
+    keyframes:
+      - {t: -750, c: [-22, -52], spin: 0}
+      - {t: -650, c: [-20, -58], spin: 0}
+      - {t: -450, c: [-20, -58], spin: 0}
+      - {t: -200, c: [-18, -108], spin: 0}
+      - {t: 0, c: [-16.6, -156.1], spin: 0}
+  micro_9:
+    type: microcontinent                   # sliver rifted off C's trailing margin in late dispersal
+    home: C
+    appears: -100
+    present_centroid: [-32.2, -104.1]
+    keyframes:
+      - {t: -100, c: [-34, -96], spin: 0}
+      - {t: 0, c: [-32.2, -104.1], spin: 0}
+  micro_10:
+    type: microcontinent
+    home: D                                # fragment of D's southwestern margin
+    present_centroid: [-41.9, -24.7]
+    keyframes:
+      - {t: -750, c: [-62, 28], spin: 0}
+      - {t: -650, c: [-58, 10], spin: 0}
+      - {t: -450, c: [-58, 10], spin: 0}
+      - {t: -250, c: [-56, -12], spin: 0}
+      - {t: 0, c: [-41.9, -24.7], spin: 0}
+  micro_11:
+    type: microcontinent
+    home: D                                # polar fragment south of D
+    present_centroid: [-78.6, 25.6]
+    keyframes:
+      - {t: -750, c: [-58, 42], spin: 0}
+      - {t: -650, c: [-57, 35], spin: 0}
+      - {t: -450, c: [-57, 35], spin: 0}
+      - {t: 0, c: [-78.6, 25.6], spin: 0}
+
+stages:
+  - t: -750
+    events:
+      - {type: note, notes: "Pre-S1 dispersal: ten cratons and their terranes scattered over ~120 deg of the southern hemisphere, all converging. A girdle of subduction zones rings the assembling core; the previous cycle's interior basins are nearly consumed."}
+    narrative: >
+      The story opens mid-convergence. The ten cratons ride six shrinking
+      plates toward a common center near 25S 0E, pulled by the slab girdle
+      of the closing pre-cycle oceans. Active margins face inward on
+      almost every block.
+  - t: -700
+    events:
+      - {type: orogeny, class: ural, where: [-15, -10], blocks: [A, J, H, B], notes: "S1 western suture: the A-J group docks against H and the B-core margin. Today eroded to basement."}
+      - {type: orogeny, class: ural, where: [-38, -35], blocks: [C, E, F], notes: "S1 southern suture: C-E-F belt docks. Today eroded to basement."}
+    narrative: >
+      First assembly collisions. The A-J group meets H along a
+      north-south suture; the southern belt C-E-F docks soon after.
+      These Ural-type orogens have had 700 Myr of erosion; today they
+      survive only as basement structure inside the continents.
+  - t: -650
+    events:
+      - {type: orogeny, class: ural, where: [-12, 42], blocks: [G, B, D], notes: "Final docking of G completes S1."}
+      - {type: subduction_init, where: [-25, 95], notes: "Circum-S1 subduction girdle locks in: the extroversion engine. The exterior ocean (EXT) now rings the supercontinent."}
+    narrative: >
+      G arrives last and S1 is complete: every craton in one landmass
+      centered near 25S, ringed by trenches dipping under its margins.
+      Sea level falls; the interior dries into a vast continental
+      climate. EXT, the world-ocean, surrounds everything.
+  - t: -600
+    events:
+      - {type: note, notes: "S1 tenure. Thermal blanketing: mantle plumes incubate beneath the supercontinent; epeirogenic doming begins along the future rift lines."}
+    narrative: >
+      Quiet tenure. Heat trapped under the huge lid builds plume heads
+      beneath the western flank and the C-D gap. The land bulges in
+      broad domes; rivers radiate off them. The exterior margins remain
+      active, slowly pulling at the lid from all sides.
+  - t: -550
+    events:
+      - {type: LIP, where: [-15, -30], notes: "L1 flood basalts over the western-flank plume head: first magmatic precursor of breakup."}
+    narrative: >
+      The first Large Igneous Province (L1) erupts across the A-F
+      neighborhood: kilometer-thick flood basalts over a few hundred
+      thousand years. The crust beneath is weakened and primed to tear.
+  - t: -500
+    events:
+      - {type: triple_junction, where: [-8, -14], notes: "R1 triple junction nucleates on the L1 scar between the A-flank and the H-B core."}
+      - {type: failed_rift, where: [-8, -18], blocks: [A], notes: "AU1 aulacogen: the failed third arm runs into A; today a sediment-filled trough on AIJ's southeastern margin."}
+      - {type: LIP, where: [-20, 8], notes: "L2 erupts at the R1 junction."}
+    narrative: >
+      Rifting begins. A three-armed rift (R1) opens on the old L1 scar;
+      two arms link into a through-going rift between the western flank
+      and the core, while the third arm fails and is preserved as
+      aulacogen AU1 in A. L2 floods the junction as the lithosphere
+      finally parts.
+  - t: -450
+    events:
+      - {type: rift, where: [-15, -5], blocks: [A, I, J, F, E, C], notes: "R1 goes to seafloor spreading: breakup of S1."}
+      - {type: ridge_birth, where: [-18, -8], notes: "Central Ridge born; CENTRAL ocean opens."}
+      - {type: rift, where: [-32, 2], blocks: [H], notes: "H-B Seaway rift: H detaches westward from B - a small interior ocean."}
+      - {type: LIP, where: [-40, 18], notes: "L3 floods the C-D gap as the southern arm unzips."}
+      - {type: failed_rift, where: [-27, 8], blocks: [B], notes: "AU2 aulacogen on B's western margin."}
+    narrative: >
+      Breakup. The western flank (A, I, J, C, E, F and their terranes)
+      tears away along the new Central Ridge; zig-zag rifted margins
+      face the young CENTRAL ocean. H splits from B across the small
+      H-B Seaway. S1 is dead after ~200 Myr of tenure.
+  - t: -400
+    events:
+      - {type: rift, where: [-5, -42], blocks: [A, J, I, C, E, F], notes: "R3 splits the west flank: AJ-I group parts from C-E-F."}
+      - {type: ridge_birth, where: [-8, -45], notes: "Western Ridge born; WESTERN ocean opens."}
+      - {type: rift, where: [-2, 40], blocks: [G], notes: "G detaches northeast from the core."}
+      - {type: ridge_birth, where: [2, 44], notes: "Northern Ridge born; NORTHERN ocean opens."}
+      - {type: LIP, where: [0, -45], notes: "L4 erupts along the R3 axis."}
+      - {type: subduction_init, where: [10, 120], notes: "EXT trenches advance: the exterior girdle begins consuming ocean ahead of the dispersing fragments (extroversion)."}
+      - {type: failed_rift, where: [-12, 50], blocks: [G], notes: "AU3 aulacogen on G's trailing (southwestern) margin."}
+    narrative: >
+      Dispersal in earnest. The west flank itself splits along the
+      Western Ridge: A-J-I head northwest, C-E-F southwest. G casts off
+      toward the northeast across the new Northern Ocean. Four LIPs in
+      100 Myr - L1 through L4 - have peppered the breakup, and a fifth
+      is coming. The fragments now ride toward the trenches of EXT.
+  - t: -350
+    events:
+      - {type: subduction_init, where: [12, -75], notes: "Ocean plate ahead of I founders; I's leading (western) margin turns Andean."}
+      - {type: LIP, where: [-30, -60], notes: "L5: last breakup-series LIP, on the young WESTERN ocean floor; its plume survives today under plate ii (hotspot chain H2-H3-H12-H14)."}
+    narrative: >
+      The leading edges harden. Old exterior crust founders in new
+      trenches ahead of I and the C-E-F group; coastal volcanic arcs
+      rise. Behind them, passive margins quietly accumulate shelf
+      sediment. L5 erupts at sea - the last gasp of the breakup plume
+      family.
+  - t: -300
+    events:
+      - {type: arc_accretion, where: [5, 62], blocks: [G], notes: "Offshore arcs dock onto G's northern leading margin - groundwork of the O4 belt."}
+      - {type: note, notes: "Central Ridge reorganizes; long transform faults segment the CENTRAL ocean."}
+    narrative: >
+      G plows north, sweeping up island arcs along its leading edge.
+      The CENTRAL ocean is now wide enough that its ridge breaks into
+      long transform-offset segments. H drifts at its farthest from B;
+      the H-B Seaway is at maximum width.
+  - t: -250
+    events:
+      - {type: orogeny, class: laramide, where: [15, 70], blocks: [G], notes: "O4: the Northern Ridge's eastern limb subducts under G - flat-slab episode, broad interior uplift (today's 2.5 Mkm2 belt at 58N 79E, eroded to 1.15 km mean)."}
+      - {type: reversal, where: [-35, 12], notes: "Subduction polarity in the H-B Seaway flips east: the seaway starts to close under B's margin."}
+    narrative: >
+      Fast-moving G overruns young, buoyant ridge crust: the slab goes
+      flat and Laramide-style basement uplifts sweep 1300 km into G's
+      interior - the O4 belt. Meanwhile the old H-B Seaway crust grows
+      dense enough to founder; a new east-dipping trench under B begins
+      pulling H home.
+  - t: -200
+    events:
+      - {type: orogeny, class: himalayan, where: [15, -90], blocks: [A, I, J], notes: "O1: A and J converge on I; broad collision belt (3.2 Mkm2). AIJ is assembled and moves as one continent hereafter."}
+      - {type: ridge_death, where: [8, -60], notes: "The A-I ridge segment is consumed in the collision."}
+      - {type: subduction_jump, where: [20, -110], notes: "Subduction jumps outboard to AIJ's new western margin."}
+      - {type: rift, where: [-12, 32], blocks: [micro_1], notes: "micro_1 detaches from B's northern margin and rides north."}
+      - {type: orogeny, class: andean, where: [-45, -95], blocks: [C], notes: "O3: C's southwestern margin enters its sustained Andean phase (belt still active today)."}
+    narrative: >
+      The first great post-breakup collision: A and J close on I from
+      two sides and weld into the continent AIJ along the broad O1
+      belt - 700 km of stacked crust, 4 km peaks in its day. Subduction
+      steps outboard to AIJ's Pacific-style western rim. Far south, C's
+      seaward margin settles into the long Andean regime that still
+      builds the O3 cordillera.
+  - t: -150
+    events:
+      - {type: subduction_init, where: [-15, 25], notes: "CENTRAL ocean's eastern flank founders under BDH's western margin (today's T8 trench and B5 back-arc)."}
+      - {type: subduction_init, where: [-50, -38], notes: "Southern ocean trench T5 system initiates."}
+      - {type: note, notes: "H closes to within 1000 km of B; seaway crust nearly consumed."}
+    narrative: >
+      The CENTRAL ocean, now 300 Myr old at its eastern edge, begins to
+      be consumed: a trench locks in along BDH's west coast. The planet
+      is entering the early signs of the NEXT assembly even as the
+      current oceans still widen elsewhere - exactly Earth's present
+      condition.
+  - t: -100
+    events:
+      - {type: orogeny, class: himalayan, where: [-40, 25], blocks: [B, D, H], notes: "O2: H docks against B and D; the seaway dies. Introverted Wilson cycle complete; BDH assembled (today 1.89 km mean, consistent with ~120 Myr age)."}
+      - {type: ridge_death, where: [-36, 8], notes: "H-B Seaway ridge destroyed."}
+      - {type: subduction_init, where: [0, -110], notes: "Intra-oceanic subduction starts in the WESTERN ocean: trench T2; the micro_7 arc begins building."}
+      - {type: hotspot_track, where: [-35, -104], notes: "Plume P1 (L5 relic) under plate ii: chain H2-H3-H12-H14 starts recording plate motion."}
+      - {type: hotspot_track, where: [-57, 35], notes: "Plume P2 under the southern ocean: chain H5-H6-H7-H10."}
+      - {type: hotspot_track, where: [4, -7], notes: "Plume P3, equatorial CENTRAL ocean: H8-H9."}
+      - {type: hotspot_track, where: [52, 8], notes: "Plume P4, northern ocean: H1-H11."}
+      - {type: hotspot_track, where: [28, -90], notes: "Plume P5 under AIJ's old AU1 rift scar: continental hotspots H13-H15."}
+    narrative: >
+      H comes home: the seaway closes and the O2 belt rises across the
+      B-D-H triple suture, completing the continent BDH almost exactly
+      where its pieces stood in S1 - a textbook introverted Wilson
+      cycle nested inside the larger extroversion. In the oceans, five
+      mantle plumes light up the hotspot chains we can still trace.
+  - t: -50
+    events:
+      - {type: orogeny, class: himalayan, where: [34, -130], blocks: [I], notes: "O5: ridge subduction plus arc pile-up on I's western margin; the belt is still rising (8.4 km peaks today)."}
+      - {type: arc_accretion, where: [30, 110], blocks: [G, micro_4], notes: "O6: the micro_4 arc terrane docks onto G's eastern margin (2.3 km mean, ~30 Myr)."}
+      - {type: subduction_init, where: [-27, -26], notes: "T10: a young trench breaks the CENTRAL ridge's western flank - subduction invading a young ocean."}
+      - {type: orogeny, class: andean, where: [0, -112], blocks: [micro_7], notes: "O7: the micro_7 arc grows into a low orogen above trench T2 (still building)."}
+    narrative: >
+      The modern mountain age. AIJ's far western rim takes the full
+      force of fast convergence - ridge crust subducts, arcs dock, and
+      the O5 cordillera shoots past 8 km, the planet's highest ground.
+      On the far side of the world micro_4 slams into G, raising O6.
+      Even the young CENTRAL ocean now hosts a new trench: the long
+      turn toward the next supercontinent has begun.
+  - t: 0
+    events:
+      - {type: note, notes: "Present day. Active systems: trenches T1-T10, Andean margins on I, C and G, back-arcs B1-B7, hotspot chains from plumes P1-P5. AIJ, CEF and G converge broadly northward; BDH walks south alone. Projected next supercontinent: a boreal assembly of AIJ+CEF+G in ~200-300 Myr."}
+    narrative: >
+      Today the planet looks like Earth ~100 Myr after a breakup:
+      four dispersed continents, half the coastline active, young
+      interior sutures (O1, O2) wearing down while collision belts on
+      the rims (O5, O6) still climb. The CENTRAL and WESTERN oceans
+      are aging into their first trenches. The cycle is turning over.
+
+provenance:
+  - {feature: "O1 orogen at [54.3, -118.6] (blocks A,I,J)", explained_by: "T-200 himalayan collision assembling AIJ; 185 Myr of erosion to 1.58 km mean"}
+  - {feature: "O2 orogen at [-42.9, 35.7] (blocks B,D,H)", explained_by: "T-100 himalayan closure of the H-B Seaway (introverted Wilson cycle); 1.89 km mean fits ~120 Myr age"}
+  - {feature: "O3 orogen at [-43.9, -160.7] (block C)", explained_by: "Sustained Andean margin on C's seaward coast since T-200 (event at stage T-200)"}
+  - {feature: "O4 orogen at [57.9, 79.3] (block G)", explained_by: "T-250 laramide flat-slab episode (ridge subduction under fast-moving G); 1.15 km mean fits ~270 Myr age"}
+  - {feature: "O5 orogen at [33.9, -135.3] (block I)", explained_by: "T-50..now himalayan-grade margin orogeny on I (ridge subduction + arc pile-up); still rising, 8.43 km max"}
+  - {feature: "O6 orogen at [55.9, 135.4] (block G)", explained_by: "T-50 arc_accretion of micro_4 onto G's eastern margin"}
+  - {feature: "O7 orogen at [3.0, -114.1] (micro_7)", explained_by: "Active intra-oceanic arc above trench T2 (subduction_init T-100)"}
+  - {feature: "T1 trench at [11.5, 72.5]", explained_by: "NORTHERN/CENTRAL ocean floor subducting beneath the micro_6 arc system (lineage of the T-150 eastern-flank foundering)"}
+  - {feature: "T2 trench at [2.5, -119.1]", explained_by: "T-100 intra-oceanic subduction_init in the WESTERN ocean; feeds the micro_7/O7 arc"}
+  - {feature: "T3 trench at [29.0, 146.2]", explained_by: "Long-lived EXT girdle subduction (since T-400)"}
+  - {feature: "T4 trench at [14.1, 160.0]", explained_by: "Long-lived EXT girdle subduction (since T-400)"}
+  - {feature: "T5 trench at [-55.9, -39.6]", explained_by: "T-150 southern-ocean subduction_init"}
+  - {feature: "T6 trench at [32.0, 86.7]", explained_by: "NORTHERN ocean beginning to close against G's trailing margin (next-assembly precursor)"}
+  - {feature: "T7 trench at [44.8, 132.5]", explained_by: "EXT margin subduction under G's eastern (O6) rim"}
+  - {feature: "T8 trench at [-25.7, 3.8]", explained_by: "T-150 foundering of old CENTRAL-ocean crust under BDH's west coast"}
+  - {feature: "T9 trench at [26.4, 168.5]", explained_by: "Long-lived EXT girdle subduction (since T-400)"}
+  - {feature: "T10 trench at [-27.4, -25.9]", explained_by: "T-50 subduction invasion of the young CENTRAL ridge flank"}
+  - {feature: "B1 back-arc at [25.6, -105.3]", explained_by: "Continental back-arc behind the O5/O1 convergent system on AIJ"}
+  - {feature: "B2 back-arc at [-47.5, -144.5]", explained_by: "Back-arc of the O3 Andean margin on CEF"}
+  - {feature: "B3 back-arc at [48.3, -117.5]", explained_by: "Northern back-arc of the AIJ convergent rim"}
+  - {feature: "B4 back-arc at [-30.0, 50.3]", explained_by: "Back-arc east of the O2 suture / BDH eastern margin system"}
+  - {feature: "B5 back-arc at [-15.4, 29.1]", explained_by: "Back-arc of the T8 trench on BDH's northwest"}
+  - {feature: "B6 back-arc at [4.4, -118.7]", explained_by: "Back-arc of the micro_7/T2 intra-oceanic arc"}
+  - {feature: "B7 back-arc at [37.0, 37.1]", explained_by: "Back-arc of the northern-ocean subduction system feeding micro_1's arc fringe"}
+  - {feature: "B8 back-arc at [11.8, 72.1]", explained_by: "Back-arc of the T1 trench / micro_6 arc system"}
+  - {feature: "B9 back-arc at [35.7, -130.8]", explained_by: "Back-arc within the O5 convergent system on I's margin"}
+  - {feature: "B10 back-arc at [-35.9, 29.6]", explained_by: "Retro-arc basin on the flank of the O2 suture (BDH southwestern margin system)"}
+  - {feature: "H1, H11 hotspots near [52, 8]", explained_by: "Plume P4 (active since ~T-100)"}
+  - {feature: "H2, H3, H12, H14 chain near [-32, -104]", explained_by: "Plume P1, relic of LIP L5; chain records plate ii's northward drift"}
+  - {feature: "H4 hotspot at [3.5, 121.7]", explained_by: "Young plume under the EXT margin west of micro_4's wake (last ~30 Myr)"}
+  - {feature: "H5, H6, H7, H10 chain near [-57, 35]", explained_by: "Plume P2; chain records southern-ocean plate motion since T-100"}
+  - {feature: "H8, H9 hotspots near [5.8, -7]", explained_by: "Plume P3, equatorial CENTRAL ocean"}
+  - {feature: "H13, H15 hotspots under eastern AIJ", explained_by: "Plume P5 exploiting the AU1 aulacogen scar (continental hotspots)"}

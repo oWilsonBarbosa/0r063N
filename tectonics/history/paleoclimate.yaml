@@ -1,0 +1,174 @@
+# Climate forcing curve for the 750-Myr tectonic history (see history.yaml).
+#
+# dT_global is a uniform offset (deg C) applied to the zonal base temperature at
+# each stage; it encodes the net greenhouse state driven by the tectonic events
+# (LIP outgassing warms; orogenic silicate weathering and supercontinent
+# assembly cool). co2_ppm is illustrative (~3 C per doubling from a 280 ppm
+# anchor). Ice ages then EMERGE from dT x polar land position via the Koppen
+# thresholds - they are not painted on.
+
+meta:
+  model: zonal-v1
+  climate_sensitivity_note: >
+    dT ~ 3 C per CO2 doubling from a 280 ppm pre-industrial-style anchor;
+    co2_ppm values are illustrative, dT_global is what the model consumes.
+
+eras:
+  - name: Assembly cool-down
+    span: [-750, -650]
+    narrative: >
+      Converging continents close the pre-cycle oceans; fresh collisional
+      orogens (the S1 sutures) weather rapidly and draw CO2 down. The world
+      slides from mild into cold as S1 locks together.
+  - name: S1 icehouse
+    span: [-650, -550]
+    narrative: >
+      The deep freeze of the cycle. A single supercontinent centered near 25S
+      pushes its southern margins (D, micro_10, micro_11) past 55S, weathering
+      stays high, and ridge length - and so CO2 outgassing - is at a minimum.
+      Continental ice sheets grow on the southern flank of S1; this is the
+      major glaciation of the modeled history.
+  - name: Breakup hothouse
+    span: [-550, -350]
+    narrative: >
+      LIPs L1-L5 erupt in sequence as S1 rifts apart, and thousands of
+      kilometers of new mid-ocean ridge (Central, Western, Northern) outgas
+      CO2 far faster than the young passive margins can weather it. The ice
+      sheets collapse and the planet swings to its warmest state, peaking
+      around T-400..T-350 with essentially ice-free poles.
+  - name: Dispersal moderation
+    span: [-350, -250]
+    narrative: >
+      The LIP era ends and ridge production stabilizes. The dispersing
+      continents green up; climate settles into a warm but moderating state.
+  - name: Collisional cooling
+    span: [-250, -50]
+    narrative: >
+      The great drawdown. The O4 flat-slab uplift on G, then the O1 (AIJ
+      assembly) and O2 (H-B closure) himalayan collisions expose vast tracts
+      of fresh rock at low latitudes; silicate weathering accelerates and CO2
+      falls for 200 Myr. By T-100 polar ice has returned to the far-southern
+      lands (micro_11 is drifting over 70S).
+  - name: Modern icehouse
+    span: [-50, 0]
+    narrative: >
+      The present regime: a moderately cold world with permanent polar ice on
+      the far-southern fragments and high-latitude tundra fringes on G and J,
+      active O5/O6 orogens still weathering, and dispersed continents keeping
+      the climate zonal and wet-margined - analogous to Earth's late Cenozoic.
+
+stages:
+  - t: -750
+    dT_global: -1.0
+    co2_ppm: 230
+    ice_hint: polar
+    narrative: Mild-cool world of dispersed converging continents.
+    drivers:
+      - {event: "pre-S1 convergence and subduction girdle (stage -750 note)", effect: cool,
+         notes: "arc weathering on every leading margin"}
+  - t: -700
+    dT_global: -2.5
+    co2_ppm: 155
+    ice_hint: polar
+    narrative: First assembly collisions; weathering accelerates.
+    drivers:
+      - {event: "orogeny at T-700 (S1 western and southern sutures)", effect: cool}
+  - t: -650
+    dT_global: -5.5
+    co2_ppm: 85
+    ice_hint: polar
+    narrative: S1 assembled; cold deepens, southern ice sheets nucleate.
+    drivers:
+      - {event: "orogeny at T-650 (G docking completes the supercontinent, assembled)", effect: cool}
+      - {event: "supercontinent tenure begins: minimum ridge length", effect: cool}
+  - t: -600
+    dT_global: -8.8
+    co2_ppm: 38
+    ice_hint: major_glaciation
+    narrative: Glacial maximum of the S1 icehouse.
+    drivers:
+      - {event: "supercontinent tenure (stage -600 note): plume incubation, low outgassing", effect: cool}
+  - t: -550
+    dT_global: -3.5
+    co2_ppm: 125
+    ice_hint: polar
+    narrative: L1 erupts; the thaw begins.
+    drivers:
+      - {event: "LIP L1 at T-550", effect: warm}
+  - t: -500
+    dT_global: -1.0
+    co2_ppm: 220
+    ice_hint: polar
+    narrative: Rifting starts; outgassing climbs.
+    drivers:
+      - {event: "LIP L2 and triple_junction rifting at T-500", effect: warm}
+  - t: -450
+    dT_global: 2.0
+    co2_ppm: 445
+    ice_hint: none
+    narrative: Breakup; new ridges outgas freely.
+    drivers:
+      - {event: "rift/ridge_birth at T-450 (Central Ridge, breakup) and LIP L3", effect: warm}
+  - t: -400
+    dT_global: 4.0
+    co2_ppm: 700
+    ice_hint: none
+    narrative: Hothouse; three young oceans spreading at once.
+    drivers:
+      - {event: "ridge_birth at T-400 (Western and Northern ridges) and LIP L4", effect: warm}
+  - t: -350
+    dT_global: 4.5
+    co2_ppm: 790
+    ice_hint: none
+    narrative: Peak warmth; ice-free poles.
+    drivers:
+      - {event: "LIP L5 at T-350", effect: warm}
+  - t: -300
+    dT_global: 3.5
+    co2_ppm: 630
+    ice_hint: none
+    narrative: LIP era over; slow moderation.
+    drivers:
+      - {event: "arc_accretion at T-300 on G; dispersal continues", effect: cool}
+  - t: -250
+    dT_global: 2.0
+    co2_ppm: 445
+    ice_hint: none
+    narrative: O4 uplift starts the long drawdown.
+    drivers:
+      - {event: "orogeny at T-250 (O4 laramide on G)", effect: cool}
+  - t: -200
+    dT_global: 0.5
+    co2_ppm: 315
+    ice_hint: none
+    narrative: O1 collision; fresh himalayan-scale weathering.
+    drivers:
+      - {event: "orogeny at T-200 (O1 himalayan, AIJ assembly)", effect: cool}
+  - t: -150
+    dT_global: -0.5
+    co2_ppm: 250
+    ice_hint: polar
+    narrative: Cooling continues; far-southern frost returns.
+    drivers:
+      - {event: "sustained weathering of the O1 belt; subduction_init at T-150", effect: cool}
+  - t: -100
+    dT_global: -1.5
+    co2_ppm: 200
+    ice_hint: polar
+    narrative: O2 collision; polar ice locks in on micro_11.
+    drivers:
+      - {event: "orogeny at T-100 (O2 himalayan, H-B closure)", effect: cool}
+  - t: -50
+    dT_global: -1.0
+    co2_ppm: 222
+    ice_hint: polar
+    narrative: Slight recovery as O2 weathering wanes; O5/O6 rise.
+    drivers:
+      - {event: "orogeny and arc_accretion at T-50 (O5, O6 active belts)", effect: neutral}
+  - t: 0
+    dT_global: 0.0
+    co2_ppm: 280
+    ice_hint: polar
+    narrative: Present day - the calibration anchor; permanent ice at the far south.
+    drivers:
+      - {event: "present-day anchor; dispersal-phase geography", effect: neutral}

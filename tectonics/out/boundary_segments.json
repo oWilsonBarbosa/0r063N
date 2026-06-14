@@ -1,0 +1,962 @@
+{
+ "unit": "superPlate",
+ "class_codes": {
+  "convergent": 1,
+  "divergent": 2,
+  "transform": 3,
+  "indeterminate": 0
+ },
+ "segments": {
+  "0-7": {
+   "plates": [
+    0,
+    7
+   ],
+   "boundary_px": 610,
+   "fractions": {
+    "convergent": 0.0016942090311146915,
+    "divergent": 0.998305790968885,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -12.449923155737705,
+   "mean_lon": 156.01219902663934
+  },
+  "0-8": {
+   "plates": [
+    0,
+    8
+   ],
+   "boundary_px": 1118,
+   "fractions": {
+    "convergent": 0.044538897923687246,
+    "divergent": 0.9554611020763131,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -51.785502152280856,
+   "mean_lon": 122.04706018000894
+  },
+  "0-9": {
+   "plates": [
+    0,
+    9
+   ],
+   "boundary_px": 428,
+   "fractions": {
+    "convergent": 0.8648529618284554,
+    "divergent": 0.13514703817154464,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "convergent",
+   "mean_lat": 10.996185017523365,
+   "mean_lon": 81.54360762266356,
+   "overriding": 0,
+   "subducting": 9,
+   "polarity_confidence": 0.007874935104804482
+  },
+  "0-11": {
+   "plates": [
+    0,
+    11
+   ],
+   "boundary_px": 571,
+   "fractions": {
+    "convergent": 0.0,
+    "divergent": 0.9966647951857148,
+    "transform": 0.0,
+    "indeterminate": 0.003335204814284973
+   },
+   "dominant": "divergent",
+   "mean_lat": 14.59369185091944,
+   "mean_lon": 127.38953384960595
+  },
+  "0-13": {
+   "plates": [
+    0,
+    13
+   ],
+   "boundary_px": 135,
+   "fractions": {
+    "convergent": 0.48132692751196116,
+    "divergent": 0.5186730724880387,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -13.142578125,
+   "mean_lon": 68.20377604166667,
+   "overriding": 0,
+   "subducting": 13,
+   "polarity_confidence": 0.005183838526911707
+  },
+  "0-18": {
+   "plates": [
+    0,
+    18
+   ],
+   "boundary_px": 129,
+   "fractions": {
+    "convergent": 0.945729832480916,
+    "divergent": 0.0,
+    "transform": 0.0,
+    "indeterminate": 0.05427016751908389
+   },
+   "dominant": "convergent",
+   "mean_lat": 25.724700218023255,
+   "mean_lon": 102.62967841569767,
+   "overriding": 18,
+   "subducting": 0,
+   "polarity_confidence": 0.008320945575833322
+  },
+  "0-19": {
+   "plates": [
+    0,
+    19
+   ],
+   "boundary_px": 591,
+   "fractions": {
+    "convergent": 0.7412197756090911,
+    "divergent": 0.006428892471568331,
+    "transform": 0.0,
+    "indeterminate": 0.25235133191934056
+   },
+   "dominant": "convergent",
+   "mean_lat": -41.84649627220812,
+   "mean_lon": 77.0943547747462,
+   "overriding": 19,
+   "subducting": 0,
+   "polarity_confidence": 0.007924298122904648
+  },
+  "1-10": {
+   "plates": [
+    1,
+    10
+   ],
+   "boundary_px": 382,
+   "fractions": {
+    "convergent": 0.15761812486598334,
+    "divergent": 0.6971964921878172,
+    "transform": 0.12334344681620515,
+    "indeterminate": 0.02184193612999425
+   },
+   "dominant": "divergent",
+   "mean_lat": 27.222165412303664,
+   "mean_lon": -61.753977830497384
+  },
+  "1-14": {
+   "plates": [
+    1,
+    14
+   ],
+   "boundary_px": 316,
+   "fractions": {
+    "convergent": 0.08623799907685907,
+    "divergent": 0.6233483040240322,
+    "transform": 0.26676521374537565,
+    "indeterminate": 0.023648483153732972
+   },
+   "dominant": "divergent",
+   "mean_lat": 39.821128362341774,
+   "mean_lon": -79.82360067246836
+  },
+  "1-17": {
+   "plates": [
+    1,
+    17
+   ],
+   "boundary_px": 376,
+   "fractions": {
+    "convergent": 1.0,
+    "divergent": 0.0,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "convergent",
+   "mean_lat": 24.08483626994681,
+   "mean_lon": -83.22213680186171,
+   "overriding": 17,
+   "subducting": 1,
+   "polarity_confidence": 0.011436098734814685
+  },
+  "2-5": {
+   "plates": [
+    2,
+    5
+   ],
+   "boundary_px": 104,
+   "fractions": {
+    "convergent": 0.009741434039361454,
+    "divergent": 0.9805244207492649,
+    "transform": 0.0,
+    "indeterminate": 0.009734145211373732
+   },
+   "dominant": "divergent",
+   "mean_lat": 16.310471754807693,
+   "mean_lon": -126.49151141826923
+  },
+  "2-6": {
+   "plates": [
+    2,
+    6
+   ],
+   "boundary_px": 181,
+   "fractions": {
+    "convergent": 0.0,
+    "divergent": 1.0,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -28.369248532458563,
+   "mean_lon": -84.84164580455801
+  },
+  "2-8": {
+   "plates": [
+    2,
+    8
+   ],
+   "boundary_px": 478,
+   "fractions": {
+    "convergent": 0.01745397544897839,
+    "divergent": 0.9825460245510217,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -41.44723293671548,
+   "mean_lon": -98.13337637290795
+  },
+  "2-12": {
+   "plates": [
+    2,
+    12
+   ],
+   "boundary_px": 450,
+   "fractions": {
+    "convergent": 0.41350165411021883,
+    "divergent": 0.5864983458897811,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -6.615625,
+   "mean_lon": -105.515234375,
+   "overriding": 12,
+   "subducting": 2,
+   "polarity_confidence": 0.0051186559349298485
+  },
+  "2-16": {
+   "plates": [
+    2,
+    16
+   ],
+   "boundary_px": 618,
+   "fractions": {
+    "convergent": 0.4499464028109191,
+    "divergent": 0.0033046768532664483,
+    "transform": 0.0,
+    "indeterminate": 0.5467489203358146
+   },
+   "dominant": "convergent",
+   "mean_lat": -15.22925515776699,
+   "mean_lon": -128.2642786711165,
+   "overriding": 16,
+   "subducting": 2,
+   "polarity_confidence": 0.00956880702332206
+  },
+  "2-17": {
+   "plates": [
+    2,
+    17
+   ],
+   "boundary_px": 209,
+   "fractions": {
+    "convergent": 0.32372241879731417,
+    "divergent": 0.0,
+    "transform": 0.0,
+    "indeterminate": 0.6762775812026861
+   },
+   "dominant": "convergent",
+   "mean_lat": 13.13775605562201,
+   "mean_lon": -113.30279044557416,
+   "overriding": 2,
+   "subducting": 17,
+   "polarity_confidence": 0.0034304734709827934
+  },
+  "3-6": {
+   "plates": [
+    3,
+    6
+   ],
+   "boundary_px": 558,
+   "fractions": {
+    "convergent": 0.6198529747707494,
+    "divergent": 0.38014702522925053,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "convergent",
+   "mean_lat": -38.489478326612904,
+   "mean_lon": -24.495022681451612,
+   "overriding": 3,
+   "subducting": 6,
+   "polarity_confidence": 0.0012883044983762453
+  },
+  "3-8": {
+   "plates": [
+    3,
+    8
+   ],
+   "boundary_px": 1522,
+   "fractions": {
+    "convergent": 0.2328262780235424,
+    "divergent": 0.7671737219764576,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -73.56537707375165,
+   "mean_lon": -0.42582488091327203
+  },
+  "3-10": {
+   "plates": [
+    3,
+    10
+   ],
+   "boundary_px": 613,
+   "fractions": {
+    "convergent": 0.07110809875418869,
+    "divergent": 0.9288919012458113,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -17.392450678017944,
+   "mean_lon": -11.047120335440457
+  },
+  "3-19": {
+   "plates": [
+    3,
+    19
+   ],
+   "boundary_px": 1142,
+   "fractions": {
+    "convergent": 0.9266919645442654,
+    "divergent": 0.0018585984043591795,
+    "transform": 0.0,
+    "indeterminate": 0.07144943705137528
+   },
+   "dominant": "convergent",
+   "mean_lat": -50.342703316549915,
+   "mean_lon": 28.602934134194395,
+   "overriding": 19,
+   "subducting": 3,
+   "polarity_confidence": 0.01799945631427483
+  },
+  "4-9": {
+   "plates": [
+    4,
+    9
+   ],
+   "boundary_px": 165,
+   "fractions": {
+    "convergent": 0.2834725675970807,
+    "divergent": 0.716527432402919,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 38.72780539772727,
+   "mean_lon": 44.49236505681818,
+   "overriding": 4,
+   "subducting": 9,
+   "polarity_confidence": 0.007417175680915961
+  },
+  "4-10": {
+   "plates": [
+    4,
+    10
+   ],
+   "boundary_px": 665,
+   "fractions": {
+    "convergent": 0.004290519894508316,
+    "divergent": 0.9957094801054917,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 39.79198484492481,
+   "mean_lon": -25.313953829887218
+  },
+  "4-13": {
+   "plates": [
+    4,
+    13
+   ],
+   "boundary_px": 418,
+   "fractions": {
+    "convergent": 0.0,
+    "divergent": 1.0,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 24.372196471291865,
+   "mean_lon": 18.732057416267942
+  },
+  "4-14": {
+   "plates": [
+    4,
+    14
+   ],
+   "boundary_px": 301,
+   "fractions": {
+    "convergent": 0.03094655201317289,
+    "divergent": 0.9690534479868272,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 63.45849122715947,
+   "mean_lon": -26.544428727159467
+  },
+  "4-15": {
+   "plates": [
+    4,
+    15
+   ],
+   "boundary_px": 517,
+   "fractions": {
+    "convergent": 0.02401903511656486,
+    "divergent": 0.975980964883435,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 76.35451296542553,
+   "mean_lon": 15.003456691247582
+  },
+  "4-18": {
+   "plates": [
+    4,
+    18
+   ],
+   "boundary_px": 601,
+   "fractions": {
+    "convergent": 0.9880736621749314,
+    "divergent": 0.0052141509696674,
+    "transform": 0.0,
+    "indeterminate": 0.006712186855401001
+   },
+   "dominant": "convergent",
+   "mean_lat": 63.079876637895175,
+   "mean_lon": 38.95894537749584,
+   "overriding": 18,
+   "subducting": 4,
+   "polarity_confidence": 0.007529595806436551
+  },
+  "5-7": {
+   "plates": [
+    5,
+    7
+   ],
+   "boundary_px": 225,
+   "fractions": {
+    "convergent": 0.253555684361787,
+    "divergent": 0.746444315638213,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 27.064453125,
+   "mean_lon": -13.507421875,
+   "overriding": 5,
+   "subducting": 7,
+   "polarity_confidence": 0.011917543448507782
+  },
+  "5-11": {
+   "plates": [
+    5,
+    11
+   ],
+   "boundary_px": 397,
+   "fractions": {
+    "convergent": 0.37560092566563746,
+    "divergent": 0.2001812861255194,
+    "transform": 0.4242177882088431,
+    "indeterminate": 0.0
+   },
+   "dominant": "transform",
+   "mean_lat": 45.00951963948363,
+   "mean_lon": 159.27264542663727,
+   "overriding": 5,
+   "subducting": 11,
+   "polarity_confidence": 0.012257376859570474
+  },
+  "5-14": {
+   "plates": [
+    5,
+    14
+   ],
+   "boundary_px": 83,
+   "fractions": {
+    "convergent": 0.0,
+    "divergent": 1.0,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 58.459972703313255,
+   "mean_lon": -157.63448324548193
+  },
+  "5-15": {
+   "plates": [
+    5,
+    15
+   ],
+   "boundary_px": 430,
+   "fractions": {
+    "convergent": 0.09629165158047688,
+    "divergent": 0.9037083484195233,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 67.27025799418605,
+   "mean_lon": 38.114280523255815
+  },
+  "5-16": {
+   "plates": [
+    5,
+    16
+   ],
+   "boundary_px": 665,
+   "fractions": {
+    "convergent": 0.37771402167289553,
+    "divergent": 0.0014073624889243883,
+    "transform": 0.0,
+    "indeterminate": 0.6208786158381802
+   },
+   "dominant": "convergent",
+   "mean_lat": 17.55103089755639,
+   "mean_lon": -149.9206561325188,
+   "overriding": 16,
+   "subducting": 5,
+   "polarity_confidence": 0.005765602570109049
+  },
+  "5-17": {
+   "plates": [
+    5,
+    17
+   ],
+   "boundary_px": 665,
+   "fractions": {
+    "convergent": 0.8801888701408478,
+    "divergent": 0.0074776412866898335,
+    "transform": 0.0,
+    "indeterminate": 0.11233348857246239
+   },
+   "dominant": "convergent",
+   "mean_lat": 37.391579534774436,
+   "mean_lon": -140.70628230733084,
+   "overriding": 17,
+   "subducting": 5,
+   "polarity_confidence": 0.017867607647224625
+  },
+  "5-18": {
+   "plates": [
+    5,
+    18
+   ],
+   "boundary_px": 619,
+   "fractions": {
+    "convergent": 0.9960788829358567,
+    "divergent": 0.0,
+    "transform": 0.0,
+    "indeterminate": 0.003921117064143141
+   },
+   "dominant": "convergent",
+   "mean_lat": 64.61977168315832,
+   "mean_lon": 143.30019752120356,
+   "overriding": 18,
+   "subducting": 5,
+   "polarity_confidence": 0.034031478176539766
+  },
+  "6-8": {
+   "plates": [
+    6,
+    8
+   ],
+   "boundary_px": 651,
+   "fractions": {
+    "convergent": 0.15182049824018792,
+    "divergent": 0.848179501759812,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -42.622362831221196,
+   "mean_lon": -55.33693656394009
+  },
+  "6-10": {
+   "plates": [
+    6,
+    10
+   ],
+   "boundary_px": 263,
+   "fractions": {
+    "convergent": 0.6789061269095279,
+    "divergent": 0.32109387309047216,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "convergent",
+   "mean_lat": -16.076632307509506,
+   "mean_lon": -48.30341759743346,
+   "overriding": 10,
+   "subducting": 6,
+   "polarity_confidence": 0.002885918804845663
+  },
+  "6-12": {
+   "plates": [
+    6,
+    12
+   ],
+   "boundary_px": 349,
+   "fractions": {
+    "convergent": 0.023011195387139506,
+    "divergent": 0.9769888046128604,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -13.45985740508596,
+   "mean_lon": -72.55711071812321
+  },
+  "7-8": {
+   "plates": [
+    7,
+    8
+   ],
+   "boundary_px": 210,
+   "fractions": {
+    "convergent": 0.0,
+    "divergent": 1.0,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": -33.864676339285715,
+   "mean_lon": 59.42075892857143
+  },
+  "7-11": {
+   "plates": [
+    7,
+    11
+   ],
+   "boundary_px": 485,
+   "fractions": {
+    "convergent": 0.4977488914589266,
+    "divergent": 0.5022511085410732,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 23.661787210051546,
+   "mean_lon": 157.42515705541237,
+   "overriding": 11,
+   "subducting": 7,
+   "polarity_confidence": 0.004523237425294125
+  },
+  "7-16": {
+   "plates": [
+    7,
+    16
+   ],
+   "boundary_px": 744,
+   "fractions": {
+    "convergent": 0.7430213742295375,
+    "divergent": 0.002386601389473986,
+    "transform": 0.0,
+    "indeterminate": 0.2545920243809887
+   },
+   "dominant": "convergent",
+   "mean_lat": -8.632418724798388,
+   "mean_lon": -160.55467174899192,
+   "overriding": 16,
+   "subducting": 7,
+   "polarity_confidence": 0.005535440073147193
+  },
+  "8-16": {
+   "plates": [
+    8,
+    16
+   ],
+   "boundary_px": 954,
+   "fractions": {
+    "convergent": 0.9335831317575493,
+    "divergent": 0.0012221667479787625,
+    "transform": 0.0,
+    "indeterminate": 0.06519470149447201
+   },
+   "dominant": "convergent",
+   "mean_lat": -53.695091391509436,
+   "mean_lon": -147.40584463443398,
+   "overriding": 16,
+   "subducting": 8,
+   "polarity_confidence": 0.007211211866052251
+  },
+  "8-19": {
+   "plates": [
+    8,
+    19
+   ],
+   "boundary_px": 413,
+   "fractions": {
+    "convergent": 0.8297835971989167,
+    "divergent": 0.002041885448232932,
+    "transform": 0.0,
+    "indeterminate": 0.16817451735285033
+   },
+   "dominant": "convergent",
+   "mean_lat": -68.59618549485472,
+   "mean_lon": 56.09401010139225,
+   "overriding": 19,
+   "subducting": 8,
+   "polarity_confidence": 0.028797215600220367
+  },
+  "9-13": {
+   "plates": [
+    9,
+    13
+   ],
+   "boundary_px": 597,
+   "fractions": {
+    "convergent": 0.0,
+    "divergent": 1.0,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 9.081589588567839,
+   "mean_lon": 46.41964706344221
+  },
+  "9-18": {
+   "plates": [
+    9,
+    18
+   ],
+   "boundary_px": 604,
+   "fractions": {
+    "convergent": 0.6600965949183859,
+    "divergent": 0.0015981558796916665,
+    "transform": 0.0,
+    "indeterminate": 0.3383052492019226
+   },
+   "dominant": "convergent",
+   "mean_lat": 45.15599130794702,
+   "mean_lon": 74.15495007243378,
+   "overriding": 18,
+   "subducting": 9,
+   "polarity_confidence": 0.01565032133785997
+  },
+  "10-12": {
+   "plates": [
+    10,
+    12
+   ],
+   "boundary_px": 317,
+   "fractions": {
+    "convergent": 0.0062401596499791125,
+    "divergent": 0.9937598403500211,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 5.492193661277603,
+   "mean_lon": -58.81546357452682
+  },
+  "10-13": {
+   "plates": [
+    10,
+    13
+   ],
+   "boundary_px": 415,
+   "fractions": {
+    "convergent": 0.002373542190317975,
+    "divergent": 0.9976264578096821,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 2.0710419804216866,
+   "mean_lon": 3.9470303087349397
+  },
+  "10-14": {
+   "plates": [
+    10,
+    14
+   ],
+   "boundary_px": 386,
+   "fractions": {
+    "convergent": 0.0,
+    "divergent": 0.5698136481969243,
+    "transform": 0.42205425392432316,
+    "indeterminate": 0.008132097878752522
+   },
+   "dominant": "divergent",
+   "mean_lat": 51.39688916774612,
+   "mean_lon": -59.71371033031088
+  },
+  "10-17": {
+   "plates": [
+    10,
+    17
+   ],
+   "boundary_px": 41,
+   "fractions": {
+    "convergent": 1.0,
+    "divergent": 0.0,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "convergent",
+   "mean_lat": 14.351895960365853,
+   "mean_lon": -66.9019150152439,
+   "overriding": 10,
+   "subducting": 17,
+   "polarity_confidence": 0.002263435497879982
+  },
+  "10-19": {
+   "plates": [
+    10,
+    19
+   ],
+   "boundary_px": 83,
+   "fractions": {
+    "convergent": 0.9279545781594289,
+    "divergent": 0.024020713176140625,
+    "transform": 0.0,
+    "indeterminate": 0.048024708664430336
+   },
+   "dominant": "convergent",
+   "mean_lat": -15.418980609939759,
+   "mean_lon": 13.362551769578314,
+   "overriding": 10,
+   "subducting": 19,
+   "polarity_confidence": 0.0032684662658721206
+  },
+  "11-18": {
+   "plates": [
+    11,
+    18
+   ],
+   "boundary_px": 530,
+   "fractions": {
+    "convergent": 0.11601951061427962,
+    "divergent": 0.0,
+    "transform": 0.0,
+    "indeterminate": 0.8839804893857202
+   },
+   "dominant": "convergent",
+   "mean_lat": 42.743698408018865,
+   "mean_lon": 120.91892688679245
+  },
+  "12-17": {
+   "plates": [
+    12,
+    17
+   ],
+   "boundary_px": 809,
+   "fractions": {
+    "convergent": 0.859559754042934,
+    "divergent": 0.0,
+    "transform": 0.0,
+    "indeterminate": 0.14044024595706606
+   },
+   "dominant": "convergent",
+   "mean_lat": 2.122737851514215,
+   "mean_lon": -83.61505572079729,
+   "overriding": 17,
+   "subducting": 12,
+   "polarity_confidence": 0.0039224542274495944
+  },
+  "13-19": {
+   "plates": [
+    13,
+    19
+   ],
+   "boundary_px": 725,
+   "fractions": {
+    "convergent": 0.9724221397331706,
+    "divergent": 0.0027529895114820594,
+    "transform": 0.0,
+    "indeterminate": 0.02482487075534752
+   },
+   "dominant": "convergent",
+   "mean_lat": -13.076791487068965,
+   "mean_lon": 39.860519935344826,
+   "overriding": 19,
+   "subducting": 13,
+   "polarity_confidence": 0.011808885473160436
+  },
+  "14-15": {
+   "plates": [
+    14,
+    15
+   ],
+   "boundary_px": 1875,
+   "fractions": {
+    "convergent": 0.05594703934722168,
+    "divergent": 0.9440529606527782,
+    "transform": 0.0,
+    "indeterminate": 0.0
+   },
+   "dominant": "divergent",
+   "mean_lat": 75.413859375,
+   "mean_lon": -97.976015625
+  },
+  "14-17": {
+   "plates": [
+    14,
+    17
+   ],
+   "boundary_px": 1081,
+   "fractions": {
+    "convergent": 0.949362724311555,
+    "divergent": 0.0062059084837504525,
+    "transform": 0.0,
+    "indeterminate": 0.04443136720469464
+   },
+   "dominant": "convergent",
+   "mean_lat": 56.17625643212303,
+   "mean_lon": -112.1205499103839,
+   "overriding": 17,
+   "subducting": 14,
+   "polarity_confidence": 0.006758092283877903
+  },
+  "15-18": {
+   "plates": [
+    15,
+    18
+   ],
+   "boundary_px": 1399,
+   "fractions": {
+    "convergent": 0.9726182000949243,
+    "divergent": 0.017695668208558325,
+    "transform": 0.0,
+    "indeterminate": 0.00968613169651742
+   },
+   "dominant": "convergent",
+   "mean_lat": 76.73341588858113,
+   "mean_lon": 106.02204001742317,
+   "overriding": 18,
+   "subducting": 15,
+   "polarity_confidence": 0.019357960767656158
+  }
+ }
+}
