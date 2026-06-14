@@ -1,0 +1,52 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+=========================================================
+
+SPDX-License-Identifier: CC-BY-4.0
+
+This license applies to the dataset and the analyses in this repository —
+specifically the contents of `data/`, `docs/`, `reports/`, `tools/`, and
+`scripts/`. It does NOT apply to `third_party/`, which is governed by its own
+license (see "Third-party content" below).
+
+Copyright (c) 2026 the repository authors.
+
+This work is licensed under the Creative Commons Attribution 4.0 International
+License. You are free to:
+
+  * Share — copy and redistribute the material in any medium or format.
+  * Adapt — remix, transform, and build upon the material for any purpose, even
+    commercially.
+
+Under the following terms:
+
+  * Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any reasonable
+    manner, but not in any way that suggests the licensor endorses you or your
+    use.
+  * No additional restrictions — You may not apply legal terms or technological
+    measures that legally restrict others from doing anything the license
+    permits.
+
+The full legal code of CC BY 4.0 is published at:
+
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+and the human-readable summary at:
+
+    https://creativecommons.org/licenses/by/4.0/
+
+Disclaimer: This license is provided "as-is" without warranties. To the extent
+possible under law, the licensor disclaims liability for uses of this work.
+
+Suggested attribution
+----------------------
+"Orogen planet 06cy8w6z6a89kow6psje93 dataset and analyses, CC BY 4.0." The
+underlying planet was generated with World Orogen (https://orogen.studio).
+
+Third-party content
+-------------------
+The directory `third_party/planet_heightmap_generation/` contains a snapshot of
+the World Orogen generator by raguilar011095, licensed under the GNU General
+Public License v3.0. That directory is a separate work, merely aggregated here;
+it retains its own LICENSE and is NOT covered by CC BY 4.0. See
+`third_party/planet_heightmap_generation/PROVENANCE.md`.

@@ -22,7 +22,7 @@ const repoRoot = path.resolve(here, '..', '..');
 function parseArgs(argv) {
     const args = {
         data: path.join(repoRoot, 'data', 'orogen_regions_full'),
-        out: path.join(repoRoot, 'output'),
+        out: path.join(repoRoot, 'reports', 'regional'),
         grid: 0.125,
         region: null,
         maps: true,

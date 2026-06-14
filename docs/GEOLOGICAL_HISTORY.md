@@ -55,21 +55,21 @@ Functional labels (after the essay's A-J / i-ii-iii / 1-2-3 convention):
 
 The starting point: what the generated planet looks like today.
 
-![Present elevation](../tectonics/maps/present/present_elevation.png)
+![Present elevation](../reports/tectonics/maps/present/present_elevation.png)
 
 **Continents.** 4 major landmasses — `G` (20.17 Mkm²), `AIJ` (28.34 Mkm²), `CEF` (27.33 Mkm²), `BDH` (27.5 Mkm²), plus 11 microcontinents and many islands.
 
 **Plates.** 20 super-plates (16 oceanic, 4 continental). Inferred motions come from a slab-pull/ridge-push force balance (plate Euler poles are not exported, so directions are heuristic; see the confidence column in `out/INVENTORY.md`).
 
-![Plates](../tectonics/maps/present/present_plates.png)
+![Plates](../reports/tectonics/maps/present/present_plates.png)
 
 **Boundaries.** Classified from the generator's `margins` field and boundary-pixel stress: ridges (divergent), trenches (convergent, with subduction polarity from back-arc and trench placement), and transforms.
 
-![Boundaries](../tectonics/maps/present/present_boundaries.png)
+![Boundaries](../reports/tectonics/maps/present/present_boundaries.png)
 
 **Tectonic features.** The belts, trenches, basins, fold ridges and hotspots that the history must explain:
 
-![Features](../tectonics/maps/present/present_features.png)
+![Features](../reports/tectonics/maps/present/present_features.png)
 
 | feature | location | character |
 |---|---|---|
@@ -87,7 +87,7 @@ The starting point: what the generated planet looks like today.
 | T5 trench | [-55.9, -39.6] | min -4.36 km |
 | T6 trench | [32.0, 86.7] | min -3.27 km |
 
-![Margins](../tectonics/maps/present/present_margins.png)
+![Margins](../reports/tectonics/maps/present/present_margins.png)
 
 Coastlines split roughly half active / half passive — consistent with a world ~100 Myr past a supercontinent breakup.
 
@@ -98,7 +98,7 @@ Across the cycle: 5 LIP, 2 arc accretion, 3 failed rift, 5 hotspot track, 5 note
 
 ### Stage T-750 Myr
 
-![Stage T-750](../tectonics/maps/stages/stage_T750.png)
+![Stage T-750](../reports/tectonics/maps/stages/stage_T750.png)
 
 The story opens mid-convergence. The ten cratons ride six shrinking plates toward a common center near 25S 0E, pulled by the slab girdle of the closing pre-cycle oceans. Active margins face inward on almost every block.
 
@@ -108,7 +108,7 @@ The story opens mid-convergence. The ten cratons ride six shrinking plates towar
 
 ### Stage T-700 Myr
 
-![Stage T-700](../tectonics/maps/stages/stage_T700.png)
+![Stage T-700](../reports/tectonics/maps/stages/stage_T700.png)
 
 First assembly collisions. The A-J group meets H along a north-south suture; the southern belt C-E-F docks soon after. These Ural-type orogens have had 700 Myr of erosion; today they survive only as basement structure inside the continents.
 
@@ -119,7 +119,7 @@ First assembly collisions. The A-J group meets H along a north-south suture; the
 
 ### Stage T-650 Myr
 
-![Stage T-650](../tectonics/maps/stages/stage_T650.png)
+![Stage T-650](../reports/tectonics/maps/stages/stage_T650.png)
 
 G arrives last and S1 is complete: every craton in one landmass centered near 25S, ringed by trenches dipping under its margins. Sea level falls; the interior dries into a vast continental climate. EXT, the world-ocean, surrounds everything.
 
@@ -130,7 +130,7 @@ G arrives last and S1 is complete: every craton in one landmass centered near 25
 
 ### Stage T-600 Myr
 
-![Stage T-600](../tectonics/maps/stages/stage_T600.png)
+![Stage T-600](../reports/tectonics/maps/stages/stage_T600.png)
 
 Quiet tenure. Heat trapped under the huge lid builds plume heads beneath the western flank and the C-D gap. The land bulges in broad domes; rivers radiate off them. The exterior margins remain active, slowly pulling at the lid from all sides.
 
@@ -140,7 +140,7 @@ Quiet tenure. Heat trapped under the huge lid builds plume heads beneath the wes
 
 ### Stage T-550 Myr
 
-![Stage T-550](../tectonics/maps/stages/stage_T550.png)
+![Stage T-550](../reports/tectonics/maps/stages/stage_T550.png)
 
 The first Large Igneous Province (L1) erupts across the A-F neighborhood: kilometer-thick flood basalts over a few hundred thousand years. The crust beneath is weakened and primed to tear.
 
@@ -150,7 +150,7 @@ The first Large Igneous Province (L1) erupts across the A-F neighborhood: kilome
 
 ### Stage T-500 Myr
 
-![Stage T-500](../tectonics/maps/stages/stage_T500.png)
+![Stage T-500](../reports/tectonics/maps/stages/stage_T500.png)
 
 Rifting begins. A three-armed rift (R1) opens on the old L1 scar; two arms link into a through-going rift between the western flank and the core, while the third arm fails and is preserved as aulacogen AU1 in A. L2 floods the junction as the lithosphere finally parts.
 
@@ -162,7 +162,7 @@ Rifting begins. A three-armed rift (R1) opens on the old L1 scar; two arms link 
 
 ### Stage T-450 Myr
 
-![Stage T-450](../tectonics/maps/stages/stage_T450.png)
+![Stage T-450](../reports/tectonics/maps/stages/stage_T450.png)
 
 Breakup. The western flank (A, I, J, C, E, F and their terranes) tears away along the new Central Ridge; zig-zag rifted margins face the young CENTRAL ocean. H splits from B across the small H-B Seaway. S1 is dead after ~200 Myr of tenure.
 
@@ -176,7 +176,7 @@ Breakup. The western flank (A, I, J, C, E, F and their terranes) tears away alon
 
 ### Stage T-400 Myr
 
-![Stage T-400](../tectonics/maps/stages/stage_T400.png)
+![Stage T-400](../reports/tectonics/maps/stages/stage_T400.png)
 
 Dispersal in earnest. The west flank itself splits along the Western Ridge: A-J-I head northwest, C-E-F southwest. G casts off toward the northeast across the new Northern Ocean. Four LIPs in 100 Myr - L1 through L4 - have peppered the breakup, and a fifth is coming. The fragments now ride toward the trenches of EXT.
 
@@ -192,7 +192,7 @@ Dispersal in earnest. The west flank itself splits along the Western Ridge: A-J-
 
 ### Stage T-350 Myr
 
-![Stage T-350](../tectonics/maps/stages/stage_T350.png)
+![Stage T-350](../reports/tectonics/maps/stages/stage_T350.png)
 
 The leading edges harden. Old exterior crust founders in new trenches ahead of I and the C-E-F group; coastal volcanic arcs rise. Behind them, passive margins quietly accumulate shelf sediment. L5 erupts at sea - the last gasp of the breakup plume family.
 
@@ -203,7 +203,7 @@ The leading edges harden. Old exterior crust founders in new trenches ahead of I
 
 ### Stage T-300 Myr
 
-![Stage T-300](../tectonics/maps/stages/stage_T300.png)
+![Stage T-300](../reports/tectonics/maps/stages/stage_T300.png)
 
 G plows north, sweeping up island arcs along its leading edge. The CENTRAL ocean is now wide enough that its ridge breaks into long transform-offset segments. H drifts at its farthest from B; the H-B Seaway is at maximum width.
 
@@ -214,7 +214,7 @@ G plows north, sweeping up island arcs along its leading edge. The CENTRAL ocean
 
 ### Stage T-250 Myr
 
-![Stage T-250](../tectonics/maps/stages/stage_T250.png)
+![Stage T-250](../reports/tectonics/maps/stages/stage_T250.png)
 
 Fast-moving G overruns young, buoyant ridge crust: the slab goes flat and Laramide-style basement uplifts sweep 1300 km into G's interior - the O4 belt. Meanwhile the old H-B Seaway crust grows dense enough to founder; a new east-dipping trench under B begins pulling H home.
 
@@ -225,7 +225,7 @@ Fast-moving G overruns young, buoyant ridge crust: the slab goes flat and Larami
 
 ### Stage T-200 Myr
 
-![Stage T-200](../tectonics/maps/stages/stage_T200.png)
+![Stage T-200](../reports/tectonics/maps/stages/stage_T200.png)
 
 The first great post-breakup collision: A and J close on I from two sides and weld into the continent AIJ along the broad O1 belt - 700 km of stacked crust, 4 km peaks in its day. Subduction steps outboard to AIJ's Pacific-style western rim. Far south, C's seaward margin settles into the long Andean regime that still builds the O3 cordillera.
 
@@ -239,7 +239,7 @@ The first great post-breakup collision: A and J close on I from two sides and we
 
 ### Stage T-150 Myr
 
-![Stage T-150](../tectonics/maps/stages/stage_T150.png)
+![Stage T-150](../reports/tectonics/maps/stages/stage_T150.png)
 
 The CENTRAL ocean, now 300 Myr old at its eastern edge, begins to be consumed: a trench locks in along BDH's west coast. The planet is entering the early signs of the NEXT assembly even as the current oceans still widen elsewhere - exactly Earth's present condition.
 
@@ -251,7 +251,7 @@ The CENTRAL ocean, now 300 Myr old at its eastern edge, begins to be consumed: a
 
 ### Stage T-100 Myr
 
-![Stage T-100](../tectonics/maps/stages/stage_T100.png)
+![Stage T-100](../reports/tectonics/maps/stages/stage_T100.png)
 
 H comes home: the seaway closes and the O2 belt rises across the B-D-H triple suture, completing the continent BDH almost exactly where its pieces stood in S1 - a textbook introverted Wilson cycle nested inside the larger extroversion. In the oceans, five mantle plumes light up the hotspot chains we can still trace.
 
@@ -268,7 +268,7 @@ H comes home: the seaway closes and the O2 belt rises across the B-D-H triple su
 
 ### Stage T-50 Myr
 
-![Stage T-50](../tectonics/maps/stages/stage_T050.png)
+![Stage T-50](../reports/tectonics/maps/stages/stage_T050.png)
 
 The modern mountain age. AIJ's far western rim takes the full force of fast convergence - ridge crust subducts, arcs dock, and the O5 cordillera shoots past 8 km, the planet's highest ground. On the far side of the world micro_4 slams into G, raising O6. Even the young CENTRAL ocean now hosts a new trench: the long turn toward the next supercontinent has begun.
 
@@ -281,7 +281,7 @@ The modern mountain age. AIJ's far western rim takes the full force of fast conv
 
 ### Stage T-0 (present) Myr
 
-![Stage T-0 (present)](../tectonics/maps/stages/stage_T000.png)
+![Stage T-0 (present)](../reports/tectonics/maps/stages/stage_T000.png)
 
 Today the planet looks like Earth ~100 Myr after a breakup: four dispersed continents, half the coastline active, young interior sutures (O1, O2) wearing down while collision belts on the rims (O5, O6) still climb. The CENTRAL and WESTERN oceans are aging into their first trenches. The cycle is turning over.
 
@@ -342,7 +342,7 @@ Every present-day tectonic feature traced to the event that made it. This is the
 
 ## 7. Validation
 
-Generated by `tectonics/scripts/60_validate.py`, which checks the history against the essays' quantitative rules of thumb. The run passes with zero hard failures; remaining warnings are sub-30% block overlaps during the tightly-packed supercontinent assembly, where continents are expected to abut.
+Generated by `tools/tectonics-pipeline/scripts/60_validate.py`, which checks the history against the essays' quantitative rules of thumb. The run passes with zero hard failures; remaining warnings are sub-30% block overlaps during the tightly-packed supercontinent assembly, where continents are expected to abut.
 
 
 ## Block speeds (cm/yr per 50-Myr stage)
@@ -437,19 +437,19 @@ The whole package is regenerated from the planet data by running, from the repo
 root:
 
 ```bash
-pip install -r tectonics/requirements.txt
-python3 tectonics/scripts/00_env_check.py
-python3 tectonics/scripts/10_ingest.py        # -> out/cache/columns.npz
-python3 tectonics/scripts/15_rasterize.py     # -> out/cache/rasters.npz
-python3 tectonics/scripts/20_boundaries.py    # -> out/boundary_segments.json
-python3 tectonics/scripts/25_inventory.py     # -> out/inventory.json, INVENTORY.md
-python3 tectonics/scripts/30_render_present.py # -> maps/present/*.png
-python3 tectonics/scripts/50_render_stages.py # -> maps/stages/*.png
-python3 tectonics/scripts/60_validate.py      # -> out/VALIDATION.md (exit 0 = valid)
-python3 tectonics/scripts/70_build_doc.py     # -> docs/GEOLOGICAL_HISTORY.md
+pip install -r tools/tectonics-pipeline/requirements.txt
+python3 tools/tectonics-pipeline/scripts/00_env_check.py
+python3 tools/tectonics-pipeline/scripts/10_ingest.py        # -> out/cache/columns.npz
+python3 tools/tectonics-pipeline/scripts/15_rasterize.py     # -> out/cache/rasters.npz
+python3 tools/tectonics-pipeline/scripts/20_boundaries.py    # -> out/boundary_segments.json
+python3 tools/tectonics-pipeline/scripts/25_inventory.py     # -> out/inventory.json, INVENTORY.md
+python3 tools/tectonics-pipeline/scripts/30_render_present.py # -> maps/present/*.png
+python3 tools/tectonics-pipeline/scripts/50_render_stages.py # -> maps/stages/*.png
+python3 tools/tectonics-pipeline/scripts/60_validate.py      # -> out/VALIDATION.md (exit 0 = valid)
+python3 tools/tectonics-pipeline/scripts/70_build_doc.py     # -> docs/GEOLOGICAL_HISTORY.md
 ```
 
-To revise the history, edit `tectonics/history/history.yaml` (block keyframes,
+To revise the history, edit `tools/tectonics-pipeline/history/history.yaml` (block keyframes,
 events, ocean basins, orogen ages), then re-run `50_render_stages.py`,
 `60_validate.py`, and `70_build_doc.py`. The validator gates correctness; keep it
 at zero failures.

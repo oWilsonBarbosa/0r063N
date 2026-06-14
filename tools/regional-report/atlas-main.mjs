@@ -28,7 +28,7 @@ const log = (msg) => console.log(`[${((Date.now() - t0) / 1000).toFixed(1)}s] ${
 function parseArgs(argv) {
     const args = {
         data: path.join(repoRoot, 'data', 'orogen_regions_full'),
-        out: path.join(repoRoot, 'output', 'atlas'),
+        out: path.join(repoRoot, 'reports', 'regional', 'atlas'),
         grid: 0.125,
     };
     for (let i = 2; i < argv.length; i++) {

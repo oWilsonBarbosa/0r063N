@@ -1,4 +1,30 @@
-# Paleoclimate of planet `06cy8w6z6a89kow6psje93`
+"""Assemble docs/PALEOCLIMATE.md from paleoclimate.yaml + climate_summary.json
++ the rendered figures. Deterministic; narrative prose lives in the YAML."""
+
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from lib import data_io, history_schema, paleoclimate_schema
+
+hist = history_schema.load(data_io.HISTORY_DIR / "history.yaml")
+pc = paleoclimate_schema.load(data_io.HISTORY_DIR / "paleoclimate.yaml", history=hist)
+with open(data_io.OUT_DIR / "climate_summary.json") as f:
+    summary = json.load(f)
+meta = data_io.load_meta()
+
+MAPS = "../reports/tectonics/maps/climate"
+DOC = data_io.REPO_ROOT / "docs" / "PALEOCLIMATE.md"
+
+anchor = summary["anchor_t0"]
+calA = summary["calibration_formula_only"]
+calB = summary["calibration_full_t0"]
+truth = anchor["koppen_major_land_fractions"]
+
+parts = []
+
+parts.append(f"""# Paleoclimate of planet `{meta['planetCode']}`
 
 A 750-Myr climate history layered on the plate-tectonic reconstruction in
 [GEOLOGICAL_HISTORY.md](GEOLOGICAL_HISTORY.md). For every 50-Myr stage of the
@@ -52,27 +78,26 @@ climate.
 ## 2. Present-day calibration
 
 The model at T-0 (true geography, dT = 0) against the generator's full
-climate solution (2,560,001 cells):
+climate solution ({meta['numRegions']:,} cells):
 
 | Köppen major class | generator (truth) | zonal model | deviation |
-|---|---:|---:|---:|
-| A | 23.3% | 14.6% | 8.8 pp |
-| B | 27.0% | 26.4% | 0.6 pp |
-| C | 17.8% | 23.9% | 6.0 pp |
-| D | 16.3% | 19.6% | 3.3 pp |
-| E | 15.4% | 15.5% | 0.1 pp |
-
+|---|---:|---:|---:|""")
+model_fr = calB["stats"]["koppen_major"]
+for m in "ABCDE":
+    parts.append(f"| {m} | {100 * truth[m]:.1f}% | {100 * model_fr[m]:.1f}% | "
+                 f"{calB['deviation_pp'][m]:.1f} pp |")
+parts.append(f"""
 Per-pixel agreement of the full pipeline against the rasterized ground truth:
-**49%** on major class
-(20% on the exact 30-class code — a harsh
+**{100 * calB['grid_major_agreement']:.0f}%** on major class
+({100 * calB['grid_full_agreement']:.0f}% on the exact 30-class code — a harsh
 metric, since one-class boundary shifts count as misses). Formula-only run on
 the true per-cell geography: seasonal temperature RMSE
-**7.6 / 7.4 °C** (summer/winter),
-annual precipitation RMSE 468 mm.
-Global mean temperature from the data: **16.22 °C**
-(modeled at T-0: 17.24 °C).
+**{calA['tS_rmse_C']:.1f} / {calA['tW_rmse_C']:.1f} °C** (summer/winter),
+annual precipitation RMSE {calA['pAnn_rmse_mm']:.0f} mm.
+Global mean temperature from the data: **{anchor['global_mean_C']} °C**
+(modeled at T-0: {calB['stats']['global_mean_C']} °C).
 
-![model vs truth](../reports/tectonics/maps/climate/koppen_present_model_vs_truth.png)
+![model vs truth]({MAPS}/koppen_present_model_vs_truth.png)
 
 With the parameterized gyres, land-following ITCZ and moisture advection in
 place, every major class lands within ~9 pp of the generator (B, D and E
@@ -85,128 +110,43 @@ cell).
 
 ## 3. The 750-Myr climate curve
 
-![climate curve](../reports/tectonics/maps/climate/climate_curve.png)
+![climate curve]({MAPS}/climate_curve.png)
 
 | stage | dT (°C) | CO₂ (ppm)* | global mean (°C) | land ice+tundra | ice state |
-|---|---:|---:|---:|---:|---|
-| T-750 | -1.0 | 230 | 16.9 | 5% | polar |
-| T-700 | -2.5 | 155 | 15.7 | 6% | polar |
-| T-650 | -5.5 | 85 | 12.9 | 9% | polar |
-| T-600 | -8.8 | 38 | 9.6 | 17% | major_glaciation |
-| T-550 | -3.5 | 125 | 14.9 | 5% | polar |
-| T-500 | -1.0 | 220 | 17.4 | 3% | polar |
-| T-450 | +2.0 | 445 | 20.4 | 1% | none |
-| T-400 | +4.0 | 700 | 22.2 | 0% | none |
-| T-350 | +4.5 | 790 | 22.6 | 1% | none |
-| T-300 | +3.5 | 630 | 21.6 | 1% | none |
-| T-250 | +2.0 | 445 | 20.1 | 2% | none |
-| T-200 | +0.5 | 315 | 18.4 | 3% | none |
-| T-150 | -0.5 | 250 | 17.3 | 4% | polar |
-| T-100 | -1.5 | 200 | 16.2 | 7% | polar |
-| T-50 | -1.0 | 222 | 16.4 | 8% | polar |
-| T0 | +0.0 | 280 | 17.2 | 9% | polar |
-
-\* illustrative, ~3 °C per CO₂ doubling from a 280 ppm anchor.
+|---|---:|---:|---:|---:|---|""")
+for s, sf in zip(summary["stages"], pc["stages"]):
+    parts.append(f"| T{s['t']} | {s['dT_global']:+.1f} | {sf.get('co2_ppm', '—')} | "
+                 f"{s['global_mean_C']:.1f} | {100 * s['ice_land_frac']:.0f}% | "
+                 f"{s['ice_hint']}{'' if s['ice_hint_met'] else ' (!)'} |")
+parts.append("""
+\\* illustrative, ~3 °C per CO₂ doubling from a 280 ppm anchor.
 
 The drivers behind every swing are the events of the tectonic history — each
 stage's forcing lists them in `paleoclimate.yaml`, and the validator rejects
 any forcing change without a matching tectonic event.
+""")
 
-## 4. Climate eras
+parts.append("## 4. Climate eras\n")
+for era in pc["eras"]:
+    t0, t1 = era["span"]
+    parts.append(f"### {era['name']} (T{t0} … T{t1})\n")
+    parts.append(era["narrative"].strip() + "\n")
+    for sf in pc["stages"]:
+        t = sf["t"]
+        in_era = (t0 <= t < t1) or (t == 0 and t1 == 0)
+        if not in_era:
+            continue
+        tag = f"T{t}" if t < 0 else "T-0 (present)"
+        parts.append(f"**Stage {tag}** — {sf.get('narrative', '').strip()}\n")
+        parts.append(f"![Koppen {tag}]({MAPS}/koppen_T{abs(t):03d}.png)\n")
 
-### Assembly cool-down (T-750 … T-650)
+glac = [s for s in summary["stages"] if s["ice_hint"] == "major_glaciation"]
+gmax = max(glac, key=lambda s: s["ice_land_frac"]) if glac else None
+parts.append(f"""## 5. The S1 glaciation
 
-Converging continents close the pre-cycle oceans; fresh collisional orogens (the S1 sutures) weather rapidly and draw CO2 down. The world slides from mild into cold as S1 locks together.
-
-**Stage T-750** — Mild-cool world of dispersed converging continents.
-
-![Koppen T-750](../reports/tectonics/maps/climate/koppen_T750.png)
-
-**Stage T-700** — First assembly collisions; weathering accelerates.
-
-![Koppen T-700](../reports/tectonics/maps/climate/koppen_T700.png)
-
-### S1 icehouse (T-650 … T-550)
-
-The deep freeze of the cycle. A single supercontinent centered near 25S pushes its southern margins (D, micro_10, micro_11) past 55S, weathering stays high, and ridge length - and so CO2 outgassing - is at a minimum. Continental ice sheets grow on the southern flank of S1; this is the major glaciation of the modeled history.
-
-**Stage T-650** — S1 assembled; cold deepens, southern ice sheets nucleate.
-
-![Koppen T-650](../reports/tectonics/maps/climate/koppen_T650.png)
-
-**Stage T-600** — Glacial maximum of the S1 icehouse.
-
-![Koppen T-600](../reports/tectonics/maps/climate/koppen_T600.png)
-
-### Breakup hothouse (T-550 … T-350)
-
-LIPs L1-L5 erupt in sequence as S1 rifts apart, and thousands of kilometers of new mid-ocean ridge (Central, Western, Northern) outgas CO2 far faster than the young passive margins can weather it. The ice sheets collapse and the planet swings to its warmest state, peaking around T-400..T-350 with essentially ice-free poles.
-
-**Stage T-550** — L1 erupts; the thaw begins.
-
-![Koppen T-550](../reports/tectonics/maps/climate/koppen_T550.png)
-
-**Stage T-500** — Rifting starts; outgassing climbs.
-
-![Koppen T-500](../reports/tectonics/maps/climate/koppen_T500.png)
-
-**Stage T-450** — Breakup; new ridges outgas freely.
-
-![Koppen T-450](../reports/tectonics/maps/climate/koppen_T450.png)
-
-**Stage T-400** — Hothouse; three young oceans spreading at once.
-
-![Koppen T-400](../reports/tectonics/maps/climate/koppen_T400.png)
-
-### Dispersal moderation (T-350 … T-250)
-
-The LIP era ends and ridge production stabilizes. The dispersing continents green up; climate settles into a warm but moderating state.
-
-**Stage T-350** — Peak warmth; ice-free poles.
-
-![Koppen T-350](../reports/tectonics/maps/climate/koppen_T350.png)
-
-**Stage T-300** — LIP era over; slow moderation.
-
-![Koppen T-300](../reports/tectonics/maps/climate/koppen_T300.png)
-
-### Collisional cooling (T-250 … T-50)
-
-The great drawdown. The O4 flat-slab uplift on G, then the O1 (AIJ assembly) and O2 (H-B closure) himalayan collisions expose vast tracts of fresh rock at low latitudes; silicate weathering accelerates and CO2 falls for 200 Myr. By T-100 polar ice has returned to the far-southern lands (micro_11 is drifting over 70S).
-
-**Stage T-250** — O4 uplift starts the long drawdown.
-
-![Koppen T-250](../reports/tectonics/maps/climate/koppen_T250.png)
-
-**Stage T-200** — O1 collision; fresh himalayan-scale weathering.
-
-![Koppen T-200](../reports/tectonics/maps/climate/koppen_T200.png)
-
-**Stage T-150** — Cooling continues; far-southern frost returns.
-
-![Koppen T-150](../reports/tectonics/maps/climate/koppen_T150.png)
-
-**Stage T-100** — O2 collision; polar ice locks in on micro_11.
-
-![Koppen T-100](../reports/tectonics/maps/climate/koppen_T100.png)
-
-### Modern icehouse (T-50 … T0)
-
-The present regime: a moderately cold world with permanent polar ice on the far-southern fragments and high-latitude tundra fringes on G and J, active O5/O6 orogens still weathering, and dispersed continents keeping the climate zonal and wet-margined - analogous to Earth's late Cenozoic.
-
-**Stage T-50** — Slight recovery as O2 weathering wanes; O5/O6 rise.
-
-![Koppen T-50](../reports/tectonics/maps/climate/koppen_T050.png)
-
-**Stage T-0 (present)** — Present day - the calibration anchor; permanent ice at the far south.
-
-![Koppen T-0 (present)](../reports/tectonics/maps/climate/koppen_T000.png)
-
-## 5. The S1 glaciation
-
-The modeled history's one major ice age peaks at **T-600** with
-17% of all land under ice or tundra and global
-mean temperature 9.6 °C. It is the textbook
+The modeled history's one major ice age peaks at **T{gmax['t']}** with
+{100 * gmax['ice_land_frac']:.0f}% of all land under ice or tundra and global
+mean temperature {gmax['global_mean_C']:.1f} °C. It is the textbook
 supercontinent glaciation: S1's assembly killed most subduction-ridge systems
 (minimum CO₂ outgassing) while its fresh collisional sutures weathered at
 maximum rate, and the D/micro_10/micro_11 flank of the supercontinent sat
@@ -243,4 +183,7 @@ python3 tools/tectonics-pipeline/scripts/90_build_climate_doc.py
 `80_paleoclimate.py` exits non-zero if the T-0 calibration drifts more than
 20 pp on any Köppen major class or the stage geometry no longer reproduces
 the present land mask.
+""")
 
+DOC.write_text("\n".join(parts) + "\n")
+print(f"wrote {DOC} ({len(''.join(parts).splitlines())} lines)")

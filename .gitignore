@@ -1,3 +1,14 @@
+# Python (tectonics pipeline)
 __pycache__/
 *.pyc
-tectonics/out/cache/
+reports/tectonics/cache/
+
+# Node (regional-report)
+node_modules/
+
+# Dataset helper outputs (scripts/reassemble.py) — derived, do not commit
+/orogen_regions_full.csv
+/orogen_regions_full.csv.gz
+
+# OS / editor cruft
+.DS_Store
