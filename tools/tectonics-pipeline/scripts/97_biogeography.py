@@ -25,7 +25,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from lib import data_io, mapstyle, raster
+from lib import continents, data_io, mapstyle, raster
 
 H, Wd = raster.H, raster.W
 MIN_CELLS = 2000
@@ -105,26 +105,9 @@ macro = np.array([MACRO_OF[t] for t in terr], dtype=object)
 npp = miami_npp(k, cols["tS"][island], cols["tW"][island], cols["pS"][island], cols["pW"][island])
 tmean = (temp_c(cols["tS"][island]) + temp_c(cols["tW"][island])) / 2.0
 
-# ---- continent of each land cell (connected landmass) -----------------------
-inv = data_io.load_inventory()
+# ---- continent of each land cell (shared connected-landmass assignment) ------
 land_ras = data_io.load_rasters()["isLand"] == 1
-cont_labels, _ = raster.connected_components(land_ras)
-label2name, label2cratons = {}, {}
-for key, c in inv["continents"].items():
-    clat, clon = c["centroid"]
-    r, col = raster.pixel_indices(np.array([clat]), np.array([clon]))
-    lab = int(cont_labels[r[0], col[0]])
-    if lab == 0:                                        # centroid fell on an ocean pixel: take nearest land label
-        rr, cc = np.nonzero(cont_labels > 0)
-        j = np.argmin((rr - r[0]) ** 2 + (cc - col[0]) ** 2)
-        lab = int(cont_labels[rr[j], cc[j]])
-    label2name[lab] = c.get("name", key)
-    label2cratons[c.get("name", key)] = "·".join(c["cratons"])
-label2cratons["Islands"] = "—"
-
-cr, cc = raster.pixel_indices(lat, lon)
-cell_label = cont_labels[cr, cc]
-continent = np.array([label2name.get(int(l), "Islands") for l in cell_label], dtype=object)
+continent, label2cratons = continents.assign(lat, lon)
 
 # ---- province roll-up -------------------------------------------------------
 total_land = int(island.sum())

@@ -42,8 +42,8 @@ Functional labels (after the essay's A-J / i-ii-iii / 1-2-3 convention):
   intact for the whole history and are the anchor points of every reconstruction.
 - **Microcontinents** `micro_1`-`micro_11`: smaller continental blocks, arc
   terranes, and oceanic plateaus that rift, drift, and accrete.
-- **Continents**: named by the cratons they contain (e.g. `AIJ`, `CEF`, `BDH`,
-  `G`).
+- **Continents**: the four major landmasses carry names (authored in
+  `continents.yaml`) alongside their craton-group key — Borea (`G`), Meridia (`AIJ`), Selvana (`CEF`), Sirocca (`BDH`).
 - **Ocean basins**: named (Exterior, Central, Western, Northern, H-B Seaway).
 - **Present-day ocean plates**: roman numerals `i`-`xvi` by area.
 - **Features**: orogens `O1`-`On`, trenches `T1`-`Tn`, back-arc basins
