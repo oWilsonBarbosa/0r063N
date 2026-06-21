@@ -30,13 +30,19 @@ python3 tools/tectonics-pipeline/scripts/15_rasterize.py   # -> reports/tectonic
 python3 tools/tectonics-pipeline/scripts/20_boundaries.py  # classify boundaries -> reports/tectonics/boundary_segments.json
 python3 tools/tectonics-pipeline/scripts/25_inventory.py   # plates/cratons/continents/features -> reports/tectonics/inventory.json
 python3 tools/tectonics-pipeline/scripts/30_render_present.py # -> reports/tectonics/maps/present/*.png
+python3 tools/tectonics-pipeline/scripts/35_subduction_style.py # -> subduction_style.json + map + docs/SUBDUCTION_STYLE.md
 python3 tools/tectonics-pipeline/scripts/50_render_stages.py  # -> reports/tectonics/maps/stages/*.png
 python3 tools/tectonics-pipeline/scripts/60_validate.py    # -> reports/tectonics/VALIDATION.md (exit 0 = valid)
 python3 tools/tectonics-pipeline/scripts/70_build_doc.py   # -> docs/GEOLOGICAL_HISTORY.md
 python3 tools/tectonics-pipeline/scripts/80_paleoclimate.py   # per-stage climate + T-0 calibration (exit 0 = valid)
 python3 tools/tectonics-pipeline/scripts/85_render_climate.py # -> reports/tectonics/maps/climate/*.png (Koppen stages + curve)
 python3 tools/tectonics-pipeline/scripts/90_build_climate_doc.py # -> docs/PALEOCLIMATE.md
+python3 tools/tectonics-pipeline/scripts/95_continent_profiles.py # -> continent_profiles.json + docs/CONTINENTS.md
 ```
+
+`continents.yaml` is the authored continent-naming map (craton group -> name,
+e.g. `AIJ: Meridia`); `25_inventory.py`, `35_subduction_style.py` and
+`95_continent_profiles.py` read it so the names flow into every output.
 
 `scripts/40_init_history.py` regenerates a blank `history.yaml` skeleton from the
 inventory; it refuses to overwrite the authored file.
@@ -57,6 +63,10 @@ and documents are committed.
 | `tools/tectonics-pipeline/lib/paleoclimate_schema.py` | forcing-curve schema + validation |
 | `tools/tectonics-pipeline/history/history.yaml` | **the authored timeline** — edit this to revise the history |
 | `tools/tectonics-pipeline/history/paleoclimate.yaml` | **the authored climate forcing curve** (dT per stage, eras) |
+| `tools/tectonics-pipeline/continents.yaml` | **authored continent names** (craton group -> name) |
+| `reports/tectonics/subduction_style.json` | Chilean/Mariana margin + back-arc-province classification |
+| `reports/tectonics/continent_profiles.json` | per-continent area, Köppen bands, mean NPP |
+| `reports/tectonics/maps/present/present_subduction_style.png` | subduction-style map |
 | `reports/tectonics/INVENTORY.md` | present-day tectonic inventory (human-readable) |
 | `reports/tectonics/VALIDATION.md` | validation report against the rules of thumb |
 | `reports/tectonics/climate_summary.json` | climate calibration + per-stage stats |

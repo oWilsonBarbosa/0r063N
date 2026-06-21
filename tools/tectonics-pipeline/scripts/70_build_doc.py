@@ -83,7 +83,8 @@ def present_section():
            "The starting point: what the generated planet looks like today.", "",
            f"![Present elevation]({PRESENT}/present_elevation.png)", "",
            f"**Continents.** {len(conts)} major landmasses — "
-           + ", ".join(f"`{n}` ({c['area_Mkm2']} Mkm²)" for n, c in conts.items())
+           + ", ".join((f"**{c['name']}** (`{n}`, {c['area_Mkm2']} Mkm²)" if c.get('name')
+                        else f"`{n}` ({c['area_Mkm2']} Mkm²)") for n, c in conts.items())
            + f", plus {len(inv['microcontinents'])} microcontinents and many islands.", "",
            f"**Plates.** {len(plates)} super-plates "
            f"({sum(1 for p in plates.values() if p['is_oceanic'])} oceanic, "

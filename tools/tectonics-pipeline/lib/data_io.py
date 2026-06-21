@@ -6,6 +6,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+PIPELINE_DIR = Path(__file__).resolve().parents[1]
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DATA_DIR = REPO_ROOT / "data" / "orogen_regions_full"
 OUT_DIR = REPO_ROOT / "reports" / "tectonics"
@@ -97,3 +98,16 @@ def load_rasters():
 def load_inventory():
     with open(OUT_DIR / "inventory.json") as f:
         return json.load(f)
+
+
+def load_continent_names():
+    """Authored craton-group -> continent-name map from continents.yaml.
+
+    Returns {} if the file is absent so the pipeline still runs unnamed.
+    """
+    import yaml
+
+    f = PIPELINE_DIR / "continents.yaml"
+    if not f.exists():
+        return {}
+    return (yaml.safe_load(f.read_text()) or {}).get("names", {})

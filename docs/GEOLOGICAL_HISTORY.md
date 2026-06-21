@@ -57,7 +57,7 @@ The starting point: what the generated planet looks like today.
 
 ![Present elevation](../reports/tectonics/maps/present/present_elevation.png)
 
-**Continents.** 4 major landmasses — `G` (20.17 Mkm²), `AIJ` (28.34 Mkm²), `CEF` (27.33 Mkm²), `BDH` (27.5 Mkm²), plus 11 microcontinents and many islands.
+**Continents.** 4 major landmasses — **Borea** (`G`, 20.17 Mkm²), **Meridia** (`AIJ`, 28.34 Mkm²), **Selvana** (`CEF`, 27.33 Mkm²), **Sirocca** (`BDH`, 27.5 Mkm²), plus 11 microcontinents and many islands.
 
 **Plates.** 20 super-plates (16 oceanic, 4 continental). Inferred motions come from a slab-pull/ridge-push force balance (plate Euler poles are not exported, so directions are heuristic; see the confidence column in `out/INVENTORY.md`).
 
