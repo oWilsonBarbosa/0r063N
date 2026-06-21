@@ -58,7 +58,8 @@ while the B-D-H core ran a small nested introverted Wilson cycle (the H-B
 Seaway opened and closed again).
 """.replace("{meta_cycle}", str(hist["meta"]["cycle_style"]))
 
-NOMENCLATURE = """## 2. Nomenclature
+_cont_named = ", ".join(f"{c.get('name', k)} (`{k}`)" for k, c in inv["continents"].items())
+NOMENCLATURE = f"""## 2. Nomenclature
 
 Functional labels (after the essay's A-J / i-ii-iii / 1-2-3 convention):
 
@@ -66,8 +67,8 @@ Functional labels (after the essay's A-J / i-ii-iii / 1-2-3 convention):
   intact for the whole history and are the anchor points of every reconstruction.
 - **Microcontinents** `micro_1`-`micro_11`: smaller continental blocks, arc
   terranes, and oceanic plateaus that rift, drift, and accrete.
-- **Continents**: named by the cratons they contain (e.g. `AIJ`, `CEF`, `BDH`,
-  `G`).
+- **Continents**: the four major landmasses carry names (authored in
+  `continents.yaml`) alongside their craton-group key — {_cont_named}.
 - **Ocean basins**: named (Exterior, Central, Western, Northern, H-B Seaway).
 - **Present-day ocean plates**: roman numerals `i`-`xvi` by area.
 - **Features**: orogens `O1`-`On`, trenches `T1`-`Tn`, back-arc basins
@@ -83,7 +84,8 @@ def present_section():
            "The starting point: what the generated planet looks like today.", "",
            f"![Present elevation]({PRESENT}/present_elevation.png)", "",
            f"**Continents.** {len(conts)} major landmasses — "
-           + ", ".join(f"`{n}` ({c['area_Mkm2']} Mkm²)" for n, c in conts.items())
+           + ", ".join((f"**{c['name']}** (`{n}`, {c['area_Mkm2']} Mkm²)" if c.get('name')
+                        else f"`{n}` ({c['area_Mkm2']} Mkm²)") for n, c in conts.items())
            + f", plus {len(inv['microcontinents'])} microcontinents and many islands.", "",
            f"**Plates.** {len(plates)} super-plates "
            f"({sum(1 for p in plates.values() if p['is_oceanic'])} oceanic, "

@@ -159,6 +159,12 @@ for lab in range(1, cn + 1):
                                  "super_plate": int(np.bincount(unit[m].ravel()).argmax())}
         landmass_name[lab] = name
 
+# Attach authored continent names (continents.yaml) where the craton-group key matches.
+continent_names = data_io.load_continent_names()
+for key, c in continents.items():
+    if key in continent_names:
+        c["name"] = continent_names[key]
+
 # ---------------- block raster (terranes) ----------------
 # Block = unit of motion for paleo maps: craton blocks (1..10) within continents,
 # microcontinents (11..), everything else joins the nearest block by BFS.
@@ -297,9 +303,9 @@ for pid, p in sorted(plates.items(), key=lambda kv: -kv[1]["area_Mkm2"]):
 lines += ["", "## Cratons", "", "| craton | area Mkm2 | centroid | super-plate |", "|---|---:|---|---:|"]
 for c, v in cratons.items():
     lines.append(f"| {c} | {v['area_Mkm2']} | {v['centroid']} | {v['super_plate']} |")
-lines += ["", "## Continents", "", "| name | cratons | area Mkm2 | centroid | super-plates |", "|---|---|---:|---|---|"]
+lines += ["", "## Continents", "", "| name | key | cratons | area Mkm2 | centroid | super-plates |", "|---|---|---|---:|---|---|"]
 for nm, v in continents.items():
-    lines.append(f"| {nm} | {','.join(v['cratons'])} | {v['area_Mkm2']} | {v['centroid']} | {v['super_plates']} |")
+    lines.append(f"| {v.get('name', '-')} | {nm} | {','.join(v['cratons'])} | {v['area_Mkm2']} | {v['centroid']} | {v['super_plates']} |")
 lines += ["", "## Microcontinents", ""]
 for nm, v in microcontinents.items():
     lines.append(f"- {nm}: {v['area_Mkm2']} Mkm2 at {v['centroid']} (super-plate {v['super_plate']})")
