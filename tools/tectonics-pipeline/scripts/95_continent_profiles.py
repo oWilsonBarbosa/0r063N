@@ -34,13 +34,14 @@ def temp_c(t):
     return -45.0 + np.clip(t, 0, 1) * 90.0
 
 
-def miami_npp(tS, tW, pS, pW):
-    """Miami model NPP (g/m²/yr), identical to the regional atlas (atlas-plates.mjs)."""
+def miami_npp(koppen, tS, tW, pS, pW):
+    """Miami model NPP (g/m²/yr), ice-corrected: Köppen-EF (code 30) ice caps = 0.
+    Matches the canonical miamiNpp in tools/regional-report/classify.mjs."""
     T = (temp_c(tS) + temp_c(tW)) / 2.0
     P = (np.maximum(0, pS) + np.maximum(0, pW)) * 1000.0
     npp_t = 3000.0 / (1.0 + np.exp(1.315 - 0.119 * T))
     npp_p = 3000.0 * (1.0 - np.exp(-0.000664 * P))
-    return np.minimum(npp_t, npp_p)
+    return np.where(koppen == 30, 0.0, np.minimum(npp_t, npp_p))
 
 
 inv = data_io.load_inventory()
@@ -63,7 +64,7 @@ cont_of_landcell = np.array(
 cols = data_io.load_columns(["koppen", "tS", "tW", "pS", "pW", "isMountain", "elev_km"])
 sel = {k: v[land_idx] for k, v in cols.items()}          # restrict to land cells
 koppen = sel["koppen"].astype(int)
-npp = miami_npp(sel["tS"], sel["tW"], sel["pS"], sel["pW"])
+npp = miami_npp(koppen, sel["tS"], sel["tW"], sel["pS"], sel["pW"])
 band_of = np.array([BANDS.get(int(k), "") for k in range(0, 31)], dtype=object)
 
 profiles = {}

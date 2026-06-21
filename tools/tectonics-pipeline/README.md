@@ -38,7 +38,11 @@ python3 tools/tectonics-pipeline/scripts/80_paleoclimate.py   # per-stage climat
 python3 tools/tectonics-pipeline/scripts/85_render_climate.py # -> reports/tectonics/maps/climate/*.png (Koppen stages + curve)
 python3 tools/tectonics-pipeline/scripts/90_build_climate_doc.py # -> docs/PALEOCLIMATE.md
 python3 tools/tectonics-pipeline/scripts/95_continent_profiles.py # -> continent_profiles.json + docs/CONTINENTS.md
+python3 tools/tectonics-pipeline/scripts/97_biogeography.py # -> biogeography_provinces.csv + map + docs/BIOGEOGRAPHY.md
 ```
+
+NPP everywhere uses the **ice-corrected** Miami model (Köppen-EF ice caps = 0),
+the canonical `miamiNpp` in `tools/regional-report/classify.mjs`.
 
 `continents.yaml` is the authored continent-naming map (craton group -> name,
 e.g. `AIJ: Meridia`); `25_inventory.py`, `35_subduction_style.py` and
@@ -66,7 +70,9 @@ and documents are committed.
 | `tools/tectonics-pipeline/continents.yaml` | **authored continent names** (craton group -> name) |
 | `reports/tectonics/subduction_style.json` | Chilean/Mariana margin + back-arc-province classification |
 | `reports/tectonics/continent_profiles.json` | per-continent area, Köppen bands, mean NPP |
+| `reports/tectonics/biogeography_provinces.csv` | continent × habitat provinces (area, climate, NPP) |
 | `reports/tectonics/maps/present/present_subduction_style.png` | subduction-style map |
+| `reports/tectonics/maps/present/present_biogeography.png` | biogeographic habitat map |
 | `reports/tectonics/INVENTORY.md` | present-day tectonic inventory (human-readable) |
 | `reports/tectonics/VALIDATION.md` | validation report against the rules of thumb |
 | `reports/tectonics/climate_summary.json` | climate calibration + per-stage stats |

@@ -2,7 +2,7 @@
 // Each function returns a PNG buffer.
 
 import { makeCanvas, encodePNG, setPx, fillRect, drawText, textWidth } from './render-png.mjs';
-import { tempC, precipAnnualMm, KOPPEN_CLASSES } from './classify.mjs';
+import { tempC, precipAnnualMm, miamiNpp, KOPPEN_CLASSES } from './classify.mjs';
 
 // Köppen colors (frozen from World Orogen js/koppen.js, scaled to 0-255)
 export const KOPPEN_COLORS = [
@@ -525,15 +525,11 @@ export function plateBasins(ctx) {
 export function plateNpp(ctx) {
     const { grid, data, px } = ctx;
     const cv = newPlate(grid.W, grid.H + 80, 'PLATE 13 - VEGETATION PRODUCTIVITY (MIAMI NPP MODEL)',
-        'NET PRIMARY PRODUCTIVITY FROM ANNUAL TEMPERATURE AND PRECIPITATION');
+        'NET PRIMARY PRODUCTIVITY FROM ANNUAL TEMPERATURE AND PRECIPITATION (ICE CAPS = 0)');
     rasterBand(cv, TITLE_H, grid, 1, p => {
         if (!px.landPx[p]) return [210, 220, 230];
         const c = grid.cellGrid[p];
-        const T = (tempC(data.tS[c]) + tempC(data.tW[c])) / 2;
-        const P = precipAnnualMm(data.pS[c], data.pW[c]);
-        const nppT = 3000 / (1 + Math.exp(1.315 - 0.119 * T));
-        const nppP = 3000 * (1 - Math.exp(-0.000664 * P));
-        return ramp(NPP_RAMP, Math.min(nppT, nppP) / 3000);
+        return ramp(NPP_RAMP, miamiNpp(data.koppen[c], data.tS[c], data.tW[c], data.pS[c], data.pW[c]) / 3000);
     });
     coastOverlay(cv, TITLE_H, grid, 1, p => px.landPx[p]);
     colorBar(cv, 60, TITLE_H + grid.H + 18, 460, 16, NPP_RAMP,
