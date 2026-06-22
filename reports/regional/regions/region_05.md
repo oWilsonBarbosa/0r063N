@@ -134,13 +134,13 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
 | 1 | 1,397 km³/yr | 2,801 km | NW quadrant | NE, 67.4°N 132.8°E | sea |
-| 2 | 621 km³/yr | 2,037 km | NW quadrant | NE, 52.9°N 119.8°E | sea |
+| 2 | 619 km³/yr | 2,037 km | NW quadrant | NE, 52.9°N 119.8°E | sea |
 | 3 | 427 km³/yr | 1,672 km | SW quadrant | NW, 49.6°N 77.9°E | sea |
-| 4 | 245 km³/yr | 903 km | SW quadrant | SW, 44.1°N 83.2°E | sea |
+| 4 | 244 km³/yr | 903 km | SW quadrant | SW, 44.1°N 83.2°E | sea |
 | 5 | 236 km³/yr | 686 km | NE quadrant | NE, 69.8°N 130.6°E | sea |
 | 6 | 200 km³/yr | 1,206 km | NE quadrant | NE, 53.3°N 121.8°E | sea |
 | 7 | 179 km³/yr | 438 km | NE quadrant | NE, 54.8°N 127.8°E | sea |
-| 8 | 101 km³/yr | 1,835 km | SW quadrant | SW, 41.7°N 105.8°E | sea |
+| 8 | 97 km³/yr | 1,835 km | SW quadrant | SW, 41.7°N 105.8°E | sea |
 | 9 | 82 km³/yr | 515 km | NE quadrant | NE, 55.8°N 127.6°E | sea |
 | 10 | 62 km³/yr | 448 km | SW quadrant | SW, 44.1°N 81.8°E | sea |
 

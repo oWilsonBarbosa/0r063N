@@ -135,21 +135,21 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 ## Rivers
 
-27 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+17 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 434 km³/yr | 2,723 km | SW quadrant | NE, 45.2°S 80.9°E | sea |
+| 1 | 423 km³/yr | 2,723 km | SW quadrant | NE, 45.2°S 80.9°E | sea |
 | 2 | 295 km³/yr | 1,872 km | SW quadrant | SW, 62.4°S 63.6°E | sea |
 | 3 | 68 km³/yr | 430 km | SW quadrant | SW, 69.1°S 55.6°E | sea |
-| 4 | 53 km³/yr | 2,375 km | NW quadrant | NE, 37.7°S 73.8°E | sea |
-| 5 | 47 km³/yr | 270 km | SW quadrant | SW, 67.1°S 45.1°E | sea |
-| 6 | 45 km³/yr | 456 km | SW quadrant | SW, 55.6°S 41.3°E | sea |
-| 7 | 44 km³/yr | 3,044 km | NW quadrant | NW, 28.2°S 42.3°E | salt lake |
-| 8 | 44 km³/yr | 2,946 km | NW quadrant | NW, 28.9°S 42.7°E | salt lake |
-| 9 | 41 km³/yr | 2,879 km | NW quadrant | NW, 29.3°S 43.2°E | salt lake |
-| 10 | 41 km³/yr | 2,758 km | NW quadrant | NW, 29.3°S 44.4°E | salt lake |
+| 4 | 47 km³/yr | 270 km | SW quadrant | SW, 67.1°S 45.1°E | sea |
+| 5 | 44 km³/yr | 456 km | SW quadrant | SW, 55.6°S 41.3°E | sea |
+| 6 | 35 km³/yr | 637 km | NE quadrant | NE, 37.7°S 73.8°E | sea |
+| 7 | 34 km³/yr | 366 km | SW quadrant | SW, 65.9°S 47.9°E | sea |
+| 8 | 31 km³/yr | 440 km | SW quadrant | SW, 62.8°S 56.6°E | sea |
+| 9 | 25 km³/yr | 224 km | SW quadrant | SW, 60.3°S 45.2°E | sea |
+| 10 | 24 km³/yr | 125 km | SW quadrant | SW, 69.8°S 52.4°E | sea |
 
-…plus 17 lesser major rivers.
+…plus 7 lesser major rivers.
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

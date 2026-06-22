@@ -13,10 +13,10 @@ Grid 2880×1440 (0.125°); land 106.53 M km².
 
 | check | result | |
 |---|---|:-:|
-| Mass balance — land runoff equals discharge reaching the sea | 34315 vs 34315 km³/yr (error 0.00%) | ✅ |
+| Mass balance — land runoff equals discharge to the sea plus closed-basin loss | 34315 = 33126 to sea + 1189 endorheic km³/yr (error 0.00%) | ✅ |
 | Every land pixel has a downhill receiver (no sinks left after flooding) | 0 orphans | ✅ |
 | Filled surface strictly decreases downstream (no uphill flow) | 0 uphill steps | ✅ |
-| Discharge never decreases downstream (accumulation conserved) | 0 violations | ✅ |
+| Discharge is monotone downstream except at endorheic outlets (accumulation conserved) | 0 unexpected violations | ✅ |
 
 Per-region river and lake counts are assigned from these same global objects
 (a river to the region holding its mouth, a lake to the region holding its
@@ -28,10 +28,10 @@ centroid), so the per-region tallies sum to the global totals by construction.
 |---|---|---|:-:|
 | Global runoff depth | 322 mm/yr | ~310 mm/yr | ✅ |
 | Total runoff | 34,315 km³/yr | ~46,000 (land-scaled ~33,000) | ✅ |
-| Largest river | 2,034 km³/yr (5.9% of all runoff) | Amazon ~14% | ✅ |
+| Largest river | 2,031 km³/yr (5.9% of all runoff) | Amazon ~14% | ✅ |
 | Longest river | 7,904 km | Nile ~6,650 km | ✅ |
 | Hack’s law (length vs basin area) | exponent 0.58 | 0.5–0.6 | ✅ |
-| Major rivers (≥ 15 km³/yr) | 241 | ~50–100 | high — extensive wet land |
+| Major rivers (≥ 15 km³/yr) | 177 (171 to sea, 6 to salt lakes) | ~50–100 | high — extensive wet land |
 
 Runoff rises with humidity exactly as it should (area-weighted mean depth per
 climate band):
@@ -61,6 +61,8 @@ depressions (3.8% of land) are suppressed as artifacts and rivers are
 drawn straight through them. The reported **61 endorheic lakes
 (0.7% of land)** are Earth-plausible, complemented by below-sea-level
 enclosed seas / great lakes detected separately in `analyze.mjs`.
+
+Closed basins are **terminal** in the routing: 1189 km³/yr (3.5% of land runoff) drains into the 61 endorheic lakes and evaporates instead of reaching the sea, so no river is drawn crossing or leaving a salt lake (the priority-flood's spill gradient would otherwise route the inflow straight over the rim).
 
 ---
 

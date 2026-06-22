@@ -130,9 +130,9 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 387 km³/yr | 3,069 km | SW quadrant | NW, 44.4°S 161.9°W | sea |
+| 1 | 381 km³/yr | 3,069 km | SW quadrant | NW, 44.4°S 161.9°W | sea |
 | 2 | 198 km³/yr | 992 km | SW quadrant | SW, 55.3°S 158.1°W | sea |
-| 3 | 56 km³/yr | 362 km | NE quadrant | NE, 39.9°S 122.9°W | sea |
+| 3 | 54 km³/yr | 348 km | NE quadrant | NE, 39.9°S 122.9°W | sea |
 | 4 | 32 km³/yr | 407 km | SW quadrant | SW, 52.2°S 164.7°W | sea |
 | 5 | 27 km³/yr | 397 km | SW quadrant | SW, 56.6°S 162.3°W | sea |
 | 6 | 25 km³/yr | 291 km | NW quadrant | NW, 46.8°S 166.6°W | sea |

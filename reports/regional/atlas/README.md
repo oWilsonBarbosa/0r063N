@@ -50,26 +50,26 @@ A natural-physical atlas derived from the [World Orogen](https://www.orogen.stud
 | Driest place | 96 mm/yr | 39.9°S 59.5°E (Region 19) |
 | Continents (≥ 3 M km²) | 4 | 28M km², 27M km², 27M km², 20M km² |
 | Largest island | 372,877 km² | 1.5°N 114.3°W |
-| Greatest river (discharge) | 2,034 km³/yr | mouth 53.6°N 68.2°E |
+| Greatest river (discharge) | 2,031 km³/yr | mouth 53.6°N 68.2°E |
 | Longest river (main stem) | 7,904 km | mouth 16.6°S 152.7°W |
 | Largest lake (endorheic) | 206,469 km² | 17.3°N 101.8°W |
-| Major rivers planet-wide | 241 | ≥ 15 km³/yr at the mouth |
+| Major rivers planet-wide | 177 | ≥ 15 km³/yr at the mouth |
 | Lakes ≥ 2,000 km² | 61 | closed-basin (endorheic); see HYDROLOGY_VALIDATION.md |
 
 ### The ten great rivers
 
 | # | Discharge | Main stem | Mouth | Empties into |
 |---|---|---|---|---|
-| 1 | 2,034 km³/yr | 4,347 km | 53.6°N 68.2°E | sea |
-| 2 | 1,484 km³/yr | 7,904 km | 16.6°S 152.7°W | sea |
+| 1 | 2,031 km³/yr | 4,347 km | 53.6°N 68.2°E | sea |
+| 2 | 1,437 km³/yr | 7,904 km | 16.6°S 152.7°W | sea |
 | 3 | 1,397 km³/yr | 2,801 km | 67.4°N 132.8°E | sea |
-| 4 | 1,363 km³/yr | 2,880 km | 56.9°N 131.4°W | sea |
-| 5 | 1,353 km³/yr | 3,243 km | 11.7°S 40.8°E | sea |
-| 6 | 834 km³/yr | 2,578 km | 12.4°N 153.2°W | sea |
+| 4 | 1,291 km³/yr | 3,243 km | 11.7°S 40.8°E | sea |
+| 5 | 1,235 km³/yr | 2,880 km | 56.9°N 131.4°W | sea |
+| 6 | 831 km³/yr | 2,578 km | 12.4°N 153.2°W | sea |
 | 7 | 703 km³/yr | 2,481 km | 69.9°N 51.7°E | sea |
-| 8 | 621 km³/yr | 2,037 km | 52.9°N 119.8°E | sea |
-| 9 | 597 km³/yr | 1,980 km | 5.7°S 85.4°W | sea |
-| 10 | 456 km³/yr | 2,824 km | 5.3°S 135.7°W | sea |
+| 8 | 619 km³/yr | 2,037 km | 52.9°N 119.8°E | sea |
+| 9 | 594 km³/yr | 1,980 km | 5.7°S 85.4°W | sea |
+| 10 | 454 km³/yr | 2,824 km | 5.3°S 135.7°W | sea |
 
 ### The ten great lakes (closed-basin / endorheic)
 

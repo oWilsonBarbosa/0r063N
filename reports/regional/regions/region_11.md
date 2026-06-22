@@ -128,19 +128,6 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 ## Rivers
 
-10 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
-
-| River | Discharge | Main-stem length | Source | Mouth | Empties into |
-|---|---|---|---|---|---|
-| 1 | 56 km³/yr | 4,082 km | SW quadrant | SW, 21.1°S 43.2°E | sea |
-| 2 | 49 km³/yr | 3,455 km | SW quadrant | SW, 25.4°S 43.6°E | salt lake |
-| 3 | 49 km³/yr | 3,358 km | SW quadrant | SW, 26.3°S 43.6°E | salt lake |
-| 4 | 49 km³/yr | 3,237 km | SW quadrant | SW, 27.2°S 42.9°E | salt lake |
-| 5 | 44 km³/yr | 3,118 km | SW quadrant | SW, 27.7°S 42.1°E | salt lake |
-| 6 | 32 km³/yr | 2,319 km | SW quadrant | SW, 29.3°S 48.3°E | salt lake |
-| 7 | 21 km³/yr | 1,516 km | SW quadrant | SW, 27.2°S 69.3°E | sea |
-| 8 | 18 km³/yr | 1,985 km | SW quadrant | SW, 29.2°S 50.7°E | salt lake |
-| 9 | 18 km³/yr | 1,912 km | SW quadrant | SW, 29.2°S 51.4°E | salt lake |
-| 10 | 16 km³/yr | 1,589 km | SW quadrant | SW, 30.3°S 54.2°E | salt lake |
+No major river reaches the sea within this region — the land here is too arid, too fragmented, or drains into neighboring regions.
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

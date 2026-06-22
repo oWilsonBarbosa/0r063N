@@ -119,14 +119,13 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 ## Rivers
 
-5 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+4 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
 | 1 | 73 km³/yr | 636 km | NW quadrant | NW, 70.9°N 153.1°E | sea |
-| 2 | 63 km³/yr | 2,679 km | SE quadrant | SE, 31.2°N 145.9°W | sea |
-| 3 | 28 km³/yr | 173 km | NE quadrant | NE, 49.9°N 144.3°W | sea |
-| 4 | 21 km³/yr | 234 km | NW quadrant | NW, 70.6°N 161.6°E | sea |
-| 5 | 16 km³/yr | 87 km | NW quadrant | NW, 73.8°N 163.7°E | sea |
+| 2 | 28 km³/yr | 173 km | NE quadrant | NE, 49.9°N 144.3°W | sea |
+| 3 | 21 km³/yr | 234 km | NW quadrant | NW, 70.6°N 161.6°E | sea |
+| 4 | 16 km³/yr | 87 km | NW quadrant | NW, 73.8°N 163.7°E | sea |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

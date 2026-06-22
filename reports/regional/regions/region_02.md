@@ -137,21 +137,21 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 ## Rivers
 
-26 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+13 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 1,363 km³/yr | 2,880 km | NE quadrant | NW, 56.9°N 131.4°W | sea |
-| 2 | 74 km³/yr | 1,939 km | SW quadrant | SW, 46.9°N 115.7°W | salt lake |
-| 3 | 73 km³/yr | 1,815 km | SW quadrant | SW, 46.4°N 114.8°W | salt lake |
-| 4 | 71 km³/yr | 1,690 km | SW quadrant | SW, 46.4°N 113.2°W | salt lake |
-| 5 | 52 km³/yr | 478 km | NE quadrant | NW, 65.6°N 110.1°W | sea |
-| 6 | 39 km³/yr | 1,029 km | SW quadrant | SW, 33.3°N 134.4°W | salt lake |
-| 7 | 38 km³/yr | 582 km | NW quadrant | NW, 51.9°N 138.7°W | sea |
-| 8 | 30 km³/yr | 546 km | NE quadrant | SE, 50.3°N 101.8°W | sea |
-| 9 | 27 km³/yr | 174 km | NW quadrant | NW, 52.9°N 138.9°W | sea |
-| 10 | 27 km³/yr | 654 km | SW quadrant | SW, 44.1°N 143.8°W | sea |
+| 1 | 1,235 km³/yr | 2,880 km | NE quadrant | NW, 56.9°N 131.4°W | sea |
+| 2 | 52 km³/yr | 478 km | NE quadrant | NW, 65.6°N 110.1°W | sea |
+| 3 | 38 km³/yr | 582 km | NW quadrant | NW, 51.9°N 138.7°W | sea |
+| 4 | 30 km³/yr | 546 km | NE quadrant | SE, 50.3°N 101.8°W | sea |
+| 5 | 27 km³/yr | 174 km | NW quadrant | NW, 52.9°N 138.9°W | sea |
+| 6 | 24 km³/yr | 313 km | SW quadrant | NW, 49.3°N 141.2°W | sea |
+| 7 | 24 km³/yr | 654 km | SW quadrant | SW, 44.1°N 143.8°W | sea |
+| 8 | 24 km³/yr | 695 km | SE quadrant | SW, 47.7°N 114.4°W | salt lake |
+| 9 | 21 km³/yr | 135 km | NW quadrant | NW, 58.2°N 133.1°W | sea |
+| 10 | 20 km³/yr | 308 km | SW quadrant | SW, 46.3°N 142.1°W | sea |
 
-…plus 16 lesser major rivers.
+…plus 3 lesser major rivers.
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

@@ -120,8 +120,8 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 272 km³/yr | 1,726 km | SE quadrant | NE, 17.2°N 160.6°W | sea |
-| 2 | 62 km³/yr | 718 km | NE quadrant | NE, 18.7°N 150.6°W | sea |
+| 1 | 270 km³/yr | 1,726 km | SE quadrant | NE, 17.2°N 160.6°W | sea |
+| 2 | 58 km³/yr | 699 km | NE quadrant | NE, 18.7°N 150.6°W | sea |
 | 3 | 50 km³/yr | 261 km | NE quadrant | NE, 14.7°N 154.2°W | sea |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

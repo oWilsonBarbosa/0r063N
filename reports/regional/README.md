@@ -24,25 +24,25 @@ The globe is divided into the 20 triangular faces of an icosahedron with one ver
 
 | Region | Character | Hydrography | Land | Dominant band | Dominant terrain | Mtn. systems | Major rivers | Lakes |
 |---|---|---|---|---|---|---|---|---|
-| [01](regions/region_01.md) | Sub-tropical coastline with offshore islands | Coastline with offshore islands | 6.5 % | Sub-tropical | Scrub / brushland | 12 | 5 | 1 |
-| [02](regions/region_02.md) | Sub-tropical multiple coastlines | Multiple coastlines | 49.8 % | Sub-tropical | Forest, medium | 22 | 26 | 12 |
+| [01](regions/region_01.md) | Sub-tropical coastline with offshore islands | Coastline with offshore islands | 6.5 % | Sub-tropical | Scrub / brushland | 12 | 4 | 1 |
+| [02](regions/region_02.md) | Sub-tropical multiple coastlines | Multiple coastlines | 49.8 % | Sub-tropical | Forest, medium | 22 | 13 | 12 |
 | [03](regions/region_03.md) | Open ocean | Open ocean | 0.1 % | — | — | 0 | 0 | 0 |
 | [04](regions/region_04.md) | Arctic coastline with offshore islands | Coastline with offshore islands | 20.5 % | Arctic | Tundra | 12 | 22 | 0 |
 | [05](regions/region_05.md) | Sub-arctic multiple coastlines | Multiple coastlines | 54.9 % | Sub-arctic | Forest, medium | 26 | 29 | 3 |
-| [06](regions/region_06.md) | Sub-tropical multiple coastlines | Multiple coastlines | 40.5 % | Sub-tropical | Scrub / brushland | 19 | 37 | 10 |
+| [06](regions/region_06.md) | Sub-tropical multiple coastlines | Multiple coastlines | 40.5 % | Sub-tropical | Scrub / brushland | 19 | 13 | 10 |
 | [07](regions/region_07.md) | Open ocean | Open ocean | 0.0 % | — | — | 0 | 0 | 0 |
-| [08](regions/region_08.md) | Tropical coastline with offshore islands | Coastline with offshore islands | 15.9 % | Tropical | Jungle, heavy | 10 | 10 | 3 |
+| [08](regions/region_08.md) | Tropical coastline with offshore islands | Coastline with offshore islands | 15.9 % | Tropical | Jungle, heavy | 10 | 9 | 3 |
 | [09](regions/region_09.md) | Sub-tropical coastline with offshore islands | Coastline with offshore islands | 4.7 % | Sub-tropical | Forest, medium | 2 | 0 | 0 |
 | [10](regions/region_10.md) | Tropical coastline with offshore islands | Coastline with offshore islands | 12.2 % | Tropical | Forest, light | 6 | 3 | 0 |
-| [11](regions/region_11.md) | Sub-tropical coastline with offshore islands | Coastline with offshore islands | 14.7 % | Sub-tropical | Scrub / brushland | 9 | 10 | 7 |
-| [12](regions/region_12.md) | Tropical multiple coastlines | Multiple coastlines | 52.0 % | Tropical | Jungle, heavy | 27 | 33 | 6 |
+| [11](regions/region_11.md) | Sub-tropical coastline with offshore islands | Coastline with offshore islands | 14.7 % | Sub-tropical | Scrub / brushland | 9 | 0 | 7 |
+| [12](regions/region_12.md) | Tropical multiple coastlines | Multiple coastlines | 52.0 % | Tropical | Jungle, heavy | 27 | 32 | 6 |
 | [13](regions/region_13.md) | Tropical multiple coastlines | Multiple coastlines | 21.1 % | Tropical | Jungle, heavy | 9 | 14 | 1 |
-| [14](regions/region_14.md) | Tropical coastline with offshore islands | Coastline with offshore islands | 14.0 % | Tropical | Barren | 10 | 6 | 3 |
+| [14](regions/region_14.md) | Tropical coastline with offshore islands | Coastline with offshore islands | 14.0 % | Tropical | Barren | 10 | 2 | 3 |
 | [15](regions/region_15.md) | Open ocean | Open ocean | 0.1 % | — | — | 0 | 0 | 0 |
 | [16](regions/region_16.md) | Sub-tropical coastline with offshore islands | Coastline with offshore islands | 44.1 % | Sub-tropical | Forest, medium | 13 | 14 | 2 |
 | [17](regions/region_17.md) | Temperate coastline with offshore islands | Coastline with offshore islands | 0.8 % | Temperate | Forest, medium | 0 | 0 | 0 |
 | [18](regions/region_18.md) | Sub-tropical multiple coastlines | Multiple coastlines | 17.8 % | Sub-tropical | Forest, medium | 12 | 5 | 7 |
-| [19](regions/region_19.md) | Sub-tropical multiple coastlines | Multiple coastlines | 47.8 % | Sub-tropical | Forest, medium | 38 | 27 | 6 |
+| [19](regions/region_19.md) | Sub-tropical multiple coastlines | Multiple coastlines | 47.8 % | Sub-tropical | Forest, medium | 38 | 17 | 6 |
 | [20](regions/region_20.md) | Open ocean | Open ocean | 0.1 % | — | — | 0 | 0 | 0 |
 
 ## How this was generated

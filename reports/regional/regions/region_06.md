@@ -138,21 +138,21 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 ## Rivers
 
-37 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+13 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 327 km³/yr | 2,534 km | NE quadrant | SE, 7.7°N 86.9°W | sea |
-| 2 | 303 km³/yr | 3,472 km | NE quadrant | NW, 17.1°N 115.2°W | sea |
-| 3 | 271 km³/yr | 2,234 km | NE quadrant | NE, 20.3°N 106.7°W | salt lake |
-| 4 | 267 km³/yr | 2,131 km | NE quadrant | NE, 20.3°N 105.8°W | salt lake |
-| 5 | 265 km³/yr | 2,028 km | NE quadrant | NE, 20.6°N 104.9°W | salt lake |
-| 6 | 264 km³/yr | 1,840 km | NE quadrant | NE, 20.2°N 103.6°W | salt lake |
-| 7 | 263 km³/yr | 1,751 km | NE quadrant | NE, 19.7°N 103.2°W | salt lake |
-| 8 | 219 km³/yr | 1,671 km | NE quadrant | NE, 19.1°N 103.2°W | salt lake |
-| 9 | 166 km³/yr | 1,575 km | NE quadrant | NE, 18.4°N 102.6°W | salt lake |
-| 10 | 157 km³/yr | 1,466 km | NE quadrant | NE, 17.8°N 101.8°W | salt lake |
+| 1 | 312 km³/yr | 2,534 km | NE quadrant | SE, 7.7°N 86.9°W | sea |
+| 2 | 82 km³/yr | 592 km | SE quadrant | SE, 6.2°N 86.7°W | sea |
+| 3 | 80 km³/yr | 468 km | SE quadrant | SE, 3.3°N 89.7°W | sea |
+| 4 | 50 km³/yr | 428 km | NE quadrant | SE, 9.7°N 86.6°W | sea |
+| 5 | 43 km³/yr | 580 km | NE quadrant | NE, 12.7°N 88.1°W | sea |
+| 6 | 41 km³/yr | 1,714 km | NE quadrant | NE, 19.4°N 98.1°W | salt lake |
+| 7 | 36 km³/yr | 278 km | NW quadrant | NW, 10.8°N 131.3°W | sea |
+| 8 | 30 km³/yr | 293 km | SE quadrant | SE, 4.2°N 88.6°W | sea |
+| 9 | 29 km³/yr | 325 km | NE quadrant | NE, 13.3°N 104.9°W | salt lake |
+| 10 | 24 km³/yr | 1,639 km | NW quadrant | NW, 20.2°N 117.8°W | sea |
 
-…plus 27 lesser major rivers.
+…plus 3 lesser major rivers.
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

@@ -178,6 +178,34 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
         lakes.push(makeLake(id, pixels, grid, { fill, elevPx, petPx, discharge }));
     }
 
+    // Full-depression membership of endorheic basins, captured BEFORE the shrink
+    // below un-marks the dropped ring. Used to (a) make these basins terminal and
+    // (b) keep the drawn river network out of them.
+    const endoBasin = new Int32Array(N).fill(-1);
+    for (let p = 0; p < N; p++) {
+        const id = lakeId[p];
+        if (id !== -1 && lakes[id].endorheic) endoBasin[p] = id;
+    }
+
+    // Endorheic basins are CLOSED: re-accumulate discharge but never let a basin's
+    // water cross its own outlet to the sea — it evaporates in the terminal lake.
+    // (The priority-flood's spill gradient otherwise routes the inflow over the rim,
+    // drawing a spurious major river straight through the lake and double-counting
+    // it in the ocean discharge.) The first pass above stands for the lake water
+    // balance / endorheic test; this corrected field drives rivers and mass balance.
+    discharge.fill(0);
+    for (let p = 0; p < N; p++) {
+        if (px.landPx[p]) discharge[p] = runoffPx[p] * rowArea[(p / W) | 0] / 1e6;
+    }
+    let endorheicLossKm3 = 0;
+    for (let i = nPop - 1; i >= 0; i--) {
+        const p = popOrder[i];
+        const r = receiver[p];
+        if (r < 0) continue;
+        if (endoBasin[p] !== -1 && endoBasin[r] !== endoBasin[p]) { endorheicLossKm3 += discharge[p]; continue; }
+        discharge[r] += discharge[p];
+    }
+
     // endorheic lakes shrink to their evaporation-balanced area: un-mark
     // pixels outside the equilibrium extent
     for (const lake of lakes) {
@@ -197,13 +225,11 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
     const exorheicArea = exorheicSuppressed.reduce((s, l) => s + l.areaKm2, 0);
     log(`  lakes: ${lakes.length} depressions; ${keptLakes.length} endorheic (closed-basin) ≥ ${MIN_LAKE_KM2} km² reported; ${exorheicSuppressed.length} exorheic filled-depression lakes suppressed as coarse-DEM artifacts`);
 
-    const saltyAt = p => lakeId[p] !== -1 && lakes[lakeId[p]].endorheic;
-
     // ---- rivers ----
-    // the river NETWORK spans all high-discharge pixels (threading through any
-    // depression); only ENDORHEIC lakes are "visible" (drawn / mouth termini),
-    // so the drawn river mask runs straight through filled exorheic basins
-    // rather than rendering them as lakes
+    // the river NETWORK spans all high-discharge land pixels; the DRAWN river mask
+    // is majors only and is kept out of endorheic basins entirely (their inflow
+    // terminates in the lake, so no channel crosses or exits them), while running
+    // straight through filled exorheic basins (which are not drawn as lakes)
     const lakeVisible = new Uint8Array(lakes.length);
     for (const lake of lakes) if (lake.endorheic && lake.areaKm2 >= DRAW_LAKE_KM2) lakeVisible[lake.id] = 1;
 
@@ -213,8 +239,8 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
     for (let p = 0; p < N; p++) {
         if (!px.landPx[p] || discharge[p] < RIVER_KM3) continue;
         netPx[p] = 1;
-        // drawn rivers: majors only, and not under a drawn lake
-        if (discharge[p] >= MAJOR_RIVER_KM3 && (lakeId[p] === -1 || !lakeVisible[lakeId[p]])) {
+        // drawn rivers: majors only, outside any endorheic (closed) depression
+        if (discharge[p] >= MAJOR_RIVER_KM3 && endoBasin[p] === -1) {
             riverPx[p] = 1; riverCount++;
         }
     }
@@ -234,7 +260,9 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
         if (!netPx[p] || discharge[p] < MAJOR_RIVER_KM3) continue;
         const r = receiver[p];
         const intoSea = r >= 0 && !px.landPx[r];
-        const intoSalt = r >= 0 && saltyAt(r) && !saltyAt(p);
+        // a river terminates at a salt lake when it crosses into a closed
+        // (endorheic) basin it is not already part of
+        const intoSalt = r >= 0 && endoBasin[r] !== -1 && endoBasin[p] !== endoBasin[r];
         if (!intoSea && !intoSalt) continue;
         candidates.push({ p, intoSalt });
     }
@@ -272,8 +300,9 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
 
     return {
         fill, receiver, discharge, riverPx, lakeId, saltyLake, lakeVisible, popOrder,
-        lakes: keptLakes, rivers,
+        lakes: keptLakes, rivers, endoBasin,
         exorheicSuppressed: { count: exorheicSuppressed.length, areaKm2: exorheicArea },
+        endorheicLossKm3,
         thresholds: { RIVER_KM3, MAJOR_RIVER_KM3, MIN_LAKE_KM2 },
     };
 }

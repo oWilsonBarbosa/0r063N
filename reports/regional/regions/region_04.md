@@ -113,7 +113,7 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 2,034 km³/yr | 4,347 km | NE quadrant | NE, 53.6°N 68.2°E | sea |
+| 1 | 2,031 km³/yr | 4,347 km | NE quadrant | NE, 53.6°N 68.2°E | sea |
 | 2 | 703 km³/yr | 2,481 km | NE quadrant | NE, 69.9°N 51.7°E | sea |
 | 3 | 263 km³/yr | 998 km | SE quadrant | NE, 53.2°N 44.2°E | sea |
 | 4 | 223 km³/yr | 1,236 km | NE quadrant | NE, 57.2°N 54.6°E | sea |

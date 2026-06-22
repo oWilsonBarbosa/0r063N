@@ -127,10 +127,10 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 84 km³/yr | 2,418 km | SE quadrant | NE, 45.7°S 35.4°E | sea |
-| 2 | 52 km³/yr | 1,368 km | NE quadrant | NE, 49.3°S 25.1°E | sea |
-| 3 | 39 km³/yr | 2,335 km | NE quadrant | NE, 46.1°S 33.4°E | sea |
-| 4 | 28 km³/yr | 259 km | NE quadrant | NE, 47.7°S 13.2°E | sea |
+| 1 | 66 km³/yr | 2,418 km | SE quadrant | NE, 45.7°S 35.4°E | sea |
+| 2 | 37 km³/yr | 787 km | NE quadrant | NE, 49.3°S 25.1°E | sea |
+| 3 | 27 km³/yr | 259 km | NE quadrant | NE, 47.7°S 13.2°E | sea |
+| 4 | 16 km³/yr | 767 km | NE quadrant | NE, 46.1°S 33.4°E | sea |
 | 5 | 16 km³/yr | 70 km | SE quadrant | SE, 78.4°S 29.1°E | sea |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.
