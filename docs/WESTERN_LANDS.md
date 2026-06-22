@@ -121,67 +121,64 @@ The Western Lands have a single, legible biography in `GEOLOGICAL_HISTORY.md`:
 ## What we already have
 
 Everything below is derived from the same 2.56-million-cell export; nothing here
-is hand-drawn.
-
-**On `main` / this branch:**
+is hand-drawn. All of it now lives on one branch:
 
 - **Raw data** — the full export under `data/orogen_regions_full/` (elevation,
   Köppen, winds, currents, tectonic fields per cell).
-- **The 750-Myr geological history** (`docs/GEOLOGICAL_HISTORY.md`) — the west's
-  full assembly→breakup→dispersal→reassembly story, the Western Ocean, and the
+- **Continent profiles** — [`CONTINENTS.md`](CONTINENTS.md) and
+  [`continent_profiles.json`](../reports/tectonics/continent_profiles.json): the
+  canonical Meridia/Selvana numbers used throughout this document.
+- **Biogeography** — [`BIOGEOGRAPHY.md`](BIOGEOGRAPHY.md) +
+  [`biogeography_provinces.csv`](../reports/tectonics/biogeography_provinces.csv):
+  the per-continent habitat provinces (jungle / forest / alpine / glacier) cited
+  here, plus a `present_biogeography` map.
+- **Subduction style** — [`SUBDUCTION_STYLE.md`](SUBDUCTION_STYLE.md): the
+  Chilean (Meridia) vs Mariana (Selvana) contrast, plus a
+  `present_subduction_style` map.
+- **The 750-Myr geological history** —
+  [`GEOLOGICAL_HISTORY.md`](GEOLOGICAL_HISTORY.md): the west's
+  assembly→breakup→dispersal→reassembly story, the Western Ocean, and the
   O1/O3/O5 orogenies, all referenced above.
-- **Paleoclimate** (`docs/PALEOCLIMATE.md`) — climate across the supercontinent
-  cycle.
-- **Physical Atlas** (`reports/regional/atlas/`) — 13 global plates that *cover*
-  the Western Lands (relief, hypsometry, erosion, Köppen, temperature,
-  precipitation, winds, **ocean currents**, **drainage basins**, NPP), plus
-  present-day tectonic maps (`reports/tectonics/maps/present/`: elevation,
-  plates, boundaries, features, margins).
-- **20 regional gazetteers** (`reports/regional/regions/`) — but these are
-  **icosahedral faces in a different coordinate frame**, not continents; none is
-  labelled "Meridia" or "Selvana."
+- **Paleoclimate** — [`PALEOCLIMATE.md`](PALEOCLIMATE.md): climate across the
+  supercontinent cycle.
+- **Naming & membership** —
+  [`continents.yaml`](../tools/tectonics-pipeline/continents.yaml) and
+  `tools/tectonics-pipeline/lib/continents.py` (the shared connected-landmass
+  assignment used by both the profiles and the biogeography).
+- **Maps** — the global [Physical Atlas](../reports/regional/atlas/README.md)
+  (13 plates: relief, hypsometry, erosion, Köppen, temperature, precipitation,
+  winds, ocean currents, drainage basins, NPP) and present-day tectonic maps
+  ([`reports/tectonics/maps/present/`](../reports/tectonics/maps/present/):
+  elevation, plates, boundaries, features, margins, biogeography, subduction
+  style).
+- **20 regional gazetteers** — but these are **icosahedral faces in a different
+  coordinate frame**, not continents; none is labelled "Meridia" or "Selvana."
 
-**Only on branch `claude/report-structure-analysis-wq3kga` (3 commits ahead of
-`main`, fast-forwardable — *not yet landed*):**
-
-- `docs/CONTINENTS.md` — the four-continent profile table.
-- `docs/BIOGEOGRAPHY.md` + `reports/tectonics/biogeography_provinces.csv` — the
-  per-continent habitat provinces cited here.
-- `docs/SUBDUCTION_STYLE.md` + map — the Chilean/Mariana classification cited
-  here.
-- `reports/tectonics/continent_profiles.json` — the canonical per-continent
-  numbers in this document.
-- `tools/tectonics-pipeline/continents.yaml` + `lib/continents.py` — the naming
-  and the shared connected-landmass assignment.
-- New maps `present_biogeography.png`, `present_subduction_style.png`.
-
-**The gap:** the regional (icosahedral) and continental (landmass) views are
-**not cross-linked**, and there is **no continent-scoped report or map** — the
-atlas is global, the gazetteers are triangular slices. This document is the first
-continent-level synthesis; the assets to do more already exist.
+**The remaining gap:** the regional (icosahedral) and continental (landmass)
+views are **not cross-linked**, and there are still **no continent-scoped maps** —
+the atlas is global, the gazetteers are triangular slices. This document is the
+first continent-level synthesis; closing the gap is the next step.
 
 ---
 
 ## What could be done with it
 
-Ordered by leverage:
+The continent-aware analyses (naming, biogeography, subduction style) are now
+merged onto this branch, so the groundwork is in place. Remaining work, ordered
+by leverage:
 
-1. **Land the continent-aware branch.** Fast-forward
-   `claude/report-structure-analysis-wq3kga` so `CONTINENTS.md`,
-   `BIOGEOGRAPHY.md`, `SUBDUCTION_STYLE.md`, the naming tooling, and the two new
-   maps live on `main`. Everything below reads better once they do.
-2. **Region ↔ continent crosswalk.** Map each icosahedral face to the
+1. **Region ↔ continent crosswalk.** Map each icosahedral face to the
    continent(s) it covers (and by what fraction), turning the 20 gazetteers into
    a navigable continental atlas. This is the missing link between the two
    pipelines.
-3. **Continent-clipped maps.** Render Meridia- and Selvana-centred views (relief,
+2. **Continent-clipped maps.** Render Meridia- and Selvana-centred views (relief,
    Köppen, drainage, biogeography) — today only global plates and per-face maps
    exist.
-4. **Name the western features.** The O5 cordillera, the O3 Andean belt, the
+3. **Name the western features.** The O5 cordillera, the O3 Andean belt, the
    Western Ocean's T2 arc, and the major western rivers/basins carry codes but no
    place-names; a named-geography pass (tagged `INVENTED`, per convention) would
    give the Western Lands a real atlas vocabulary.
-5. **A west-flank paleo-sequence.** Subset the existing global stage maps to the
+4. **A west-flank paleo-sequence.** Subset the existing global stage maps to the
    Meridia+Selvana split-and-reassembly, from the R3 rift to the projected boreal
    supercontinent.
 
@@ -191,9 +188,9 @@ Ordered by leverage:
 
 | Claim | Source |
 |---|---|
-| Continent areas, elevation, Köppen, NPP | `reports/tectonics/continent_profiles.json`, `docs/CONTINENTS.md` *(branch `wq3kga`)* |
-| Habitat provinces (jungle/forest/alpine/glacier) | `docs/BIOGEOGRAPHY.md` *(branch `wq3kga`)* |
-| Chilean vs Mariana margins | `docs/SUBDUCTION_STYLE.md` *(branch `wq3kga`)* |
-| Breakup history, Western Ocean, O1/O3/O5, future reassembly | `docs/GEOLOGICAL_HISTORY.md` |
-| Naming | `tools/tectonics-pipeline/continents.yaml` *(branch `wq3kga`)* |
-| Global maps | `reports/regional/atlas/`, `reports/tectonics/maps/present/` |
+| Continent areas, elevation, Köppen, NPP | [`continent_profiles.json`](../reports/tectonics/continent_profiles.json), [`CONTINENTS.md`](CONTINENTS.md) |
+| Habitat provinces (jungle/forest/alpine/glacier) | [`BIOGEOGRAPHY.md`](BIOGEOGRAPHY.md) |
+| Chilean vs Mariana margins | [`SUBDUCTION_STYLE.md`](SUBDUCTION_STYLE.md) |
+| Breakup history, Western Ocean, O1/O3/O5, future reassembly | [`GEOLOGICAL_HISTORY.md`](GEOLOGICAL_HISTORY.md) |
+| Naming | [`continents.yaml`](../tools/tectonics-pipeline/continents.yaml) |
+| Global maps | [Physical Atlas](../reports/regional/atlas/README.md), [present-day maps](../reports/tectonics/maps/present/) |
