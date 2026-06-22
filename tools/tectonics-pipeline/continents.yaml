@@ -1,0 +1,15 @@
+# Continent naming for Orogen planet 06cy8w6z6a89kow6psje93.
+#
+# The tectonics pipeline derives four major landmasses as connected land
+# components and names them by the cratons they contain (see
+# reports/tectonics/inventory.json -> "continents"). The keys below are those
+# craton-group identifiers; the values are the human-readable continent names
+# used throughout the World Orogen Atlas.
+#
+# The mapping was verified against each continent's data-derived centroid
+# (latitude, longitude) in inventory.json — edit a value to rename a continent.
+names:
+  AIJ: Meridia    # centroid  30N, 105W — northern, western hemisphere
+  G:   Borea      # centroid  59N,  93E — far north, eastern hemisphere
+  BDH: Sirocca    # centroid  35S,  43E — southern, eastern hemisphere
+  CEF: Selvana    # centroid  22S, 146W — southern, western hemisphere

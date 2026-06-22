@@ -30,8 +30,8 @@ generator's `js/koppen.js`): the `…S` season is NH summer / SH winter.
 | Column | Meaning |
 |---|---|
 | `id` | Cell index, `0 … 2,560,000` (Fibonacci-sphere point order). |
-| `lat`, `lon` | Geographic latitude / longitude, **radians**. For degrees use the formulas above. |
-| `x`, `y`, `z` | Unit-sphere Cartesian coordinates of the cell (`y` is the polar axis: `lat = asin(y)`, `lon = atan2(x, z)`). |
+| `lat`, `lon` | Geographic latitude / longitude in **degrees** (lat −90…90, lon −180…180); equal to `asin(y)·180/π` and `atan2(x, z)·180/π`. |
+| `x`, `y`, `z` | Unit-sphere Cartesian coordinates of the cell (`y` is the polar axis); `lat`/`lon` above are the degree forms of `asin(y)` / `atan2(x, z)`. |
 
 ### Elevation & erosion
 | Column | Meaning |

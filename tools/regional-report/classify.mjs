@@ -89,6 +89,18 @@ export function precipAnnualMm(pS, pW) {
     return (Math.max(0, pS) + Math.max(0, pW)) * 1000;
 }
 
+// Miami-model net primary productivity (g/m²/yr), ice-corrected: Köppen-EF
+// (ice cap, code 30) cells carry no standing vegetation, so NPP is 0 there.
+// Tundra (ET, 29) keeps its real low productivity.
+export function miamiNpp(koppen, tS, tW, pS, pW) {
+    if (koppen === 30) return 0;
+    const T = (tempC(tS) + tempC(tW)) / 2;
+    const P = precipAnnualMm(pS, pW);
+    const nppT = 3000 / (1 + Math.exp(1.315 - 0.119 * T));
+    const nppP = 3000 * (1 - Math.exp(-0.000664 * P));
+    return Math.min(nppT, nppP);
+}
+
 // Deterministic terrain class for one land cell.
 export function classifyTerrain(koppen, elevKm, pannMm, isCoastal) {
     if (koppen === 30) return T_IDX.glacier;                       // EF

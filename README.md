@@ -27,6 +27,9 @@ reconstructed **750-million-year geological + climate history**.
 | **A continent-scale deep dive** — the Western Lands (Meridia + Selvana) and their shared ocean | [`docs/WESTERN_LANDS.md`](docs/WESTERN_LANDS.md) |
 | **How the world came to be** — a 750-Myr plate-tectonic history | [`docs/GEOLOGICAL_HISTORY.md`](docs/GEOLOGICAL_HISTORY.md) |
 | **How its climate evolved** — paleoclimate across the supercontinent cycle | [`docs/PALEOCLIMATE.md`](docs/PALEOCLIMATE.md) |
+| **The four continents** — Meridia, Sirocca, Selvana, Borea (area, climate, NPP) | [`docs/CONTINENTS.md`](docs/CONTINENTS.md) |
+| **Subduction style** — Chilean vs Mariana margins | [`docs/SUBDUCTION_STYLE.md`](docs/SUBDUCTION_STYLE.md) |
+| **Life & habitats** — biogeographic provinces of the four continents | [`docs/BIOGEOGRAPHY.md`](docs/BIOGEOGRAPHY.md) |
 | **The raw data** — what the columns mean | [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) |
 
 ## Repository map
