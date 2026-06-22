@@ -40,6 +40,7 @@ python3 tools/tectonics-pipeline/scripts/90_build_climate_doc.py # -> docs/PALEO
 python3 tools/tectonics-pipeline/scripts/95_continent_profiles.py # -> continent_profiles.json + docs/CONTINENTS.md
 python3 tools/tectonics-pipeline/scripts/96_region_crosswalk.py # -> region_continent_crosswalk.{json,csv} + docs/REGION_CROSSWALK.md
 python3 tools/tectonics-pipeline/scripts/97_biogeography.py # -> biogeography_provinces.csv + map + docs/BIOGEOGRAPHY.md
+python3 tools/tectonics-pipeline/scripts/98_continent_maps.py # -> maps/continents/*.png (per-continent relief/Köppen/habitat)
 ```
 
 NPP everywhere uses the **ice-corrected** Miami model (Köppen-EF ice caps = 0),
@@ -71,6 +72,7 @@ and documents are committed.
 | `tools/tectonics-pipeline/lib/history_schema.py` | history.yaml schema, keyframe interpolation, block rotations |
 | `tools/tectonics-pipeline/lib/mapstyle.py` | shared map styling |
 | `tools/tectonics-pipeline/lib/climate.py` | zonal climate model (temp/precip/Köppen), generator-calibrated |
+| `tools/tectonics-pipeline/lib/biogeo.py` | Table-18 terrain classification + Miami NPP (shared by 97 and 98) |
 | `tools/tectonics-pipeline/lib/paleoclimate_schema.py` | forcing-curve schema + validation |
 | `tools/tectonics-pipeline/history/history.yaml` | **the authored timeline** — edit this to revise the history |
 | `tools/tectonics-pipeline/history/paleoclimate.yaml` | **the authored climate forcing curve** (dT per stage, eras) |
@@ -81,6 +83,7 @@ and documents are committed.
 | `reports/tectonics/biogeography_provinces.csv` | continent × habitat provinces (area, climate, NPP) |
 | `reports/tectonics/maps/present/present_subduction_style.png` | subduction-style map |
 | `reports/tectonics/maps/present/present_biogeography.png` | biogeographic habitat map |
+| `reports/tectonics/maps/continents/` | per-continent clipped maps (relief / Köppen / habitats) + overview |
 | `reports/tectonics/INVENTORY.md` | present-day tectonic inventory (human-readable) |
 | `reports/tectonics/VALIDATION.md` | validation report against the rules of thumb |
 | `reports/tectonics/climate_summary.json` | climate calibration + per-stage stats |

@@ -58,6 +58,8 @@ where ridge subduction and arc pile-up are still driving peaks past **8.4 km**
   the A+J+I weld along the **O1 suture** (700 km of stacked crust) and subduction
   stepping outboard onto the new continent's edge.
 
+![Meridia — relief, Köppen climate, native habitats](../reports/tectonics/maps/continents/Meridia.png)
+
 ## Selvana — the green west
 
 The **lowest** (1.09 km mean) and **most biologically productive** continent
@@ -75,6 +77,8 @@ Selvana is low, wet, and green, spanning an enormous latitude range
   4,754 px) — the opposite of Meridia — *but* it also carries the long-lived
   **O3 Andean belt** on craton C's southwestern margin, a cordillera that has
   been building continuously and is **still active today**.
+
+![Selvana — relief, Köppen climate, native habitats](../reports/tectonics/maps/continents/Selvana.png)
 
 ## The Western Ocean — the sea between
 
@@ -147,10 +151,13 @@ is hand-drawn. All of it now lives on one branch:
   assignment used by both the profiles and the biogeography).
 - **Maps** — the global [Physical Atlas](../reports/regional/atlas/README.md)
   (13 plates: relief, hypsometry, erosion, Köppen, temperature, precipitation,
-  winds, ocean currents, drainage basins, NPP) and present-day tectonic maps
+  winds, ocean currents, drainage basins, NPP), present-day tectonic maps
   ([`reports/tectonics/maps/present/`](../reports/tectonics/maps/present/):
   elevation, plates, boundaries, features, margins, biogeography, subduction
-  style).
+  style), and **per-continent clipped maps**
+  ([`reports/tectonics/maps/continents/`](../reports/tectonics/maps/continents/):
+  relief / Köppen / habitats, each centred on its continent — Meridia and Selvana
+  shown above).
 - **20 regional gazetteers** ([`reports/regional/`](../reports/regional/README.md))
   — icosahedral faces in a different coordinate frame; now **bridged to the
   continents** by the crosswalk below.
@@ -166,28 +173,30 @@ is hand-drawn. All of it now lives on one branch:
   [10](../reports/regional/regions/region_10.md) (11 %) — so you can jump from
   either half of the Western Lands straight to the write-ups that map it.
 
-**The remaining gap:** the two frames are now **cross-linked** (above), but there
-are still **no continent-scoped maps** — the atlas is global and the gazetteers
-are triangular slices, so neither shows Meridia or Selvana clipped to its own
-outline. That is the next step.
+**The remaining gap:** the two frames are now **cross-linked** and each continent
+has its own **clipped map** (relief / Köppen / habitats, above). What's still
+missing is *named* geography — the western cordilleras, rivers and basins carry
+codes, not place-names — and hydrography on the continent maps (rivers live in
+the Node pipeline). Those are the next steps.
 
 ---
 
 ## What could be done with it
 
 The continent-aware analyses (naming, biogeography, subduction style) are merged
-onto this branch, and the **region ↔ continent crosswalk**
-([`REGION_CROSSWALK.md`](REGION_CROSSWALK.md)) now bridges the gazetteers to the
-continents. Remaining work, ordered by leverage:
+onto this branch, the **region ↔ continent crosswalk**
+([`REGION_CROSSWALK.md`](REGION_CROSSWALK.md)) bridges the gazetteers to the
+continents, and each continent now has a **clipped relief / Köppen / habitat map**
+([`maps/continents/`](../reports/tectonics/maps/continents/)). Remaining work,
+ordered by leverage:
 
-1. **Continent-clipped maps.** Render Meridia- and Selvana-centred views (relief,
-   Köppen, drainage, biogeography) — today only global plates and per-face maps
-   exist. The crosswalk now says exactly which faces to composite for each
-   continent.
-2. **Name the western features.** The O5 cordillera, the O3 Andean belt, the
+1. **Name the western features.** The O5 cordillera, the O3 Andean belt, the
    Western Ocean's T2 arc, and the major western rivers/basins carry codes but no
    place-names; a named-geography pass (tagged `INVENTED`, per convention) would
    give the Western Lands a real atlas vocabulary.
+2. **Rivers on the continent maps.** Overlay the Node pipeline's drainage and
+   rivers onto the clipped continent maps — today they carry relief, climate and
+   habitats but not hydrography.
 3. **A west-flank paleo-sequence.** Subset the existing global stage maps to the
    Meridia+Selvana split-and-reassembly, from the R3 rift to the projected boreal
    supercontinent.
@@ -205,3 +214,4 @@ continents. Remaining work, ordered by leverage:
 | Naming | [`continents.yaml`](../tools/tectonics-pipeline/continents.yaml) |
 | Which gazetteers map each continent | [`REGION_CROSSWALK.md`](REGION_CROSSWALK.md), [`region_continent_crosswalk.csv`](../reports/tectonics/region_continent_crosswalk.csv) |
 | Global maps | [Physical Atlas](../reports/regional/atlas/README.md), [present-day maps](../reports/tectonics/maps/present/) |
+| Continent-clipped maps | [`maps/continents/`](../reports/tectonics/maps/continents/) |

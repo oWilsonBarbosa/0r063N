@@ -95,7 +95,15 @@ for name, p in order:
     lines.append(f"| **{name}** | {','.join(p['cratons'])} | {p['area_Mkm2']} | {p['pct_land']} | "
                  f"{b['A']} | {b['B']} | {b['C']} | {b['D']} | {b['E']} | "
                  f"{p['mean_npp_g_m2_yr']:.0f} | {p['mountainous_pct']} | {p['mean_elev_km']} |")
-lines += ["", "See [`REGION_CROSSWALK.md`](REGION_CROSSWALK.md) for which regional "
+lines += ["", "## Maps", "",
+          "Each continent centred and clipped — relief, Köppen climate and native "
+          "habitats: [Meridia](../reports/tectonics/maps/continents/Meridia.png) · "
+          "[Sirocca](../reports/tectonics/maps/continents/Sirocca.png) · "
+          "[Selvana](../reports/tectonics/maps/continents/Selvana.png) · "
+          "[Borea](../reports/tectonics/maps/continents/Borea.png).", "",
+          "![The four continents — relief](../reports/tectonics/maps/continents/continents_overview.png)",
+          "",
+          "See [`REGION_CROSSWALK.md`](REGION_CROSSWALK.md) for which regional "
           "gazetteers cover each continent (and by how much), and "
           "[`BIOGEOGRAPHY.md`](BIOGEOGRAPHY.md) for per-continent habitat provinces.",
           "", "Köppen bands: **A** tropical · **B** arid · **C** temperate · "
