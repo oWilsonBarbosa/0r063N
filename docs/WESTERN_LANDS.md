@@ -151,34 +151,44 @@ is hand-drawn. All of it now lives on one branch:
   ([`reports/tectonics/maps/present/`](../reports/tectonics/maps/present/):
   elevation, plates, boundaries, features, margins, biogeography, subduction
   style).
-- **20 regional gazetteers** — but these are **icosahedral faces in a different
-  coordinate frame**, not continents; none is labelled "Meridia" or "Selvana."
+- **20 regional gazetteers** ([`reports/regional/`](../reports/regional/README.md))
+  — icosahedral faces in a different coordinate frame; now **bridged to the
+  continents** by the crosswalk below.
+- **Region ↔ continent crosswalk** — [`REGION_CROSSWALK.md`](REGION_CROSSWALK.md)
+  (+ [`region_continent_crosswalk.{json,csv}`](../reports/tectonics/region_continent_crosswalk.csv)):
+  every gazetteer resolved to its continents, and every continent to its
+  gazetteers. **Meridia** is mapped mainly by gazetteers
+  [02](../reports/regional/regions/region_02.md) (44 %),
+  [06](../reports/regional/regions/region_06.md) (34 %) and
+  [13](../reports/regional/regions/region_13.md) (19 %); **Selvana** by
+  [12](../reports/regional/regions/region_12.md) (48 %),
+  [16](../reports/regional/regions/region_16.md) (41 %) and
+  [10](../reports/regional/regions/region_10.md) (11 %) — so you can jump from
+  either half of the Western Lands straight to the write-ups that map it.
 
-**The remaining gap:** the regional (icosahedral) and continental (landmass)
-views are **not cross-linked**, and there are still **no continent-scoped maps** —
-the atlas is global, the gazetteers are triangular slices. This document is the
-first continent-level synthesis; closing the gap is the next step.
+**The remaining gap:** the two frames are now **cross-linked** (above), but there
+are still **no continent-scoped maps** — the atlas is global and the gazetteers
+are triangular slices, so neither shows Meridia or Selvana clipped to its own
+outline. That is the next step.
 
 ---
 
 ## What could be done with it
 
-The continent-aware analyses (naming, biogeography, subduction style) are now
-merged onto this branch, so the groundwork is in place. Remaining work, ordered
-by leverage:
+The continent-aware analyses (naming, biogeography, subduction style) are merged
+onto this branch, and the **region ↔ continent crosswalk**
+([`REGION_CROSSWALK.md`](REGION_CROSSWALK.md)) now bridges the gazetteers to the
+continents. Remaining work, ordered by leverage:
 
-1. **Region ↔ continent crosswalk.** Map each icosahedral face to the
-   continent(s) it covers (and by what fraction), turning the 20 gazetteers into
-   a navigable continental atlas. This is the missing link between the two
-   pipelines.
-2. **Continent-clipped maps.** Render Meridia- and Selvana-centred views (relief,
+1. **Continent-clipped maps.** Render Meridia- and Selvana-centred views (relief,
    Köppen, drainage, biogeography) — today only global plates and per-face maps
-   exist.
-3. **Name the western features.** The O5 cordillera, the O3 Andean belt, the
+   exist. The crosswalk now says exactly which faces to composite for each
+   continent.
+2. **Name the western features.** The O5 cordillera, the O3 Andean belt, the
    Western Ocean's T2 arc, and the major western rivers/basins carry codes but no
    place-names; a named-geography pass (tagged `INVENTED`, per convention) would
    give the Western Lands a real atlas vocabulary.
-4. **A west-flank paleo-sequence.** Subset the existing global stage maps to the
+3. **A west-flank paleo-sequence.** Subset the existing global stage maps to the
    Meridia+Selvana split-and-reassembly, from the R3 rift to the projected boreal
    supercontinent.
 
@@ -193,4 +203,5 @@ by leverage:
 | Chilean vs Mariana margins | [`SUBDUCTION_STYLE.md`](SUBDUCTION_STYLE.md) |
 | Breakup history, Western Ocean, O1/O3/O5, future reassembly | [`GEOLOGICAL_HISTORY.md`](GEOLOGICAL_HISTORY.md) |
 | Naming | [`continents.yaml`](../tools/tectonics-pipeline/continents.yaml) |
+| Which gazetteers map each continent | [`REGION_CROSSWALK.md`](REGION_CROSSWALK.md), [`region_continent_crosswalk.csv`](../reports/tectonics/region_continent_crosswalk.csv) |
 | Global maps | [Physical Atlas](../reports/regional/atlas/README.md), [present-day maps](../reports/tectonics/maps/present/) |

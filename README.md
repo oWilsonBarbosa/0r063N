@@ -30,6 +30,7 @@ reconstructed **750-million-year geological + climate history**.
 | **The four continents** — Meridia, Sirocca, Selvana, Borea (area, climate, NPP) | [`docs/CONTINENTS.md`](docs/CONTINENTS.md) |
 | **Subduction style** — Chilean vs Mariana margins | [`docs/SUBDUCTION_STYLE.md`](docs/SUBDUCTION_STYLE.md) |
 | **Life & habitats** — biogeographic provinces of the four continents | [`docs/BIOGEOGRAPHY.md`](docs/BIOGEOGRAPHY.md) |
+| **Regions ↔ continents** — which of the 20 gazetteers map each continent | [`docs/REGION_CROSSWALK.md`](docs/REGION_CROSSWALK.md) |
 | **The raw data** — what the columns mean | [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) |
 
 ## Repository map

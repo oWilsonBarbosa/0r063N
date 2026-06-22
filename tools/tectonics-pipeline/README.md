@@ -38,6 +38,7 @@ python3 tools/tectonics-pipeline/scripts/80_paleoclimate.py   # per-stage climat
 python3 tools/tectonics-pipeline/scripts/85_render_climate.py # -> reports/tectonics/maps/climate/*.png (Koppen stages + curve)
 python3 tools/tectonics-pipeline/scripts/90_build_climate_doc.py # -> docs/PALEOCLIMATE.md
 python3 tools/tectonics-pipeline/scripts/95_continent_profiles.py # -> continent_profiles.json + docs/CONTINENTS.md
+python3 tools/tectonics-pipeline/scripts/96_region_crosswalk.py # -> region_continent_crosswalk.{json,csv} + docs/REGION_CROSSWALK.md
 python3 tools/tectonics-pipeline/scripts/97_biogeography.py # -> biogeography_provinces.csv + map + docs/BIOGEOGRAPHY.md
 ```
 
@@ -47,6 +48,12 @@ the canonical `miamiNpp` in `tools/regional-report/classify.mjs`.
 `continents.yaml` is the authored continent-naming map (craton group -> name,
 e.g. `AIJ: Meridia`); `25_inventory.py`, `35_subduction_style.py` and
 `95_continent_profiles.py` read it so the names flow into every output.
+
+`96_region_crosswalk.py` bridges the two pipelines — it tells you which regional
+gazetteers cover each continent and vice versa. It reads the published gazetteers
+(`reports/regional/regions/`, produced by the Node pipeline) to bind its region
+numbering to theirs, so run `node tools/regional-report/main.mjs` first; its
+continent totals match `continent_profiles.json` cell-for-cell.
 
 `scripts/40_init_history.py` regenerates a blank `history.yaml` skeleton from the
 inventory; it refuses to overwrite the authored file.
@@ -70,6 +77,7 @@ and documents are committed.
 | `tools/tectonics-pipeline/continents.yaml` | **authored continent names** (craton group -> name) |
 | `reports/tectonics/subduction_style.json` | Chilean/Mariana margin + back-arc-province classification |
 | `reports/tectonics/continent_profiles.json` | per-continent area, Köppen bands, mean NPP |
+| `reports/tectonics/region_continent_crosswalk.{json,csv}` | region ↔ continent bridge (which gazetteers cover each continent) |
 | `reports/tectonics/biogeography_provinces.csv` | continent × habitat provinces (area, climate, NPP) |
 | `reports/tectonics/maps/present/present_subduction_style.png` | subduction-style map |
 | `reports/tectonics/maps/present/present_biogeography.png` | biogeographic habitat map |
