@@ -184,18 +184,28 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
         if (!lake.endorheic) continue;
         for (const p of lake.dropped) lakeId[p] = -1;
     }
+    // Reporting policy: only ENDORHEIC (closed-basin) lakes are reported and
+    // drawn. Exorheic "filled-depression" lakes are an over-detection artifact at
+    // this 0.125° grid — the priority-flood fills whole low-relief basins up to
+    // their spill, and unresolved river incision makes through-flowing valleys
+    // look ponded. Endorheic closure is the resolution-robust signal. See
+    // reports/regional/HYDROLOGY_VALIDATION.md.
     const keptLakes = lakes
-        .filter(l => l.areaKm2 >= MIN_LAKE_KM2)
+        .filter(l => l.endorheic && l.areaKm2 >= MIN_LAKE_KM2)
         .sort((a, b) => b.areaKm2 - a.areaKm2);
-    log(`  lakes: ${lakes.length} depressions, ${keptLakes.length} ≥ ${MIN_LAKE_KM2} km² after water balance`);
+    const exorheicSuppressed = lakes.filter(l => !l.endorheic && l.areaKm2 >= MIN_LAKE_KM2);
+    const exorheicArea = exorheicSuppressed.reduce((s, l) => s + l.areaKm2, 0);
+    log(`  lakes: ${lakes.length} depressions; ${keptLakes.length} endorheic (closed-basin) ≥ ${MIN_LAKE_KM2} km² reported; ${exorheicSuppressed.length} exorheic filled-depression lakes suppressed as coarse-DEM artifacts`);
 
     const saltyAt = p => lakeId[p] !== -1 && lakes[lakeId[p]].endorheic;
 
     // ---- rivers ----
-    // the river NETWORK includes freshwater-lake pixels (rivers thread
-    // through lakes); the drawn river mask excludes them
+    // the river NETWORK spans all high-discharge pixels (threading through any
+    // depression); only ENDORHEIC lakes are "visible" (drawn / mouth termini),
+    // so the drawn river mask runs straight through filled exorheic basins
+    // rather than rendering them as lakes
     const lakeVisible = new Uint8Array(lakes.length);
-    for (const lake of lakes) if (lake.areaKm2 >= DRAW_LAKE_KM2) lakeVisible[lake.id] = 1;
+    for (const lake of lakes) if (lake.endorheic && lake.areaKm2 >= DRAW_LAKE_KM2) lakeVisible[lake.id] = 1;
 
     const netPx = new Uint8Array(N);
     const riverPx = new Uint8Array(N);
@@ -263,6 +273,7 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
     return {
         fill, receiver, discharge, riverPx, lakeId, saltyLake, lakeVisible, popOrder,
         lakes: keptLakes, rivers,
+        exorheicSuppressed: { count: exorheicSuppressed.length, areaKm2: exorheicArea },
         thresholds: { RIVER_KM3, MAJOR_RIVER_KM3, MIN_LAKE_KM2 },
     };
 }

@@ -109,22 +109,17 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 |---|---|---|---|---|
 | 1 | great lake | 3,351 km² | 0.5 km | SE |
 
-Lakes (computed hydrology — depressions in the terrain holding water above sea level):
+Closed-basin (endorheic) lakes — terminal depressions where evaporation balances inflow, holding standing (saline) water with no ocean outlet:
 
-| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
-|---|---|---|---|---|---|
-| 1 | freshwater (with outlet) | 13,456 km² | 1,003 m | 611 m | NE |
-| 2 | salt (no outlet) | 8,709 km² | 999 m | 647 m | NE |
-| 3 | freshwater (with outlet) | 8,621 km² | 1,064 m | 327 m | NE |
-| 4 | freshwater (with outlet) | 7,453 km² | 529 m | 405 m | NE |
-| 5 | salt (no outlet) | 7,040 km² | 1,634 m | 340 m | NE |
-| 6 | freshwater (with outlet) | 6,916 km² | 1,465 m | 337 m | NE |
-| 7 | freshwater (with outlet) | 6,421 km² | 328 m | 243 m | NE |
-| 8 | freshwater (with outlet) | 6,060 km² | 696 m | 516 m | NE |
-| 9 | freshwater (with outlet) | 5,607 km² | 535 m | 252 m | NE |
-| 10 | freshwater (with outlet) | 5,569 km² | 797 m | 539 m | NE |
-
-…plus 17 smaller lakes.
+| Lake | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|
+| 1 | 8,709 km² | 999 m | 647 m | NE |
+| 2 | 7,040 km² | 1,634 m | 340 m | NE |
+| 3 | 5,389 km² | 2,028 m | 567 m | NE |
+| 4 | 4,379 km² | 980 m | 220 m | NE |
+| 5 | 3,858 km² | 2,313 m | 235 m | NE |
+| 6 | 3,711 km² | 698 m | 160 m | NE |
+| 7 | 3,109 km² | 241 m | 183 m | NE |
 
 ## Rivers
 
@@ -138,4 +133,4 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 | 4 | 28 km³/yr | 259 km | NE quadrant | NE, 47.7°S 13.2°E | sea |
 | 5 | 16 km³/yr | 70 km | SE quadrant | SE, 78.4°S 29.1°E | sea |
 
-> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

@@ -164,8 +164,7 @@ export function renderLegend() {
         { color: OCEAN_SHALLOW, label: 'Ocean (shelf, above -2 km)' },
         { color: OCEAN_MID, label: 'Ocean (-2 to -5 km)' },
         { color: OCEAN_DEEP, label: 'Ocean (below -5 km)' },
-        { color: LAKE, label: 'Lake (freshwater)' },
-        { color: SALT_LAKE, label: 'Salt lake (endorheic)' },
+        { color: SALT_LAKE, label: 'Lake (endorheic / closed-basin)' },
         { color: RIVER, label: 'River' },
     ];
     const rowH = 22, w = 430;

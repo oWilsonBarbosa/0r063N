@@ -208,8 +208,7 @@ function gazetteer(ctx, regionByCell) {
 
     const rivers = hydro.rivers;
     const longest = [...rivers].sort((a, b) => b.lengthKm - a.lengthKm)[0];
-    const freshLakes = hydro.lakes.filter(l => !l.endorheic);
-    const saltLakes = hydro.lakes.filter(l => l.endorheic);
+    const lakes = hydro.lakes;   // reported lakes are closed-basin (endorheic) only
 
     return {
         rows: [
@@ -227,12 +226,10 @@ function gazetteer(ctx, regionByCell) {
                 `mouth ${fmtDeg(rivers[0].mouthLat, rivers[0].mouthLon)}`],
             ['Longest river (main stem)', `${fmtInt(longest.lengthKm)} km`,
                 `mouth ${fmtDeg(longest.mouthLat, longest.mouthLon)}`],
-            ['Largest freshwater lake', freshLakes[0] ? `${fmtInt(freshLakes[0].areaKm2)} km²` : '—',
-                freshLakes[0] ? fmtDeg(freshLakes[0].centroidLat, freshLakes[0].centroidLon) : ''],
-            ['Largest salt lake', saltLakes[0] ? `${fmtInt(saltLakes[0].areaKm2)} km²` : '—',
-                saltLakes[0] ? fmtDeg(saltLakes[0].centroidLat, saltLakes[0].centroidLon) : ''],
+            ['Largest lake (endorheic)', lakes[0] ? `${fmtInt(lakes[0].areaKm2)} km²` : '—',
+                lakes[0] ? fmtDeg(lakes[0].centroidLat, lakes[0].centroidLon) : ''],
             ['Major rivers planet-wide', `${rivers.length}`, '≥ 15 km³/yr at the mouth'],
-            ['Lakes ≥ 2,000 km²', `${hydro.lakes.length}`, `${freshLakes.length} freshwater, ${saltLakes.length} salt`],
+            ['Lakes ≥ 2,000 km²', `${lakes.length}`, 'closed-basin (endorheic); see HYDROLOGY_VALIDATION.md'],
         ],
         topRivers: rivers.slice(0, 10),
         topLakes: hydro.lakes.slice(0, 10),
@@ -295,19 +292,19 @@ function atlasReadme(meta, records, hydro) {
         L.push(`| ${i + 1} | ${fmtInt(rv.dischargeKm3)} km³/yr | ${fmtInt(rv.lengthKm)} km | ${fmtDeg(rv.mouthLat, rv.mouthLon)} | ${rv.terminus} |`);
     });
     L.push('');
-    L.push('### The ten great lakes');
+    L.push('### The ten great lakes (closed-basin / endorheic)');
     L.push('');
-    L.push('| # | Type | Area | Surface | Max. depth | Where |');
-    L.push('|---|---|---|---|---|---|');
+    L.push('| # | Area | Surface | Max. depth | Where |');
+    L.push('|---|---|---|---|---|');
     records.topLakes.forEach((lk, i) => {
-        L.push(`| ${i + 1} | ${lk.endorheic ? 'salt' : 'freshwater'} | ${fmtInt(lk.areaKm2)} km² | ${fmtInt(lk.surfaceKm * 1000)} m | ${fmtInt(lk.maxDepthKm * 1000)} m | ${fmtDeg(lk.centroidLat, lk.centroidLon)} |`);
+        L.push(`| ${i + 1} | ${fmtInt(lk.areaKm2)} km² | ${fmtInt(lk.surfaceKm * 1000)} m | ${fmtInt(lk.maxDepthKm * 1000)} m | ${fmtDeg(lk.centroidLat, lk.centroidLon)} |`);
     });
     L.push('');
     L.push('## Method notes');
     L.push('');
     L.push('- Rasterized at 0.125° from the 2.56 M-cell Fibonacci-sphere export; all areas are cos-latitude weighted.');
     L.push('- **Relief, erosion, tectonics, Köppen, temperature, precipitation, pressure, winds, currents** come directly from exported per-cell fields (`elev_km`, `prePost`, `plate`, `stress`, `foldRidge`, `backArc`, `hotspot`, `koppen`, `tS/tW`, `pS/pW`, `prS/prW` [pressure], `wind*`, `oc*`, `ow*`).');
-    L.push('- **Hydrology** is derived: priority-flood depression filling, steepest-descent routing, Ol\'dekop runoff, per-depression water balance (see the regional reports for details).');
+    L.push('- **Hydrology** is derived: priority-flood depression filling, steepest-descent routing, Ol\'dekop runoff, per-depression water balance. Only closed-basin (endorheic) lakes are reported; exorheic filled-depression lakes are suppressed as a coarse-DEM artifact — see [HYDROLOGY_VALIDATION.md](../HYDROLOGY_VALIDATION.md).');
     L.push('- **NPP** uses the Miami model: `min(3000/(1+e^(1.315−0.119T)), 3000(1−e^(−0.000664P)))` g/m²/yr, ice-corrected (Köppen-EF ice caps set to 0).');
     L.push('- Plate-boundary types on Plate 5 are heuristic: ridge field → divergent, high collision stress → convergent, otherwise transform.');
     L.push('- Seasons follow the northern-hemisphere convention (June vs December half-years).');

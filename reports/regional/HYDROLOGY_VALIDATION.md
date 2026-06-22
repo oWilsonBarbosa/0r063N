@@ -44,28 +44,23 @@ climate band):
 | Sub-arctic | 686 | 12.2 |
 | Arctic | 525 | 16.5 |
 
-## Lakes — a resolution caveat
+## Lakes — endorheic-only reporting
 
 | lake set | count | area (M km²) | % of land | size bins 2k/10k/50k/200k/1M+ |
 |---|---:|---:|---:|---|
-| Endorheic (closed-basin) | 61 | 0.74 | 0.7% | 49 / 10 / 1 / 1 / 0 |
-| Exorheic (filled depressions) | 620 | 4.04 | 3.8% | 548 / 64 / 7 / 1 / 0 |
-| **All ≥ 2,000 km²** | **681** | **4.78** | **4.5%** | |
+| **Reported** — endorheic (closed-basin) | 61 | 0.74 | 0.7% | 49 / 10 / 1 / 1 / 0 |
+| Suppressed — exorheic filled depressions | 620 | 4.04 | 3.8% | — |
 
-Earth has roughly **36** lakes ≥ 2,000 km² (~1.8% of land). The size
-distribution here is a clean power law (many small, few large), but the total
-count and area are ~15× Earth, driven by the **exorheic** set. This is a known
-coarse-DEM artifact: at 0.125° (~14 km) the priority-flood fills entire
-low-relief basins up to their spill, and unresolved river incision makes
-through-flowing valleys look ponded (these lakes are *deep* — median
-211 m — so it is basin relief, not shallow noise).
-
-**Endorheic closure is resolution-robust** (a basin whose inflow cannot outpace
-evaporation is genuinely terminal at any resolution), so the **61 endorheic
-lakes (0.7% of land)** are the trustworthy standing-water population,
-complementing the below-sea-level enclosed seas / great lakes detected separately
-in `analyze.mjs`. Treat exorheic-lake counts as an upper bound / poorly-drained
-lowland rather than literal open water.
+Earth has roughly **36** lakes ≥ 2,000 km² (~1.8% of land). Only
+**closed-basin (endorheic)** lakes are reported: a basin whose inflow cannot
+outpace evaporation is genuinely terminal at any resolution, so it is robust.
+Exorheic “filled-depression” lakes are not — at 0.125° (~14 km) the
+priority-flood fills entire low-relief basins up to their spill, and unresolved
+river incision makes through-flowing valleys look ponded — so the 620 exorheic
+depressions (3.8% of land) are suppressed as artifacts and rivers are
+drawn straight through them. The reported **61 endorheic lakes
+(0.7% of land)** are Earth-plausible, complemented by below-sea-level
+enclosed seas / great lakes detected separately in `analyze.mjs`.
 
 ---
 
