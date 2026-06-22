@@ -11,9 +11,9 @@ The four major landmasses of Orogen planet `06cy8w6z6a89kow6psje93`, named in `t
 
 ## Maps
 
-Each continent centred and clipped — relief, Köppen climate and native habitats: [Meridia](../reports/tectonics/maps/continents/Meridia.png) · [Sirocca](../reports/tectonics/maps/continents/Sirocca.png) · [Selvana](../reports/tectonics/maps/continents/Selvana.png) · [Borea](../reports/tectonics/maps/continents/Borea.png).
+Each continent centred and clipped — relief, Köppen climate and native habitats, with the major-river network and endorheic (closed-basin) lakes overlaid (hydrography from the Node regional pipeline, see [`HYDROLOGY_VALIDATION.md`](../reports/regional/HYDROLOGY_VALIDATION.md)): [Meridia](../reports/tectonics/maps/continents/Meridia.png) · [Sirocca](../reports/tectonics/maps/continents/Sirocca.png) · [Selvana](../reports/tectonics/maps/continents/Selvana.png) · [Borea](../reports/tectonics/maps/continents/Borea.png).
 
-![The four continents — relief](../reports/tectonics/maps/continents/continents_overview.png)
+![The four continents — relief with rivers and endorheic lakes](../reports/tectonics/maps/continents/continents_overview.png)
 
 See [`REGION_CROSSWALK.md`](REGION_CROSSWALK.md) for which regional gazetteers cover each continent (and by how much), and [`BIOGEOGRAPHY.md`](BIOGEOGRAPHY.md) for per-continent habitat provinces.
 

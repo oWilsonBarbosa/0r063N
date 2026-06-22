@@ -15,6 +15,7 @@ import { pixelFields, globalWaterBodies, analyzeRegion, planetMeanWindSpeed } fr
 import { buildHydrology } from './hydrology.mjs';
 import { renderRegionMap, renderOverview, renderLegend } from './maps.mjs';
 import { regionReport, indexReadme } from './report.mjs';
+import { hydrographyExport } from './hydro-export.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, '..', '..');
@@ -140,6 +141,12 @@ async function main() {
     if (!args.region) {
         const partitionNote = 'The globe is divided into the 20 triangular faces of an icosahedron with one vertex at each pole (the book\'s "polyhedral mapping system"): regions 01–05 ring the north pole, 06–15 span the equatorial belt, and 16–20 ring the south pole. Faces are numbered by descending center latitude, then ascending longitude; the partition\'s rotation about the polar axis is arbitrary (a north-cap face is centered on the 36° E meridian). Each face covers ~25.5 M km².';
         fs.writeFileSync(path.join(args.out, 'README.md'), indexReadme(meta, results, partitionNote));
+
+        // machine-readable hydrography (river network + endorheic lakes) for
+        // overlay by other tools — single source of truth for derived rivers
+        const hydroExport = hydrographyExport(grid, hydro, meta);
+        fs.writeFileSync(path.join(args.out, 'hydrography.json'), JSON.stringify(hydroExport));
+        log(`wrote hydrography.json (${hydroExport.rivers.count} river px, ${hydroExport.lakes.count} endorheic-lake px)`);
     }
     log(`done — output in ${args.out}`);
 }

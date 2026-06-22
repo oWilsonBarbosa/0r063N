@@ -58,7 +58,7 @@ where ridge subduction and arc pile-up are still driving peaks past **8.4 km**
   the A+J+I weld along the **O1 suture** (700 km of stacked crust) and subduction
   stepping outboard onto the new continent's edge.
 
-![Meridia — relief, Köppen climate, native habitats](../reports/tectonics/maps/continents/Meridia.png)
+![Meridia — relief, Köppen climate, native habitats, with the river network and endorheic lakes overlaid](../reports/tectonics/maps/continents/Meridia.png)
 
 ## Selvana — the green west
 
@@ -78,7 +78,7 @@ Selvana is low, wet, and green, spanning an enormous latitude range
   **O3 Andean belt** on craton C's southwestern margin, a cordillera that has
   been building continuously and is **still active today**.
 
-![Selvana — relief, Köppen climate, native habitats](../reports/tectonics/maps/continents/Selvana.png)
+![Selvana — relief, Köppen climate, native habitats, with the river network and endorheic lakes overlaid](../reports/tectonics/maps/continents/Selvana.png)
 
 ## The Western Ocean — the sea between
 

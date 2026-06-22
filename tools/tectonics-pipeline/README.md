@@ -40,8 +40,10 @@ python3 tools/tectonics-pipeline/scripts/90_build_climate_doc.py # -> docs/PALEO
 python3 tools/tectonics-pipeline/scripts/95_continent_profiles.py # -> continent_profiles.json + docs/CONTINENTS.md
 python3 tools/tectonics-pipeline/scripts/96_region_crosswalk.py # -> region_continent_crosswalk.{json,csv} + docs/REGION_CROSSWALK.md
 python3 tools/tectonics-pipeline/scripts/97_biogeography.py # -> biogeography_provinces.csv + map + docs/BIOGEOGRAPHY.md
-python3 tools/tectonics-pipeline/scripts/98_continent_maps.py # -> maps/continents/*.png (per-continent relief/Köppen/habitat)
+python3 tools/tectonics-pipeline/scripts/98_continent_maps.py # -> maps/continents/*.png (relief/Köppen/habitat + rivers & endorheic lakes)
 ```
+
+The per-continent maps (`98`) overlay the river network and endorheic lakes read from `reports/regional/hydrography.json` — the single source of truth for derived hydrography, produced by the Node regional pipeline (`node tools/regional-report/main.mjs`) and validated in `reports/regional/HYDROLOGY_VALIDATION.md`. The script still runs without it (overlay skipped with a warning).
 
 NPP everywhere uses the **ice-corrected** Miami model (Köppen-EF ice caps = 0),
 the canonical `miamiNpp` in `tools/regional-report/classify.mjs`.
@@ -83,7 +85,7 @@ and documents are committed.
 | `reports/tectonics/biogeography_provinces.csv` | continent × habitat provinces (area, climate, NPP) |
 | `reports/tectonics/maps/present/present_subduction_style.png` | subduction-style map |
 | `reports/tectonics/maps/present/present_biogeography.png` | biogeographic habitat map |
-| `reports/tectonics/maps/continents/` | per-continent clipped maps (relief / Köppen / habitats) + overview |
+| `reports/tectonics/maps/continents/` | per-continent clipped maps (relief / Köppen / habitats, rivers & endorheic lakes overlaid) + overview |
 | `reports/tectonics/INVENTORY.md` | present-day tectonic inventory (human-readable) |
 | `reports/tectonics/VALIDATION.md` | validation report against the rules of thumb |
 | `reports/tectonics/climate_summary.json` | climate calibration + per-stage stats |
