@@ -9,6 +9,11 @@ node_modules/
 # Dataset helper outputs (scripts/reassemble.py) — derived, do not commit
 /orogen_regions_full.csv
 /orogen_regions_full.csv.gz
+/orogen_regions_full_v2.csv
+/orogen_regions_full_v2.csv.gz
+
+# Export-v2 pipeline intermediates (tools/export-v2/) — derived, do not commit
+tools/export-v2/intermediate/
 
 # OS / editor cruft
 .DS_Store

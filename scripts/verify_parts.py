@@ -7,6 +7,7 @@ source of truth) and checks each `.csv.gz` against them.
 
     python3 scripts/verify_parts.py          # SHA-256 + file size (fast, authoritative)
     python3 scripts/verify_parts.py --rows    # also decompress and count data rows
+    python3 scripts/verify_parts.py --v2      # check the corrected v2 export instead
 
 Exit code 0 = all parts pass, 1 = at least one mismatch.
 """
@@ -18,8 +19,10 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = REPO_ROOT / "data" / "orogen_regions_full"
-MANIFEST = DATA_DIR / "orogen_regions_full_csv_parts_manifest.md"
+DATASETS = {
+    "v1": ("orogen_regions_full", "orogen_regions_full_csv_parts_manifest.md"),
+    "v2": ("orogen_regions_full_v2", "orogen_regions_full_v2_manifest.md"),
+}
 
 # Manifest row: | 00 | `file.csv.gz` | 200,000 | 0 | 199999 | .. | .. | 31,627,636 | `sha` |
 ROW_RE = re.compile(
@@ -28,9 +31,9 @@ ROW_RE = re.compile(
 )
 
 
-def parse_manifest():
+def parse_manifest(manifest):
     parts = []
-    for line in MANIFEST.read_text().splitlines():
+    for line in manifest.read_text().splitlines():
         m = ROW_RE.match(line.strip())
         if m:
             parts.append({
@@ -59,21 +62,27 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--rows", action="store_true",
                     help="also decompress each part and verify the data-row count")
+    ap.add_argument("--v2", action="store_true",
+                    help="verify the corrected v2 export (data/orogen_regions_full_v2/)")
     args = ap.parse_args()
 
-    parts = parse_manifest()
+    dir_name, manifest_name = DATASETS["v2" if args.v2 else "v1"]
+    data_dir = REPO_ROOT / "data" / dir_name
+    manifest = data_dir / manifest_name
+
+    parts = parse_manifest(manifest)
     if not parts:
-        print(f"ERROR: no parts parsed from {MANIFEST}", file=sys.stderr)
+        print(f"ERROR: no parts parsed from {manifest}", file=sys.stderr)
         return 2
 
-    print(f"Verifying {len(parts)} parts against {MANIFEST.name}\n")
+    print(f"Verifying {len(parts)} parts against {manifest.name}\n")
     header = f"{'part':<40} {'size':>6} {'sha256':>8}" + ("  rows" if args.rows else "")
     print(header)
     print("-" * len(header))
 
     ok = True
     for p in parts:
-        path = DATA_DIR / p["file"]
+        path = data_dir / p["file"]
         if not path.exists():
             print(f"{p['file']:<40} MISSING")
             ok = False
