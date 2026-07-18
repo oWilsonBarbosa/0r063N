@@ -22,16 +22,17 @@ const BYTE_COLS = ['isLand', 'isSurfaceCoast', 'isMountain', 'koppen', 'superPla
 
 export function loadMeta(dataDir) {
     const meta = JSON.parse(fs.readFileSync(path.join(dataDir, 'orogen_meta_full_v2.json'), 'utf8'));
-    // The koppen/elevation reference stats used by verifyData live in the v1
-    // metadata; those columns are preserved text-for-text in v2, so the v1
-    // values remain the authoritative expectations.
+    // The v2 metadata describes the correction; planet-level facts (url,
+    // landFractionPct, extractedAt, koppen/elevation reference stats, ...)
+    // live in the v1 metadata and remain valid, since the columns they
+    // describe are preserved text-for-text in v2. Overlay v2 on top of v1.
     try {
         const v1 = JSON.parse(fs.readFileSync(
             path.join(dataDir, '..', 'orogen_regions_full', 'orogen_meta_full.json'), 'utf8'));
-        meta.koppenDistributionLand ??= v1.koppenDistributionLand;
-        meta.elevPhysicalKm ??= v1.elevPhysicalKm;
-    } catch { /* verifyData skips the checks it has no expectations for */ }
-    return meta;
+        return { ...v1, ...meta };
+    } catch {
+        return meta; // verifyData skips the checks it has no expectations for
+    }
 }
 
 const CACHE_MAGIC = 0x4f524f47; // "OROG"
