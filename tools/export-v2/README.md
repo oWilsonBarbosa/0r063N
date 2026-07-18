@@ -37,12 +37,17 @@ node rewrite_parts.mjs              # -> ../../data/orogen_regions_full_v2/ (13 
 node validate_corrected_export.mjs  # row-by-row v1↔v2 validation -> validation_v2.json
 ```
 
-Optional checks:
+Optional checks and analyses:
 
 ```bash
 node inspect_planet.mjs             # decode the planet code
 node verify_geometry.mjs            # sample-check exported x,y,z against the regenerated mesh
+node continent_stats.mjs            # per-continent profile (extent, elevation, Köppen, temperature)
 ```
+
+`continent_stats.mjs` rebuilds the mesh, labels the landmasses, and prints
+planet-level counts plus a profile of the four continents — the source of the
+numbers in `.claude/skills/orogen-worldbuilding/SKILL.md`.
 
 Every step is deterministic: rebuilding from the same v1 parts reproduces the
 13 v2 `.csv.gz` parts byte-for-byte (SHA-256s are recorded in
