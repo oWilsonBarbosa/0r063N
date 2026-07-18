@@ -90,14 +90,14 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Desert, rocky | 10.8 % |
 | Desert, sandy | 10.4 % |
 | Barren | 8.6 % |
-| Grassland / savanna | 7.4 % |
-| Forest, light | 6.1 % |
-| Jungle, heavy | 5.3 % |
+| Grassland / savanna | 7.2 % |
+| Forest, light | 5.6 % |
+| Jungle, heavy | 4.3 % |
 | Glacier | 4.0 % |
-| Jungle, medium | 3.2 % |
+| Jungle, medium | 2.6 % |
+| Marsh / swamp | 2.4 % |
 | Forest, medium | 0.8 % |
 | Steppe | 0.7 % |
-| Marsh / swamp | 0.2 % |
 
 Notable expanses (largest contiguous areas):
 

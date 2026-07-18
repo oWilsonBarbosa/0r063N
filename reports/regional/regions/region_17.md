@@ -73,13 +73,13 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 52.3 % |
+| Forest, medium | 50.9 % |
 | Scrub / brushland | 12.5 % |
 | Steppe | 12.3 % |
-| Forest, light | 11.4 % |
+| Forest, light | 11.3 % |
 | Tundra | 10.6 % |
+| Marsh / swamp | 1.7 % |
 | Barren | 0.7 % |
-| Marsh / swamp | 0.2 % |
 
 ## Water Bodies
 

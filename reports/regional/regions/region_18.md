@@ -84,22 +84,23 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 24.2 % |
+| Forest, medium | 23.6 % |
 | Scrub / brushland | 22.7 % |
 | Barren | 20.9 % |
 | Desert, rocky | 12.5 % |
 | Steppe | 5.2 % |
 | Glacier | 4.1 % |
-| Forest, heavy | 3.6 % |
+| Forest, heavy | 3.4 % |
 | Tundra | 3.0 % |
 | Desert, sandy | 2.5 % |
+| Marsh / swamp | 0.9 % |
 | Grassland / savanna | 0.6 % |
 | Forest, light | 0.6 % |
 
 Notable expanses (largest contiguous areas):
 
 - A desert of 154,108 km² in the NE quadrant.
-- A forest of 989,025 km² in the NE quadrant.
+- A forest of 971,760 km² in the NE quadrant.
 
 ## Water Bodies
 

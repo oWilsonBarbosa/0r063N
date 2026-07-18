@@ -84,18 +84,19 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Jungle, heavy | 44.8 % |
-| Forest, light | 20.2 % |
-| Jungle, medium | 12.8 % |
+| Jungle, heavy | 43.8 % |
+| Forest, light | 20.1 % |
+| Jungle, medium | 12.7 % |
 | Grassland / savanna | 9.8 % |
 | Barren | 7.7 % |
 | Scrub / brushland | 4.2 % |
+| Marsh / swamp | 1.2 % |
 | Glacier | 0.3 % |
 
 Notable expanses (largest contiguous areas):
 
-- A jungle of 2,179,213 km² in the SW quadrant.
-- A forest of 746,802 km² in the SW quadrant.
+- A jungle of 2,146,465 km² in the SW quadrant.
+- A forest of 746,245 km² in the SW quadrant.
 - A grassland of 173,962 km² in the SW quadrant.
 
 ## Water Bodies

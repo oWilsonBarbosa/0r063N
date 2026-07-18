@@ -90,8 +90,9 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Glacier | 30.6 % |
 | Forest, light | 14.3 % |
 | Barren | 11.0 % |
-| Forest, medium | 4.5 % |
-| Moor | 0.7 % |
+| Forest, medium | 4.1 % |
+| Moor | 0.6 % |
+| Marsh / swamp | 0.5 % |
 
 Notable expanses (largest contiguous areas):
 

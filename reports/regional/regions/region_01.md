@@ -86,16 +86,17 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Scrub / brushland | 27.3 % |
+| Scrub / brushland | 27.2 % |
 | Tundra | 22.7 % |
-| Forest, medium | 17.3 % |
+| Forest, medium | 16.6 % |
 | Forest, light | 10.6 % |
 | Glacier | 6.0 % |
 | Barren | 5.4 % |
 | Desert, sandy | 3.2 % |
 | Steppe | 3.1 % |
 | Desert, rocky | 2.7 % |
-| Forest, heavy | 1.4 % |
+| Marsh / swamp | 1.2 % |
+| Forest, heavy | 1.1 % |
 
 Notable expanses (largest contiguous areas):
 
