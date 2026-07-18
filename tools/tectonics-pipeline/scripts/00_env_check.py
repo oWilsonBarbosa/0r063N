@@ -29,11 +29,11 @@ from lib import data_io  # noqa: E402
 try:
     paths = data_io.part_paths()
     sizes = {p.name: p.stat().st_size for p in paths}
-    manifest = (data_io.DATA_DIR / "orogen_regions_full_csv_parts_manifest.md").read_text()
+    manifest = (data_io.DATA_DIR / "orogen_regions_full_v2_manifest.md").read_text()
     for name, size in sizes.items():
         if name not in manifest:
             failures.append(f"part not in manifest: {name}")
-        elif f"{size:,}" not in manifest:
+        elif f" {size} " not in manifest and f"{size:,}" not in manifest:
             failures.append(f"size mismatch vs manifest: {name} ({size:,} bytes)")
     meta = data_io.load_meta()
     print(f"data: 13 parts OK, planet seed {meta['seed']}, "

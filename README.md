@@ -27,6 +27,7 @@ reconstructed **750-million-year geological + climate history**.
 | **How the world came to be** — a 750-Myr plate-tectonic history | [`docs/GEOLOGICAL_HISTORY.md`](docs/GEOLOGICAL_HISTORY.md) |
 | **How its climate evolved** — paleoclimate across the supercontinent cycle | [`docs/PALEOCLIMATE.md`](docs/PALEOCLIMATE.md) |
 | **The raw data** — what the columns mean | [`docs/DATA_DICTIONARY_V2.md`](docs/DATA_DICTIONARY_V2.md) (corrected v2) · [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) (original) |
+| **Why v2 exists** — the dataset audit (69 tests, 15 alerts, 9 root causes) | [`reports/audit/`](reports/audit/README.md) |
 
 ## Repository map
 
@@ -37,6 +38,7 @@ reconstructed **750-million-year geological + climate history**.
 | `docs/` | Narrative documents: the data dictionary, geological history, and paleoclimate. |
 | `reports/regional/` | **Physical Atlas + 20 regional gazetteers** (Markdown + maps). Built by `tools/regional-report/`. |
 | `reports/tectonics/` | Tectonic inventory, validation, and ~38 paleogeographic/climate maps. Built by `tools/tectonics-pipeline/`. |
+| `reports/audit/` | The dataset audit that motivated the v2 export: field profile, coherence tests, code-level root-cause analysis, and the present-state atlas (source documents in Portuguese, summary in English). |
 | `tools/export-v2/` | **Node.js** pipeline that rebuilds the corrected v2 export from the v1 parts and the pinned generator (single dependency: `delaunator`). |
 | `tools/regional-report/` | Zero-dependency **Node.js** pipeline that generates the regional reports and atlas. |
 | `tools/tectonics-pipeline/` | **Python** pipeline that reconstructs the tectonic history and paleoclimate. |
