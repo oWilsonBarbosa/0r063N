@@ -90,14 +90,15 @@ export function precipAnnualMm(pS, pW) {
 }
 
 // Deterministic terrain class for one land cell.
-export function classifyTerrain(koppen, elevKm, pannMm, isCoastal) {
+export function classifyTerrain(koppen, elevKm, pannMm, isSurfaceCoast) {
     if (koppen === 30) return T_IDX.glacier;                       // EF
     if (elevKm > 3.0) return T_IDX.barren;                         // above treeline
     if (koppen === 29 && elevKm > 2.0) return T_IDX.barren;        // alpine ET
     if (koppen === 29) return T_IDX.tundra;
 
-    // low-lying wet coastal flats -> wetlands
-    if (elevKm < 0.05 && isCoastal && pannMm > 800 && koppen >= 1 && koppen <= 16) {
+    // low-lying wet coastal flats -> wetlands (isSurfaceCoast is the true
+    // land/ocean adjacency flag; the legacy isCoastal is a tectonic seed mask)
+    if (elevKm < 0.05 && isSurfaceCoast && pannMm > 800 && koppen >= 1 && koppen <= 16) {
         return T_IDX.marshSwamp;
     }
 
@@ -136,7 +137,7 @@ export function classifyAll(data) {
         const k = data.koppen[i];
         band[i] = climateBand(k);
         const pann = precipAnnualMm(data.pS[i], data.pW[i]);
-        terrain[i] = classifyTerrain(k, data.elev_km[i], pann, data.isCoastal[i]);
+        terrain[i] = classifyTerrain(k, data.elev_km[i], pann, data.isSurfaceCoast[i]);
     }
     return { terrain, band };
 }

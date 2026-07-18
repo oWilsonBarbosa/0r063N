@@ -27,7 +27,7 @@ const log = (msg) => console.log(`[${((Date.now() - t0) / 1000).toFixed(1)}s] ${
 
 function parseArgs(argv) {
     const args = {
-        data: path.join(repoRoot, 'data', 'orogen_regions_full'),
+        data: path.join(repoRoot, 'data', 'orogen_regions_full_v2'),
         out: path.join(repoRoot, 'reports', 'regional', 'atlas'),
         grid: 0.125,
     };
@@ -306,7 +306,8 @@ function atlasReadme(meta, records, hydro) {
     L.push('## Method notes');
     L.push('');
     L.push('- Rasterized at 0.125° from the 2.56 M-cell Fibonacci-sphere export; all areas are cos-latitude weighted.');
-    L.push('- **Relief, erosion, tectonics, Köppen, temperature, precipitation, pressure, winds, currents** come directly from exported per-cell fields (`elev_km`, `prePost`, `plate`, `stress`, `foldRidge`, `backArc`, `hotspot`, `koppen`, `tS/tW`, `pS/pW`, `prS/prW` [pressure], `wind*`, `oc*`, `ow*`).');
+    L.push('- **Relief, erosion, tectonics, Köppen, temperature, precipitation, pressure, winds, currents** come directly from exported per-cell fields (`elev_km`, `eroD`, `plate`, `stress`, `foldRidge`, `backArc`, `hotspot`, `koppen`, `tS/tW`, `pS/pW`, `prS/prW` [pressure], `wind*`, `oc*`). Built from the corrected v2 export (`data/orogen_regions_full_v2/`).');
+    L.push('- `pS/pW`, `wsS/wsW`, and `ocSpeed*` are p95-normalized and capped at 1, so values at the cap are floors (≥ p95), not exact maxima; precipitation-mm figures in the wettest areas are lower bounds.');
     L.push('- **Hydrology** is derived: priority-flood depression filling, steepest-descent routing, Ol\'dekop runoff, per-depression water balance (see the regional reports for details).');
     L.push('- **NPP** uses the Miami model: `min(3000/(1+e^(1.315−0.119T)), 3000(1−e^(−0.000664P)))` g/m²/yr.');
     L.push('- Plate-boundary types on Plate 5 are heuristic: ridge field → divergent, high collision stress → convergent, otherwise transform.');

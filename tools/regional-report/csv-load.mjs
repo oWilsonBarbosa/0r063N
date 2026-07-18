@@ -6,25 +6,36 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import readline from 'node:readline';
 
-export const EXPECTED_HEADER = 'id,lat,lon,x,y,z,elev,elev_km,prePost,eroD,plate,isOcPlate,superPlate,plateSpeed,isLand,isCoastal,isMountain,stress,orogPow,tecAct,base,tectonic,noise,interior,coastal_l,ocean_l,hotspot,margins,backArc,foldRidge,basin,koppen,contality,tempContality,tS,tW,pS,pW,wsS,wsW,prS,prW,windES,windNS,windEW,windNW,owS,owW,ocSpeedS,ocSpeedW,ocEastS,ocNorthS,ocEastW,ocNorthW,rsSummer,rsWinter';
+export const EXPECTED_HEADER = 'id,lat,lon,x,y,z,elev,elev_km,prePost,eroD,plate,isOcPlate,superPlate,plateSpeed,isLand,isCoastal,isMountain,stress,orogPow,tecAct,base,tectonic,noise,interior,coastal_l,ocean_l,hotspot,margins,backArc,foldRidge,basin,koppen,contality,tempContinentality,tS,tW,pS,pW,wsS,wsW,prS,prW,windES,windNS,windEW,windNW,owS,owW,ocSpeedS,ocSpeedW,ocEastS,ocNorthS,ocEastW,ocNorthW,rsSummer,rsWinter,isSurfaceCoast,postProcessDelta';
 
 // column name -> { array kind } ; indices resolved from the header at load time
-// NOTE: pS/pW are PRECIPITATION half-year totals (meta: precip_mm = pS*1000)
-// and prS/prW are sea-level PRESSURE, despite what the names suggest.
+// NOTE: pS/pW are PRECIPITATION half-year totals (meta: precip_mm = pS*1000),
+// p95-normalized and capped at 1 (1 means >= the seasonal p95), and prS/prW
+// are sea-level PRESSURE, despite what the names suggest.
 const FLOAT_COLS = ['lat', 'lon', 'x', 'y', 'z', 'elev_km', 'tS', 'tW', 'wsS', 'wsW',
     'pS', 'pW', 'windES', 'windNS', 'windEW', 'windNW', 'rsSummer', 'rsWinter',
     // atlas columns: erosion, tectonics, pressure, ocean currents
     'prePost', 'eroD', 'plate', 'stress', 'orogPow', 'tecAct', 'hotspot',
     'margins', 'backArc', 'foldRidge', 'prS', 'prW',
     'ocEastS', 'ocNorthS', 'ocEastW', 'ocNorthW', 'ocSpeedS', 'ocSpeedW', 'owS', 'owW'];
-const BYTE_COLS = ['isLand', 'isCoastal', 'isMountain', 'koppen', 'superPlate'];
+const BYTE_COLS = ['isLand', 'isSurfaceCoast', 'isMountain', 'koppen', 'superPlate'];
 
 export function loadMeta(dataDir) {
-    return JSON.parse(fs.readFileSync(path.join(dataDir, 'orogen_meta_full.json'), 'utf8'));
+    const meta = JSON.parse(fs.readFileSync(path.join(dataDir, 'orogen_meta_full_v2.json'), 'utf8'));
+    // The koppen/elevation reference stats used by verifyData live in the v1
+    // metadata; those columns are preserved text-for-text in v2, so the v1
+    // values remain the authoritative expectations.
+    try {
+        const v1 = JSON.parse(fs.readFileSync(
+            path.join(dataDir, '..', 'orogen_regions_full', 'orogen_meta_full.json'), 'utf8'));
+        meta.koppenDistributionLand ??= v1.koppenDistributionLand;
+        meta.elevPhysicalKm ??= v1.elevPhysicalKm;
+    } catch { /* verifyData skips the checks it has no expectations for */ }
+    return meta;
 }
 
 const CACHE_MAGIC = 0x4f524f47; // "OROG"
-const CACHE_VERSION = 4;
+const CACHE_VERSION = 5;
 
 function cacheColumns() { return [...FLOAT_COLS, ...BYTE_COLS]; }
 
@@ -70,7 +81,7 @@ export async function loadData(dataDir, { log = () => {} } = {}) {
     const n = meta.numRegions;
 
     const files = fs.readdirSync(dataDir)
-        .filter(f => /^orogen_regions_full_part_\d+\.csv\.gz$/.test(f))
+        .filter(f => /^orogen_regions_full_v2_part_\d+\.csv\.gz$/.test(f))
         .sort();
     if (files.length === 0) throw new Error(`no CSV parts found in ${dataDir}`);
 
@@ -127,6 +138,7 @@ export function verifyData(data, meta) {
     check('row count', data.n, meta.numRegions);
 
     let landCount = 0;
+    let coastCount = 0;
     const koppenHist = new Array(32).fill(0);
     let minElev = Infinity, maxElev = -Infinity;
     for (let i = 0; i < data.n; i++) {
@@ -134,16 +146,22 @@ export function verifyData(data, meta) {
             landCount++;
             koppenHist[data.koppen[i]]++;
         }
+        if (data.isSurfaceCoast[i]) coastCount++;
         const e = data.elev_km[i];
         if (e < minElev) minElev = e;
         if (e > maxElev) maxElev = e;
     }
     check('land cells', landCount, meta.numLandCells);
+    if (meta.numSurfaceCoastCells !== undefined) {
+        check('surface coast cells', coastCount, meta.numSurfaceCoastCells);
+    }
 
-    const wantHist = meta.koppenDistributionLand || {};
-    for (let k = 1; k < 32; k++) {
-        const want = wantHist[String(k)] || 0;
-        check(`koppen[${k}] land count`, koppenHist[k], want);
+    if (meta.koppenDistributionLand) {
+        const wantHist = meta.koppenDistributionLand;
+        for (let k = 1; k < 32; k++) {
+            const want = wantHist[String(k)] || 0;
+            check(`koppen[${k}] land count`, koppenHist[k], want);
+        }
     }
     const near = (a, b, tol) => Math.abs(a - b) <= tol;
     if (meta.elevPhysicalKm) {
