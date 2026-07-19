@@ -156,8 +156,17 @@ geological/climate record; and the **continental divergence tree**
 biological sisters are *not* the easy-to-sail neighbours. New regional life
 must descend consistently from this root.
 
+The **biogeographic realm map** is also fixed: see `docs/life/01_BIOGEOGRAPHIC_REALMS.md`.
+Four terrestrial realms (Meridian, Siroccan, Borean, Selvanan), each split into
+provinces on the mountain/aridity barriers; marine realms by depth/latitude/basin
+(circumglobal Abyssal, old EXT vs young rift-oceans, cold southern, upwelling
+coasts). Realm **affinities follow the divergence tree, not the modern map** —
+sisters Meridia–Sirocca and Borea–Selvana share deep lineages across the ocean
+(homology), while easy-to-sail neighbours Meridia–Selvana and Borea–Sirocca are
+cross-branch (convergence). Regional ecologies must obey this.
+
 ### Open (Phase 5 creative space — fully yours to invent)
-Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · human history and mythology · calendar, day length, moon system, gravity · the post-dispersal biogeographic realms and regional ecologies (grounded in `docs/life/`) · any minor rivers and local geography
+Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · human history and mythology · calendar, day length, moon system, gravity · concrete regional ecologies (grounded in `docs/life/`) · any minor rivers and local geography
 
 ### Label conventions when worldbuilding
 - `MEASURED` — directly from the v2 export (elevation, temperature, Köppen)
