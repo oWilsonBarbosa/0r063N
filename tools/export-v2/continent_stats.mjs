@@ -6,6 +6,7 @@ import Delaunator from 'delaunator';
 import { setDelaunator, buildSphere } from '/home/user/0r063N/third_party/planet_heightmap_generation/js/sphere-mesh.js';
 import { makeRng } from '/home/user/0r063N/third_party/planet_heightmap_generation/js/rng.js';
 import { decodePlanetCode } from '/home/user/0r063N/third_party/planet_heightmap_generation/js/planet-code.js';
+import { elevToHeightKm } from '/home/user/0r063N/third_party/planet_heightmap_generation/js/color-map.js';
 
 setDelaunator(Delaunator);
 const cfg = decodePlanetCode('06cy8w6z6a89kow6psje93');
@@ -38,7 +39,10 @@ for (const file of files) {
     if (!line) continue;
     const f = line.split(',');
     isLand[row] = f[idx.isLand] === '1' ? 1 : 0;
-    elevKm[row] = +f[idx.elev_km];
+    // Canonical height: the generator's own S-curve mapping (the one the
+    // climate physics used), derived from the raw dimensionless elev — not the
+    // legacy linear elev_km field.
+    elevKm[row] = elevToHeightKm(+f[idx.elev]);
     kop[row] = +f[idx.koppen];
     tAnnC[row] = -45 + ((+f[idx.tS] + +f[idx.tW]) / 2) * 90;
     latDeg[row] = +f[idx.lat];

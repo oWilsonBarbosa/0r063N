@@ -1,0 +1,209 @@
+{
+  "schema": "orogen_atlas_v2_relief_coast_diagnostic",
+  "schemaVersion": "1.0.0",
+  "planetCode": "06cy8w6z6a89kow6psje93",
+  "seed": 10673275,
+  "verdict": "VERTICAL_SCHEMA_MISMATCH_PRECEDES_TERRAIN_TUNING",
+  "inputIntegrity": {
+    "rows": 2560001,
+    "landCells": 534840,
+    "partsPassing": 13,
+    "partsTotal": 13,
+    "postProcessIdentityMaxAbsErrorRaw": 2.220446049250313e-16,
+    "legacyExportMappingMaxAbsErrorKm": 5.2000000001051205e-05,
+    "legacyExportMappingMeanAbsErrorKm": 2.497467774443722e-05
+  },
+  "verticalMapping": {
+    "conflictingDefinitions": 3,
+    "legacyLinear": {
+      "mapping": "legacy_linear",
+      "land_mean_km": 1.5404659100236466,
+      "land_median_km": 1.1729729622602463,
+      "land_at_or_above_2km_share": 0.2838736818487772,
+      "maximum_land_km": 8.537861824035645,
+      "q10_km": 0.2144874058663845,
+      "q25_km": 0.5403990000486374,
+      "q75_km": 2.2228154987096786,
+      "q90_km": 3.480702531337738,
+      "q95_km": 4.130816066265106,
+      "q99_km": 5.493928449153894,
+      "earth_land_mean_km": 0.7936147913941995,
+      "earth_land_median_km": 0.4205841957659063,
+      "earth_land_at_or_above_2km_share": 0.10742653260160782,
+      "earth_matched_maximum_km": 6.258655071258545,
+      "gate_count_passed": 1,
+      "candidate_gate_status": "HOLD",
+      "gate_detail": "mean=HOLD; median=HOLD; high_share=HOLD; maximum=PASS"
+    },
+    "codeSCurve": {
+      "mapping": "code_s_curve",
+      "land_mean_km": 0.5249289030287216,
+      "land_median_km": 0.036966359785399514,
+      "land_at_or_above_2km_share": 0.09003814224814898,
+      "maximum_land_km": 6.0,
+      "q10_km": 4.759072159326838e-05,
+      "q25_km": 0.0018318819303355552,
+      "q75_km": 0.3976224831424847,
+      "q90_km": 1.8208441522237722,
+      "q95_km": 3.027771807254147,
+      "q99_km": 5.640705183162723,
+      "earth_land_mean_km": 0.7936147913941995,
+      "earth_land_median_km": 0.4205841957659063,
+      "earth_land_at_or_above_2km_share": 0.10742653260160782,
+      "earth_matched_maximum_km": 6.258655071258545,
+      "gate_count_passed": 2,
+      "candidate_gate_status": "HOLD",
+      "gate_detail": "mean=HOLD; median=HOLD; high_share=PASS; maximum=PASS"
+    },
+    "candidatePower": {
+      "mapping": "earth_fitted_power",
+      "land_mean_km": 0.7682763899877563,
+      "land_median_km": 0.42051967837661974,
+      "land_at_or_above_2km_share": 0.10741717149053923,
+      "maximum_land_km": 7.661812311125774,
+      "q10_km": 0.03506027977077629,
+      "q25_km": 0.13540453642771744,
+      "q75_km": 1.0708491004544096,
+      "q90_km": 2.0631003861825086,
+      "q95_km": 2.650123034798523,
+      "q99_km": 4.021249224245848,
+      "earth_land_mean_km": 0.7936147913941995,
+      "earth_land_median_km": 0.4205841957659063,
+      "earth_land_at_or_above_2km_share": 0.10742653260160782,
+      "earth_matched_maximum_km": 6.258655071258545,
+      "gate_count_passed": 4,
+      "candidate_gate_status": "PASS",
+      "gate_detail": "mean=PASS; median=PASS; high_share=PASS; maximum=PASS"
+    },
+    "candidateScaleKm": 4.574236096629359,
+    "candidateExponent": 1.4622457219144074,
+    "terrainMetricBandReproduction": {
+      "computed": {
+        "land_band_0_50m_frac": 0.5304352703612295,
+        "land_band_50_200m_frac": 0.1610556428090644,
+        "land_band_200_500m_frac": 0.08266210455463316,
+        "land_band_500m_plus_frac": 0.2258469822750729
+      },
+      "metadata": {
+        "land_band_0_50m_frac": 0.5304,
+        "land_band_50_200m_frac": 0.1611,
+        "land_band_200_500m_frac": 0.0827,
+        "land_band_500m_plus_frac": 0.2258
+      },
+      "maxAbsError": 4.698227507290986e-05,
+      "method": "Exact implementation thresholds in raw elevation: 0.21, 0.31, 0.40.",
+      "interpretationLimit": "The metre labels are approximate and do not equal exact inverse S-curve boundaries."
+    },
+    "temperatureRegression": {
+      "legacy_linear": {
+        "mapping": "legacy_linear",
+        "intercept_c": 37.93450712874956,
+        "latitude_coefficient_c_per_degree": -0.44173170314028165,
+        "height_coefficient_c_per_km": -5.402910835057643,
+        "r_squared_descriptive": 0.7666724559777938
+      },
+      "ui_quadratic": {
+        "mapping": "ui_quadratic",
+        "intercept_c": 34.95170630014452,
+        "latitude_coefficient_c_per_degree": -0.4499266487957304,
+        "height_coefficient_c_per_km": -7.457227508969128,
+        "r_squared_descriptive": 0.8505054319822383
+      },
+      "code_s_curve": {
+        "mapping": "code_s_curve",
+        "intercept_c": 33.954288552867254,
+        "latitude_coefficient_c_per_degree": -0.45454598798462764,
+        "height_coefficient_c_per_km": -7.4172009502254905,
+        "r_squared_descriptive": 0.8726637767420727
+      },
+      "earth_fitted_power": {
+        "mapping": "earth_fitted_power",
+        "intercept_c": 36.196027256210364,
+        "latitude_coefficient_c_per_degree": -0.4447343471885339,
+        "height_coefficient_c_per_km": -8.433482098802397,
+        "r_squared_descriptive": 0.8202438902434266
+      }
+    }
+  },
+  "terrainPipeline": {
+    "prePostLandCells": 511857,
+    "finalLandCells": 534840,
+    "landGainedAfterPrePostSnapshot": 42366,
+    "landLostAfterPrePostSnapshot": 19383,
+    "landMaskJaccardPrePostVsFinal": 0.8885845589230328,
+    "landPostProcessDeltaMeanRaw": -0.10784070938825607,
+    "landPostProcessDeltaMedianRaw": -0.05559000000357628,
+    "landPostProcessDeltaNegativeShare": 0.6714849300725451,
+    "strongestDescriptiveComponents": [
+      {
+        "field": "base",
+        "pearson_with_final_raw_elevation": 0.39616364383558944,
+        "standardized_multivariate_coefficient": 0.5609368617530129
+      },
+      {
+        "field": "tecAct",
+        "pearson_with_final_raw_elevation": 0.37027423688778327,
+        "standardized_multivariate_coefficient": 0.22564406592299852
+      },
+      {
+        "field": "noise",
+        "pearson_with_final_raw_elevation": 0.3539846939194642,
+        "standardized_multivariate_coefficient": 0.6499139723588759
+      },
+      {
+        "field": "stress",
+        "pearson_with_final_raw_elevation": 0.29994331059348806,
+        "standardized_multivariate_coefficient": 0.010306351099188645
+      },
+      {
+        "field": "interior",
+        "pearson_with_final_raw_elevation": 0.29963902923859903,
+        "standardized_multivariate_coefficient": 0.7337533384668012
+      }
+    ]
+  },
+  "coast": {
+    "nativeAtlasShare": 0.07623214419265575,
+    "nativeEarthFourNeighborShare": 0.038527847620198175,
+    "nativeEarthEightNeighborShare": 0.05027018320107318,
+    "commonGridTwoToSixDegreeGate": "PASS",
+    "decision": "NO_TERRAIN_PARAMETER_CHANGE",
+    "interpretation": "The native mismatch is not reproduced after topology and scale are harmonized; it is not a robust trigger for reducing terrain warp."
+  },
+  "heldOutGeneratorScreen": {
+    "seeds": 6,
+    "regionsPerSeed": 50001,
+    "candidateMappingStatus": "PASS",
+    "baselineCandidateMetrics": {
+      "variant": "baseline_initial",
+      "mapping": "v2_seed_fitted_power",
+      "held_out_seeds": 6,
+      "regions_per_seed": 50001,
+      "land_fraction_mean": 0.1997793377465784,
+      "coast_share_mean": 0.1990145275695184,
+      "coast_share_min": 0.18363472874413028,
+      "coast_share_max": 0.21605415860735008,
+      "land_mean_km_mean": 0.9041211831137432,
+      "land_mean_km_sd": 0.05919964929965885,
+      "land_median_km_mean": 0.5496287723144043,
+      "land_median_km_sd": 0.04295754342575561,
+      "land_at_or_above_2km_share_mean": 0.13434726972088099,
+      "land_at_or_above_2km_share_sd": 0.018616742423012856,
+      "maximum_land_km_mean": 6.219761248534759,
+      "maximum_land_km_min": 5.707519845094009,
+      "maximum_land_km_max": 7.078160672185244,
+      "earth_land_mean_km": 0.7936147913941995,
+      "earth_land_median_km": 0.4205841957659063,
+      "earth_land_at_or_above_2km_share": 0.10742653260160782,
+      "earth_matched_maximum_km": 6.258655071258545,
+      "mean_gate_status": "PASS"
+    },
+    "moderatedPostprocessCoastRelativeChange": -0.11169029566507482,
+    "decision": "Sensitivity evidence only; do not change morphology parameters because the common-grid coast gate already passes."
+  },
+  "scientificDecision": {
+    "startLifeWork": false,
+    "nextAction": "Implement a single canonical physical-height function in a v2.1 candidate branch and regenerate all height-dependent products.",
+    "doNotDo": "Do not lower uplift or terrain warp to repair metrics produced by the legacy linear export field."
+  }
+}

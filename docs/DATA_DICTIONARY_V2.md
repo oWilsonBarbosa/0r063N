@@ -19,11 +19,29 @@ id,lat,lon,x,y,z,elev,elev_km,prePost,eroD,plate,isOcPlate,superPlate,plateSpeed
 
 | Field | Meaning |
 |---|---|
-| `elev` | Final dimensionless model elevation; positive values are above sea level. |
-| `elev_km` | Physical elevation: positive `elev × 6`, negative `elev × 10`. |
+| `elev` | Final dimensionless model elevation; positive values are above sea level. **This is the primary height field** — derive physical height from it via the canonical mapping below. |
+| `elev_km` | **LEGACY / non-canonical.** Linear physical elevation: positive `elev × 6`, negative `elev × 10`. Preserved for provenance only. Its land values (peak 8.54 km) use a linear mapping the generator's own climate physics did **not** use — do not treat it as physical height. |
 | `prePost` | Elevation before terrain warp and the remaining post-processing pipeline. |
 | `eroD` | Legacy generator `erosionDelta`: final elevation minus the snapshot taken **after terrain warp**. It includes smoothing, erosion, ridge sharpening, and soil creep, but excludes warp. |
 | `postProcessDelta` | Added in v2: exact decimal `elev - prePost`; the combined net effect of terrain warp and later post-processing. |
+
+### Canonical physical height (use this)
+
+Physical height in km is **not** the stored `elev_km` field. It is the
+generator's own S-curve mapping of the raw `elev` (`js/color-map.js:elevToHeightKm`)
+— the same mapping the climate physics used (`temperature.js` lapse rate), so it
+is the one coherent definition across the whole stack:
+
+```text
+height_km = 6 · t⁴ · (5 − 4t),  t = min(elev, 1)   for elev > 0   (land; peaks at the 6 km ceiling)
+height_km = 10 · elev                              for elev ≤ 0   (ocean; unchanged from the legacy field)
+```
+
+Land profile under this mapping: mean ≈ 0.53 km, median ≈ 0.04 km, ~9 % of land
+≥ 2 km, peak 6.0 km (terrain with `elev ≥ 1` clamps to the ceiling). All
+repository height products (atlas relief, `continent_stats.mjs`, gazetteers, the
+life-layer figures) use this mapping. The three-way height-schema conflict that
+motivated fixing this is recorded in [`../reports/audit/`](../reports/audit/README.md).
 
 ## Tectonics and surface masks
 

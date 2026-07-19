@@ -42,7 +42,7 @@ A natural-physical atlas derived from the [World Orogen](https://www.orogen.stud
 
 | Record | Value | Where |
 |---|---|---|
-| Highest peak | 8.54 km | 28.6°N 130.4°W (Region 06) |
+| Highest peak | 6.00 km | 28.6°N 130.4°W (Region 06) |
 | Deepest trench | -9.28 km | 26.4°N 96.2°E (Region 09) |
 | Hottest place (seasonal mean) | 38.1 °C | 37.6°S 51.8°E (Region 19) |
 | Coldest place (seasonal mean) | -45.0 °C | 58.8°N 39.3°E (Region 04) |
@@ -90,7 +90,8 @@ A natural-physical atlas derived from the [World Orogen](https://www.orogen.stud
 ## Method notes
 
 - Rasterized at 0.125° from the 2.56 M-cell Fibonacci-sphere export; all areas are cos-latitude weighted.
-- **Relief, erosion, tectonics, Köppen, temperature, precipitation, pressure, winds, currents** come directly from exported per-cell fields (`elev_km`, `eroD`, `plate`, `stress`, `foldRidge`, `backArc`, `hotspot`, `koppen`, `tS/tW`, `pS/pW`, `prS/prW` [pressure], `wind*`, `oc*`). Built from the corrected v2 export (`data/orogen_regions_full_v2/`).
+- **Relief, erosion, tectonics, Köppen, temperature, precipitation, pressure, winds, currents** come directly from exported per-cell fields (`elev`, `eroD`, `plate`, `stress`, `foldRidge`, `backArc`, `hotspot`, `koppen`, `tS/tW`, `pS/pW`, `prS/prW` [pressure], `wind*`, `oc*`). Built from the corrected v2 export (`data/orogen_regions_full_v2/`).
+- **Physical height in km** uses the generator's canonical S-curve mapping of `elev` (`6·t⁴(5−4t)`, `t=min(elev,1)`; land peaks at the 6 km ceiling) — the same mapping its climate physics used. The stored `elev_km` column is the legacy linear mapping and is not used here.
 - `pS/pW`, `wsS/wsW`, and `ocSpeed*` are p95-normalized and capped at 1, so values at the cap are floors (≥ p95), not exact maxima; precipitation-mm figures in the wettest areas are lower bounds.
 - **Hydrology** is derived: priority-flood depression filling, steepest-descent routing, Ol'dekop runoff, per-depression water balance (see the regional reports for details).
 - **NPP** uses the Miami model: `min(3000/(1+e^(1.315−0.119T)), 3000(1−e^(−0.000664P)))` g/m²/yr.

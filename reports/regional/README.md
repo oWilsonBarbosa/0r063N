@@ -35,11 +35,11 @@ The globe is divided into the 20 triangular faces of an icosahedron with one ver
 | [11](regions/region_11.md) | Sub-tropical coastline with offshore islands | Coastline with offshore islands | 14.7 % | Sub-tropical | Scrub / brushland | 9 | 10 | 17 |
 | [12](regions/region_12.md) | Tropical multiple coastlines | Multiple coastlines | 52.0 % | Tropical | Jungle, heavy | 27 | 33 | 87 |
 | [13](regions/region_13.md) | Tropical multiple coastlines | Multiple coastlines | 21.1 % | Tropical | Jungle, heavy | 9 | 14 | 26 |
-| [14](regions/region_14.md) | Tropical coastline with offshore islands | Coastline with offshore islands | 14.0 % | Tropical | Barren | 10 | 6 | 17 |
+| [14](regions/region_14.md) | Tropical coastline with offshore islands | Coastline with offshore islands | 14.0 % | Tropical | Scrub / brushland | 10 | 6 | 17 |
 | [15](regions/region_15.md) | Open ocean | Open ocean | 0.1 % | — | — | 0 | 0 | 0 |
 | [16](regions/region_16.md) | Sub-tropical coastline with offshore islands | Coastline with offshore islands | 44.1 % | Sub-tropical | Forest, medium | 13 | 14 | 71 |
 | [17](regions/region_17.md) | Temperate coastline with offshore islands | Coastline with offshore islands | 0.8 % | Temperate | Forest, medium | 0 | 0 | 0 |
-| [18](regions/region_18.md) | Sub-tropical multiple coastlines | Multiple coastlines | 17.8 % | Sub-tropical | Forest, medium | 12 | 5 | 27 |
+| [18](regions/region_18.md) | Sub-tropical multiple coastlines | Multiple coastlines | 17.8 % | Sub-tropical | Scrub / brushland | 12 | 5 | 27 |
 | [19](regions/region_19.md) | Sub-tropical multiple coastlines | Multiple coastlines | 47.8 % | Sub-tropical | Forest, medium | 38 | 27 | 74 |
 | [20](regions/region_20.md) | Open ocean | Open ocean | 0.1 % | — | — | 0 | 0 | 0 |
 

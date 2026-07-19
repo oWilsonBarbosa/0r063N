@@ -55,7 +55,7 @@ leeward interior. Provinces:
 
 | Province | Isolating barrier (MEASURED) |
 |---|---|
-| Western Cordillera & Central Massif | 8.54 km wall; 39 % of land > 2 km |
+| Western Cordillera & Central Massif | 6 km-ceiling wall; 15.8 % of land > 2 km (most mountainous by area) |
 | Arid Interior Plateau | leeward rain shadow (B-dominant) |
 | Northern Cold Highlands | subarctic latitude (D/E) |
 | Southern Tropical Lowlands & SW Trunk River | the A-group south, cut off by the Massif |
@@ -65,7 +65,7 @@ leeward interior. Provinces:
 
 | Province | Isolating barrier (MEASURED) |
 |---|---|
-| Northern Range & SW wet coast | 8.01 km wall; the one reliable maritime margin |
+| Northern Range & SW wet coast | 6 km-ceiling wall; the one reliable maritime margin |
 | The Arid Heart | the dominant endorheic desert + Salt Sea |
 | Southern Cold Fringe | far-south D/E |
 
@@ -78,7 +78,7 @@ leeward interior. Provinces:
 |---|---|
 | Southern Maritime Coast | the warm C-group refuge, walled off inland |
 | Subarctic Interior | the taiga belt |
-| Eastern Range & Northern Ice Highlands | 7.32 km wall; polar ice |
+| Eastern Range & Northern Ice Highlands | 6 km-ceiling range; polar ice |
 
 **Selvanan realm** — Selvana · the tropical cradle (A = 40 %), lowest and most
 climatically varied. Borea's **deep sister**. Provinces:
@@ -86,7 +86,7 @@ climatically varied. Borea's **deep sister**. Provinces:
 | Province | Isolating barrier (MEASURED) |
 |---|---|
 | Tropical North | wet A-group lowland |
-| Equatorial Ranges (sky-islands) | 7.36 km summits **on the equator** — cold pockets marooned in rainforest |
+| Equatorial Ranges (sky-islands) | 6 km-ceiling summits **on the equator** — cold pockets marooned in rainforest |
 | Interior Dry Basin | rain-shadow salt basin inside a wet continent |
 | Southern Cordillera | cold southern wall |
 

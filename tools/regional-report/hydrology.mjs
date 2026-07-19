@@ -98,6 +98,13 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
     const petPx = new Float32Array(N);
     for (let p = 0; p < N; p++) {
         const c = cellGrid[p];
+        // Drainage runs on the raw terrain ordering. The stored `elev_km`
+        // (legacy linear = 6·elev) is used here purely as the internal DEM: it
+        // is monotonic in elev with good numerical separation, which the
+        // priority-flood epsilon and lake water-balance were tuned for. This is
+        // an ordering-only role — physical heights reported elsewhere (relief,
+        // stats, terrain, records) use the canonical S-curve mapping. Feeding
+        // the compressed S-curve km here would degrade routing in flat lowlands.
         elevPx[p] = data.elev_km[c];
         const t = (tempC(data.tS[c]) + tempC(data.tW[c])) / 2;
         petPx[p] = petMm(t);

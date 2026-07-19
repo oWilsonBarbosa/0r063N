@@ -7,6 +7,9 @@ import {
     TERRAIN_CLASSES, TERRAIN_OCEAN, BANDS, BAND_OCEAN, KOPPEN_CLASSES,
     tempC, precipAnnualMm,
 } from './classify.mjs';
+// Canonical physical height: the generator's S-curve mapping of raw `elev`
+// (the mapping the climate physics used); the stored `elev_km` is legacy linear.
+import { elevToHeightKm } from '../../third_party/planet_heightmap_generation/js/color-map.js';
 
 const RAIN_SHADOW_THRESHOLD = 0.15;
 const MIN_ISLAND_KM2 = 600;          // ignore smaller specks as raster noise
@@ -147,7 +150,7 @@ export function analyzeRegion(regionId, ctx) {
             bandArea[px.bandPx[p]] += a;
             terrainArea[px.terrainPx[p]] += a;
             koppenArea[data.koppen[c]] += a;
-            const e = data.elev_km[c];
+            const e = elevToHeightKm(data.elev[c]);
             reliefArea[e < 0.3 ? 0 : e < 0.8 ? 1 : e < 2.0 ? 2 : 3] += a;
             const pann = precipAnnualMm(data.pS[c], data.pW[c]);
             Q.pannA += pann * a;
@@ -198,7 +201,7 @@ export function analyzeRegion(regionId, ctx) {
     }
     const mLabel = labelComponents(grid,
         p => mDil[p] === 1 && isReg(p),
-        { connect8: true, value: p => data.elev_km[cellGrid[p]] });
+        { connect8: true, value: p => elevToHeightKm(data.elev[cellGrid[p]]) });
     const sysComps = mLabel.comps.filter(c => c.areaKm2 >= MIN_MOUNTAIN_SYSTEM_KM2);
     sysComps.sort((a, b) => b.areaKm2 - a.areaKm2);
 

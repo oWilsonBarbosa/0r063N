@@ -3,6 +3,10 @@
 
 import { makeCanvas, encodePNG, setPx, fillRect, drawText, textWidth } from './render-png.mjs';
 import { tempC, precipAnnualMm, KOPPEN_CLASSES } from './classify.mjs';
+// Canonical physical height: the generator's own S-curve mapping (the one the
+// climate physics used), applied to the raw dimensionless `elev`. The stored
+// `elev_km` field is the legacy linear mapping and is not used for relief.
+import { elevToHeightKm } from '../../third_party/planet_heightmap_generation/js/color-map.js';
 
 // Köppen colors (frozen from World Orogen js/koppen.js, scaled to 0-255)
 export const KOPPEN_COLORS = [
@@ -158,17 +162,17 @@ const shaded = (col, s) => [Math.min(255, col[0] * s) | 0, Math.min(255, col[1] 
 
 export function plateRelief(ctx) {
     const { grid, data } = ctx;
-    const elevAt = p => data.elev_km[grid.cellGrid[p]];
+    const elevAt = p => elevToHeightKm(data.elev[grid.cellGrid[p]]);
     const shade = buildShade(grid, elevAt);
     const cv = newPlate(grid.W, grid.H + 80, 'PLATE 1 - SHADED RELIEF AND BATHYMETRY',
-        'HYPSOMETRIC TINTS, NW ILLUMINATION. ELEVATIONS -9.3 TO 8.5 KM');
+        'HYPSOMETRIC TINTS, NW ILLUMINATION. ELEVATIONS -9.3 TO 6.0 KM');
     // quantize elevation and shade so the PNG compresses well
     const qe = e => Math.round(e * 25) / 25;
     const qs = s => Math.round(s * 24) / 24;
     rasterBand(cv, TITLE_H, grid, 1, p => shaded(hypsoColor(qe(elevAt(p))), qs(shade[p])));
     coastOverlay(cv, TITLE_H, grid, 1, p => ctx.px.landPx[p]);
     colorBar(cv, 60, TITLE_H + grid.H + 18, 500, 16, HYPSO_LAND,
-        [{ t: 0, label: '0' }, { t: 0.5, label: '2.5' }, { t: 1, label: '5+ KM' }]);
+        [{ t: 0, label: '0' }, { t: 0.5, label: '2.5' }, { t: 1, label: '5-6 KM' }]);
     colorBar(cv, 660, TITLE_H + grid.H + 18, 500, 16, HYPSO_OCEAN,
         [{ t: 0, label: '0' }, { t: 0.5, label: '-4.6' }, { t: 1, label: '-9.3 KM' }]);
     return encodePNG(cv.width, cv.height, cv.rgb);
@@ -182,14 +186,10 @@ export function plateErosion(ctx) {
     const w = grid.W / step, h = grid.H / step;
     // eroD is the erosion-only delta in raw elevation units (final elevation
     // minus the post-terrain-warp snapshot). elev - prePost would also include
-    // the stylistic terrain warp, which is not erosion.
-    const toKm = v => (v > 0 ? v * 6 : v * 10);
-    const rawCur = p => {
-        const km = data.elev_km[grid.cellGrid[p]];
-        return km > 0 ? km / 6 : km / 10;
-    };
-    const preKm = p => toKm(rawCur(p) - data.eroD[grid.cellGrid[p]]);
-    const curKm = p => data.elev_km[grid.cellGrid[p]];
+    // the stylistic terrain warp, which is not erosion. Heights are the
+    // canonical S-curve mapping of the raw elev (pre-erosion = elev - eroD).
+    const curKm = p => elevToHeightKm(data.elev[grid.cellGrid[p]]);
+    const preKm = p => elevToHeightKm(data.elev[grid.cellGrid[p]] - data.eroD[grid.cellGrid[p]]);
     const cv = newPlate(w, (h + 26) * 3 + 60, 'PLATE 4 - THE WORK OF EROSION',
         'SURFACE BEFORE EROSION, PRESENT SURFACE, AND THE EROSION-ONLY ELEVATION CHANGE');
     let y = TITLE_H;

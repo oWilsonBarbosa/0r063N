@@ -18,6 +18,9 @@ import {
     plateBasins, plateNpp,
 } from './atlas-plates.mjs';
 import { profileChart, hypsometryChart, encodePNG } from './charts.mjs';
+// Canonical physical height: the generator's S-curve mapping of raw `elev`
+// (the mapping the climate physics used); the stored `elev_km` is legacy linear.
+import { elevToHeightKm } from '../../third_party/planet_heightmap_generation/js/color-map.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, '..', '..');
@@ -113,7 +116,7 @@ function renderHypsometry(ctx) {
     const bins = new Float64Array(nBins);
     let total = 0;
     for (let p = 0; p < W * H; p++) {
-        const e = data.elev_km[cellGrid[p]];
+        const e = elevToHeightKm(data.elev[cellGrid[p]]);
         const a = rowArea[(p / W) | 0];
         const b = Math.max(0, Math.min(nBins - 1, Math.floor((e - lo) / binKm)));
         bins[b] += a;
@@ -150,7 +153,7 @@ function renderCrossSections(ctx) {
     for (let x = 0; x < W; x++) if (landByCol[x] > landByCol[bestCol]) bestCol = x;
     const bestLon = (bestCol + 0.5) * grid.resDeg - 180;
 
-    const elevAt = (py, pxx) => data.elev_km[cellGrid[py * W + ((pxx % W) + W) % W]];
+    const elevAt = (py, pxx) => elevToHeightKm(data.elev[cellGrid[py * W + ((pxx % W) + W) % W]]);
 
     const equator = [];
     const eqRow = Math.floor(H / 2);
@@ -188,8 +191,8 @@ function gazetteer(ctx, regionByCell) {
     let hiI = 0, loI = 0, hotI = -1, coldI = -1, wetI = -1, dryI = -1;
     let hot = -Infinity, cold = Infinity, wet = -Infinity, dry = Infinity;
     for (let i = 0; i < n; i++) {
-        if (data.elev_km[i] > data.elev_km[hiI]) hiI = i;
-        if (data.elev_km[i] < data.elev_km[loI]) loI = i;
+        if (data.elev[i] > data.elev[hiI]) hiI = i;
+        if (data.elev[i] < data.elev[loI]) loI = i;
         if (!data.isLand[i]) continue;
         const tMax = Math.max(tempC(data.tS[i]), tempC(data.tW[i]));
         const tMin = Math.min(tempC(data.tS[i]), tempC(data.tW[i]));
@@ -213,8 +216,8 @@ function gazetteer(ctx, regionByCell) {
 
     return {
         rows: [
-            ['Highest peak', `${data.elev_km[hiI].toFixed(2)} km`, place(hiI)],
-            ['Deepest trench', `${data.elev_km[loI].toFixed(2)} km`, place(loI)],
+            ['Highest peak', `${elevToHeightKm(data.elev[hiI]).toFixed(2)} km`, place(hiI)],
+            ['Deepest trench', `${elevToHeightKm(data.elev[loI]).toFixed(2)} km`, place(loI)],
             ['Hottest place (seasonal mean)', `${hot.toFixed(1)} °C`, place(hotI)],
             ['Coldest place (seasonal mean)', `${cold.toFixed(1)} °C`, place(coldI)],
             ['Wettest place', `${fmtInt(wet)} mm/yr`, place(wetI)],
@@ -306,7 +309,8 @@ function atlasReadme(meta, records, hydro) {
     L.push('## Method notes');
     L.push('');
     L.push('- Rasterized at 0.125° from the 2.56 M-cell Fibonacci-sphere export; all areas are cos-latitude weighted.');
-    L.push('- **Relief, erosion, tectonics, Köppen, temperature, precipitation, pressure, winds, currents** come directly from exported per-cell fields (`elev_km`, `eroD`, `plate`, `stress`, `foldRidge`, `backArc`, `hotspot`, `koppen`, `tS/tW`, `pS/pW`, `prS/prW` [pressure], `wind*`, `oc*`). Built from the corrected v2 export (`data/orogen_regions_full_v2/`).');
+    L.push('- **Relief, erosion, tectonics, Köppen, temperature, precipitation, pressure, winds, currents** come directly from exported per-cell fields (`elev`, `eroD`, `plate`, `stress`, `foldRidge`, `backArc`, `hotspot`, `koppen`, `tS/tW`, `pS/pW`, `prS/prW` [pressure], `wind*`, `oc*`). Built from the corrected v2 export (`data/orogen_regions_full_v2/`).');
+    L.push('- **Physical height in km** uses the generator\'s canonical S-curve mapping of `elev` (`6·t⁴(5−4t)`, `t=min(elev,1)`; land peaks at the 6 km ceiling) — the same mapping its climate physics used. The stored `elev_km` column is the legacy linear mapping and is not used here.');
     L.push('- `pS/pW`, `wsS/wsW`, and `ocSpeed*` are p95-normalized and capped at 1, so values at the cap are floors (≥ p95), not exact maxima; precipitation-mm figures in the wettest areas are lower bounds.');
     L.push('- **Hydrology** is derived: priority-flood depression filling, steepest-descent routing, Ol\'dekop runoff, per-depression water balance (see the regional reports for details).');
     L.push('- **NPP** uses the Miami model: `min(3000/(1+e^(1.315−0.119T)), 3000(1−e^(−0.000664P)))` g/m²/yr.');

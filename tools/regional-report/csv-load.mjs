@@ -12,7 +12,7 @@ export const EXPECTED_HEADER = 'id,lat,lon,x,y,z,elev,elev_km,prePost,eroD,plate
 // NOTE: pS/pW are PRECIPITATION half-year totals (meta: precip_mm = pS*1000),
 // p95-normalized and capped at 1 (1 means >= the seasonal p95), and prS/prW
 // are sea-level PRESSURE, despite what the names suggest.
-const FLOAT_COLS = ['lat', 'lon', 'x', 'y', 'z', 'elev_km', 'tS', 'tW', 'wsS', 'wsW',
+const FLOAT_COLS = ['lat', 'lon', 'x', 'y', 'z', 'elev', 'elev_km', 'tS', 'tW', 'wsS', 'wsW',
     'pS', 'pW', 'windES', 'windNS', 'windEW', 'windNW', 'rsSummer', 'rsWinter',
     // atlas columns: erosion, tectonics, pressure, ocean currents
     'prePost', 'eroD', 'plate', 'stress', 'orogPow', 'tecAct', 'hotspot',
@@ -36,7 +36,7 @@ export function loadMeta(dataDir) {
 }
 
 const CACHE_MAGIC = 0x4f524f47; // "OROG"
-const CACHE_VERSION = 5;
+const CACHE_VERSION = 6;
 
 function cacheColumns() { return [...FLOAT_COLS, ...BYTE_COLS]; }
 

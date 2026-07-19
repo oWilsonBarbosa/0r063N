@@ -5,6 +5,12 @@ It archives the four-stage audit of the original (v1) export that identified
 the defects the v2 correction repairs. The source documents are in Portuguese;
 this page summarizes their findings in English.
 
+A later, separate audit resolved a **height-schema conflict** (three
+incompatible `elev → km` mappings) and is archived in
+[`relief_coast_diagnostic/`](relief_coast_diagnostic/README.md): the repository
+now uses the generator's native S-curve as the one canonical physical-height
+mapping.
+
 | Stage | Document | What it did |
 |---|---|---|
 | Profile | [`Orogen_Perfil_Integral_56_Campos.xlsx`](Orogen_Perfil_Integral_56_Campos.xlsx) | Exact quantile/statistical profile of all 56 fields over the 13 canonical parts. First flagged: `plateSpeed` and `tempContality` all-zero, `lat`/`lon` in degrees (dictionary said radians), `ocNorthS` ≡ `ocNorthW`, and the exact-5 % ceilings on `pS/pW` and `ocSpeed*`. |

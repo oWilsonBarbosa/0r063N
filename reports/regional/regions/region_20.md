@@ -34,7 +34,7 @@ Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 92.4 % | 7.6 % | 0.0 % | 0.0 % |
+| 100.0 % | 0.0 % | 0.0 % | 0.0 % |
 
 ## Climate
 

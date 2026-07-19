@@ -19,6 +19,20 @@
     "lon": "degrees",
     "floatTextPrecision": "up to 6 decimal places"
   },
+  "heightMapping": {
+    "canonicalId": "generator_s_curve",
+    "note": "Canonical dimensionless-elev to physical-height-km mapping. This is the generator's own elevToHeightKm (js/color-map.js), the mapping its climate physics (temperature.js lapse rate) already used. All repository height-in-km products (atlas relief, continent stats, gazetteers, life-layer figures) use this mapping.",
+    "landFormula": "height_km = 6 * t^4 * (5 - 4*t), with t = min(elev, 1)   for elev > 0",
+    "oceanFormula": "height_km = 10 * elev                                      for elev <= 0",
+    "landPeakKm": 6.0,
+    "landProfileKm": { "mean": 0.525, "median": 0.037, "shareAtOrAbove2km": 0.0900, "max": 6.0 },
+    "legacyField": {
+      "name": "elev_km",
+      "mapping": "linear: 6*elev (land), 10*elev (ocean)",
+      "status": "LEGACY / NON-CANONICAL. Preserved for provenance; do not use as physical height. Its land values (peak 8.54 km) come from a linear mapping the generator's climate did not use. The canonical height is heightMapping above, applied to the raw `elev` column."
+    },
+    "resolvedDiagnostic": "Orogen_Atlas_v2_Relief_Coast_Diagnostic (2026-07-19); see reports/audit/."
+  },
   "corrections": [
     {
       "field": "plateSpeed",

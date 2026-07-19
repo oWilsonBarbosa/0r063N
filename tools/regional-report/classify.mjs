@@ -4,6 +4,10 @@
 // World Builder's Guidebook chapter; the Koppen->terrain mapping is the one
 // interpretive piece of the pipeline, kept here as a single visible table.
 
+// Canonical physical height: the generator's S-curve mapping of raw `elev`
+// (the mapping the climate physics used); the stored `elev_km` is legacy linear.
+import { elevToHeightKm } from '../../third_party/planet_heightmap_generation/js/color-map.js';
+
 export const KOPPEN_CLASSES = [
     { code: 'Ocean', name: 'Ocean' },
     { code: 'Af', name: 'Tropical rainforest' },
@@ -137,7 +141,7 @@ export function classifyAll(data) {
         const k = data.koppen[i];
         band[i] = climateBand(k);
         const pann = precipAnnualMm(data.pS[i], data.pW[i]);
-        terrain[i] = classifyTerrain(k, data.elev_km[i], pann, data.isSurfaceCoast[i]);
+        terrain[i] = classifyTerrain(k, elevToHeightKm(data.elev[i]), pann, data.isSurfaceCoast[i]);
     }
     return { terrain, band };
 }
