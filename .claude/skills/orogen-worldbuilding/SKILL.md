@@ -144,8 +144,20 @@ Continent shapes, coastlines, mountain belts, climate zones, trunk river courses
 ### Derived (use at trunk scale only, not exact geography)
 River lengths and exact courses, lake counts, drainage basin details — modelled at raster scale; correct at major-river scale, not local geography.
 
+### Established life canon (invented, but now fixed — build on it, don't contradict)
+The **tree of life** is written: see `docs/life/`. Fixed points a worldbuilder
+must respect — single marine origin at hydrothermal vents; water/carbon
+biochemistry; a **two-pigment palette (violet seas, green land)**; three
+ancestral domains and a single complex-cell origin; four founding kingdoms and
+a bilaterian, blue-blooded, internal-skeleton **Zoan animal plan**; the
+icehouse-bottleneck → hothouse-radiation → dispersal timeline pegged to the
+geological/climate record; and the **continental divergence tree**
+`((Meridia, Sirocca), (Borea, Selvana))` with its load-bearing hook that
+biological sisters are *not* the easy-to-sail neighbours. New regional life
+must descend consistently from this root.
+
 ### Open (Phase 5 creative space — fully yours to invent)
-Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · history and mythology · calendar, day length, moon system, gravity · biomes beyond Köppen inference · any minor rivers and local geography
+Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · human history and mythology · calendar, day length, moon system, gravity · the post-dispersal biogeographic realms and regional ecologies (grounded in `docs/life/`) · any minor rivers and local geography
 
 ### Label conventions when worldbuilding
 - `MEASURED` — directly from the v2 export (elevation, temperature, Köppen)
@@ -171,6 +183,9 @@ Everything lives in repository `oWilsonBarbosa/0r063N`:
 - **Deep history** — `docs/GEOLOGICAL_HISTORY.md` and `docs/PALEOCLIMATE.md`
   (750-Myr reconstructed plate/climate history; narrative canon for myths of
   deep time).
+- **Life layer** — `docs/life/` (origin of life and the founding tree; the
+  root every regional biota descends from). Start here before designing any
+  flora, fauna, or people.
 - **Data caveats** — `reports/audit/README.md`. The ones that matter for
   worldbuilding: `pS/pW`, `wsS/wsW`, `ocSpeed*` are p95-capped indices (1
   means "at or above the 95th percentile", so extreme rainfall/wind figures

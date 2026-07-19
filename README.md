@@ -26,6 +26,7 @@ reconstructed **750-million-year geological + climate history**.
 | **Region-by-region write-ups** — 20 chapter-style gazetteers with maps | [`reports/regional/`](reports/regional/README.md) |
 | **How the world came to be** — a 750-Myr plate-tectonic history | [`docs/GEOLOGICAL_HISTORY.md`](docs/GEOLOGICAL_HISTORY.md) |
 | **How its climate evolved** — paleoclimate across the supercontinent cycle | [`docs/PALEOCLIMATE.md`](docs/PALEOCLIMATE.md) |
+| **How life began** — origin, biochemistry, and the founding tree of life | [`docs/life/`](docs/life/README.md) |
 | **The raw data** — what the columns mean | [`docs/DATA_DICTIONARY_V2.md`](docs/DATA_DICTIONARY_V2.md) (corrected v2) · [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) (original) |
 | **Why v2 exists** — the dataset audit (69 tests, 15 alerts, 9 root causes) | [`reports/audit/`](reports/audit/README.md) |
 
@@ -36,6 +37,7 @@ reconstructed **750-million-year geological + climate history**.
 | `data/orogen_regions_full/` | The original raw export (v1): 13 gzipped CSV parts (~408 MB), `orogen_meta_full.json`, and a checksummed parts manifest. |
 | `data/orogen_regions_full_v2/` | **The corrected export (v2, 58 fields)** — recovered `plateSpeed` and `tempContinentality`, new `isSurfaceCoast` and `postProcessDelta` columns, corrected metadata. Built deterministically from v1 by `tools/export-v2/`. |
 | `docs/` | Narrative documents: the data dictionary, geological history, and paleoclimate. |
+| `docs/life/` | The life layer: origin of life, core biochemistry, and the founding tree from which all regional biota descends. Built root-first on the physical + deep-time canon. |
 | `reports/regional/` | **Physical Atlas + 20 regional gazetteers** (Markdown + maps). Built by `tools/regional-report/`. |
 | `reports/tectonics/` | Tectonic inventory, validation, and ~38 paleogeographic/climate maps. Built by `tools/tectonics-pipeline/`. |
 | `reports/audit/` | The dataset audit that motivated the v2 export: field profile, coherence tests, code-level root-cause analysis, and the present-state atlas (source documents in Portuguese, summary in English). |
