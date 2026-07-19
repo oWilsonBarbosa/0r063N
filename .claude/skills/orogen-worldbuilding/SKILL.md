@@ -192,9 +192,11 @@ Everything lives in repository `oWilsonBarbosa/0r063N`:
 - **Deep history** — `docs/GEOLOGICAL_HISTORY.md` and `docs/PALEOCLIMATE.md`
   (750-Myr reconstructed plate/climate history; narrative canon for myths of
   deep time).
-- **Life layer** — `docs/life/` (origin of life and the founding tree; the
-  root every regional biota descends from). Start here before designing any
-  flora, fauna, or people.
+- **Life layer** — `docs/life/`: the founding tree (`00`), the biogeographic
+  realm map (`01`), and the deep-time paleobiology that runs the biology forward
+  era by era from origin to the present realms (`02`). Start here before
+  designing any flora, fauna, or people; regional ecologies are the T-0
+  cross-section of the doc-02 history.
 - **Data caveats** — `reports/audit/README.md`. The ones that matter for
   worldbuilding: `pS/pW`, `wsS/wsW`, `ocSpeed*` are p95-capped indices (1
   means "at or above the 95th percentile", so extreme rainfall/wind figures

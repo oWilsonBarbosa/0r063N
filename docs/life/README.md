@@ -13,7 +13,8 @@ to each other correctly.
 |---|---|---|---|
 | 00 | [`00_TREE_OF_LIFE.md`](00_TREE_OF_LIFE.md) | Origin of life, core biochemistry, the ancestral domains and founding kingdoms, and the deep timeline pegged to the geological/climate record | **done** |
 | 01 | [`01_BIOGEOGRAPHIC_REALMS.md`](01_BIOGEOGRAPHIC_REALMS.md) | The realm map: four terrestrial realms + provinces, the marine realms, and the affinity rules — which biotas share deep ancestry vs. which merely trade coastlines | **done** |
-| 02+ | *Regional ecologies* | Concrete flora and fauna for specific regions from the gazetteers | planned |
+| 02 | [`02_LIFE_THROUGH_DEEP_TIME.md`](02_LIFE_THROUGH_DEEP_TIME.md) | Paleobiology: the biology run forward era by era along the paleoclimate record, showing how the one tree became the four realms | **done** |
+| 03+ | *Regional ecologies* | Concrete flora and fauna for specific regions — the T-0 cross-section of doc 02 | planned |
 | — | *Humanoid ancestry* | The Zoan lineage that leads toward the peoples of Phase 5 | planned |
 
 ## Grounding rules
