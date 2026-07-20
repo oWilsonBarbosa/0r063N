@@ -129,16 +129,16 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 
 | Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
 |---|---|---|---|---|---|
-| 1 | freshwater (with outlet) | 96,477 km² | 346 m | 183 m | NW |
-| 2 | salt (no outlet) | 32,862 km² | 254 m | 122 m | NW |
-| 3 | freshwater (with outlet) | 17,528 km² | 208 m | 141 m | NE |
-| 4 | freshwater (with outlet) | 16,461 km² | 1,042 m | 932 m | SW |
-| 5 | freshwater (with outlet) | 16,190 km² | 772 m | 546 m | NW |
-| 6 | freshwater (with outlet) | 15,152 km² | 247 m | 226 m | NE |
-| 7 | freshwater (with outlet) | 14,592 km² | 695 m | 242 m | SW |
-| 8 | freshwater (with outlet) | 12,157 km² | 1,055 m | 204 m | SW |
-| 9 | freshwater (with outlet) | 11,518 km² | 804 m | 241 m | SW |
-| 10 | freshwater (with outlet) | 10,866 km² | 247 m | 158 m | NE |
+| 1 | freshwater (with outlet) | 96,477 km² | 71 m | 47 m | NW |
+| 2 | salt (no outlet) | 32,862 km² | 45 m | 28 m | NW |
+| 3 | freshwater (with outlet) | 17,528 km² | 33 m | 27 m | NE |
+| 4 | freshwater (with outlet) | 16,461 km² | 354 m | 340 m | SW |
+| 5 | freshwater (with outlet) | 16,190 km² | 228 m | 190 m | NW |
+| 6 | freshwater (with outlet) | 15,152 km² | 43 m | 42 m | NE |
+| 7 | freshwater (with outlet) | 14,592 km² | 196 m | 91 m | SW |
+| 8 | freshwater (with outlet) | 12,157 km² | 360 m | 97 m | SW |
+| 9 | freshwater (with outlet) | 11,518 km² | 242 m | 98 m | SW |
+| 10 | freshwater (with outlet) | 10,866 km² | 43 m | 33 m | NE |
 
 …plus 64 smaller lakes.
 

@@ -26,7 +26,7 @@
     "oceanFormula": "height_km = 10 * elev                                    for elev <= 0",
     "landPeakKm": 7.66,
     "landProfileKm": { "mean": 0.768, "median": 0.421, "shareAtOrAbove2km": 0.1074, "max": 7.66 },
-    "climateNote": "The generator's EXPORTED climate (tS/tW, koppen, precip, winds) was computed by the generator using its own internal S-curve height curve (js/color-map.js elevToHeightKm) and is preserved unchanged as the planet's published climate. This heightMapping governs physical relief and height reporting; it is not the (immutable) height curve used inside the exported climate simulation.",
+    "climateNote": "The generator's EXPORTED climate (tS/tW, koppen, precip, winds) was computed by the generator using its own internal S-curve height curve (js/color-map.js elevToHeightKm) and is preserved unchanged as the planet's published climate. This heightMapping governs physical relief and height reporting; it is not the (immutable) height curve used inside the exported climate simulation. Known seam: the power and S-curve heights differ by a mean 0.35 km per land cell (implied ~2.3 C mean temperature discrepancy, up to ~10 C at the highest peaks) - within the climate model's own error and accepted as a documented caveat. See reports/audit/relief_coast_diagnostic/.",
     "legacyField": {
       "name": "elev_km",
       "mapping": "linear: 6*elev (land), 10*elev (ocean)",

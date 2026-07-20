@@ -145,8 +145,10 @@ under Key Locked Facts.)
 > ~10.7 % of land ≥ 2 km, peak ~7.66 km). The stored `elev_km` column is a
 > legacy *linear* mapping (peak 8.54 km) and is **not** canonical. The
 > generator's exported climate (temperature, Köppen, precip, winds) was computed
-> on the generator's own internal profile and is preserved as published. See
-> `docs/DATA_DICTIONARY_V2.md` and `reports/audit/`.
+> on the generator's own internal S-curve profile and is preserved as published;
+> it differs from the reported relief by ~2 °C mean (a documented, accepted seam —
+> within model error, so it shifts no climate zones). See
+> `docs/DATA_DICTIONARY_V2.md` and `reports/audit/relief_coast_diagnostic/`.
 
 ---
 

@@ -109,7 +109,7 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 
 | Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
 |---|---|---|---|---|---|
-| 1 | freshwater (with outlet) | 2,094 km² | 169 m | 127 m | NE |
+| 1 | freshwater (with outlet) | 2,094 km² | 25 m | 21 m | NE |
 
 ## Rivers
 

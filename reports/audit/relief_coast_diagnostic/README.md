@@ -72,8 +72,49 @@ ceiling** (`elev ≥ 1`). See [`height_mapping_comparison.csv`](height_mapping_c
 ## Consequence
 
 The physical structure (continents, coastlines, climate zones, tectonics, the
-divergence tree, all realm logic) is unchanged. What changed is the absolute
-height scale: peaks are 6 km not 8.5 km, ~9 % of land is above 2 km not 28 %, and
-the terrain tables shift toward lowland classes. Coastline realism was found to
-be within the plausibility band at matched resolutions and required no terrain
+divergence tree, all realm logic) is unchanged. Coastline realism was found to be
+within the plausibility band at matched resolutions and required no terrain
 tuning.
+
+## Update (canonical mapping changed to the Earth-fitted power curve)
+
+The initial resolution adopted the generator's S-curve. It was later replaced by
+the diagnostic's **Earth-fitted power mapping** (`4.574·elev^1.462`, land; peak
+**7.66 km**, land >2 km **10.7 %**, differentiated continental peaks) because the
+S-curve clamped every high peak to a flat 6 km ceiling and left the world
+implausibly low. The power mapping is now the single canonical relief curve
+(`tools/height-mapping.mjs`, `tools/tectonics-pipeline/lib/height.py`), applied to
+atlas relief, continent stats, terrain classes, the tectonic inventory (with the
+erosion-age model recalibrated `2500−5·age → 1300−3·age`), and the life-layer
+figures. Hydrology routing keeps the linear DEM (ordering only; networks
+unchanged) but reports vertical measures on the power scale.
+
+### The climate ↔ relief height seam (a documented, accepted caveat)
+
+The generator's **exported climate** (`tS/tW`, Köppen, precipitation, winds) was
+computed by the generator using its **own internal S-curve** height curve
+(lapse-rate cooling in `temperature.js`; orographic effects in
+`precipitation.js`). We preserve that climate unchanged — it is the planet's
+published climate, not something to overwrite with a headless re-simulation — so
+the height the climate cooled by and the height we now report differ. Measured
+per land cell (`power − S-curve`):
+
+- median gap **0.27 km**, mean |gap| **0.35 km**; 30 % of land differs by >0.5 km,
+  **2.4 %** by >1 km, worst cell 1.66 km;
+- implied temperature discrepancy at a 6.5 °C/km lapse: **~2.3 °C mean, ~4 °C at
+  the 95th percentile, up to ~10 °C at the very highest peaks**.
+
+Direction: the power curve runs *higher* than the S-curve across most land, so the
+bulk of the world reads ~2 °C warmer than its stated elevation strictly implies;
+at the highest ~2 % of terrain the power curve is lower, so those peaks read
+colder than their stated height implies.
+
+**Why this is accepted, not fixed:** the ~2 °C mean offset is well inside the
+climate model's own error (temperature RMSE ≈ 7.5 °C; Köppen accuracy ±10 pp), so
+it changes no zone boundaries or narrative. It also mirrors standard practice —
+a climate model runs on its own reference orography and is not re-simulated each
+time relief is rendered on a calibrated scale. The seam is irreducible without
+either reverting to the flat S-curve (perfect coherence, no dramatic relief) or
+re-simulating the climate on power heights (which would replace the planet's
+published climate and cascade into the Köppen-derived realm/biology canon). It is
+recorded here as a known modeling caveat.

@@ -43,10 +43,13 @@ with no artificial ceiling: land mean ≈ 0.77 km, median ≈ 0.42 km, ~10.7 % o
 use this mapping.
 
 **Climate note.** The generator's *exported* climate (`tS/tW`, `koppen`, precip,
-winds) was computed by the generator on its own internal height curve and is
-preserved unchanged as the planet's published climate; this mapping governs
-physical relief, not the climate simulation's internal heights. The height-schema
-history is recorded in [`../reports/audit/`](../reports/audit/README.md).
+winds) was computed by the generator on its own internal **S-curve** height curve
+and is preserved unchanged as the planet's published climate; this mapping governs
+physical relief, not the climate simulation's internal heights. The two curves
+differ by a mean 0.35 km per land cell (an implied ~2.3 °C mean temperature
+discrepancy, up to ~10 °C at the highest peaks) — within the climate model's own
+error, and documented as an accepted caveat in
+[`../reports/audit/relief_coast_diagnostic/`](../reports/audit/relief_coast_diagnostic/README.md).
 
 ## Tectonics and surface masks
 

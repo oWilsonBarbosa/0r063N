@@ -76,16 +76,16 @@ A natural-physical atlas derived from the [World Orogen](https://www.orogen.stud
 
 | # | Type | Area | Surface | Max. depth | Where |
 |---|---|---|---|---|---|
-| 1 | freshwater | 206,614 km² | 282 m | 207 m | 34.0°S 145.7°W |
-| 2 | salt | 206,469 km² | 861 m | 590 m | 17.3°N 101.8°W |
-| 3 | freshwater | 96,477 km² | 346 m | 183 m | 48.2°S 69.3°E |
-| 4 | freshwater | 93,841 km² | 702 m | 235 m | 53.3°N 111.9°W |
-| 5 | salt | 91,027 km² | 754 m | 272 m | 45.1°N 113.0°W |
-| 6 | freshwater | 87,899 km² | 563 m | 317 m | 8.4°S 144.6°W |
-| 7 | freshwater | 85,894 km² | 422 m | 307 m | 11.6°S 29.9°E |
-| 8 | freshwater | 64,459 km² | 665 m | 222 m | 54.7°S 131.9°W |
-| 9 | freshwater | 62,383 km² | 526 m | 229 m | 58.6°N 121.5°E |
-| 10 | freshwater | 53,973 km² | 654 m | 209 m | 44.2°N 97.3°E |
+| 1 | freshwater | 206,614 km² | 52 m | 45 m | 34.0°S 145.7°W |
+| 2 | salt | 206,469 km² | 267 m | 218 m | 17.3°N 101.8°W |
+| 3 | freshwater | 96,477 km² | 71 m | 47 m | 48.2°S 69.3°E |
+| 4 | freshwater | 93,841 km² | 198 m | 89 m | 53.3°N 111.9°W |
+| 5 | salt | 91,027 km² | 220 m | 106 m | 45.1°N 113.0°W |
+| 6 | freshwater | 87,899 km² | 144 m | 101 m | 8.4°S 144.6°W |
+| 7 | freshwater | 85,894 km² | 94 m | 80 m | 11.6°S 29.9°E |
+| 8 | freshwater | 64,459 km² | 183 m | 82 m | 54.7°S 131.9°W |
+| 9 | freshwater | 62,383 km² | 130 m | 74 m | 58.6°N 121.5°E |
+| 10 | freshwater | 53,973 km² | 179 m | 77 m | 44.2°N 97.3°E |
 
 ## Method notes
 
