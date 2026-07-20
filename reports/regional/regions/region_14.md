@@ -31,14 +31,14 @@ Classified as **Coastline with offshore islands** (Table 15 vocabulary), based o
 
 | System | Quadrant | Length × width | Trend | Peak | Mean elev. |
 |---|---|---|---|---|---|
-| 1 (87,840 km²) | SE | 1,370 × 213 km | NW-SE | 5.9 km at 17.7°S 14.7°E | 0.5 km |
-| 2 (78,834 km²) | NE | 981 × 348 km | N-S | 6.0 km at 7.3°S 20.7°E | 1.5 km |
-| 3 (65,417 km²) | SE | 764 × 537 km | E-W | 5.4 km at 25.7°S 21.6°E | 1.2 km |
-| 4 (29,347 km²) | SE | 578 × 178 km | E-W | 4.9 km at 24.4°S 27.1°E | 1.6 km |
-| 5 (21,306 km²) | SE | 223 × 142 km | E-W | 1.4 km at 14.8°S 17.3°E | 0.1 km |
-| 6 (20,220 km²) | SE | 394 × 115 km | NE-SW | 4.8 km at 28.1°S 24.9°E | 3.3 km |
-| 7 (12,394 km²) | SE | 287 × 86 km | E-W | 4.2 km at 25.6°S 31.3°E | 1.9 km |
-| 8 (6,141 km²) | NE | 117 × 68 km | E-W | 4.6 km at 6.6°S 22.1°E | 1.1 km |
+| 1 (87,840 km²) | SE | 1,370 × 213 km | NW-SE | 4.3 km at 17.7°S 14.7°E | 0.8 km |
+| 2 (78,834 km²) | NE | 981 × 348 km | N-S | 5.9 km at 8.4°S 19.9°E | 1.6 km |
+| 3 (65,417 km²) | SE | 764 × 537 km | E-W | 3.8 km at 25.7°S 21.6°E | 1.2 km |
+| 4 (29,347 km²) | SE | 578 × 178 km | E-W | 3.6 km at 24.4°S 27.1°E | 1.9 km |
+| 5 (21,306 km²) | SE | 223 × 142 km | E-W | 1.8 km at 14.8°S 17.3°E | 0.4 km |
+| 6 (20,220 km²) | SE | 394 × 115 km | NE-SW | 3.5 km at 28.1°S 24.9°E | 2.8 km |
+| 7 (12,394 km²) | SE | 287 × 86 km | E-W | 3.2 km at 25.6°S 31.3°E | 1.9 km |
+| 8 (6,141 km²) | NE | 117 × 68 km | E-W | 3.4 km at 6.6°S 22.1°E | 1.6 km |
 
 …plus 2 lesser system(s).
 
@@ -46,7 +46,7 @@ Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 49.9 % | 12.0 % | 17.1 % | 21.0 % |
+| 22.5 % | 23.0 % | 29.8 % | 24.7 % |
 
 ## Climate
 
@@ -85,23 +85,23 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Terrain | Share of land |
 |---|---|
 | Scrub / brushland | 24.0 % |
-| Forest, light | 14.2 % |
-| Grassland / savanna | 12.7 % |
-| Barren | 10.5 % |
-| Desert, sandy | 8.0 % |
+| Forest, light | 15.1 % |
+| Grassland / savanna | 12.8 % |
+| Barren | 10.2 % |
 | Steppe | 7.2 % |
 | Glacier | 6.0 % |
-| Forest, medium | 5.3 % |
-| Marsh / swamp | 3.8 % |
-| Jungle, medium | 2.8 % |
-| Desert, rocky | 2.8 % |
-| Jungle, heavy | 2.3 % |
-| Tundra | 0.3 % |
+| Desert, sandy | 5.8 % |
+| Forest, medium | 5.6 % |
+| Desert, rocky | 5.1 % |
+| Jungle, medium | 3.0 % |
+| Jungle, heavy | 2.6 % |
+| Marsh / swamp | 2.3 % |
+| Moor | 0.2 % |
 
 Notable expanses (largest contiguous areas):
 
 - A desert of 211,802 km² in the SE quadrant.
-- A forest of 405,657 km² in the SE quadrant.
+- A forest of 471,506 km² in the SE quadrant.
 - A grassland of 381,343 km² in the SE quadrant.
 
 ## Water Bodies

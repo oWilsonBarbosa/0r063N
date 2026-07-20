@@ -4,9 +4,9 @@
 // World Builder's Guidebook chapter; the Koppen->terrain mapping is the one
 // interpretive piece of the pipeline, kept here as a single visible table.
 
-// Canonical physical height: the generator's S-curve mapping of raw `elev`
-// (the mapping the climate physics used); the stored `elev_km` is legacy linear.
-import { elevToHeightKm } from '../../third_party/planet_heightmap_generation/js/color-map.js';
+// Canonical physical height: the Earth-fitted power mapping of raw `elev`
+// (tools/height-mapping.mjs); the stored `elev_km` is legacy linear.
+import { elevToHeightKm } from '../height-mapping.mjs';
 
 export const KOPPEN_CLASSES = [
     { code: 'Ocean', name: 'Ocean' },

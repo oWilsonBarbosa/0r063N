@@ -103,8 +103,8 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
         // is monotonic in elev with good numerical separation, which the
         // priority-flood epsilon and lake water-balance were tuned for. This is
         // an ordering-only role — physical heights reported elsewhere (relief,
-        // stats, terrain, records) use the canonical S-curve mapping. Feeding
-        // the compressed S-curve km here would degrade routing in flat lowlands.
+        // stats, terrain, records) use the canonical power mapping. Feeding a
+        // compressed height curve here would degrade routing in flat lowlands.
         elevPx[p] = data.elev_km[c];
         const t = (tempC(data.tS[c]) + tempC(data.tW[c])) / 2;
         petPx[p] = petMm(t);

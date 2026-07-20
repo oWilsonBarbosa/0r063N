@@ -68,8 +68,8 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Marsh / swamp | 84.3 % |
-| Forest, light | 15.7 % |
+| Marsh / swamp | 79.0 % |
+| Forest, light | 21.0 % |
 
 ## Water Bodies
 

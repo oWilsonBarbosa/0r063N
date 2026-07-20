@@ -18,9 +18,9 @@ import {
     plateBasins, plateNpp,
 } from './atlas-plates.mjs';
 import { profileChart, hypsometryChart, encodePNG } from './charts.mjs';
-// Canonical physical height: the generator's S-curve mapping of raw `elev`
-// (the mapping the climate physics used); the stored `elev_km` is legacy linear.
-import { elevToHeightKm } from '../../third_party/planet_heightmap_generation/js/color-map.js';
+// Canonical physical height: the Earth-fitted power mapping of raw `elev`
+// (tools/height-mapping.mjs); the stored `elev_km` is legacy linear.
+import { elevToHeightKm } from '../height-mapping.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, '..', '..');
@@ -310,7 +310,7 @@ function atlasReadme(meta, records, hydro) {
     L.push('');
     L.push('- Rasterized at 0.125° from the 2.56 M-cell Fibonacci-sphere export; all areas are cos-latitude weighted.');
     L.push('- **Relief, erosion, tectonics, Köppen, temperature, precipitation, pressure, winds, currents** come directly from exported per-cell fields (`elev`, `eroD`, `plate`, `stress`, `foldRidge`, `backArc`, `hotspot`, `koppen`, `tS/tW`, `pS/pW`, `prS/prW` [pressure], `wind*`, `oc*`). Built from the corrected v2 export (`data/orogen_regions_full_v2/`).');
-    L.push('- **Physical height in km** uses the generator\'s canonical S-curve mapping of `elev` (`6·t⁴(5−4t)`, `t=min(elev,1)`; land peaks at the 6 km ceiling) — the same mapping its climate physics used. The stored `elev_km` column is the legacy linear mapping and is not used here.');
+    L.push('- **Physical height in km** uses the repository\'s canonical Earth-fitted power mapping of `elev` (`4.574·elev^1.462`; land peaks ~7.7 km, Earth-plausible distribution). The stored `elev_km` column is the legacy linear mapping and is not used here. The generator\'s exported climate (temperature, Köppen, precipitation, winds) was computed on the generator\'s own internal profile and is preserved as published.');
     L.push('- `pS/pW`, `wsS/wsW`, and `ocSpeed*` are p95-normalized and capped at 1, so values at the cap are floors (≥ p95), not exact maxima; precipitation-mm figures in the wettest areas are lower bounds.');
     L.push('- **Hydrology** is derived: priority-flood depression filling, steepest-descent routing, Ol\'dekop runoff, per-depression water balance (see the regional reports for details).');
     L.push('- **NPP** uses the Miami model: `min(3000/(1+e^(1.315−0.119T)), 3000(1−e^(−0.000664P)))` g/m²/yr.');

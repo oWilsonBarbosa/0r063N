@@ -15,7 +15,7 @@ reconstructed **750-million-year geological + climate history**.
 | Seed | 10673275 |
 | Surface cells | 2,560,001 |
 | Land fraction | 20.89 % |
-| Physical relief | −9.281 … +8.538 km |
+| Physical relief | −9.28 … +7.66 km (canonical Earth-fitted power height mapping) |
 | Exported | 2026-06-06 |
 
 ## Start here

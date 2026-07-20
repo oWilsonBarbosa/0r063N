@@ -31,14 +31,14 @@ Classified as **Coastline with offshore islands** (Table 15 vocabulary), based o
 
 | System | Quadrant | Length × width | Trend | Peak | Mean elev. |
 |---|---|---|---|---|---|
-| 1 (39,817 km²) | NE | 820 × 183 km | NE-SW | 4.3 km at 59.1°N 39.1°E | 0.3 km |
-| 2 (25,290 km²) | SE | 487 × 95 km | N-S | 1.4 km at 48.4°N 41.3°E | 0.2 km |
-| 3 (20,465 km²) | SE | 362 × 69 km | N-S | 3.3 km at 52.2°N 52.2°E | 0.2 km |
-| 4 (16,828 km²) | NE | 401 × 75 km | NE-SW | 5.9 km at 61.4°N 38.6°E | 0.9 km |
-| 5 (12,733 km²) | NE | 390 × 68 km | NE-SW | 0.1 km at 67.2°N 48.2°E | 0.0 km |
-| 6 (10,816 km²) | NW | 363 × 54 km | NE-SW | 2.5 km at 76.1°N 38.1°E | 0.2 km |
-| 7 (10,741 km²) | NE | 235 × 72 km | NE-SW | 5.7 km at 75.4°N 71.6°E | 1.4 km |
-| 8 (8,581 km²) | NE | 325 × 42 km | NE-SW | 1.3 km at 78.4°N 54.4°E | 0.1 km |
+| 1 (39,817 km²) | NE | 820 × 183 km | NE-SW | 3.2 km at 59.1°N 39.1°E | 0.6 km |
+| 2 (25,290 km²) | SE | 487 × 95 km | N-S | 1.8 km at 48.4°N 41.3°E | 0.6 km |
+| 3 (20,465 km²) | SE | 362 × 69 km | N-S | 2.8 km at 52.2°N 52.2°E | 0.5 km |
+| 4 (16,828 km²) | NE | 401 × 75 km | NE-SW | 4.3 km at 61.4°N 38.6°E | 1.0 km |
+| 5 (12,733 km²) | NE | 390 × 68 km | NE-SW | 0.7 km at 67.2°N 48.2°E | 0.2 km |
+| 6 (10,816 km²) | NW | 363 × 54 km | NE-SW | 2.4 km at 76.1°N 38.1°E | 0.5 km |
+| 7 (10,741 km²) | NE | 235 × 72 km | NE-SW | 4.1 km at 75.4°N 71.6°E | 1.5 km |
+| 8 (8,581 km²) | NE | 325 × 42 km | NE-SW | 1.8 km at 78.4°N 54.4°E | 0.4 km |
 
 …plus 4 lesser system(s).
 
@@ -46,7 +46,7 @@ Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 66.8 % | 13.3 % | 13.4 % | 6.5 % |
+| 38.0 % | 24.1 % | 29.5 % | 8.4 % |
 
 ## Climate
 
@@ -90,8 +90,8 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Glacier | 30.6 % |
 | Forest, light | 14.3 % |
 | Forest, medium | 3.9 % |
-| Marsh / swamp | 1.0 % |
-| Moor | 0.3 % |
+| Marsh / swamp | 0.9 % |
+| Moor | 0.4 % |
 
 Notable expanses (largest contiguous areas):
 

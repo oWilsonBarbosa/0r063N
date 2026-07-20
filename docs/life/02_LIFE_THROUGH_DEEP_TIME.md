@@ -210,8 +210,8 @@ turnover (**E2**) as habitats are lost.
 ## §6 · The Present Cross-section — Modern icehouse (T-50 … T-0)
 
 **Physical state (MEASURED).** The modern configuration: O5 (Meridia's
-cordillera) and O6 (Borea) rise to the planet's highest ground (the 6 km
-ceiling), the young oceans
+cordillera) and O6 (Borea) rise to the planet's highest ground (the 7.66 km
+peak in Meridia), the young oceans
 take their first trenches, four dispersed continents stand in a moderately cold
 world with permanent far-southern polar ice (present global mean 17.2 °C, 9 %
 land ice+tundra).

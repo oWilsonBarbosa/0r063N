@@ -23,7 +23,7 @@ description: >
 - Four major continents = **96.4 %** of all land; 1,471 islands share the rest
 - Mild maritime baseline with dramatic exceptions: Himalaya-class mountain walls, vast arid interiors, polar ice
 - 80 tectonic plates (16 continental, 64 oceanic) grouped into 20 superplates
-- Physical relief: **−9.28 km** (deepest trench) to **+6.0 km** (land height ceiling; canonical S-curve mapping — see Key Locked Facts)
+- Physical relief: **−9.28 km** (deepest trench) to **+7.66 km** (planet peak, Meridia; canonical Earth-fitted power mapping — see Key Locked Facts)
 - **Phase 5 status**: all physical geography is locked canon. Societies, cities, cultures, history, planet name, and calendar are fully open — not yet created.
 
 ### Canonical dataset
@@ -35,8 +35,8 @@ version of this skill used a low-resolution export of the *same world*
 (identical seed and generation parameters, code `06cy8vf7zvurfgpbrgnm4l`,
 591k-cell mesh); the high-resolution export supersedes it — same continents
 and climate story, refined statistics. Continent stats below were computed by
-`tools/export-v2/continent_stats.mjs` using the **canonical S-curve height
-mapping** (see the Key Locked Facts note).
+`tools/export-v2/continent_stats.mjs` using the **canonical Earth-fitted power
+height mapping** (see the Key Locked Facts note).
 
 ---
 
@@ -45,31 +45,31 @@ mapping** (see the Key Locked Facts note).
 ### Meridia — the high meridional western continent
 
 - **Extent**: 67°N → 15°S · area ~28.1 M km² (largest)
-- **Elevation**: mean **0.85 km** (highest continent) · high massifs reach the **6 km ceiling** (Central Massif — the planet's most extensive high terrain) · **15.8 %** of its land above 2 km (most mountainous by area)
+- **Elevation**: mean **1.08 km** (highest continent) · peak **7.66 km** at ~29°N (Central Massif — planet's highest point) · **18.2 %** of its land above 2 km (most mountainous)
 - **Climate**: A 25 % · **B 36 %** · C 16 % · D 9 % · E 15 % · mean temp 15.3 °C
 - **Shape**: NW–SE spine. Western Collision Front + Central Massif form the backbone. East of them: Arid Interior Plateau (dry, leeward, dominant). Far north: Cold Highlands (subarctic). South: Tropical Lowlands.
 - **Water**: SW Trunk River + coastal delta (main artery, natural port); NW freshwater lakes (structural gift in an otherwise dry plateau interior)
 - **Story character**: the planet's rooftop. A continent of extremes — the highest wall on one side, driest plateau behind it, tropical fringe below. Everything of importance happens in relation to the mountain barrier or the river that escapes it.
-- **Story hooks**: passes through the 6 km wall · salt pan oasis economies · SW river delta as port capital · NW lakeland as contested water source · subarctic northern frontier
+- **Story hooks**: passes through the 7.7 km wall · salt pan oasis economies · SW river delta as port capital · NW lakeland as contested water source · subarctic northern frontier
 
 ---
 
 ### Sirocca — the arid southern continent
 
 - **Extent**: ~1°N → 76°S · area ~27.4 M km²
-- **Elevation**: mean **0.55 km** · high massifs reach the **6 km ceiling** (Northern Range) · **9.1 %** above 2 km
+- **Elevation**: mean **0.85 km** · peak **6.98 km** at ~24°S (Northern Range) · **11.3 %** above 2 km
 - **Climate**: A 20 % · **B 44 %** · C 21 % · D 5 % · E 10 % · mean temp 18.2 °C
-- **Shape**: Northern Range wall (subtropical, 8.0 km) → Vast Arid Heart (salt sea, playas, endorheic basins) → Southern Cold Fringe. SW wet coast is the only reliable maritime zone.
+- **Shape**: Northern Range wall (subtropical, ~7 km) → Vast Arid Heart (salt sea, playas, endorheic basins) → Southern Cold Fringe. SW wet coast is the only reliable maritime zone.
 - **Water**: Northern River corridor (desert-to-sea lifeline — the continent's most critical through-route); equatorial-zone lakes; Salt Sea (endorheic, saline)
 - **Story character**: almost half the continent is Köppen B. Arid is not an exception here — it is the norm. The Northern River is the artery everything else depends on.
-- **Story hooks**: desert caravan economies · contested oases and water rights · salt trade · Northern River as political spine · Northern Range passes between wet coast and arid interior · subtropical snowfields on the 6 km crest (dramatic, rare)
+- **Story hooks**: desert caravan economies · contested oases and water rights · salt trade · Northern River as political spine · Northern Range passes between wet coast and arid interior · subtropical snowfields on the 7 km crest (dramatic, rare)
 
 ---
 
 ### Selvana — the green tropical southern continent
 
 - **Extent**: ~28°N → 64°S · area ~27.2 M km²
-- **Elevation**: mean **0.27 km** (lowest / flattest continent) · high summits reach the **6 km ceiling** (Equatorial Ranges) · **4.4 %** above 2 km
+- **Elevation**: mean **0.49 km** (lowest / flattest continent) · peak **6.17 km** at ~2°N (Equatorial Ranges) · **5.2 %** above 2 km
 - **Climate**: **A 40 %** · B 21 % · C 18 % · D 17 % · E 4 % · mean temp 18.5 °C
 - **Shape**: Tropical North (wet, lush) → Equatorial Ranges (spine, carrying the continent's highest summits) → Interior Dry Basin (rain shadow, salt lake) → Southern Cordillera (cold southern wall). NE and Northern coasts open onto warm equatorial sea.
 - **Water**: NE and Northern river deltas (tropical gateways, high maritime traffic); plateau lakes in Interior Dry Basin; Southern Cordillera freshwater from glacial melt
@@ -81,11 +81,11 @@ mapping** (see the Key Locked Facts note).
 ### Borea — the cold northern continent
 
 - **Extent**: ~23°N → 79°N · area ~20.1 M km² (smallest)
-- **Elevation**: mean **0.47 km** · high ground reaches the **6 km ceiling** (Eastern Range / Northern Ice Highlands) · **7.3 %** above 2 km
+- **Elevation**: mean **0.73 km** · peak **6.12 km** at ~60°N (Eastern Range / Northern Ice Highlands) · **9.0 %** above 2 km
 - **Climate**: A 0 % · B 3 % · C 13 % · **D 43 %** · **E 41 %** — **D+E = 84 %** · mean temperature **0.4 °C**
 - **Shape**: Southern maritime coast (warmest zone, C-group) → Subarctic Interior → Eastern Range → Northern Ice Highlands (ice cap, polar edge; the high-latitude interior is the "far north", not the geographic poles which are maritime)
 - **Water**: Western and Eastern snowmelt rivers (taiga highways; seasonal flooding governs agricultural and transport calendar)
-- **Story character**: the only continent defined entirely by cold — by latitude, not by relief (its mean elevation is modest, ~0.47 km, though its high massifs reach the ceiling). Sparse, seasonal, materially distinct from all other continents. A different relationship with land, time, and survival.
+- **Story character**: the only continent defined entirely by cold — by latitude, not by relief (its mean elevation is modest, ~0.73 km, though its high massifs top 6 km). Sparse, seasonal, materially distinct from all other continents. A different relationship with land, time, and survival.
 - **Story hooks**: cold-specialist peoples and material culture · seasonal settlement calendars · glacially carved harbours on southern coast · snowmelt rivers as the only highways · Northern Ice Highlands as polar frontier · starkly contrasting with tropical-arid Sirocca (its eastern pair neighbour)
 
 ---
@@ -110,12 +110,13 @@ salt pans, endorheic basins, oasis corridors. Water is the currency that
 shapes everything inland.
 
 ### Thread 2 — Snow-crowned mountain walls
-**9 % of land lies above 2 km**, but the high fronts are dramatic: the highest
-massifs on every continent rise to the **6 km ceiling** — walls in the
-subtropics (Meridia, Sirocca) and summits on the equator (Selvana) all top out
-there. Passes through these walls are history-defining chokepoints. Glacial
-U-valleys, sharpened ridges, permanent snowfields. (Physical height uses the
-generator's canonical S-curve mapping; see the note under Key Locked Facts.)
+**10.7 % of land lies above 2 km**, and the high fronts are dramatic:
+Himalaya-class walls on every continent — the planet's peak of **7.66 km** in
+subtropical Meridia, **~7 km** in subtropical Sirocca, and **~6 km** summits on
+the equator (Selvana). Passes through these walls are history-defining
+chokepoints. Glacial U-valleys, sharpened ridges, permanent snowfields.
+(Physical height uses the canonical Earth-fitted power mapping; see the note
+under Key Locked Facts.)
 
 ---
 
@@ -126,23 +127,26 @@ generator's canonical S-curve mapping; see the note under Key Locked Facts.)
 | Land / ocean split | 20.89 % / 79.11 % |
 | Major continents | 4 (= 96.4 % of all land) · 1,471 islands |
 | Tectonic plates | 80 (16 continental, 64 oceanic) · 20 superplates |
-| Planet peak | 6.0 km — the S-curve height ceiling (reached on the high massifs of all four continents; the single highest raw-elevation point is Meridia's Central Massif, ~29°N) |
+| Planet peak | 7.66 km (Meridia, Central Massif, ~29°N) |
 | Deepest ocean | −9.28 km |
-| Highest continent (mean) | Meridia 0.85 km · then Sirocca 0.55 · Borea 0.47 · Selvana 0.27 |
+| Continental peaks | Sirocca 6.98 · Selvana 6.17 · Borea 6.12 km |
+| Highest continent (mean) | Meridia 1.08 km · then Sirocca 0.85 · Borea 0.73 · Selvana 0.49 |
 | Borea mean temperature | 0.4 °C (D+E = 84 %) |
 | Meridia mean temperature | 15.3 °C |
 | Global arid (B-group) | 27 % of land |
 | Sirocca B share | 44 % |
 | Meridia B share | 36 % |
 | Selvana A (tropical) | 40 % |
-| Land above 2 km | 9 % (Meridia 15.8 % · Sirocca 9.1 % · Borea 7.3 % · Selvana 4.4 %) |
+| Land above 2 km | 10.7 % (Meridia 18.2 % · Sirocca 11.3 % · Borea 9.0 % · Selvana 5.2 %) |
 
-> **Height mapping note.** Physical height in km is the generator's canonical
-> **S-curve** mapping of the raw `elev` (`6·t⁴(5−4t)`, `t=min(elev,1)`; ocean
-> `10·elev`) — the mapping its climate physics used. Land peaks at a 6 km
-> ceiling and the world is mostly low (median ~40 m). The stored `elev_km`
-> column is a legacy *linear* mapping (peak 8.54 km) and is **not** canonical.
-> See `docs/DATA_DICTIONARY_V2.md` and `reports/audit/`.
+> **Height mapping note.** Physical height in km is the repository's canonical
+> **Earth-fitted power** mapping of the raw `elev` (`4.574·elev^1.462`; ocean
+> `10·elev`), fitted to an Earth-like land distribution (median ~0.42 km,
+> ~10.7 % of land ≥ 2 km, peak ~7.66 km). The stored `elev_km` column is a
+> legacy *linear* mapping (peak 8.54 km) and is **not** canonical. The
+> generator's exported climate (temperature, Köppen, precip, winds) was computed
+> on the generator's own internal profile and is preserved as published. See
+> `docs/DATA_DICTIONARY_V2.md` and `reports/audit/`.
 
 ---
 

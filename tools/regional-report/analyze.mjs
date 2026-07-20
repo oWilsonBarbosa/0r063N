@@ -7,9 +7,9 @@ import {
     TERRAIN_CLASSES, TERRAIN_OCEAN, BANDS, BAND_OCEAN, KOPPEN_CLASSES,
     tempC, precipAnnualMm,
 } from './classify.mjs';
-// Canonical physical height: the generator's S-curve mapping of raw `elev`
-// (the mapping the climate physics used); the stored `elev_km` is legacy linear.
-import { elevToHeightKm } from '../../third_party/planet_heightmap_generation/js/color-map.js';
+// Canonical physical height: the Earth-fitted power mapping of raw `elev`
+// (tools/height-mapping.mjs); the stored `elev_km` is legacy linear.
+import { elevToHeightKm } from '../height-mapping.mjs';
 
 const RAIN_SHADOW_THRESHOLD = 0.15;
 const MIN_ISLAND_KM2 = 600;          // ignore smaller specks as raster noise

@@ -6,7 +6,7 @@ import Delaunator from 'delaunator';
 import { setDelaunator, buildSphere } from '/home/user/0r063N/third_party/planet_heightmap_generation/js/sphere-mesh.js';
 import { makeRng } from '/home/user/0r063N/third_party/planet_heightmap_generation/js/rng.js';
 import { decodePlanetCode } from '/home/user/0r063N/third_party/planet_heightmap_generation/js/planet-code.js';
-import { elevToHeightKm } from '/home/user/0r063N/third_party/planet_heightmap_generation/js/color-map.js';
+import { elevToHeightKm } from '../height-mapping.mjs';
 
 setDelaunator(Delaunator);
 const cfg = decodePlanetCode('06cy8w6z6a89kow6psje93');

@@ -39,7 +39,7 @@ The globe is divided into the 20 triangular faces of an icosahedron with one ver
 | [15](regions/region_15.md) | Open ocean | Open ocean | 0.1 % | — | — | 0 | 0 | 0 |
 | [16](regions/region_16.md) | Sub-tropical coastline with offshore islands | Coastline with offshore islands | 44.1 % | Sub-tropical | Forest, medium | 13 | 14 | 71 |
 | [17](regions/region_17.md) | Temperate coastline with offshore islands | Coastline with offshore islands | 0.8 % | Temperate | Forest, medium | 0 | 0 | 0 |
-| [18](regions/region_18.md) | Sub-tropical multiple coastlines | Multiple coastlines | 17.8 % | Sub-tropical | Scrub / brushland | 12 | 5 | 27 |
+| [18](regions/region_18.md) | Sub-tropical multiple coastlines | Multiple coastlines | 17.8 % | Sub-tropical | Forest, medium | 12 | 5 | 27 |
 | [19](regions/region_19.md) | Sub-tropical multiple coastlines | Multiple coastlines | 47.8 % | Sub-tropical | Forest, medium | 38 | 27 | 74 |
 | [20](regions/region_20.md) | Open ocean | Open ocean | 0.1 % | — | — | 0 | 0 | 0 |
 

@@ -27,21 +27,26 @@ id,lat,lon,x,y,z,elev,elev_km,prePost,eroD,plate,isOcPlate,superPlate,plateSpeed
 
 ### Canonical physical height (use this)
 
-Physical height in km is **not** the stored `elev_km` field. It is the
-generator's own S-curve mapping of the raw `elev` (`js/color-map.js:elevToHeightKm`)
-— the same mapping the climate physics used (`temperature.js` lapse rate), so it
-is the one coherent definition across the whole stack:
+Physical height in km is **not** the stored `elev_km` field. It is the repository's
+canonical **Earth-fitted power mapping** of the raw `elev` (`tools/height-mapping.mjs`):
 
 ```text
-height_km = 6 · t⁴ · (5 − 4t),  t = min(elev, 1)   for elev > 0   (land; peaks at the 6 km ceiling)
-height_km = 10 · elev                              for elev ≤ 0   (ocean; unchanged from the legacy field)
+height_km = 4.574236096629359 · elev^1.4622457219144074   for elev > 0   (land; peak ≈ 7.66 km)
+height_km = 10 · elev                                      for elev ≤ 0   (ocean; = the legacy field)
 ```
 
-Land profile under this mapping: mean ≈ 0.53 km, median ≈ 0.04 km, ~9 % of land
-≥ 2 km, peak 6.0 km (terrain with `elev ≥ 1` clamps to the ceiling). All
-repository height products (atlas relief, `continent_stats.mjs`, gazetteers, the
-life-layer figures) use this mapping. The three-way height-schema conflict that
-motivated fixing this is recorded in [`../reports/audit/`](../reports/audit/README.md).
+Its two land parameters were fitted (in the relief/coast diagnostic) to Earth's land
+median and its share of land at or above 2 km, giving an Earth-plausible distribution
+with no artificial ceiling: land mean ≈ 0.77 km, median ≈ 0.42 km, ~10.7 % of land
+≥ 2 km, peak ≈ 7.66 km. All repository height products (atlas relief,
+`continent_stats.mjs`, gazetteers, the tectonic inventory, the life-layer figures)
+use this mapping.
+
+**Climate note.** The generator's *exported* climate (`tS/tW`, `koppen`, precip,
+winds) was computed by the generator on its own internal height curve and is
+preserved unchanged as the planet's published climate; this mapping governs
+physical relief, not the climate simulation's internal heights. The height-schema
+history is recorded in [`../reports/audit/`](../reports/audit/README.md).
 
 ## Tectonics and surface masks
 

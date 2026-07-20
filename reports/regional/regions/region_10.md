@@ -31,18 +31,18 @@ Classified as **Coastline with offshore islands** (Table 15 vocabulary), based o
 
 | System | Quadrant | Length × width | Trend | Peak | Mean elev. |
 |---|---|---|---|---|---|
-| 1 (68,477 km²) | SE | 1,183 × 139 km | NW-SE | 6.0 km at 6.7°N 161.7°W | 0.4 km |
-| 2 (44,564 km²) | SE | 851 × 112 km | E-W | 3.5 km at 10.6°N 167.8°W | 0.2 km |
-| 3 (14,581 km²) | NE | 300 × 91 km | NE-SW | 0.3 km at 23.1°N 152.1°W | 0.0 km |
-| 4 (12,151 km²) | NE | 495 × 101 km | E-W | 5.6 km at 26.2°N 144.7°W | 0.7 km |
-| 5 (11,892 km²) | NE | 269 × 165 km | N-S | 0.2 km at 25.7°N 151.2°W | 0.0 km |
-| 6 (6,433 km²) | NE | 228 × 45 km | NW-SE | 0.3 km at 11.3°N 172.8°W | 0.0 km |
+| 1 (68,477 km²) | SE | 1,183 × 139 km | NW-SE | 4.5 km at 6.7°N 161.7°W | 0.7 km |
+| 2 (44,564 km²) | SE | 851 × 112 km | E-W | 2.9 km at 10.6°N 167.8°W | 0.5 km |
+| 3 (14,581 km²) | NE | 300 × 91 km | NE-SW | 0.9 km at 23.1°N 152.1°W | 0.3 km |
+| 4 (12,151 km²) | NE | 495 × 101 km | E-W | 4.0 km at 26.2°N 144.7°W | 0.8 km |
+| 5 (11,892 km²) | NE | 269 × 165 km | N-S | 0.8 km at 25.7°N 151.2°W | 0.2 km |
+| 6 (6,433 km²) | NE | 228 × 45 km | NW-SE | 0.9 km at 11.3°N 172.8°W | 0.3 km |
 
 Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 78.7 % | 7.7 % | 8.0 % | 5.6 % |
+| 58.7 % | 16.9 % | 17.5 % | 7.0 % |
 
 ## Climate
 
@@ -82,14 +82,14 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, light | 25.3 % |
-| Jungle, heavy | 13.7 % |
-| Jungle, medium | 12.9 % |
-| Marsh / swamp | 12.1 % |
-| Grassland / savanna | 11.8 % |
+| Forest, light | 27.6 % |
+| Jungle, heavy | 13.9 % |
+| Jungle, medium | 13.2 % |
+| Grassland / savanna | 12.3 % |
 | Scrub / brushland | 10.7 % |
-| Forest, medium | 6.3 % |
-| Barren | 3.1 % |
+| Marsh / swamp | 8.9 % |
+| Forest, medium | 6.4 % |
+| Barren | 2.7 % |
 | Steppe | 1.9 % |
 | Desert, sandy | 1.2 % |
 | Glacier | 0.5 % |
@@ -97,8 +97,9 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 Notable expanses (largest contiguous areas):
 
-- A jungle of 581,237 km² in the NE quadrant.
-- A forest of 243,964 km² in the SE quadrant.
+- A jungle of 583,999 km² in the NE quadrant.
+- A forest of 302,180 km² in the SE quadrant.
+- A grassland of 101,290 km² in the NE quadrant.
 
 ## Water Bodies
 

@@ -13,7 +13,7 @@ Triangular face centered at 52.6°S 0.0°W · area 25,510,694 km² (1/20 of the 
 | Hydrography | **Multiple coastlines** |
 | Land share | 17.8 % (4,539,641 km²) |
 | Dominant climate band | Sub-tropical |
-| Dominant terrain | Scrub / brushland |
+| Dominant terrain | Forest, medium |
 | Mountain systems | 12 |
 | Mean land temperature | 7.6 °C (Jun half-year) / 20.6 °C (Dec half-year) |
 | Mean annual precipitation | 538 mm |
@@ -31,14 +31,14 @@ Classified as **Multiple coastlines** (Table 15 vocabulary), based on:
 
 | System | Quadrant | Length × width | Trend | Peak | Mean elev. |
 |---|---|---|---|---|---|
-| 1 (28,298 km²) | NE | 453 × 114 km | N-S | 4.1 km at 39.2°S 18.3°E | 0.5 km |
-| 2 (24,732 km²) | NE | 598 × 114 km | E-W | 2.3 km at 41.3°S 18.3°E | 0.2 km |
-| 3 (23,570 km²) | NE | 414 × 79 km | N-S | 2.9 km at 47.8°S 16.2°E | 0.4 km |
-| 4 (19,650 km²) | NE | 420 × 140 km | NW-SE | 1.9 km at 31.6°S 35.6°E | 0.8 km |
-| 5 (18,039 km²) | NE | 585 × 102 km | NE-SW | 0.2 km at 41.3°S 11.9°E | 0.0 km |
-| 6 (16,292 km²) | NE | 609 × 97 km | N-S | 2.0 km at 30.8°S 19.9°E | 0.1 km |
-| 7 (15,576 km²) | NE | 243 × 77 km | N-S | 2.6 km at 44.3°S 13.4°E | 0.5 km |
-| 8 (8,631 km²) | NE | 158 × 112 km | NW-SE | 1.7 km at 35.6°S 15.8°E | 0.1 km |
+| 1 (28,298 km²) | NE | 453 × 114 km | N-S | 3.2 km at 39.2°S 18.3°E | 0.9 km |
+| 2 (24,732 km²) | NE | 598 × 114 km | E-W | 2.3 km at 41.3°S 18.3°E | 0.5 km |
+| 3 (23,570 km²) | NE | 414 × 79 km | N-S | 2.6 km at 47.8°S 16.2°E | 0.9 km |
+| 4 (19,650 km²) | NE | 420 × 140 km | NW-SE | 2.1 km at 31.6°S 35.6°E | 1.4 km |
+| 5 (18,039 km²) | NE | 585 × 102 km | NE-SW | 0.8 km at 41.3°S 11.9°E | 0.3 km |
+| 6 (16,292 km²) | NE | 609 × 97 km | N-S | 2.1 km at 30.8°S 19.9°E | 0.2 km |
+| 7 (15,576 km²) | NE | 243 × 77 km | N-S | 2.5 km at 44.3°S 13.4°E | 0.9 km |
+| 8 (8,631 km²) | NE | 158 × 112 km | NW-SE | 2.0 km at 35.6°S 15.8°E | 0.5 km |
 
 …plus 4 lesser system(s).
 
@@ -46,7 +46,7 @@ Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 55.7 % | 14.7 % | 19.0 % | 10.6 % |
+| 28.5 % | 21.9 % | 35.6 % | 14.0 % |
 
 ## Climate
 
@@ -84,23 +84,23 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
+| Forest, medium | 23.1 % |
 | Scrub / brushland | 22.9 % |
-| Forest, medium | 22.1 % |
-| Desert, sandy | 12.3 % |
+| Desert, rocky | 13.1 % |
 | Steppe | 10.8 % |
-| Desert, rocky | 9.2 % |
-| Barren | 5.7 % |
+| Desert, sandy | 8.4 % |
+| Barren | 6.1 % |
 | Glacier | 4.1 % |
-| Marsh / swamp | 3.7 % |
-| Tundra | 3.6 % |
-| Forest, heavy | 2.8 % |
+| Tundra | 3.2 % |
+| Forest, heavy | 3.2 % |
+| Marsh / swamp | 2.3 % |
 | Forest, light | 1.6 % |
 | Grassland / savanna | 1.0 % |
 
 Notable expanses (largest contiguous areas):
 
 - A desert of 356,115 km² in the NE quadrant.
-- A forest of 960,463 km² in the NE quadrant.
+- A forest of 1,017,892 km² in the NE quadrant.
 - A grassland of 115,213 km² in the NE quadrant.
 
 ## Water Bodies

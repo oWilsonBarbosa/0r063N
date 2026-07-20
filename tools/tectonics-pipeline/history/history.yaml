@@ -351,7 +351,7 @@ stages:
       the H-B Seaway is at maximum width.
   - t: -250
     events:
-      - {type: orogeny, class: laramide, where: [15, 70], blocks: [G], notes: "O4: the Northern Ridge's eastern limb subducts under G - flat-slab episode, broad interior uplift (today's 2.5 Mkm2 belt at 58N 79E, eroded to 1.15 km mean)."}
+      - {type: orogeny, class: laramide, where: [15, 70], blocks: [G], notes: "O4: the Northern Ridge's eastern limb subducts under G - flat-slab episode, broad interior uplift (today's 2.5 Mkm2 belt at 58N 79E, eroded to 0.52 km mean)."}
       - {type: reversal, where: [-35, 12], notes: "Subduction polarity in the H-B Seaway flips east: the seaway starts to close under B's margin."}
     narrative: >
       Fast-moving G overruns young, buoyant ridge crust: the slab goes
@@ -386,7 +386,7 @@ stages:
       condition.
   - t: -100
     events:
-      - {type: orogeny, class: himalayan, where: [-40, 25], blocks: [B, D, H], notes: "O2: H docks against B and D; the seaway dies. Introverted Wilson cycle complete; BDH assembled (today 1.89 km mean, consistent with ~120 Myr age)."}
+      - {type: orogeny, class: himalayan, where: [-40, 25], blocks: [B, D, H], notes: "O2: H docks against B and D; the seaway dies. Introverted Wilson cycle complete; BDH assembled (today 0.95 km mean, consistent with ~120 Myr age)."}
       - {type: ridge_death, where: [-36, 8], notes: "H-B Seaway ridge destroyed."}
       - {type: subduction_init, where: [0, -110], notes: "Intra-oceanic subduction starts in the WESTERN ocean: trench T2; the micro_7 arc begins building."}
       - {type: hotspot_track, where: [-35, -104], notes: "Plume P1 (L5 relic) under plate ii: chain H2-H3-H12-H14 starts recording plate motion."}
@@ -402,14 +402,14 @@ stages:
       mantle plumes light up the hotspot chains we can still trace.
   - t: -50
     events:
-      - {type: orogeny, class: himalayan, where: [34, -130], blocks: [I], notes: "O5: ridge subduction plus arc pile-up on I's western margin; the belt is still rising (8.4 km peaks today)."}
-      - {type: arc_accretion, where: [30, 110], blocks: [G, micro_4], notes: "O6: the micro_4 arc terrane docks onto G's eastern margin (2.3 km mean, ~30 Myr)."}
+      - {type: orogeny, class: himalayan, where: [34, -130], blocks: [I], notes: "O5: ridge subduction plus arc pile-up on I's western margin; the belt is still rising (7.5 km peaks today)."}
+      - {type: arc_accretion, where: [30, 110], blocks: [G, micro_4], notes: "O6: the micro_4 arc terrane docks onto G's eastern margin (1.4 km mean, ~30 Myr)."}
       - {type: subduction_init, where: [-27, -26], notes: "T10: a young trench breaks the CENTRAL ridge's western flank - subduction invading a young ocean."}
       - {type: orogeny, class: andean, where: [0, -112], blocks: [micro_7], notes: "O7: the micro_7 arc grows into a low orogen above trench T2 (still building)."}
     narrative: >
       The modern mountain age. AIJ's far western rim takes the full
       force of fast convergence - ridge crust subducts, arcs dock, and
-      the O5 cordillera shoots past 8 km, the planet's highest ground.
+      the O5 cordillera climbs toward 7.7 km, the planet's highest ground.
       On the far side of the world micro_4 slams into G, raising O6.
       Even the young CENTRAL ocean now hosts a new trench: the long
       turn toward the next supercontinent has begun.
@@ -424,11 +424,11 @@ stages:
       are aging into their first trenches. The cycle is turning over.
 
 provenance:
-  - {feature: "O1 orogen at [54.3, -118.6] (blocks A,I,J)", explained_by: "T-200 himalayan collision assembling AIJ; 185 Myr of erosion to 1.58 km mean"}
-  - {feature: "O2 orogen at [-42.9, 35.7] (blocks B,D,H)", explained_by: "T-100 himalayan closure of the H-B Seaway (introverted Wilson cycle); 1.89 km mean fits ~120 Myr age"}
+  - {feature: "O1 orogen at [54.3, -118.6] (blocks A,I,J)", explained_by: "T-200 himalayan collision assembling AIJ; 185 Myr of erosion to 0.78 km mean"}
+  - {feature: "O2 orogen at [-42.9, 35.7] (blocks B,D,H)", explained_by: "T-100 himalayan closure of the H-B Seaway (introverted Wilson cycle); 0.95 km mean fits ~120 Myr age"}
   - {feature: "O3 orogen at [-43.9, -160.7] (block C)", explained_by: "Sustained Andean margin on C's seaward coast since T-200 (event at stage T-200)"}
-  - {feature: "O4 orogen at [57.9, 79.3] (block G)", explained_by: "T-250 laramide flat-slab episode (ridge subduction under fast-moving G); 1.15 km mean fits ~270 Myr age"}
-  - {feature: "O5 orogen at [33.9, -135.3] (block I)", explained_by: "T-50..now himalayan-grade margin orogeny on I (ridge subduction + arc pile-up); still rising, 8.43 km max"}
+  - {feature: "O4 orogen at [57.9, 79.3] (block G)", explained_by: "T-250 laramide flat-slab episode (ridge subduction under fast-moving G); 0.52 km mean fits ~270 Myr age"}
+  - {feature: "O5 orogen at [33.9, -135.3] (block I)", explained_by: "T-50..now himalayan-grade margin orogeny on I (ridge subduction + arc pile-up); still rising, 7.53 km max"}
   - {feature: "O6 orogen at [55.9, 135.4] (block G)", explained_by: "T-50 arc_accretion of micro_4 onto G's eastern margin"}
   - {feature: "O7 orogen at [3.0, -114.1] (micro_7)", explained_by: "Active intra-oceanic arc above trench T2 (subduction_init T-100)"}
   - {feature: "T1 trench at [11.5, 72.5]", explained_by: "NORTHERN/CENTRAL ocean floor subducting beneath the micro_6 arc system (lineage of the T-150 eastern-flank foundering)"}

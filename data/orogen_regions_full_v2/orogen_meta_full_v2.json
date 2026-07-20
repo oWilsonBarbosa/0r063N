@@ -20,16 +20,17 @@
     "floatTextPrecision": "up to 6 decimal places"
   },
   "heightMapping": {
-    "canonicalId": "generator_s_curve",
-    "note": "Canonical dimensionless-elev to physical-height-km mapping. This is the generator's own elevToHeightKm (js/color-map.js), the mapping its climate physics (temperature.js lapse rate) already used. All repository height-in-km products (atlas relief, continent stats, gazetteers, life-layer figures) use this mapping.",
-    "landFormula": "height_km = 6 * t^4 * (5 - 4*t), with t = min(elev, 1)   for elev > 0",
-    "oceanFormula": "height_km = 10 * elev                                      for elev <= 0",
-    "landPeakKm": 6.0,
-    "landProfileKm": { "mean": 0.525, "median": 0.037, "shareAtOrAbove2km": 0.0900, "max": 6.0 },
+    "canonicalId": "earth_fitted_power_v1",
+    "note": "Canonical dimensionless-elev to physical-height-km mapping for all repository height products (atlas relief, continent stats, gazetteers, tectonic inventory, life-layer figures). The Earth-fitted power land curve from the relief/coast diagnostic: two parameters fitted to Earth's land median and its share of land at or above 2 km, giving an Earth-plausible distribution with no artificial ceiling.",
+    "landFormula": "height_km = 4.574236096629359 * elev^1.4622457219144074   for elev > 0",
+    "oceanFormula": "height_km = 10 * elev                                    for elev <= 0",
+    "landPeakKm": 7.66,
+    "landProfileKm": { "mean": 0.768, "median": 0.421, "shareAtOrAbove2km": 0.1074, "max": 7.66 },
+    "climateNote": "The generator's EXPORTED climate (tS/tW, koppen, precip, winds) was computed by the generator using its own internal S-curve height curve (js/color-map.js elevToHeightKm) and is preserved unchanged as the planet's published climate. This heightMapping governs physical relief and height reporting; it is not the (immutable) height curve used inside the exported climate simulation.",
     "legacyField": {
       "name": "elev_km",
       "mapping": "linear: 6*elev (land), 10*elev (ocean)",
-      "status": "LEGACY / NON-CANONICAL. Preserved for provenance; do not use as physical height. Its land values (peak 8.54 km) come from a linear mapping the generator's climate did not use. The canonical height is heightMapping above, applied to the raw `elev` column."
+      "status": "LEGACY / NON-CANONICAL. Preserved for provenance; do not use as physical height. The canonical height is heightMapping above, applied to the raw `elev` column."
     },
     "resolvedDiagnostic": "Orogen_Atlas_v2_Relief_Coast_Diagnostic (2026-07-19); see reports/audit/."
   },

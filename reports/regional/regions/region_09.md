@@ -31,14 +31,14 @@ Classified as **Coastline with offshore islands** (Table 15 vocabulary), based o
 
 | System | Quadrant | Length × width | Trend | Peak | Mean elev. |
 |---|---|---|---|---|---|
-| 1 (13,092 km²) | NW | 265 × 96 km | NE-SW | 3.5 km at 24.8°N 102.8°E | 0.3 km |
-| 2 (8,912 km²) | NW | 293 × 75 km | E-W | 0.1 km at 27.7°N 100.7°E | 0.0 km |
+| 1 (13,092 km²) | NW | 265 × 96 km | NE-SW | 2.9 km at 24.8°N 102.8°E | 0.6 km |
+| 2 (8,912 km²) | NW | 293 × 75 km | E-W | 0.7 km at 27.7°N 100.7°E | 0.2 km |
 
 Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 95.1 % | 3.0 % | 1.7 % | 0.3 % |
+| 77.2 % | 16.0 % | 6.3 % | 0.4 % |
 
 ## Climate
 
@@ -78,19 +78,19 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 46.7 % |
+| Forest, medium | 48.5 % |
 | Scrub / brushland | 31.6 % |
-| Marsh / swamp | 12.6 % |
-| Forest, heavy | 4.0 % |
+| Marsh / swamp | 10.0 % |
+| Forest, heavy | 4.3 % |
 | Steppe | 1.9 % |
-| Forest, light | 1.2 % |
-| Jungle, heavy | 0.9 % |
+| Forest, light | 1.5 % |
+| Jungle, heavy | 1.0 % |
 | Desert, sandy | 0.8 % |
 | Grassland / savanna | 0.3 % |
 
 Notable expanses (largest contiguous areas):
 
-- A forest of 485,148 km² in the NW quadrant.
+- A forest of 515,196 km² in the NW quadrant.
 
 ## Water Bodies
 

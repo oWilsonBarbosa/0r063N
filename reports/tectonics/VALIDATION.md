@@ -36,17 +36,17 @@
 - S1 assembled T-650, breakup T-450: tenure 200 Myr
 - modeled cycle span 750 Myr (rule of thumb 400-750)
 
-## Orogen heights vs erosion model (2500 m - 5 m/Myr x age)
+## Orogen heights vs erosion model (1300 m - 3 m/Myr x age)
 
 | orogen | event stage | age Myr | predicted mean m | observed mean m | verdict |
 |---|---|---:|---:|---:|---|
-| O1 | T-200 | 200 | 1500 | 1580 | ok |
-| O2 | T-100 | 100 | 2000 | 1890 | ok |
-| O3 | T-200 | 200 | active belt | 1530 | exempt (still building) |
-| O4 | T-250 | 250 | 1250 | 1150 | ok |
-| O5 | T-50 | 50 | active belt | 2650 | exempt (still building) |
-| O6 | T-50 | 50 | active belt | 2340 | exempt (still building) |
-| O7 | T-50 | 50 | active belt | 400 | exempt (still building) |
+| O1 | T-200 | 200 | 700 | 780 | ok |
+| O2 | T-100 | 100 | 1000 | 950 | ok |
+| O3 | T-200 | 200 | active belt | 770 | exempt (still building) |
+| O4 | T-250 | 250 | 550 | 520 | ok |
+| O5 | T-50 | 50 | active belt | 1540 | exempt (still building) |
+| O6 | T-50 | 50 | active belt | 1380 | exempt (still building) |
+| O7 | T-50 | 50 | active belt | 110 | exempt (still building) |
 
 ## Provenance coverage
 
