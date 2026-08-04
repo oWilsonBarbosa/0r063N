@@ -193,26 +193,40 @@ they separated. The geological record gives the exact order of separation
 (mapping the lettered cratons onto the modern continents):
 
 ```
-              ┌── Meridia   (cratons A·I·J — west flank)
+              ┌── Meridia   (cratons A·I·J — west flank, drifted NW)
       ┌───────┤
-      │       └── Sirocca   (cratons C·E·F — west flank)
+      │       └── Selvana   (cratons C·E·F — west flank, drifted SW)
 ──────┤                                   split ~T-400
       │       ┌── Borea     (craton  G     — core, cast off NE)
       └───────┤
-              └── Selvana   (cratons B·D·H — core)
+              └── Sirocca   (cratons B·D·H — core)
                                           split ~T-400
    deepest split ~T-450: {west flank} | {core}
 ```
 
-**The load-bearing hook:** the continents that are **biological sisters** are
-*not* the continents that are **easy to sail between**. Meridia and Sirocca
-share the deepest ancestry (both west-flank), yet today sit far apart; Meridia
-and Selvana are near neighbours across the warm Equatorial Western Sea (easy
-contact) yet belong to **different halves of the tree**. Every realm, every
-"why does this creature exist here and nowhere else," and every strange
-cross-ocean parallel the peoples will one day puzzle over is seeded by this
-mismatch between **kinship and reachability**. That is the subject of the next
-document.
+**The load-bearing hook:** the deepest split in the tree runs along the hardest
+water in the world. The west-flank sisters **Meridia + Selvana** are also the
+Western pair, nearly meeting at the equator across the warm, narrow Equatorial
+Western Sea; the core sisters **Borea + Sirocca** are the Eastern pair. The
+`{west flank} | {core}` divide of ~T-450 therefore coincides with the **Eastern
+Ocean** — broad, open, the planet's defining long-distance voyage. Kinship and
+reachability *align*, and that is what makes the two consequences sharp:
+
+- **Within a pair, kinship and contact are confounded.** Meridia and Selvana are
+  sisters *and* in easy contact, so a shared trait there is genuinely ambiguous —
+  deep inheritance, or later exchange across a narrow warm sea? That ambiguity is
+  a designer's tool, not a bug.
+- **Across the ocean, only deep homology can explain a similarity.** Anything
+  Meridia and Sirocca share must date to before T-450, because nothing crosses
+  the Eastern Ocean easily. A cross-ocean parallel is therefore *evidence of the
+  deep tree*, never of contact.
+- **Sisters need not resemble each other.** Borea and Sirocca are the closest of
+  kin and climatic opposites (polar D+E 84 % against arid B 44 %) — the same
+  inheritance forced through opposite filters.
+
+Every realm, every "why does this creature exist here and nowhere else," and
+every strange cross-ocean parallel the peoples will one day puzzle over is
+seeded by this. That is the subject of the next document.
 
 ---
 

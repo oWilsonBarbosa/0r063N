@@ -22,7 +22,8 @@ meta:
 # Authored interpretation of each present-day orogen belt (from 25_inventory):
 # the stage at which it last formed, and whether it is still tectonically
 # active. The validator checks each inactive belt's present height against the
-# erosion model (2500 m - 5 m/Myr x age); active belts are exempt.
+# shared erosion model in lib/erosion.py (1300 m - 3 m/Myr x age, floor 300 m),
+# which the paleoclimate stage-scaling uses too; active belts are exempt.
 orogen_ages:
   O1: {formed: -200, active: false, note: "AIJ assembly (himalayan), eroding"}
   O2: {formed: -100, active: false, note: "H-B seaway closure (himalayan), eroding"}
