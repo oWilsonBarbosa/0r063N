@@ -273,14 +273,14 @@
   {
    "koppen_major": {
     "A": 0.2167,
-    "B": 0.3759,
-    "C": 0.2459,
+    "B": 0.3758,
+    "C": 0.2456,
     "D": 0.1332,
-    "E": 0.0283
+    "E": 0.0288
    },
-   "global_mean_C": 20.06,
-   "ice_land_frac": 0.0168,
-   "EF_land_frac": 0.0015,
+   "global_mean_C": 20.05,
+   "ice_land_frac": 0.0173,
+   "EF_land_frac": 0.0017,
    "sea_ice_frac": 0.0054,
    "land_lat_range": [
     -84.8,
@@ -294,14 +294,14 @@
   {
    "koppen_major": {
     "A": 0.1754,
-    "B": 0.3315,
-    "C": 0.27,
-    "D": 0.1788,
-    "E": 0.0441
+    "B": 0.3308,
+    "C": 0.2697,
+    "D": 0.1789,
+    "E": 0.0452
    },
    "global_mean_C": 18.44,
-   "ice_land_frac": 0.0295,
-   "EF_land_frac": 0.0023,
+   "ice_land_frac": 0.0306,
+   "EF_land_frac": 0.0028,
    "sea_ice_frac": 0.0073,
    "land_lat_range": [
     -81.7,
@@ -315,14 +315,14 @@
   {
    "koppen_major": {
     "A": 0.1486,
-    "B": 0.3182,
-    "C": 0.266,
-    "D": 0.2051,
-    "E": 0.0622
+    "B": 0.3168,
+    "C": 0.2659,
+    "D": 0.2059,
+    "E": 0.0628
    },
    "global_mean_C": 17.29,
-   "ice_land_frac": 0.0437,
-   "EF_land_frac": 0.0034,
+   "ice_land_frac": 0.0443,
+   "EF_land_frac": 0.0037,
    "sea_ice_frac": 0.0089,
    "land_lat_range": [
     -79.0,
@@ -336,14 +336,14 @@
   {
    "koppen_major": {
     "A": 0.1439,
-    "B": 0.2521,
-    "C": 0.2654,
-    "D": 0.2444,
-    "E": 0.0941
+    "B": 0.2509,
+    "C": 0.2653,
+    "D": 0.2452,
+    "E": 0.0947
    },
-   "global_mean_C": 16.19,
-   "ice_land_frac": 0.0659,
-   "EF_land_frac": 0.0055,
+   "global_mean_C": 16.18,
+   "ice_land_frac": 0.0665,
+   "EF_land_frac": 0.0056,
    "sea_ice_frac": 0.0116,
    "land_lat_range": [
     -79.0,
@@ -357,13 +357,13 @@
   {
    "koppen_major": {
     "A": 0.1311,
-    "B": 0.2686,
-    "C": 0.2664,
-    "D": 0.2068,
-    "E": 0.1269
+    "B": 0.2683,
+    "C": 0.2663,
+    "D": 0.2066,
+    "E": 0.1276
    },
-   "global_mean_C": 16.36,
-   "ice_land_frac": 0.0835,
+   "global_mean_C": 16.35,
+   "ice_land_frac": 0.084,
    "EF_land_frac": 0.0277,
    "sea_ice_frac": 0.0098,
    "land_lat_range": [
