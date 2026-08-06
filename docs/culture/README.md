@@ -63,11 +63,13 @@ It runs the generator's own climate chain on `assets/earth.png` and reports
 the implied global land mean, the zonal profile, and the per-Köppen-class
 breakdown that section 2.2 of doc 00 turns into reliability bands.
 
-## Known inconsistency
+## One scale, one planet
 
-`tools/regional-report/classify.mjs` converts the same index with a hardcoded
-1000, which overstates precipitation by ~19 %. That convention is baked into
-the published regional gazetteers and the atlas, so it is left alone here
-rather than silently changed — but the humidity classes in those reports
-(`arid` < 250 mm, `semi-arid` < 500, `sub-humid` < 1000) sit on thresholds
-that the calibration moves. Worth correcting on the next atlas regeneration.
+Both the culture layer and the regional-report pipeline now convert the
+precipitation index through `tools/precip-scale.mjs`, so the reports, the
+atlas, the derived hydrology and these vectors all describe the same planet.
+The pipeline previously used a hardcoded 1000, which overstated precipitation
+by ~19 % and — because runoff is precipitation minus evapotranspiration —
+overstated river discharge by considerably more. `reports/regional/` and
+`reports/regional/atlas/` were regenerated against the calibrated scale; see
+that commit for what moved.

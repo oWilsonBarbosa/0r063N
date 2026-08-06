@@ -254,7 +254,7 @@ not taiga.
 `Bio1 20–25 · Bio12 250–400 · NPP 500–600 · Köppen BSh/BWh · frost-free`
 
 Hot semi-desert that never freezes, and holds the planet's deep salt sea
-(206,469 km², 218 m deep, 17.3 °N 101.8 °W) — a **Caspian**, not a playa.
+(137,774 km², 200 m deep, 17.3 °N 101.8 °W) — a **Caspian**, not a playa.
 
 - **eHRAF**: Saharan and Sahelian pastoral · Arabian bedouin · Hohokam and
   Sonoran · Rajasthan / Thar
@@ -269,25 +269,28 @@ Hot semi-desert that never freezes, and holds the planet's deep salt sea
 `Bio1 22–25 · Bio12 1000–1400 · NPP ≥1400 · Köppen Aw/Am/Cfa`
 *Broad province — split before use.*
 
-Contains the SW trunk river: 1,980 km, **597 km³/yr**, mouth 5.7 °S 85.4 °W
+Contains the SW trunk river: 1,980 km, **409 km³/yr**, mouth 5.7 °S 85.4 °W
 onto a delta that is 49 % `Aw` / 29 % `BSh`, one wet season.
 
 - **eHRAF**: Indus (Harappan) · Ganges Neolithic and Painted Grey Ware ·
   mainland Southeast Asian riverine · Orinoco/llanos
 - **Invariants**: annual flood pulse sets the calendar; delta agriculture with
   a dry hinterland; natural port at the mouth.
-- **Variance axis**: the Indus analogue is imperfect — 597 km³/yr is 3–6× the
-  Indus, so this river is *not* marginal and the "civilisation clinging to one
-  thread" story is unavailable. Water this abundant historically produces
-  dispersed, less coercive polities. If you want a hydraulic despotism on this
-  planet, it belongs on S2's starved river, not here.
+- **Variance axis**: the Indus analogue holds better than it first appeared.
+  Before the precipitation calibration (§2.1) this river read as 597 km³/yr —
+  3–6× the Indus, so abundant that the "civilisation clinging to one thread"
+  story looked unavailable. Recalibrated it carries **409 km³/yr**, about 1.7×
+  the pre-dam Indus, which puts it squarely in the same class. The delta is
+  still `Aw`/`BSh` with one flood pulse a year, and the hinterland is still
+  dry. Treat it as a genuine Indus, with the caveat that a river this size is
+  avulsion-prone: cities here get abandoned, not besieged.
 
 ### S1 · Northern Range & SW Wet Coast
 `Bio1 16–21 · Bio12 850–1200 · NPP ≥1200 · Köppen Af/Cfb + elev >2000 m band`
 
 A 6.98 km near-equatorial wall against the continent's only reliable maritime
-margin. Includes the 3,243 km / **1,353 km³/yr** river reaching the sea at
-11.7 °S 40.8 °W into 78 % `Af` rainforest — a Congo, not a Nile.
+margin. Includes the 3,243 km / **925 km³/yr** river reaching the sea at
+11.7 °S 40.8 °E into 78 % `Af` rainforest — a Congo, not a Nile.
 
 - **eHRAF**: Central Andean (Chavín, Moche, Wari) · Ethiopian highland ·
   Highland and coastal New Guinea
@@ -301,8 +304,8 @@ margin. Includes the 3,243 km / **1,353 km³/yr** river reaching the sea at
 `Bio1 20–25 · Bio12 250–350 · NPP ~510 · Köppen BSh/BWh · endorheic`
 
 The most distinctive province on the planet. 12.1 M km², 1.1 % coastal, and
-drained by **2,300–3,400 km rivers that all die in a terminal salt lake** at
-~28 °S 43 °E. It also holds the Nile-profile river — 4,082 km, **56 km³/yr**,
+drained by **3,000–3,450 km rivers that all die in a terminal salt lake** at
+~28 °S 43 °E. It also holds the Nile-profile river — 4,036 km, **37 km³/yr**,
 one of the very few that escapes to the sea (21.1 °S 43.2 °E).
 
 - **eHRAF**: Bactria-Margiana (Oxus civilisation) · Tarim Basin oasis states

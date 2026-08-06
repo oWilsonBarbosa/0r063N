@@ -16,7 +16,7 @@ Triangular face centered at 10.8°N 108.0°E · area 25,505,720 km² (1/20 of th
 | Dominant terrain | Forest, medium |
 | Mountain systems | 2 |
 | Mean land temperature | 26.9 °C (Jun half-year) / 15.2 °C (Dec half-year) |
-| Mean annual precipitation | 769 mm |
+| Mean annual precipitation | 645 mm |
 
 ## Hydrography
 
@@ -65,10 +65,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NNE, moderate | from NE, light | 649 mm (year-round) | sub-humid | 23 % of land |
-| NE | from NE, moderate, variable | from NE, light | 1,062 mm (summer-wet) | humid | 63 % of land |
+| NW | from NNE, moderate | from NE, light | 544 mm (year-round) | sub-humid | 23 % of land |
+| NE | from NE, moderate, variable | from NE, light | 890 mm (summer-wet) | sub-humid | 63 % of land |
 | SW | from SSE, light | from N, light | no land | — | — |
-| SE | from SSE, light | from N, light | 1,653 mm (year-round) | humid | — |
+| SE | from SSE, light | from N, light | 1,387 mm (year-round) | humid | — |
 
 A pronounced rain shadow affects the NW and NE quadrant(s), leeward of the NW mountain system.
 
@@ -78,19 +78,19 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 48.5 % |
+| Forest, medium | 53.4 % |
 | Scrub / brushland | 31.6 % |
-| Marsh / swamp | 10.0 % |
-| Forest, heavy | 4.3 % |
+| Marsh / swamp | 5.9 % |
+| Forest, heavy | 2.3 % |
+| Grassland / savanna | 2.1 % |
 | Steppe | 1.9 % |
-| Forest, light | 1.5 % |
 | Jungle, heavy | 1.0 % |
+| Forest, light | 0.9 % |
 | Desert, sandy | 0.8 % |
-| Grassland / savanna | 0.3 % |
 
 Notable expanses (largest contiguous areas):
 
-- A forest of 515,196 km² in the NW quadrant.
+- A forest of 537,755 km² in the NW quadrant.
 
 ## Water Bodies
 
@@ -104,12 +104,6 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 | 4 | great lake | 4,057 km² | 0.8 km | NW |
 | 5 | great lake | 3,268 km² | 0.6 km | NW |
 | 6 | great lake | 2,331 km² | 0.1 km | NE |
-
-Lakes (computed hydrology — depressions in the terrain holding water above sea level):
-
-| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
-|---|---|---|---|---|---|
-| 1 | freshwater (with outlet) | 2,094 km² | 25 m | 21 m | NE |
 
 ## Rivers
 

@@ -46,45 +46,45 @@ A natural-physical atlas derived from the [World Orogen](https://www.orogen.stud
 | Deepest trench | -9.28 km | 26.4°N 96.2°E (Region 09) |
 | Hottest place (seasonal mean) | 38.1 °C | 37.6°S 51.8°E (Region 19) |
 | Coldest place (seasonal mean) | -45.0 °C | 58.8°N 39.3°E (Region 04) |
-| Wettest place | 2,000 mm/yr | 7.1°S 18.9°E (Region 14) |
-| Driest place | 96 mm/yr | 39.9°S 59.5°E (Region 19) |
+| Wettest place | 1,677 mm/yr | 7.1°S 18.9°E (Region 14) |
+| Driest place | 80 mm/yr | 39.9°S 59.5°E (Region 19) |
 | Continents (≥ 3 M km²) | 4 | 28M km², 27M km², 27M km², 20M km² |
 | Largest island | 372,877 km² | 1.5°N 114.3°W |
-| Greatest river (discharge) | 2,034 km³/yr | mouth 53.6°N 68.2°E |
-| Longest river (main stem) | 7,904 km | mouth 16.6°S 152.7°W |
+| Greatest river (discharge) | 1,545 km³/yr | mouth 53.6°N 68.2°E |
+| Longest river (main stem) | 7,874 km | mouth 16.6°S 152.7°W |
 | Largest freshwater lake | 206,614 km² | 34.0°S 145.7°W |
-| Largest salt lake | 206,469 km² | 17.3°N 101.8°W |
-| Major rivers planet-wide | 241 | ≥ 15 km³/yr at the mouth |
-| Lakes ≥ 2,000 km² | 681 | 620 freshwater, 61 salt |
+| Largest salt lake | 137,774 km² | 17.3°N 101.8°W |
+| Major rivers planet-wide | 187 | ≥ 15 km³/yr at the mouth |
+| Lakes ≥ 2,000 km² | 643 | 559 freshwater, 84 salt |
 
 ### The ten great rivers
 
 | # | Discharge | Main stem | Mouth | Empties into |
 |---|---|---|---|---|
-| 1 | 2,034 km³/yr | 4,347 km | 53.6°N 68.2°E | sea |
-| 2 | 1,484 km³/yr | 7,904 km | 16.6°S 152.7°W | sea |
-| 3 | 1,397 km³/yr | 2,801 km | 67.4°N 132.8°E | sea |
-| 4 | 1,363 km³/yr | 2,880 km | 56.9°N 131.4°W | sea |
-| 5 | 1,353 km³/yr | 3,243 km | 11.7°S 40.8°E | sea |
-| 6 | 834 km³/yr | 2,578 km | 12.4°N 153.2°W | sea |
-| 7 | 703 km³/yr | 2,481 km | 69.9°N 51.7°E | sea |
-| 8 | 621 km³/yr | 2,037 km | 52.9°N 119.8°E | sea |
-| 9 | 597 km³/yr | 1,980 km | 5.7°S 85.4°W | sea |
-| 10 | 456 km³/yr | 2,824 km | 5.3°S 135.7°W | sea |
+| 1 | 1,545 km³/yr | 4,288 km | 53.6°N 68.2°E | sea |
+| 2 | 1,116 km³/yr | 2,757 km | 67.4°N 132.8°E | sea |
+| 3 | 1,047 km³/yr | 7,874 km | 16.6°S 152.7°W | sea |
+| 4 | 968 km³/yr | 2,864 km | 56.9°N 131.4°W | sea |
+| 5 | 925 km³/yr | 3,243 km | 11.7°S 40.8°E | sea |
+| 6 | 571 km³/yr | 2,466 km | 69.9°N 51.7°E | sea |
+| 7 | 565 km³/yr | 2,559 km | 12.4°N 153.2°W | sea |
+| 8 | 450 km³/yr | 2,008 km | 52.9°N 119.8°E | sea |
+| 9 | 409 km³/yr | 1,980 km | 5.7°S 85.4°W | sea |
+| 10 | 319 km³/yr | 1,655 km | 49.6°N 77.9°E | sea |
 
 ### The ten great lakes
 
 | # | Type | Area | Surface | Max. depth | Where |
 |---|---|---|---|---|---|
 | 1 | freshwater | 206,614 km² | 52 m | 45 m | 34.0°S 145.7°W |
-| 2 | salt | 206,469 km² | 267 m | 218 m | 17.3°N 101.8°W |
+| 2 | salt | 137,774 km² | 249 m | 200 m | 17.3°N 101.8°W |
 | 3 | freshwater | 96,477 km² | 71 m | 47 m | 48.2°S 69.3°E |
 | 4 | freshwater | 93,841 km² | 198 m | 89 m | 53.3°N 111.9°W |
-| 5 | salt | 91,027 km² | 220 m | 106 m | 45.1°N 113.0°W |
-| 6 | freshwater | 87,899 km² | 144 m | 101 m | 8.4°S 144.6°W |
-| 7 | freshwater | 85,894 km² | 94 m | 80 m | 11.6°S 29.9°E |
-| 8 | freshwater | 64,459 km² | 183 m | 82 m | 54.7°S 131.9°W |
-| 9 | freshwater | 62,383 km² | 130 m | 74 m | 58.6°N 121.5°E |
+| 5 | freshwater | 87,899 km² | 144 m | 101 m | 8.4°S 144.6°W |
+| 6 | freshwater | 85,894 km² | 94 m | 80 m | 11.6°S 29.9°E |
+| 7 | freshwater | 64,459 km² | 183 m | 82 m | 54.7°S 131.9°W |
+| 8 | freshwater | 62,383 km² | 130 m | 74 m | 58.6°N 121.5°E |
+| 9 | salt | 62,233 km² | 195 m | 80 m | 45.1°N 113.0°W |
 | 10 | freshwater | 53,973 km² | 179 m | 77 m | 44.2°N 97.3°E |
 
 ## Method notes

@@ -15,27 +15,12 @@ import readline from 'node:readline';
 import { fileURLToPath } from 'node:url';
 import { elevToHeightKm } from '../height-mapping.mjs';
 import { KOPPEN_CLASSES } from '../regional-report/classify.mjs';
+import { PRECIP_SCALE_MM, precipAnnualMm } from '../precip-scale.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'data/orogen_regions_full_v2');
 const CELL_AREA_KM2 = 510.072e6 / 2560001;
 
-// Millimetres of precipitation per unit of normalized seasonal index, per
-// half-year.  This is the generator's own CLIMATE.KOPPEN_PRECIP_SCALE_MM
-// (js/climate-config.js) — the scale its Köppen classifier feeds into the
-// standard real-millimetre Köppen thresholds, fitted against observed
-// Köppen-Geiger data by tuning/climate/optimize.mjs.
-//
-// Independently verified here by running the generator's climate chain on
-// assets/earth.png at N=160,001: it yields a global land mean of 720 mm/yr
-// against Earth's observed ~715 mm/yr, and solving the scale directly from
-// that land mean gives 832.9 — a 0.7 % difference from the constant below.
-//
-// NOTE the regional-report pipeline uses a different, uncalibrated convention
-// (`precipAnnualMm` in ../regional-report/classify.mjs hardcodes 1000), which
-// overstates precipitation by ~19 %.  See docs/culture/ §2.
-const PRECIP_SCALE_MM = 838.5683;
-const precipAnnualMm = (pS, pW) => (Math.max(0, pS) + Math.max(0, pW)) * PRECIP_SCALE_MM;
 
 // Normalized seasonal temperature -> degrees Celsius (data dictionary).
 const degC = t => -45 + t * 90;
