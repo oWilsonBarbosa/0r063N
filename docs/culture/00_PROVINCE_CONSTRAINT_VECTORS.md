@@ -49,7 +49,7 @@ Read these before trusting a number.
 |---|---|---|
 | Height | Canonical Earth-fitted power mapping of raw `elev` (`tools/height-mapping.mjs`), **not** the legacy `elev_km` column | Differs from the climate model's internal S-curve by ~0.35 km mean; see [`relief_coast_diagnostic`](../../reports/audit/relief_coast_diagnostic/README.md) |
 | Temperature | `°C = -45 + t × 90` on `tS`/`tW` | **Two seasons, not twelve.** "Cold-season mean" is not the coldest *month*; true monthly extremes are colder |
-| Precipitation | `(pS + pW) × 838.5683` mm/yr — the generator's own Earth-fitted `CLIMATE.KOPPEN_PRECIP_SCALE_MM`, **not** the regional-report convention (§2.1) | Censored, and reliability varies sharply by climate class — §2.2 |
+| Precipitation | `(pS + pW) × 813.7` mm/yr — fitted to the generator snapshot that produced this export (§2.1) | Censored, and reliability varies sharply by climate class — §2.2 |
 | Wet-season share | `max(pS,pW) / (pS+pW)` | Scale-invariant, so the calibration does not move it. The cap still compresses it. Use the Köppen class as the authority on seasonality — `Af` vs `Aw` vs `Am` is computed by the generator on **uncapped** values, so the class label is strictly better evidence than the `Wet` figure beside it |
 | NPP | Miami model, `min(3000/(1+e^(1.315−0.119T)), 3000(1−e^(−0.000664P)))` g/m²/yr | More robust than the precipitation it is built from — §2.3 |
 | Growing season | % of province area with warm-season mean ≥ 10 °C (Köppen tree-line criterion) | A proxy for *extent*, not *length in days* |
@@ -57,71 +57,84 @@ Read these before trusting a number.
 
 ### 2.1 The precipitation calibration
 
-The seasonal precipitation columns `pS`/`pW` are dimensionless — each is the
-raw field divided by its own 95th percentile. Turning them into millimetres
-requires a scale, and the choice is not free.
+The seasonal columns `pS`/`pW` are dimensionless — each is the raw field
+divided by its own 95th percentile. Turning them into millimetres needs a
+scale, and the scale has to be fitted to **the generator that produced this
+export**, which `orogen_meta_full_v2.json` pins as snapshot `f9bb081`
+(2026-04-15). That qualifier is load-bearing: the generator has changed
+substantially since — `js/elevation.js` was largely rewritten and
+`js/climate-config.js` did not yet exist — so its present-day climate
+constants do not transfer backwards.
 
-The regional-report pipeline uses `(pS + pW) × 1000` (`classify.mjs`). That
-1000 is a convention, not a measurement, and it is wrong by about 19 %.
+Three candidates, all measured by running `f9bb081`'s own climate chain on
+`assets/earth.png` at N = 160,001
+([`earth-calibration-snapshot.mjs`](../../tools/province-vectors/earth-calibration-snapshot.mjs)):
 
-The generator already carries a better one. Its Köppen classifier converts the
-same index to millimetres via `CLIMATE.KOPPEN_PRECIP_SCALE_MM` before applying
-the standard Köppen thresholds, which are stated in real millimetres (`Af`
-driest month ≥ 60 mm, the `B` aridity threshold, the `Am`/`Aw` boundary). That
-constant sits in `tuning/climate/param-space.mjs` flagged `high: true` and was
-fitted by `tuning/climate/optimize.mjs` against observed Köppen-Geiger data —
-so it is already an Earth-calibrated estimate of "index 1.0 = X mm per
-half-year." Its value is **838.5683**.
+| Scale | Origin | Earth land mean | Error vs observed ~715 mm/yr |
+|---|---|---:|---:|
+| 1000 | hardcoded in `f9bb081`'s `koppen.js` | 879 mm/yr | **+23 %** |
+| 838.5683 | the *current* generator's fitted `KOPPEN_PRECIP_SCALE_MM` | 737 mm/yr | +3.1 % |
+| **813.7** | **fitted to `f9bb081` here** | **715 mm/yr** | **0 %** |
 
-Verified independently by running the generator's own climate chain
-(`wind → ocean → precipitation → temperature`) on `assets/earth.png`:
+The 1000 was a placeholder, not a calibration — which is exactly why the later
+climate-tuning commit replaced it with a fitted parameter. The 838.5683 is a
+real calibration, but of a *different* precipitation model.
 
-| Mesh | Land mean under K = 838.5683 | Scale solved from Earth's land mean |
-|---|---:|---:|
-| N = 40,001 | 747 mm/yr | 802.5 |
-| N = 160,001 | 720 mm/yr | 832.9 |
+Corroborating the choice of reference: `f9bb081` censors **13.48 %** of Earth
+land cells at the p95 cap, closely matching this planet's own **13.80 %**. The
+current generator gives 19.84 %.
 
-Against Earth's observed global land mean of ~715 mm/yr, the constant is
-accurate to **0.7 %** at the higher resolution. The regional-report convention
-gives 858 mm/yr — 20 % high. **This document uses 838.5683.**
+**One caveat, and it is unavoidable.** The exported `koppen` column was
+classified by the generator using its uncalibrated 1000, so millimetres on the
+813.7 scale will not exactly reproduce the Köppen boundaries stored beside
+them. The labels are immutable canon computed with a placeholder. Physical
+accuracy wins here because everything these millimetres feed — terrain
+classes, humidity bands, D-PLACE `Bio12` filters — is stated in real
+millimetres and compared against real-world data. Where a decision turns on
+the boundary itself rather than on the amount, trust the stored `koppen`
+label.
 
 ### 2.2 Where the millimetres are trustworthy, and where they are not
 
-The same Earth run exposes something a single scale factor cannot fix: the
-global mean is right, but the *meridional distribution* is not. Simulated
-zonal land means against observed Earth, at N = 160,001:
+A single scale factor fixes the global mean, not the distribution. `f9bb081`'s
+simulated per-class land means, converted at 813.7, against typical Earth
+values for the same class:
 
-| Band | 0–10° | 10–20° | 20–30° | 30–40° | 40–50° | 50–60° | 60–70° | 70–90° |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| sim ÷ obs | 0.63 | 0.63 | 1.06 | 0.70 | 0.97 | 1.59 | 2.52 | 2.87 |
+| Class | sim mm | Earth ~mm | ratio | | Class | sim mm | Earth ~mm | ratio |
+|---|---:|---:|---:|---|---|---:|---:|---:|
+| `Af` | 1448 | 2200 | 0.66 | | `Cfb` | 925 | 900 | 1.03 |
+| `Am` | 1186 | 1800 | 0.66 | | `Csa` | 488 | 500 | 0.98 |
+| `Aw` | 833 | 1100 | 0.76 | | `Dfa` | 772 | 700 | 1.10 |
+| `BWh` | 173 | 100 | 1.73 | | `Dfb` | 990 | 650 | 1.52 |
+| `BSh` | 381 | 400 | 0.95 | | `Dfc` | 1119 | 450 | 2.49 |
+| `BSk` | 248 | 350 | 0.71 | | `ET` | 1057 | 250 | 4.23 |
+| `Cfa` | 733 | 1200 | 0.61 | | `EF` | 394 | 100 | 3.94 |
 
-The model is **too dry in the tropics and much too wet toward the poles**. By
-Köppen class, comparing simulated means to typical Earth values for the same
-class:
-
-| Reliable (0.85–1.25×) | Understated (~0.7×) | Overstated (2–4×) |
+| Reliable (0.85–1.25×) | Understated (0.6–0.8×) | Overstated (1.5–4×) |
 |---|---|---|
-| `Aw` `BWk` `BSh` `BSk` `Cfb` `Csa` `Dfa` | `Af` `Am` `Cfa` | `Dfc` `ET` `EF` |
+| `BSh` `Cfb` `Csa` `Dfa` | `Af` `Am` `Aw` `BSk` `Cfa` | `BWh` `Dfb` `Dfc` `ET` `EF` |
 
-Two different causes. The tropical deficit is largely **censoring** — 19.8 % of
-land cells were clipped at the cap in the Earth run, concentrated exactly on
-the ITCZ peak. The polar excess is a genuine **model bias**: simulated `ET`
-averages 1,008 mm against a real-world ~250 mm.
+Two different causes. The tropical and warm-temperate deficit is largely
+**censoring** — 13.5 % of land cells clipped at the cap, concentrated on the
+ITCZ peak and on wet subtropical east coasts. The cold-class excess is a
+genuine **model bias**: simulated `ET` averages 1,057 mm against a real-world
+~250 mm.
 
 What that means province by province:
 
 | Province | Precipitation figure | Read it as |
 |---|---|---|
-| M3 · S2 · V3 · V1b · V4 · M2 | **Reliable** | Use as stated |
-| M4 · S1 · V1a · B1 | **Understated ~20–30 %** | A floor |
-| S3 · B2 | **Overstated ~1.6–1.8×** | B2's 862 mm is likely nearer 500 |
-| M1 · B3 | **Overstated ~3–4×** | Ice-dominated; treat as "very dry" |
+| M3 · S2 · V3 | **Reliable**, slight overstatement from their `BWh` fraction | Use as stated |
+| V4 · M2 | **Mixed** — `Dfa`/`Csa` reliable, `Dfb`/`Dfc` high | Treat as an upper bound |
+| M4 · S1 · V1a · V1b · B1 | **Understated ~25–35 %** | A floor |
+| S3 · B2 | **Overstated ~2–2.5×** | B2's 836 mm is likely nearer 400 |
+| M1 · B3 | **Overstated ~4×** | Ice-dominated; treat as "very dry" |
 | V2 | **Unknown** | Tropical alpine has no Earth counterpart at this scale, and the `ET` bias was measured on polar tundra. Do not transfer it |
 
 The arid provinces — the ones where precipitation actually decides the
-culture — are the ones the calibration validates best. That is not luck: `B`
-is where the Köppen thresholds bite hardest, so it is what the optimizer was
-most strongly rewarded for getting right.
+culture — remain the best-calibrated, because `B` is where the Köppen
+thresholds bite hardest and so is what the generator was most constrained to
+get right.
 
 ### 2.3 Why NPP survives this better than precipitation does
 
@@ -135,9 +148,9 @@ province that is temperature-limited:
 | B3 98 % · B2 84 % · S3 56 % · M1 53 % · V4 46 % · V2 41 % | M3 · S2 · V3 · M4 · V1a 0 % · V1b 3 % · S1 7 % · B1 12 % |
 
 The provinces whose precipitation is least reliable are almost exactly the
-ones whose NPP does not depend on it. Recalibrating from 1000 to 838.5683
-moves B2's NPP by only 2.6 % (793 → 772) because it is temperature-limited,
-while M3's moves 14 % (645 → 553) because it is not.
+ones whose NPP does not depend on it. Recalibrating from 1000 to 813.7
+moves B2's NPP by only 3.2 % (793 → 768) because it is temperature-limited,
+while M3's moves 16 % (645 → 539) because it is not.
 
 The exception worth remembering: **V1a and M4 are precipitation-limited *and*
 censored**, so their NPP figures are floors as well.
@@ -179,25 +192,25 @@ Area in millions of km². Temperatures °C. Precipitation mm/yr. NPP g/m²/yr.
 
 | Province | Area | Lat (5–95 %) | Elev mean / max | >2 km | T cold | T warm | T ann | Precip | Wet | NPP | Frost-free | Growing | Coastal |
 |---|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| **M1** W. Cordillera & Central Massif | 5.1 | 10–58 N | 2.99 / 7.66 | 100 % | −12.2 | −1.1 | −6.7 | 322 ‡ | 60 % | 336 | 21 % | 25 % | 0.0 % |
-| **M2** Northern Cold Highlands | 5.3 | 46–63 N | 0.54 / 2.0 | 0 % | 0.1 | 20.7 | 10.4 | 840 | 58 % | 1082 | 53 % | 95 % | 8.4 % |
-| **M3** Arid Interior Plateau | 9.5 | 16–42 N | 0.75 / 2.0 | 0 % | 17.7 | 26.8 | 22.3 | 314 | 65 % | 553 | 98 % | 100 % | 3.7 % |
-| **M4** S. Tropical Lowlands & SW Trunk | 9.5 | 7 S–43 N | 0.53 / 2.0 | 0 % | 21.5 | 25.7 | 23.6 | 1012 + | 64 % | 1406 + | 96 % | 100 % | 13.0 % |
-| **S1** Northern Range & SW Wet Coast | 11.5 | 4–49 S | 0.87 / 6.98 | 17 % | 15.0 | 22.0 | 18.5 | 869 + | 60 % | 1212 + | 87 % | 87 % | 9.9 % |
-| **S2** The Arid Heart | 12.1 | 21–46 S | 0.80 / 2.8 | 5 % | 17.6 | 27.1 | 22.4 | 286 | 64 % | 512 | 98 % | 100 % | 1.1 % |
-| **S3** Southern Cold Fringe | 4.7 | 50–74 S | 0.77 / 4.7 | 11 % | −2.3 | 13.7 | 5.7 | 937 ‡ | 54 % | 938 | 47 % | 71 % | 16.3 % |
-| **B1** Southern Maritime Coast | 4.0 | 26–45 N | 0.19 / 1.5 | 0 % | 7.9 | 26.6 | 17.2 | 662 + | 70 % | 975 + | 100 % | 100 % | 19.4 % |
-| **B2** Subarctic Interior | 12.9 | 47–72 N | 0.44 / 1.5 | 0 % | −10.5 | 14.9 | 2.2 | 862 ‡ | 59 % | 772 | 1 % | 66 % | 7.1 % |
-| **B3** E. Range & N. Ice Highlands | 4.3 | 51–77 N | 1.96 / 6.12 | 42 % | −28.5 | −5.2 | −16.8 | 501 ‡ | 60 % | 164 | 0 % | 9 % | 2.0 % |
-| **V1a** Tropical North | 10.0 | 13 S–19 N | 0.39 / 2.0 | 0 % | 23.6 | 25.7 | 24.7 | 1208 + | 64 % | 1625 + | 100 % | 100 % | 11.7 % |
-| **V1b** Subtropical Belt *(operational)* | 4.7 | 16–41 S | 0.33 / 5.5 | 3 % | 12.7 | 26.7 | 19.7 | 703 | 70 % | 1076 | 95 % | 97 % | 6.4 % |
-| **V2** Equatorial Ranges (sky-islands) | 0.8 | 17 S–14 N | 2.63 / 6.17 | 100 % | 3.0 | 10.0 | 6.5 | 778 ? | 70 % | 983 | 68 % | 58 % | 0.1 % |
-| **V3** Interior Dry Basin | 4.8 | 18–40 S | 0.22 / 2.2 | 0 % | 14.9 | 29.3 | 22.1 | 363 | 68 % | 638 | 100 % | 100 % | 1.7 % |
-| **V4** Southern Cordillera & Cold South | 5.6 | 43–60 S | 0.72 / 6.12 | 9 % | −5.4 | 20.1 | 7.3 | 789 | 59 % | 947 | 21 % | 88 % | 5.0 % |
+| **M1** W. Cordillera & Central Massif | 5.1 | 10–58 N | 2.99 / 7.66 | 100 % | −12.2 | −1.1 | −6.7 | 312 ‡ | 60 % | 331 | 21 % | 25 % | 0.0 % |
+| **M2** Northern Cold Highlands | 5.3 | 46–63 N | 0.54 / 2.0 | 0 % | 0.1 | 20.7 | 10.4 | 815 ~ | 58 % | 1066 | 53 % | 95 % | 8.4 % |
+| **M3** Arid Interior Plateau | 9.5 | 16–42 N | 0.75 / 2.0 | 0 % | 17.7 | 26.8 | 22.3 | 304 | 65 % | 539 | 98 % | 100 % | 3.7 % |
+| **M4** S. Tropical Lowlands & SW Trunk | 9.5 | 7 S–43 N | 0.53 / 2.0 | 0 % | 21.5 | 25.7 | 23.6 | 982 + | 64 % | 1378 + | 96 % | 100 % | 13.0 % |
+| **S1** Northern Range & SW Wet Coast | 11.5 | 4–49 S | 0.87 / 6.98 | 17 % | 15.0 | 22.0 | 18.5 | 843 + | 60 % | 1187 + | 87 % | 87 % | 9.9 % |
+| **S2** The Arid Heart | 12.1 | 21–46 S | 0.80 / 2.8 | 5 % | 17.6 | 27.1 | 22.4 | 278 | 64 % | 498 | 98 % | 100 % | 1.1 % |
+| **S3** Southern Cold Fringe | 4.7 | 50–74 S | 0.77 / 4.7 | 11 % | −2.3 | 13.7 | 5.7 | 909 ‡ | 54 % | 926 | 47 % | 71 % | 16.3 % |
+| **B1** Southern Maritime Coast | 4.0 | 26–45 N | 0.19 / 1.5 | 0 % | 7.9 | 26.6 | 17.2 | 642 + | 70 % | 956 + | 100 % | 100 % | 19.4 % |
+| **B2** Subarctic Interior | 12.9 | 47–72 N | 0.44 / 1.5 | 0 % | −10.5 | 14.9 | 2.2 | 836 ‡ | 59 % | 768 | 1 % | 66 % | 7.1 % |
+| **B3** E. Range & N. Ice Highlands | 4.3 | 51–77 N | 1.96 / 6.12 | 42 % | −28.5 | −5.2 | −16.8 | 486 ‡ | 60 % | 163 | 0 % | 9 % | 2.0 % |
+| **V1a** Tropical North | 10.0 | 13 S–19 N | 0.39 / 2.0 | 0 % | 23.6 | 25.7 | 24.7 | 1173 + | 64 % | 1594 + | 100 % | 100 % | 11.7 % |
+| **V1b** Subtropical Belt *(operational)* | 4.7 | 16–41 S | 0.33 / 5.5 | 3 % | 12.7 | 26.7 | 19.7 | 682 + | 70 % | 1052 + | 95 % | 97 % | 6.4 % |
+| **V2** Equatorial Ranges (sky-islands) | 0.8 | 17 S–14 N | 2.63 / 6.17 | 100 % | 3.0 | 10.0 | 6.5 | 755 ? | 70 % | 968 | 68 % | 58 % | 0.1 % |
+| **V3** Interior Dry Basin | 4.8 | 18–40 S | 0.22 / 2.2 | 0 % | 14.9 | 29.3 | 22.1 | 353 | 68 % | 621 | 100 % | 100 % | 1.7 % |
+| **V4** Southern Cordillera & Cold South | 5.6 | 43–60 S | 0.72 / 6.12 | 9 % | −5.4 | 20.1 | 7.3 | 766 ~ | 59 % | 934 | 21 % | 88 % | 5.0 % |
 
 Precipitation uses the calibrated scale (§2.1). Reliability marks from §2.2:
-`+` understated, treat as a floor · `‡` overstated ~1.6–4× · `?` no Earth
-counterpart, do not bias-correct.
+`+` understated, treat as a floor · `‡` overstated ~2–4× · `~` mixed, treat as
+an upper bound · `?` no Earth counterpart, do not bias-correct.
 
 ---
 
@@ -215,11 +228,11 @@ Hunter-Gatherer dataset).
 ---
 
 ### M1 · Western Cordillera & Central Massif
-`Bio1 −10…0 · Bio12 100–300 · NPP <400 · Köppen EF/ET · elev >2000 m`
-*Simulated 322 mm is overstated ~3–4× (§2.2); filter on the Earth-equivalent.*
+`Bio1 −10…0 · Bio12 75–250 · NPP <400 · Köppen EF/ET · elev >2000 m`
+*Simulated 312 mm is overstated ~4× (§2.2); filter on the Earth-equivalent.*
 
 High, cold, dry, and 100 % above 2 km — 93 % of the land over 3 km is `EF` ice.
-Terrestrial NPP of 336 is at the edge of what supports year-round occupation.
+Terrestrial NPP of 331 is at the edge of what supports year-round occupation.
 
 - **eHRAF**: Tibetan (Changtang) pastoralists · Central Andean puna (Wankarani,
   Tiwanaku highland) · Pamiri · Ladakhi
@@ -233,7 +246,7 @@ Terrestrial NPP of 336 is at the edge of what supports year-round occupation.
   it decides whether Meridia has one civilisation or two separated by a wall.
 
 ### M2 · Northern Cold Highlands
-`Bio1 8–13 · Bio12 750–950 · NPP ~1080 · Köppen Cfa/Cfb/Dfb`
+`Bio1 8–13 · Bio12 600–850 · NPP ~1065 · Köppen Cfa/Cfb/Dfb`
 
 **Mislabelled in the compendium.** Called "subarctic (D/E)", but the data reads
 C 45 % / D 37 %, mean 10.4 °C, cold season at freezing, 95 % of it above the
@@ -251,10 +264,10 @@ not taiga.
   complex.
 
 ### M3 · Arid Interior Plateau
-`Bio1 20–25 · Bio12 250–400 · NPP 500–600 · Köppen BSh/BWh · frost-free`
+`Bio1 20–25 · Bio12 250–350 · NPP ~540 · Köppen BSh/BWh · frost-free`
 
 Hot semi-desert that never freezes, and holds the planet's deep salt sea
-(137,774 km², 200 m deep, 17.3 °N 101.8 °W) — a **Caspian**, not a playa.
+(128,383 km², 17.3 °N 101.8 °W) — a **Caspian**, not a playa.
 
 - **eHRAF**: Saharan and Sahelian pastoral · Arabian bedouin · Hohokam and
   Sonoran · Rajasthan / Thar
@@ -266,10 +279,10 @@ Hot semi-desert that never freezes, and holds the planet's deep salt sea
   whether the sea unifies the plateau or divides it.
 
 ### M4 · Southern Tropical Lowlands & SW Trunk River
-`Bio1 22–25 · Bio12 1000–1400 · NPP ≥1400 · Köppen Aw/Am/Cfa`
+`Bio1 22–25 · Bio12 1200–1500 · NPP ≥1380 · Köppen Aw/Am/Cfa`
 *Broad province — split before use.*
 
-Contains the SW trunk river: 1,980 km, **409 km³/yr**, mouth 5.7 °S 85.4 °W
+Contains the SW trunk river: 1,980 km, **383 km³/yr**, mouth 5.7 °S 85.4 °W
 onto a delta that is 49 % `Aw` / 29 % `BSh`, one wet season.
 
 - **eHRAF**: Indus (Harappan) · Ganges Neolithic and Painted Grey Ware ·
@@ -279,17 +292,17 @@ onto a delta that is 49 % `Aw` / 29 % `BSh`, one wet season.
 - **Variance axis**: the Indus analogue holds better than it first appeared.
   Before the precipitation calibration (§2.1) this river read as 597 km³/yr —
   3–6× the Indus, so abundant that the "civilisation clinging to one thread"
-  story looked unavailable. Recalibrated it carries **409 km³/yr**, about 1.7×
+  story looked unavailable. Recalibrated it carries **383 km³/yr**, about 1.6×
   the pre-dam Indus, which puts it squarely in the same class. The delta is
   still `Aw`/`BSh` with one flood pulse a year, and the hinterland is still
   dry. Treat it as a genuine Indus, with the caveat that a river this size is
   avulsion-prone: cities here get abandoned, not besieged.
 
 ### S1 · Northern Range & SW Wet Coast
-`Bio1 16–21 · Bio12 850–1200 · NPP ≥1200 · Köppen Af/Cfb + elev >2000 m band`
+`Bio1 16–21 · Bio12 1000–1300 · NPP ≥1190 · Köppen Af/Cfb + elev >2000 m band`
 
 A 6.98 km near-equatorial wall against the continent's only reliable maritime
-margin. Includes the 3,243 km / **925 km³/yr** river reaching the sea at
+margin. Includes the 3,243 km / **865 km³/yr** river reaching the sea at
 11.7 °S 40.8 °E into 78 % `Af` rainforest — a Congo, not a Nile.
 
 - **eHRAF**: Central Andean (Chavín, Moche, Wari) · Ethiopian highland ·
@@ -301,11 +314,11 @@ margin. Includes the 3,243 km / **925 km³/yr** river reaching the sea at
   peoples (New Guinea). This is the single richest design decision on Sirocca.
 
 ### S2 · The Arid Heart
-`Bio1 20–25 · Bio12 250–350 · NPP ~510 · Köppen BSh/BWh · endorheic`
+`Bio1 20–25 · Bio12 230–320 · NPP ~500 · Köppen BSh/BWh · endorheic`
 
 The most distinctive province on the planet. 12.1 M km², 1.1 % coastal, and
 drained by **3,000–3,450 km rivers that all die in a terminal salt lake** at
-~28 °S 43 °E. It also holds the Nile-profile river — 4,036 km, **37 km³/yr**,
+~28 °S 43 °E. It also holds the Nile-profile river — 4,036 km, **34 km³/yr**,
 one of the very few that escapes to the sea (21.1 °S 43.2 °E).
 
 - **eHRAF**: Bactria-Margiana (Oxus civilisation) · Tarim Basin oasis states
@@ -320,8 +333,8 @@ one of the very few that escapes to the sea (21.1 °S 43.2 °E).
   early hydraulic state, precisely because it is starved enough to require one.
 
 ### S3 · Southern Cold Fringe
-`Bio1 4–8 · Bio12 500–900 · NPP ~940 · Köppen Cfb/Cfc/ET · ET (Binford) low`
-*Simulated 937 mm is overstated ~1.6× (§2.2).*
+`Bio1 4–8 · Bio12 400–700 · NPP ~925 · Köppen Cfb/Cfc/ET · ET (Binford) low`
+*Simulated 909 mm is overstated ~2× (§2.2).*
 
 Cool, wet, oceanic, 16.3 % coastal — the highest coastal fraction of any
 province.
@@ -332,10 +345,10 @@ province.
   transport; fuel and shelter are year-round problems at 47 % frost-free.
 - **Variance axis**: maritime foragers (Fuegian: mobile, egalitarian, canoe-
   based) vs. maritime farmers (Norse: sedentary, stratified, livestock on a
-  thin margin). NPP 938 permits either.
+  thin margin). NPP 926 permits either.
 
 ### B1 · Southern Maritime Coast
-`Bio1 15–20 · Bio12 650–900 · NPP ~975 · Köppen Cfa · frost-free 100 %`
+`Bio1 15–20 · Bio12 800–1050 · NPP ~955 · Köppen Cfa · frost-free 100 %`
 
 Borea's warm refuge — 26–45 °N, never freezes, summer-wet, 19.4 % coastal. On
 a continent that is 81 % D+E, this is the anomaly that will hold most of its
@@ -349,8 +362,8 @@ people.
   cold interior a hinterland this coast exploits, or a rival that raids it?
 
 ### B2 · Subarctic Interior
-`Bio1 0–4 · Bio12 400–600 · NPP ~770 · Köppen Dfc/Dfb · frost-free 1 %`
-*Simulated 862 mm is overstated ~1.8× (§2.2); real taiga runs 400–600 mm, and
+`Bio1 0–4 · Bio12 300–450 · NPP ~770 · Köppen Dfc/Dfb · frost-free 1 %`
+*Simulated 836 mm is overstated ~2.5× (§2.2); real taiga runs 400–600 mm, and
 the corrected figure is what actually matches the Volga-Kama analogue.*
 
 The taiga. Near-exact match to Volga-Kama (Kirov: 18 °C / −13 °C, mean 2.5 °C).
@@ -365,21 +378,21 @@ The taiga. Near-exact match to Volga-Kama (Kirov: 18 °C / −13 °C, mean 2.5 �
   political scales. Requires a decision from the biology layer first.
 
 ### B3 · Eastern Range & Northern Ice Highlands
-`Bio1 <−15 · Bio12 <250 · NPP <200 · Köppen EF · elev mean ~2000 m`
+`Bio1 <−15 · Bio12 <200 · NPP <200 · Köppen EF · elev mean ~2000 m`
 
 **A 2 km ice dome, not an Arctic coast** — mean elevation 1.96 km, 42 % above
-2 km, mean −16.8 °C, NPP 164. The Earth analogue is the Greenland ice sheet
+2 km, mean −16.8 °C, NPP 163. The Earth analogue is the Greenland ice sheet
 (mean ice elevation 2.1 km, interior ≈ −20 °C), not Yamal or Chukotka.
 
 - **eHRAF**: Thule and Inuit (margins only) · Chukchi · Tibetan Changtang
-- **Invariants**: NPP 164 means essentially no terrestrial production. Anyone
+- **Invariants**: NPP 163 means essentially no terrestrial production. Anyone
   here is marine-subsidised, transient, or dead. There is no indigenous
   agriculture and no year-round interior settlement.
 - **Variance axis**: none worth designing in the interior. Design the *edge* —
   who crosses it, why, and what they believe is on top.
 
 ### V1a · Tropical North
-`Bio1 23–26 · Bio12 >1400 · NPP >1600 · Köppen Af/Am/Aw · frost-free 100 %`
+`Bio1 23–26 · Bio12 >1500 · NPP >1590 · Köppen Af/Am/Aw · frost-free 100 %`
 
 Highest NPP on the planet, and both figures are floors under the cap. The NE/N
 deltas here are 47–49 % `Af` — **ever-wet, not monsoon**; the wet/dry ratio is
@@ -396,7 +409,7 @@ about 1.4 : 1 where real monsoon deltas run 5 : 1 to 20 : 1.
   states. If you want a delta empire here you need an explicit reason.
 
 ### V1b · Subtropical Belt *(operational zone — not in the realms document)*
-`Bio1 18–22 · Bio12 650–850 · NPP ~1075 · Köppen Cs/Aw/Cfa`
+`Bio1 18–22 · Bio12 850–1050 · NPP ~1050 · Köppen Cs/Aw/Cfa`
 
 Mild winters, hot summers, 70 % summer-wet.
 
@@ -408,7 +421,7 @@ Mild winters, hot summers, 70 % summer-wet.
   horticultural-forager (Tupí, Aboriginal SE). Same envelope, opposite worlds.
 
 ### V2 · Equatorial Ranges (sky-islands)
-`Bio1 5–8 · Bio12 700–1000 · NPP ~980 · Köppen ET/Cfb at |lat|<17 · elev >2000 m`
+`Bio1 5–8 · Bio12 650–950 · NPP ~970 · Köppen ET/Cfb at |lat|<17 · elev >2000 m`
 *Precipitation confidence is lowest here — see the V2 note in §2.2.*
 
 The strongest single analogue on the planet and the smallest province (0.8 M
@@ -427,7 +440,7 @@ rainforest. Puncak Jaya is 4.88 km with glaciers at 4 °S; this is higher.
   whether anything ever unified it, and what could.
 
 ### V3 · Interior Dry Basin
-`Bio1 20–24 · Bio12 300–450 · NPP ~640 · Köppen BSh/BWh · frost-free 100 %`
+`Bio1 20–24 · Bio12 300–420 · NPP ~620 · Köppen BSh/BWh · frost-free 100 %`
 
 Mean elevation **0.22 km** — a genuine low basin — and it **never freezes**
 (cold-season mean +14.9 °C, summer 29.3 °C).
@@ -443,7 +456,7 @@ Mean elevation **0.22 km** — a genuine low basin — and it **never freezes**
   The Pontic-Caspian analogue on this planet is **V4**.
 
 ### V4 · Southern Cordillera & Cold South
-`Bio1 5–10 · Bio12 700–900 · NPP ~950 · Köppen Dfa/Dfb + BSk margin`
+`Bio1 5–10 · Bio12 550–780 · NPP ~935 · Köppen Dfa/Dfb + BSk margin`
 
 Cold-season −5.4 °C, warm-season 20.1 °C, 88 % above the growing threshold,
 with `BSk` cold steppe on its margin and a 6.12 km wall behind it. **This is

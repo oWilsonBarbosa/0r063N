@@ -16,7 +16,7 @@ Triangular face centered at 10.8°N 108.0°E · area 25,505,720 km² (1/20 of th
 | Dominant terrain | Forest, medium |
 | Mountain systems | 2 |
 | Mean land temperature | 26.9 °C (Jun half-year) / 15.2 °C (Dec half-year) |
-| Mean annual precipitation | 645 mm |
+| Mean annual precipitation | 626 mm |
 
 ## Hydrography
 
@@ -65,10 +65,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NNE, moderate | from NE, light | 544 mm (year-round) | sub-humid | 23 % of land |
-| NE | from NE, moderate, variable | from NE, light | 890 mm (summer-wet) | sub-humid | 63 % of land |
+| NW | from NNE, moderate | from NE, light | 528 mm (year-round) | sub-humid | 23 % of land |
+| NE | from NE, moderate, variable | from NE, light | 864 mm (summer-wet) | sub-humid | 63 % of land |
 | SW | from SSE, light | from N, light | no land | — | — |
-| SE | from SSE, light | from N, light | 1,387 mm (year-round) | humid | — |
+| SE | from SSE, light | from N, light | 1,345 mm (year-round) | humid | — |
 
 A pronounced rain shadow affects the NW and NE quadrant(s), leeward of the NW mountain system.
 
@@ -78,19 +78,19 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 53.4 % |
+| Forest, medium | 54.0 % |
 | Scrub / brushland | 31.6 % |
-| Marsh / swamp | 5.9 % |
-| Forest, heavy | 2.3 % |
-| Grassland / savanna | 2.1 % |
+| Marsh / swamp | 5.2 % |
+| Grassland / savanna | 2.6 % |
+| Forest, heavy | 1.9 % |
 | Steppe | 1.9 % |
 | Jungle, heavy | 1.0 % |
-| Forest, light | 0.9 % |
+| Forest, light | 0.8 % |
 | Desert, sandy | 0.8 % |
 
 Notable expanses (largest contiguous areas):
 
-- A forest of 537,755 km² in the NW quadrant.
+- A forest of 539,470 km² in the NW quadrant.
 
 ## Water Bodies
 

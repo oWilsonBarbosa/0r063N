@@ -16,7 +16,7 @@ Triangular face centered at 10.8°N 180.0°E · area 25,510,668 km² (1/20 of th
 | Dominant terrain | Grassland / savanna |
 | Mountain systems | 6 |
 | Mean land temperature | 24.8 °C (Jun half-year) / 19.4 °C (Dec half-year) |
-| Mean annual precipitation | 933 mm |
+| Mean annual precipitation | 905 mm |
 
 ## Hydrography
 
@@ -69,10 +69,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NE, moderate | from NE, light | 842 mm (summer-wet) | sub-humid | — |
-| NE | from ENE, strong | from NE, moderate, variable | 903 mm (year-round) | sub-humid | 38 % of land |
+| NW | from NE, moderate | from NE, light | 817 mm (summer-wet) | sub-humid | — |
+| NE | from ENE, strong | from NE, moderate, variable | 876 mm (year-round) | sub-humid | 38 % of land |
 | SW | from S, light | from N, light | no land | — | — |
-| SE | from SW, moderate | from NNW, light, variable | 1,071 mm (summer-wet) | humid | — |
+| SE | from SW, moderate | from NNW, light, variable | 1,040 mm (summer-wet) | humid | — |
 
 A pronounced rain shadow affects the NE quadrant(s), leeward of the SE mountain system.
 
@@ -82,12 +82,12 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Grassland / savanna | 22.0 % |
-| Forest, light | 19.0 % |
+| Grassland / savanna | 23.8 % |
+| Forest, light | 17.5 % |
 | Jungle, heavy | 13.9 % |
 | Jungle, medium | 13.2 % |
 | Scrub / brushland | 10.7 % |
-| Marsh / swamp | 7.7 % |
+| Marsh / swamp | 7.4 % |
 | Forest, medium | 6.7 % |
 | Barren | 2.7 % |
 | Steppe | 1.9 % |
@@ -98,8 +98,8 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 Notable expanses (largest contiguous areas):
 
 - A jungle of 583,999 km² in the NE quadrant.
-- A forest of 120,526 km² in the SE quadrant.
-- A grassland of 256,475 km² in the NE quadrant.
+- A forest of 113,856 km² in the SE quadrant.
+- A grassland of 279,280 km² in the NE quadrant.
 
 ## Water Bodies
 
@@ -122,9 +122,9 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 | 3 | freshwater (with outlet) | 2,737 km² | 26 m | 11 m | NE |
 | 4 | freshwater (with outlet) | 2,721 km² | 47 m | 23 m | NE |
 | 5 | freshwater (with outlet) | 2,487 km² | 435 m | 100 m | SE |
-| 6 | salt (no outlet) | 2,310 km² | 136 m | 110 m | SE |
-| 7 | freshwater (with outlet) | 2,247 km² | 50 m | 25 m | NE |
-| 8 | freshwater (with outlet) | 2,245 km² | 57 m | 14 m | NE |
+| 6 | freshwater (with outlet) | 2,247 km² | 50 m | 25 m | NE |
+| 7 | freshwater (with outlet) | 2,245 km² | 57 m | 14 m | NE |
+| 8 | salt (no outlet) | 2,117 km² | 135 m | 109 m | SE |
 | 9 | freshwater (with outlet) | 2,080 km² | 126 m | 52 m | NE |
 
 ## Rivers
@@ -133,8 +133,8 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 182 km³/yr | 1,692 km | SE quadrant | NE, 17.2°N 160.6°W | sea |
-| 2 | 41 km³/yr | 628 km | NE quadrant | NE, 18.7°N 150.6°W | sea |
-| 3 | 33 km³/yr | 242 km | NE quadrant | NE, 14.7°N 154.2°W | sea |
+| 1 | 169 km³/yr | 1,692 km | SE quadrant | NE, 17.2°N 160.6°W | sea |
+| 2 | 38 km³/yr | 576 km | NE quadrant | NE, 18.7°N 150.6°W | sea |
+| 3 | 31 km³/yr | 242 km | NE quadrant | NE, 14.7°N 154.2°W | sea |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

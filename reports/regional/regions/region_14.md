@@ -16,7 +16,7 @@ Triangular face centered at 10.8°S 0.0°W · area 25,486,825 km² (1/20 of the 
 | Dominant terrain | Scrub / brushland |
 | Mountain systems | 10 |
 | Mean land temperature | 17.6 °C (Jun half-year) / 20.2 °C (Dec half-year) |
-| Mean annual precipitation | 596 mm |
+| Mean annual precipitation | 578 mm |
 
 ## Hydrography
 
@@ -73,10 +73,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from SSW, light | from N, light | 1,304 mm (year-round) | humid | — |
-| NE | from SSW, moderate, variable | from NNW, moderate | 1,164 mm (year-round) | humid | — |
-| SW | from SE, light | from SE, moderate, variable | 867 mm (winter-wet) | sub-humid | — |
-| SE | from SSE, strong, variable | from SSE, strong, variable | 537 mm (winter-wet) | sub-humid | — |
+| NW | from SSW, light | from N, light | 1,265 mm (year-round) | humid | — |
+| NE | from SSW, moderate, variable | from NNW, moderate | 1,129 mm (year-round) | humid | — |
+| SW | from SE, light | from SE, moderate, variable | 841 mm (winter-wet) | sub-humid | — |
+| SE | from SSE, strong, variable | from SSE, strong, variable | 521 mm (winter-wet) | sub-humid | — |
 
 ## Predominant Terrain
 
@@ -85,9 +85,9 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Terrain | Share of land |
 |---|---|
 | Scrub / brushland | 24.0 % |
-| Grassland / savanna | 17.6 % |
-| Forest, light | 10.5 % |
+| Grassland / savanna | 18.2 % |
 | Barren | 10.2 % |
+| Forest, light | 10.0 % |
 | Steppe | 7.2 % |
 | Glacier | 6.0 % |
 | Desert, sandy | 5.8 % |
@@ -100,8 +100,8 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 Notable expanses (largest contiguous areas):
 
 - A desert of 211,802 km² in the SE quadrant.
-- A forest of 192,199 km² in the SE quadrant.
-- A grassland of 539,436 km² in the SE quadrant.
+- A forest of 183,737 km² in the SE quadrant.
+- A grassland of 552,122 km² in the SE quadrant.
 
 ## Water Bodies
 
@@ -119,16 +119,16 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 
 | Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
 |---|---|---|---|---|---|
-| 1 | salt (no outlet) | 17,501 km² | 145 m | 64 m | SE |
+| 1 | salt (no outlet) | 16,220 km² | 143 m | 61 m | SE |
 | 2 | freshwater (with outlet) | 11,733 km² | 110 m | 37 m | SE |
 | 3 | freshwater (with outlet) | 6,976 km² | 114 m | 37 m | SE |
 | 4 | freshwater (with outlet) | 4,704 km² | 111 m | 30 m | SE |
 | 5 | freshwater (with outlet) | 3,745 km² | 109 m | 41 m | SE |
 | 6 | freshwater (with outlet) | 3,590 km² | 113 m | 18 m | SE |
-| 7 | salt (no outlet) | 3,517 km² | 342 m | 79 m | SE |
-| 8 | freshwater (with outlet) | 3,335 km² | 110 m | 33 m | SE |
-| 9 | freshwater (with outlet) | 3,216 km² | 263 m | 88 m | SE |
-| 10 | freshwater (with outlet) | 3,193 km² | 45 m | 40 m | SE |
+| 7 | freshwater (with outlet) | 3,335 km² | 110 m | 33 m | SE |
+| 8 | freshwater (with outlet) | 3,216 km² | 263 m | 88 m | SE |
+| 9 | freshwater (with outlet) | 3,193 km² | 45 m | 40 m | SE |
+| 10 | salt (no outlet) | 3,166 km² | 341 m | 77 m | SE |
 
 …plus 3 smaller lakes.
 
@@ -138,10 +138,10 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 33 km³/yr | 518 km | NE quadrant | SE, 13.7°S 18.2°E | sea |
-| 2 | 22 km³/yr | 696 km | SE quadrant | SE, 19.8°S 22.7°E | salt lake |
-| 3 | 22 km³/yr | 581 km | SE quadrant | SE, 19.3°S 21.8°E | salt lake |
-| 4 | 21 km³/yr | 392 km | NE quadrant | NE, 9.6°S 17.7°E | sea |
-| 5 | 20 km³/yr | 453 km | SE quadrant | SE, 18.6°S 20.9°E | salt lake |
+| 1 | 31 km³/yr | 504 km | SE quadrant | SE, 13.7°S 18.2°E | sea |
+| 2 | 21 km³/yr | 372 km | NE quadrant | NE, 9.6°S 17.7°E | sea |
+| 3 | 20 km³/yr | 696 km | SE quadrant | SE, 19.8°S 22.7°E | salt lake |
+| 4 | 20 km³/yr | 581 km | SE quadrant | SE, 19.3°S 21.8°E | salt lake |
+| 5 | 18 km³/yr | 453 km | SE quadrant | SE, 18.6°S 20.9°E | salt lake |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

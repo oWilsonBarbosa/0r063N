@@ -16,7 +16,7 @@ Triangular face centered at 10.8°N 36.0°W · area 25,497,087 km² (1/20 of the
 | Dominant terrain | — |
 | Mountain systems | 0 |
 | Mean land temperature | 26.6 °C (Jun half-year) / 21.4 °C (Dec half-year) |
-| Mean annual precipitation | 914 mm |
+| Mean annual precipitation | 887 mm |
 
 ## Hydrography
 
@@ -57,7 +57,7 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NE, moderate | from NE, light | 914 mm (summer-wet) | sub-humid | — |
+| NW | from NE, moderate | from NE, light | 887 mm (summer-wet) | sub-humid | — |
 | NE | from NE, moderate, variable | from NE, light | no land | — | — |
 | SW | from S, light | from N, light | no land | — | — |
 | SE | from S, light | from N, light | no land | — | — |

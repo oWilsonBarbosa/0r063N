@@ -16,7 +16,7 @@ Triangular face centered at 52.6°S 144.0°W · area 25,501,188 km² (1/20 of th
 | Dominant terrain | Forest, medium |
 | Mountain systems | 13 |
 | Mean land temperature | 0.0 °C (Jun half-year) / 22.8 °C (Dec half-year) |
-| Mean annual precipitation | 678 mm |
+| Mean annual precipitation | 657 mm |
 
 ## Hydrography
 
@@ -73,10 +73,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NNW, strong | from WSW, strong, variable | 483 mm (summer-wet) | semi-arid | — |
-| NE | from WNW, moderate | from NNW, moderate | 736 mm (year-round) | sub-humid | 11 % of land |
-| SW | from SSE, strong, variable | from SSE, strong, variable | 915 mm (year-round) | sub-humid | 11 % of land |
-| SE | from ESE, moderate, variable | from E, moderate, variable | 933 mm (year-round) | sub-humid | — |
+| NW | from NNW, strong | from WSW, strong, variable | 469 mm (summer-wet) | semi-arid | — |
+| NE | from WNW, moderate | from NNW, moderate | 714 mm (year-round) | sub-humid | 11 % of land |
+| SW | from SSE, strong, variable | from SSE, strong, variable | 888 mm (year-round) | sub-humid | 11 % of land |
+| SE | from ESE, moderate, variable | from E, moderate, variable | 906 mm (year-round) | sub-humid | — |
 
 ## Predominant Terrain
 
@@ -84,23 +84,23 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 41.9 % |
+| Forest, medium | 41.5 % |
 | Scrub / brushland | 28.5 % |
 | Forest, light | 12.3 % |
+| Prairie | 4.2 % |
 | Glacier | 3.9 % |
-| Prairie | 3.8 % |
 | Steppe | 2.4 % |
 | Tundra | 2.0 % |
 | Barren | 1.8 % |
 | Desert, sandy | 1.3 % |
 | Forest, heavy | 0.9 % |
-| Marsh / swamp | 0.8 % |
+| Marsh / swamp | 0.7 % |
 | Grassland / savanna | 0.4 % |
 
 Notable expanses (largest contiguous areas):
 
-- A forest of 5,824,650 km² in the NE quadrant.
-- A grassland of 145,294 km² in the NW quadrant.
+- A forest of 5,773,499 km² in the NE quadrant.
+- A grassland of 155,892 km² in the NW quadrant.
 - A glacier of 146,349 km² in the SW quadrant.
 
 ## Water Bodies
@@ -135,21 +135,20 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 | 9 | freshwater (with outlet) | 9,312 km² | 65 m | 60 m | NW |
 | 10 | freshwater (with outlet) | 9,148 km² | 290 m | 280 m | NW |
 
-…plus 58 smaller lakes.
+…plus 57 smaller lakes.
 
 ## Rivers
 
-8 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+7 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 270 km³/yr | 3,022 km | SW quadrant | NW, 44.4°S 161.9°W | sea |
-| 2 | 146 km³/yr | 992 km | SW quadrant | SW, 55.3°S 158.1°W | sea |
-| 3 | 38 km³/yr | 334 km | NE quadrant | NE, 39.9°S 122.9°W | sea |
-| 4 | 24 km³/yr | 407 km | SW quadrant | SW, 52.2°S 164.7°W | sea |
-| 5 | 20 km³/yr | 324 km | SW quadrant | SW, 56.6°S 162.3°W | sea |
-| 6 | 18 km³/yr | 248 km | NW quadrant | NW, 46.8°S 166.6°W | sea |
-| 7 | 17 km³/yr | 233 km | NE quadrant | NE, 49.2°S 120.8°W | sea |
-| 8 | 15 km³/yr | 87 km | SE quadrant | SE, 62.7°S 131.1°W | sea |
+| 1 | 253 km³/yr | 3,022 km | SW quadrant | NW, 44.4°S 161.9°W | sea |
+| 2 | 139 km³/yr | 992 km | SW quadrant | SW, 55.3°S 158.1°W | sea |
+| 3 | 36 km³/yr | 320 km | NE quadrant | NE, 39.9°S 122.9°W | sea |
+| 4 | 23 km³/yr | 391 km | SW quadrant | SW, 52.2°S 164.7°W | sea |
+| 5 | 19 km³/yr | 324 km | SW quadrant | SW, 56.6°S 162.3°W | sea |
+| 6 | 17 km³/yr | 248 km | NW quadrant | NW, 46.8°S 166.6°W | sea |
+| 7 | 16 km³/yr | 216 km | NE quadrant | NE, 49.2°S 120.8°W | sea |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

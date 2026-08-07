@@ -16,7 +16,7 @@ Triangular face centered at 52.6°N 36.0°E · area 25,506,710 km² (1/20 of the
 | Dominant terrain | Tundra |
 | Mountain systems | 12 |
 | Mean land temperature | 2.8 °C (Jun half-year) / -13.5 °C (Dec half-year) |
-| Mean annual precipitation | 731 mm |
+| Mean annual precipitation | 709 mm |
 
 ## Hydrography
 
@@ -73,10 +73,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NE, light, variable | from NE, light | 1,268 mm (year-round) | humid | 27 % of land |
-| NE | from NW, strong, variable | from N, strong, variable | 648 mm (year-round) | sub-humid | — |
-| SW | from SW, moderate | from SW, moderate | 1,203 mm (year-round) | humid | — |
-| SE | from SW, moderate | from SW, moderate | 1,057 mm (year-round) | humid | 12 % of land |
+| NW | from NE, light, variable | from NE, light | 1,230 mm (year-round) | humid | 27 % of land |
+| NE | from NW, strong, variable | from N, strong, variable | 629 mm (year-round) | sub-humid | — |
+| SW | from SW, moderate | from SW, moderate | 1,168 mm (year-round) | humid | — |
+| SE | from SW, moderate | from SW, moderate | 1,025 mm (year-round) | humid | 12 % of land |
 
 A pronounced rain shadow affects the NW quadrant(s), leeward of the NE mountain system.
 
@@ -126,21 +126,21 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 
 ## Rivers
 
-15 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+14 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 1,545 km³/yr | 4,288 km | NE quadrant | NE, 53.6°N 68.2°E | sea |
-| 2 | 571 km³/yr | 2,466 km | NE quadrant | NE, 69.9°N 51.7°E | sea |
-| 3 | 201 km³/yr | 980 km | SE quadrant | NE, 53.2°N 44.2°E | sea |
-| 4 | 178 km³/yr | 1,194 km | NE quadrant | NE, 57.2°N 54.6°E | sea |
-| 5 | 120 km³/yr | 1,119 km | NE quadrant | NE, 65.8°N 47.7°E | sea |
-| 6 | 117 km³/yr | 623 km | NE quadrant | NE, 54.4°N 62.2°E | sea |
-| 7 | 64 km³/yr | 551 km | SE quadrant | SE, 46.7°N 42.3°E | sea |
-| 8 | 46 km³/yr | 575 km | NE quadrant | NE, 68.1°N 47.8°E | sea |
-| 9 | 34 km³/yr | 276 km | SE quadrant | NE, 52.4°N 43.4°E | sea |
-| 10 | 34 km³/yr | 210 km | NE quadrant | NE, 56.2°N 58.6°E | sea |
+| 1 | 1,471 km³/yr | 4,288 km | NE quadrant | NE, 53.6°N 68.2°E | sea |
+| 2 | 550 km³/yr | 2,466 km | NE quadrant | NE, 69.9°N 51.7°E | sea |
+| 3 | 191 km³/yr | 971 km | SE quadrant | NE, 53.2°N 44.2°E | sea |
+| 4 | 171 km³/yr | 1,179 km | NE quadrant | NE, 57.2°N 54.6°E | sea |
+| 5 | 116 km³/yr | 1,119 km | NE quadrant | NE, 65.8°N 47.7°E | sea |
+| 6 | 111 km³/yr | 623 km | NE quadrant | NE, 54.4°N 62.2°E | sea |
+| 7 | 61 km³/yr | 551 km | SE quadrant | SE, 46.7°N 42.3°E | sea |
+| 8 | 44 km³/yr | 575 km | NE quadrant | NE, 68.1°N 47.8°E | sea |
+| 9 | 33 km³/yr | 267 km | SE quadrant | NE, 52.4°N 43.4°E | sea |
+| 10 | 33 km³/yr | 202 km | NE quadrant | NE, 56.2°N 58.6°E | sea |
 
-…plus 5 lesser major rivers.
+…plus 4 lesser major rivers.
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

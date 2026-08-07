@@ -16,7 +16,7 @@ Triangular face centered at 52.6°S 72.0°W · area 25,506,486 km² (1/20 of the
 | Dominant terrain | Forest, medium |
 | Mountain systems | 0 |
 | Mean land temperature | 6.1 °C (Jun half-year) / 19.1 °C (Dec half-year) |
-| Mean annual precipitation | 639 mm |
+| Mean annual precipitation | 620 mm |
 
 ## Hydrography
 
@@ -62,10 +62,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NW, moderate | from NW, light | 497 mm (year-round) | semi-arid | — |
-| NE | from NW, moderate | from WNW, moderate, variable | 939 mm (year-round) | sub-humid | — |
-| SW | from SE, light, variable | from SSE, light, variable | 970 mm (year-round) | sub-humid | — |
-| SE | from SE, light, variable | from SE, light, variable | 1,206 mm (year-round) | humid | — |
+| NW | from NW, moderate | from NW, light | 482 mm (year-round) | semi-arid | — |
+| NE | from NW, moderate | from WNW, moderate, variable | 911 mm (year-round) | sub-humid | — |
+| SW | from SE, light, variable | from SSE, light, variable | 941 mm (year-round) | sub-humid | — |
+| SE | from SE, light, variable | from SE, light, variable | 1,170 mm (year-round) | humid | — |
 
 ## Predominant Terrain
 
@@ -74,10 +74,10 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Terrain | Share of land |
 |---|---|
 | Forest, medium | 52.3 % |
-| Scrub / brushland | 17.5 % |
+| Scrub / brushland | 18.6 % |
 | Steppe | 12.3 % |
 | Tundra | 10.9 % |
-| Forest, light | 6.8 % |
+| Forest, light | 5.9 % |
 
 ## Water Bodies
 
