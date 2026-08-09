@@ -17,3 +17,7 @@ tools/export-v2/intermediate/
 
 # OS / editor cruft
 .DS_Store
+
+# v3 derived cache — rebuildable from orogen_mesh_triangles + the region parts
+# via scripts/rebuild_triangle_centroids.py. ~72 MB; not worth committing.
+data/orogen_regions_v3_browser/orogen_triangles_xyz_elev.f32.gz
