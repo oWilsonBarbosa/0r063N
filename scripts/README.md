@@ -70,6 +70,26 @@ python3 scripts/make_data_dictionary.py
 
 Re-run it after any fresh extract — the doc is a build artefact of the metadata.
 
+## `rebuild_triangle_centroids.py` — regenerate the largest v3 file
+
+`orogen_triangles_xyz_elev.f32.gz` (~72 MB) is the biggest file in the repo and
+past GitHub's 50 MB advisory — but it is **pure cache**: per-triangle centroid
+`xyz` and mean `elev`, both derivable from `orogen_mesh_triangles.Int32Array.gz`
+(the Delaunay index, which is *not* derivable — keep it) plus the region parts'
+`x,y,z,elev` columns.
+
+```bash
+python3 scripts/rebuild_triangle_centroids.py --verify   # prove it reconstructs exactly
+python3 scripts/rebuild_triangle_centroids.py            # rebuild it locally
+```
+
+Run `--verify` **before** removing the committed copy: it reports the max error
+against the real file, and tests both readings of the metadata's ambiguous
+"unnormalised arithmetic centroid" (sum vs mean) to report which one applies. It
+only green-lights deletion if the match is exact to float32 precision.
+
+The file is gitignored so it is not re-committed by accident.
+
 ## Column meanings
 
 `docs/DATA_DICTIONARY.md` (56, v1) · `docs/DATA_DICTIONARY_V2.md` (58, v2) ·
