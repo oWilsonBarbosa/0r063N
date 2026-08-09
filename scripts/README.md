@@ -57,7 +57,24 @@ format exactly, so `verify_parts.py` parses all three identically.
 It **refuses to overwrite an existing manifest** without `--force`, so it cannot
 silently replace the authoritative v1/v2 manifests with regenerated ones.
 
+## `make_data_dictionary.py` — regenerate the v3 column reference
+
+The v3 extract ships a self-describing `fields` block in `orogen_meta.json`
+(name, dtype, units, source, semantics per column). This renders it into
+`docs/DATA_DICTIONARY_V3.md` rather than hand-maintaining an 82-row table that
+would drift on the next extract:
+
+```bash
+python3 scripts/make_data_dictionary.py
+```
+
+Re-run it after any fresh extract — the doc is a build artefact of the metadata.
+
 ## Column meanings
 
 `docs/DATA_DICTIONARY.md` (56, v1) · `docs/DATA_DICTIONARY_V2.md` (58, v2) ·
 `docs/DATA_DICTIONARY_V3.md` (82, v3).
+
+The v3 extract itself is produced by `tools/orogen-extract.js` — paste it into
+the browser console at orogen.studio with the planet loaded. See the header
+comment in that file for the procedure and its config flags.
