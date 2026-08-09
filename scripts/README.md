@@ -1,9 +1,18 @@
 # Dataset helper scripts
 
 Small, dependency-free (Python 3 standard library only) utilities for working
-with the raw datasets in `data/orogen_regions_full/` (original v1) and
-`data/orogen_regions_full_v2/` (corrected v2). Run them from the repository
-root. Both scripts accept `--v2` to operate on the corrected export.
+with the raw datasets. Run them from the repository root.
+
+| Flag | Dataset | Columns |
+|---|---|---:|
+| *(none)* | `data/orogen_regions_full/` — the original export | 56 |
+| `--v2` | `data/orogen_regions_full_v2/` — the corrected export | 58 |
+| `--v3` | `data/orogen_regions_v3_browser/` — the in-browser DevTools extract | 82 |
+
+**Use v2 for analysis.** v1 is the provenance record; v3 is an independent
+capture taken live from the generator (it recovers uncensored wind/ocean
+magnitudes that v1/v2 cannot represent, but it is a different schema — see
+`docs/DATA_DICTIONARY_V3.md`).
 
 ## `verify_parts.py` — integrity check
 
@@ -30,5 +39,25 @@ python3 scripts/reassemble.py --v2       # -> ./orogen_regions_full_v2.csv
 python3 scripts/reassemble.py --check    # count rows only; assert the 2,560,001 total
 ```
 
-See `docs/DATA_DICTIONARY_V2.md` for what the 58 v2 columns mean
-(`docs/DATA_DICTIONARY.md` covers the original 56-column export).
+## `make_manifest.py` — generate a checksummed manifest
+
+v1 and v2 ship with a parts manifest. The v3 browser extract does **not** — it
+writes `orogen_meta.json` instead — so its manifest has to be generated once
+before `verify_parts.py --v3` can check anything:
+
+```bash
+python3 scripts/make_manifest.py --v3          # -> orogen_regions_v3_manifest.md
+python3 scripts/make_manifest.py --v3 --force  # regenerate an existing one
+```
+
+It reads every part once (counting rows and land/coast cells) and hashes the raw
+file, so allow a couple of minutes over ~520 MB. Output matches the v1/v2 table
+format exactly, so `verify_parts.py` parses all three identically.
+
+It **refuses to overwrite an existing manifest** without `--force`, so it cannot
+silently replace the authoritative v1/v2 manifests with regenerated ones.
+
+## Column meanings
+
+`docs/DATA_DICTIONARY.md` (56, v1) · `docs/DATA_DICTIONARY_V2.md` (58, v2) ·
+`docs/DATA_DICTIONARY_V3.md` (82, v3).

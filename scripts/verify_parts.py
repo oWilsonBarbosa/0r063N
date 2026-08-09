@@ -8,6 +8,7 @@ source of truth) and checks each `.csv.gz` against them.
     python3 scripts/verify_parts.py          # SHA-256 + file size (fast, authoritative)
     python3 scripts/verify_parts.py --rows    # also decompress and count data rows
     python3 scripts/verify_parts.py --v2      # check the corrected v2 export instead
+    python3 scripts/verify_parts.py --v3      # check the browser extract instead
 
 Exit code 0 = all parts pass, 1 = at least one mismatch.
 """
@@ -22,6 +23,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DATASETS = {
     "v1": ("orogen_regions_full", "orogen_regions_full_csv_parts_manifest.md"),
     "v2": ("orogen_regions_full_v2", "orogen_regions_full_v2_manifest.md"),
+    # v3 = the in-browser DevTools extract (82 columns). Its manifest is not
+    # shipped by the exporter — generate it once with scripts/make_manifest.py --v3.
+    "v3": ("orogen_regions_v3_browser", "orogen_regions_v3_manifest.md"),
 }
 
 # Manifest row: | 00 | `file.csv.gz` | 200,000 | 0 | 199999 | .. | .. | 31,627,636 | `sha` |
@@ -64,11 +68,24 @@ def main():
                     help="also decompress each part and verify the data-row count")
     ap.add_argument("--v2", action="store_true",
                     help="verify the corrected v2 export (data/orogen_regions_full_v2/)")
+    ap.add_argument("--v3", action="store_true",
+                    help="verify the browser extract (data/orogen_regions_v3_browser/)")
     args = ap.parse_args()
 
-    dir_name, manifest_name = DATASETS["v2" if args.v2 else "v1"]
+    if args.v2 and args.v3:
+        print("ERROR: choose one of --v2 / --v3", file=sys.stderr)
+        return 2
+    key = "v3" if args.v3 else ("v2" if args.v2 else "v1")
+    dir_name, manifest_name = DATASETS[key]
     data_dir = REPO_ROOT / "data" / dir_name
     manifest = data_dir / manifest_name
+
+    if not manifest.exists():
+        print(f"ERROR: no manifest at {manifest}", file=sys.stderr)
+        if key == "v3":
+            print("       generate it first:  python3 scripts/make_manifest.py --v3",
+                  file=sys.stderr)
+        return 2
 
     parts = parse_manifest(manifest)
     if not parts:
