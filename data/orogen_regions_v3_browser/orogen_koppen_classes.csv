@@ -1,0 +1,32 @@
+class_id,code,name,color_r,color_g,color_b
+0,Ocean,"Ocean",0.29,0.44,0.65
+1,Af,"Tropical rainforest",0,0,1
+2,Am,"Tropical monsoon",0,0.47,1
+3,Aw,"Tropical savanna",0.27,0.67,0.98
+4,BWh,"Hot desert",1,0,0
+5,BWk,"Cold desert",1,0.59,0.59
+6,BSh,"Hot steppe",0.96,0.65,0
+7,BSk,"Cold steppe",1,0.86,0.39
+8,Cfa,"Humid subtropical",0.78,1,0.31
+9,Cfb,"Oceanic",0.39,1,0.31
+10,Cfc,"Subpolar oceanic",0.2,0.78,0
+11,Csa,"Hot-summer Mediterranean",1,1,0
+12,Csb,"Warm-summer Mediterranean",0.78,0.78,0
+13,Csc,"Cold-summer Mediterranean",0.59,0.59,0
+14,Cwa,"Humid subtropical (monsoon)",0.59,1,0.59
+15,Cwb,"Subtropical highland",0.39,0.78,0.39
+16,Cwc,"Cold subtropical highland",0.2,0.59,0.2
+17,Dfa,"Hot-summer continental",0,1,1
+18,Dfb,"Warm-summer continental",0.22,0.78,1
+19,Dfc,"Subarctic",0,0.49,0.49
+20,Dfd,"Extremely cold subarctic",0,0.27,0.37
+21,Dsa,"Hot-summer continental (dry summer)",0.9,0.5,1
+22,Dsb,"Warm-summer continental (dry summer)",0.7,0.35,0.85
+23,Dsc,"Subarctic (dry summer)",0.5,0.2,0.65
+24,Dsd,"Extremely cold subarctic (dry summer)",0.35,0.1,0.45
+25,Dwa,"Hot-summer continental (monsoon)",0.67,0.69,1
+26,Dwb,"Warm-summer continental (monsoon)",0.43,0.47,0.78
+27,Dwc,"Subarctic (monsoon)",0.29,0.31,0.78
+28,Dwd,"Extremely cold subarctic (monsoon)",0.2,0,0.53
+29,ET,"Tundra",0.7,0.7,0.7
+30,EF,"Ice cap",0.41,0.41,0.41
