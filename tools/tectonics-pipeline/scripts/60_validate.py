@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from lib import data_io, history_schema
+from lib import data_io, erosion, history_schema
 from lib.spherical import great_circle_km, cm_per_yr, xyz_to_latlon, latlon_to_xyz
 
 hist = history_schema.load(data_io.HISTORY_DIR / "history.yaml")
@@ -96,7 +96,7 @@ for i, o in enumerate(orogens):
         report.append(f"| {label} | T{t} | {age} | active belt | {obs:.0f} | "
                       f"exempt (still building) |")
         continue
-    pred = 1300 - 3 * age
+    pred = erosion.predicted_height_m(age)
     ok = abs(obs - pred) <= 0.4 * pred
     if not ok:
         fails.append(f"{label}: predicted {pred:.0f} m for age {age}, observed {obs:.0f} m")

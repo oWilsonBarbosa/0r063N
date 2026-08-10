@@ -55,6 +55,7 @@ and documents are committed.
 | `tools/tectonics-pipeline/lib/mapstyle.py` | shared map styling |
 | `tools/tectonics-pipeline/lib/climate.py` | zonal climate model (temp/precip/Köppen), generator-calibrated |
 | `tools/tectonics-pipeline/lib/paleoclimate_schema.py` | forcing-curve schema + validation |
+| `tools/tectonics-pipeline/lib/erosion.py` | **shared** orogen height-vs-age erosion law (validator + paleoclimate) |
 | `tools/tectonics-pipeline/history/history.yaml` | **the authored timeline** — edit this to revise the history |
 | `tools/tectonics-pipeline/history/paleoclimate.yaml` | **the authored climate forcing curve** (dT per stage, eras) |
 | `reports/tectonics/INVENTORY.md` | present-day tectonic inventory (human-readable) |
@@ -96,4 +97,4 @@ advection with ITCZ convective recycling. Ice ages are emergent from forcing
 output: every major class within 9 pp (B, D, E within ~3 pp); deviations
 documented in `docs/PALEOCLIMATE.md`. Orogen belts carry age-scaled
 elevations into the past using the same erosion model the tectonic validator
-enforces.
+enforces — both import it from `lib/erosion.py`, so the two cannot drift apart.

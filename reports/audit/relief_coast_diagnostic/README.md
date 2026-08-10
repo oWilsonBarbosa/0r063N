@@ -27,7 +27,13 @@ The km heights we reported did not match the heights the climate used.
 This was an **inherited** conflict (generator + original export choice), not a
 regression from the v2 corrections. Data integrity was intact throughout.
 
-## Decision
+## Decision (superseded — see [Update](#update-canonical-mapping-changed-to-the-earth-fitted-power-curve))
+
+> **This section records the *first* resolution and is kept as the archival
+> record. It no longer describes the repository.** The canonical mapping is now
+> the Earth-fitted power curve (peak 7.66 km, no ceiling), not the S-curve
+> described below. The statements in this section that the power candidate was
+> "not adopted" and that heights clamp to a 6 km ceiling are both obsolete.
 
 Adopt the **generator's native S-curve** (`elevToHeightKm`) as the single
 canonical `elev → height_km` mapping — the mapping the climate physics already

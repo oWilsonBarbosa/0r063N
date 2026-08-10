@@ -63,8 +63,10 @@ against its source) and runs them on each stage's rotated geography:
 - **Köppen classification**: the generator's exact thresholds (30 classes).
 - **Per-stage inputs**: land cells rotated by the tectonic block rotations;
   per-cell elevation carried from the present, with **orogen belts scaled by
-  age** using the same erosion model as the tectonic validator (belts rise as
-  they form and decay afterwards; absent before their orogeny); continentality,
+  age** using the same erosion model as the tectonic validator — both import it
+  from `lib/erosion.py` (1300 m − 3 m/Myr × age, floor 300 m), so they cannot
+  drift apart (belts rise as they form and decay afterwards; absent before their
+  orogeny); continentality,
   ITCZ, gyres and moisture all recomputed from each stage's geography.
 - **Simplifications** (documented, not hidden): no orographic wind shadowing,
   a two-season year, uniform (non-amplified) forcing, and parameterized rather

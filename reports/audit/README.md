@@ -7,9 +7,16 @@ this page summarizes their findings in English.
 
 A later, separate audit resolved a **height-schema conflict** (three
 incompatible `elev → km` mappings) and is archived in
-[`relief_coast_diagnostic/`](relief_coast_diagnostic/README.md): the repository
-now uses the generator's native S-curve as the one canonical physical-height
-mapping.
+[`relief_coast_diagnostic/`](relief_coast_diagnostic/README.md). The repository's
+one canonical physical-height mapping is the **Earth-fitted power curve**
+(`earth_fitted_power_v1`: `4.574·elev^1.462` on land, `10·elev` in ocean; land
+peak **7.66 km**), defined in [`tools/height-mapping.mjs`](../../tools/height-mapping.mjs)
+and `tools/tectonics-pipeline/lib/height.py`. That diagnostic's *first*
+resolution adopted the generator's native S-curve; it was superseded because the
+S-curve clamped every peak to a flat 6 km ceiling — see the
+[update section](relief_coast_diagnostic/README.md#update-canonical-mapping-changed-to-the-earth-fitted-power-curve).
+The exported climate fields remain the generator's own S-curve product; that
+documented seam is described in the same file.
 
 | Stage | Document | What it did |
 |---|---|---|

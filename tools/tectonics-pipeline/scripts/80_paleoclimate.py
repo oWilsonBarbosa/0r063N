@@ -19,7 +19,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from lib import climate, data_io, history_schema, paleoclimate_schema, raster
+from lib import climate, data_io, erosion, history_schema, paleoclimate_schema, raster
 from lib.spherical import xyz_to_latlon
 
 CW, CH = 800, 400  # climate grid
@@ -102,8 +102,7 @@ def belt_factor(belt_idx, t):
     if spec.get("active"):
         return 1.0  # active belts held at present height once formed
 
-    def pred(age):
-        return max(2500 - 5 * age, 300.0)
+    pred = erosion.predicted_height_m   # shared law (lib/erosion.py)
 
     age_t = t - formed   # Myr since formation at stage t (>= 0)
     age_now = -formed    # Myr since formation today
