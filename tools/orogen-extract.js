@@ -774,9 +774,25 @@ if (dlAbsent.length) warn('debug layers absent on this build/session:', dlAbsent
 const PHYS_DL = ['continentalDrag','sizeVelocity','plateSpeed','velChange','mantleFlow'];
 const plateEditDetected = !!DL.base && PHYS_DL.every(k => !DL[k]);
 if (plateEditDetected) {
-  warn('plate-physics debug layers are gone — this planet was rebuilt via a plate edit. ' +
-       PHYS_DL.join(', ') + ' are NOT recoverable without regenerating from the planet code, ' +
-       'and superPlate ids have been renumbered.');
+  // Blocking, like the climate gate: discovering this in the summary after a
+  // seven-minute export is the difference between a 30-second fix and a wasted
+  // run. The five layers are attached ONLY by handleGenerate, and editDone
+  // replaces curData.debugLayers wholesale, so nothing in this session can
+  // bring them back — only a fresh generate from the planet code can.
+  const msg =
+    'PLATE-PHYSICS LAYERS ARE GONE.\n\n' +
+    'This planet was rebuilt by a plate edit, which replaced debugLayers wholesale ' +
+    '(editDone, js/planet-worker.js). These five columns cannot be exported:\n\n' +
+    '    ' + PHYS_DL.join(', ') + '\n\n' +
+    'superPlate ids have also been renumbered from scratch, so they will not match ' +
+    'any earlier export.\n\n' +
+    'TO RECOVER THEM: reload this page from the planet code (a plain reload of the ' +
+    '#<code> URL is enough), press "Compute Climate", and re-run this script WITHOUT ' +
+    'touching plate editing. plateSpeed is one of the two fields the original CSV ' +
+    'export lost, so this is usually worth the extra few minutes.\n\n' +
+    'Press OK to export anyway without them.';
+  if (!confirm(msg)) throw new Error('aborted — reload from the planet code and re-run before editing plates.');
+  warn('proceeding WITHOUT the plate-physics layers at user request');
 }
 
 // koppen label alongside the numeric class
