@@ -120,22 +120,13 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 
 …plus 4 smaller enclosed water bodies.
 
-Lakes (computed hydrology — depressions in the terrain holding water above sea level):
+Closed-basin (endorheic) lakes — terminal depressions where evaporation balances inflow, holding standing (saline) water with no ocean outlet:
 
-| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
-|---|---|---|---|---|---|
-| 1 | freshwater (with outlet) | 62,383 km² | 130 m | 74 m | NE |
-| 2 | freshwater (with outlet) | 53,973 km² | 179 m | 77 m | SW |
-| 3 | freshwater (with outlet) | 43,018 km² | 169 m | 147 m | NE |
-| 4 | freshwater (with outlet) | 40,611 km² | 1,538 m | 339 m | NW |
-| 5 | freshwater (with outlet) | 38,074 km² | 1,031 m | 429 m | NW |
-| 6 | freshwater (with outlet) | 36,717 km² | 85 m | 37 m | SW |
-| 7 | freshwater (with outlet) | 35,724 km² | 168 m | 121 m | NE |
-| 8 | freshwater (with outlet) | 35,312 km² | 899 m | 327 m | NW |
-| 9 | freshwater (with outlet) | 31,926 km² | 171 m | 162 m | SW |
-| 10 | freshwater (with outlet) | 21,259 km² | 168 m | 118 m | NE |
-
-…plus 110 smaller lakes.
+| Lake | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|
+| 1 | 8,187 km² | 19 m | 14 m | SW |
+| 2 | 7,447 km² | 566 m | 176 m | SW |
+| 3 | 2,165 km² | 168 m | 3 m | SW |
 
 ## Rivers
 
@@ -144,16 +135,16 @@ Lakes (computed hydrology — depressions in the terrain holding water above sea
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
 | 1 | 1,397 km³/yr | 2,801 km | NW quadrant | NE, 67.4°N 132.8°E | sea |
-| 2 | 621 km³/yr | 2,037 km | NW quadrant | NE, 52.9°N 119.8°E | sea |
+| 2 | 619 km³/yr | 2,037 km | NW quadrant | NE, 52.9°N 119.8°E | sea |
 | 3 | 427 km³/yr | 1,672 km | SW quadrant | NW, 49.6°N 77.9°E | sea |
-| 4 | 245 km³/yr | 903 km | SW quadrant | SW, 44.1°N 83.2°E | sea |
+| 4 | 244 km³/yr | 903 km | SW quadrant | SW, 44.1°N 83.2°E | sea |
 | 5 | 236 km³/yr | 686 km | NE quadrant | NE, 69.8°N 130.6°E | sea |
 | 6 | 200 km³/yr | 1,206 km | NE quadrant | NE, 53.3°N 121.8°E | sea |
 | 7 | 179 km³/yr | 438 km | NE quadrant | NE, 54.8°N 127.8°E | sea |
-| 8 | 101 km³/yr | 1,835 km | SW quadrant | SW, 41.7°N 105.8°E | sea |
+| 8 | 97 km³/yr | 1,835 km | SW quadrant | SW, 41.7°N 105.8°E | sea |
 | 9 | 82 km³/yr | 515 km | NE quadrant | NE, 55.8°N 127.6°E | sea |
 | 10 | 62 km³/yr | 448 km | SW quadrant | SW, 44.1°N 81.8°E | sea |
 
 …plus 19 lesser major rivers.
 
-> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.
