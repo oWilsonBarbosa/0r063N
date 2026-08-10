@@ -16,7 +16,7 @@ Triangular face centered at 10.8°N 36.0°E · area 25,502,757 km² (1/20 of the
 | Dominant terrain | Jungle, heavy |
 | Mountain systems | 10 |
 | Mean land temperature | 25.1 °C (Jun half-year) / 25.1 °C (Dec half-year) |
-| Mean annual precipitation | 1,173 mm |
+| Mean annual precipitation | 1,441 mm |
 
 ## Hydrography
 
@@ -75,8 +75,8 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 |---|---|---|---|---|---|
 | NW | from ENE, moderate | from NE, light | no land | — | — |
 | NE | from NE, light | from NE, light | no land | — | — |
-| SW | from ENE, strong, variable | from N, moderate, variable | 1,188 mm (year-round) | humid | — |
-| SE | from NNE, light, variable | from N, light | 1,150 mm (year-round) | humid | — |
+| SW | from ENE, strong, variable | from N, moderate, variable | 1,460 mm (year-round) | humid | — |
+| SE | from NNE, light, variable | from N, light | 1,413 mm (year-round) | humid | — |
 
 ## Predominant Terrain
 
@@ -85,9 +85,9 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Terrain | Share of land |
 |---|---|
 | Jungle, heavy | 44.6 % |
-| Grassland / savanna | 23.5 % |
+| Forest, light | 20.1 % |
 | Jungle, medium | 12.8 % |
-| Forest, light | 6.4 % |
+| Grassland / savanna | 9.8 % |
 | Scrub / brushland | 4.2 % |
 | Forest, medium | 3.3 % |
 | Marsh / swamp | 2.7 % |
@@ -97,7 +97,8 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 Notable expanses (largest contiguous areas):
 
 - A jungle of 2,161,920 km² in the SW quadrant.
-- A grassland of 932,122 km² in the SW quadrant.
+- A forest of 744,584 km² in the SW quadrant.
+- A grassland of 173,962 km² in the SW quadrant.
 
 ## Water Bodies
 
@@ -112,34 +113,28 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 | 5 | great lake | 3,213 km² | 1.2 km | SE |
 | 6 | great lake | 2,697 km² | 2.5 km | SW |
 
-Lakes (computed hydrology — depressions in the terrain holding water above sea level):
+Closed-basin (endorheic) lakes — terminal depressions where evaporation balances inflow, holding standing (saline) water with no ocean outlet:
 
-| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
-|---|---|---|---|---|---|
-| 1 | freshwater (with outlet) | 85,894 km² | 94 m | 80 m | SW |
-| 2 | freshwater (with outlet) | 45,182 km² | 89 m | 80 m | SE |
-| 3 | freshwater (with outlet) | 12,914 km² | 121 m | 99 m | SE |
-| 4 | salt (no outlet) | 9,316 km² | 85 m | 17 m | SE |
-| 5 | freshwater (with outlet) | 7,409 km² | 94 m | 53 m | SW |
-| 6 | freshwater (with outlet) | 6,610 km² | 53 m | 48 m | SE |
-| 7 | freshwater (with outlet) | 6,295 km² | 700 m | 233 m | SE |
-| 8 | freshwater (with outlet) | 5,879 km² | 52 m | 40 m | SE |
-| 9 | salt (no outlet) | 5,791 km² | 202 m | 24 m | SE |
-| 10 | freshwater (with outlet) | 5,152 km² | 192 m | 39 m | SW |
-
-…plus 28 smaller lakes.
+| Lake | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|
+| 1 | 16,297 km² | 88 m | 20 m | SE |
+| 2 | 7,333 km² | 222 m | 29 m | SW |
+| 3 | 2,430 km² | 72 m | 54 m | SE |
 
 ## Rivers
 
-6 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+9 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 865 km³/yr | 3,243 km | SW quadrant | SE, 11.7°S 40.8°E | sea |
-| 2 | 68 km³/yr | 1,433 km | SW quadrant | SE, 17.6°S 40.9°E | sea |
-| 3 | 61 km³/yr | 623 km | SW quadrant | SW, 3.4°S 31.2°E | sea |
-| 4 | 33 km³/yr | 246 km | SW quadrant | SW, 5.3°S 21.3°E | sea |
-| 5 | 31 km³/yr | 262 km | SW quadrant | SW, 3.9°S 25.3°E | sea |
-| 6 | 22 km³/yr | 106 km | SW quadrant | SW, 0.9°S 27.2°E | sea |
+| 1 | 1,291 km³/yr | 3,243 km | SW quadrant | SE, 11.7°S 40.8°E | sea |
+| 2 | 92 km³/yr | 623 km | SW quadrant | SW, 3.4°S 31.2°E | sea |
+| 3 | 68 km³/yr | 1,447 km | SW quadrant | SE, 17.6°S 40.9°E | sea |
+| 4 | 46 km³/yr | 228 km | SW quadrant | SW, 5.3°S 21.3°E | sea |
+| 5 | 46 km³/yr | 337 km | SW quadrant | SW, 3.9°S 25.3°E | sea |
+| 6 | 33 km³/yr | 148 km | SW quadrant | SW, 0.9°S 27.2°E | sea |
+| 7 | 22 km³/yr | 187 km | SE quadrant | SE, 5.4°S 38.8°E | sea |
+| 8 | 22 km³/yr | 199 km | SE quadrant | SE, 4.1°S 37.4°E | sea |
+| 9 | 20 km³/yr | 123 km | SE quadrant | SE, 3.2°S 39.1°E | sea |
 
-> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

@@ -13,10 +13,10 @@ Triangular face centered at 10.8°N 180.0°E · area 25,510,668 km² (1/20 of th
 | Hydrography | **Coastline with offshore islands** |
 | Land share | 12.2 % (3,108,791 km²) |
 | Dominant climate band | Tropical |
-| Dominant terrain | Grassland / savanna |
+| Dominant terrain | Forest, light |
 | Mountain systems | 6 |
 | Mean land temperature | 24.8 °C (Jun half-year) / 19.4 °C (Dec half-year) |
-| Mean annual precipitation | 905 mm |
+| Mean annual precipitation | 1,112 mm |
 
 ## Hydrography
 
@@ -69,10 +69,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NE, moderate | from NE, light | 817 mm (summer-wet) | sub-humid | — |
-| NE | from ENE, strong | from NE, moderate, variable | 876 mm (year-round) | sub-humid | 38 % of land |
+| NW | from NE, moderate | from NE, light | 1,004 mm (summer-wet) | humid | — |
+| NE | from ENE, strong | from NE, moderate, variable | 1,077 mm (year-round) | humid | 38 % of land |
 | SW | from S, light | from N, light | no land | — | — |
-| SE | from SW, moderate | from NNW, light, variable | 1,040 mm (summer-wet) | humid | — |
+| SE | from SW, moderate | from NNW, light, variable | 1,278 mm (summer-wet) | humid | — |
 
 A pronounced rain shadow affects the NE quadrant(s), leeward of the SE mountain system.
 
@@ -82,13 +82,13 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Grassland / savanna | 23.8 % |
-| Forest, light | 17.5 % |
+| Forest, light | 27.6 % |
 | Jungle, heavy | 13.9 % |
 | Jungle, medium | 13.2 % |
+| Grassland / savanna | 12.3 % |
 | Scrub / brushland | 10.7 % |
-| Marsh / swamp | 7.4 % |
-| Forest, medium | 6.7 % |
+| Marsh / swamp | 8.9 % |
+| Forest, medium | 6.4 % |
 | Barren | 2.7 % |
 | Steppe | 1.9 % |
 | Desert, sandy | 1.2 % |
@@ -98,8 +98,8 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 Notable expanses (largest contiguous areas):
 
 - A jungle of 583,999 km² in the NE quadrant.
-- A forest of 113,856 km² in the SE quadrant.
-- A grassland of 279,280 km² in the NE quadrant.
+- A forest of 302,180 km² in the SE quadrant.
+- A grassland of 101,290 km² in the NE quadrant.
 
 ## Water Bodies
 
@@ -113,28 +113,14 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 | 4 | great lake | 2,246 km² | 0.2 km | NE |
 | 5 | great lake | 2,177 km² | 0.3 km | NE |
 
-Lakes (computed hydrology — depressions in the terrain holding water above sea level):
-
-| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
-|---|---|---|---|---|---|
-| 1 | freshwater (with outlet) | 5,449 km² | 67 m | 14 m | NE |
-| 2 | freshwater (with outlet) | 3,453 km² | 347 m | 72 m | SE |
-| 3 | freshwater (with outlet) | 2,737 km² | 26 m | 11 m | NE |
-| 4 | freshwater (with outlet) | 2,721 km² | 47 m | 23 m | NE |
-| 5 | freshwater (with outlet) | 2,487 km² | 435 m | 100 m | SE |
-| 6 | freshwater (with outlet) | 2,247 km² | 50 m | 25 m | NE |
-| 7 | freshwater (with outlet) | 2,245 km² | 57 m | 14 m | NE |
-| 8 | salt (no outlet) | 2,117 km² | 135 m | 109 m | SE |
-| 9 | freshwater (with outlet) | 2,080 km² | 126 m | 52 m | NE |
-
 ## Rivers
 
 3 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 169 km³/yr | 1,692 km | SE quadrant | NE, 17.2°N 160.6°W | sea |
-| 2 | 38 km³/yr | 576 km | NE quadrant | NE, 18.7°N 150.6°W | sea |
-| 3 | 31 km³/yr | 242 km | NE quadrant | NE, 14.7°N 154.2°W | sea |
+| 1 | 270 km³/yr | 1,726 km | SE quadrant | NE, 17.2°N 160.6°W | sea |
+| 2 | 58 km³/yr | 699 km | NE quadrant | NE, 18.7°N 150.6°W | sea |
+| 3 | 50 km³/yr | 261 km | NE quadrant | NE, 14.7°N 154.2°W | sea |
 
-> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

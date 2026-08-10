@@ -1,0 +1,43 @@
+{
+ "unit": "raster pixel (2048x1024 equirectangular)",
+ "px_km_nominal": 19.6,
+ "method": "Uyeda-Kanamori end-members from overriding-plate orogPow (compression) vs backArc (extension); back-arc provinces are strong-basin land >= 20 hops (~391 km) from a live margin",
+ "active_margin_px": 28741,
+ "chilean_px": 14702,
+ "mariana_px": 14039,
+ "chilean_fraction": 0.512,
+ "backarc_province_px": 36936,
+ "backarc_province_Mkm2_approx": 14.14,
+ "median_decoupling_km_approx": 783,
+ "backarc_threshold": -0.0328,
+ "per_continent": {
+  "Borea": {
+   "key": "G",
+   "chilean_px": 2547,
+   "mariana_px": 3769,
+   "dominant_style": "mariana",
+   "chilean_fraction": 0.403
+  },
+  "Meridia": {
+   "key": "AIJ",
+   "chilean_px": 5053,
+   "mariana_px": 1703,
+   "dominant_style": "chilean",
+   "chilean_fraction": 0.748
+  },
+  "Selvana": {
+   "key": "CEF",
+   "chilean_px": 2737,
+   "mariana_px": 4754,
+   "dominant_style": "mariana",
+   "chilean_fraction": 0.365
+  },
+  "Sirocca": {
+   "key": "BDH",
+   "chilean_px": 4116,
+   "mariana_px": 3782,
+   "dominant_style": "chilean",
+   "chilean_fraction": 0.521
+  }
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "npp": "ice-corrected Miami (K\u00f6ppen-EF = 0)",
+ "continents": {
+  "Borea": {
+   "key": "G",
+   "cratons": [
+    "G"
+   ],
+   "centroid": [
+    59.3,
+    93.1
+   ],
+   "land_cells": 100601,
+   "pct_land": 18.8,
+   "area_Mkm2": 20.17,
+   "koppen_band_pct": {
+    "A": 0.1,
+    "B": 3.3,
+    "C": 12.5,
+    "D": 43.2,
+    "E": 40.9
+   },
+   "mean_npp_g_m2_yr": 681.0,
+   "mountainous_pct": 1.8,
+   "mean_elev_km": 1.51
+  },
+  "Meridia": {
+   "key": "AIJ",
+   "cratons": [
+    "A",
+    "I",
+    "J"
+   ],
+   "centroid": [
+    30.4,
+    -105.3
+   ],
+   "land_cells": 141125,
+   "pct_land": 26.4,
+   "area_Mkm2": 28.34,
+   "koppen_band_pct": {
+    "A": 24.8,
+    "B": 35.6,
+    "C": 15.6,
+    "D": 9.3,
+    "E": 14.7
+   },
+   "mean_npp_g_m2_yr": 956.0,
+   "mountainous_pct": 1.9,
+   "mean_elev_km": 2.01
+  },
+  "Selvana": {
+   "key": "CEF",
+   "cratons": [
+    "C",
+    "E",
+    "F"
+   ],
+   "centroid": [
+    -21.8,
+    -145.6
+   ],
+   "land_cells": 135809,
+   "pct_land": 25.4,
+   "area_Mkm2": 27.33,
+   "koppen_band_pct": {
+    "A": 39.9,
+    "B": 20.8,
+    "C": 18.4,
+    "D": 16.6,
+    "E": 4.3
+   },
+   "mean_npp_g_m2_yr": 1295.0,
+   "mountainous_pct": 1.2,
+   "mean_elev_km": 1.09
+  },
+  "Sirocca": {
+   "key": "BDH",
+   "cratons": [
+    "B",
+    "D",
+    "H"
+   ],
+   "centroid": [
+    -35.2,
+    42.7
+   ],
+   "land_cells": 137103,
+   "pct_land": 25.6,
+   "area_Mkm2": 27.5,
+   "koppen_band_pct": {
+    "A": 20.1,
+    "B": 44.2,
+    "C": 21.2,
+    "D": 4.8,
+    "E": 9.7
+   },
+   "mean_npp_g_m2_yr": 957.0,
+   "mountainous_pct": 1.9,
+   "mean_elev_km": 1.71
+  }
+ }
+}
