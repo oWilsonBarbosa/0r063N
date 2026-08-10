@@ -2,7 +2,7 @@
 // Each function returns a PNG buffer.
 
 import { makeCanvas, encodePNG, setPx, fillRect, drawText, textWidth } from './render-png.mjs';
-import { tempC, precipAnnualMm, miamiNpp, KOPPEN_CLASSES } from './classify.mjs';
+import { tempC, precipAnnualMm, PRECIP_SCALE_MM, miamiNpp, KOPPEN_CLASSES } from './classify.mjs';
 // Canonical physical height: the Earth-fitted power mapping of the raw `elev`
 // (tools/height-mapping.mjs). The stored `elev_km` field is the legacy linear
 // mapping and is not used for relief.
@@ -355,7 +355,10 @@ export function plateTemperature(ctx) {
 export function platePrecipitation(ctx) {
     const { grid, data } = ctx;
     const half = field => p => {
-        const mm = Math.max(0, data[field][grid.cellGrid[p]]) * 1000;
+        // Canonical scale, same as the annual panel below — a half-year panel
+        // drawn on a different scale than the annual one would put two
+        // different planets in the same figure.
+        const mm = Math.max(0, data[field][grid.cellGrid[p]]) * PRECIP_SCALE_MM;
         return ramp(PRECIP_RAMP, mm / 1500);
     };
     const annual = p => {

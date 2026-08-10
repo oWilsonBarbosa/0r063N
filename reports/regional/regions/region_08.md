@@ -16,7 +16,7 @@ Triangular face centered at 10.8°N 36.0°E · area 25,502,757 km² (1/20 of the
 | Dominant terrain | Jungle, heavy |
 | Mountain systems | 10 |
 | Mean land temperature | 25.1 °C (Jun half-year) / 25.1 °C (Dec half-year) |
-| Mean annual precipitation | 1,441 mm |
+| Mean annual precipitation | 1,173 mm |
 
 ## Hydrography
 
@@ -75,8 +75,8 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 |---|---|---|---|---|---|
 | NW | from ENE, moderate | from NE, light | no land | — | — |
 | NE | from NE, light | from NE, light | no land | — | — |
-| SW | from ENE, strong, variable | from N, moderate, variable | 1,460 mm (year-round) | humid | — |
-| SE | from NNE, light, variable | from N, light | 1,413 mm (year-round) | humid | — |
+| SW | from ENE, strong, variable | from N, moderate, variable | 1,188 mm (year-round) | humid | — |
+| SE | from NNE, light, variable | from N, light | 1,150 mm (year-round) | humid | — |
 
 ## Predominant Terrain
 
@@ -85,9 +85,9 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Terrain | Share of land |
 |---|---|
 | Jungle, heavy | 44.6 % |
-| Forest, light | 20.1 % |
+| Grassland / savanna | 23.5 % |
 | Jungle, medium | 12.8 % |
-| Grassland / savanna | 9.8 % |
+| Forest, light | 6.4 % |
 | Scrub / brushland | 4.2 % |
 | Forest, medium | 3.3 % |
 | Marsh / swamp | 2.7 % |
@@ -97,8 +97,7 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 Notable expanses (largest contiguous areas):
 
 - A jungle of 2,161,920 km² in the SW quadrant.
-- A forest of 744,584 km² in the SW quadrant.
-- A grassland of 173,962 km² in the SW quadrant.
+- A grassland of 932,122 km² in the SW quadrant.
 
 ## Water Bodies
 
@@ -117,24 +116,22 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 | Lake | Area | Surface elev. | Max. depth | Quadrant |
 |---|---|---|---|---|
-| 1 | 16,297 km² | 88 m | 20 m | SE |
-| 2 | 7,333 km² | 222 m | 29 m | SW |
-| 3 | 2,430 km² | 72 m | 54 m | SE |
+| 1 | 9,316 km² | 85 m | 17 m | SE |
+| 2 | 5,791 km² | 202 m | 24 m | SE |
+| 3 | 4,120 km² | 211 m | 18 m | SW |
+| 4 | 2,118 km² | 25 m | 16 m | SE |
 
 ## Rivers
 
-9 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+6 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 1,291 km³/yr | 3,243 km | SW quadrant | SE, 11.7°S 40.8°E | sea |
-| 2 | 92 km³/yr | 623 km | SW quadrant | SW, 3.4°S 31.2°E | sea |
-| 3 | 68 km³/yr | 1,447 km | SW quadrant | SE, 17.6°S 40.9°E | sea |
-| 4 | 46 km³/yr | 228 km | SW quadrant | SW, 5.3°S 21.3°E | sea |
-| 5 | 46 km³/yr | 337 km | SW quadrant | SW, 3.9°S 25.3°E | sea |
-| 6 | 33 km³/yr | 148 km | SW quadrant | SW, 0.9°S 27.2°E | sea |
-| 7 | 22 km³/yr | 187 km | SE quadrant | SE, 5.4°S 38.8°E | sea |
-| 8 | 22 km³/yr | 199 km | SE quadrant | SE, 4.1°S 37.4°E | sea |
-| 9 | 20 km³/yr | 123 km | SE quadrant | SE, 3.2°S 39.1°E | sea |
+| 1 | 816 km³/yr | 3,243 km | SW quadrant | SE, 11.7°S 40.8°E | sea |
+| 2 | 60 km³/yr | 623 km | SW quadrant | SW, 3.4°S 31.2°E | sea |
+| 3 | 33 km³/yr | 1,327 km | SW quadrant | SE, 17.6°S 40.9°E | sea |
+| 4 | 33 km³/yr | 246 km | SW quadrant | SW, 5.3°S 21.3°E | sea |
+| 5 | 31 km³/yr | 262 km | SW quadrant | SW, 3.9°S 25.3°E | sea |
+| 6 | 22 km³/yr | 106 km | SW quadrant | SW, 0.9°S 27.2°E | sea |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

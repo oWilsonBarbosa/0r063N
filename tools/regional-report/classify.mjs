@@ -7,6 +7,7 @@
 // Canonical physical height: the Earth-fitted power mapping of raw `elev`
 // (tools/height-mapping.mjs); the stored `elev_km` is legacy linear.
 import { elevToHeightKm } from '../height-mapping.mjs';
+import { precipAnnualMm, PRECIP_SCALE_MM } from '../precip-scale.mjs';
 
 export const KOPPEN_CLASSES = [
     { code: 'Ocean', name: 'Ocean' },
@@ -89,9 +90,9 @@ export function tempC(tNorm) {
     return -45 + Math.max(0, Math.min(1, tNorm)) * 90;
 }
 
-export function precipAnnualMm(pS, pW) {
-    return (Math.max(0, pS) + Math.max(0, pW)) * 1000;
-}
+// Re-exported from the repository-wide canonical scale so that every consumer
+// (reports, atlas, hydrology, province vectors) converts identically.
+export { precipAnnualMm, PRECIP_SCALE_MM };
 
 // Miami-model net primary productivity (g/m²/yr), ice-corrected: Köppen-EF
 // (ice cap, code 30) cells carry no standing vegetation, so NPP is 0 there.

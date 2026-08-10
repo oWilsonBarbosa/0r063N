@@ -30,6 +30,7 @@ reconstructed **750-million-year geological + climate history**.
 | **How life began** — origin, biochemistry, and the founding tree of life | [`docs/life/`](docs/life/README.md) |
 | **The four continents** — Meridia, Sirocca, Selvana, Borea (area, climate, NPP) | [`docs/CONTINENTS.md`](docs/CONTINENTS.md) |
 | **Life & habitats** — biogeographic provinces of the four continents | [`docs/BIOGEOGRAPHY.md`](docs/BIOGEOGRAPHY.md) |
+| **What the world lets people do** — per-province climate/productivity envelopes with cross-cultural database queries | [`docs/culture/`](docs/culture/README.md) |
 | **Subduction style** — Chilean vs Mariana margins | [`docs/SUBDUCTION_STYLE.md`](docs/SUBDUCTION_STYLE.md) |
 | **Regions ↔ continents** — which of the 20 gazetteers map each continent | [`docs/REGION_CROSSWALK.md`](docs/REGION_CROSSWALK.md) |
 | **The raw data** — what the columns mean | [`docs/DATA_DICTIONARY_V2.md`](docs/DATA_DICTIONARY_V2.md) (corrected v2) · [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) (original) · [`docs/DATA_DICTIONARY_V3.md`](docs/DATA_DICTIONARY_V3.md) (browser extract) |
@@ -44,11 +45,13 @@ reconstructed **750-million-year geological + climate history**.
 | `data/orogen_regions_v3_browser/` | **The browser extract (v3, 82 fields)** — captured live from the running generator by `tools/orogen-extract.js`, plus per-plate, Köppen, ITCZ and dual-mesh sidecars. Recovers the **uncensored** wind/current magnitudes v1 and v2 cannot represent. |
 | `docs/` | Narrative documents: the data dictionary, geological history, and paleoclimate. |
 | `docs/life/` | The life layer: origin of life, core biochemistry, and the founding tree from which all regional biota descends. Built root-first on the physical + deep-time canon. |
+| `docs/culture/` | The culture layer: the physical envelope each biogeographic province imposes, expressed as query keys for eHRAF and D-PLACE. Constraints first — no societies invented yet. |
 | `reports/regional/` | **Physical Atlas + 20 regional gazetteers** (Markdown + maps). Built by `tools/regional-report/`. |
 | `reports/tectonics/` | Tectonic inventory, validation, and ~38 paleogeographic/climate maps. Built by `tools/tectonics-pipeline/`. |
 | `reports/audit/` | The dataset audit that motivated the v2 export: field profile, coherence tests, code-level root-cause analysis, and the present-state atlas (source documents in Portuguese, summary in English). |
 | `tools/export-v2/` | **Node.js** pipeline that rebuilds the corrected v2 export from the v1 parts and the pinned generator (single dependency: `delaunator`). |
 | `tools/regional-report/` | Zero-dependency **Node.js** pipeline that generates the regional reports and atlas. |
+| `tools/province-vectors/` | Zero-dependency **Node.js** script that derives the per-province constraint vectors in `docs/culture/`. |
 | `tools/tectonics-pipeline/` | **Python** pipeline that reconstructs the tectonic history and paleoclimate. |
 | `scripts/` | Dependency-free dataset helpers — verify checksums, reassemble the parts. |
 | `third_party/planet_heightmap_generation/` | A pinned snapshot of the World Orogen generator (GPL-v3) that produced the data — kept for reproducibility and attribution. |
@@ -120,6 +123,10 @@ Both studies are reproducible from the raw data:
 # Regional reports + atlas (Node.js, zero dependencies)
 node tools/regional-report/main.mjs       # -> reports/regional/
 node tools/regional-report/atlas-main.mjs # -> reports/regional/atlas/
+
+# Province constraint vectors (Node.js, zero dependencies)
+node tools/province-vectors/main.mjs            # -> docs/culture/ table
+node tools/province-vectors/main.mjs --json     # machine-readable
 
 # Geological history + paleoclimate (Python)
 pip install -r tools/tectonics-pipeline/requirements.txt
