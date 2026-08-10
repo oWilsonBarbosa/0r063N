@@ -767,10 +767,17 @@ const EXPECTED_DL = ['base','tectonic','noise','interior','coastal','ocean','hot
 const dlAbsent = EXPECTED_DL.filter(k => !(k in DL) || DL[k] == null);
 if (dlAbsent.length) warn('debug layers absent on this build/session:', dlAbsent.join(', '));
 
-// Plate-physics layers are attached only in handleGenerate (js/planet-worker.js:
-// 328-332) and are NOT re-attached by handleEditRecompute, whose editDone
-// handler replaces curData.debugLayers wholesale. Their joint absence alongside
-// a present `base` layer is a reliable signature of a post-plate-edit export.
+// The five plate-physics layers are attached by handleGenerate
+// (js/planet-worker.js). Their joint absence alongside a present `base` layer
+// means SOMETHING dropped them after generation — but the cause is NOT reliably
+// inferable from here.
+//
+// A plate edit is one known cause (editDone replaces curData.debugLayers
+// wholesale). It is NOT the only one: this signature has been observed on a
+// session with no plate editing at all, and reapplyDone (which only touches
+// .erosionDelta) and climateDone (which Object.assigns) were both ruled out as
+// causes. The deployed build may differ from any pinned snapshot. So report the
+// SYMPTOM and the remedy; do not assert a cause.
 const PHYS_DL = ['continentalDrag','sizeVelocity','plateSpeed','velChange','mantleFlow'];
 const plateEditDetected = !!DL.base && PHYS_DL.every(k => !DL[k]);
 if (plateEditDetected) {
@@ -781,15 +788,18 @@ if (plateEditDetected) {
   // bring them back — only a fresh generate from the planet code can.
   const msg =
     'PLATE-PHYSICS LAYERS ARE GONE.\n\n' +
-    'This planet was rebuilt by a plate edit, which replaced debugLayers wholesale ' +
-    '(editDone, js/planet-worker.js). These five columns cannot be exported:\n\n' +
+    'Something dropped them after generation. A plate edit is one known cause, but ' +
+    'not the only one — this has been seen with no plate editing at all. These five ' +
+    'columns cannot be exported from the current app state:\n\n' +
     '    ' + PHYS_DL.join(', ') + '\n\n' +
     'superPlate ids have also been renumbered from scratch, so they will not match ' +
     'any earlier export.\n\n' +
-    'TO RECOVER THEM: reload this page from the planet code (a plain reload of the ' +
-    '#<code> URL is enough), press "Compute Climate", and re-run this script WITHOUT ' +
-    'touching plate editing. plateSpeed is one of the two fields the original CSV ' +
-    'export lost, so this is usually worth the extra few minutes.\n\n' +
+    'WORTH TRYING: reload this page from the planet code (a plain reload of the ' +
+    '#<code> URL), press "Compute Climate", and re-run this script without touching ' +
+    'plate editing. plateSpeed is one of the two fields the original CSV export lost, ' +
+    'so it is worth the extra few minutes — but if the layers are still absent on a ' +
+    'clean reload, the deployed build simply does not expose them and no client-side ' +
+    'action will recover them.\n\n' +
     'Press OK to export anyway without them.';
   if (!confirm(msg)) throw new Error('aborted — reload from the planet code and re-run before editing plates.');
   warn('proceeding WITHOUT the plate-physics layers at user request');
