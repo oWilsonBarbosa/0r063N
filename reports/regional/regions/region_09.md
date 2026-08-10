@@ -31,14 +31,14 @@ Classified as **Coastline with offshore islands** (Table 15 vocabulary), based o
 
 | System | Quadrant | Length × width | Trend | Peak | Mean elev. |
 |---|---|---|---|---|---|
-| 1 (13,092 km²) | NW | 265 × 96 km | NE-SW | 4.4 km at 24.8°N 102.8°E | 1.3 km |
-| 2 (8,912 km²) | NW | 293 × 75 km | E-W | 1.6 km at 27.7°N 100.7°E | 0.7 km |
+| 1 (13,092 km²) | NW | 265 × 96 km | NE-SW | 2.9 km at 24.8°N 102.8°E | 0.6 km |
+| 2 (8,912 km²) | NW | 293 × 75 km | E-W | 0.7 km at 27.7°N 100.7°E | 0.2 km |
 
 Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 46.7 % | 26.7 % | 21.3 % | 5.3 % |
+| 77.2 % | 16.0 % | 6.3 % | 0.4 % |
 
 ## Climate
 
@@ -78,21 +78,19 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 52.4 % |
+| Forest, medium | 48.5 % |
 | Scrub / brushland | 31.6 % |
-| Forest, heavy | 5.0 % |
-| Forest, light | 4.6 % |
-| Jungle, heavy | 1.5 % |
-| Barren | 1.2 % |
-| Steppe | 1.2 % |
-| Grassland / savanna | 0.8 % |
-| Desert, sandy | 0.6 % |
-| Jungle, medium | 0.5 % |
-| Marsh / swamp | 0.4 % |
+| Marsh / swamp | 10.0 % |
+| Forest, heavy | 4.3 % |
+| Steppe | 1.9 % |
+| Forest, light | 1.5 % |
+| Jungle, heavy | 1.0 % |
+| Desert, sandy | 0.8 % |
+| Grassland / savanna | 0.3 % |
 
 Notable expanses (largest contiguous areas):
 
-- A forest of 560,011 km² in the NW quadrant.
+- A forest of 515,196 km² in the NW quadrant.
 
 ## Water Bodies
 
@@ -107,8 +105,14 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 | 5 | great lake | 3,268 km² | 0.6 km | NW |
 | 6 | great lake | 2,331 km² | 0.1 km | NE |
 
+Lakes (computed hydrology — depressions in the terrain holding water above sea level):
+
+| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|---|
+| 1 | freshwater (with outlet) | 2,094 km² | 25 m | 21 m | NE |
+
 ## Rivers
 
 No major river reaches the sea within this region — the land here is too arid, too fragmented, or drains into neighboring regions.
 
-> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

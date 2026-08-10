@@ -8,7 +8,8 @@ import pandas as pd
 
 PIPELINE_DIR = Path(__file__).resolve().parents[1]
 REPO_ROOT = Path(__file__).resolve().parents[3]
-DATA_DIR = REPO_ROOT / "data" / "orogen_regions_full"
+DATA_DIR = REPO_ROOT / "data" / "orogen_regions_full_v2"
+V1_DATA_DIR = REPO_ROOT / "data" / "orogen_regions_full"
 OUT_DIR = REPO_ROOT / "reports" / "tectonics"
 CACHE_DIR = OUT_DIR / "cache"
 MAPS_DIR = REPO_ROOT / "reports" / "tectonics" / "maps"
@@ -16,7 +17,7 @@ HISTORY_DIR = REPO_ROOT / "tools" / "tectonics-pipeline" / "history"
 
 EXPECTED_ROWS = 2_560_001
 
-# Tectonics-relevant column subset (of the 56 exported fields) and dtypes.
+# Tectonics-relevant column subset (of the 58 exported v2 fields) and dtypes.
 TECTONIC_COLUMNS = {
     "lat": np.float32,
     "lon": np.float32,
@@ -31,7 +32,8 @@ TECTONIC_COLUMNS = {
     "isOcPlate": np.int8,
     "superPlate": np.int16,
     "isLand": np.int8,
-    "isCoastal": np.int8,
+    # true land/ocean adjacency flag (the legacy isCoastal is a tectonic seed mask)
+    "isSurfaceCoast": np.int8,
     "isMountain": np.int8,
     "stress": np.float32,
     "orogPow": np.float32,
@@ -47,15 +49,26 @@ TECTONIC_COLUMNS = {
 
 
 def part_paths():
-    paths = sorted(DATA_DIR.glob("orogen_regions_full_part_*.csv.gz"))
+    paths = sorted(DATA_DIR.glob("orogen_regions_full_v2_part_*.csv.gz"))
     if len(paths) != 13:
         raise FileNotFoundError(f"expected 13 csv.gz parts in {DATA_DIR}, found {len(paths)}")
     return paths
 
 
 def load_meta():
-    with open(DATA_DIR / "orogen_meta_full.json") as f:
-        return json.load(f)
+    """V2 metadata overlaid on the v1 planet-level facts.
+
+    The v2 document describes the correction; fields like landFractionPct and
+    elevPhysicalKm live in the v1 metadata and remain valid because the columns
+    they describe are preserved text-for-text in v2.
+    """
+    with open(DATA_DIR / "orogen_meta_full_v2.json") as f:
+        meta = json.load(f)
+    try:
+        with open(V1_DATA_DIR / "orogen_meta_full.json") as f:
+            return {**json.load(f), **meta}
+    except FileNotFoundError:
+        return meta
 
 
 def load_columns(columns=None, use_cache=True):

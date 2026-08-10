@@ -6,6 +6,8 @@ the header once, and writes a single `orogen_regions_full.csv` (gitignored).
 
     python3 scripts/reassemble.py             # -> ./orogen_regions_full.csv
     python3 scripts/reassemble.py --gzip      # -> ./orogen_regions_full.csv.gz
+    python3 scripts/reassemble.py --v2        # corrected v2 export -> ./orogen_regions_full_v2.csv
+    python3 scripts/reassemble.py --v3        # browser extract     -> ./orogen_regions_v3.csv
     python3 scripts/reassemble.py --out PATH  # custom destination
     python3 scripts/reassemble.py --check     # count rows only, assert the expected total
 
@@ -17,14 +19,23 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = REPO_ROOT / "data" / "orogen_regions_full"
 EXPECTED_ROWS = 2_560_001
 
+# key -> (directory under data/, part-file stem, output stem)
+# v1/v2 name their parts after their directory; the v3 browser extract does not
+# (data/orogen_regions_v3_browser/orogen_regions_part_00.csv.gz), so the
+# directory, the part stem and the output name are tracked separately.
+DATASETS = {
+    "v1": ("orogen_regions_full", "orogen_regions_full", "orogen_regions_full"),
+    "v2": ("orogen_regions_full_v2", "orogen_regions_full_v2", "orogen_regions_full_v2"),
+    "v3": ("orogen_regions_v3_browser", "orogen_regions", "orogen_regions_v3"),
+}
 
-def part_paths():
-    parts = sorted(DATA_DIR.glob("orogen_regions_full_part_*.csv.gz"))
+
+def part_paths(data_dir, stem):
+    parts = sorted(data_dir.glob(f"{stem}_part_*.csv.gz"))
     if not parts:
-        sys.exit(f"ERROR: no parts found in {DATA_DIR}")
+        sys.exit(f"ERROR: no parts found in {data_dir}")
     return parts
 
 
@@ -34,9 +45,16 @@ def main():
     ap.add_argument("--gzip", action="store_true", help="write gzip-compressed output")
     ap.add_argument("--check", action="store_true",
                     help="don't write; just count data rows and verify the expected total")
+    ap.add_argument("--v2", action="store_true",
+                    help="reassemble the corrected v2 export (data/orogen_regions_full_v2/)")
+    ap.add_argument("--v3", action="store_true",
+                    help="reassemble the browser extract (data/orogen_regions_v3_browser/)")
     args = ap.parse_args()
 
-    parts = part_paths()
+    if args.v2 and args.v3:
+        sys.exit("ERROR: choose one of --v2 / --v3")
+    dir_name, part_stem, stem = DATASETS["v3" if args.v3 else ("v2" if args.v2 else "v1")]
+    parts = part_paths(REPO_ROOT / "data" / dir_name, part_stem)
 
     if args.check:
         total = 0
@@ -56,8 +74,7 @@ def main():
         print("RESULT: OK")
         return 0
 
-    out = args.out or (REPO_ROOT / ("orogen_regions_full.csv.gz" if args.gzip
-                                    else "orogen_regions_full.csv"))
+    out = args.out or (REPO_ROOT / (f"{stem}.csv.gz" if args.gzip else f"{stem}.csv"))
     opener = (lambda p: gzip.open(p, "wt", newline="")) if args.gzip else (lambda p: open(p, "w", newline=""))
 
     total = 0

@@ -34,7 +34,7 @@ Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 97.2 % | 2.8 % | 0.0 % | 0.0 % |
+| 100.0 % | 0.0 % | 0.0 % | 0.0 % |
 
 ## Climate
 
@@ -68,9 +68,10 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, light | 60.4 % |
-| Grassland / savanna | 34.1 % |
+| Marsh / swamp | 80.0 % |
+| Forest, light | 11.7 % |
 | Scrub / brushland | 5.5 % |
+| Grassland / savanna | 2.8 % |
 
 ## Water Bodies
 

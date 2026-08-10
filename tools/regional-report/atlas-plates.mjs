@@ -3,6 +3,10 @@
 
 import { makeCanvas, encodePNG, setPx, fillRect, drawText, textWidth } from './render-png.mjs';
 import { tempC, precipAnnualMm, miamiNpp, KOPPEN_CLASSES } from './classify.mjs';
+// Canonical physical height: the Earth-fitted power mapping of the raw `elev`
+// (tools/height-mapping.mjs). The stored `elev_km` field is the legacy linear
+// mapping and is not used for relief.
+import { elevToHeightKm } from '../height-mapping.mjs';
 
 // Köppen colors (frozen from World Orogen js/koppen.js, scaled to 0-255)
 export const KOPPEN_COLORS = [
@@ -158,10 +162,10 @@ const shaded = (col, s) => [Math.min(255, col[0] * s) | 0, Math.min(255, col[1] 
 
 export function plateRelief(ctx) {
     const { grid, data } = ctx;
-    const elevAt = p => data.elev_km[grid.cellGrid[p]];
+    const elevAt = p => elevToHeightKm(data.elev[grid.cellGrid[p]]);
     const shade = buildShade(grid, elevAt);
     const cv = newPlate(grid.W, grid.H + 80, 'PLATE 1 - SHADED RELIEF AND BATHYMETRY',
-        'HYPSOMETRIC TINTS, NW ILLUMINATION. ELEVATIONS -9.3 TO 8.5 KM');
+        'HYPSOMETRIC TINTS, NW ILLUMINATION. ELEVATIONS -9.3 TO 7.7 KM');
     // quantize elevation and shade so the PNG compresses well
     const qe = e => Math.round(e * 25) / 25;
     const qs = s => Math.round(s * 24) / 24;
@@ -180,15 +184,16 @@ export function plateErosion(ctx) {
     const { grid, data } = ctx;
     const step = 2;
     const w = grid.W / step, h = grid.H / step;
-    const preKm = p => {
-        const v = data.prePost[grid.cellGrid[p]];
-        return v > 0 ? v * 6 : v * 10;
-    };
-    const curKm = p => data.elev_km[grid.cellGrid[p]];
+    // eroD is the erosion-only delta in raw elevation units (final elevation
+    // minus the post-terrain-warp snapshot). elev - prePost would also include
+    // the stylistic terrain warp, which is not erosion. Heights are the
+    // canonical power mapping of the raw elev (pre-erosion = elev - eroD).
+    const curKm = p => elevToHeightKm(data.elev[grid.cellGrid[p]]);
+    const preKm = p => elevToHeightKm(data.elev[grid.cellGrid[p]] - data.eroD[grid.cellGrid[p]]);
     const cv = newPlate(w, (h + 26) * 3 + 60, 'PLATE 4 - THE WORK OF EROSION',
-        'PRE-EROSION SURFACE, PRESENT SURFACE, AND NET ELEVATION CHANGE');
+        'SURFACE BEFORE EROSION, PRESENT SURFACE, AND THE EROSION-ONLY ELEVATION CHANGE');
     let y = TITLE_H;
-    drawText(cv, 10, y + 6, 'A. PRE-EROSION SURFACE (RAW TECTONIC UPLIFT)', [40, 40, 40], 1.5);
+    drawText(cv, 10, y + 6, 'A. SURFACE BEFORE EROSION (AFTER TECTONIC UPLIFT AND TERRAIN WARP)', [40, 40, 40], 1.5);
     y += 26;
     rasterBand(cv, y, grid, step, p => hypsoColor(preKm(p)));
     y += h;
@@ -197,7 +202,7 @@ export function plateErosion(ctx) {
     rasterBand(cv, y, grid, step, p => hypsoColor(curKm(p)));
     coastOverlay(cv, y, grid, step, p => ctx.px.landPx[p]);
     y += h;
-    drawText(cv, 10, y + 6, 'C. NET CHANGE ON LAND: RED = CARVED AWAY, BLUE = DEPOSITED', [40, 40, 40], 1.5);
+    drawText(cv, 10, y + 6, 'C. NET EROSION ON LAND: RED = CARVED AWAY, BLUE = DEPOSITED', [40, 40, 40], 1.5);
     y += 26;
     rasterBand(cv, y, grid, step, p => {
         if (!ctx.px.landPx[p]) return [216, 224, 232];
@@ -430,11 +435,11 @@ export function plateCurrents(ctx) {
     const step = 2;
     const w = W / step, h = H / step;
     const cv = newPlate(w, (h + 26) * 2 + 40, 'PLATE 11 - OCEAN SURFACE CURRENTS',
-        'RED = WARM POLEWARD FLOW, BLUE = COLD EQUATORWARD FLOW');
+        'DARKER ARROW = FASTER FLOW (SPEED INDEX, CAPPED AT THE OCEANIC P95)');
     let y = TITLE_H;
     const seasons = [
-        { caption: 'A. JUNE-AUGUST', E: 'ocEastS', N: 'ocNorthS', S: 'ocSpeedS', O: 'owS' },
-        { caption: 'B. DECEMBER-FEBRUARY', E: 'ocEastW', N: 'ocNorthW', S: 'ocSpeedW', O: 'owW' },
+        { caption: 'A. JUNE-AUGUST', E: 'ocEastS', N: 'ocNorthS', S: 'ocSpeedS' },
+        { caption: 'B. DECEMBER-FEBRUARY', E: 'ocEastW', N: 'ocNorthW', S: 'ocSpeedW' },
     ];
     for (const s of seasons) {
         drawText(cv, 10, y + 6, s.caption, [40, 40, 40], 1.5);
@@ -450,24 +455,28 @@ export function plateCurrents(ctx) {
             for (let gx = Math.floor(cell / 2); gx < w; gx += cell) {
                 const p0 = (gy * step) * W + gx * step;
                 if (px.landPx[p0]) continue;
-                // window means: the warm/cold signal lives on narrow boundary
-                // currents, so sample a neighborhood rather than one cell
-                let e = 0, n = 0, spd = 0, warm = 0, cnt = 0;
+                // window means: the strong signal lives on narrow boundary
+                // currents, so sample a neighborhood rather than one cell.
+                // (The legacy owS/owW "ocean warmth" field is a smoothed
+                // coastal-warmth proxy, uncorrelated with the current vectors,
+                // so no warm/cold classification is drawn here.)
+                let e = 0, n = 0, spd = 0, cnt = 0;
                 for (let dy = -4; dy <= 4; dy += 2) {
                     for (let dx = -4; dx <= 4; dx += 2) {
                         const p = ((gy + dy) * step) * W + ((gx + dx + w) % w) * step;
                         if (px.landPx[p]) continue;
                         const c = cellGrid[p];
                         e += data[s.E][c]; n += data[s.N][c];
-                        spd += data[s.S][c]; warm += data[s.O][c];
+                        spd += data[s.S][c];
                         cnt++;
                     }
                 }
                 if (cnt === 0) continue;
-                e /= cnt; n /= cnt; spd /= cnt; warm /= cnt;
+                e /= cnt; n /= cnt; spd /= cnt;
                 const mag = Math.hypot(e, n);
                 if (mag < 0.08 || spd < 0.06) continue;
-                const col = warm > 0.015 ? [195, 35, 35] : warm < -0.015 ? [35, 60, 185] : [70, 70, 70];
+                const t = Math.min(1, spd);
+                const col = [Math.round(150 - 120 * t), Math.round(160 - 120 * t), Math.round(200 - 110 * t)];
                 const sc = 3 + Math.min(11, spd * 12);
                 drawArrow(cv, gx, y + gy, e / mag * sc, -n / mag * sc, col);
             }

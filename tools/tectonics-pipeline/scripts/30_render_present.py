@@ -13,7 +13,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-from lib import data_io, mapstyle, raster
+from lib import data_io, mapstyle, raster, height
 
 OUT = data_io.MAPS_DIR / "present"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -23,7 +23,7 @@ inv = data_io.load_inventory()
 with np.load(data_io.CACHE_DIR / "boundaries.npz") as npz:
     bcls, bmask = npz["cls"], npz["mask"]
 land = g["isLand"] == 1
-elev = g["elev_km"]
+elev = height.elev_to_height_km(g["elev"])  # canonical power height (km)
 H, Wd = land.shape
 lon_ax = np.linspace(-180, 180, Wd)
 lat_ax = np.linspace(90, -90, H)

@@ -2,7 +2,7 @@
 
 *Orogen seed 10673275 — 2,560,001 surface regions,
 20.89% land, physical relief -9.281 to
-+8.538 km.*
++7.66 km (canonical Earth-fitted power mapping).*
 
 This document reconstructs a plate-tectonic history for a procedurally generated
 world. The generator produces only a **single present-day snapshot** — plates,
@@ -73,13 +73,13 @@ The starting point: what the generated planet looks like today.
 
 | feature | location | character |
 |---|---|---|
-| O1 orogen | [54.3, -118.6] | 3.22 Mkm², mean 1.58 km / max 7.54 km, blocks ['A', 'I', 'J'] |
-| O2 orogen | [-42.9, 35.7] | 3.046 Mkm², mean 1.89 km / max 5.18 km, blocks ['B', 'D', 'H'] |
-| O3 orogen | [-43.9, -160.7] | 3.035 Mkm², mean 1.53 km / max 6.65 km, blocks ['C'] |
-| O4 orogen | [57.9, 79.3] | 2.529 Mkm², mean 1.15 km / max 5.09 km, blocks ['G'] |
-| O5 orogen | [33.9, -135.3] | 2.148 Mkm², mean 2.65 km / max 8.43 km, blocks ['I'] |
-| O6 orogen | [55.9, 135.4] | 0.569 Mkm², mean 2.34 km / max 7.15 km, blocks ['G'] |
-| O7 orogen | [3.0, -114.1] | 0.238 Mkm², mean 0.4 km / max 1.68 km, blocks ['micro_7'] |
+| O1 orogen | [54.3, -118.6] | 3.22 Mkm², mean 0.78 km / max 6.39 km, blocks ['A', 'I', 'J'] |
+| O2 orogen | [-42.9, 35.7] | 3.046 Mkm², mean 0.95 km / max 3.69 km, blocks ['B', 'D', 'H'] |
+| O3 orogen | [-43.9, -160.7] | 3.035 Mkm², mean 0.77 km / max 5.32 km, blocks ['C'] |
+| O4 orogen | [57.9, 79.3] | 2.529 Mkm², mean 0.52 km / max 3.6 km, blocks ['G'] |
+| O5 orogen | [33.9, -135.3] | 2.148 Mkm², mean 1.54 km / max 7.53 km, blocks ['I'] |
+| O6 orogen | [55.9, 135.4] | 0.569 Mkm², mean 1.38 km / max 5.91 km, blocks ['G'] |
+| O7 orogen | [3.0, -114.1] | 0.238 Mkm², mean 0.11 km / max 0.71 km, blocks ['micro_7'] |
 | T1 trench | [11.5, 72.5] | min -4.26 km |
 | T2 trench | [2.5, -119.1] | min -3.28 km |
 | T3 trench | [29.0, 146.2] | min -4.21 km |
@@ -220,7 +220,7 @@ Fast-moving G overruns young, buoyant ridge crust: the slab goes flat and Larami
 
 | event | type | where | detail |
 |---|---|---|---|
-| ['G'] | orogeny *(laramide)* | [15, 70] | O4: the Northern Ridge's eastern limb subducts under G - flat-slab episode, broad interior uplift (today's 2.5 Mkm2 belt at 58N 79E, eroded to 1.15 km mean). |
+| ['G'] | orogeny *(laramide)* | [15, 70] | O4: the Northern Ridge's eastern limb subducts under G - flat-slab episode, broad interior uplift (today's 2.5 Mkm2 belt at 58N 79E, eroded to 0.52 km mean). |
 |  | reversal | [-35, 12] | Subduction polarity in the H-B Seaway flips east: the seaway starts to close under B's margin. |
 
 ### Stage T-200 Myr
@@ -257,7 +257,7 @@ H comes home: the seaway closes and the O2 belt rises across the B-D-H triple su
 
 | event | type | where | detail |
 |---|---|---|---|
-| ['B', 'D', 'H'] | orogeny *(himalayan)* | [-40, 25] | O2: H docks against B and D; the seaway dies. Introverted Wilson cycle complete; BDH assembled (today 1.89 km mean, consistent with ~120 Myr age). |
+| ['B', 'D', 'H'] | orogeny *(himalayan)* | [-40, 25] | O2: H docks against B and D; the seaway dies. Introverted Wilson cycle complete; BDH assembled (today 0.95 km mean, consistent with ~120 Myr age). |
 |  | ridge_death | [-36, 8] | H-B Seaway ridge destroyed. |
 |  | subduction_init | [0, -110] | Intra-oceanic subduction starts in the WESTERN ocean: trench T2; the micro_7 arc begins building. |
 |  | hotspot_track | [-35, -104] | Plume P1 (L5 relic) under plate ii: chain H2-H3-H12-H14 starts recording plate motion. |
@@ -270,12 +270,12 @@ H comes home: the seaway closes and the O2 belt rises across the B-D-H triple su
 
 ![Stage T-50](../reports/tectonics/maps/stages/stage_T050.png)
 
-The modern mountain age. AIJ's far western rim takes the full force of fast convergence - ridge crust subducts, arcs dock, and the O5 cordillera shoots past 8 km, the planet's highest ground. On the far side of the world micro_4 slams into G, raising O6. Even the young CENTRAL ocean now hosts a new trench: the long turn toward the next supercontinent has begun.
+The modern mountain age. AIJ's far western rim takes the full force of fast convergence - ridge crust subducts, arcs dock, and the O5 cordillera climbs toward 7.7 km, the planet's highest ground. On the far side of the world micro_4 slams into G, raising O6. Even the young CENTRAL ocean now hosts a new trench: the long turn toward the next supercontinent has begun.
 
 | event | type | where | detail |
 |---|---|---|---|
-| ['I'] | orogeny *(himalayan)* | [34, -130] | O5: ridge subduction plus arc pile-up on I's western margin; the belt is still rising (8.4 km peaks today). |
-| ['G', 'micro_4'] | arc_accretion | [30, 110] | O6: the micro_4 arc terrane docks onto G's eastern margin (2.3 km mean, ~30 Myr). |
+| ['I'] | orogeny *(himalayan)* | [34, -130] | O5: ridge subduction plus arc pile-up on I's western margin; the belt is still rising (7.5 km peaks today). |
+| ['G', 'micro_4'] | arc_accretion | [30, 110] | O6: the micro_4 arc terrane docks onto G's eastern margin (1.4 km mean, ~30 Myr). |
 |  | subduction_init | [-27, -26] | T10: a young trench breaks the CENTRAL ridge's western flank - subduction invading a young ocean. |
 | ['micro_7'] | orogeny *(andean)* | [0, -112] | O7: the micro_7 arc grows into a low orogen above trench T2 (still building). |
 
@@ -306,11 +306,11 @@ Every present-day tectonic feature traced to the event that made it. This is the
 
 | present-day feature | explained by |
 |---|---|
-| O1 orogen at [54.3, -118.6] (blocks A,I,J) | T-200 himalayan collision assembling AIJ; 185 Myr of erosion to 1.58 km mean |
-| O2 orogen at [-42.9, 35.7] (blocks B,D,H) | T-100 himalayan closure of the H-B Seaway (introverted Wilson cycle); 1.89 km mean fits ~120 Myr age |
+| O1 orogen at [54.3, -118.6] (blocks A,I,J) | T-200 himalayan collision assembling AIJ; 185 Myr of erosion to 0.78 km mean |
+| O2 orogen at [-42.9, 35.7] (blocks B,D,H) | T-100 himalayan closure of the H-B Seaway (introverted Wilson cycle); 0.95 km mean fits ~120 Myr age |
 | O3 orogen at [-43.9, -160.7] (block C) | Sustained Andean margin on C's seaward coast since T-200 (event at stage T-200) |
-| O4 orogen at [57.9, 79.3] (block G) | T-250 laramide flat-slab episode (ridge subduction under fast-moving G); 1.15 km mean fits ~270 Myr age |
-| O5 orogen at [33.9, -135.3] (block I) | T-50..now himalayan-grade margin orogeny on I (ridge subduction + arc pile-up); still rising, 8.43 km max |
+| O4 orogen at [57.9, 79.3] (block G) | T-250 laramide flat-slab episode (ridge subduction under fast-moving G); 0.52 km mean fits ~270 Myr age |
+| O5 orogen at [33.9, -135.3] (block I) | T-50..now himalayan-grade margin orogeny on I (ridge subduction + arc pile-up); still rising, 7.53 km max |
 | O6 orogen at [55.9, 135.4] (block G) | T-50 arc_accretion of micro_4 onto G's eastern margin |
 | O7 orogen at [3.0, -114.1] (micro_7) | Active intra-oceanic arc above trench T2 (subduction_init T-100) |
 | T1 trench at [11.5, 72.5] | NORTHERN/CENTRAL ocean floor subducting beneath the micro_6 arc system (lineage of the T-150 eastern-flank foundering) |
@@ -381,17 +381,17 @@ Generated by `tools/tectonics-pipeline/scripts/60_validate.py`, which checks the
 - S1 assembled T-650, breakup T-450: tenure 200 Myr
 - modeled cycle span 750 Myr (rule of thumb 400-750)
 
-## Orogen heights vs erosion model (2500 m - 5 m/Myr x age)
+## Orogen heights vs erosion model (1300 m - 3 m/Myr x age)
 
 | orogen | event stage | age Myr | predicted mean m | observed mean m | verdict |
 |---|---|---:|---:|---:|---|
-| O1 | T-200 | 200 | 1500 | 1580 | ok |
-| O2 | T-100 | 100 | 2000 | 1890 | ok |
-| O3 | T-200 | 200 | active belt | 1530 | exempt (still building) |
-| O4 | T-250 | 250 | 1250 | 1150 | ok |
-| O5 | T-50 | 50 | active belt | 2650 | exempt (still building) |
-| O6 | T-50 | 50 | active belt | 2340 | exempt (still building) |
-| O7 | T-50 | 50 | active belt | 400 | exempt (still building) |
+| O1 | T-200 | 200 | 700 | 780 | ok |
+| O2 | T-100 | 100 | 1000 | 950 | ok |
+| O3 | T-200 | 200 | active belt | 770 | exempt (still building) |
+| O4 | T-250 | 250 | 550 | 520 | ok |
+| O5 | T-50 | 50 | active belt | 1540 | exempt (still building) |
+| O6 | T-50 | 50 | active belt | 1380 | exempt (still building) |
+| O7 | T-50 | 50 | active belt | 110 | exempt (still building) |
 
 ## Provenance coverage
 

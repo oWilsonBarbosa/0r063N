@@ -23,7 +23,7 @@ def hypsometric_rgb(elev_km, land_mask):
     oc = ~land_mask
     od = np.clip(-elev_km / 9.0, 0, 1)
     rgb[oc] = ocean_cmap(1 - od[oc])[:, :3]
-    ld = np.clip(elev_km / 6.0, 0, 1) ** 0.6
+    ld = np.clip(elev_km / 7.7, 0, 1) ** 0.6
     rgb[land_mask] = land_cmap(ld[land_mask])[:, :3]
     return rgb
 

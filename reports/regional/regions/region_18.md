@@ -31,14 +31,14 @@ Classified as **Multiple coastlines** (Table 15 vocabulary), based on:
 
 | System | Quadrant | Length × width | Trend | Peak | Mean elev. |
 |---|---|---|---|---|---|
-| 1 (28,298 km²) | NE | 453 × 114 km | N-S | 4.7 km at 39.2°S 18.3°E | 1.8 km |
-| 2 (24,732 km²) | NE | 598 × 114 km | E-W | 3.8 km at 41.3°S 18.3°E | 1.2 km |
-| 3 (23,570 km²) | NE | 414 × 79 km | N-S | 4.1 km at 47.8°S 16.2°E | 1.8 km |
-| 4 (19,650 km²) | NE | 420 × 140 km | NW-SE | 3.5 km at 31.6°S 35.6°E | 2.6 km |
-| 5 (18,039 km²) | NE | 585 × 102 km | NE-SW | 1.9 km at 41.3°S 11.9°E | 0.8 km |
-| 6 (16,292 km²) | NE | 609 × 97 km | N-S | 3.6 km at 30.8°S 19.9°E | 0.6 km |
-| 7 (15,576 km²) | NE | 243 × 77 km | N-S | 3.9 km at 44.3°S 13.4°E | 1.9 km |
-| 8 (8,631 km²) | NE | 158 × 112 km | NW-SE | 3.4 km at 35.6°S 15.8°E | 1.2 km |
+| 1 (28,298 km²) | NE | 453 × 114 km | N-S | 3.2 km at 39.2°S 18.3°E | 0.9 km |
+| 2 (24,732 km²) | NE | 598 × 114 km | E-W | 2.3 km at 41.3°S 18.3°E | 0.5 km |
+| 3 (23,570 km²) | NE | 414 × 79 km | N-S | 2.6 km at 47.8°S 16.2°E | 0.9 km |
+| 4 (19,650 km²) | NE | 420 × 140 km | NW-SE | 2.1 km at 31.6°S 35.6°E | 1.4 km |
+| 5 (18,039 km²) | NE | 585 × 102 km | NE-SW | 0.8 km at 41.3°S 11.9°E | 0.3 km |
+| 6 (16,292 km²) | NE | 609 × 97 km | N-S | 2.1 km at 30.8°S 19.9°E | 0.2 km |
+| 7 (15,576 km²) | NE | 243 × 77 km | N-S | 2.5 km at 44.3°S 13.4°E | 0.9 km |
+| 8 (8,631 km²) | NE | 158 × 112 km | NW-SE | 2.0 km at 35.6°S 15.8°E | 0.5 km |
 
 …plus 4 lesser system(s).
 
@@ -46,7 +46,7 @@ Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 12.9 % | 12.4 % | 29.1 % | 45.6 % |
+| 28.5 % | 21.9 % | 35.6 % | 14.0 % |
 
 ## Climate
 
@@ -84,22 +84,24 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 24.2 % |
-| Scrub / brushland | 22.7 % |
-| Barren | 20.9 % |
-| Desert, rocky | 12.5 % |
-| Steppe | 5.2 % |
+| Forest, medium | 23.1 % |
+| Scrub / brushland | 22.9 % |
+| Desert, rocky | 13.1 % |
+| Steppe | 10.8 % |
+| Desert, sandy | 8.4 % |
+| Barren | 6.1 % |
 | Glacier | 4.1 % |
-| Forest, heavy | 3.6 % |
-| Tundra | 3.0 % |
-| Desert, sandy | 2.5 % |
-| Grassland / savanna | 0.6 % |
-| Forest, light | 0.6 % |
+| Tundra | 3.2 % |
+| Forest, heavy | 3.2 % |
+| Marsh / swamp | 2.3 % |
+| Forest, light | 1.6 % |
+| Grassland / savanna | 1.0 % |
 
 Notable expanses (largest contiguous areas):
 
-- A desert of 154,108 km² in the NE quadrant.
-- A forest of 989,025 km² in the NE quadrant.
+- A desert of 356,115 km² in the NE quadrant.
+- A forest of 1,017,892 km² in the NE quadrant.
+- A grassland of 115,213 km² in the NE quadrant.
 
 ## Water Bodies
 
@@ -109,17 +111,22 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 |---|---|---|---|---|
 | 1 | great lake | 3,351 km² | 0.5 km | SE |
 
-Closed-basin (endorheic) lakes — terminal depressions where evaporation balances inflow, holding standing (saline) water with no ocean outlet:
+Lakes (computed hydrology — depressions in the terrain holding water above sea level):
 
-| Lake | Area | Surface elev. | Max. depth | Quadrant |
-|---|---|---|---|---|
-| 1 | 8,709 km² | 999 m | 647 m | NE |
-| 2 | 7,040 km² | 1,634 m | 340 m | NE |
-| 3 | 5,389 km² | 2,028 m | 567 m | NE |
-| 4 | 4,379 km² | 980 m | 220 m | NE |
-| 5 | 3,858 km² | 2,313 m | 235 m | NE |
-| 6 | 3,711 km² | 698 m | 160 m | NE |
-| 7 | 3,109 km² | 241 m | 183 m | NE |
+| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|---|
+| 1 | freshwater (with outlet) | 13,456 km² | 334 m | 250 m | NE |
+| 2 | salt (no outlet) | 8,709 km² | 333 m | 260 m | NE |
+| 3 | freshwater (with outlet) | 8,621 km² | 365 m | 152 m | NE |
+| 4 | freshwater (with outlet) | 7,453 km² | 131 m | 116 m | NE |
+| 5 | salt (no outlet) | 7,040 km² | 683 m | 197 m | NE |
+| 6 | freshwater (with outlet) | 6,916 km² | 582 m | 185 m | NE |
+| 7 | freshwater (with outlet) | 6,421 km² | 65 m | 56 m | NE |
+| 8 | freshwater (with outlet) | 6,060 km² | 196 m | 169 m | NE |
+| 9 | freshwater (with outlet) | 5,607 km² | 133 m | 81 m | NE |
+| 10 | freshwater (with outlet) | 5,569 km² | 239 m | 193 m | NE |
+
+…plus 17 smaller lakes.
 
 ## Rivers
 
@@ -127,10 +134,10 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 66 km³/yr | 2,418 km | SE quadrant | NE, 45.7°S 35.4°E | sea |
-| 2 | 37 km³/yr | 787 km | NE quadrant | NE, 49.3°S 25.1°E | sea |
-| 3 | 27 km³/yr | 259 km | NE quadrant | NE, 47.7°S 13.2°E | sea |
-| 4 | 16 km³/yr | 767 km | NE quadrant | NE, 46.1°S 33.4°E | sea |
+| 1 | 84 km³/yr | 2,418 km | SE quadrant | NE, 45.7°S 35.4°E | sea |
+| 2 | 52 km³/yr | 1,368 km | NE quadrant | NE, 49.3°S 25.1°E | sea |
+| 3 | 39 km³/yr | 2,335 km | NE quadrant | NE, 46.1°S 33.4°E | sea |
+| 4 | 28 km³/yr | 259 km | NE quadrant | NE, 47.7°S 13.2°E | sea |
 | 5 | 16 km³/yr | 70 km | SE quadrant | SE, 78.4°S 29.1°E | sea |
 
-> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

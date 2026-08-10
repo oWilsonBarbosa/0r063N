@@ -1,5 +1,14 @@
 # Data dictionary — `orogen_regions_full`
 
+> **Superseded.** This describes the original v1 export, kept as the
+> provenance record. For new work use the corrected v2 export
+> (`data/orogen_regions_full_v2/`) and its dictionary,
+> [`DATA_DICTIONARY_V2.md`](DATA_DICTIONARY_V2.md). Known v1 defects — audited
+> in [`reports/audit/`](../reports/audit/README.md) — include: `plateSpeed`
+> and `tempContality` are zero-filled export fallbacks, `lat`/`lon` are in
+> **degrees** (not radians as stated below), and `isCoastal` is a tectonic
+> seed class, not the surface coastline.
+
 Every row in the dataset is one surface cell of the planet (2,560,001 cells on a
 Fibonacci sphere). There are **56 columns**. Values are taken straight from the
 World Orogen full export; the unit-conversion formulas below come from

@@ -26,7 +26,7 @@ INTRO = f"""# Geological history of planet `{meta['planetCode']}`
 
 *Orogen seed {meta['seed']} — {meta['numRegions']:,} surface regions,
 {meta['landFractionPct']}% land, physical relief {meta['elevPhysicalKm']['min']} to
-+{meta['elevPhysicalKm']['max']} km.*
++{meta['heightMapping']['landProfileKm']['max']} km (canonical Earth-fitted power mapping).*
 
 This document reconstructs a plate-tectonic history for a procedurally generated
 world. The generator produces only a **single present-day snapshot** — plates,

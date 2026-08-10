@@ -1,5 +1,9 @@
 # Orogen regions full independent CSV parts manifest
 
+> **Superseded.** This is the original v1 export, kept as the provenance
+> record for the audits in `reports/audit/`. For new work use the corrected
+> v2 export in `data/orogen_regions_full_v2/` (see `docs/DATA_DICTIONARY_V2.md`).
+
 Source: `orogen_regions_full.zip` / inner file `orogen_regions_full.csv`
 
 Source ZIP SHA-256: `41a839e9fc32867713520fd5beefeb49acb814f3297ba7497fed97a7dead1e29`

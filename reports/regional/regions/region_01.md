@@ -31,14 +31,14 @@ Classified as **Coastline with offshore islands** (Table 15 vocabulary), based o
 
 | System | Quadrant | Length × width | Trend | Peak | Mean elev. |
 |---|---|---|---|---|---|
-| 1 (34,517 km²) | NW | 829 × 101 km | N-S | 4.7 km at 72.8°N 160.4°E | 1.2 km |
-| 2 (22,775 km²) | NW | 371 × 248 km | NW-SE | 3.0 km at 74.7°N 155.1°E | 0.9 km |
-| 3 (21,576 km²) | SE | 636 × 116 km | NW-SE | 2.5 km at 34.2°N 149.3°W | 0.9 km |
-| 4 (20,486 km²) | NE | 401 × 72 km | E-W | 3.9 km at 55.9°N 148.1°W | 1.6 km |
-| 5 (11,077 km²) | SE | 319 × 96 km | N-S | 3.5 km at 38.4°N 146.6°W | 0.9 km |
-| 6 (8,873 km²) | SE | 266 × 89 km | E-W | 3.2 km at 32.1°N 148.7°W | 1.2 km |
-| 7 (8,409 km²) | NW | 174 × 68 km | NE-SW | 5.0 km at 70.4°N 159.8°E | 1.5 km |
-| 8 (7,393 km²) | NW | 248 × 62 km | NE-SW | 1.9 km at 69.4°N 155.6°E | 0.8 km |
+| 1 (34,517 km²) | NW | 829 × 101 km | N-S | 3.2 km at 72.8°N 160.4°E | 0.5 km |
+| 2 (22,775 km²) | NW | 371 × 248 km | NW-SE | 1.7 km at 74.7°N 155.1°E | 0.3 km |
+| 3 (21,576 km²) | SE | 636 × 116 km | NW-SE | 1.3 km at 34.2°N 149.3°W | 0.4 km |
+| 4 (20,486 km²) | NE | 401 × 72 km | E-W | 2.5 km at 55.9°N 148.1°W | 0.7 km |
+| 5 (11,077 km²) | SE | 319 × 96 km | N-S | 2.1 km at 38.4°N 146.6°W | 0.4 km |
+| 6 (8,873 km²) | SE | 266 × 89 km | E-W | 1.8 km at 32.1°N 148.7°W | 0.5 km |
+| 7 (8,409 km²) | NW | 174 × 68 km | NE-SW | 3.5 km at 70.4°N 159.8°E | 0.7 km |
+| 8 (7,393 km²) | NW | 248 × 62 km | NE-SW | 0.8 km at 69.4°N 155.6°E | 0.3 km |
 
 …plus 4 lesser system(s).
 
@@ -46,7 +46,7 @@ Relief of the land area:
 
 | Lowlands (< 0.3 km) | Hills (0.3–0.8 km) | Highlands (0.8–2 km) | Mountains (> 2 km) |
 |---|---|---|---|
-| 26.0 % | 21.3 % | 33.6 % | 19.1 % |
+| 52.6 % | 25.1 % | 17.6 % | 4.6 % |
 
 ## Climate
 
@@ -86,20 +86,23 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Scrub / brushland | 27.3 % |
-| Tundra | 22.7 % |
-| Forest, medium | 17.3 % |
-| Forest, light | 10.6 % |
+| Scrub / brushland | 27.2 % |
+| Tundra | 25.3 % |
+| Forest, medium | 15.6 % |
+| Forest, light | 10.9 % |
 | Glacier | 6.0 % |
-| Barren | 5.4 % |
-| Desert, sandy | 3.2 % |
-| Steppe | 3.1 % |
-| Desert, rocky | 2.7 % |
-| Forest, heavy | 1.4 % |
+| Desert, sandy | 4.8 % |
+| Steppe | 3.3 % |
+| Marsh / swamp | 2.7 % |
+| Barren | 1.2 % |
+| Desert, rocky | 1.2 % |
+| Forest, heavy | 0.9 % |
+| Grassland / savanna | 0.7 % |
+| Prairie | 0.3 % |
 
 Notable expanses (largest contiguous areas):
 
-- A forest of 116,027 km² in the NE quadrant.
+- A forest of 116,673 km² in the NE quadrant.
 
 ## Water Bodies
 
@@ -111,21 +114,27 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 | 2 | great lake | 2,720 km² | 4.0 km | NE |
 | 3 | great lake | 2,477 km² | 2.6 km | NW |
 
-Closed-basin (endorheic) lakes — terminal depressions where evaporation balances inflow, holding standing (saline) water with no ocean outlet:
+Lakes (computed hydrology — depressions in the terrain holding water above sea level):
 
-| Lake | Area | Surface elev. | Max. depth | Quadrant |
-|---|---|---|---|---|
-| 1 | 2,040 km² | 623 m | 15 m | SE |
+| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|---|
+| 1 | freshwater (with outlet) | 8,492 km² | 247 m | 110 m | NW |
+| 2 | freshwater (with outlet) | 5,088 km² | 217 m | 141 m | NW |
+| 3 | freshwater (with outlet) | 3,780 km² | 22 m | 17 m | SE |
+| 4 | freshwater (with outlet) | 3,118 km² | 1,948 m | 433 m | NW |
+| 5 | freshwater (with outlet) | 2,095 km² | 43 m | 28 m | NE |
+| 6 | salt (no outlet) | 2,040 km² | 167 m | 6 m | SE |
 
 ## Rivers
 
-4 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+5 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
 | 1 | 73 km³/yr | 636 km | NW quadrant | NW, 70.9°N 153.1°E | sea |
-| 2 | 28 km³/yr | 173 km | NE quadrant | NE, 49.9°N 144.3°W | sea |
-| 3 | 21 km³/yr | 234 km | NW quadrant | NW, 70.6°N 161.6°E | sea |
-| 4 | 16 km³/yr | 87 km | NW quadrant | NW, 73.8°N 163.7°E | sea |
+| 2 | 63 km³/yr | 2,679 km | SE quadrant | SE, 31.2°N 145.9°W | sea |
+| 3 | 28 km³/yr | 173 km | NE quadrant | NE, 49.9°N 144.3°W | sea |
+| 4 | 21 km³/yr | 234 km | NW quadrant | NW, 70.6°N 161.6°E | sea |
+| 5 | 16 km³/yr | 87 km | NW quadrant | NW, 73.8°N 163.7°E | sea |
 
-> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.

@@ -67,13 +67,13 @@ Mesh verified uniform-on-sphere; areas from cos-lat-weighted pixel counts.
 
 ## Orogens (orogPow >= p85, 7 belts)
 
-- O1: 3.22 Mkm2 at [54.3, -118.6], mean 1.58 km, max 7.54 km, blocks ['A', 'I', 'J']
-- O2: 3.046 Mkm2 at [-42.9, 35.7], mean 1.89 km, max 5.18 km, blocks ['B', 'D', 'H']
-- O3: 3.035 Mkm2 at [-43.9, -160.7], mean 1.53 km, max 6.65 km, blocks ['C']
-- O4: 2.529 Mkm2 at [57.9, 79.3], mean 1.15 km, max 5.09 km, blocks ['G']
-- O5: 2.148 Mkm2 at [33.9, -135.3], mean 2.65 km, max 8.43 km, blocks ['I']
-- O6: 0.569 Mkm2 at [55.9, 135.4], mean 2.34 km, max 7.15 km, blocks ['G']
-- O7: 0.238 Mkm2 at [3.0, -114.1], mean 0.4 km, max 1.68 km, blocks ['micro_7']
+- O1: 3.22 Mkm2 at [54.3, -118.6], mean 0.78 km, max 6.39 km, blocks ['A', 'I', 'J']
+- O2: 3.046 Mkm2 at [-42.9, 35.7], mean 0.95 km, max 3.69 km, blocks ['B', 'D', 'H']
+- O3: 3.035 Mkm2 at [-43.9, -160.7], mean 0.77 km, max 5.32 km, blocks ['C']
+- O4: 2.529 Mkm2 at [57.9, 79.3], mean 0.52 km, max 3.6 km, blocks ['G']
+- O5: 2.148 Mkm2 at [33.9, -135.3], mean 1.54 km, max 7.53 km, blocks ['I']
+- O6: 0.569 Mkm2 at [55.9, 135.4], mean 1.38 km, max 5.91 km, blocks ['G']
+- O7: 0.238 Mkm2 at [3.0, -114.1], mean 0.11 km, max 0.71 km, blocks ['micro_7']
 
 ## Trenches
 

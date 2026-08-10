@@ -1,0 +1,242 @@
+{
+  "schema": "orogen_regions_full_v2",
+  "schemaVersion": "2.0.0",
+  "planetCode": "06cy8w6z6a89kow6psje93",
+  "seed": 10673275,
+  "numRegions": 2560001,
+  "numFields": 58,
+  "numLandCells": 534840,
+  "numSurfaceCoastCells": 40772,
+  "source": {
+    "repository": "oWilsonBarbosa/0r063N",
+    "auditedCommit": "9937ec63f74a5485344d0348c8a86480360c61c4",
+    "originalDatasetZipSha256": "41a839e9fc32867713520fd5beefeb49acb814f3297ba7497fed97a7dead1e29",
+    "generatorSnapshotObject": "f9bb081224ee80adea5bd1bb7c012d05786c4f9f",
+    "generatorSnapshotDate": "2026-04-15"
+  },
+  "representation": {
+    "lat": "degrees",
+    "lon": "degrees",
+    "floatTextPrecision": "up to 6 decimal places"
+  },
+  "heightMapping": {
+    "canonicalId": "earth_fitted_power_v1",
+    "note": "Canonical dimensionless-elev to physical-height-km mapping for all repository height products (atlas relief, continent stats, gazetteers, tectonic inventory, life-layer figures). The Earth-fitted power land curve from the relief/coast diagnostic: two parameters fitted to Earth's land median and its share of land at or above 2 km, giving an Earth-plausible distribution with no artificial ceiling.",
+    "landFormula": "height_km = 4.574236096629359 * elev^1.4622457219144074   for elev > 0",
+    "oceanFormula": "height_km = 10 * elev                                    for elev <= 0",
+    "landPeakKm": 7.66,
+    "landProfileKm": { "mean": 0.768, "median": 0.421, "shareAtOrAbove2km": 0.1074, "max": 7.66 },
+    "climateNote": "The generator's EXPORTED climate (tS/tW, koppen, precip, winds) was computed by the generator using its own internal S-curve height curve (js/color-map.js elevToHeightKm) and is preserved unchanged as the planet's published climate. This heightMapping governs physical relief and height reporting; it is not the (immutable) height curve used inside the exported climate simulation. Known seam: the power and S-curve heights differ by a mean 0.35 km per land cell (implied ~2.3 C mean temperature discrepancy, up to ~10 C at the highest peaks) - within the climate model's own error and accepted as a documented caveat. See reports/audit/relief_coast_diagnostic/.",
+    "legacyField": {
+      "name": "elev_km",
+      "mapping": "linear: 6*elev (land), 10*elev (ocean)",
+      "status": "LEGACY / NON-CANONICAL. Preserved for provenance; do not use as physical height. The canonical height is heightMapping above, applied to the raw `elev` column."
+    },
+    "resolvedDiagnostic": "Orogen_Atlas_v2_Relief_Coast_Diagnostic (2026-07-19); see reports/audit/."
+  },
+  "corrections": [
+    {
+      "field": "plateSpeed",
+      "change": "replaced zero fallback with deterministic Float32 angular-speed magnitude after plate physics",
+      "proof": "80 recovered plate IDs match the 80 observed plate IDs"
+    },
+    {
+      "field": "tempContinentality",
+      "change": "renamed from tempContality and recovered from the exact mesh, land mask, and summer ocean-warmth field",
+      "proof": "exact regenerated geometry; no warmth values at the 0.3 rounding threshold; 149543 distinct land values at 6 decimals"
+    },
+    {
+      "field": "isSurfaceCoast",
+      "change": "added final land/ocean adjacency flag",
+      "proof": "40772 cells, exactly matching generator terrainMetrics.coastline_cells"
+    },
+    {
+      "field": "postProcessDelta",
+      "change": "added exact decimal difference elev - prePost from the exported values",
+      "proof": "decimal identity checked during export and validation"
+    }
+  ],
+  "clarifiedLegacySemantics": {
+    "isCoastal": "tectonic collision/boundary seed flag; not the final surface coastline",
+    "isMountain": "tectonic mountain-generation seed flag; not an elevation threshold",
+    "eroD": "net change after the terrain-warp snapshot: smoothing, erosion, ridge sharpening, and soil creep; excludes terrain warp",
+    "owS_owW": "smoothed geographic coastal warmth proxy; not vector heat transport",
+    "pS_pW": "p95-normalized and capped precipitation index; 1 means greater than or equal to the seasonal p95",
+    "wsS_wsW": "p95-normalized and capped wind speed; 1 means greater than or equal to the seasonal p95",
+    "ocSpeedS_ocSpeedW": "p95-normalized and capped current speed; 1 means greater than or equal to the oceanic seasonal p95"
+  },
+  "unavailableFromLegacyExport": [
+    "raw precipitation above the p95 cap and its p95 scale",
+    "raw wind speed above the p95 cap and its p95 scale",
+    "raw ocean-current speed above the p95 cap and its p95 scale",
+    "pre-erosion elevation and terrain-warp-only delta"
+  ],
+  "recoveryValidation": {
+    "planetCode": "06cy8w6z6a89kow6psje93",
+    "seed": 10673275,
+    "rows": 2560001,
+    "platesObserved": 80,
+    "landCount": 534840,
+    "surfaceCoastCount": 40772,
+    "expectedSurfaceCoastCount": 40772,
+    "oceanComponentCount": 1121,
+    "mainOceanSize": 2019733,
+    "avgEdgeKm": 12.509426804265672,
+    "warmthValuesAtRoundingThreshold": 0,
+    "tempContinentality": {
+      "oceanValue": -1,
+      "landMin": 0,
+      "landMax": 1,
+      "distinctAt6Decimals": 149543
+    },
+    "files": {
+      "tempContinentality": "/home/user/0r063N/tools/export-v2/intermediate/temp_continentality.f32",
+      "isSurfaceCoast": "/home/user/0r063N/tools/export-v2/intermediate/is_surface_coast.u8"
+    }
+  },
+  "parts": [
+    {
+      "part": 0,
+      "file": "orogen_regions_full_v2_part_00.csv.gz",
+      "rows": 200000,
+      "firstId": 0,
+      "lastId": 199999,
+      "land": 17481,
+      "surfaceCoast": 1297,
+      "sizeBytes": 27817817,
+      "sha256": "0c3a49a243f943840e0e80e6c9d94cad4d6e4b024fe20c47f9581c562762473a"
+    },
+    {
+      "part": 1,
+      "file": "orogen_regions_full_v2_part_01.csv.gz",
+      "rows": 200000,
+      "firstId": 200000,
+      "lastId": 399999,
+      "land": 33511,
+      "surfaceCoast": 1746,
+      "sizeBytes": 28229126,
+      "sha256": "07a346565a66156cf801d00c13a05816e77e295c34ed0c43b0dac304ddd5b33e"
+    },
+    {
+      "part": 2,
+      "file": "orogen_regions_full_v2_part_02.csv.gz",
+      "rows": 200000,
+      "firstId": 400000,
+      "lastId": 599999,
+      "land": 27164,
+      "surfaceCoast": 1483,
+      "sizeBytes": 29106779,
+      "sha256": "2772fe1b252feac9afed615399dcef3d0fee97aaaed9b4d13a17b47917a093fd"
+    },
+    {
+      "part": 3,
+      "file": "orogen_regions_full_v2_part_03.csv.gz",
+      "rows": 200000,
+      "firstId": 600000,
+      "lastId": 799999,
+      "land": 32205,
+      "surfaceCoast": 2332,
+      "sizeBytes": 29758112,
+      "sha256": "b2a0a1abec6ca496a8961d6d9145e529f2a0a3d44beb27299404647ce98d85ba"
+    },
+    {
+      "part": 4,
+      "file": "orogen_regions_full_v2_part_04.csv.gz",
+      "rows": 200000,
+      "firstId": 800000,
+      "lastId": 999999,
+      "land": 47188,
+      "surfaceCoast": 4280,
+      "sizeBytes": 30322636,
+      "sha256": "e99f1f3482ec00c29944f28ccd72db5cb7cb691efea6f9387ad38aec07cbafcf"
+    },
+    {
+      "part": 5,
+      "file": "orogen_regions_full_v2_part_05.csv.gz",
+      "rows": 200000,
+      "firstId": 1000000,
+      "lastId": 1199999,
+      "land": 49636,
+      "surfaceCoast": 4007,
+      "sizeBytes": 30218926,
+      "sha256": "d4fba6fc0650914ebf0c091ad9536b0218babd26f9b65791dfa4f135deaac590"
+    },
+    {
+      "part": 6,
+      "file": "orogen_regions_full_v2_part_06.csv.gz",
+      "rows": 200000,
+      "firstId": 1200000,
+      "lastId": 1399999,
+      "land": 39640,
+      "surfaceCoast": 3591,
+      "sizeBytes": 29837740,
+      "sha256": "0bbe445f0ef9680b667d41d6efdba5c63d098bf7f58eb9b1bc3f11d86274c20e"
+    },
+    {
+      "part": 7,
+      "file": "orogen_regions_full_v2_part_07.csv.gz",
+      "rows": 200000,
+      "firstId": 1400000,
+      "lastId": 1599999,
+      "land": 59978,
+      "surfaceCoast": 2776,
+      "sizeBytes": 29845812,
+      "sha256": "50689009b2cef9f7a59de3602dcc288f2ceb1c6a5f5ff84eab414b09be5ce810"
+    },
+    {
+      "part": 8,
+      "file": "orogen_regions_full_v2_part_08.csv.gz",
+      "rows": 200000,
+      "firstId": 1600000,
+      "lastId": 1799999,
+      "land": 54569,
+      "surfaceCoast": 4448,
+      "sizeBytes": 29967605,
+      "sha256": "f860fed73f092435a292b132e4bcfcb85b5c986b209cede34ec62257b520b30e"
+    },
+    {
+      "part": 9,
+      "file": "orogen_regions_full_v2_part_09.csv.gz",
+      "rows": 200000,
+      "firstId": 1800000,
+      "lastId": 1999999,
+      "land": 49996,
+      "surfaceCoast": 4148,
+      "sizeBytes": 30111882,
+      "sha256": "505ef04ac1d566db2cfa2ebd418b9bb393f8f0f7d75d6c5a174cfbd891b6afa8"
+    },
+    {
+      "part": 10,
+      "file": "orogen_regions_full_v2_part_10.csv.gz",
+      "rows": 200000,
+      "firstId": 2000000,
+      "lastId": 2199999,
+      "land": 53972,
+      "surfaceCoast": 3751,
+      "sizeBytes": 29791993,
+      "sha256": "f6b33d5fa9b4c57e45d36b6e24d94eb064ef7af9b53dac81796daa674f378526"
+    },
+    {
+      "part": 11,
+      "file": "orogen_regions_full_v2_part_11.csv.gz",
+      "rows": 200000,
+      "firstId": 2200000,
+      "lastId": 2399999,
+      "land": 52575,
+      "surfaceCoast": 4800,
+      "sizeBytes": 29604849,
+      "sha256": "7dc559b3affaba278ec4387cfa7ed9e7a019a5d1cd760b2628f88990bbc2299e"
+    },
+    {
+      "part": 12,
+      "file": "orogen_regions_full_v2_part_12.csv.gz",
+      "rows": 160001,
+      "firstId": 2400000,
+      "lastId": 2560000,
+      "land": 16925,
+      "surfaceCoast": 2113,
+      "sizeBytes": 22596354,
+      "sha256": "4b848266254fc08d7eb6f68394b2ad97cfd6a7cbd35ae7d632fc0cc8dee42a23"
+    }
+  ]
+}

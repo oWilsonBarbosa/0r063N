@@ -11,6 +11,12 @@
 
 import { greatCircleKm } from './grid.mjs';
 import { tempC, precipAnnualMm } from './classify.mjs';
+import { elevToHeightKm } from '../height-mapping.mjs';
+
+// Reported vertical measures use the canonical power height. Routing runs on the
+// stored linear `elev_km` DEM (ordering only), so recover raw elev from it
+// (land 6·elev, ocean 10·elev) before applying the canonical mapping.
+const linKmToPowerKm = (linKm) => elevToHeightKm(linKm > 0 ? linKm / 6 : linKm / 10);
 
 const EPS_KM = 1e-5;             // enforced gradient across flats
 const MIN_LAKE_DEPTH_KM = 0.025; // ignore shallower depressions (raster noise)
@@ -98,6 +104,13 @@ export function buildHydrology(grid, data, px, { log = () => {} } = {}) {
     const petPx = new Float32Array(N);
     for (let p = 0; p < N; p++) {
         const c = cellGrid[p];
+        // Drainage runs on the raw terrain ordering. The stored `elev_km`
+        // (legacy linear = 6·elev) is used here purely as the internal DEM: it
+        // is monotonic in elev with good numerical separation, which the
+        // priority-flood epsilon and lake water-balance were tuned for. This is
+        // an ordering-only role — physical heights reported elsewhere (relief,
+        // stats, terrain, records) use the canonical power mapping. Feeding a
+        // compressed height curve here would degrade routing in flat lowlands.
         elevPx[p] = data.elev_km[c];
         const t = (tempC(data.tS[c]) + tempC(data.tW[c])) / 2;
         petPx[p] = petMm(t);
@@ -349,7 +362,9 @@ function makeLake(id, pixels, grid, f) {
     }
     return {
         id, areaKm2,
-        surfaceKm: surface, maxDepthKm: Math.max(0, surface - minElev),
+        // routing/detection use the linear DEM; reported heights are canonical power km
+        surfaceKm: linKmToPowerKm(surface),
+        maxDepthKm: Math.max(0, linKmToPowerKm(surface) - linKmToPowerKm(minElev)),
         centroidLat: sumLatA / areaSum,
         centroidLon: Math.atan2(sumSinA, sumCosA) * 180 / Math.PI,
         inflowKm3: inflow, evapKm3,

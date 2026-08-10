@@ -70,7 +70,7 @@ if not (400 <= cycle <= 800):
     fails.append(f"cycle span {cycle} Myr outside 400-800")
 
 # ---------- 3. mountain height vs age (erosion model) ----------
-report += ["", "## Orogen heights vs erosion model (2500 m - 5 m/Myr x age)", "",
+report += ["", "## Orogen heights vs erosion model (1300 m - 3 m/Myr x age)", "",
            "| orogen | event stage | age Myr | predicted mean m | observed mean m | verdict |",
            "|---|---|---:|---:|---:|---|"]
 orogens = inv["features"]["orogens"]
@@ -96,7 +96,7 @@ for i, o in enumerate(orogens):
         report.append(f"| {label} | T{t} | {age} | active belt | {obs:.0f} | "
                       f"exempt (still building) |")
         continue
-    pred = 2500 - 5 * age
+    pred = 1300 - 3 * age
     ok = abs(obs - pred) <= 0.4 * pred
     if not ok:
         fails.append(f"{label}: predicted {pred:.0f} m for age {age}, observed {obs:.0f} m")

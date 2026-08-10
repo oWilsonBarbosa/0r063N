@@ -15,7 +15,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from lib import data_io, raster
+from lib import data_io, raster, height
 from lib.spherical import xyz_to_latlon
 
 H, Wd = raster.H, raster.W
@@ -235,17 +235,18 @@ def clusters(mask, min_km2=2e4, top=None):
 
 orog_thr = np.nanpercentile(g["orogPow"][land], 85)
 orogens = clusters(land & (g["orogPow"] >= orog_thr), min_km2=1e5)
+elev_h = height.elev_to_height_km(g["elev"])  # canonical power height (km)
 for o in orogens:
     m = o.pop("_mask")
-    o["mean_elev_km"] = round(float(np.nanmean(g["elev_km"][m])), 2)
-    o["max_elev_km"] = round(float(np.nanmax(g["elev_km"][m])), 2)
+    o["mean_elev_km"] = round(float(np.nanmean(elev_h[m])), 2)
+    o["max_elev_km"] = round(float(np.nanmax(elev_h[m])), 2)
     o["blocks"] = sorted({block_names.get(int(b), "?") for b in np.unique(block_grid[m]) if b > 0})
 
 trench_thr = np.nanpercentile(g["tectonic"][~land], 2)
 trenches = clusters(~land & (g["tectonic"] <= trench_thr), min_km2=1e5, top=12)
 for t in trenches:
     m = t.pop("_mask")
-    t["min_elev_km"] = round(float(np.nanmin(g["elev_km"][m])), 2)
+    t["min_elev_km"] = round(float(np.nanmin(elev_h[m])), 2)
 
 ba = g["backArc"]  # negative depressions; deepest quartile marks real basins
 backarcs = clusters(ba <= np.nanpercentile(ba[ba < 0], 25), min_km2=2e5, top=10)

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "rows": 2560001,
+  "fields": 58,
+  "land": 534840,
+  "surfaceCoast": 40772,
+  "distinctPlates": 80,
+  "distinctPlateSpeeds": 80,
+  "distinctTempContinentalityTextValues": 149544,
+  "legacyColumnsUnchangedExcept": [
+    "plateSpeed",
+    "tempContality -> tempContinentality"
+  ],
+  "addedColumns": [
+    "isSurfaceCoast",
+    "postProcessDelta"
+  ]
+}
