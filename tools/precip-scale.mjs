@@ -32,9 +32,15 @@
 // cap, closely matching this planet's own 13.80 %. The current generator gives
 // 19.84 %, further confirming f9bb081 as the correct reference.
 //
-// CAVEAT. The exported `koppen` column was classified by the generator using
-// its uncalibrated 1000, so millimetres on this scale will not exactly
-// reproduce the Köppen boundaries stored beside them. That is unavoidable: the
+// CAVEAT — MEASURED, and larger than "not exactly". The exported `koppen`
+// column was classified by the generator using its uncalibrated 1000, so
+// millimetres on this scale disagree with those labels for **11.24 % of land**
+// (60,124 of 534,840 cells). Reproduce with scripts/audit_koppen_scale.py:
+//   37,443 cells (7.00 %) would newly be arid  - mostly Aw 44 %, Cfa 23 %, Csa 18 %
+//   22,681 cells (4.24 %) already arid move steppe -> desert
+//   B-group share: 27.65 % at 1000  ->  34.65 % at 813.7
+// The disagreement is one-directional: Pthresh is scale-invariant (a ratio of
+// temperature and seasonality), so only Pann moves, and it moves down. That is unavoidable: the
 // labels are immutable canon computed with a placeholder. Physical accuracy is
 // preferred here because the thresholds these millimetres feed — terrain
 // classes, humidity bands, D-PLACE `Bio12` filters — are all stated in real

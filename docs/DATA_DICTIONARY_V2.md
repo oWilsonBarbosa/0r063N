@@ -90,7 +90,7 @@ passes: `S` is Northern-Hemisphere summer / Southern-Hemisphere winter.
 | `contality` | BFS distance-from-main-ocean continentality index. |
 | `tempContinentality` | Recovered thermal continentality zone/transition field. Ocean is `-1`; land is `0 … 1`. |
 | `tS`, `tW` | Normalized seasonal temperature. °C = `-45 + t × 90`. |
-| `pS`, `pW` | Seasonal precipitation index divided by its p95 and capped at `1`. A value of `1` means **greater than or equal to p95**, not an exact maximum. |
+| `pS`, `pW` | Seasonal precipitation index divided by its p95 and capped at `1`. A value of `1` means **greater than or equal to p95**, not an exact maximum. To millimetres: `mm = p × PRECIP_SCALE_MM` (`tools/precip-scale.mjs`, **813.7**). **Do not assume these millimetres agree with the `koppen` column beside them** — see the note below. |
 | `wsS`, `wsW` | Seasonal wind speed divided by its p95 and capped at `1`. |
 | `prS`, `prW` | Seasonal sea-level pressure deviation used by the generator. |
 | `windES`, `windNS`, `windEW`, `windNW` | East/north surface-wind components. |
@@ -98,6 +98,38 @@ passes: `S` is Northern-Hemisphere summer / Southern-Hemisphere winter.
 | `ocSpeedS`, `ocSpeedW` | Ocean-current vector magnitude divided by the oceanic p95 and capped at `1`. |
 | `ocEastS`, `ocNorthS`, `ocEastW`, `ocNorthW` | Seasonal east/north ocean-current components. The meridional component is season-invariant in this generator snapshot. |
 | `rsSummer`, `rsWinter` | Seasonal orographic rain-shadow factor. |
+
+### Millimetres and `koppen` disagree for ~11 % of land
+
+`koppen` was classified **by the generator**, which used a placeholder conversion
+of `1000` mm per index unit. The repository reports millimetres on the calibrated
+`PRECIP_SCALE_MM = 813.7`, fitted to the snapshot that produced this export
+(`tools/precip-scale.mjs` explains the fit). Köppen's aridity test is *defined* in
+millimetres, so the two do not agree.
+
+Measured over all 534,840 land cells by `scripts/audit_koppen_scale.py`, which
+reproduces the generator's own test (`js/koppen.js`) at both scales:
+
+| | at 1000 (as classified) | at 813.7 (as reported) |
+|---|---:|---:|
+| Arid (B group) | 147,857 — 27.65 % of land | 185,300 — 34.65 % of land |
+
+- **37,443 cells (7.00 % of land)** would newly be arid. They come mostly from the
+  semi-arid margins: `Aw` 44 %, `Cfa` 23 %, `Csa` 18 %.
+- **22,681 cells (4.24 % of land)** already arid would move steppe → desert.
+- **60,124 cells — 11.24 % of land — carry a `koppen` label that disagrees with
+  the millimetres reported beside them.**
+
+The `Pthresh` term is a ratio-based function of temperature and seasonality, so it
+is scale-invariant; only `Pann` moves, and it moves *down*, which is why the
+disagreement is one-directional (the calibrated scale reads more arid).
+
+**Practical guidance.** Use `koppen` when you want the generator's published
+climate labels — they are the canon the biome, realm and life layers were built
+on. Use millimetres when you need a physical quantity comparable to real-world
+data (terrain classes, humidity bands, D-PLACE `Bio12`). Do not mix them within a
+single threshold test, and do not expect a mm-derived aridity mask to reproduce
+the B-group cells.
 
 ## V1 to v2 migration
 
