@@ -16,7 +16,7 @@ Triangular face centered at 10.8°S 0.0°W · area 25,486,825 km² (1/20 of the 
 | Dominant terrain | Scrub / brushland |
 | Mountain systems | 10 |
 | Mean land temperature | 17.6 °C (Jun half-year) / 20.2 °C (Dec half-year) |
-| Mean annual precipitation | 711 mm |
+| Mean annual precipitation | 578 mm |
 
 ## Hydrography
 
@@ -73,10 +73,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from SSW, light | from N, light | 1,555 mm (year-round) | humid | — |
-| NE | from SSW, moderate, variable | from NNW, moderate | 1,388 mm (year-round) | humid | — |
-| SW | from SE, light | from SE, moderate, variable | 1,034 mm (winter-wet) | humid | — |
-| SE | from SSE, strong, variable | from SSE, strong, variable | 640 mm (winter-wet) | sub-humid | — |
+| NW | from SSW, light | from N, light | 1,265 mm (year-round) | humid | — |
+| NE | from SSW, moderate, variable | from NNW, moderate | 1,129 mm (year-round) | humid | — |
+| SW | from SE, light | from SE, moderate, variable | 841 mm (winter-wet) | sub-humid | — |
+| SE | from SSE, strong, variable | from SSE, strong, variable | 521 mm (winter-wet) | sub-humid | — |
 
 ## Predominant Terrain
 
@@ -85,9 +85,9 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Terrain | Share of land |
 |---|---|
 | Scrub / brushland | 24.0 % |
-| Forest, light | 15.1 % |
-| Grassland / savanna | 12.8 % |
+| Grassland / savanna | 18.2 % |
 | Barren | 10.2 % |
+| Forest, light | 10.0 % |
 | Steppe | 7.2 % |
 | Glacier | 6.0 % |
 | Desert, sandy | 5.8 % |
@@ -95,14 +95,13 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 | Desert, rocky | 5.1 % |
 | Jungle, medium | 3.0 % |
 | Jungle, heavy | 2.6 % |
-| Marsh / swamp | 2.3 % |
-| Moor | 0.2 % |
+| Marsh / swamp | 2.2 % |
 
 Notable expanses (largest contiguous areas):
 
 - A desert of 211,802 km² in the SE quadrant.
-- A forest of 471,506 km² in the SE quadrant.
-- A grassland of 381,343 km² in the SE quadrant.
+- A forest of 183,737 km² in the SE quadrant.
+- A grassland of 552,122 km² in the SE quadrant.
 
 ## Water Bodies
 
@@ -120,9 +119,8 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 | Lake | Area | Surface elev. | Max. depth | Quadrant |
 |---|---|---|---|---|
-| 1 | 27,367 km² | 174 m | 92 m | SE |
-| 2 | 5,276 km² | 369 m | 106 m | SE |
-| 3 | 2,596 km² | 305 m | 59 m | SE |
+| 1 | 16,220 km² | 143 m | 61 m | SE |
+| 2 | 3,166 km² | 341 m | 77 m | SE |
 
 ## Rivers
 
@@ -130,7 +128,7 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 44 km³/yr | 538 km | NE quadrant | SE, 13.7°S 18.2°E | sea |
-| 2 | 27 km³/yr | 392 km | NE quadrant | NE, 9.6°S 17.7°E | sea |
+| 1 | 31 km³/yr | 504 km | SE quadrant | SE, 13.7°S 18.2°E | sea |
+| 2 | 20 km³/yr | 372 km | NE quadrant | NE, 9.6°S 17.7°E | sea |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

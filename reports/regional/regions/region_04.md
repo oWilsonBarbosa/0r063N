@@ -16,7 +16,7 @@ Triangular face centered at 52.6°N 36.0°E · area 25,506,710 km² (1/20 of the
 | Dominant terrain | Tundra |
 | Mountain systems | 12 |
 | Mean land temperature | 2.8 °C (Jun half-year) / -13.5 °C (Dec half-year) |
-| Mean annual precipitation | 872 mm |
+| Mean annual precipitation | 709 mm |
 
 ## Hydrography
 
@@ -73,10 +73,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NE, light, variable | from NE, light | 1,512 mm (year-round) | humid | 27 % of land |
-| NE | from NW, strong, variable | from N, strong, variable | 773 mm (year-round) | sub-humid | — |
-| SW | from SW, moderate | from SW, moderate | 1,435 mm (year-round) | humid | — |
-| SE | from SW, moderate | from SW, moderate | 1,260 mm (year-round) | humid | 12 % of land |
+| NW | from NE, light, variable | from NE, light | 1,230 mm (year-round) | humid | 27 % of land |
+| NE | from NW, strong, variable | from N, strong, variable | 629 mm (year-round) | sub-humid | — |
+| SW | from SW, moderate | from SW, moderate | 1,168 mm (year-round) | humid | — |
+| SE | from SW, moderate | from SW, moderate | 1,025 mm (year-round) | humid | 12 % of land |
 
 A pronounced rain shadow affects the NW quadrant(s), leeward of the NE mountain system.
 
@@ -88,10 +88,10 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 |---|---|
 | Tundra | 49.8 % |
 | Glacier | 30.6 % |
-| Forest, light | 14.3 % |
-| Forest, medium | 3.9 % |
-| Marsh / swamp | 0.9 % |
-| Moor | 0.4 % |
+| Forest, light | 14.4 % |
+| Forest, medium | 4.0 % |
+| Marsh / swamp | 0.8 % |
+| Moor | 0.3 % |
 
 Notable expanses (largest contiguous areas):
 
@@ -109,21 +109,21 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 
 ## Rivers
 
-22 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+14 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 2,031 km³/yr | 4,347 km | NE quadrant | NE, 53.6°N 68.2°E | sea |
-| 2 | 703 km³/yr | 2,481 km | NE quadrant | NE, 69.9°N 51.7°E | sea |
-| 3 | 263 km³/yr | 998 km | SE quadrant | NE, 53.2°N 44.2°E | sea |
-| 4 | 223 km³/yr | 1,236 km | NE quadrant | NE, 57.2°N 54.6°E | sea |
-| 5 | 151 km³/yr | 653 km | NE quadrant | NE, 54.4°N 62.2°E | sea |
-| 6 | 147 km³/yr | 1,119 km | NE quadrant | NE, 65.8°N 47.7°E | sea |
-| 7 | 83 km³/yr | 570 km | SE quadrant | SE, 46.7°N 42.3°E | sea |
-| 8 | 57 km³/yr | 575 km | NE quadrant | NE, 68.1°N 47.8°E | sea |
-| 9 | 46 km³/yr | 319 km | SE quadrant | NE, 52.4°N 43.4°E | sea |
-| 10 | 43 km³/yr | 242 km | NE quadrant | NE, 56.2°N 58.6°E | sea |
+| 1 | 1,468 km³/yr | 4,288 km | NE quadrant | NE, 53.6°N 68.2°E | sea |
+| 2 | 550 km³/yr | 2,466 km | NE quadrant | NE, 69.9°N 51.7°E | sea |
+| 3 | 191 km³/yr | 971 km | SE quadrant | NE, 53.2°N 44.2°E | sea |
+| 4 | 171 km³/yr | 1,179 km | NE quadrant | NE, 57.2°N 54.6°E | sea |
+| 5 | 116 km³/yr | 1,119 km | NE quadrant | NE, 65.8°N 47.7°E | sea |
+| 6 | 111 km³/yr | 623 km | NE quadrant | NE, 54.4°N 62.2°E | sea |
+| 7 | 61 km³/yr | 551 km | SE quadrant | SE, 46.7°N 42.3°E | sea |
+| 8 | 44 km³/yr | 575 km | NE quadrant | NE, 68.1°N 47.8°E | sea |
+| 9 | 33 km³/yr | 267 km | SE quadrant | NE, 52.4°N 43.4°E | sea |
+| 10 | 33 km³/yr | 202 km | NE quadrant | NE, 56.2°N 58.6°E | sea |
 
-…plus 12 lesser major rivers.
+…plus 4 lesser major rivers.
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.
