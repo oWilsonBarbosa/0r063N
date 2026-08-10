@@ -5,7 +5,7 @@ import { labelComponents, EARTH_R } from './grid.mjs';
 import { fromLatLon, gnomonicForward, QUADRANT_NAMES } from './icosahedron.mjs';
 import {
     TERRAIN_CLASSES, TERRAIN_OCEAN, BANDS, BAND_OCEAN, KOPPEN_CLASSES,
-    tempC, precipAnnualMm,
+    tempC, precipAnnualMm, PRECIP_SCALE_MM,
 } from './classify.mjs';
 // Canonical physical height: the Earth-fitted power mapping of raw `elev`
 // (tools/height-mapping.mjs); the stored `elev_km` is legacy linear.
@@ -154,8 +154,8 @@ export function analyzeRegion(regionId, ctx) {
             reliefArea[e < 0.3 ? 0 : e < 0.8 ? 1 : e < 2.0 ? 2 : 3] += a;
             const pann = precipAnnualMm(data.pS[c], data.pW[c]);
             Q.pannA += pann * a;
-            Q.pSA += Math.max(0, data.pS[c]) * 1000 * a;
-            Q.pWA += Math.max(0, data.pW[c]) * 1000 * a;
+            Q.pSA += Math.max(0, data.pS[c]) * PRECIP_SCALE_MM * a;
+            Q.pWA += Math.max(0, data.pW[c]) * PRECIP_SCALE_MM * a;
             if (data.rsSummer[c] > RAIN_SHADOW_THRESHOLD) Q.rsSA += a;
             if (data.rsWinter[c] > RAIN_SHADOW_THRESHOLD) Q.rsWA += a;
             tSsum += tempC(data.tS[c]) * a;
