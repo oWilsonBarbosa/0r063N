@@ -16,7 +16,7 @@ Triangular face centered at 10.8°S 72.0°E · area 25,498,382 km² (1/20 of the
 | Dominant terrain | Scrub / brushland |
 | Mountain systems | 9 |
 | Mean land temperature | 20.8 °C (Jun half-year) / 24.2 °C (Dec half-year) |
-| Mean annual precipitation | 586 mm |
+| Mean annual precipitation | 477 mm |
 
 ## Hydrography
 
@@ -73,10 +73,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NW, light | from N, light | 1,724 mm (year-round) | humid | — |
-| NE | from ENE, moderate | from N, light | 1,613 mm (year-round) | humid | — |
-| SW | from ESE, strong, variable | from E, strong, variable | 557 mm (year-round) | sub-humid | — |
-| SE | from ESE, light | from SE, moderate, variable | 1,079 mm (winter-wet) | humid | 25 % of land |
+| NW | from NW, light | from N, light | 1,403 mm (year-round) | humid | — |
+| NE | from ENE, moderate | from N, light | 1,312 mm (year-round) | humid | — |
+| SW | from ESE, strong, variable | from E, strong, variable | 453 mm (year-round) | semi-arid | — |
+| SE | from ESE, light | from SE, moderate, variable | 878 mm (winter-wet) | sub-humid | 25 % of land |
 
 A pronounced rain shadow affects the SE quadrant(s), leeward of the SE mountain system.
 
@@ -88,11 +88,11 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 |---|---|
 | Scrub / brushland | 42.9 % |
 | Desert, sandy | 17.8 % |
-| Grassland / savanna | 7.2 % |
-| Forest, light | 5.4 % |
-| Marsh / swamp | 4.9 % |
+| Grassland / savanna | 10.0 % |
+| Marsh / swamp | 4.4 % |
 | Desert, rocky | 4.3 % |
 | Glacier | 4.0 % |
+| Forest, light | 3.2 % |
 | Jungle, heavy | 3.1 % |
 | Barren | 3.0 % |
 | Forest, medium | 2.8 % |
@@ -102,6 +102,7 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 Notable expanses (largest contiguous areas):
 
 - A desert of 343,016 km² in the SW quadrant.
+- A grassland of 107,633 km² in the SW quadrant.
 
 ## Water Bodies
 
@@ -118,13 +119,11 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 | Lake | Area | Surface elev. | Max. depth | Quadrant |
 |---|---|---|---|---|
-| 1 | 37,822 km² | 43 m | 31 m | SW |
-| 2 | 18,783 km² | 26 m | 9 m | SW |
-| 3 | 11,440 km² | 642 m | 149 m | SW |
-| 4 | 11,150 km² | 137 m | 97 m | SW |
-| 5 | 3,098 km² | 123 m | 60 m | SW |
-| 6 | 3,023 km² | 233 m | 153 m | SW |
-| 7 | 2,094 km² | 134 m | 6 m | SW |
+| 1 | 23,172 km² | 26 m | 14 m | SW |
+| 2 | 12,428 km² | 23 m | 6 m | SW |
+| 3 | 7,943 km² | 112 m | 72 m | SW |
+| 4 | 7,731 km² | 622 m | 130 m | SW |
+| 5 | 3,694 km² | 135 m | 35 m | SW |
 
 ## Rivers
 

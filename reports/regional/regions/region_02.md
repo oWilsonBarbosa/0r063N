@@ -16,7 +16,7 @@ Triangular face centered at 52.6°N 108.0°W · area 25,497,889 km² (1/20 of th
 | Dominant terrain | Forest, medium |
 | Mountain systems | 22 |
 | Mean land temperature | 17.8 °C (Jun half-year) / -0.2 °C (Dec half-year) |
-| Mean annual precipitation | 562 mm |
+| Mean annual precipitation | 457 mm |
 
 ## Hydrography
 
@@ -73,10 +73,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from N, moderate, variable | from NNE, moderate, variable | 1,095 mm (year-round) | humid | — |
-| NE | from E, moderate, variable | from ENE, moderate, variable | 921 mm (year-round) | sub-humid | — |
-| SW | from NNW, strong, variable | from WSW, strong, variable | 386 mm (year-round) | semi-arid | — |
-| SE | from SSE, strong, variable | from SW, strong, variable | 350 mm (year-round) | semi-arid | — |
+| NW | from N, moderate, variable | from NNE, moderate, variable | 891 mm (year-round) | sub-humid | — |
+| NE | from E, moderate, variable | from ENE, moderate, variable | 750 mm (year-round) | sub-humid | — |
+| SW | from NNW, strong, variable | from WSW, strong, variable | 314 mm (year-round) | semi-arid | — |
+| SE | from SSE, strong, variable | from SW, strong, variable | 285 mm (year-round) | semi-arid | — |
 
 ## Predominant Terrain
 
@@ -84,25 +84,25 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 25.3 % |
+| Forest, medium | 26.2 % |
 | Scrub / brushland | 19.5 % |
 | Glacier | 11.1 % |
 | Steppe | 9.0 % |
 | Desert, rocky | 8.0 % |
 | Desert, sandy | 6.8 % |
-| Forest, light | 6.7 % |
+| Forest, light | 6.5 % |
 | Barren | 6.3 % |
-| Grassland / savanna | 2.0 % |
+| Grassland / savanna | 2.3 % |
 | Tundra | 1.9 % |
-| Forest, heavy | 1.5 % |
-| Prairie | 1.3 % |
-| Marsh / swamp | 0.4 % |
+| Prairie | 1.8 % |
+| Marsh / swamp | 0.3 % |
+| Forest, heavy | 0.2 % |
 
 Notable expanses (largest contiguous areas):
 
 - A desert of 564,035 km² in the SW quadrant.
-- A forest of 3,584,331 km² in the NW quadrant.
-- A grassland of 922,066 km² in the SW quadrant.
+- A forest of 3,514,607 km² in the NW quadrant.
+- A grassland of 938,936 km² in the SW quadrant.
 - A glacier of 607,712 km² in the SE quadrant.
 
 ## Water Bodies
@@ -124,36 +124,32 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 | Lake | Area | Surface elev. | Max. depth | Quadrant |
 |---|---|---|---|---|
-| 1 | 91,027 km² | 220 m | 106 m | SW |
-| 2 | 35,208 km² | 361 m | 179 m | SW |
-| 3 | 8,120 km² | 609 m | 303 m | SW |
-| 4 | 7,066 km² | 230 m | 53 m | SW |
-| 5 | 5,672 km² | 749 m | 40 m | SW |
-| 6 | 5,562 km² | 179 m | 27 m | SW |
-| 7 | 5,535 km² | 217 m | 28 m | SW |
-| 8 | 3,306 km² | 1,033 m | 183 m | SW |
-| 9 | 2,340 km² | 337 m | 79 m | SW |
-| 10 | 2,144 km² | 299 m | 52 m | SW |
+| 1 | 58,163 km² | 190 m | 75 m | SW |
+| 2 | 27,347 km² | 160 m | 28 m | SW |
+| 3 | 22,914 km² | 330 m | 148 m | SW |
+| 4 | 6,522 km² | 1,527 m | 241 m | SW |
+| 5 | 6,159 km² | 373 m | 79 m | NW |
+| 6 | 5,842 km² | 326 m | 143 m | SW |
+| 7 | 5,260 km² | 516 m | 211 m | SW |
+| 8 | 5,031 km² | 455 m | 72 m | SW |
+| 9 | 4,903 km² | 1,618 m | 356 m | SW |
+| 10 | 4,079 km² | 203 m | 26 m | SW |
 
-…plus 2 smaller endorheic lakes.
+…plus 6 smaller endorheic lakes.
 
 ## Rivers
 
-13 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+8 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 1,235 km³/yr | 2,880 km | NE quadrant | NW, 56.9°N 131.4°W | sea |
-| 2 | 52 km³/yr | 478 km | NE quadrant | NW, 65.6°N 110.1°W | sea |
-| 3 | 38 km³/yr | 582 km | NW quadrant | NW, 51.9°N 138.7°W | sea |
-| 4 | 30 km³/yr | 546 km | NE quadrant | SE, 50.3°N 101.8°W | sea |
-| 5 | 27 km³/yr | 174 km | NW quadrant | NW, 52.9°N 138.9°W | sea |
-| 6 | 24 km³/yr | 313 km | SW quadrant | NW, 49.3°N 141.2°W | sea |
-| 7 | 24 km³/yr | 654 km | SW quadrant | SW, 44.1°N 143.8°W | sea |
-| 8 | 24 km³/yr | 695 km | SE quadrant | SW, 47.7°N 114.4°W | salt lake |
-| 9 | 21 km³/yr | 135 km | NW quadrant | NW, 58.2°N 133.1°W | sea |
-| 10 | 20 km³/yr | 308 km | SW quadrant | SW, 46.3°N 142.1°W | sea |
-
-…plus 3 lesser major rivers.
+| 1 | 804 km³/yr | 2,864 km | NE quadrant | NW, 56.9°N 131.4°W | sea |
+| 2 | 39 km³/yr | 447 km | NE quadrant | NW, 65.6°N 110.1°W | sea |
+| 3 | 24 km³/yr | 447 km | NW quadrant | NW, 51.9°N 138.7°W | sea |
+| 4 | 23 km³/yr | 521 km | NE quadrant | SE, 50.3°N 101.8°W | sea |
+| 5 | 19 km³/yr | 174 km | NW quadrant | NW, 52.9°N 138.9°W | sea |
+| 6 | 16 km³/yr | 113 km | NW quadrant | NW, 58.2°N 133.1°W | sea |
+| 7 | 16 km³/yr | 547 km | SW quadrant | SW, 44.1°N 143.8°W | sea |
+| 8 | 16 km³/yr | 254 km | NW quadrant | NW, 49.3°N 141.2°W | sea |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.

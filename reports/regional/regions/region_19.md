@@ -16,7 +16,7 @@ Triangular face centered at 52.6°S 72.0°E · area 25,507,749 km² (1/20 of the
 | Dominant terrain | Forest, medium |
 | Mountain systems | 38 |
 | Mean land temperature | 8.1 °C (Jun half-year) / 23.0 °C (Dec half-year) |
-| Mean annual precipitation | 659 mm |
+| Mean annual precipitation | 536 mm |
 
 ## Hydrography
 
@@ -73,10 +73,10 @@ Wind direction is the direction the wind blows **from** (area-weighted mean over
 
 | Quadrant | Jun wind | Dec wind | Land precip. | Regime | Rain shadow |
 |---|---|---|---|---|---|
-| NW | from NW, strong, variable | from N, strong, variable | 377 mm (year-round) | semi-arid | — |
-| NE | from NW, moderate | from NNW, moderate, variable | 826 mm (year-round) | sub-humid | 16 % of land |
-| SW | from SE, strong, variable | from SE, strong, variable | 1,127 mm (year-round) | humid | — |
-| SE | from SE, light, variable | from SE, moderate, variable | 877 mm (year-round) | sub-humid | — |
+| NW | from NW, strong, variable | from N, strong, variable | 307 mm (year-round) | semi-arid | — |
+| NE | from NW, moderate | from NNW, moderate, variable | 672 mm (year-round) | sub-humid | 16 % of land |
+| SW | from SE, strong, variable | from SE, strong, variable | 917 mm (year-round) | sub-humid | — |
+| SE | from SE, light, variable | from SE, moderate, variable | 713 mm (year-round) | sub-humid | — |
 
 A pronounced rain shadow affects the NE quadrant(s), leeward of the NW mountain system.
 
@@ -86,26 +86,25 @@ Terrain classes (Table 18 vocabulary) derived per cell from Köppen class, eleva
 
 | Terrain | Share of land |
 |---|---|
-| Forest, medium | 27.9 % |
+| Forest, medium | 29.2 % |
 | Scrub / brushland | 23.5 % |
 | Desert, sandy | 16.2 % |
-| Forest, light | 8.1 % |
+| Forest, light | 7.6 % |
 | Desert, rocky | 5.6 % |
 | Tundra | 5.4 % |
 | Barren | 3.8 % |
 | Steppe | 3.6 % |
 | Glacier | 1.7 % |
-| Forest, heavy | 1.4 % |
-| Marsh / swamp | 1.2 % |
-| Grassland / savanna | 1.1 % |
+| Grassland / savanna | 1.6 % |
+| Marsh / swamp | 0.9 % |
+| Prairie | 0.5 % |
 | Moor | 0.3 % |
-| Prairie | 0.3 % |
 
 Notable expanses (largest contiguous areas):
 
 - A desert of 2,275,735 km² in the NW quadrant.
-- A forest of 4,202,219 km² in the SW quadrant.
-- A grassland of 276,309 km² in the NW quadrant.
+- A forest of 4,210,851 km² in the SW quadrant.
+- A grassland of 346,738 km² in the NW quadrant.
 - A glacier of 108,169 km² in the SW quadrant.
 
 ## Water Bodies
@@ -129,30 +128,34 @@ Closed-basin (endorheic) lakes — terminal depressions where evaporation balanc
 
 | Lake | Area | Surface elev. | Max. depth | Quadrant |
 |---|---|---|---|---|
-| 1 | 32,862 km² | 45 m | 28 m | NW |
-| 2 | 6,889 km² | 304 m | 69 m | NW |
-| 3 | 6,336 km² | 276 m | 7 m | NW |
-| 4 | 4,653 km² | 49 m | 25 m | NW |
-| 5 | 3,885 km² | 97 m | 20 m | NW |
-| 6 | 2,669 km² | 314 m | 3 m | NW |
+| 1 | 20,226 km² | 29 m | 12 m | NW |
+| 2 | 7,429 km² | 2,011 m | 319 m | SW |
+| 3 | 5,639 km² | 24 m | 5 m | NE |
+| 4 | 5,219 km² | 443 m | 80 m | NW |
+| 5 | 5,047 km² | 63 m | 8 m | NW |
+| 6 | 3,793 km² | 276 m | 41 m | NW |
+| 7 | 3,549 km² | 310 m | 35 m | NW |
+| 8 | 3,489 km² | 273 m | 4 m | NW |
+| 9 | 3,423 km² | 75 m | 6 m | NE |
+| 10 | 2,495 km² | 38 m | 14 m | NW |
+
+…plus 4 smaller endorheic lakes.
 
 ## Rivers
 
-17 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+10 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
-| 1 | 423 km³/yr | 2,723 km | SW quadrant | NE, 45.2°S 80.9°E | sea |
-| 2 | 295 km³/yr | 1,872 km | SW quadrant | SW, 62.4°S 63.6°E | sea |
-| 3 | 68 km³/yr | 430 km | SW quadrant | SW, 69.1°S 55.6°E | sea |
-| 4 | 47 km³/yr | 270 km | SW quadrant | SW, 67.1°S 45.1°E | sea |
-| 5 | 44 km³/yr | 456 km | SW quadrant | SW, 55.6°S 41.3°E | sea |
-| 6 | 35 km³/yr | 637 km | NE quadrant | NE, 37.7°S 73.8°E | sea |
-| 7 | 34 km³/yr | 366 km | SW quadrant | SW, 65.9°S 47.9°E | sea |
-| 8 | 31 km³/yr | 440 km | SW quadrant | SW, 62.8°S 56.6°E | sea |
-| 9 | 25 km³/yr | 224 km | SW quadrant | SW, 60.3°S 45.2°E | sea |
-| 10 | 24 km³/yr | 125 km | SW quadrant | SW, 69.8°S 52.4°E | sea |
-
-…plus 7 lesser major rivers.
+| 1 | 250 km³/yr | 2,645 km | SW quadrant | NE, 45.2°S 80.9°E | sea |
+| 2 | 195 km³/yr | 1,809 km | SW quadrant | SW, 62.4°S 63.6°E | sea |
+| 3 | 53 km³/yr | 411 km | SW quadrant | SW, 69.1°S 55.6°E | sea |
+| 4 | 35 km³/yr | 270 km | SW quadrant | SW, 67.1°S 45.1°E | sea |
+| 5 | 27 km³/yr | 440 km | SW quadrant | SW, 55.6°S 41.3°E | sea |
+| 6 | 24 km³/yr | 366 km | SW quadrant | SW, 65.9°S 47.9°E | sea |
+| 7 | 20 km³/yr | 341 km | SW quadrant | SW, 62.8°S 56.6°E | sea |
+| 8 | 19 km³/yr | 115 km | SW quadrant | SW, 69.8°S 52.4°E | sea |
+| 9 | 18 km³/yr | 130 km | SW quadrant | SW, 69.4°S 43.1°E | sea |
+| 10 | 18 km³/yr | 224 km | SW quadrant | SW, 60.3°S 45.2°E | sea |
 
 > **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.
