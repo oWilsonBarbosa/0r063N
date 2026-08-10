@@ -1,0 +1,1134 @@
+{
+ "planetCode": "06cy8w6z6a89kow6psje93",
+ "url": "https://www.orogen.studio/#06cy8w6z6a89kow6psje93",
+ "extractedAt": "2026-08-09T16:33:07.919Z",
+ "status": "complete",
+ "numRegions": 2560001,
+ "seed": 10673275,
+ "nMag": 0.4,
+ "generationParams": {
+  "landCoverage": 0.22,
+  "precipitationOffset": 0,
+  "temperatureOffset": 0,
+  "continentSizeVariety": 0.35,
+  "terrainWarp": 0.75,
+  "soilCreep": 0.75,
+  "ridgeSharpening": 0.5,
+  "thermalErosion": 0.1,
+  "hydraulicErosion": 0.5,
+  "glacialErosion": 0.5,
+  "smoothing": 0.1,
+  "roughness": 0.4,
+  "numContinents": 4,
+  "P": 80,
+  "jitter": 0.75,
+  "N": 2560000,
+  "seed": 10673275,
+  "toggledIndices": []
+ },
+ "climateComputed": true,
+ "rowsPerPart": 200000,
+ "gzip": true,
+ "columns": [
+  "id",
+  "lat",
+  "lon",
+  "x",
+  "y",
+  "z",
+  "isSyntheticPole",
+  "elev",
+  "elev_km",
+  "prePost",
+  "postProcessDelta",
+  "cellArea_km2",
+  "isLand",
+  "isMountain",
+  "isTectCoastal",
+  "isSurfaceCoast",
+  "isOceanRegion",
+  "plate",
+  "isOcPlate",
+  "origIsOcPlate",
+  "stress",
+  "eastX",
+  "eastY",
+  "eastZ",
+  "northX",
+  "northY",
+  "northZ",
+  "backArc",
+  "base",
+  "basin",
+  "coastal",
+  "continentality",
+  "erosionDelta",
+  "foldRidge",
+  "hotspot",
+  "interior",
+  "koppen",
+  "margins",
+  "noise",
+  "ocean",
+  "orogenicPower",
+  "pressureSummer",
+  "pressureWinter",
+  "rainShadowSummer",
+  "rainShadowWinter",
+  "tecActivity",
+  "tectonic",
+  "windSpeedSummer",
+  "windSpeedWinter",
+  "superPlate",
+  "koppen_code",
+  "tS",
+  "tW",
+  "tempC_S",
+  "tempC_W",
+  "tS_sat",
+  "tW_sat",
+  "pS",
+  "pW",
+  "precipMM_S",
+  "precipMM_W",
+  "pS_p95units",
+  "pW_p95units",
+  "pS_censored",
+  "pW_censored",
+  "precip_invertible",
+  "windS_E",
+  "windS_N",
+  "windS_Speed_raw",
+  "windW_E",
+  "windW_N",
+  "windW_Speed_raw",
+  "ocS_E",
+  "ocS_N",
+  "ocS_Speed_raw",
+  "ocW_E",
+  "ocW_N",
+  "ocW_Speed_raw",
+  "ocSpeedS_norm",
+  "ocSpeedW_norm",
+  "owS",
+  "owW"
+ ],
+ "fields": [
+  {
+   "name": "id",
+   "dtype": "int",
+   "units": "region id",
+   "source": "row index",
+   "semantics": "mesh region index 0..numRegions-1",
+   "precision": "exact"
+  },
+  {
+   "name": "lat",
+   "dtype": "float",
+   "units": "degrees",
+   "source": "derived from curData.r_xyz",
+   "semantics": "asin(y)*180/PI — Y-up convention, js/wind.js:571",
+   "precision": 6
+  },
+  {
+   "name": "lon",
+   "dtype": "float",
+   "units": "degrees",
+   "source": "derived from curData.r_xyz",
+   "semantics": "atan2(x,z)*180/PI — Y-up convention, js/wind.js:572",
+   "precision": 6
+  },
+  {
+   "name": "x",
+   "dtype": "Float32",
+   "units": "unit sphere",
+   "source": "curData.r_xyz",
+   "semantics": null,
+   "precision": 7
+  },
+  {
+   "name": "y",
+   "dtype": "Float32",
+   "units": "unit sphere",
+   "source": "curData.r_xyz",
+   "semantics": null,
+   "precision": 7
+  },
+  {
+   "name": "z",
+   "dtype": "Float32",
+   "units": "unit sphere",
+   "source": "curData.r_xyz",
+   "semantics": null,
+   "precision": 7
+  },
+  {
+   "name": "isSyntheticPole",
+   "dtype": "uint8",
+   "units": "flag",
+   "source": "derived",
+   "semantics": "The artificial vertex appended by buildSphere (js/sphere-mesh.js:178-184) at (0,0,1) to close the Fibonacci mesh. It reads as lat 0 / lon 0. Its Voronoi cell, neighbour ring, cellArea_km2 and isSurfaceCoast are mesh artefacts, not terrain. Filter this out before any spatial analysis.",
+   "precision": "exact"
+  },
+  {
+   "name": "elev",
+   "dtype": "Float32",
+   "units": "dimensionless elevation",
+   "source": "curData.r_elevation",
+   "semantics": "final elevation; >0 is land",
+   "precision": 6
+  },
+  {
+   "name": "elev_km",
+   "dtype": "float",
+   "units": "km",
+   "source": "js/color-map.js elevToHeightKm(elev)",
+   "semantics": "canonical generator curve: ocean elev*10; land 6*t^4*(5-4t) (js/color-map.js:7-12)",
+   "precision": 4
+  },
+  {
+   "name": "prePost",
+   "dtype": "Float32",
+   "units": "elevation",
+   "source": "curData.prePostElev",
+   "semantics": "elevation snapshot taken BEFORE the whole post-processing block (warp, smoothing, detail noise, erosion, soil creep)",
+   "precision": 6
+  },
+  {
+   "name": "postProcessDelta",
+   "dtype": "float",
+   "units": "elevation delta",
+   "source": "derived",
+   "semantics": "elev - prePost: the FULL post-processing delta INCLUDING terrain warp. Contrast with the erosionDelta debug layer, whose baseline is snapshotted AFTER the warp (js/planet-worker.js:78-88), so erosionDelta EXCLUDES warp.",
+   "precision": 6
+  },
+  {
+   "name": "cellArea_km2",
+   "dtype": "float",
+   "units": "km^2",
+   "source": "derived from mesh._adjTriList + curData.t_xyz",
+   "semantics": "spherical Voronoi cell area (Van Oosterom-Strackee over the incident-triangle ring), scaled by R = 6371 km — the radius the codebase itself assumes (js/terrain-metrics.js:19). Rescale if your planet is not Earth-sized.",
+   "precision": 2
+  },
+  {
+   "name": "isLand",
+   "dtype": "uint8",
+   "units": "flag",
+   "source": "derived",
+   "semantics": "r_elevation > 0",
+   "precision": "exact"
+  },
+  {
+   "name": "isMountain",
+   "dtype": "uint8",
+   "units": "flag",
+   "source": "curData.mountain_r (Set)",
+   "semantics": "tectonic mountain class (js/elevation.js:230-235)",
+   "precision": "exact"
+  },
+  {
+   "name": "isTectCoastal",
+   "dtype": "uint8",
+   "units": "flag",
+   "source": "curData.coastline_r (Set)",
+   "semantics": "TECTONIC boundary class (js/elevation.js:227-236) — this is the old CSV `isCoastal`. It is NOT a land/ocean coastline; use isSurfaceCoast for that.",
+   "precision": "exact"
+  },
+  {
+   "name": "isSurfaceCoast",
+   "dtype": "uint8",
+   "units": "flag",
+   "source": "derived from mesh.adjOffset/adjList",
+   "semantics": "TRUE coastline: this cell has at least one neighbour on the other side of sea level",
+   "precision": "exact"
+  },
+  {
+   "name": "isOceanRegion",
+   "dtype": "uint8",
+   "units": "flag",
+   "source": "curData.ocean_r (Set)",
+   "semantics": "tectonic ocean-boundary class",
+   "precision": "exact"
+  },
+  {
+   "name": "plate",
+   "dtype": "Int32",
+   "units": "plate id",
+   "source": "curData.r_plate",
+   "semantics": "COARSE-MESH SEED REGION ID, not a dense 0..P-1 index. Join against orogen_plates.csv.",
+   "precision": "exact"
+  },
+  {
+   "name": "isOcPlate",
+   "dtype": "uint8",
+   "units": "flag",
+   "source": "curData.plateIsOcean (Set)",
+   "semantics": "current oceanic/continental flag of this cell's plate",
+   "precision": "exact"
+  },
+  {
+   "name": "origIsOcPlate",
+   "dtype": "uint8",
+   "units": "flag",
+   "source": "curData.originalPlateIsOcean (Set)",
+   "semantics": "flag as first generated, before any user plate toggle",
+   "precision": "exact"
+  },
+  {
+   "name": "stress",
+   "dtype": "Float32",
+   "units": "dimensionless",
+   "source": "curData.r_stress",
+   "semantics": "plate-boundary stress magnitude",
+   "precision": 5
+  },
+  {
+   "name": "eastX",
+   "dtype": "float",
+   "units": "unit vector component",
+   "source": "derived (exactly js/wind.js:578-589)",
+   "semantics": "local east unit vector, x",
+   "precision": 7
+  },
+  {
+   "name": "eastY",
+   "dtype": "float",
+   "units": "unit vector component",
+   "source": "derived (exactly js/wind.js:578-589)",
+   "semantics": "local east unit vector, y — identically 0 under the Y-up convention",
+   "precision": 7
+  },
+  {
+   "name": "eastZ",
+   "dtype": "float",
+   "units": "unit vector component",
+   "source": "derived (exactly js/wind.js:578-589)",
+   "semantics": "local east unit vector, z",
+   "precision": 7
+  },
+  {
+   "name": "northX",
+   "dtype": "float",
+   "units": "unit vector component",
+   "source": "derived (exactly js/wind.js:578-589)",
+   "semantics": "local north unit vector, x",
+   "precision": 7
+  },
+  {
+   "name": "northY",
+   "dtype": "float",
+   "units": "unit vector component",
+   "source": "derived (exactly js/wind.js:578-589)",
+   "semantics": "local north unit vector, y",
+   "precision": 7
+  },
+  {
+   "name": "northZ",
+   "dtype": "float",
+   "units": "unit vector component",
+   "source": "derived (exactly js/wind.js:578-589)",
+   "semantics": "local north unit vector, z",
+   "precision": 7
+  },
+  {
+   "name": "backArc",
+   "dtype": "Float32Array",
+   "units": "elevation delta",
+   "source": "curData.debugLayers.backArc",
+   "semantics": "back-arc basin contribution",
+   "precision": 5
+  },
+  {
+   "name": "base",
+   "dtype": "Float32Array",
+   "units": "elevation",
+   "source": "curData.debugLayers.base",
+   "semantics": "raw distance-field elevation before any per-domain modifier",
+   "precision": 5
+  },
+  {
+   "name": "basin",
+   "dtype": "Float32Array",
+   "units": "[0,1]",
+   "source": "curData.debugLayers.basin",
+   "semantics": "shield <-> basin personality field; LAND ONLY",
+   "precision": 5
+  },
+  {
+   "name": "coastal",
+   "dtype": "Float32Array",
+   "units": "elevation delta",
+   "source": "curData.debugLayers.coastal",
+   "semantics": "coastal-plain suppression + coastal detail + island-arc uplift; mixed sign",
+   "precision": 5
+  },
+  {
+   "name": "continentality",
+   "dtype": "Float32Array",
+   "units": "[0,1]",
+   "source": "curData.debugLayers.continentality",
+   "semantics": "smoothstep of BFS distance-from-ocean, elevation mask",
+   "precision": 5
+  },
+  {
+   "name": "erosionDelta",
+   "dtype": "Float32Array",
+   "units": "elevation delta",
+   "source": "curData.debugLayers.erosionDelta",
+   "semantics": "final minus the post-WARP snapshot (js/planet-worker.js:88,154-157). EXCLUDES terrain warp; use postProcessDelta for warp + everything.",
+   "precision": 5
+  },
+  {
+   "name": "foldRidge",
+   "dtype": "Float32Array",
+   "units": "dimensionless",
+   "source": "curData.debugLayers.foldRidge",
+   "semantics": "generator debug layer (see js/elevation.js / js/planet-worker.js)",
+   "precision": 5
+  },
+  {
+   "name": "hotspot",
+   "dtype": "Float32Array",
+   "units": "elevation delta",
+   "source": "curData.debugLayers.hotspot",
+   "semantics": "hotspot / plume uplift field",
+   "precision": 5
+  },
+  {
+   "name": "interior",
+   "dtype": "Float32Array",
+   "units": "elevation delta",
+   "source": "curData.debugLayers.interior",
+   "semantics": "continental-interior bias and plateau boost; LAND ONLY, 0 on ocean",
+   "precision": 5
+  },
+  {
+   "name": "koppen",
+   "dtype": "Uint8Array",
+   "units": "class id",
+   "source": "curData.debugLayers.koppen",
+   "semantics": "CATEGORICAL index into KOPPEN_CLASSES; 0 = Ocean. See orogen_koppen_classes.csv.",
+   "precision": "exact"
+  },
+  {
+   "name": "margins",
+   "dtype": "Float32Array",
+   "units": "class code",
+   "source": "curData.debugLayers.margins",
+   "semantics": "CATEGORICAL, ocean only: 0.2 passive margin, 0.8 active margin, 1.0 mid-ocean ridge, -0.5 fracture zone (js/elevation.js:1174-1177)",
+   "precision": 5
+  },
+  {
+   "name": "noise",
+   "dtype": "Float32Array",
+   "units": "elevation delta",
+   "source": "curData.debugLayers.noise",
+   "semantics": "delta added by the noise block",
+   "precision": 5
+  },
+  {
+   "name": "ocean",
+   "dtype": "Float32Array",
+   "units": "elevation",
+   "source": "curData.debugLayers.ocean",
+   "semantics": "ocean-floor shelf/slope/abyss profile; OCEAN ONLY",
+   "precision": 5
+  },
+  {
+   "name": "orogenicPower",
+   "dtype": "Float32Array",
+   "units": "[-0.5, +0.5]",
+   "source": "curData.debugLayers.orogenicPower",
+   "semantics": "shaped low-frequency noise STORED AS raw-0.5, so its range is centred on zero (js/elevation.js:929)",
+   "precision": 5
+  },
+  {
+   "name": "pressureSummer",
+   "dtype": "Float32Array",
+   "units": "hPa deviation",
+   "source": "curData.debugLayers.pressureSummer",
+   "semantics": "sea-level pressure DEVIATION from 1013 hPa (js/wind.js:850-853)",
+   "precision": 5
+  },
+  {
+   "name": "pressureWinter",
+   "dtype": "Float32Array",
+   "units": "hPa deviation",
+   "source": "curData.debugLayers.pressureWinter",
+   "semantics": "sea-level pressure DEVIATION from 1013 hPa (js/wind.js:850-853)",
+   "precision": 5
+  },
+  {
+   "name": "rainShadowSummer",
+   "dtype": "Float32Array",
+   "units": "dimensionless",
+   "source": "curData.debugLayers.rainShadowSummer",
+   "semantics": "orographic rain-shadow factor, NH summer",
+   "precision": 5
+  },
+  {
+   "name": "rainShadowWinter",
+   "dtype": "Float32Array",
+   "units": "dimensionless",
+   "source": "curData.debugLayers.rainShadowWinter",
+   "semantics": "orographic rain-shadow factor, NH winter",
+   "precision": 5
+  },
+  {
+   "name": "tecActivity",
+   "dtype": "Float32Array",
+   "units": "[0,1]",
+   "source": "curData.debugLayers.tecActivity",
+   "semantics": "max(normalised stress, cubed proximity to mountain seeds)",
+   "precision": 5
+  },
+  {
+   "name": "tectonic",
+   "dtype": "Float32Array",
+   "units": "elevation delta",
+   "source": "curData.debugLayers.tectonic",
+   "semantics": "delta added by the tectonic-uplift block",
+   "precision": 5
+  },
+  {
+   "name": "windSpeedSummer",
+   "dtype": "Float32Array",
+   "units": "[0,1]",
+   "source": "curData.debugLayers.windSpeedSummer",
+   "semantics": "p95-normalised AND CLAMPED (js/wind.js:842-846). Use windS_Speed_raw for the true magnitude.",
+   "precision": 5
+  },
+  {
+   "name": "windSpeedWinter",
+   "dtype": "Float32Array",
+   "units": "[0,1]",
+   "source": "curData.debugLayers.windSpeedWinter",
+   "semantics": "p95-normalised AND CLAMPED (js/wind.js:842-846). Use windW_Speed_raw for the true magnitude.",
+   "precision": 5
+  },
+  {
+   "name": "superPlate",
+   "dtype": "Int32 (stored as Float32Array)",
+   "units": "group id",
+   "source": "curData.debugLayers.superPlates",
+   "semantics": "CATEGORICAL super-plate group id 0..numSuperPlates-1; nominal, not ordered. Renumbered from scratch by any plate-edit rebuild (js/planet-worker.js:598-601).",
+   "precision": "exact"
+  },
+  {
+   "name": "koppen_code",
+   "dtype": "string",
+   "units": "Koppen code",
+   "source": "js/koppen.js KOPPEN_CLASSES[debugLayers.koppen[r]].code",
+   "semantics": "e.g. Af, BWh, Cfb; \"Ocean\" for class 0. Full table in orogen_koppen_classes.csv.",
+   "precision": "exact"
+  },
+  {
+   "name": "tS",
+   "dtype": "Float32",
+   "units": "[0,1]",
+   "source": "curData.r_temperature_summer",
+   "semantics": "normalised NH-summer temperature; CLAMPED to [0,1] at js/temperature.js:997",
+   "precision": 5
+  },
+  {
+   "name": "tW",
+   "dtype": "Float32",
+   "units": "[0,1]",
+   "source": "curData.r_temperature_winter",
+   "semantics": "normalised NH-winter temperature; CLAMPED to [0,1] at js/temperature.js:997",
+   "precision": 5
+  },
+  {
+   "name": "tempC_S",
+   "dtype": "float",
+   "units": "degrees C",
+   "source": "derived",
+   "semantics": "-45 + t*90. Because t is clamped, +-45 C are SATURATED, not measured — see tS_sat.",
+   "precision": 3
+  },
+  {
+   "name": "tempC_W",
+   "dtype": "float",
+   "units": "degrees C",
+   "source": "derived",
+   "semantics": "-45 + t*90. Because t is clamped, +-45 C are SATURATED, not measured — see tW_sat.",
+   "precision": 3
+  },
+  {
+   "name": "tS_sat",
+   "dtype": "int8",
+   "units": "flag",
+   "source": "derived",
+   "semantics": "-1 = floored at -45 C, +1 = ceilinged at +45 C, 0 = in range",
+   "precision": "exact"
+  },
+  {
+   "name": "tW_sat",
+   "dtype": "int8",
+   "units": "flag",
+   "source": "derived",
+   "semantics": "-1 = floored at -45 C, +1 = ceilinged at +45 C, 0 = in range",
+   "precision": "exact"
+  },
+  {
+   "name": "pS",
+   "dtype": "Float32",
+   "units": "p95 units, post-contrast",
+   "source": "curData.r_precip_summer",
+   "semantics": "p95-clamped, then interior-capped, then contrast-stretched. CAN EXCEED 1.0.",
+   "precision": 5
+  },
+  {
+   "name": "pW",
+   "dtype": "Float32",
+   "units": "p95 units, post-contrast",
+   "source": "curData.r_precip_winter",
+   "semantics": "p95-clamped, then interior-capped, then contrast-stretched. CAN EXCEED 1.0.",
+   "precision": 5
+  },
+  {
+   "name": "precipMM_S",
+   "dtype": "float",
+   "units": "mm per half-year",
+   "source": "derived",
+   "semantics": "pS * KOPPEN_PRECIP_SCALE_MM. This is EXACTLY what the Koppen classifier saw (js/koppen.js:110-111 multiplies the same post-contrast value).",
+   "precision": 3
+  },
+  {
+   "name": "precipMM_W",
+   "dtype": "float",
+   "units": "mm per half-year",
+   "source": "derived",
+   "semantics": "pW * KOPPEN_PRECIP_SCALE_MM — exactly what the Koppen classifier saw.",
+   "precision": 3
+  },
+  {
+   "name": "pS_p95units",
+   "dtype": "float",
+   "units": "p95 units, pre-contrast",
+   "source": "derived (inverse of js/precipitation.js:745-763)",
+   "semantics": "summer precip with the seasonal-contrast stretch removed; this is the scientifically comparable field",
+   "precision": 5
+  },
+  {
+   "name": "pW_p95units",
+   "dtype": "float",
+   "units": "p95 units, pre-contrast",
+   "source": "derived (inverse of js/precipitation.js:745-763)",
+   "semantics": "winter precip with the seasonal-contrast stretch removed",
+   "precision": 5
+  },
+  {
+   "name": "pS_censored",
+   "dtype": "uint8 or empty",
+   "units": "flag",
+   "source": "derived",
+   "semantics": "pre-contrast summer value sits at the p95 ceiling. SOUND but not COMPLETE: the continental interior cap (js/precipitation.js:731-739) can pull a clamped cell below the ceiling and hide it. Empty where precip_invertible = 0.",
+   "precision": "exact"
+  },
+  {
+   "name": "pW_censored",
+   "dtype": "uint8 or empty",
+   "units": "flag",
+   "source": "derived",
+   "semantics": "as pS_censored, for winter",
+   "precision": "exact"
+  },
+  {
+   "name": "precip_invertible",
+   "dtype": "uint8",
+   "units": "flag",
+   "source": "derived",
+   "semantics": "0 when the max(0,..) floor in js/precipitation.js:759-761 destroyed mean-preservation for this cell (either season exactly 0), or when PRECIP_SEASON_CONTRAST was unreadable",
+   "precision": "exact"
+  },
+  {
+   "name": "windS_E",
+   "dtype": "Float32",
+   "units": "raw model units",
+   "source": "curData",
+   "semantics": "NH-summer wind, eastward component (pre-normalisation)",
+   "precision": "sig9"
+  },
+  {
+   "name": "windS_N",
+   "dtype": "Float32",
+   "units": "raw model units",
+   "source": "curData",
+   "semantics": "NH-summer wind, northward component (pre-normalisation)",
+   "precision": "sig9"
+  },
+  {
+   "name": "windS_Speed_raw",
+   "dtype": "float",
+   "units": "raw model units",
+   "source": "derived",
+   "semantics": "NH-summer wind, TRUE uncensored magnitude hypot(E,N). The app only ever displays min(1, hypot/p95).",
+   "precision": "sig9"
+  },
+  {
+   "name": "windW_E",
+   "dtype": "Float32",
+   "units": "raw model units",
+   "source": "curData",
+   "semantics": "NH-winter wind, eastward component (pre-normalisation)",
+   "precision": "sig9"
+  },
+  {
+   "name": "windW_N",
+   "dtype": "Float32",
+   "units": "raw model units",
+   "source": "curData",
+   "semantics": "NH-winter wind, northward component (pre-normalisation)",
+   "precision": "sig9"
+  },
+  {
+   "name": "windW_Speed_raw",
+   "dtype": "float",
+   "units": "raw model units",
+   "source": "derived",
+   "semantics": "NH-winter wind, TRUE uncensored magnitude hypot(E,N). The app only ever displays min(1, hypot/p95).",
+   "precision": "sig9"
+  },
+  {
+   "name": "ocS_E",
+   "dtype": "Float32",
+   "units": "raw model units",
+   "source": "curData",
+   "semantics": "NH-summer ocean current, eastward component (pre-normalisation)",
+   "precision": "sig9"
+  },
+  {
+   "name": "ocS_N",
+   "dtype": "Float32",
+   "units": "raw model units",
+   "source": "curData",
+   "semantics": "NH-summer ocean current, northward component (pre-normalisation)",
+   "precision": "sig9"
+  },
+  {
+   "name": "ocS_Speed_raw",
+   "dtype": "float",
+   "units": "raw model units",
+   "source": "derived",
+   "semantics": "NH-summer ocean current, TRUE uncensored magnitude hypot(E,N). The app only ever displays min(1, hypot/p95).",
+   "precision": "sig9"
+  },
+  {
+   "name": "ocW_E",
+   "dtype": "Float32",
+   "units": "raw model units",
+   "source": "curData",
+   "semantics": "NH-winter ocean current, eastward component (pre-normalisation)",
+   "precision": "sig9"
+  },
+  {
+   "name": "ocW_N",
+   "dtype": "Float32",
+   "units": "raw model units",
+   "source": "curData",
+   "semantics": "NH-winter ocean current, northward component (pre-normalisation)",
+   "precision": "sig9"
+  },
+  {
+   "name": "ocW_Speed_raw",
+   "dtype": "float",
+   "units": "raw model units",
+   "source": "derived",
+   "semantics": "NH-winter ocean current, TRUE uncensored magnitude hypot(E,N). The app only ever displays min(1, hypot/p95).",
+   "precision": "sig9"
+  },
+  {
+   "name": "ocSpeedS_norm",
+   "dtype": "Float32",
+   "units": "[0,1]",
+   "source": "curData.r_ocean_speed_summer",
+   "semantics": "min(1, hypot/p95) as displayed (js/ocean.js:373-376). Multiply by meta.p95.oceanSummer to recover raw units.",
+   "precision": 5
+  },
+  {
+   "name": "ocSpeedW_norm",
+   "dtype": "Float32",
+   "units": "[0,1]",
+   "source": "curData.r_ocean_speed_winter",
+   "semantics": "min(1, hypot/p95) as displayed. Multiply by meta.p95.oceanWinter to recover raw units.",
+   "precision": 5
+  },
+  {
+   "name": "owS",
+   "dtype": "Float32",
+   "units": "[0,1]",
+   "source": "curData.r_ocean_warmth_summer",
+   "semantics": "advected ocean warmth, NH summer",
+   "precision": 5
+  },
+  {
+   "name": "owW",
+   "dtype": "Float32",
+   "units": "[0,1]",
+   "source": "curData.r_ocean_warmth_winter",
+   "semantics": "advected ocean warmth, NH winter",
+   "precision": 5
+  }
+ ],
+ "debugLayersCaptured": [
+  "backArc",
+  "base",
+  "basin",
+  "coastal",
+  "continentality",
+  "erosionDelta",
+  "foldRidge",
+  "hotspot",
+  "interior",
+  "koppen",
+  "margins",
+  "noise",
+  "ocean",
+  "orogenicPower",
+  "pressureSummer",
+  "pressureWinter",
+  "rainShadowSummer",
+  "rainShadowWinter",
+  "tecActivity",
+  "tectonic",
+  "windSpeedSummer",
+  "windSpeedWinter"
+ ],
+ "debugLayersAbsent": [
+  "lip",
+  "phasorRidge",
+  "uniformNoise",
+  "dynamicTopo",
+  "noiseAmp",
+  "foldBeltWeight",
+  "cratonWeight",
+  "basinWeight",
+  "skeleton",
+  "continentalDrag",
+  "sizeVelocity",
+  "plateSpeed",
+  "velChange",
+  "mantleFlow",
+  "tempContinentality"
+ ],
+ "debugLayersRejected": [],
+ "aliasedLayers": {
+  "precipSummer": "pS",
+  "precipWinter": "pW",
+  "tempSummer": "tS",
+  "tempWinter": "tW"
+ },
+ "superPlateCount": 20,
+ "plateEditDetected": true,
+ "syntheticPoleRegion": 2560000,
+ "fieldsMissing": [
+  "coastDistLand",
+  "westness",
+  "plateContinentality",
+  "tempContinentality",
+  "coastDistLand/westness/plateContinentality (CFG.RERUN_WIND is off)",
+  "tempContinentality (omitted by the on-demand climate path; set CFG.RERUN_WIND + CFG.RERUN_TEMP to recover)"
+ ],
+ "parts": [
+  {
+   "part": 0,
+   "file": "orogen_regions_part_00.csv.gz",
+   "bytes": 39851703,
+   "rows": 200000,
+   "firstId": 0,
+   "lastId": 199999
+  },
+  {
+   "part": 1,
+   "file": "orogen_regions_part_01.csv.gz",
+   "bytes": 40165361,
+   "rows": 200000,
+   "firstId": 200000,
+   "lastId": 399999
+  },
+  {
+   "part": 2,
+   "file": "orogen_regions_part_02.csv.gz",
+   "bytes": 41585141,
+   "rows": 200000,
+   "firstId": 400000,
+   "lastId": 599999
+  },
+  {
+   "part": 3,
+   "file": "orogen_regions_part_03.csv.gz",
+   "bytes": 42577095,
+   "rows": 200000,
+   "firstId": 600000,
+   "lastId": 799999
+  },
+  {
+   "part": 4,
+   "file": "orogen_regions_part_04.csv.gz",
+   "bytes": 42823996,
+   "rows": 200000,
+   "firstId": 800000,
+   "lastId": 999999
+  },
+  {
+   "part": 5,
+   "file": "orogen_regions_part_05.csv.gz",
+   "bytes": 42521851,
+   "rows": 200000,
+   "firstId": 1000000,
+   "lastId": 1199999
+  },
+  {
+   "part": 6,
+   "file": "orogen_regions_part_06.csv.gz",
+   "bytes": 42047379,
+   "rows": 200000,
+   "firstId": 1200000,
+   "lastId": 1399999
+  },
+  {
+   "part": 7,
+   "file": "orogen_regions_part_07.csv.gz",
+   "bytes": 41761286,
+   "rows": 200000,
+   "firstId": 1400000,
+   "lastId": 1599999
+  },
+  {
+   "part": 8,
+   "file": "orogen_regions_part_08.csv.gz",
+   "bytes": 42130605,
+   "rows": 200000,
+   "firstId": 1600000,
+   "lastId": 1799999
+  },
+  {
+   "part": 9,
+   "file": "orogen_regions_part_09.csv.gz",
+   "bytes": 42398219,
+   "rows": 200000,
+   "firstId": 1800000,
+   "lastId": 1999999
+  },
+  {
+   "part": 10,
+   "file": "orogen_regions_part_10.csv.gz",
+   "bytes": 41705859,
+   "rows": 200000,
+   "firstId": 2000000,
+   "lastId": 2199999
+  },
+  {
+   "part": 11,
+   "file": "orogen_regions_part_11.csv.gz",
+   "bytes": 41649379,
+   "rows": 200000,
+   "firstId": 2200000,
+   "lastId": 2399999
+  },
+  {
+   "part": 12,
+   "file": "orogen_regions_part_12.csv.gz",
+   "bytes": 32179260,
+   "rows": 160001,
+   "firstId": 2400000,
+   "lastId": 2560000
+  }
+ ],
+ "failedParts": [],
+ "cellAreaSolidAngleSr": 12.57488781802812,
+ "precipSeasonContrast": 1,
+ "precipMaxValueSeen": 1,
+ "conversions": {
+  "lat": "asin(y) * 180/PI   (Y-up, js/wind.js:571)",
+  "lon": "atan2(x, z) * 180/PI   (Y-up, js/wind.js:572)",
+  "elev_km": "js/color-map.js elevToHeightKm(elev)  [canonical generator curve]",
+  "temp_C": "-45 + t*90. js/temperature.js:997 CLAMPS t to [0,1] with T_MIN=-45/T_MAX=+45 (:789-790), so +-45 C are SATURATED, not measured — see tS_sat / tW_sat (-1 = floored, +1 = ceilinged, 0 = in range).",
+  "precip_mm": "p * 1000 (KOPPEN_PRECIP_SCALE_MM). precipMM_S/W reproduce exactly what the Koppen classifier saw (js/koppen.js:110-111 uses the same post-contrast value).",
+  "cellArea_km2": "spherical Voronoi cell area x R^2 with R = 6371 km — the radius the codebase itself assumes (js/terrain-metrics.js:19). Rescale for a non-Earth-sized planet.",
+  "wind3D": "windS_3D = windS_E*[eastX,eastY,eastZ] + windS_N*[northX,northY,northZ]; same for windW_, ocS_, ocW_. The basis reproduces js/wind.js:578-589 exactly.",
+  "windSpeed_raw": "hypot(E, N) — uncensored. The app displays min(1, hypot/p95) (js/wind.js:842-846).",
+  "oceanSpeed_raw": "hypot(E, N) — uncensored. The app displays min(1, hypot/p95) (js/ocean.js:365-377)."
+ },
+ "notes": [
+  "isTectCoastal is the generator TECTONIC class (the old CSV `isCoastal`, js/elevation.js:227-236), not a coastline. isSurfaceCoast is the TRUE land/ocean adjacency coastline, computed here.",
+  "Plate ids are COARSE-mesh seed region ids, not a dense 0..P-1 range.",
+  "pS/pW are p95-clamped (js/precipitation.js:721-724), then interior-capped (:731-739), then contrast-stretched by PRECIP_SEASON_CONTRAST=1 (:745-763) — so they CAN EXCEED 1.0. pS_p95units/pW_p95units are the exact pre-contrast values (the stretch preserves the seasonal mean, so it inverts exactly). pS_censored/pW_censored flag cells whose PRE-CONTRAST value hit the p95 ceiling: sound, but not complete, because the continental interior cap can pull a clamped cell back below the ceiling. Cells with precip_invertible = 0 are not recoverable (the max(0,..) floor at :759-761 broke mean-preservation).",
+  "The layer once exported as `foldRidge` was renamed `phasorRidge` upstream and is emitted under that name. `superPlates` is emitted as the integer column `superPlate`.",
+  "tempSummer/tempWinter/precipSummer/precipWinter in debugLayers are the SAME ARRAY OBJECTS as r_temperature_summer/winter and r_precip_summer/winter (js/planet-worker.js:369-371, 776-778); they are emitted once each, under the short names tS/tW/pS/pW. See aliasedLayers.",
+  "tempContinentality is omitted by the on-demand climate path (js/planet-worker.js:767-780) and therefore only exists on planets small enough for climate at generation time (AUTO_CLIMATE_THRESHOLD = 300000, js/main.js:83). Set CFG.RERUN_WIND + CFG.RERUN_TEMP to recover it.",
+  "coastDistLand, westness and plateContinentality are returned by computeWind (js/wind.js:884-886) but never forwarded by buildClimateFields (js/planet-worker.js:171-193), so they exist in NO stored field. Set CFG.RERUN_WIND to recover them.",
+  "Region 2560000 is the synthetic vertex appended by buildSphere (js/sphere-mesh.js:178-184) at (0,0,1) to close the Fibonacci mesh. Under lat=asin(y)/lon=atan2(x,z) it reports lat 0, lon 0. Its Voronoi cell, neighbour ring, cellArea_km2 and isSurfaceCoast are mesh artefacts, not terrain. Filter isSyntheticPole = 1 before any spatial analysis.",
+  "plateEditDetected = true: the five plate-physics layers were destroyed by a plate-edit rebuild (editDone replaces curData.debugLayers wholesale) and superPlate ids were renumbered by buildSuperPlates. Regenerate the planet from its code and export BEFORE editing to capture them.",
+  "ITCZ curves are a 360-bin RESAMPLING at bin centres over [-pi, pi) (js/wind.js:863-875) of a spline fitted at only NUM_LON = 72 longitudes (js/wind.js:235) — 360 is not the native resolution."
+ ],
+ "terrainMetricsAtGeneration": {
+  "continent_count": 4,
+  "island_count_total": 1471,
+  "island_cells_total": 19141,
+  "continent_solidity_mean": 0.4444,
+  "continent_solidity_variance": 0.0064,
+  "relief_headroom": 0.493,
+  "peak_clustering": 0.9936,
+  "coast_complexity_index": 55.7507,
+  "coastline_cells": 40772,
+  "land_cells": 534840,
+  "ocean_elev_stddev": 0.10754,
+  "ocean_trench_gap": 0.05572,
+  "ocean_plate_land_cells": 45593,
+  "flat_ocean_plate_land_cells": 35556,
+  "flat_ocean_plate_land_fraction": 0.7799,
+  "ocean_mode_elev": -0.2302,
+  "land_mode_elev": 0.0038,
+  "hypsometry_trough_depth": 0.8188,
+  "mountain_boundary_ratio": 0.6,
+  "mountain_boundary_median_hops": 9,
+  "all_land_boundary_median_hops": 15,
+  "orogenic_elev_correlation": 0.1397,
+  "erosion_slope_correlation": 0.6768,
+  "island_count": 1471,
+  "island_size_max": 1877,
+  "island_size_median": 2,
+  "island_mean_elevation": 0.0378,
+  "island_arc_association": 0.9708,
+  "land_band_0_50m_frac": 0.5304,
+  "land_band_50_200m_frac": 0.1611,
+  "land_band_200_500m_frac": 0.0827,
+  "land_band_500m_plus_frac": 0.2258,
+  "coastal_lowland_fraction": 0.6915,
+  "shelf_break_threshold": -0.3071,
+  "shelf_width_active_hops": 11,
+  "shelf_width_passive_hops": 14,
+  "shelf_width_active_km": 138,
+  "shelf_width_passive_km": 175,
+  "shelf_passive_wider_than_active": true,
+  "shelf_measurements_active": 3139,
+  "shelf_measurements_passive": 7204,
+  "shelf_first_ocean_cell_mean_elev": -0.08144,
+  "near_coast_mean_elev": 0.06973,
+  "interior_gradient_per_hop": 0.04345,
+  "interior_gradient_per_km": 0.003474,
+  "hotspot_kurtosis": 79.16,
+  "hotspot_active_fraction": 0.0333,
+  "back_arc_active_cells": 658940,
+  "back_arc_mean_magnitude": 0.01647,
+  "fold_ridge_active_cells": 368903,
+  "fold_ridge_mean_magnitude": 0.03516,
+  "_metrics_ms": 21532.4
+ },
+ "terrainMetricsFresh": null,
+ "terrainMetrics": {
+  "continent_count": 4,
+  "island_count_total": 1471,
+  "island_cells_total": 19141,
+  "continent_solidity_mean": 0.4444,
+  "continent_solidity_variance": 0.0064,
+  "relief_headroom": 0.493,
+  "peak_clustering": 0.9936,
+  "coast_complexity_index": 55.7507,
+  "coastline_cells": 40772,
+  "land_cells": 534840,
+  "ocean_elev_stddev": 0.10754,
+  "ocean_trench_gap": 0.05572,
+  "ocean_plate_land_cells": 45593,
+  "flat_ocean_plate_land_cells": 35556,
+  "flat_ocean_plate_land_fraction": 0.7799,
+  "ocean_mode_elev": -0.2302,
+  "land_mode_elev": 0.0038,
+  "hypsometry_trough_depth": 0.8188,
+  "mountain_boundary_ratio": 0.6,
+  "mountain_boundary_median_hops": 9,
+  "all_land_boundary_median_hops": 15,
+  "orogenic_elev_correlation": 0.1397,
+  "erosion_slope_correlation": 0.6768,
+  "island_count": 1471,
+  "island_size_max": 1877,
+  "island_size_median": 2,
+  "island_mean_elevation": 0.0378,
+  "island_arc_association": 0.9708,
+  "land_band_0_50m_frac": 0.5304,
+  "land_band_50_200m_frac": 0.1611,
+  "land_band_200_500m_frac": 0.0827,
+  "land_band_500m_plus_frac": 0.2258,
+  "coastal_lowland_fraction": 0.6915,
+  "shelf_break_threshold": -0.3071,
+  "shelf_width_active_hops": 11,
+  "shelf_width_passive_hops": 14,
+  "shelf_width_active_km": 138,
+  "shelf_width_passive_km": 175,
+  "shelf_passive_wider_than_active": true,
+  "shelf_measurements_active": 3139,
+  "shelf_measurements_passive": 7204,
+  "shelf_first_ocean_cell_mean_elev": -0.08144,
+  "near_coast_mean_elev": 0.06973,
+  "interior_gradient_per_hop": 0.04345,
+  "interior_gradient_per_km": 0.003474,
+  "hotspot_kurtosis": 79.16,
+  "hotspot_active_fraction": 0.0333,
+  "back_arc_active_cells": 658940,
+  "back_arc_mean_magnitude": 0.01647,
+  "fold_ridge_active_cells": 368903,
+  "fold_ridge_mean_magnitude": 0.03516,
+  "_metrics_ms": 21532.4
+ },
+ "terrainMetricsNote": "window.__terrainMetrics is written ONLY on the initial `done` message (js/generate.js:243) and is never refreshed by reapplyDone or editDone, so terrainMetricsAtGeneration describes the planet AS FIRST GENERATED and can be stale after any Reapply or plate edit. terrainMetricsFresh is non-null only when CFG.RECOMPUTE_TERRAIN_METRICS was on; it is recomputed against the CURRENT r_elevation using a COPY of plateIsOcean, because computeTerrainMetrics writes back onto the context object it is given (js/terrain-metrics.js:802-805) and passing curData directly would corrupt the live app. Keys beginning with _ are dropped by computeTerrainMetrics itself and are not recoverable.",
+ "climateParams": null,
+ "climateParamsModified": null,
+ "climateParamsNote": "js/climate-config.js:153 exports CLIMATE = {...CLIMATE_DEFAULTS} — a live, mutable object every climate module reads at call time. Without it the exported climate columns cannot be reproduced or fully interpreted (PRECIP_MODEL_BLEND, PRECIP_CONT_CAP_*, PRECIP_SEASON_CONTRAST, TEMP_SWING_SCALE, KOPPEN_SHOULDER_FRAC, the WIND_ITCZ_* family all shape these numbers).",
+ "p95": {
+  "windSummer": {
+   "p95": 101.3637846351477,
+   "samples": 3782,
+   "spread": 2.566527134630352e-7
+  },
+  "windWinter": {
+   "p95": 99.8857954971106,
+   "samples": 3777,
+   "spread": 2.408641716215245e-7
+  },
+  "oceanSummer": {
+   "p95": 1.1286844620167227,
+   "samples": 2998,
+   "spread": 1.3832696910403715e-7
+  },
+  "oceanWinter": {
+   "p95": 1.1709572831181498,
+   "samples": 2994,
+   "spread": 1.3341452399629648e-7
+  },
+  "precip": null,
+  "_note": "p95 = hypot(E,N)/normalisedSpeed, solved on uncensored cells; `spread` should be ~1e-3 if the solve is sound. Multiply any *Speed_norm column by p95 to recover raw units. `precip` is null because the pre-normalisation precipitation array is overwritten IN PLACE (js/precipitation.js:721-724) and its p95 is not solvable from stored state."
+ },
+ "dualMesh": {
+  "numTriangles": 5119998,
+  "numRegions": 2560001,
+  "files": [
+   "orogen_triangles_xyz_elev.f32.gz",
+   "orogen_mesh_triangles.Int32Array.gz",
+   "orogen_mesh_halfedges.Int32Array.gz"
+  ],
+  "trianglesDtype": "Int32Array",
+  "halfedgesDtype": "Int32Array",
+  "orogen_triangles_xyz_elev.f32": "Float32 [x,y,z,elev] * numTriangles, little-endian. xyz is the UNNORMALISED arithmetic centroid of the three corner unit vectors (js/sphere-mesh.js:206-218) — normalise before using it as a direction. elev is curData.t_elevation, the mean of the three corner region elevations (NaN if t_elevation was unavailable).",
+  "orogen_mesh_triangles": "three region ids per triangle, row-major (the Delaunay index)",
+  "orogen_mesh_halfedges": "opposite-side index per side, -1 where unpaired"
+ },
+ "sidecars": [
+  {
+   "name": "orogen_plates.csv",
+   "bytes": 6939
+  },
+  {
+   "name": "orogen_koppen_classes.csv",
+   "bytes": 1328
+  },
+  {
+   "name": "orogen_itcz.csv",
+   "bytes": 22450
+  }
+ ],
+ "sidecarErrors": [],
+ "elapsedSeconds": 442.5,
+ "resumeHint": null
+}

@@ -7,6 +7,7 @@ the header once, and writes a single `orogen_regions_full.csv` (gitignored).
     python3 scripts/reassemble.py             # -> ./orogen_regions_full.csv
     python3 scripts/reassemble.py --gzip      # -> ./orogen_regions_full.csv.gz
     python3 scripts/reassemble.py --v2        # corrected v2 export -> ./orogen_regions_full_v2.csv
+    python3 scripts/reassemble.py --v3        # browser extract     -> ./orogen_regions_v3.csv
     python3 scripts/reassemble.py --out PATH  # custom destination
     python3 scripts/reassemble.py --check     # count rows only, assert the expected total
 
@@ -19,6 +20,16 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_ROWS = 2_560_001
+
+# key -> (directory under data/, part-file stem, output stem)
+# v1/v2 name their parts after their directory; the v3 browser extract does not
+# (data/orogen_regions_v3_browser/orogen_regions_part_00.csv.gz), so the
+# directory, the part stem and the output name are tracked separately.
+DATASETS = {
+    "v1": ("orogen_regions_full", "orogen_regions_full", "orogen_regions_full"),
+    "v2": ("orogen_regions_full_v2", "orogen_regions_full_v2", "orogen_regions_full_v2"),
+    "v3": ("orogen_regions_v3_browser", "orogen_regions", "orogen_regions_v3"),
+}
 
 
 def part_paths(data_dir, stem):
@@ -36,10 +47,14 @@ def main():
                     help="don't write; just count data rows and verify the expected total")
     ap.add_argument("--v2", action="store_true",
                     help="reassemble the corrected v2 export (data/orogen_regions_full_v2/)")
+    ap.add_argument("--v3", action="store_true",
+                    help="reassemble the browser extract (data/orogen_regions_v3_browser/)")
     args = ap.parse_args()
 
-    stem = "orogen_regions_full_v2" if args.v2 else "orogen_regions_full"
-    parts = part_paths(REPO_ROOT / "data" / stem, stem)
+    if args.v2 and args.v3:
+        sys.exit("ERROR: choose one of --v2 / --v3")
+    dir_name, part_stem, stem = DATASETS["v3" if args.v3 else ("v2" if args.v2 else "v1")]
+    parts = part_paths(REPO_ROOT / "data" / dir_name, part_stem)
 
     if args.check:
         total = 0
