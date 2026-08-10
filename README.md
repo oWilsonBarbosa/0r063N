@@ -24,9 +24,14 @@ reconstructed **750-million-year geological + climate history**.
 |---|---|
 | **The planet's physical geography** — 13-plate atlas (relief, tectonics, climate, currents, ecology) | [`reports/regional/atlas/`](reports/regional/atlas/README.md) |
 | **Region-by-region write-ups** — 20 chapter-style gazetteers with maps | [`reports/regional/`](reports/regional/README.md) |
+| **A continent-scale deep dive** — the Western Lands (Meridia + Selvana) and their shared ocean | [`docs/WESTERN_LANDS.md`](docs/WESTERN_LANDS.md) |
 | **How the world came to be** — a 750-Myr plate-tectonic history | [`docs/GEOLOGICAL_HISTORY.md`](docs/GEOLOGICAL_HISTORY.md) |
 | **How its climate evolved** — paleoclimate across the supercontinent cycle | [`docs/PALEOCLIMATE.md`](docs/PALEOCLIMATE.md) |
 | **How life began** — origin, biochemistry, and the founding tree of life | [`docs/life/`](docs/life/README.md) |
+| **The four continents** — Meridia, Sirocca, Selvana, Borea (area, climate, NPP) | [`docs/CONTINENTS.md`](docs/CONTINENTS.md) |
+| **Life & habitats** — biogeographic provinces of the four continents | [`docs/BIOGEOGRAPHY.md`](docs/BIOGEOGRAPHY.md) |
+| **Subduction style** — Chilean vs Mariana margins | [`docs/SUBDUCTION_STYLE.md`](docs/SUBDUCTION_STYLE.md) |
+| **Regions ↔ continents** — which of the 20 gazetteers map each continent | [`docs/REGION_CROSSWALK.md`](docs/REGION_CROSSWALK.md) |
 | **The raw data** — what the columns mean | [`docs/DATA_DICTIONARY_V2.md`](docs/DATA_DICTIONARY_V2.md) (corrected v2) · [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) (original) · [`docs/DATA_DICTIONARY_V3.md`](docs/DATA_DICTIONARY_V3.md) (browser extract) |
 | **Why v2 exists** — the dataset audit (69 tests, 15 alerts, 9 root causes) | [`reports/audit/`](reports/audit/README.md) |
 

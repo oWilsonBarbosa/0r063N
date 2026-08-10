@@ -44,12 +44,12 @@ Mesh verified uniform-on-sphere; areas from cos-lat-weighted pixel counts.
 
 ## Continents
 
-| name | cratons | area Mkm2 | centroid | super-plates |
-|---|---|---:|---|---|
-| G | G | 20.17 | [59.3, 93.1] | [0, 4, 5, 9, 11, 15, 18] |
-| AIJ | A,I,J | 28.34 | [30.4, -105.3] | [1, 2, 5, 6, 10, 12, 14, 17] |
-| CEF | C,E,F | 27.33 | [-21.8, -145.6] | [2, 5, 7, 8, 16] |
-| BDH | B,D,H | 27.5 | [-35.2, 42.7] | [0, 3, 8, 10, 13, 19] |
+| name | key | cratons | area Mkm2 | centroid | super-plates |
+|---|---|---|---:|---|---|
+| Borea | G | G | 20.17 | [59.3, 93.1] | [0, 4, 5, 9, 11, 15, 18] |
+| Meridia | AIJ | A,I,J | 28.34 | [30.4, -105.3] | [1, 2, 5, 6, 10, 12, 14, 17] |
+| Selvana | CEF | C,E,F | 27.33 | [-21.8, -145.6] | [2, 5, 7, 8, 16] |
+| Sirocca | BDH | B,D,H | 27.5 | [-35.2, 42.7] | [0, 3, 8, 10, 13, 19] |
 
 ## Microcontinents
 

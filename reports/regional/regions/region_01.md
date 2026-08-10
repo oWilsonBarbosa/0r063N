@@ -114,27 +114,21 @@ Enclosed below-sea-level seas (basins with no ocean outlet, almost certainly sal
 | 2 | great lake | 2,720 km² | 4.0 km | NE |
 | 3 | great lake | 2,477 km² | 2.6 km | NW |
 
-Lakes (computed hydrology — depressions in the terrain holding water above sea level):
+Closed-basin (endorheic) lakes — terminal depressions where evaporation balances inflow, holding standing (saline) water with no ocean outlet:
 
-| Lake | Type | Area | Surface elev. | Max. depth | Quadrant |
-|---|---|---|---|---|---|
-| 1 | freshwater (with outlet) | 8,492 km² | 247 m | 110 m | NW |
-| 2 | freshwater (with outlet) | 5,088 km² | 217 m | 141 m | NW |
-| 3 | freshwater (with outlet) | 3,780 km² | 22 m | 17 m | SE |
-| 4 | freshwater (with outlet) | 3,118 km² | 1,948 m | 433 m | NW |
-| 5 | freshwater (with outlet) | 2,095 km² | 43 m | 28 m | NE |
-| 6 | salt (no outlet) | 2,040 km² | 167 m | 6 m | SE |
+| Lake | Area | Surface elev. | Max. depth | Quadrant |
+|---|---|---|---|---|
+| 1 | 2,040 km² | 167 m | 6 m | SE |
 
 ## Rivers
 
-5 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
+4 major river system(s) reach the sea (or a terminal lake) in this region — the book expects 4d6 for a typical region. Discharge is annual flow at the mouth; for scale, the Rhine carries ≈ 70 km³/yr and the Mississippi ≈ 580 km³/yr.
 
 | River | Discharge | Main-stem length | Source | Mouth | Empties into |
 |---|---|---|---|---|---|
 | 1 | 73 km³/yr | 636 km | NW quadrant | NW, 70.9°N 153.1°E | sea |
-| 2 | 63 km³/yr | 2,679 km | SE quadrant | SE, 31.2°N 145.9°W | sea |
-| 3 | 28 km³/yr | 173 km | NE quadrant | NE, 49.9°N 144.3°W | sea |
-| 4 | 21 km³/yr | 234 km | NW quadrant | NW, 70.6°N 161.6°E | sea |
-| 5 | 16 km³/yr | 87 km | NW quadrant | NW, 73.8°N 163.7°E | sea |
+| 2 | 28 km³/yr | 173 km | NE quadrant | NE, 49.9°N 144.3°W | sea |
+| 3 | 21 km³/yr | 234 km | NW quadrant | NW, 70.6°N 161.6°E | sea |
+| 4 | 16 km³/yr | 87 km | NW quadrant | NW, 73.8°N 163.7°E | sea |
 
-> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve), and a per-depression water balance — humid basins fill to their spill point and drain onward (freshwater), arid basins shrink to the area where evaporation matches inflow (salt lakes). Below-sea-level enclosed seas come directly from the export's elevation field.
+> **Method note.** Rivers and lakes are not part of the Orogen export; they are derived by this tool with standard terrain hydrology: priority-flood depression filling over the elevation raster, steepest-descent flow routing, and runoff from annual precipitation minus temperature-driven evapotranspiration (Ol'dekop curve). Only **closed-basin (endorheic) lakes** are reported as standing water: at the 0.125° grid, exorheic filled depressions are an over-detection artifact (unresolved river incision makes through-flowing valleys look ponded), whereas endorheic closure is resolution-robust — rivers are drawn straight through filled exorheic basins. The full consistency and plausibility checks are in [`HYDROLOGY_VALIDATION.md`](../HYDROLOGY_VALIDATION.md). Below-sea-level enclosed seas come directly from the export's elevation field.
