@@ -181,6 +181,21 @@ sisters Meridia–Sirocca and Borea–Selvana share deep lineages across the oce
 (homology), while easy-to-sail neighbours Meridia–Selvana and Borea–Sirocca are
 cross-branch (convergence). Regional ecologies must obey this.
 
+The **humanoid ancestry** is also fixed: see `docs/life/03_HUMANOID_ANCESTRY.md`.
+The peoples are **Meridian** (west-flank branch), originating in the **AU1
+aulacogen and salt-sea basin** of Meridia's southeastern interior (~15–28 °N)
+on the M3/M4 ecotone — a **modern-icehouse event (T-50 → T-0)** driven by O5's
+young rain shadow and an orbital lake-basin speciation pump, not a deep-time
+one. The lineage is `Zoa → Thermozoa → Dendrozoa → Aulacines → crown Aulacine`,
+with **iron-red blood** derived from the cradle's heat in an otherwise
+copper-blue world. There is **exactly one sapient species**, planet-wide, with
+deep internal population structure and **no sister species** — the conservative
+triplet code and the refilling basin prevented every split. Dispersal is
+asymmetric: **Selvana** is reachable but cross-branch (convergent, misleading),
+**Sirocca** is Meridia's deep kin across the widest ocean (the prize — its arid
+biota is genuinely usable by a Meridian people), **Borea** is last. The
+peoples' endonym and everything cultural remain open.
+
 ### Open (Phase 5 creative space — fully yours to invent)
 Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · human history and mythology · calendar, day length, moon system, gravity · concrete regional ecologies (grounded in `docs/life/`) · any minor rivers and local geography
 
@@ -209,10 +224,12 @@ Everything lives in repository `oWilsonBarbosa/0r063N`:
   (750-Myr reconstructed plate/climate history; narrative canon for myths of
   deep time).
 - **Life layer** — `docs/life/`: the founding tree (`00`), the biogeographic
-  realm map (`01`), and the deep-time paleobiology that runs the biology forward
-  era by era from origin to the present realms (`02`). Start here before
-  designing any flora, fauna, or people; regional ecologies are the T-0
-  cross-section of the doc-02 history.
+  realm map (`01`), the deep-time paleobiology that runs the biology forward
+  era by era from origin to the present realms (`02`), and the humanoid
+  ancestry that seats the peoples in Meridia's AU1 trough (`03`). Start here
+  before designing any flora, fauna, or people; regional ecologies (`04+`,
+  not yet written) are the T-0 cross-section of the doc-02 history, and
+  `03` §8 is the design brief for them.
 - **Data caveats** — `reports/audit/README.md`. The ones that matter for
   worldbuilding: `pS/pW`, `wsS/wsW`, `ocSpeed*` are p95-capped indices (1
   means "at or above the 95th percentile", so extreme rainfall/wind figures

@@ -16,12 +16,23 @@ problem rather than from one remembered example.
 
 ## Sequencing
 
-The culture layer sits downstream of two documents that do not exist yet — the
-regional ecologies (`../life/03+`) and the humanoid-ancestry document. Rather
-than wait, doc 00 is designed to be read **backwards**: the subsistence
-requirements it extracts (a herdable cold-tolerant animal here, a storable
-cereal-analogue there) are a design brief for those biology documents, not a
-consumer of them.
+The culture layer sat downstream of two documents that did not exist yet. One
+now does: [`../life/03_HUMANOID_ANCESTRY.md`](../life/03_HUMANOID_ANCESTRY.md)
+fixes the peoples as a single species out of Meridia's AU1 trough, and its §8
+answers this layer's brief directly. The regional ecologies (`../life/04+`)
+are still outstanding.
+
+Doc 00 was designed to be read **backwards**, and that still holds: the
+subsistence requirements it extracts (a herdable cold-tolerant animal here, a
+storable cereal-analogue there) are a design brief for those biology
+documents, not a consumer of them. Doc 03 §8 is the first reply to it.
+
+Two results from doc 03 that this layer should now assume: the peoples
+originate in **M3** (the southeastern trough) but domesticate in **M2/M3's
+northwestern lakeland**, so the origin province and the agricultural province
+are different places; and **Sirocca's biota is deep kin to Meridia's** while
+**Selvana's only looks familiar** — which sets what transplants, herds, and
+crops can survive a crossing.
 
 ## Grounding rules
 

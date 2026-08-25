@@ -27,7 +27,7 @@ reconstructed **750-million-year geological + climate history**.
 | **A continent-scale deep dive** — the Western Lands (Meridia + Selvana) and their shared ocean | [`docs/WESTERN_LANDS.md`](docs/WESTERN_LANDS.md) |
 | **How the world came to be** — a 750-Myr plate-tectonic history | [`docs/GEOLOGICAL_HISTORY.md`](docs/GEOLOGICAL_HISTORY.md) |
 | **How its climate evolved** — paleoclimate across the supercontinent cycle | [`docs/PALEOCLIMATE.md`](docs/PALEOCLIMATE.md) |
-| **How life began** — origin, biochemistry, and the founding tree of life | [`docs/life/`](docs/life/README.md) |
+| **How life began** — origin, biochemistry, the founding tree, and the ancestry of the peoples | [`docs/life/`](docs/life/README.md) |
 | **The four continents** — Meridia, Sirocca, Selvana, Borea (area, climate, NPP) | [`docs/CONTINENTS.md`](docs/CONTINENTS.md) |
 | **Life & habitats** — biogeographic provinces of the four continents | [`docs/BIOGEOGRAPHY.md`](docs/BIOGEOGRAPHY.md) |
 | **What the world lets people do** — per-province climate/productivity envelopes with cross-cultural database queries | [`docs/culture/`](docs/culture/README.md) |
@@ -44,7 +44,7 @@ reconstructed **750-million-year geological + climate history**.
 | `data/orogen_regions_full_v2/` | **The corrected export (v2, 58 fields)** — recovered `plateSpeed` and `tempContinentality`, new `isSurfaceCoast` and `postProcessDelta` columns, corrected metadata. Built deterministically from v1 by `tools/export-v2/`. |
 | `data/orogen_regions_v3_browser/` | **The browser extract (v3, 82 fields)** — captured live from the running generator by `tools/orogen-extract.js`, plus per-plate, Köppen, ITCZ and dual-mesh sidecars. Recovers the **uncensored** wind/current magnitudes v1 and v2 cannot represent. |
 | `docs/` | Narrative documents: the data dictionary, geological history, and paleoclimate. |
-| `docs/life/` | The life layer: origin of life, core biochemistry, and the founding tree from which all regional biota descends. Built root-first on the physical + deep-time canon. |
+| `docs/life/` | The life layer: origin of life, core biochemistry, the founding tree from which all regional biota descends, the deep-time paleobiology, and the humanoid ancestry that seats the peoples in Meridia. Built root-first on the physical + deep-time canon. |
 | `docs/culture/` | The culture layer: the physical envelope each biogeographic province imposes, expressed as query keys for eHRAF and D-PLACE. Constraints first — no societies invented yet. |
 | `reports/regional/` | **Physical Atlas + 20 regional gazetteers** (Markdown + maps). Built by `tools/regional-report/`. |
 | `reports/tectonics/` | Tectonic inventory, validation, and ~38 paleogeographic/climate maps. Built by `tools/tectonics-pipeline/`. |
