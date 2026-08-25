@@ -98,6 +98,11 @@ height mapping** (see the Key Locked Facts note).
 | Eastern | Borea (north) + Sirocca (south, reaching to the equator) | Tropical ocean | Moderate — requires sea crossing; climatically opposite |
 | Cross-ocean | Western pair → Eastern pair | Eastern Ocean (broad, open) | Hard — **planet's defining long-distance voyage** |
 
+**The pairs are also the biological sisters.** Meridia+Selvana are the
+west-flank branch, Sirocca+Borea the core (see the divergence tree below), so
+each geographic pair shares deep ancestry and the Eastern Ocean is simultaneously
+the widest crossing and the only cross-branch boundary on the planet.
+
 ---
 
 ## The Two Planet-Wide Narrative Threads
@@ -168,18 +173,26 @@ ancestral domains and a single complex-cell origin; four founding kingdoms and
 a bilaterian, blue-blooded, internal-skeleton **Zoan animal plan**; the
 icehouse-bottleneck → hothouse-radiation → dispersal timeline pegged to the
 geological/climate record; and the **continental divergence tree**
-`((Meridia, Sirocca), (Borea, Selvana))` with its load-bearing hook that
-biological sisters are *not* the easy-to-sail neighbours. New regional life
-must descend consistently from this root.
+`((Meridia, Selvana), (Sirocca, Borea))` — derived from the craton mapping
+(AIJ Meridia · CEF Selvana · BDH Sirocca · G Borea) and the rift order R1
+(T-450, west flank | core) then R3 (T-400, splitting the west flank) — with its
+load-bearing hook that **kinship and reachability agree**: each sister pair is
+also a hemisphere pair, and the one deep divide is the Eastern Ocean. New
+regional life must descend consistently from this root.
 
 The **biogeographic realm map** is also fixed: see `docs/life/01_BIOGEOGRAPHIC_REALMS.md`.
 Four terrestrial realms (Meridian, Siroccan, Borean, Selvanan), each split into
 provinces on the mountain/aridity barriers; marine realms by depth/latitude/basin
 (circumglobal Abyssal, old EXT vs young rift-oceans, cold southern, upwelling
-coasts). Realm **affinities follow the divergence tree, not the modern map** —
-sisters Meridia–Sirocca and Borea–Selvana share deep lineages across the ocean
-(homology), while easy-to-sail neighbours Meridia–Selvana and Borea–Sirocca are
-cross-branch (convergence). Regional ecologies must obey this.
+coasts). Realm **affinities follow the divergence tree, and the modern map
+agrees with it** — sisters **Meridia–Selvana** (west flank, western hemisphere)
+and **Sirocca–Borea** (core, eastern hemisphere) are each other's closest kin
+*and* nearest neighbours, so resemblance within a hemisphere is **homology**.
+The only cross-branch boundary is the **Eastern Ocean**, so resemblance across
+it is **convergence**. The showcase: the three great deserts sit within 0.3 °C
+of each other — M3 (Meridia, 22.3 °C / 304 mm) and V3 (Selvana, 22.1 °C /
+353 mm) are cousins; S2 (Sirocca, 22.4 °C / 278 mm) is a convergent stranger.
+Regional ecologies must obey this.
 
 The **humanoid ancestry** is also fixed: see `docs/life/03_HUMANOID_ANCESTRY.md`.
 The peoples are **Meridian** (west-flank branch), originating in the **AU1
@@ -191,10 +204,13 @@ with **iron-red blood** derived from the cradle's heat in an otherwise
 copper-blue world. There is **exactly one sapient species**, planet-wide, with
 deep internal population structure and **no sister species** — the conservative
 triplet code and the refilling basin prevented every split. Dispersal is
-asymmetric: **Selvana** is reachable but cross-branch (convergent, misleading),
-**Sirocca** is Meridia's deep kin across the widest ocean (the prize — its arid
-biota is genuinely usable by a Meridian people), **Borea** is last. The
-peoples' endonym and everything cultural remain open.
+asymmetric: **Selvana** is both near and deep kin (cheap expansion — the
+western hemisphere becomes one connected human world early), **Sirocca** is far
+*and* cross-branch and is the trap (S2 is the planet's closest climatic match
+to the Meridian homeland — 22.4 °C / 278 mm / 98 % frost-free against M3's
+22.3 / 304 / 98 — with **zero** kinship, so inherited knowledge of food,
+medicine and poison silently stops applying), **Borea** is last. The peoples'
+endonym and everything cultural remain open.
 
 ### Open (Phase 5 creative space — fully yours to invent)
 Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · human history and mythology · calendar, day length, moon system, gravity · concrete regional ecologies (grounded in `docs/life/`) · any minor rivers and local geography

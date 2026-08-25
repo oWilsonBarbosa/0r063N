@@ -32,8 +32,8 @@ each one traces to a **MEASURED barrier** or an **INTERPRETED divergence event**
 - **Ocean between continents** — the primary barrier. Four dispersed continents
   (79 % ocean) means four terrestrial realms to begin with.
 - **The breakup order** — which realms are *sisters* (share the deepest post-
-  dispersal ancestry) is fixed by the geological record, not by the modern map
-  (§4).
+  dispersal ancestry) is fixed by the geological record; on this planet the
+  modern map happens to agree with it, and §4 is about why that matters.
 - **Mountain walls and arid interiors** — the Himalaya-class fronts and map-
   scale rain shadows split each continent into **provinces** (sub-realms)
   isolated enough to diverge (§2).
@@ -44,11 +44,16 @@ each one traces to a **MEASURED barrier** or an **INTERPRETED divergence event**
 ## 2. The terrestrial realms
 
 Four continental realms, grouped by the two deep branches of the divergence
-tree (`((Meridia, Sirocca), (Borea, Selvana))`). Sisters share ancestry at the
+tree (`((Meridia, Selvana), (Sirocca, Borea))`). Sisters share ancestry at the
 base; provinces within a realm are separated by a physical barrier strong enough
 to isolate, but share almost everything above it.
 
-### West-flank branch
+Each branch occupies one hemisphere — the west flank the western, the core the
+eastern (continent centroids: Meridia 105 °W, Selvana 146 °W · Sirocca 43 °E,
+Borea 93 °E). Sisters are therefore also neighbours, and §4 is about what that
+costs and what it buys.
+
+### West-flank branch — the western hemisphere
 
 **Meridian realm** — Meridia · the high rooftop; extreme relief over a dry
 leeward interior. Provinces:
@@ -60,28 +65,9 @@ leeward interior. Provinces:
 | Northern Cold Highlands | subarctic latitude (D/E) |
 | Southern Tropical Lowlands & SW Trunk River | the A-group south, cut off by the Massif |
 
-**Siroccan realm** — Sirocca · the desert continent (44 % Köppen B). Meridia's
-**deep sister**, a world away. Provinces:
-
-| Province | Isolating barrier (MEASURED) |
-|---|---|
-| Northern Range & SW wet coast | 6.98 km wall; the one reliable maritime margin |
-| The Arid Heart | the dominant endorheic desert + Salt Sea |
-| Southern Cold Fringe | far-south D/E |
-
-### Core branch
-
-**Borean realm** — Borea · defined by cold (D+E = 84 %, mean 0.4 °C). Selvana's
-**deep sister**, its climatic opposite. Provinces:
-
-| Province | Isolating barrier (MEASURED) |
-|---|---|
-| Southern Maritime Coast | the warm C-group refuge, walled off inland |
-| Subarctic Interior | the taiga belt |
-| Eastern Range & Northern Ice Highlands | 6.12 km range; polar ice |
-
 **Selvanan realm** — Selvana · the tropical cradle (A = 40 %), lowest and most
-climatically varied. Borea's **deep sister**. Provinces:
+climatically varied. Meridia's **deep sister** — and, uniquely on this planet,
+also its **nearest neighbour**, one narrow warm sea away. Provinces:
 
 | Province | Isolating barrier (MEASURED) |
 |---|---|
@@ -93,6 +79,26 @@ climatically varied. Borea's **deep sister**. Provinces:
 The **Equatorial Ranges** deserve a note: cold summits surrounded by rainforest
 make each high peak an *island* of isolation — a province that is itself an
 archipelago of endemism, the terrestrial mirror of §5's island rule.
+
+### Core branch — the eastern hemisphere
+
+**Siroccan realm** — Sirocca · the desert continent (44 % Köppen B). Borea's
+**deep sister**, and its climatic opposite. Provinces:
+
+| Province | Isolating barrier (MEASURED) |
+|---|---|
+| Northern Range & SW wet coast | 6.98 km wall; the one reliable maritime margin |
+| The Arid Heart | the dominant endorheic desert + Salt Sea |
+| Southern Cold Fringe | far-south D/E |
+
+**Borean realm** — Borea · defined by cold (D+E = 84 %, mean 0.4 °C).
+Sirocca's **deep sister**. Provinces:
+
+| Province | Isolating barrier (MEASURED) |
+|---|---|
+| Southern Maritime Coast | the warm C-group refuge, walled off inland |
+| Subarctic Interior | the taiga belt |
+| Eastern Range & Northern Ice Highlands | 6.12 km range; polar ice |
 
 ---
 
@@ -123,56 +129,80 @@ built from three axes — **depth, latitude, and basin** — not from coastlines
 
 ---
 
-## 4. Affinities — the kinship/reachability mismatch
+## 4. Affinities — the hemisphere divide
 
 This is the organising idea of the whole living world, and the data makes it
-exact. Two independent facts collide:
+exact. Two independent facts **agree**:
 
-- **Phylogenetic sisters** (deepest shared ancestry), from the breakup order:
-  **Meridia–Sirocca** (west-flank) and **Borea–Selvana** (core).
-- **Geographic clusters** (who is easy to reach today), from the present map:
-  **Western** {Meridia, Selvana} across the warm narrow Equatorial Western Sea;
-  **Eastern** {Borea, Sirocca}; the two clusters divided by the broad Eastern
-  Ocean — the planet's hardest crossing.
+- **Phylogenetic sisters** (deepest shared ancestry), from the breakup order in
+  `../GEOLOGICAL_HISTORY.md` §5: rift **R1** (T-450) opened the CENTRAL ocean
+  "between the S1 west flank and the B-D-H core"; rift **R3** (T-400) then split
+  "the west flank into AJ-I and C-E-F groups"; and G "detached northeast from
+  the core" at T-400. With the craton mapping (AIJ Meridia · CEF Selvana ·
+  BDH Sirocca · G Borea) that reads **Meridia–Selvana** and **Sirocca–Borea**.
+- **Geographic clusters** (who is easy to reach today), from the present
+  centroids: **Western** {Meridia 105 °W, Selvana 146 °W} across the warm
+  narrow Equatorial Western Sea; **Eastern** {Sirocca 43 °E, Borea 93 °E}; the
+  two divided by the broad Eastern Ocean — the planet's hardest crossing.
 
-Line them up and the sisters land in **opposite clusters**:
+Line them up and the two partitions are **the same partition**:
 
 ```
-                    deep sisters (shared ancestry)
-                   ┌───────────────────────────────┐
-  Western cluster  │  Meridia ······ Sirocca        │  Eastern cluster
-  (easy contact)   │     :    ╲    ╱    :            │  (easy contact)
-                   │     :     ╲  ╱     :            │
-                   │  Selvana ····X···· Borea        │
-                   └───────────────────────────────┘
-                    deep sisters (shared ancestry)
+   WESTERN HEMISPHERE          ┃          EASTERN HEMISPHERE
+   west-flank branch           ┃          core branch
+                               ┃
+      Meridia                  ┃                  Borea
+         ║                     ┃                    ║
+         ║ Equatorial          ┃         detached   ║
+         ║ Western Sea         ┃         northeast  ║
+         ║ (rift R3, T-400)    ┃         (T-400)    ║
+         ║                     ┃                    ║
+      Selvana                  ┃                 Sirocca
+                               ┃
+                     the Eastern Ocean
+              split T-450 (rift R1) · widest crossing
 
-  ······ = easy to sail (same geographic cluster), but distant cousins
-  ╲ ╱    = closest relatives, but separated by the widest ocean
+  ║  = sisters AND neighbours: shared ancestry, ongoing contact
+  ┃  = the one deep divide — oldest split and widest ocean at once
 ```
 
-**Every continent's nearest neighbour is its distant cousin, and its closest
-relative lies across the world's widest ocean.** Meridia can trade coastlines
-with Selvana but is biologically alien to it; its true kin, Sirocca, is on the
-far side of the Eastern Ocean. The same holds for all four.
+**Every continent's nearest neighbour is also its closest relative.** The rift
+that separated each sister pair is the sea that still lies between them, and
+neither pair has had time to drift apart. Meridia and Selvana trade coastlines
+*and* lineages; so, more coldly, do Sirocca and Borea.
+
+The consequence is not that the world is simple — it is that **the world has
+exactly one deep seam, and it does not run between neighbours.** It runs down
+the middle of the map, where the oldest split in the tree and the widest ocean
+on the planet coincide. This is a Wallace Line drawn at hemispheric scale.
 
 Two rules follow, and they govern every later ecology:
 
-- **Homology across the ocean.** Sister realms share genuine deep lineages
-  despite never touching. Where their physical settings match, the resemblance
-  is *real kinship*: Sirocca's **Arid Heart** and Meridia's **Arid Interior
-  Plateau** are one west-flank arid inheritance, split by 400 Myr and an ocean.
-- **Convergence next door.** Neighbours that look alike are **not** related.
-  Selvana's **Interior Dry Basin** and Sirocca's **Arid Heart** are both
-  deserts, but Selvana is core branch and Sirocca is west-flank — so any
-  resemblance is **convergent, not inherited**. This is the planet's
-  marsupial-vs-placental engine: each realm builds its own version of every
-  ecological role from its own stock.
+- **Homology within a hemisphere.** Sister realms share genuine deep lineages
+  *and* a crossable sea, so resemblance between them is **real kinship**, kept
+  alive by intermittent contact. Meridia's **Arid Interior Plateau** and
+  Selvana's **Interior Dry Basin** are one west-flank arid inheritance.
+- **Convergence across the divide.** Anything that looks alike on opposite
+  sides of the Eastern Ocean is **convergent, not inherited** — two branches
+  sundered at T-450 building the same ecological role from different stock.
+  This is the planet's marsupial-vs-placental engine, and it operates at the
+  scale of half a world rather than of a coastline.
 
-The sharpest illustration, and a good test of the whole framework: **two deserts
-that share ancestry across the widest ocean (Meridia–Sirocca), and two deserts
-side by side that share none (Selvana–Sirocca).** Same climate, opposite
-histories.
+The sharpest illustration, and a good test of the whole framework, is that the
+planet's three great deserts are **climate triplets split two-to-one by
+ancestry** (MEASURED, from `../culture/00_PROVINCE_CONSTRAINT_VECTORS.md` §3):
+
+| Desert province | Realm | Branch | T ann | Precip | NPP | Frost-free |
+|---|---|---|---:|---:|---:|---:|
+| **M3** Arid Interior Plateau | Meridian | west flank | 22.3 °C | 304 mm | 539 | 98 % |
+| **V3** Interior Dry Basin | Selvanan | **west flank** | 22.1 °C | 353 mm | 621 | 100 % |
+| **S2** The Arid Heart | Siroccan | **core** | 22.4 °C | 278 mm | 498 | 98 % |
+
+Three deserts inside **0.3 °C** of one another, all effectively frost-free, at
+comparable productivity — and the tree cuts them 2–1. M3 and V3 are cousins in
+the same hemisphere; S2 is a stranger that merely solved the same problem. Same
+climate, opposite histories, and the boundary between the two answers is the
+Eastern Ocean.
 
 ---
 
@@ -182,20 +212,26 @@ Realms are not sealed. A few MEASURED geographic features are the rare gates,
 and each is a distinct kind of biological event:
 
 - **The Equatorial Western Sea** (Meridia ↔ Selvana). Warm, narrow, easy — and
-  therefore a **cross-branch mixing front** where west-flank and core lineages
-  actually meet. The most evolutionarily novel setting on the planet: biota
-  drawn from both halves of the tree, side by side.
-- **The Eastern tropical ocean** (Borea ↔ Sirocca). A second cross-branch
-  contact, but harsher and climatically opposed (cold-core meets arid-west-
-  flank), so the interchange is thinner and more filtered.
+  a **within-branch reunion front**: it is the R3 rift itself, so everything
+  that crosses it is meeting a cousin it was separated from at T-400. The
+  traffic is heavy and the arrivals are pre-adapted, which makes this the
+  planet's busiest interchange and its weakest filter. Expect shared genera
+  either side, secondary contact, and hybrid zones — not novelty.
+- **The Eastern tropical ocean** (Sirocca ↔ Borea). The core branch's own
+  reunion front, but harsher and climatically opposed (arid meets cold), so the
+  interchange is thinner and far more filtered despite the same shared ancestry.
 - **Island and hotspot stepping-stones.** 1,471 islands, and the age-progressive
   **hotspot chains H1–H15** in particular, are sweepstakes routes and natural
   experiments — each chain a chronosequence of colonisation and a generator of
   narrow endemics (the Galápagos/Hawaii role).
-- **The Eastern Ocean crossing** (Western cluster ↔ Eastern cluster). The
-  planet's widest barrier and deepest biotic divide — but also the *only* route
-  between the sisters. Whatever rafts across it reunites branches sundered since
-  the breakup: the rarest and most consequential dispersal on the world.
+- **The Eastern Ocean crossing** (west flank ↔ core). The planet's widest
+  barrier and its **only cross-branch route** — the single place where the two
+  halves of the tree can meet at all. Nothing that crosses it is meeting a
+  relative; it is arriving among strangers descended from a stock its own
+  lineage last shared at T-450. Whatever rafts across therefore lands with no
+  co-evolved predators, parasites, or competitors waiting for it: the rarest
+  dispersal on the world, and the most consequential precisely because it is
+  the one crossing that introduces rather than reunites.
 
 ---
 
@@ -207,18 +243,23 @@ and each is a distinct kind of biological event:
   provinces, with every edge on a MEASURED barrier.
 - The marine realms: circumglobal Abyssal; surface belts × basins (old EXT vs
   young rift-oceans); the cold southern province; upwelling coasts.
-- Realm **affinities follow the divergence tree**, not the modern map: sisters
-  are Meridia–Sirocca and Borea–Selvana; neighbours (Meridia–Selvana,
-  Borea–Sirocca) are cross-branch.
-- The two rules — homology across the ocean, convergence next door — and their
-  desert showcase.
-- The interchange fronts as the only crossing points.
+- Realm **affinities follow the divergence tree, and the modern map agrees with
+  it**: sisters are **Meridia–Selvana** (west flank, western hemisphere) and
+  **Sirocca–Borea** (core, eastern hemisphere). Each pair is both closest kin
+  and nearest neighbour.
+- The two rules — **homology within a hemisphere, convergence across the
+  Eastern Ocean** — and their three-desert showcase (M3 · V3 west flank vs S2
+  core, all within 0.3 °C).
+- The Eastern Ocean as the world's **single deep biological seam**, and the
+  interchange fronts as the only crossing points.
 
 **Open for the next layers:**
 
 - **Regional ecologies** — populate specific gazetteer regions with concrete
   flora and fauna, each descended from the correct realm's stock and obeying the
   affinity rules above.
-- **The humanoid ancestry** — which realm's Zoan lineage leads toward the
-  peoples of Phase 5. The realm chosen decides their deep kin, their convergent
-  look-alikes abroad, and which strangers they meet first across the Western Sea.
+- **The humanoid ancestry** — settled in
+  [`03_HUMANOID_ANCESTRY.md`](03_HUMANOID_ANCESTRY.md): the peoples are
+  **Meridian**, west-flank branch. That places their homeland, their kin
+  (Selvana, one easy sea away), and the strangers on the far side of the
+  Eastern Ocean.

@@ -107,7 +107,7 @@ erupt in sequence, three young oceans (Central, Western, Northern) open, and
 breakup manufactures **vast new shallow passive-margin shelves** around every
 fragment. The planet swings to its **warmest state — 22.6 °C, ice-free poles**.
 Vicariance begins: the T-450 rift splits west-flank from core, and T-400 splits
-Meridia | Sirocca and Borea | Selvana.
+Meridia | Selvana and Sirocca | Borea.
 
 **Biology (INVENTED).** The **great radiation** — the hinge of the whole tree.
 Warm, sunlit, oxygen-rich, nutrient-fed shelves are the perfect cradle, and the
@@ -167,9 +167,10 @@ pelagic lineages. Widening water deepens every isolation.
 
 **Physical state (MEASURED).** The great drawdown. O4 flat-slab uplift on Borea
 (T-250), the O1 collision that assembles Meridia (T-200), C's sustained Andean
-belt on Sirocca (O3), and the O2 collision that reassembles Selvana (T-100)
-expose fresh rock and pull CO₂ down for 200 Myr; far-southern frost returns by
-T-150 and polar ice locks in by T-100. Hotspot chains H1–H15 light up (T-100).
+belt on Selvana (O3, since T-200), and the O2 collision that reassembles
+Sirocca (T-100) expose fresh rock and pull CO₂ down for 200 Myr; far-southern
+frost returns by T-150 and polar ice locks in by T-100. Hotspot chains H1–H15
+light up (T-100).
 
 **Biology (INVENTED).** Cooling **and** mountain-building carve the
 **intra-continental provinces** of the realm map. As the great walls rise (O1–O6),
@@ -179,14 +180,21 @@ importance are set here:
 
 - **The deserts, and the homology puzzle they encode.** A drought-tolerant
   xeric stem had already arisen in the seasonally-dry interiors of the
-  west-flank biota *before* the T-400 Meridia–Sirocca split — so it is **shared
+  west-flank biota *before* the T-400 Meridia–Selvana split — so it is **shared
   inheritance**. When each of those continents later built its own rain-shadow
-  desert (Meridia behind the O1 front, Sirocca behind O3), that shared stem
-  **radiated in parallel** into full desert forms on both. Hence doc 01's rule:
-  Meridia's and Sirocca's deserts are **homologous** (one west-flank stem, split
-  by an ocean), while Selvana's Interior Dry Basin — built from the *core*
-  branch's own stock behind O2 — is merely **convergent**. The historical spine
-  is what makes that a *result*, not an assertion.
+  desert, that shared stem **radiated in parallel** into full desert forms on
+  both, and the timing cooperates: **Meridia's Arid Interior Plateau opens
+  behind the O1 front at T-200, and Selvana's Interior Dry Basin behind C's
+  Andean belt (O3) over the same interval.** Two contemporaneous deserts, one
+  stem, one hemisphere.
+
+  **Sirocca's Arid Heart is the odd one out, and it is younger.** It opens
+  behind O2 only at T-100, and it is built from the *core* branch's own stock —
+  so its resemblance to the other two is **convergent**, not inherited. Hence
+  doc 01's rule and its three-desert showcase: M3 and V3 are cousins within the
+  western hemisphere; S2 is a stranger across the Eastern Ocean that solved the
+  same problem 100 Myr later. The historical spine is what makes that a
+  *result*, not an assertion.
 - **The cold specialists.** The returning poles and the new high ground select
   the cold- and seasonal-adapted lineages that will define Borea and the
   far-southern margins — the ancestral blue blood of the Zoan plan (doc 00 §8)
@@ -200,7 +208,7 @@ turnover (**E2**) as habitats are lost.
 |---|---|---|
 | Alpine biotas open on the rising walls | radiation | O1–O6 orogeny |
 | Parallel desert radiations from the shared west-flank xeric stem | radiation | leeward rain shadows behind new orogens |
-| Selvana's convergent desert biota | radiation | O2 rain shadow, core-branch stock |
+| Sirocca's convergent desert biota | radiation | O2 rain shadow, core-branch stock |
 | Cold-/seasonal-specialist lineages established | radiation | returning poles, cooling |
 | Island-endemic radiations begin | provincialization | hotspot chains H1–H15 |
 | **E2** — drawdown turnover on drying interiors | extinction | collisional cooling |

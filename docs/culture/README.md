@@ -30,9 +30,11 @@ documents, not a consumer of them. Doc 03 §8 is the first reply to it.
 Two results from doc 03 that this layer should now assume: the peoples
 originate in **M3** (the southeastern trough) but domesticate in **M2/M3's
 northwestern lakeland**, so the origin province and the agricultural province
-are different places; and **Sirocca's biota is deep kin to Meridia's** while
-**Selvana's only looks familiar** — which sets what transplants, herds, and
-crops can survive a crossing.
+are different places; and **Selvana's biota is deep kin to Meridia's** (same
+west-flank branch, one narrow sea away) while **Sirocca's only looks
+familiar** — a near-identical desert climate across the Eastern Ocean with no
+shared ancestry at all. That sets what transplants, herds, and crops can
+survive a crossing: almost everything westward, almost nothing eastward.
 
 ## Grounding rules
 

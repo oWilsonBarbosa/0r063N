@@ -260,9 +260,11 @@ Three things follow, and the culture layer should hold all three:
 
 ## 7. Out of Meridia — and the payoff doc 01 promised
 
-Doc 01 §6 stated the stakes precisely: "The realm chosen decides their deep
-kin, their convergent look-alikes abroad, and which strangers they meet first
-across the Western Sea." Meridia is west-flank, so the answers are these:
+Choosing the realm decides three things at once: the peoples' deep kin, their
+convergent look-alikes abroad, and where the world stops being legible to them.
+Meridia is **west-flank**, so by doc 01 §4 the answers are these — and note that
+on this planet kinship and reachability **agree**, so the boundary of the
+knowable world is a single line rather than a scatter.
 
 **Within Meridia (M3 → M4 → M2 → M1).** The homeland expansion runs from the
 cradle outward across a continent the lineage is already fitted to. The
@@ -273,45 +275,57 @@ what that means in sequence: **the peoples become people in the southeastern
 trough, and become farmers in the northwestern lakeland.** Two different
 basins, one continent, and a long walk between them.
 
-**Selvana — easy to reach, and quietly wrong.** The Equatorial Western Sea is
+**Selvana — easy to reach, and genuinely kin.** The Equatorial Western Sea is
 warm, narrow, and the planet's one easy crossing; Selvana will be the first
-foreign land the peoples ever see. But Selvana is **core branch**. Every
-resemblance is convergent (doc 01 §4): a fruit shaped like a homeland fruit is
-not related to it, a browsing animal filling a homeland role is not a homeland
-animal, and nothing about the Meridian body's tolerances transfers. The first
-foreign continent is a place where familiarity is actively misleading —
-**recognition without kinship**, and the poisonings, failed transplants, and
-failed domestications to match.
+foreign land the peoples ever see. It is also Meridia's **deep sister** — the
+same west-flank branch, separated by the very rift that sea occupies. So the
+biota waiting there is really related to home: comparable stock, comparable
+chemistry, plausibly edible, plausibly herdable, plausibly transplantable.
+Selvana's **Interior Dry Basin (V3)** and Meridia's **Arid Interior Plateau
+(M3)** are one arid inheritance (doc 02 §5), and V3 runs 22.1 °C at 353 mm
+against M3's 22.3 °C at 304 mm.
 
-**Sirocca — hard to reach, and the prize.** Sirocca is Meridia's **deep
-sister** across the Eastern Ocean, the planet's widest barrier. Its Arid Heart
-and Meridia's Arid Interior Plateau are **one west-flank arid inheritance**
-split by 400 Myr and an ocean (doc 01 §4, doc 02 §5). So the biota waiting
-there is genuinely related to home: comparable stock, comparable chemistry,
-plausibly edible, plausibly herdable, plausibly domesticable. **S2 is 12.1
-Mkm² at 278 mm and 98 % frost-free — the Arid Interior Plateau written
-larger.** A people carrying a Meridian arid toolkit would find that it *works*
-on a continent no one has ever walked.
+The consequence is large and easy to underrate: **the western hemisphere is a
+single connected human world, early.** Expansion into Selvana is biologically
+cheap — the crops travel, the herds travel, the medicines travel — so the
+peoples spread across two continents without ever solving a hard problem.
+Whatever divides them there will be political, not ecological.
 
-**Borea — cross-branch and far.** Both wrong: core-branch biota and the hard
-crossing, plus a climate the cradle disqualifies the body for (B2 is frost-free
-1 % of the year). Borea is a late, deliberate, technologically-mediated
-arrival, not a dispersal.
+**Sirocca — hard to reach, and the trap.** Sirocca is **core branch**, across
+the Eastern Ocean, the planet's widest barrier and (doc 01 §4) its only
+cross-branch route. And here is the cruelty of the arrangement: the Arid Heart
+is the **closest climatic match to the Meridian homeland anywhere on the
+planet** — **S2 is 12.1 Mkm² at 22.4 °C, 278 mm, 98 % frost-free**, against
+M3's 22.3 °C, 304 mm, 98 % frost-free. It reads, at a glance, as the Arid
+Interior Plateau written larger.
+
+It is not. Nothing in it is kin. Every resemblance is convergence across a
+T-450 split: a fruit shaped like a homeland fruit is not related to it, a
+browsing animal filling a homeland role is not a homeland animal, and the
+Meridian arid toolkit — the crops, the herds, the seasonal calendar, the
+pharmacopoeia — has no purchase on any of it. **The one place that looks most
+like home is the one place where the peoples' entire inherited knowledge of
+what is food, what is medicine, and what is poison silently stops applying.**
+
+**Borea — cross-branch, far, and cold.** All three wrong: core-branch biota,
+the hard crossing, and a climate the cradle disqualifies the body for (B2 is
+frost-free **1 %** of the year). Borea is a late, deliberate,
+technologically-mediated arrival, not a dispersal.
 
 The asymmetry is the engine:
 
 ```
-   reachable but alien   ────────  Selvana   (first contact, convergent, misleading)
-   unreachable but kin   ────────  Sirocca   (the prize; the defining voyage)
-   unreachable and alien ────────  Borea     (last)
+   near AND kin       ──────  Selvana   (cheap expansion; one western world)
+   far AND alien      ──────  Sirocca   (the trap: identical climate, zero kinship)
+   far, alien, cold   ──────  Borea     (last)
 ```
 
 **The world's single most consequential possible event** is therefore fixed by
-this document: *the Eastern Ocean crossing that lands on Sirocca.* Doc 01
-called it "the rarest and most consequential dispersal on the world" for
-lineages. For the peoples it is more than that — it is the moment a species
-that has spent its whole history among strangers finds a whole continent of
-its own kind of life. Whether that has happened yet is Phase 5's to decide.
+this document: *the Eastern Ocean crossing that lands on Sirocca.* Doc 01 calls
+it the one crossing that **introduces rather than reunites**. For the peoples
+that is the whole of it — a species that has never in its history met a living
+thing it was not related to, walking into a desert that looks exactly like the
+one it came from. Whether that has happened yet is Phase 5's to decide.
 
 ---
 
@@ -333,11 +347,15 @@ direction — what the regional ecologies (`04+`) now **must** supply:
   ecotone community the Aulacines evolved among, including whatever they hunted
   and whatever hunted them. This is the ecology the peoples' oldest stories
   will remember.
-- **A Siroccan mirror set** — for the homology to pay off, S2's Arid Heart
-  needs named counterparts to M3's arid biota: *related*, not identical, split
-  by 400 Myr. The pairs are the proof of the whole framework.
-- **A Selvanan trap set** — core-branch look-alikes for the Meridian species
-  the peoples know best. Convergent, unrelated, and where possible dangerous.
+- **A Selvanan mirror set** — for the homology to pay off, V3's Interior Dry
+  Basin needs named counterparts to M3's arid biota: *related*, not identical,
+  split by the T-400 R3 rift. These are the pairs the peoples can actually use
+  when they cross the Western Sea, and they are the proof of the whole
+  framework.
+- **A Siroccan trap set** — core-branch look-alikes for the Meridian species
+  the peoples know best, in the one place whose climate matches home most
+  closely (S2, 22.4 °C / 278 mm). Convergent, unrelated, and where possible
+  dangerous: this is where inherited knowledge gets people killed.
 
 ---
 
@@ -357,9 +375,10 @@ direction — what the regional ecologies (`04+`) now **must** supply:
 - **One sapient species**, planet-wide, with deep internal population
   structure and **no sister species** — the conservative code and the
   refilling basin together prevented every split.
-- The dispersal asymmetry: **Selvana reachable but cross-branch** (convergent,
-  misleading), **Sirocca unreachable but deep kin** (the prize), **Borea
-  last**.
+- The dispersal asymmetry: **Selvana near and deep kin** (cheap expansion — one
+  connected western-hemisphere human world), **Sirocca far and cross-branch**
+  (the trap: the planet's closest climatic match to the homeland, with zero
+  kinship), **Borea last**.
 
 **Open for the next layers:**
 

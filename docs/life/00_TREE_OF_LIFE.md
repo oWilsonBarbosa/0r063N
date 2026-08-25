@@ -195,24 +195,32 @@ they separated. The geological record gives the exact order of separation
 ```
               ┌── Meridia   (cratons A·I·J — west flank)
       ┌───────┤
-      │       └── Sirocca   (cratons C·E·F — west flank)
-──────┤                                   split ~T-400
+      │       └── Selvana   (cratons C·E·F — west flank)
+──────┤                        split ~T-400 · rift R3 → the WESTERN ocean
       │       ┌── Borea     (craton  G     — core, cast off NE)
       └───────┤
-              └── Selvana   (cratons B·D·H — core)
-                                          split ~T-400
-   deepest split ~T-450: {west flank} | {core}
+              └── Sirocca   (cratons B·D·H — core)
+                             split ~T-400 · G detaches northeast
+   deepest split ~T-450: {west flank} | {core} · rift R1 → the CENTRAL ocean
 ```
 
-**The load-bearing hook:** the continents that are **biological sisters** are
-*not* the continents that are **easy to sail between**. Meridia and Sirocca
-share the deepest ancestry (both west-flank), yet today sit far apart; Meridia
-and Selvana are near neighbours across the warm Equatorial Western Sea (easy
-contact) yet belong to **different halves of the tree**. Every realm, every
-"why does this creature exist here and nowhere else," and every strange
-cross-ocean parallel the peoples will one day puzzle over is seeded by this
-mismatch between **kinship and reachability**. That is the subject of the next
-document.
+**The load-bearing hook:** kinship and reachability **agree** — and they agree
+so completely that the world is cut into **two biological hemispheres**.
+
+The west-flank sisters, **Meridia and Selvana**, are also each other's nearest
+neighbours: the rift **R3** that split them at T-400 opened the **WESTERN
+ocean**, which is today the warm, narrow **Equatorial Western Sea** — the
+planet's one easy crossing. The planet's easiest voyage is the youngest rift
+between its two closest relatives, which is exactly what drifting continents
+should produce. The core sisters, **Sirocca and Borea**, are likewise each
+other's neighbours, in the eastern hemisphere.
+
+What separates the two pairs is the **oldest split in the tree** (T-450) *and*
+the **widest ocean on the map** — one barrier, counted twice. So the deep
+divide is not between neighbours; it runs down the middle of the world.
+Everything that looks alike **across** that divide is convergence, and
+everything that looks alike **within** a hemisphere is inheritance. That is
+the subject of the next document.
 
 ---
 
@@ -246,8 +254,9 @@ designer should keep true across all four continents:
 chemistry; the two-pigment palette; the three ancestral domains; a single
 complex-cell origin; the four founding kingdoms and the Zoan animal plan; the
 icehouse-bottleneck → hothouse-radiation → dispersal sequence tied to the dated
-record; the continental divergence tree and the kinship-vs-reachability
-mismatch.
+record; the continental divergence tree `((Meridia, Selvana), (Sirocca, Borea))`
+and the kinship-and-reachability **alignment** that makes the Eastern Ocean the
+world's single deep biological divide.
 
 **Open for the next layers:**
 - **Biogeographic realms** — the independent post-dispersal radiations on each
