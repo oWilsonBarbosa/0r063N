@@ -221,7 +221,8 @@ def main():
 
     # ---- write tidy csv (one row per region x continent with cells > 0) ------
     with open(data_io.OUT_DIR / "region_continent_crosswalk.csv", "w", newline="") as f:
-        w = csv.writer(f)
+        # LF, not the excel dialect's CRLF — see .gitattributes (*.csv eol=lf).
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["region", "centre_lat", "centre_lon", "region_total_cells",
                     "region_land_cells", "continent", "cells",
                     "pct_of_region_land", "pct_of_continent_land"])

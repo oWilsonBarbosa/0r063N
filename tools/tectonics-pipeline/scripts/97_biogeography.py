@@ -80,7 +80,10 @@ rows.sort(key=lambda r: (r["continent"], -r["cells"]))
 fields = ["continent", "cratons", "habitat", "dom_terrain", "cells", "pct_land",
           "lat_min", "lat_max", "elev_mean", "T_mean", "P_mean", "NPP"]
 with open(data_io.OUT_DIR / "biogeography_provinces.csv", "w", newline="") as f:
-    w = csv.DictWriter(f, fieldnames=fields)
+    # csv defaults to the excel dialect, which terminates lines with CRLF;
+    # .gitattributes declares *.csv eol=lf, so the default leaves the file
+    # permanently dirty in git.
+    w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
     w.writeheader()
     w.writerows(rows)
 
