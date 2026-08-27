@@ -52,7 +52,8 @@ reconstructed **750-million-year geological + climate history**.
 | `tools/export-v2/` | **Node.js** pipeline that rebuilds the corrected v2 export from the v1 parts and the pinned generator (single dependency: `delaunator`). |
 | `tools/regional-report/` | Zero-dependency **Node.js** pipeline that generates the regional reports and atlas. |
 | `tools/province-vectors/` | Zero-dependency **Node.js** script that derives the per-province constraint vectors in `docs/culture/`. |
-| `tools/province-ecology/` | Zero-dependency **Node.js** province profiler behind the `docs/life/04+` regional ecologies: Köppen/terrain composition, seasonal water and temperature regime, NPP and relief, for any province or sub-region. |
+| `tools/province-ecology/` | Zero-dependency **Node.js** province profiler and map renderer behind the `docs/life/04+` regional ecologies: Köppen/terrain composition, seasonal water and temperature regime, NPP and relief, for any province or sub-region — plus the plates in `reports/life/`. |
+| `reports/life/` | Map plates for the regional ecologies (province context, cradle terrain, ecotone bins). Built by `tools/province-ecology/render.mjs`. |
 | `tools/tectonics-pipeline/` | **Python** pipeline that reconstructs the tectonic history and paleoclimate. |
 | `scripts/` | Dependency-free dataset helpers — verify checksums, reassemble the parts. |
 | `third_party/planet_heightmap_generation/` | A pinned snapshot of the World Orogen generator (GPL-v3) that produced the data — kept for reproducibility and attribution. |
@@ -129,8 +130,9 @@ node tools/regional-report/atlas-main.mjs # -> reports/regional/atlas/
 node tools/province-vectors/main.mjs            # -> docs/culture/ table
 node tools/province-vectors/main.mjs --json     # machine-readable
 
-# Province ecology profiles (Node.js, zero dependencies) -> docs/life/04+
+# Province ecology profiles + plates (Node.js, zero dependencies) -> docs/life/04+
 node tools/province-ecology/main.mjs M3 --box 15,28,-110,-85 --label cradle --compare M4
+node tools/province-ecology/render.mjs    # -> reports/life/maps/
 
 # Geological history + paleoclimate (Python)
 pip install -r tools/tectonics-pipeline/requirements.txt

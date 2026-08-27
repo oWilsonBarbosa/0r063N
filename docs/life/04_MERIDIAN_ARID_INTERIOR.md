@@ -29,7 +29,15 @@ which that table does not carry, are computed the same way. Regenerate with:
 
 ```sh
 node tools/province-ecology/main.mjs M3 --box 15,28,-110,-85 --label cradle --compare M4
+node tools/province-ecology/render.mjs        # the three plates below
 ```
+
+![M3 within Meridia](../../reports/life/maps/plate-m3-01-province.png)
+
+*The province, in context. M3 (gold) is the continental interior; M4 (green)
+fringes it south and east; M1 (grey) is the cordillera spine and M2 (teal) the
+northern highlands. The dashed box is the cradle of doc 03; the three rings are
+the great lakes of §2, drawn at true area-equivalent radius.*
 
 The new caution: **organisms are INVENTED, but their roles are not free.** A
 province with no frost, one rainy half-year, and three lakes at three different
@@ -105,6 +113,16 @@ elevations and depths:
 A 1,843 m vertical spread across roughly 1,300 km of one basin system, with a
 5.2 km N–S mountain front standing beside The Deep at 21.8 °N 87.3 °W. This is
 the AU1 aulacogen and the P5 hotspot field expressed in water.
+
+![The cradle](../../reports/life/maps/plate-m3-02-cradle.png)
+
+*The cradle in Table-18 terrain classes. The olive scrub matrix runs west to
+east; sandy desert (tan) occupies the north-west; the pale high ground on the
+right is the barren rift shoulder that carries The Deep at 2,090 m; the greens
+breaking in from the south and east are M4. The three lakes are drawn at true
+area-equivalent radius — the size difference between The Sump and The Deep is
+real, and so is the inversion behind it: the smallest of the three is four
+times deeper than the largest.*
 
 **INTERPRETED — three lakes, three water regimes, three ecological roles.** The
 depths are not decoration; they decide behaviour under the orbital forcing that
@@ -260,6 +278,13 @@ which contain both provinces:
 
 > **43.8 % of occupied bins contain both M3 and M4** (323 mixed · 143 M3-only ·
 > 272 M4-only).
+
+![The M3/M4 ecotone](../../reports/life/maps/plate-m3-03-ecotone.png)
+
+*The ecotone, mapped. Red bins contain both provinces. The pure-M3 core (gold)
+is a small island inside a vast red band that wraps it on every side — the
+mixed zone is not a seam between two blocks, it is most of the boundary
+region's area, and it is where the interesting living happens.*
 
 **INTERPRETED.** The boundary is not a line, it is a **zone occupying nearly
 half the two provinces' shared extent** — unsurprising once you note that the
