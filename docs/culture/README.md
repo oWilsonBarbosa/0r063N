@@ -19,8 +19,12 @@ problem rather than from one remembered example.
 The culture layer sat downstream of two documents that did not exist yet. One
 now does: [`../life/03_HUMANOID_ANCESTRY.md`](../life/03_HUMANOID_ANCESTRY.md)
 fixes the peoples as a single species out of Meridia's AU1 trough, and its §8
-answers this layer's brief directly. The regional ecologies (`../life/04+`)
-are still outstanding.
+answers this layer's brief directly. The regional ecologies have begun:
+[`../life/04_MERIDIAN_ARID_INTERIOR.md`](../life/04_MERIDIAN_ARID_INTERIOR.md)
+covers **M3** and names the two domestication lines this layer was waiting on —
+**Flushgrass** (the cereal-analogue's wild ancestor) and the **Rainherd** (the
+pack-and-milk animal's). The remaining provinces (`../life/05+`) are still
+outstanding.
 
 Doc 00 was designed to be read **backwards**, and that still holds: the
 subsistence requirements it extracts (a herdable cold-tolerant animal here, a

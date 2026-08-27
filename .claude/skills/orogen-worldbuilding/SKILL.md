@@ -212,6 +212,22 @@ to the Meridian homeland — 22.4 °C / 278 mm / 98 % frost-free against M3's
 medicine and poison silently stops applying), **Borea** is last. The peoples'
 endonym and everything cultural remain open.
 
+The **first regional ecology** is written: see
+`docs/life/04_MERIDIAN_ARID_INTERIOR.md` for **M3**, the peoples' homeland.
+Fixed points: M3 is **two-thirds steppe, not desert** (BSh 54.1 %, scrub is the
+matrix); the survival bottleneck is **water on a schedule, never cold** (97.9 %
+frost-free), so aestivation replaces hibernation and herds migrate to follow
+rain rather than to escape winter; the province is **ectotherm-dominated**, with
+the red-blooded Thermozoa a conspicuous minority — the Aulacines were odd at
+home. The cradle holds **three of the planet's ten great lakes** at 247 m, 287 m
+and 2,090 m: The Deep (821 m, permanent refuge), The Shallow (36 m, the
+speciation pump), The Sump (saline, terminal). The cradle is **thermally
+seasonless** (2.4 °C annual range, 100 % frost-free). Named biota:
+**Ashscrub · Flushgrass · Waterstem · Sun-tuber · Saltmat · Cloudscrub** and
+**Plainbacks · Stiltwaders · Sandswimmers · Rainherds · Coursers · Deepfin**.
+The two domestication lines are **Flushgrass → cereal** and **Rainherd →
+pack-and-milk animal**, both originating in M3 and maturing elsewhere.
+
 ### Open (Phase 5 creative space — fully yours to invent)
 Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · human history and mythology · calendar, day length, moon system, gravity · concrete regional ecologies (grounded in `docs/life/`) · any minor rivers and local geography
 
@@ -241,11 +257,17 @@ Everything lives in repository `oWilsonBarbosa/0r063N`:
   deep time).
 - **Life layer** — `docs/life/`: the founding tree (`00`), the biogeographic
   realm map (`01`), the deep-time paleobiology that runs the biology forward
-  era by era from origin to the present realms (`02`), and the humanoid
-  ancestry that seats the peoples in Meridia's AU1 trough (`03`). Start here
-  before designing any flora, fauna, or people; regional ecologies (`04+`,
-  not yet written) are the T-0 cross-section of the doc-02 history, and
-  `03` §8 is the design brief for them.
+  era by era from origin to the present realms (`02`), the humanoid
+  ancestry that seats the peoples in Meridia's AU1 trough (`03`), and the
+  first regional ecology, **M3 the Meridian Arid Interior** (`04`). Start here
+  before designing any flora, fauna, or people. Regional ecologies are the T-0
+  cross-section of the doc-02 history, written one province at a time with
+  `03` §8 as the design brief; `05+` are still open (next: V3, then S2).
+- **Province profiler** — `tools/province-ecology/main.mjs <PROVINCE>` streams
+  the raw export and reports any province's Köppen/terrain composition,
+  seasonal water and temperature regime, frost-free share, NPP and elevation
+  spread (`--box` for a sub-region, `--compare` for interdigitation with a
+  neighbour). Run it before writing any new regional ecology.
 - **Data caveats** — `reports/audit/README.md`. The ones that matter for
   worldbuilding: `pS/pW`, `wsS/wsW`, `ocSpeed*` are p95-capped indices (1
   means "at or above the 95th percentile", so extreme rainfall/wind figures

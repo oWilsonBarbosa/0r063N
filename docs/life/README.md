@@ -15,7 +15,15 @@ to each other correctly.
 | 01 | [`01_BIOGEOGRAPHIC_REALMS.md`](01_BIOGEOGRAPHIC_REALMS.md) | The realm map: four terrestrial realms + provinces, the marine realms, and the affinity rules — which biotas share deep ancestry vs. which merely trade coastlines | **done** |
 | 02 | [`02_LIFE_THROUGH_DEEP_TIME.md`](02_LIFE_THROUGH_DEEP_TIME.md) | Paleobiology: the biology run forward era by era along the paleoclimate record, showing how the one tree became the four realms | **done** |
 | 03 | [`03_HUMANOID_ANCESTRY.md`](03_HUMANOID_ANCESTRY.md) | The Meridian Aulacines: which Zoan lineage, in which basin, becomes the peoples of Phase 5 — and the dispersal asymmetry that follows | **done** |
-| 04+ | *Regional ecologies* | Concrete flora and fauna for specific regions — the T-0 cross-section of doc 02, briefed by doc 03 §8 | planned |
+| 04 | [`04_MERIDIAN_ARID_INTERIOR.md`](04_MERIDIAN_ARID_INTERIOR.md) | The first regional ecology: **M3**, the peoples' homeland — the three-lake basin system, the xeric flora, the ectotherm-dominated fauna, and the two domestication lines | **done** |
+| 05+ | *Regional ecologies* | The remaining provinces — the T-0 cross-section of doc 02, briefed by doc 03 §8. Next: **V3** (the homologous mirror), then **S2** (the convergent trap) | planned |
+
+Regional ecologies are written **one province at a time**, on the province
+partition of `../culture/00_PROVINCE_CONSTRAINT_VECTORS.md` §2 rather than on
+the icosahedral gazetteer faces — provinces are the biogeographic unit (doc 01
+draws every edge on an isolating barrier), and they are the interface the
+culture layer consumes. Each is profiled from the raw export first by
+`tools/province-ecology/`, so the invention starts from measured composition.
 
 ## Grounding rules
 
