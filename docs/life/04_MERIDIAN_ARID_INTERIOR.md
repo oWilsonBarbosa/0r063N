@@ -358,9 +358,13 @@ constrains the other two.
 
 **Open for the next documents:**
 
-- **`05` — Selvana's Interior Dry Basin (V3)**, the homologous mirror. The
-  natural next document: it is defined against this one, and writing it
-  immediately is what proves the homology rule does real work.
+- **`05` — Selvana's Interior Dry Basin (V3)**, the homologous mirror —
+  **written**, see [`05_SELVANAN_INTERIOR_DRY_BASIN.md`](05_SELVANAN_INTERIOR_DRY_BASIN.md).
+  It confirms the homology and sharpens this document in one place: V3 holds
+  the climate and the ancestral stock almost exactly, lacks all three of the
+  cradle's geological requirements, and produces no speciation pump — so the
+  peoples arose here because of AU1, P5 and The Deep, not because Meridia was
+  dry.
 - **`06` — Sirocca's Arid Heart (S2)**, the convergent trap.
 - The remaining Meridian provinces (M1, M2, M4) and everything outside Meridia.
 - Marine ecologies — untouched by any document so far, on a planet that is

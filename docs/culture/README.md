@@ -23,8 +23,19 @@ answers this layer's brief directly. The regional ecologies have begun:
 [`../life/04_MERIDIAN_ARID_INTERIOR.md`](../life/04_MERIDIAN_ARID_INTERIOR.md)
 covers **M3** and names the two domestication lines this layer was waiting on —
 **Flushgrass** (the cereal-analogue's wild ancestor) and the **Rainherd** (the
-pack-and-milk animal's). The remaining provinces (`../life/05+`) are still
-outstanding.
+pack-and-milk animal's).
+[`../life/05_SELVANAN_INTERIOR_DRY_BASIN.md`](../life/05_SELVANAN_INTERIOR_DRY_BASIN.md)
+adds **V3**, where those two lines have usable congeners — so a Meridian
+agricultural toolkit crosses the Equatorial Western Sea intact, but its
+**planting calendar does not**: V3 plants time on cooling as well as wetting,
+a cue the Meridian homeland (2.4 °C annual range) never taught. The remaining
+provinces (`../life/06+`) are still outstanding.
+
+Doc 05 §7 also records a **defect in this layer's own partition**: the
+longitude-based continent proxy of §2 drops 1.80 Mkm² of land planet-wide and
+undercounts Selvana by 1.39 Mkm² (−5.1 %) against `reports/tectonics/inventory.json`.
+It is internally consistent, so every published vector still agrees with every
+document, but a flood-fill continent assignment would be the real fix.
 
 Doc 00 was designed to be read **backwards**, and that still holds: the
 subsistence requirements it extracts (a herdable cold-tolerant animal here, a

@@ -228,6 +228,28 @@ seasonless** (2.4 °C annual range, 100 % frost-free). Named biota:
 The two domestication lines are **Flushgrass → cereal** and **Rainherd →
 pack-and-milk animal**, both originating in M3 and maturing elsewhere.
 
+The **second regional ecology** is written: `docs/life/05_SELVANAN_INTERIOR_DRY_BASIN.md`
+covers **V3**, M3's homologous mirror. M3 and V3 are climate twins at
+**mirror-image latitudes** (16–42 °N vs 18–40 °S; 22.3 vs 22.1 °C) from one
+west-flank xeric stem, but V3 is **flat** (median 90 m vs 620 m), **twice as
+seasonal** (range 14.3 vs 9.1 °C), **monotonous** (BSh 85.2 % vs 54.1 %), and has
+**no permanent deep water** (Selvana holds none of the planet's ten great lakes;
+its deepest is 44 m against The Deep's 821 m). So V3 has **no speciation pump**:
+same ancestry, opposite diversity structure — M3 many species with small ranges
+and ancient relicts, V3 few species with huge ranges and none. Congeners:
+**Palescrub · Coldflush · Pan-tuber · Broadbacks · Basinherds · Longcoursers**;
+**Cloudscrub and Deepfin are absent**. Two results to carry forward: V3 organisms
+time on **cooling as well as wetting**, so a Meridian planting calendar misfires
+there even though the crops transfer; and **V3 could not have produced the
+peoples** — it has the climate and the stock but none of doc 03 §2's three
+geological requirements, which is what makes the cradle's geology, not its
+climate, responsible.
+
+**Partition caveat** (doc 05 §7): the longitude-based continent proxy drops
+1.80 Mkm² of land (1.69 % of all land) and undercounts **Selvana by 5.1 %**
+against `reports/tectonics/inventory.json`. Every published vector is internally
+consistent with it, but treat Selvanan absolute areas as approximate.
+
 ### Open (Phase 5 creative space — fully yours to invent)
 Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · human history and mythology · calendar, day length, moon system, gravity · concrete regional ecologies (grounded in `docs/life/`) · any minor rivers and local geography
 

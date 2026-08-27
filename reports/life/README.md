@@ -16,12 +16,27 @@ describe the same partition.
 | [`plate-m3-02-cradle.png`](maps/plate-m3-02-cradle.png) | The cradle at 4× in Table-18 terrain classes, with the three lakes labelled by surface elevation and maximum depth |
 | [`plate-m3-03-ecotone.png`](maps/plate-m3-03-ecotone.png) | The M3/M4 interdigitation in 2° bins — mixed, M3-only, M4-only |
 
+## V3 — the Selvanan Interior Dry Basin (doc 05)
+
+| Plate | What it shows |
+|---|---|
+| [`plate-v3-01-province.png`](maps/plate-v3-01-province.png) | V3 within Selvana, provinces colour-coded, with the continent proxy's meridian cut drawn and labelled |
+| [`plate-v3-02-basin.png`](maps/plate-v3-02-basin.png) | The basin at 3× in Table-18 terrain classes — an unbroken scrub matrix, no great lake, no relief |
+| [`plate-v3-03-ecotone.png`](maps/plate-v3-03-ecotone.png) | The V3/V1b interdigitation — 63 % mixed, against M3/M4's 43.8 % |
+| [`plate-m3-v3-mirror.png`](maps/plate-m3-v3-mirror.png) | The homologous pair at identical scale, V3 mirrored on the equator so the mirror-image latitude bands align |
+
 Every figure in a plate legend is tallied **per cell over the whole export**,
 before any cropping or rasterisation, so the plates agree exactly with
 `tools/province-ecology/main.mjs` and with the numbers in the documents (M3
 terrain 54.1 / 21.6 / 12.5 / 11.8 %; ecotone 323 / 143 / 272 bins, 43.8 %
 mixed). Counting rasterised pixels inside a crop instead would change both the
 denominator and the projection weighting.
+
+**One honest edge.** The continent proxy defines Selvana as `lon < -128`, so
+V3's plates end on a meridian rather than a coast; the cut is drawn on them in
+red and labelled, because it is a definition rather than geography. It drops
+1.80 Mkm² of land planet-wide and undercounts Selvana by 1.39 Mkm² against
+`reports/tectonics/inventory.json` — see doc 05 §7.
 
 ## Regenerating
 

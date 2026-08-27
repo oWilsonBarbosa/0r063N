@@ -16,7 +16,8 @@ to each other correctly.
 | 02 | [`02_LIFE_THROUGH_DEEP_TIME.md`](02_LIFE_THROUGH_DEEP_TIME.md) | Paleobiology: the biology run forward era by era along the paleoclimate record, showing how the one tree became the four realms | **done** |
 | 03 | [`03_HUMANOID_ANCESTRY.md`](03_HUMANOID_ANCESTRY.md) | The Meridian Aulacines: which Zoan lineage, in which basin, becomes the peoples of Phase 5 — and the dispersal asymmetry that follows | **done** |
 | 04 | [`04_MERIDIAN_ARID_INTERIOR.md`](04_MERIDIAN_ARID_INTERIOR.md) | The first regional ecology: **M3**, the peoples' homeland — the three-lake basin system, the xeric flora, the ectotherm-dominated fauna, and the two domestication lines | **done** |
-| 05+ | *Regional ecologies* | The remaining provinces — the T-0 cross-section of doc 02, briefed by doc 03 §8. Next: **V3** (the homologous mirror), then **S2** (the convergent trap) | planned |
+| 05 | [`05_SELVANAN_INTERIOR_DRY_BASIN.md`](05_SELVANAN_INTERIOR_DRY_BASIN.md) | **V3**, M3's homologous mirror: climate twins at mirror-image latitudes from one xeric stem, diverging on relief, seasonality, uniformity and water — and the control showing the cradle needed geology, not climate | **done** |
+| 06+ | *Regional ecologies* | The remaining provinces — the T-0 cross-section of doc 02, briefed by doc 03 §8. Next: **S2**, Sirocca's Arid Heart, the convergent trap and the third leg of the desert experiment | planned |
 
 Regional ecologies are written **one province at a time**, on the province
 partition of `../culture/00_PROVINCE_CONSTRAINT_VECTORS.md` §2 rather than on
