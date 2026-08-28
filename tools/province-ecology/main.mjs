@@ -32,6 +32,7 @@ import { fileURLToPath } from 'node:url';
 import { elevToHeightKm } from '../height-mapping.mjs';
 import { KOPPEN_CLASSES, TERRAIN_CLASSES, classifyTerrain } from '../regional-report/classify.mjs';
 import { precipAnnualMm } from '../precip-scale.mjs';
+import { buildContinentIndex, ISLANDS } from '../continents.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'data/orogen_regions_full_v2');
@@ -83,6 +84,9 @@ if (!target) {
 }
 const flag = n => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : null; };
 const asJson = argv.includes('--json');
+// 'proxy'      = the documented longitude rule (culture doc section 2)
+// 'connected'  = connected landmass, keyed to inventory.json (tools/continents.mjs)
+const CONTINENT_RULE = flag('--continents') || 'proxy';
 const compare = flag('--compare');
 const boxLabel = flag('--label') || 'box';
 const box = flag('--box')?.split(',').map(Number) ?? null;
@@ -112,6 +116,13 @@ function add(a, r) {
 const bins = new Map();                       // 2-degree bins, for --compare
 const binKey = (lat, lon) => `${Math.floor(lat / 2)},${Math.floor(lon / 2)}`;
 
+const connected = CONTINENT_RULE === 'connected' ? await buildContinentIndex() : null;
+const continentAt = (lat, lon) => {
+    if (!connected) return continentOf(lat, lon);
+    const n = connected.at(lat, lon);
+    return n === ISLANDS ? null : n;
+};
+
 const parts = fs.readdirSync(DATA).filter(f => f.endsWith('.csv.gz')).sort();
 let idx = null;
 
@@ -130,7 +141,7 @@ for (const part of parts) {
         const f = line.split(',');
         if (+f[idx.isLand] !== 1) continue;
         const lat = +f[idx.lat], lon = +f[idx.lon];
-        const cont = continentOf(lat, lon);
+        const cont = continentAt(lat, lon);
         if (!cont) continue;
         const h = elevToHeightKm(+f[idx.elev]);
         const k = +f[idx.koppen];

@@ -31,11 +31,41 @@ agricultural toolkit crosses the Equatorial Western Sea intact, but its
 a cue the Meridian homeland (2.4 °C annual range) never taught. The remaining
 provinces (`../life/06+`) are still outstanding.
 
-Doc 05 §7 also records a **defect in this layer's own partition**: the
+## A correction available to this layer
+
+Doc 05 §7 records a **defect in this layer's own partition**: the
 longitude-based continent proxy of §2 drops 1.80 Mkm² of land planet-wide and
-undercounts Selvana by 1.39 Mkm² (−5.1 %) against `reports/tectonics/inventory.json`.
-It is internally consistent, so every published vector still agrees with every
-document, but a flood-fill continent assignment would be the real fix.
+undercounts Selvana by 1.39 Mkm² (−5.1 %) against
+`reports/tectonics/inventory.json`, while inflating the other three continents.
+
+**The fix now exists.** [`tools/continents.mjs`](../../tools/continents.mjs)
+ports the connected-landmass assignment the tectonics pipeline already used
+(`tools/tectonics-pipeline/lib/continents.py`, also behind `docs/BIOGEOGRAPHY.md`)
+into zero-dependency Node, and reproduces the authoritative continent areas to
+within 0.27 Mkm². Both Node tools accept `--continents connected`; the full
+per-province delta is printed by:
+
+```sh
+node tools/province-vectors/validate-continents.mjs
+```
+
+**The published vectors in doc 00 still use the proxy**, so this document and
+every figure downstream of it remain internally consistent. Adopting the
+corrected rule is a decision for this layer, because it is not merely numeric:
+
+| Province | Delta | Why it matters here |
+|---|---:|---|
+| **B1** Southern Maritime Coast | **−21 %** | the largest change on the planet; §5 rates B-group coasts a top state-formation bet |
+| **V4** Southern Cordillera | +15.2 % | |
+| **M4** S. Tropical Lowlands | −9.6 % | §5 ranks M4 second by NPP × area |
+| **V1b** Subtropical Belt | +6.8 % | §5 ranks V1b fourth — the M4/V1b move may reorder that list |
+| S3 · S1 | −7.3 % · −5 % | |
+| M1 · V2 · S2 · B3 · V3 · M3 | ≤ 2.3 % | the provinces the life layer has documented barely move |
+
+Two editorial questions come with the switch: whether §5's "four provinces that
+will carry the world" ranking survives the M4/V1b move, and whether the master
+table should gain **Islands** rows (the corrected rule assigns 4.03 Mkm² there,
+matching `docs/BIOGEOGRAPHY.md`, where the proxy had no such bucket).
 
 Doc 00 was designed to be read **backwards**, and that still holds: the
 subsistence requirements it extracts (a herdable cold-tolerant animal here, a

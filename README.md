@@ -51,7 +51,8 @@ reconstructed **750-million-year geological + climate history**.
 | `reports/audit/` | The dataset audit that motivated the v2 export: field profile, coherence tests, code-level root-cause analysis, and the present-state atlas (source documents in Portuguese, summary in English). |
 | `tools/export-v2/` | **Node.js** pipeline that rebuilds the corrected v2 export from the v1 parts and the pinned generator (single dependency: `delaunator`). |
 | `tools/regional-report/` | Zero-dependency **Node.js** pipeline that generates the regional reports and atlas. |
-| `tools/province-vectors/` | Zero-dependency **Node.js** script that derives the per-province constraint vectors in `docs/culture/`. |
+| `tools/province-vectors/` | Zero-dependency **Node.js** script that derives the per-province constraint vectors in `docs/culture/`, plus `validate-continents.mjs`, which reports the per-province delta between the published longitude proxy and the corrected connected-landmass partition. |
+| `tools/continents.mjs` | Connected-landmass continent membership for the Node tools — a port of the tectonics pipeline's `lib/continents.py`, reproducing the authoritative `inventory.json` areas to within 0.27 Mkm². |
 | `tools/province-ecology/` | Zero-dependency **Node.js** province profiler and map renderer behind the `docs/life/04+` regional ecologies: Köppen/terrain composition, seasonal water and temperature regime, NPP and relief, for any province or sub-region — plus the plates in `reports/life/`. |
 | `reports/life/` | Map plates for the regional ecologies (province context, cradle terrain, ecotone bins). Built by `tools/province-ecology/render.mjs`. |
 | `tools/tectonics-pipeline/` | **Python** pipeline that reconstructs the tectonic history and paleoclimate. |

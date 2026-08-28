@@ -245,10 +245,18 @@ peoples** — it has the climate and the stock but none of doc 03 §2's three
 geological requirements, which is what makes the cradle's geology, not its
 climate, responsible.
 
-**Partition caveat** (doc 05 §7): the longitude-based continent proxy drops
-1.80 Mkm² of land (1.69 % of all land) and undercounts **Selvana by 5.1 %**
-against `reports/tectonics/inventory.json`. Every published vector is internally
-consistent with it, but treat Selvanan absolute areas as approximate.
+**Partition caveat** (doc 05 §7): the longitude-based continent proxy behind the
+published constraint vectors drops 1.80 Mkm² of land (1.69 % of all land) and
+undercounts **Selvana by 5.1 %** against `reports/tectonics/inventory.json`.
+A corrected connected-landmass assignment now exists —
+`tools/continents.mjs`, a port of the tectonics pipeline's own
+`lib/continents.py`, reproducing the authoritative areas to within 0.27 Mkm².
+Both Node tools take `--continents connected`, and
+`node tools/province-vectors/validate-continents.mjs` prints the per-province
+delta. The **published vectors still use the proxy**, so everything downstream
+stays consistent; treat absolute areas as approximate, most of all for **B1
+(−21 %)**, V4 (+15.2 %) and M4 (−9.6 %). The documented provinces M3 and V3
+move by ≤ 2.3 % and no climate figure in docs 04–05 changes.
 
 ### Open (Phase 5 creative space — fully yours to invent)
 Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · human history and mythology · calendar, day length, moon system, gravity · concrete regional ecologies (grounded in `docs/life/`) · any minor rivers and local geography

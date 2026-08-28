@@ -291,16 +291,42 @@ smaller artifact: ~96 southern land cells lie east of +150° and are assigned to
 Sirocca, though Selvana's reach to exactly −180.0 suggests they are its western
 tip.
 
-**What this does and does not affect.** Every figure in this document is
-computed on the documented partition and reproduces the published vectors, so
-it is internally consistent with the culture layer and with doc 04. But V3's
-true extent is probably somewhat larger than 4.8 Mkm², and some of the dropped
-strip is probably V3 or V1b. **Nothing here rests on V3's absolute area** — the
-argument runs on relief, seasonality, uniformity, water depth and
-interdigitation, none of which a 5 % area correction would move. Fixing the
-partition properly (a flood fill rather than a meridian) would change the
-published constraint vectors, so it is a decision for the culture layer, not a
-change to make inside an ecology document.
+### The corrected partition, and what it changes
+
+The fix is now implemented. The tectonics pipeline already carried the right
+definition — `tools/tectonics-pipeline/lib/continents.py` assigns each land cell
+by **connected landmass**, keyed to the inventory centroids, and both
+`docs/BIOGEOGRAPHY.md` and the continent profiles already use it. The Node tools
+simply could not reach it. [`tools/continents.mjs`](../../tools/continents.mjs)
+is a faithful port (same 2048×1024 grid, same majority rasterisation, same
+8-neighbour gap fill, same 4-connected labelling with longitude wrap), and it
+reproduces the authoritative areas to within 0.27 Mkm² — the residual being
+pixel-area against cell-area summation.
+
+```sh
+node tools/province-vectors/validate-continents.mjs
+node tools/province-ecology/main.mjs V3 --continents connected
+```
+
+It confirms the diagnosis: **1.46 Mkm² of the dropped strip is Selvana's**, and
+a further 3.7 Mkm² the proxy folded into one continent or another is detached
+island (the connected rule gives Islands 4.03 Mkm², consistent with the
+`Islands` bucket in `docs/BIOGEOGRAPHY.md`).
+
+**None of this document's conclusions move.** Under the corrected rule V3 is
+4.84 Mkm² rather than 4.80 (+0.8 %) and M3 is 9.27 rather than 9.49 (−2.3 %);
+every climate figure is identical to a decimal place or within one unit —
+V3 22.1 °C / range 14.3 / 352 mm / NPP 621 / BSh 85.2 %, M3 22.3 °C / range 9.1
+/ 303 mm / NPP 537 / BSh 53.3 %. The mirror-latitude homology, the four
+divergences, the diversity inversion and §6's control all stand unchanged.
+
+**Where it does matter is elsewhere**, and future provinces should be written on
+the corrected rule: **B1** (Borea's Southern Maritime Coast) is **−21 %**,
+**V4** +15.2 %, **M4** −9.6 %, **S3** −7.3 %, **S1** −5 %. Adopting it as the
+published default would reorder the culture layer's "four provinces that will
+carry the world" and raise whether that table should carry Islands rows, so the
+switch is the culture layer's to make; the tool, the validation and the full
+per-province delta are in place for it.
 
 ---
 
