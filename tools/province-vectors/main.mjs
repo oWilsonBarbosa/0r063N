@@ -16,6 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { elevToHeightKm } from '../height-mapping.mjs';
 import { KOPPEN_CLASSES } from '../regional-report/classify.mjs';
 import { PRECIP_SCALE_MM, precipAnnualMm } from '../precip-scale.mjs';
+import { buildContinentIndex, ISLANDS } from '../continents.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'data/orogen_regions_full_v2');
@@ -31,7 +32,17 @@ const miamiNpp = (tC, pMm) => Math.min(
     3000 * (1 - Math.exp(-0.000664 * pMm)),
 );
 
-// --- continent assignment -------------------------------------------------
+// --- continent rule -------------------------------------------------------
+// 'connected' (default) assigns each land cell to its connected landmass, keyed
+// to reports/tectonics/inventory.json — the same definition the tectonics
+// pipeline and docs/BIOGEOGRAPHY.md use (tools/continents.mjs).
+// 'proxy' is the original longitude rule, kept so the pre-correction table can
+// be reproduced; it drops 1.80 Mkm2 of land and undercounts Selvana by 5.1 %.
+const CONTINENT_RULE =
+    (process.argv.includes('--continents') ? process.argv[process.argv.indexOf('--continents') + 1] : null)
+    || 'connected';
+
+// --- legacy continent assignment (--continents proxy) ---------------------
 // The export carries no continent id.  Meridia and Selvana are joined by an
 // island chain across the Equatorial Western Sea, so a flood fill merges them;
 // they are separated here on the strait longitude instead.  Western-hemisphere
@@ -86,6 +97,8 @@ function bucket(name) {
     return a;
 }
 
+const connected = CONTINENT_RULE === 'connected' ? await buildContinentIndex() : null;
+
 const parts = fs.readdirSync(DATA).filter(f => f.endsWith('.csv.gz')).sort();
 let idx = null;
 
@@ -107,12 +120,16 @@ for (const part of parts) {
         if (f[idx.isLand] !== '1') continue;
 
         const lat = +f[idx.lat], lon = +f[idx.lon];
-        const cont = continentOf(lat, lon);
-        if (!cont) continue;
+        const cont = connected ? connected.at(lat, lon) : continentOf(lat, lon);
+        if (!cont) continue;                      // proxy only: its dropped bucket
 
         const heightKm = elevToHeightKm(+f[idx.elev]);
         const code = KOPPEN_CLASSES[+f[idx.koppen]].code;
-        const name = provinceOf(cont, heightKm, lat, code);
+        // Islands is an accounting row, not a province of the realm map: under
+        // the corrected rule every land cell lands somewhere, and detached land
+        // would otherwise vanish the way the proxy's 1.80 Mkm2 did.
+        const name = cont === ISLANDS ? 'Islands (accounting row)'
+            : provinceOf(cont, heightKm, lat, code);
         if (!name) continue;
 
         const tS = degC(+f[idx.tS]), tW = degC(+f[idx.tW]);

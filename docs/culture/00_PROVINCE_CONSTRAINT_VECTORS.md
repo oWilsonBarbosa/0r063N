@@ -33,11 +33,16 @@ from MEASURED values. Nothing here is INVENTED.
 5. Check the choice against [`../life/01_BIOGEOGRAPHIC_REALMS.md`](../life/01_BIOGEOGRAPHIC_REALMS.md).
    A subsistence mode is only available if the realm's biota can supply it.
 
-**Use it backwards too.** The regional ecologies (`../life/03+`) and the
-humanoid-ancestry document are still unwritten. The subsistence *requirements*
-that fall out of step 4 are a design brief for those documents: if a province's
-envelope demands a herdable, cellulose-converting, cold-tolerant animal, that
-is a specification the biology layer has to fill.
+**Use it backwards too.** The subsistence *requirements* that fall out of step 4
+are a design brief for the biology layer: if a province's envelope demands a
+herdable, cellulose-converting, cold-tolerant animal, that is a specification
+the biology has to fill. Three of those documents now exist —
+[`../life/03_HUMANOID_ANCESTRY.md`](../life/03_HUMANOID_ANCESTRY.md),
+[`04`](../life/04_MERIDIAN_ARID_INTERIOR.md) (M3) and
+[`05`](../life/05_SELVANAN_INTERIOR_DRY_BASIN.md) (V3) — and they answer the
+brief for M3 and V3 with **Flushgrass → cereal** and **Rainherd → pack-and-milk
+animal**, plus their Selvanan congeners. The remaining provinces (`../life/06+`)
+are still unwritten, so keep reading this document backwards for those.
 
 ---
 
@@ -127,7 +132,7 @@ What that means province by province:
 | M3 · S2 · V3 | **Reliable**, slight overstatement from their `BWh` fraction | Use as stated |
 | V4 · M2 | **Mixed** — `Dfa`/`Csa` reliable, `Dfb`/`Dfc` high | Treat as an upper bound |
 | M4 · S1 · V1a · V1b · B1 | **Understated ~25–35 %** | A floor |
-| S3 · B2 | **Overstated ~2–2.5×** | B2's 836 mm is likely nearer 400 |
+| S3 · B2 | **Overstated ~2–2.5×** | B2's 831 mm is likely nearer 400 |
 | M1 · B3 | **Overstated ~4×** | Ice-dominated; treat as "very dry" |
 | V2 | **Unknown** | Tropical alpine has no Earth counterpart at this scale, and the `ET` bias was measured on polar tundra. Do not transfer it |
 
@@ -150,13 +155,36 @@ province that is temperature-limited:
 The provinces whose precipitation is least reliable are almost exactly the
 ones whose NPP does not depend on it. Recalibrating from 1000 to 813.7
 moves B2's NPP by only 3.2 % (793 → 768) because it is temperature-limited,
-while M3's moves 16 % (645 → 539) because it is not.
+while M3's moves 16 % (645 → 539) because it is not. (Both pairs were computed
+on the pre-correction partition of §2; the effect they illustrate is a property
+of the precipitation scale, not of continent membership, and the corrected
+partition puts the same endpoints at 761 and 537.)
 
 The exception worth remembering: **V1a and M4 are precipitation-limited *and*
 censored**, so their NPP figures are floors as well.
 
 
-**Province boundaries are operational.** The fourteen provinces are those of
+**Which continent a cell belongs to.** Every land cell is assigned to its
+**connected landmass**, keyed to the continent centroids in
+`reports/tectonics/inventory.json` — the same definition the tectonics pipeline
+and [`../BIOGEOGRAPHY.md`](../BIOGEOGRAPHY.md) use, ported for the Node tools as
+[`../../tools/continents.mjs`](../../tools/continents.mjs). Detached land falls
+in an **Islands** bucket rather than being folded into whichever continent lies
+nearest.
+
+> **This replaces a longitude proxy, and the table below has been regenerated.**
+> Earlier versions separated Meridia from Selvana on the −128° meridian and
+> discarded western-hemisphere land below 16 °S. That rule dropped **1.80 Mkm²
+> of land** (1.69 % of the planet's land) and undercounted **Selvana by 5.1 %**
+> against the authoritative areas, while inflating the other three continents.
+> The correction moves **B1 −21 %**, **V4 +15.2 %**, **M4 −9.6 %**, **S3 −7.3 %**,
+> **S1 −5 %**, **V1b +6.8 %**; every other province moves by ≤ 2.3 %, and no
+> climate figure moves by more than a rounding unit. Reproduce the old table
+> with `--continents proxy`; see `tools/province-vectors/validate-continents.mjs`
+> for the full delta and `../life/05_SELVANAN_INTERIOR_DRY_BASIN.md` §7 for how
+> it was found.
+
+**Province boundaries are operational.** The fifteen provinces are those of
 [`../life/01_BIOGEOGRAPHIC_REALMS.md`](../life/01_BIOGEOGRAPHIC_REALMS.md),
 but that document names them without drawing them. The rules below are my
 reproducible approximation, applied in priority order per continent:
@@ -179,9 +207,11 @@ Two consequences to keep in view:
   below 45°N, which merges the tropical south with the humid east coast. Its
   vector is an average over two genuinely different places; split it before
   designing anything specific.
-
-Offshore land in the western hemisphere below 16°S is excluded from Meridia as
-islands rather than continent.
+- **Islands is an accounting row, not a province.** It exists so that every
+  land cell lands somewhere and none goes missing the way the proxy's
+  1.80 Mkm² did. Its vector averages a pole-to-pole scatter (−72° to 55°,
+  61 % coastal) and describes nowhere: **never design against it.** For island
+  habitats use the per-habitat island rows in [`../BIOGEOGRAPHY.md`](../BIOGEOGRAPHY.md).
 
 ---
 
@@ -193,20 +223,21 @@ Area in millions of km². Temperatures °C. Precipitation mm/yr. NPP g/m²/yr.
 | Province | Area | Lat (5–95 %) | Elev mean / max | >2 km | T cold | T warm | T ann | Precip | Wet | NPP | Frost-free | Growing | Coastal |
 |---|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | **M1** W. Cordillera & Central Massif | 5.1 | 10–58 N | 2.99 / 7.66 | 100 % | −12.2 | −1.1 | −6.7 | 312 ‡ | 60 % | 331 | 21 % | 25 % | 0.0 % |
-| **M2** Northern Cold Highlands | 5.3 | 46–63 N | 0.54 / 2.0 | 0 % | 0.1 | 20.7 | 10.4 | 815 ~ | 58 % | 1066 | 53 % | 95 % | 8.4 % |
-| **M3** Arid Interior Plateau | 9.5 | 16–42 N | 0.75 / 2.0 | 0 % | 17.7 | 26.8 | 22.3 | 304 | 65 % | 539 | 98 % | 100 % | 3.7 % |
-| **M4** S. Tropical Lowlands & SW Trunk | 9.5 | 7 S–43 N | 0.53 / 2.0 | 0 % | 21.5 | 25.7 | 23.6 | 982 + | 64 % | 1378 + | 96 % | 100 % | 13.0 % |
-| **S1** Northern Range & SW Wet Coast | 11.5 | 4–49 S | 0.87 / 6.98 | 17 % | 15.0 | 22.0 | 18.5 | 843 + | 60 % | 1187 + | 87 % | 87 % | 9.9 % |
-| **S2** The Arid Heart | 12.1 | 21–46 S | 0.80 / 2.8 | 5 % | 17.6 | 27.1 | 22.4 | 278 | 64 % | 498 | 98 % | 100 % | 1.1 % |
-| **S3** Southern Cold Fringe | 4.7 | 50–74 S | 0.77 / 4.7 | 11 % | −2.3 | 13.7 | 5.7 | 909 ‡ | 54 % | 926 | 47 % | 71 % | 16.3 % |
-| **B1** Southern Maritime Coast | 4.0 | 26–45 N | 0.19 / 1.5 | 0 % | 7.9 | 26.6 | 17.2 | 642 + | 70 % | 956 + | 100 % | 100 % | 19.4 % |
-| **B2** Subarctic Interior | 12.9 | 47–72 N | 0.44 / 1.5 | 0 % | −10.5 | 14.9 | 2.2 | 836 ‡ | 59 % | 768 | 1 % | 66 % | 7.1 % |
-| **B3** E. Range & N. Ice Highlands | 4.3 | 51–77 N | 1.96 / 6.12 | 42 % | −28.5 | −5.2 | −16.8 | 486 ‡ | 60 % | 163 | 0 % | 9 % | 2.0 % |
-| **V1a** Tropical North | 10.0 | 13 S–19 N | 0.39 / 2.0 | 0 % | 23.6 | 25.7 | 24.7 | 1173 + | 64 % | 1594 + | 100 % | 100 % | 11.7 % |
-| **V1b** Subtropical Belt *(operational)* | 4.7 | 16–41 S | 0.33 / 5.5 | 3 % | 12.7 | 26.7 | 19.7 | 682 + | 70 % | 1052 + | 95 % | 97 % | 6.4 % |
+| **M2** Northern Cold Highlands | 5.1 | 46–62 N | 0.56 / 2.0 | 0 % | 0.2 | 21.0 | 10.6 | 799 ~ | 58 % | 1068 | 54 % | 95 % | 6.5 % |
+| **M3** Arid Interior Plateau | 9.3 | 16–42 N | 0.77 / 2.0 | 0 % | 17.7 | 26.8 | 22.3 | 303 | 65 % | 537 | 98 % | 100 % | 2.6 % |
+| **M4** S. Tropical Lowlands & SW Trunk | 8.6 | 7 S–43 N | 0.58 / 2.0 | 0 % | 21.4 | 25.7 | 23.5 | 958 + | 65 % | 1353 + | 96 % | 100 % | 9.1 % |
+| **S1** Northern Range & SW Wet Coast | 10.9 | 5–49 S | 0.92 / 6.98 | 18 % | 14.9 | 21.8 | 18.4 | 830 + | 60 % | 1171 + | 87 % | 86 % | 6.8 % |
+| **S2** The Arid Heart | 12.1 | 21–46 S | 0.80 / 2.8 | 5 % | 17.6 | 27.1 | 22.4 | 277 | 64 % | 498 | 98 % | 100 % | 1.0 % |
+| **S3** Southern Cold Fringe | 4.3 | 50–71 S | 0.83 / 4.74 | 12 % | −1.7 | 14.2 | 6.3 | 883 ‡ | 54 % | 951 | 49 % | 74 % | 12.5 % |
+| **B1** Southern Maritime Coast | 3.1 | 26–45 N | 0.22 / 1.49 | 0 % | 7.2 | 27.0 | 17.1 | 643 + | 72 % | 950 + | 100 % | 100 % | 13.1 % |
+| **B2** Subarctic Interior | 12.6 | 47–72 N | 0.45 / 1.5 | 0 % | −10.8 | 14.8 | 2.0 | 831 ‡ | 59 % | 761 | 0 % | 66 % | 5.6 % |
+| **B3** E. Range & N. Ice Highlands | 4.3 | 50–77 N | 1.97 / 6.12 | 42 % | −28.5 | −5.2 | −16.9 | 485 ‡ | 60 % | 163 | 0 % | 9 % | 1.7 % |
+| **V1a** Tropical North | 9.9 | 13 S–20 N | 0.40 / 2.0 | 0 % | 23.4 | 25.8 | 24.6 | 1160 + | 63 % | 1578 + | 100 % | 100 % | 9.5 % |
+| **V1b** Subtropical Belt *(operational)* | 5.1 | 17–41 S | 0.32 / 5.51 | 3 % | 12.2 | 26.4 | 19.3 | 688 + | 69 % | 1061 + | 96 % | 97 % | 6.0 % |
 | **V2** Equatorial Ranges (sky-islands) | 0.8 | 17 S–14 N | 2.63 / 6.17 | 100 % | 3.0 | 10.0 | 6.5 | 755 ? | 70 % | 968 | 68 % | 58 % | 0.1 % |
-| **V3** Interior Dry Basin | 4.8 | 18–40 S | 0.22 / 2.2 | 0 % | 14.9 | 29.3 | 22.1 | 353 | 68 % | 621 | 100 % | 100 % | 1.7 % |
-| **V4** Southern Cordillera & Cold South | 5.6 | 43–60 S | 0.72 / 6.12 | 9 % | −5.4 | 20.1 | 7.3 | 766 ~ | 59 % | 934 | 21 % | 88 % | 5.0 % |
+| **V3** Interior Dry Basin | 4.8 | 18–40 S | 0.22 / 2.23 | 0 % | 14.9 | 29.2 | 22.1 | 352 | 68 % | 621 | 100 % | 100 % | 1.8 % |
+| **V4** Southern Cordillera & Cold South | 6.5 | 43–60 S | 0.71 / 6.14 | 8 % | −5.2 | 19.6 | 7.2 | 791 ~ | 58 % | 952 | 21 % | 89 % | 5.6 % |
+| *Islands* — accounting row, **not a design envelope** | 4.0 | 72 S–55 N | 0.09 / 2.67 | 0 % | 12.8 | 22.8 | 17.8 | 968 | 61 % | 1199 | 84 % | 92 % | 61.3 % |
 
 Precipitation uses the calibrated scale (§2.1). Reliability marks from §2.2:
 `+` understated, treat as a floor · `‡` overstated ~2–4× · `~` mixed, treat as
@@ -246,7 +277,7 @@ Terrestrial NPP of 331 is at the edge of what supports year-round occupation.
   it decides whether Meridia has one civilisation or two separated by a wall.
 
 ### M2 · Northern Cold Highlands
-`Bio1 8–13 · Bio12 600–850 · NPP ~1065 · Köppen Cfa/Cfb/Dfb`
+`Bio1 8–13 · Bio12 600–850 · NPP ~1070 · Köppen Cfa/Cfb/Dfb`
 
 **Mislabelled in the compendium.** Called "subarctic (D/E)", but the data reads
 C 45 % / D 37 %, mean 10.4 °C, cold season at freezing, 95 % of it above the
@@ -279,7 +310,7 @@ Hot semi-desert that never freezes, and holds the planet's deep salt sea
   whether the sea unifies the plateau or divides it.
 
 ### M4 · Southern Tropical Lowlands & SW Trunk River
-`Bio1 22–25 · Bio12 1200–1500 · NPP ≥1380 · Köppen Aw/Am/Cfa`
+`Bio1 22–25 · Bio12 1200–1450 · NPP ≥1350 · Köppen Aw/Am/Cfa`
 *Broad province — split before use.*
 
 Contains the SW trunk river: 1,980 km, **383 km³/yr**, mouth 5.7 °S 85.4 °W
@@ -299,7 +330,7 @@ onto a delta that is 49 % `Aw` / 29 % `BSh`, one wet season.
   avulsion-prone: cities here get abandoned, not besieged.
 
 ### S1 · Northern Range & SW Wet Coast
-`Bio1 16–21 · Bio12 1000–1300 · NPP ≥1190 · Köppen Af/Cfb + elev >2000 m band`
+`Bio1 16–21 · Bio12 1000–1300 · NPP ≥1170 · Köppen Af/Cfb + elev >2000 m band`
 
 A 6.98 km near-equatorial wall against the continent's only reliable maritime
 margin. Includes the 3,243 km / **865 km³/yr** river reaching the sea at
@@ -333,7 +364,7 @@ one of the very few that escapes to the sea (21.1 °S 43.2 °E).
   early hydraulic state, precisely because it is starved enough to require one.
 
 ### S3 · Southern Cold Fringe
-`Bio1 4–8 · Bio12 400–700 · NPP ~925 · Köppen Cfb/Cfc/ET · ET (Binford) low`
+`Bio1 4–8 · Bio12 400–700 · NPP ~950 · Köppen Cfb/Cfc/ET · ET (Binford) low`
 *Simulated 909 mm is overstated ~2× (§2.2).*
 
 Cool, wet, oceanic, 16.3 % coastal — the highest coastal fraction of any
@@ -362,8 +393,8 @@ people.
   cold interior a hinterland this coast exploits, or a rival that raids it?
 
 ### B2 · Subarctic Interior
-`Bio1 0–4 · Bio12 300–450 · NPP ~770 · Köppen Dfc/Dfb · frost-free 1 %`
-*Simulated 836 mm is overstated ~2.5× (§2.2); real taiga runs 400–600 mm, and
+`Bio1 0–4 · Bio12 300–450 · NPP ~760 · Köppen Dfc/Dfb · frost-free 0 %`
+*Simulated 831 mm is overstated ~2.5× (§2.2); real taiga runs 400–600 mm, and
 the corrected figure is what actually matches the Volga-Kama analogue.*
 
 The taiga. Near-exact match to Volga-Kama (Kirov: 18 °C / −13 °C, mean 2.5 °C).
@@ -392,7 +423,7 @@ The taiga. Near-exact match to Volga-Kama (Kirov: 18 °C / −13 °C, mean 2.5 �
   who crosses it, why, and what they believe is on top.
 
 ### V1a · Tropical North
-`Bio1 23–26 · Bio12 >1500 · NPP >1590 · Köppen Af/Am/Aw · frost-free 100 %`
+`Bio1 23–26 · Bio12 >1450 · NPP >1570 · Köppen Af/Am/Aw · frost-free 100 %`
 
 Highest NPP on the planet, and both figures are floors under the cap. The NE/N
 deltas here are 47–49 % `Af` — **ever-wet, not monsoon**; the wet/dry ratio is
@@ -409,7 +440,7 @@ about 1.4 : 1 where real monsoon deltas run 5 : 1 to 20 : 1.
   states. If you want a delta empire here you need an explicit reason.
 
 ### V1b · Subtropical Belt *(operational zone — not in the realms document)*
-`Bio1 18–22 · Bio12 850–1050 · NPP ~1050 · Köppen Cs/Aw/Cfa`
+`Bio1 18–22 · Bio12 850–1050 · NPP ~1060 · Köppen Cs/Aw/Cfa`
 
 Mild winters, hot summers, 70 % summer-wet.
 
@@ -484,11 +515,19 @@ winter-wet with dry summers, ~1 km elevation, mountains and freshwater lakes.
 It sits inside M2/M3's boundary and deserves its own province when this
 document is revised.
 
-**The four provinces that will carry the world.** By NPP × area: V1a (18.1 M
-NPP-units × Mkm²), M4, S1, V1b. By *state-formation potential* the ranking is
-almost inverted — S2's starved exorheic river and M2's storage-rich temperate
-coast are better bets than the productive tropics, for the reasons given in
-each block.
+**The four provinces that will carry the world.** By NPP × area: **V1a**
+(15.6 M NPP-units × Mkm², raw), then **S1** (12.8), **M4** (11.6) and **V1b**
+(5.4) — setting aside B2, which outranks V1b on the raw product but is cold and
+carries a `‡` overstated precipitation figure. By *state-formation potential*
+the ranking is almost inverted — S2's starved exorheic river and M2's
+storage-rich temperate coast are better bets than the productive tropics, for
+the reasons given in each block.
+
+*This ranking survives the §2 partition correction.* The top five are unchanged
+in identity and order, and V1b in fact pulls further clear of V4 and S2 (its
+area rose 6.8 %). The only reordering below the top five is V4 rising two
+places past S2 and M2, and B1 slipping one behind S3 — B1 having lost 21 % of
+its area, the largest single change the correction makes anywhere.
 
 **The variable that matters most and is measured worst.** Precipitation
 seasonality — and calibrating the scale (§2.1) did not fix it, because it is a

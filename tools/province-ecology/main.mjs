@@ -86,7 +86,7 @@ const flag = n => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : nul
 const asJson = argv.includes('--json');
 // 'proxy'      = the documented longitude rule (culture doc section 2)
 // 'connected'  = connected landmass, keyed to inventory.json (tools/continents.mjs)
-const CONTINENT_RULE = flag('--continents') || 'proxy';
+const CONTINENT_RULE = flag('--continents') || 'connected';
 const compare = flag('--compare');
 const boxLabel = flag('--label') || 'box';
 const box = flag('--box')?.split(',').map(Number) ?? null;

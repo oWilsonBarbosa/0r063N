@@ -23,7 +23,8 @@ from `tools/province-ecology/`, streaming the full 2.56 M-cell v2 export through
 the province rules of
 [`../culture/00_PROVINCE_CONSTRAINT_VECTORS.md`](../culture/00_PROVINCE_CONSTRAINT_VECTORS.md)
 §2; the province totals reproduce the published vectors (4.8 Mkm², 22.1 °C,
-353 mm, NPP 621). Regenerate with:
+352 mm, NPP 621). Both use the **connected-landmass** continent assignment
+adopted in §7. Regenerate with:
 
 ```sh
 node tools/province-ecology/main.mjs V3 --compare V1b
@@ -35,8 +36,8 @@ node tools/province-ecology/render.mjs V3
 *V3 (gold) is a broad band across Selvana's southern half, thoroughly
 interleaved with the wetter V1b (light green). Note the hard horizontal edges:
 the province rule cuts V1a off at 15 °S and V4 at 42 °S, so those boundaries are
-definitional, not geographic. The dashed red line is the continent proxy's
-meridian cut — see §7.*
+definitional, not geographic. The continent boundary, by contrast, is now a real
+coastline — §7 is about the meridian that used to stand there instead.*
 
 ---
 
@@ -49,19 +50,19 @@ paying off; everything after them is the surprise.
 |---|---:|---:|
 | Latitude band | **16–42 °N** | **18–40 °S** |
 | Mean annual temperature | **22.3 °C** | **22.1 °C** |
-| Annual precipitation | 304 mm | 353 mm |
-| Frost-free | 97.9 % | **99.6 %** |
-| Wet-season share | 64.5 % | 68.1 % |
+| Annual precipitation | 303 mm | 352 mm |
+| Frost-free | 97.8 % | **99.6 %** |
+| Wet-season share | 64.6 % | 68.1 % |
 | — | | |
-| Area | 9.49 Mkm² | **4.80 Mkm²** |
+| Area | 9.27 Mkm² | **4.84 Mkm²** |
 | Annual temperature range | **9.1 °C** | **14.3 °C** |
-| Warm / cold season | 26.8 / 17.7 °C | **29.3 / 14.9 °C** |
+| Warm / cold season | 26.8 / 17.7 °C | **29.2 / 14.9 °C** |
 | Median elevation | **620 m** | **90 m** |
 | Elevation p95 | 1,810 m | 930 m |
-| Köppen BSh (hot steppe) | 54.1 % | **85.2 %** |
-| True desert (BW) | **34.1 %** | 10.3 % |
-| NPP | 539 | **621** |
-| Mixed bins with wetter neighbour | 43.8 % | **63.0 %** |
+| Köppen BSh (hot steppe) | 53.3 % | **85.2 %** |
+| True desert (BW) | **34.7 %** | 10.3 % |
+| NPP | 537 | **621** |
+| Mixed bins with wetter neighbour | 49.6 % | **60.8 %** |
 | Great lakes (of the planet's ten) | **3** | **0** |
 
 **MEASURED — the four rows that make the homology real.** The two deserts sit at
@@ -103,7 +104,7 @@ to leave it horizontally.
 ### 2.2 V3 has a real cool season
 
 **Annual range 14.3 °C against M3's 9.1 °C**, driven from both ends: V3's warm
-season is hotter (29.3 vs 26.8 °C, max 36.2) and its cool season is genuinely
+season is hotter (29.2 vs 26.8 °C, max 36.2) and its cool season is genuinely
 cooler (14.9 vs 17.7 °C — and against the cradle's 25.2 °C, a different world
 entirely). It is still 99.6 % frost-free, so this is a cool season, not a winter.
 
@@ -114,8 +115,8 @@ well as on wetting. §5 is about what that does to a farmer.
 
 ### 2.3 V3 is monotonous
 
-**BSh 85.2 %**, with only 10.3 % true desert. M3 is a mosaic: 54.1 % steppe,
-34.1 % desert, spread across 2 km of relief. V3 is one habitat, repeated.
+**BSh 85.2 %**, with only 10.3 % true desert. M3 is a mosaic: 53.3 % steppe,
+34.7 % desert, spread across 2 km of relief. V3 is one habitat, repeated.
 
 **Consequence:** fewer distinct niches, and therefore fewer specialists.
 
@@ -159,7 +160,7 @@ relative of its Meridian counterpart — same genus-equivalent, divergent for
 
 | M3 (doc 04) | V3 congener | What diverged, and the fact that drove it |
 |---|---|---|
-| **Ashscrub** | **Palescrub** | The same matrix shrub, but far more dominant (85.2 % vs 54.1 %) and correspondingly less varied: one widespread species complex where Meridia has several. Monotony of habitat, monotony of shrub. |
+| **Ashscrub** | **Palescrub** | The same matrix shrub, but far more dominant (85.2 % vs 53.3 %) and correspondingly less varied: one widespread species complex where Meridia has several. Monotony of habitat, monotony of shrub. |
 | **Flushgrass** | **Coldflush** | The key divergence. Germinates on the **cooling cue** as well as the wetting cue (§2.2), so its season is longer and far more predictable than its Meridian cousin's. Bigger, softer seed; less dormancy. |
 | **Sun-tuber** | **Pan-tuber** | Shallower and broader — a flat basin has a shallow water table and no slope drainage, so the organ spreads rather than plunges. Available year-round, as in M3. |
 | **Waterstem** | *marginal* | Only 10.3 % of V3 is true desert against M3's 34.1 %, so the water-banking succulent is a minor plant of the sandy west, not a province-wide strategy. |
@@ -184,10 +185,10 @@ biotas from the *same* ancestry:
 |---|---|---|
 | Isolating mechanism | vertical relief · permanent deep water · habitat mosaic | none within the province |
 | Escape in a dry phase | up (2 km of relief), or to The Deep | sideways, into V1b |
-| Contact with the wetter neighbour | 43.8 % of bins | **63.0 % of bins**, same lat/lon envelope |
+| Contact with the wetter neighbour | 49.6 % of bins | **60.8 % of bins**, same lat/lon envelope |
 | Expected outcome | **many species, small ranges**, deep endemism, ancient relicts | **few species, huge ranges**, shallow endemism, no relicts |
 
-The V3/V1b interdigitation figure is doing the work here. At **63 %** — and
+The V3/V1b interdigitation figure is doing the work here. At **60.8 %** — and
 across an identical latitude–longitude envelope, since the two are separated by
 Köppen group alone — V3 and V1b are not neighbours so much as **interleaved
 phases of one landscape**. In a wet excursion V1b's biota floods in; in a dry
@@ -266,14 +267,14 @@ and a lake 821 m deep**. Climate set the stage; the geology cast the play.
 
 ---
 
-## 7. A caveat about the partition itself
+## 7. The partition, and the defect this document found in it
 
-**MEASURED, and it should be recorded before anyone builds further on V3.**
-
-The export carries no continent identifier. The culture layer's operational
-rule separates Meridia from Selvana on a **meridian** (Selvana is
-`lat < 23 && lon < -128`) and drops western-hemisphere land below 16 °S as
-offshore island. Checked against the authoritative continent areas in
+**MEASURED.** The export carries no continent identifier, so the culture layer's
+original rule separated Meridia from Selvana on a **meridian** (Selvana was
+`lat < 23 && lon < -128`) and discarded western-hemisphere land below 16 °S as
+offshore island. Writing this document meant mapping Selvana, and the map made
+the rule's edge visible: the province ended on a straight line of longitude.
+Checked against the authoritative continent areas in
 `reports/tectonics/inventory.json`:
 
 | Continent | Authoritative | Longitude proxy | Delta |
@@ -283,50 +284,61 @@ offshore island. Checked against the authoritative continent areas in
 | **Selvana** | **27.33** | **25.94** | **−1.39** |
 | Borea | 20.17 | 21.16 | +0.99 |
 
-The rule **drops 1.80 Mkm² of land planet-wide (1.69 % of all land)**, in a
-strip pressed against the −128° cut running from 16 °S to 64 °S — which is, on
-the evidence of its position, Selvana's eastern margin. Selvana is the
-continent the proxy treats worst, undercounting it by **5.1 %**. A second,
-smaller artifact: ~96 southern land cells lie east of +150° and are assigned to
-Sirocca, though Selvana's reach to exactly −180.0 suggests they are its western
-tip.
+The rule **dropped 1.80 Mkm² of land planet-wide (1.69 % of all land)**, in a
+strip pressed against the −128° cut running from 16 °S to 64 °S. Selvana — this
+document's subject — was the continent it treated worst, undercounting it by
+**5.1 %** while inflating the other three. A second, smaller artifact: ~96
+southern land cells lie east of +150° and were assigned to Sirocca, though
+Selvana's reach to exactly −180.0 suggests they are its western tip.
 
-### The corrected partition, and what it changes
+### The correction, now adopted
 
-The fix is now implemented. The tectonics pipeline already carried the right
-definition — `tools/tectonics-pipeline/lib/continents.py` assigns each land cell
-by **connected landmass**, keyed to the inventory centroids, and both
-`docs/BIOGEOGRAPHY.md` and the continent profiles already use it. The Node tools
-simply could not reach it. [`tools/continents.mjs`](../../tools/continents.mjs)
-is a faithful port (same 2048×1024 grid, same majority rasterisation, same
-8-neighbour gap fill, same 4-connected labelling with longitude wrap), and it
-reproduces the authoritative areas to within 0.27 Mkm² — the residual being
-pixel-area against cell-area summation.
+The repository already held the right definition and the Node tools could not
+reach it. `tools/tectonics-pipeline/lib/continents.py` assigns each land cell by
+**connected landmass**, keyed to the inventory centroids, and both
+`docs/BIOGEOGRAPHY.md` and the continent profiles were already using it; the
+culture layer's rules are Node, so they cut on a meridian instead. The two
+halves of the repository were partitioning the planet differently.
+
+[`tools/continents.mjs`](../../tools/continents.mjs) is a faithful port — same
+2048×1024 grid, same majority rasterisation with ties to land, same 8-neighbour
+categorical gap fill, same 4-connected labelling with longitude wrap — and it
+reproduces the authoritative areas to within 0.27 Mkm², the residual being
+pixel-area against cell-area summation. It confirms the diagnosis: **1.46 Mkm²
+of the dropped strip is Selvana's**, and a further 3.7 Mkm² the proxy folded
+into whichever continent its box covered is detached island (the corrected rule
+gives **Islands 4.03 Mkm²**, a bucket the proxy lacked and
+`docs/BIOGEOGRAPHY.md` already had).
+
+**The culture layer has adopted it, and the published constraint vectors are
+regenerated on it** — so this document, doc 04 and
+[`../culture/00_PROVINCE_CONSTRAINT_VECTORS.md`](../culture/00_PROVINCE_CONSTRAINT_VECTORS.md)
+now describe one partition. Reproduce the superseded table with
+`--continents proxy`; print the full delta with:
 
 ```sh
 node tools/province-vectors/validate-continents.mjs
-node tools/province-ecology/main.mjs V3 --continents connected
 ```
 
-It confirms the diagnosis: **1.46 Mkm² of the dropped strip is Selvana's**, and
-a further 3.7 Mkm² the proxy folded into one continent or another is detached
-island (the connected rule gives Islands 4.03 Mkm², consistent with the
-`Islands` bucket in `docs/BIOGEOGRAPHY.md`).
+**None of this document's conclusions moved.** V3 went from 4.80 to 4.84 Mkm²
+(+0.8 %) and M3 from 9.49 to 9.27 (−2.3 %); every climate figure held to a
+decimal place or a single unit. The mirror-latitude homology, the four
+divergences, the diversity inversion and §6's control all stand on the
+regenerated numbers.
 
-**None of this document's conclusions move.** Under the corrected rule V3 is
-4.84 Mkm² rather than 4.80 (+0.8 %) and M3 is 9.27 rather than 9.49 (−2.3 %);
-every climate figure is identical to a decimal place or within one unit —
-V3 22.1 °C / range 14.3 / 352 mm / NPP 621 / BSh 85.2 %, M3 22.3 °C / range 9.1
-/ 303 mm / NPP 537 / BSh 53.3 %. The mirror-latitude homology, the four
-divergences, the diversity inversion and §6's control all stand unchanged.
+Two things did move, and both cut in this document's favour. The **M3/M4
+ecotone rose from 43.8 % to 49.6 %** of mixed bins — the proxy had been
+inflating M4-only bins with land that is not M4's — so doc 04's ecotone is
+wider than it claimed. And **V3/V1b fell from 63.0 % to 60.8 %**, which leaves
+§4's contrast between them intact.
 
-**Where it does matter is elsewhere**, and future provinces should be written on
-the corrected rule: **B1** (Borea's Southern Maritime Coast) is **−21 %**,
-**V4** +15.2 %, **M4** −9.6 %, **S3** −7.3 %, **S1** −5 %. Adopting it as the
-published default would reorder the culture layer's "four provinces that will
-carry the world" and raise whether that table should carry Islands rows, so the
-switch is the culture layer's to make; the tool, the validation and the full
-per-province delta are in place for it.
+**Where the correction bites is elsewhere**, and it is worth knowing before the
+remaining provinces are written: **B1** (Borea's Southern Maritime Coast)
+**−21 %**, the largest single change on the planet; **V4** +15.2 %; **M4**
+−9.6 %; **S3** −7.3 %; **S1** −5 %; **V1b** +6.8 %. The culture layer's "four
+provinces that will carry the world" survives the change — V1b in fact pulls
+further clear — but B1's fifth is gone, and any Borean work should start from
+the corrected figure.
 
 ---
 
@@ -338,7 +350,8 @@ per-province delta are in place for it.
   16–42 °N; 22.1 vs 22.3 °C) built from **one west-flank xeric stem** — the
   homology of doc 01 §4 and doc 02 §5, made concrete.
 - They diverge on four measured axes: V3 is **flat** (median 90 m), **twice as
-  seasonal** (range 14.3 °C), **monotonous** (BSh 85.2 %), and **has no
+  seasonal** (range 14.3 °C), **monotonous** (BSh 85.2 % against M3's 53.3 %),
+  and **has no
   permanent deep water** (deepest lake 44 m; Selvana holds none of the ten).
 - The **two-cue season** — V3 organisms time on cooling as well as wetting —
   and the planting-calendar failure it causes for Meridian arrivals.

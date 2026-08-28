@@ -19,7 +19,8 @@
 //                               the equator so the two deserts' mirror-image
 //                               latitude bands line up
 //
-// Province rules are identical to ../province-vectors/main.mjs. Every legend
+// Province rules are identical to ../province-vectors/main.mjs, including its
+// connected-landmass continent assignment (../continents.mjs). Every legend
 // figure is tallied per cell over the whole export, before cropping or
 // rasterisation, so the plates agree exactly with ./main.mjs and the docs.
 //
@@ -36,6 +37,7 @@ import { elevToHeightKm } from '../height-mapping.mjs';
 import { KOPPEN_CLASSES, TERRAIN_CLASSES, classifyTerrain } from '../regional-report/classify.mjs';
 import { precipAnnualMm } from '../precip-scale.mjs';
 import { makeCanvas, encodePNG, fillRect, drawText, textWidth } from '../regional-report/render-png.mjs';
+import { buildContinentIndex, ISLANDS } from '../continents.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'data/orogen_regions_full_v2');
@@ -60,8 +62,8 @@ const PLATES = {
         crop: { lat0: -20, lat1: 70, lon0: -160, lon1: -70 },
         palette: { M1: [162, 155, 148], M2: [102, 150, 158], M3: ARID, M4: [56, 116, 70] },
         legend: [
-            ['M3', 'M3 ARID INTERIOR PLATEAU  9.5 MKM2'],
-            ['M4', 'M4 S. TROPICAL LOWLANDS   9.5 MKM2'],
+            ['M3', 'M3 ARID INTERIOR PLATEAU  9.3 MKM2'],
+            ['M4', 'M4 S. TROPICAL LOWLANDS   8.6 MKM2'],
             ['M1', 'M1 W. CORDILLERA'],
             ['M2', 'M2 NORTHERN COLD HIGHLANDS'],
         ],
@@ -80,27 +82,21 @@ const PLATES = {
     V3: {
         hero: 'V3', neighbour: 'V1b', slug: 'v3',
         title: 'V3  SELVANAN INTERIOR DRY BASIN',
-        crop: { lat0: -70, lat1: 30, lon0: -180, lon1: -120 },
+        crop: { lat0: -70, lat1: 30, lon0: -180, lon1: -118 },
         palette: {
             V1a: [46, 110, 66], V1b: [96, 146, 88], V2: [162, 155, 148],
             V3: ARID, V4: [130, 148, 160],
         },
         legend: [
             ['V3',  'V3 INTERIOR DRY BASIN   4.8 MKM2'],
-            ['V1b', 'V1B SUBTROPICAL BELT    4.7 MKM2'],
-            ['V1a', 'V1A TROPICAL NORTH     10.0 MKM2'],
+            ['V1b', 'V1B SUBTROPICAL BELT    5.1 MKM2'],
+            ['V1a', 'V1A TROPICAL NORTH      9.9 MKM2'],
             ['V2',  'V2 EQUATORIAL RANGES'],
             ['V4',  'V4 SOUTHERN CORDILLERA'],
         ],
         // no sub-box and no annotated lakes: Selvana holds none of the planet's
         // ten great closed-basin lakes, which is the point doc 05 turns on.
         lakes: [],
-        // The continent proxy defines Selvana as lon < -128, so the province
-        // ends on a meridian rather than on a coast. Draw the cut, so the hard
-        // edge on these plates reads as the definition it is. See doc 05 and
-        // reports/life/README.md: the rule drops 1.80 Mkm2 of land planet-wide
-        // and undercounts Selvana by 1.39 Mkm2 against inventory.json.
-        ruleCut: { lon: -128, label: 'CONTINENT RULE CUT AT 128 W  (NOT A COAST)' },
         detail: {
             slug: 'basin', zoom: 3,
             title: 'THE INTERIOR DRY BASIN  NO GREAT LAKE, NO RELIEF',
@@ -109,13 +105,6 @@ const PLATES = {
     },
 };
 
-function continentOf(lat, lon) {
-    const west = lon >= -180 && lon <= -60;
-    if (!west) return lat > 15 ? 'Borea' : 'Sirocca';
-    if (lat < 23 && lon < -128) return 'Selvana';
-    if (lat < -16) return null;
-    return 'Meridia';
-}
 function provinceOf(cont, heightKm, lat, code) {
     const g = code[0];
     switch (cont) {
@@ -158,6 +147,12 @@ const terrainOf = new Map();                     // province -> Map(terrainIdx -
 const binKey = (lat, lon) => `${Math.floor(lat / 2)},${Math.floor(lon / 2)}`;
 const HEROES = new Set(Object.values(PLATES).flatMap(p => [p.hero, p.neighbour]));
 
+const continents = await buildContinentIndex();
+const continentAt = (lat, lon) => {
+    const nm = continents.at(lat, lon);
+    return nm === ISLANDS ? null : nm;      // Islands are context, not a province
+};
+
 let idx = null;
 for (const part of fs.readdirSync(DATA).filter(f => f.endsWith('.csv.gz')).sort()) {
     const rl = readline.createInterface({
@@ -179,7 +174,7 @@ for (const part of fs.readdirSync(DATA).filter(f => f.endsWith('.csv.gz')).sort(
             const h = elevToHeightKm(+f[idx.elev]);
             const k = +f[idx.koppen];
             const code = (KOPPEN_CLASSES[k] || {}).code || '??';
-            pv = provinceOf(continentOf(lat, lon), h, lat, code);
+            pv = provinceOf(continentAt(lat, lon), h, lat, code);
             tc = classifyTerrain(k, h, precipAnnualMm(+f[idx.pS], +f[idx.pW]), +f[idx.isSurfaceCoast] === 1);
             if (HEROES.has(pv)) {
                 const b = binKey(lat, lon);

@@ -31,55 +31,45 @@ agricultural toolkit crosses the Equatorial Western Sea intact, but its
 a cue the Meridian homeland (2.4 °C annual range) never taught. The remaining
 provinces (`../life/06+`) are still outstanding.
 
-## A correction available to this layer
+## The partition correction, adopted
 
-Doc 05 §7 records a **defect in this layer's own partition**: the
-longitude-based continent proxy of §2 drops 1.80 Mkm² of land planet-wide and
-undercounts Selvana by 1.39 Mkm² (−5.1 %) against
+Doc 05 §7 found a **defect in this layer's own partition**: the longitude-based
+continent proxy that doc 00 §2 used dropped 1.80 Mkm² of land planet-wide
+(1.69 % of all land) and undercounted Selvana by 1.39 Mkm² (−5.1 %) against
 `reports/tectonics/inventory.json`, while inflating the other three continents.
 
-**The fix now exists.** [`tools/continents.mjs`](../../tools/continents.mjs)
-ports the connected-landmass assignment the tectonics pipeline already used
-(`tools/tectonics-pipeline/lib/continents.py`, also behind `docs/BIOGEOGRAPHY.md`)
-into zero-dependency Node, and reproduces the authoritative continent areas to
-within 0.27 Mkm². Both Node tools accept `--continents connected`; the full
-per-province delta is printed by:
+**It has been replaced and the master table regenerated.**
+[`../../tools/continents.mjs`](../../tools/continents.mjs) ports the
+connected-landmass assignment the tectonics pipeline already used
+(`tools/tectonics-pipeline/lib/continents.py`, also behind
+[`../BIOGEOGRAPHY.md`](../BIOGEOGRAPHY.md)) into zero-dependency Node, and
+reproduces the authoritative continent areas to within 0.27 Mkm². The whole
+repository now partitions the planet one way.
 
 ```sh
-node tools/province-vectors/validate-continents.mjs
+node tools/province-vectors/main.mjs                      # -> doc 00 table
+node tools/province-vectors/main.mjs --continents proxy   # the superseded table
+node tools/province-vectors/validate-continents.mjs       # the full delta
 ```
 
-**The published vectors in doc 00 still use the proxy**, so this document and
-every figure downstream of it remain internally consistent. Adopting the
-corrected rule is a decision for this layer, because it is not merely numeric:
+What moved, and what it meant:
 
-| Province | Delta | Why it matters here |
+| Province | Delta | Consequence |
 |---|---:|---|
-| **B1** Southern Maritime Coast | **−21 %** | the largest change on the planet; §5 rates B-group coasts a top state-formation bet |
-| **V4** Southern Cordillera | +15.2 % | |
-| **M4** S. Tropical Lowlands | −9.6 % | §5 ranks M4 second by NPP × area |
-| **V1b** Subtropical Belt | +6.8 % | §5 ranks V1b fourth — the M4/V1b move may reorder that list |
-| S3 · S1 | −7.3 % · −5 % | |
-| M1 · V2 · S2 · B3 · V3 · M3 | ≤ 2.3 % | the provinces the life layer has documented barely move |
+| **B1** Southern Maritime Coast | **−21 %** | the largest change on the planet; B1 drops from 10th to 11th by NPP × area |
+| **V4** Southern Cordillera | +15.2 % | rises two places, past S2 and M2 |
+| **M4** S. Tropical Lowlands | −9.6 % | keeps 3rd |
+| S3 · S1 · V1b | −7.3 % · −5 % · +6.8 % | V1b pulls further clear in 5th |
+| everything else | ≤ 2.3 % | including M3 and V3, the two provinces the life layer has documented |
 
-Two editorial questions come with the switch: whether §5's "four provinces that
-will carry the world" ranking survives the M4/V1b move, and whether the master
-table should gain **Islands** rows (the corrected rule assigns 4.03 Mkm² there,
-matching `docs/BIOGEOGRAPHY.md`, where the proxy had no such bucket).
+**§5's "four provinces that will carry the world" survives** — V1a, S1, M4, V1b,
+in that order, with V1b strengthened. The table also gains an **Islands**
+accounting row (4.03 Mkm²), which the proxy had no bucket for; it is there so no
+land goes missing, and it is explicitly not a design envelope.
 
-Doc 00 was designed to be read **backwards**, and that still holds: the
-subsistence requirements it extracts (a herdable cold-tolerant animal here, a
-storable cereal-analogue there) are a design brief for those biology
-documents, not a consumer of them. Doc 03 §8 is the first reply to it.
-
-Two results from doc 03 that this layer should now assume: the peoples
-originate in **M3** (the southeastern trough) but domesticate in **M2/M3's
-northwestern lakeland**, so the origin province and the agricultural province
-are different places; and **Selvana's biota is deep kin to Meridia's** (same
-west-flank branch, one narrow sea away) while **Sirocca's only looks
-familiar** — a near-identical desert climate across the Eastern Ocean with no
-shared ancestry at all. That sets what transplants, herds, and crops can
-survive a crossing: almost everything westward, almost nothing eastward.
+No climate figure in the table moved by more than a rounding unit, so every
+downstream reading of temperature, precipitation, NPP or Köppen composition is
+unaffected.
 
 ## Grounding rules
 

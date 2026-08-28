@@ -190,8 +190,8 @@ and **Sirocca–Borea** (core, eastern hemisphere) are each other's closest kin
 *and* nearest neighbours, so resemblance within a hemisphere is **homology**.
 The only cross-branch boundary is the **Eastern Ocean**, so resemblance across
 it is **convergence**. The showcase: the three great deserts sit within 0.3 °C
-of each other — M3 (Meridia, 22.3 °C / 304 mm) and V3 (Selvana, 22.1 °C /
-353 mm) are cousins; S2 (Sirocca, 22.4 °C / 278 mm) is a convergent stranger.
+of each other — M3 (Meridia, 22.3 °C / 303 mm) and V3 (Selvana, 22.1 °C /
+352 mm) are cousins; S2 (Sirocca, 22.4 °C / 277 mm) is a convergent stranger.
 Regional ecologies must obey this.
 
 The **humanoid ancestry** is also fixed: see `docs/life/03_HUMANOID_ANCESTRY.md`.
@@ -214,8 +214,8 @@ endonym and everything cultural remain open.
 
 The **first regional ecology** is written: see
 `docs/life/04_MERIDIAN_ARID_INTERIOR.md` for **M3**, the peoples' homeland.
-Fixed points: M3 is **two-thirds steppe, not desert** (BSh 54.1 %, scrub is the
-matrix); the survival bottleneck is **water on a schedule, never cold** (97.9 %
+Fixed points: M3 is **two-thirds steppe, not desert** (BSh 53.3 %, scrub is the
+matrix); the survival bottleneck is **water on a schedule, never cold** (97.8 %
 frost-free), so aestivation replaces hibernation and herds migrate to follow
 rain rather than to escape winter; the province is **ectotherm-dominated**, with
 the red-blooded Thermozoa a conspicuous minority — the Aulacines were odd at
@@ -232,7 +232,7 @@ The **second regional ecology** is written: `docs/life/05_SELVANAN_INTERIOR_DRY_
 covers **V3**, M3's homologous mirror. M3 and V3 are climate twins at
 **mirror-image latitudes** (16–42 °N vs 18–40 °S; 22.3 vs 22.1 °C) from one
 west-flank xeric stem, but V3 is **flat** (median 90 m vs 620 m), **twice as
-seasonal** (range 14.3 vs 9.1 °C), **monotonous** (BSh 85.2 % vs 54.1 %), and has
+seasonal** (range 14.3 vs 9.1 °C), **monotonous** (BSh 85.2 % vs 53.3 %), and has
 **no permanent deep water** (Selvana holds none of the planet's ten great lakes;
 its deepest is 44 m against The Deep's 821 m). So V3 has **no speciation pump**:
 same ancestry, opposite diversity structure — M3 many species with small ranges

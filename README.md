@@ -130,6 +130,7 @@ node tools/regional-report/atlas-main.mjs # -> reports/regional/atlas/
 # Province constraint vectors (Node.js, zero dependencies)
 node tools/province-vectors/main.mjs            # -> docs/culture/ table
 node tools/province-vectors/main.mjs --json     # machine-readable
+node tools/province-vectors/validate-continents.mjs  # continent-partition delta
 
 # Province ecology profiles + plates (Node.js, zero dependencies) -> docs/life/04+
 node tools/province-ecology/main.mjs M3 --box 15,28,-110,-85 --label cradle --compare M4

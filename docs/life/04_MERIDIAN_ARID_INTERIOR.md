@@ -23,9 +23,11 @@ one exists.
 below was recomputed for this document by `tools/province-ecology/`, which
 streams the full 2.56 M-cell v2 export through the province rules of
 [`../culture/00_PROVINCE_CONSTRAINT_VECTORS.md`](../culture/00_PROVINCE_CONSTRAINT_VECTORS.md)
-§2. The province totals reproduce the published vectors exactly (9.49 Mkm²,
-22.3 °C, 304 mm, NPP 539) — which is the check that the sub-province figures,
-which that table does not carry, are computed the same way. Regenerate with:
+§2. The province totals reproduce the published vectors exactly (9.3 Mkm²,
+22.3 °C, 303 mm, NPP 537) — which is the check that the sub-province figures,
+which that table does not carry, are computed the same way. Both use the
+**connected-landmass** continent assignment; these figures were regenerated when
+the culture layer adopted it (doc 05 §7). Regenerate with:
 
 ```sh
 node tools/province-ecology/main.mjs M3 --box 15,28,-110,-85 --label cradle --compare M4
@@ -53,25 +55,25 @@ been doing damage. The Köppen composition says otherwise:
 
 | Köppen | Share of M3 | What it is |
 |---|---:|---|
-| **BSh** hot steppe | **54.1 %** | semi-arid scrub and brushland |
-| BWh hot desert | 25.7 % | true hot desert |
-| BSk cold steppe | 11.8 % | semi-arid, cool season |
-| BWk cold desert | 8.4 % | true cool desert |
+| **BSh** hot steppe | **53.3 %** | semi-arid scrub and brushland |
+| BWh hot desert | 26.1 % | true hot desert |
+| BSk cold steppe | 12.1 % | semi-arid, cool season |
+| BWk cold desert | 8.6 % | true cool desert |
 
-**Two-thirds of M3 is steppe, not desert.** By terrain class it is 54.1 %
-scrub/brushland, 21.6 % sandy desert, 12.5 % rocky desert, 11.8 % steppe. The
-province is a vast semi-arid *shrubland* with deserts inside it, not a sand sea
-with margins.
+**Two-thirds of M3 is steppe, not desert** (BSh + BSk = 65.4 %). By terrain
+class it is 53.3 % scrub/brushland, 21.9 % sandy desert, 12.8 % rocky desert,
+12.1 % steppe. The province is a vast semi-arid *shrubland* with deserts inside
+it, not a sand sea with margins.
 
 Three more measured facts set every constraint that follows:
 
-- **It effectively never freezes.** 97.9 % of the province is frost-free; mean
+- **It effectively never freezes.** 97.8 % of the province is frost-free; mean
   cold-season temperature is **17.7 °C**. There is no winter here in any sense
   a temperate ecologist would recognise.
-- **The year has one dry half.** 64.5 % of precipitation falls in the wetter
-  half-year, on a 304 mm annual mean.
+- **The year has one dry half.** 64.6 % of precipitation falls in the wetter
+  half-year, on a 303 mm annual mean.
 - **It is not uniform.** Annual precipitation ranges **86 → 676 mm**, an
-  eightfold spread inside one province, and elevation runs 0.05 → 2.00 km
+  eightfold spread inside one province, and elevation runs 0.08 → 2.00 km
   (p05 → cap).
 
 **INTERPRETED — the single most important consequence.** On Earth, the
@@ -165,16 +167,16 @@ copies — that is doc 05's problem.
 
 | Working name | Form | The measured fact it answers |
 |---|---|---|
-| **Ashscrub** | Waxy grey-green shrub, 1–3 m, deep taproot, drought-deciduous | 54.1 % of M3 is scrub/brushland — this is the province's matrix plant, and the thing "scrub" actually *is* |
+| **Ashscrub** | Waxy grey-green shrub, 1–3 m, deep taproot, drought-deciduous | 53.3 % of M3 is scrub/brushland — this is the province's matrix plant, and the thing "scrub" actually *is* |
 | **Flushgrass** | Ephemeral; germinates, seeds and dies inside one wet half-year | 64.5 % of rain in one half; large seed set is the only way to use it |
 | **Waterstem** | Succulent columnar stem, shallow wide root mat, stores months of water | 86 mm at the dry extreme — the BWh quarter of the province needs a plant that banks water, not one that hunts it |
-| **Sun-tuber** | Rosette with a large buried starch–water storage organ; aestivates | Frost-free ground (97.9 %) means a buried organ is safe year-round — no freeze risk, so storage below ground always beats storage above it |
+| **Sun-tuber** | Rosette with a large buried starch–water storage organ; aestivates | Frost-free ground (97.8 %) means a buried organ is safe year-round — no freeze risk, so storage below ground always beats storage above it |
 | **Saltmat** | Low halophyte turf, salt-excreting | The Sump is closed and evaporating; its margins are saline |
 | **Cloudscrub** | Dense small-leaved shrub of the rift shoulders above ~1.8 km | The Deep's basin walls intercept moisture the plain never sees |
 
 **INTERPRETED — why the storage organs matter more here than on Earth.** In a
 temperate biome, a buried tuber is a frost refuge as much as a drought refuge.
-In a province that is **97.9 % frost-free**, it is *purely* a water-and-energy
+In a province that is **97.8 % frost-free**, it is *purely* a water-and-energy
 bank — so there is no cold ceiling on how large it can get, and no seasonal
 signal telling it to stay small. The Sun-tuber can be an enormous, long-lived,
 year-round-available food object. That is a rare thing in an arid land, and §7
@@ -184,7 +186,7 @@ is about what the peoples eventually do with it.
 
 ## 4. The fauna — a blue-blooded province
 
-**INTERPRETED, from a measured fact with large consequences.** M3 is 97.9 %
+**INTERPRETED, from a measured fact with large consequences.** M3 is 97.8 %
 frost-free with a cold-season mean of 17.7 °C. Doc 00 §8 fixes the ancestral
 Zoan respiratory pigment as **copper-based and blue**, efficient in cold and
 oxygen-rich conditions, with the iron-red carrier derived only in "the most
@@ -203,9 +205,9 @@ of the day, and active at hours when the majority is torpid.
 
 | Working name | Grade | Role | The measured fact it answers |
 |---|---|---|---|
-| **Plainbacks** | Zoan ectotherm | Large slow grazers, herds on the BSh matrix; aestivate through the dry half | 54 % scrub at NPP 539 supports bulk grazers, and no frost means no need to burn fuel keeping warm |
+| **Plainbacks** | Zoan ectotherm | Large slow grazers, herds on the BSh matrix; aestivate through the dry half | 53 % scrub at NPP 537 supports bulk grazers, and no frost means no need to burn fuel keeping warm |
 | **Stiltwaders** | Zoan ectotherm | Long-legged lake-margin foragers, follow the Shallow's edge as it moves | A 36 m-deep, 33,200 km² lake has an enormous, constantly relocating shoreline |
-| **Sandswimmers** | Zoan ectotherm | Burrowing insectivore-analogues of the BWh quarter | 25.7 % of M3 is true hot desert; below ground is the only stable habitat there |
+| **Sandswimmers** | Zoan ectotherm | Burrowing insectivore-analogues of the BWh quarter | 26.1 % of M3 is true hot desert; below ground is the only stable habitat there |
 | **Rainherds** | **Thermozoan** | Mid-sized endothermic herd grazers that **migrate to follow rain** | The 86–676 mm gradient makes rain-following viable *only* for an animal that can sustain long daily movement — i.e. an endotherm |
 | **Coursers** | **Thermozoan** | Cursorial pack predators of the Rainherds | A migratory endothermic prey animal can only be hunted by something that keeps up |
 | **Deepfin** | Zoan ectotherm | Ancient endemic fish-analogues of The Deep, found nowhere else | 821 m of permanent water in an isolated graben is a museum |
@@ -224,14 +226,14 @@ cradle box separately from the rest of M3 gives two genuinely different places:
 
 | | Cradle box (15–28 °N) | M3 remainder |
 |---|---:|---:|
-| Area | 2.24 Mkm² | 7.25 Mkm² |
-| Mean annual temp | **26.5 °C** | 21.0 °C |
-| Warm / cold season | 27.7 / **25.2 °C** | 26.5 / 15.4 °C |
+| Area | 2.24 Mkm² | 7.03 Mkm² |
+| Mean annual temp | **26.5 °C** | 20.9 °C |
+| Warm / cold season | 27.7 / **25.2 °C** | 26.5 / 15.3 °C |
 | **Annual range** | **2.4 °C** | 11.2 °C |
 | Frost-free | **100.0 %** | 97.2 % |
-| Precipitation | 386 mm | 279 mm |
-| NPP | 672 | 497 |
-| BSh share | **76.0 %** | 47.3 % |
+| Precipitation | 386 mm | 277 mm |
+| NPP | 672 | 494 |
+| BSh share | **75.9 %** | 46.1 % |
 
 **The cradle has a mean annual temperature range of 2.4 °C and is 100 %
 frost-free — every cell, no exceptions.** It is thermally almost seasonless,
@@ -276,8 +278,8 @@ Doc 03 §1 argued that M3 and M4 form a continental-scale ecotone and rested a
 lot on it. It is now quantified. Binning Meridian land into 2° cells and asking
 which contain both provinces:
 
-> **43.8 % of occupied bins contain both M3 and M4** (323 mixed · 143 M3-only ·
-> 272 M4-only).
+> **49.6 % of occupied bins contain both M3 and M4** (302 mixed · 128 M3-only ·
+> 179 M4-only).
 
 ![The M3/M4 ecotone](../../reports/life/maps/plate-m3-03-ecotone.png)
 
@@ -293,14 +295,14 @@ they interdigitate wherever rainfall does. And what interdigitates is dramatic:
 
 | | M3 | M4 |
 |---|---:|---:|
-| Precipitation | 304 mm | 982 mm |
-| NPP | 539 | 1378 |
-| Dominant Köppen | BSh 54.1 % | Aw 46.3 %, Af 27.1 % |
-| Dominant terrain | Scrub 54.1 % | Grassland 28.6 %, Heavy jungle 24.2 % |
+| Precipitation | 303 mm | 958 mm |
+| NPP | 537 | 1353 |
+| Dominant Köppen | BSh 53.3 % | Aw 48.7 %, Af 25.1 % |
+| Dominant terrain | Scrub 53.3 % | Grassland 30.8 %, Heavy jungle 23.3 % |
 
-Scrub against savanna-and-rainforest, threefold in both water and productivity,
-interleaved across 323 shared bins at nearly identical temperature (22.3 vs
-23.6 °C). An animal that can work both sides has a range no specialist on either
+Scrub against savanna-and-rainforest — threefold in water, two-and-a-half-fold
+in productivity — interleaved across 302 shared bins at nearly identical
+temperature (22.3 vs 23.5 °C). An animal that can work both sides has a range no specialist on either
 side can match — and in a climate that oscillates, the position of the boundary
 is precisely what moves.
 
