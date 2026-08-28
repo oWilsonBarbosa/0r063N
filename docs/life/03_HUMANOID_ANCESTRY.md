@@ -49,7 +49,7 @@ measured numbers.
 |---|---|---|
 | **Selvana** | The richest and the flattest — and therefore the *least* selective. A 40 %, NPP 1594 in the Tropical North, 5.2 % of land above 2 km. Abundance without structure; no barrier to sharpen a lineage against. | mean elev 0.49 km · A 40 % |
 | **Borea** | Cold-limited to the point of exclusion. D+E = 84 %, mean 0.4 °C, and its interior province is frost-free **1 %** of the year. A cold specialist can live here; a naked-skinned endurance forager cannot originate here. | B2 frost-free 1 % · NPP 768 |
-| **Sirocca** | The right *kind* of place — but too uniformly so. The Arid Heart is 12.1 Mkm² of near-homogeneous B at NPP 498, with one reliable maritime margin. Aridity without the mosaic; a desert, not an ecotone. | S2 precip 278 mm · B 44 % |
+| **Sirocca** | The genuine rival, and it loses on one axis only — see the note below. | S2 277 mm · NPP 498 · B 44 % |
 | **Meridia** | **The mosaic continent.** The greatest relief on the planet, the youngest major orogen, a hard rain shadow behind it, and a 9.5 Mkm² arid plateau lying directly against a 9.5 Mkm² tropical lowland at more than double the productivity. | see below |
 
 Meridia's advantage is not any single number — it is that its numbers sit
@@ -57,17 +57,25 @@ Meridia's advantage is not any single number — it is that its numbers sit
 
 | Province | Area (Mkm²) | T ann | Precip | NPP | Frost-free |
 |---|---:|---:|---:|---:|---:|
-| **M3** Arid Interior Plateau | 9.5 | 22.3 °C | 304 mm | 539 | 98 % |
-| **M4** S. Tropical Lowlands & SW Trunk | 9.5 | 23.6 °C | 982 mm + | 1378 + | 96 % |
+| **M3** Arid Interior Plateau | 9.3 | 22.3 °C | 303 mm | 537 | 98 % |
+| **M4** S. Tropical Lowlands & SW Trunk | 8.6 | 23.5 °C | 958 mm + | 1353 + | 96 % |
 
-**INTERPRETED.** Two provinces of identical area and near-identical
-temperature, both effectively frost-free, differing by **3× in productivity**
+**INTERPRETED.** Two provinces of comparable area and near-identical
+temperature, both effectively frost-free, differing by **2.5× in productivity**
 and **3× in rainfall**, sharing a long internal boundary. That boundary is a
 continental-scale ecotone: a band where woodland breaks into scrub and back
 again with every shift in the rain, and where a generalist that can work both
-sides outcompetes a specialist committed to either. This is the single most
-selective habitat configuration on the planet, and Meridia is the only
-continent that has it at this scale.
+sides outcompetes a specialist committed to either.
+
+> **A correction this document owes to doc 06.** An earlier version of the row
+> above dismissed Sirocca as "aridity without the mosaic." Profiling S2
+> ([`06`](06_SIROCCAN_ARID_HEART.md)) shows that is simply false: S2 shares
+> **52.8 %** of its bins with its wetter neighbour against M3's 49.6 %, reaches
+> **1.99 km** at p95 against M3's 1.81, and is no less a Köppen mosaic. Sirocca
+> has the climate, the relief, the ecotone and the scale. What it does not have
+> is **permanent deep water** — its three great lakes bottom out at 14 m, where
+> the cradle's Deep holds 821 m. The mosaic was never the discriminator; §2's
+> three requirements are, and Sirocca fails exactly one of them.
 
 Add the two facts that finish the argument:
 
@@ -107,10 +115,10 @@ That trough is the cradle, and three independent physical facts converge on it:
    not an ephemeral pan.
 
 **INTERPRETED.** Put the three together against M3's climate — 22.3 °C mean,
-**98 % frost-free**, 304 mm of rain with **65 % of it in one half-year** —
+**98 % frost-free**, 303 mm of rain with **65 % of it in one half-year** —
 and the setting writes itself: a **frost-free, strongly seasonal rift trough
 with permanent and semi-permanent lakes, active volcanism, structural relief,
-and a productivity gradient running from 539 to 1378 across its eastern
+and a productivity gradient running from 537 to 1353 across its eastern
 shoulder.**
 
 The cradle is placed at the **AU1 trough and salt-sea basin, roughly
@@ -163,7 +171,7 @@ world runs through its **youngest** geology, not its oldest.
 Zoa  (hothouse shelves, T-550…T-350 — bilaterian, internal skeleton,
  │    closed circulation, copper-blue blood)
  │
- └── Thermozoa  (T-250…T-50, collisional cooling)
+ └── Thermozoa  (west-flank stem, T-450…T-400)
       │    endothermy + the derived iron-red carrier (doc 00 §8)
       │
       └── Dendrozoa  (Meridian, pre-T-50)
@@ -178,9 +186,22 @@ Zoa  (hothouse shelves, T-550…T-350 — bilaterian, internal skeleton,
 
 **Thermozoa** — the red-blooded endothermic grade. Doc 00 §8 fixes copper-blue
 blood as ancestral and "an iron-red variant derived later in the most active
-warm-blooded lineages"; the Thermozoa *are* that derivation. Placed in the
-collisional-cooling era (T-250 … T-50), when returning polar ice and the new
-high ground of O1–O6 first put a premium on holding a body temperature.
+warm-blooded lineages"; the Thermozoa *are* that derivation.
+
+Placed on the **west-flank stem, between the T-450 and T-400 rifts** — after the
+west flank parted from the core, before Meridia parted from Selvana. Two things
+fix it there. The tail of the hothouse arms race (doc 02 §3) is where sustained
+aerobic output starts paying, and endothermy buys *activity*, not only warmth —
+so it does not need an icehouse to arise in. And doc 02 §5 already has the
+core branch answering the cold a different way: Borea's specialists are
+"the ancestral blue blood of the Zoan plan… paying off in exactly the cold it
+was first tuned to."
+
+**So red blood is a west-flank invention.** Meridia and Selvana share it by
+descent — which is why doc 05's Basinherds are true congeners of the Rainherds —
+and **Sirocca and Borea never got it.** The core branch's animal world is
+copper-blue throughout. That is the sharpest single consequence of the
+divergence tree, and doc 06 is where the peoples run into it.
 
 **Dendrozoa** — arboreal Thermozoans of eastern Meridia, from the era **before
 O5's rain shadow existed**. Grasping limbs, depth vision, and a generalist gut
@@ -209,7 +230,7 @@ the physics, never against it.
 
 | Trait | Motivating physical fact |
 |---|---|
-| **Red blood** — iron-based carrier, not the ancestral copper-blue | The cradle is **98 % frost-free at 22.3 °C mean**, and the lineage forages actively in it. Copper-blue is doc 00's cold-sea pigment; it is the wrong carrier for sustained high output in continuous heat. The Thermozoan switch is *forced by the cradle's temperature.* |
+| **Red blood** — iron-based carrier, not the ancestral copper-blue | Inherited from the west-flank Thermozoan stem (§4), not minted here. What the cradle supplies is the reason it became *decisive*: at **98 % frost-free and 26.5 °C in the cradle**, a copper-blue competitor cannot match an endotherm's sustained daytime output, and there is no cool season in which it could catch up. The trait was available; the heat is what made it win. |
 | **Endurance heat tolerance** — bare skin, whole-body evaporative cooling, upright carriage | M3 runs 26.8 °C in the warm season with 304 mm of rain and almost no shade in the dry half. Long-distance foraging under an open sky is the only way to work a 539-NPP landscape, and it has to be done in the heat. |
 | **Altitude tolerance as ancestral, not acquired** | Meridia is **18.2 % above 2 km** and the trough's shoulders and volcanic highs stand above the basin floor. The lineage was never a lowland specialist; it ranged vertically from the start. |
 | **Water and salt economy** | 304 mm/yr, **65 % of it in one half-year**, beside a **salt** sea. Both scarcity and salinity are permanent features of the homeland, not seasonal hardships. |
@@ -369,9 +390,11 @@ direction — what the regional ecologies (`04+`) now **must** supply:
 - The origin is a **modern-icehouse event (T-50 → T-0)**, driven by O5's rain
   shadow and an orbital-scale lake-basin speciation pump — the youngest
   geology on the planet, not the oldest.
-- The lineage: **Zoa → Thermozoa → Dendrozoa → Aulacines → crown Aulacine**,
-  with **iron-red blood** as a derived Thermozoan trait forced by the cradle's
-  heat, in a world that is otherwise copper-blue.
+- The lineage: **Zoa → Thermozoa → Dendrozoa → Aulacines → crown Aulacine**.
+  **Iron-red blood is a west-flank invention** (Thermozoa, T-450…T-400), shared
+  with Selvana by descent and absent from the entire core branch — so Sirocca
+  and Borea are copper-blue worlds, and the peoples bleed a colour half the
+  planet's animals do not.
 - **One sapient species**, planet-wide, with deep internal population
   structure and **no sister species** — the conservative code and the
   refilling basin together prevented every split.

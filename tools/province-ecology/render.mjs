@@ -79,6 +79,29 @@ const PLATES = {
             lat0: 11, lat1: 32, lon0: -116, lon1: -82,
         },
     },
+    S2: {
+        hero: 'S2', neighbour: 'S1', slug: 's2',
+        title: 'S2  SIROCCAN ARID HEART',
+        crop: { lat0: -80, lat1: 8, lon0: 5, lon1: 90 },
+        palette: { S1: [72, 126, 86], S2: ARID, S3: [130, 148, 160] },
+        legend: [
+            ['S2', 'S2 THE ARID HEART      12.1 MKM2'],
+            ['S1', 'S1 N. RANGE & SW COAST 10.9 MKM2'],
+            ['S3', 'S3 SOUTHERN COLD FRINGE 4.3 MKM2'],
+        ],
+        // S2 holds three of the planet's ten great closed-basin lakes - the
+        // same count as the M3 cradle - and not one of them is deep.
+        lakes: [
+            { name: 'THE GREAT PAN',  lat: -26.6, lon: 43.7, areaKm2: 23172, surfaceM: 26, depthM: 14 },
+            { name: 'THE WEST PAN',   lat: -29.2, lon: 46.0, areaKm2: 20226, surfaceM: 29, depthM: 12 },
+            { name: 'THE SHALLOWEST', lat: -29.5, lon: 53.8, areaKm2: 12428, surfaceM: 23, depthM: 6  },
+        ],
+        detail: {
+            slug: 'pans', zoom: 3,
+            title: 'THE PAN COUNTRY  THREE GREAT LAKES, NONE DEEPER THAN 14 M',
+            lat0: -38, lat1: -18, lon0: 32, lon1: 62,
+        },
+    },
     V3: {
         hero: 'V3', neighbour: 'V1b', slug: 'v3',
         title: 'V3  SELVANAN INTERIOR DRY BASIN',
@@ -391,20 +414,16 @@ function plateEcotone(cfg) {
     write(`plate-${cfg.slug}-03-ecotone.png`, cv);
 }
 
-// The homology plate: the two west-flank deserts at identical scale, V3
-// mirrored on the equator so their mirror-image latitude bands (M3 16-42 N,
-// V3 18-40 S) line up for direct comparison.
-function plateMirror() {
-    const BAND = { lat: 46, lon: 62 };             // degrees shown per panel
+// Side-by-side desert panels at identical scale, southern provinces mirrored on
+// the equator so every band's latitudes line up for direct comparison.
+function platePanels({ file, title, subtitle, band, panels, facts }) {
+    const BAND = band;
     const pw = Math.round(BAND.lon / RES), ph = Math.round(BAND.lat / RES);
     const GAP = 26;
-    const cv = plate('THE HOMOLOGOUS DESERTS  M3 AND V3', 'SAME BRANCH / MIRROR-IMAGE LATITUDES / V3 FLIPPED ON THE EQUATOR', pw * 2 + GAP, ph + 116);
-    const panels = [
-        { lat1: 46, lon0: -132, hero: 'M3', flip: false, label: 'M3  MERIDIA  16 TO 42 N' },
-        { lat1: 46, lon0: -180, hero: 'V3', flip: true,  label: 'V3  SELVANA  18 TO 40 S  (MIRRORED)' },
-    ];
+    const cv = plate(title, subtitle, pw * panels.length + GAP * (panels.length - 1), ph + 30 + facts.length * 11 + 16);
     panels.forEach((pan, i) => {
         const ox = i * (pw + GAP);
+        void 0;
         for (let y = 0; y < ph; y++) for (let x = 0; x < pw; x++) {
             const lat = pan.lat1 - y * RES;
             const p = at(pan.flip ? -lat : lat, pan.lon0 + x * RES);
@@ -420,27 +439,65 @@ function plateMirror() {
         box(cv, ox, HEADER_H, ox + pw - 1, HEADER_H + ph - 1, INK);
         drawText(cv, ox + 4, HEADER_H + ph + 8, pan.label, INK, 1);
     });
-    const facts = [
-        ['AREA',                 '9.5 MKM2',  '4.8 MKM2'],
-        ['MEAN ANNUAL TEMP',     '22.3 C',    '22.1 C'],
-        ['ANNUAL TEMP RANGE',    '9.1 C',     '14.3 C'],
-        ['PRECIPITATION',        '304 MM',    '353 MM'],
-        ['MEDIAN ELEVATION',     '620 M',     '90 M'],
-        ['SCRUB SHARE',          '54.1%',     '85.2%'],
-        ['GREAT LAKES OF THE TEN', '3',       '0'],
-    ];
     const fy = HEADER_H + ph + 26;
-    facts.forEach(([k, a, b], i) => {
+    facts.forEach((row, i) => {
         const y = fy + i * 11;
-        drawText(cv, 12, y, k, [110, 118, 130], 1);
-        drawText(cv, pw - textWidth(a, 1) - 14, y, a, INK, 1);
-        drawText(cv, pw + GAP + pw - textWidth(b, 1) - 14, y, b, INK, 1);
+        drawText(cv, 12, y, row[0], [110, 118, 130], 1);
+        row.slice(1).forEach((v, j) => {
+            drawText(cv, (j + 1) * pw + j * GAP - textWidth(v, 1) - 14, y, v, INK, 1);
+        });
     });
-    write('plate-m3-v3-mirror.png', cv);
+    write(file, cv);
 }
+
+const M3_PANEL = { lat1: 46, lon0: -132, hero: 'M3', flip: false, label: 'M3  MERIDIA  16 TO 42 N' };
+const V3_PANEL = { lat1: 46, lon0: -180, hero: 'V3', flip: true,  label: 'V3  SELVANA  18 TO 40 S  (MIRRORED)' };
+
+// The homology plate: the two west-flank deserts, same branch, mirror latitudes.
+const plateMirror = () => platePanels({
+    file: 'plate-m3-v3-mirror.png',
+    title: 'THE HOMOLOGOUS DESERTS  M3 AND V3',
+    subtitle: 'SAME BRANCH / MIRROR-IMAGE LATITUDES / V3 FLIPPED ON THE EQUATOR',
+    band: { lat: 46, lon: 62 },
+    panels: [M3_PANEL, V3_PANEL],
+    facts: [
+        ['AREA',                   '9.3 MKM2', '4.8 MKM2'],
+        ['MEAN ANNUAL TEMP',       '22.3 C',   '22.1 C'],
+        ['ANNUAL TEMP RANGE',      '9.1 C',    '14.3 C'],
+        ['PRECIPITATION',          '303 MM',   '352 MM'],
+        ['MEDIAN ELEVATION',       '620 M',    '90 M'],
+        ['SCRUB SHARE',            '53.3%',    '85.2%'],
+        ['GREAT LAKES OF THE TEN', '3',        '0'],
+    ],
+});
+
+// The three-desert plate: the framework's whole claim in one image. M3 and V3
+// are cousins; S2 is a stranger - and S2 is the one that looks like M3.
+const plateDeserts = () => platePanels({
+    file: 'plate-three-deserts.png',
+    title: 'THE THREE GREAT DESERTS',
+    subtitle: 'WEST FLANK: M3 + V3 (COUSINS) / CORE: S2 (STRANGER) / SOUTHERN PANELS MIRRORED',
+    band: { lat: 52, lon: 74 },
+    panels: [
+        { lat1: 50, lon0: -140, hero: 'M3', flip: false, label: 'M3  MERIDIA  WEST FLANK' },
+        { lat1: 50, lon0: -180, hero: 'V3', flip: true,  label: 'V3  SELVANA  WEST FLANK  (MIRRORED)' },
+        { lat1: 52, lon0: 8,    hero: 'S2', flip: true,  label: 'S2  SIROCCA  CORE BRANCH  (MIRRORED)' },
+    ],
+    facts: [
+        ['BRANCH',                 'WEST FLANK', 'WEST FLANK', 'CORE'],
+        ['AREA',                   '9.3 MKM2',   '4.8 MKM2',   '12.1 MKM2'],
+        ['MEAN ANNUAL TEMP',       '22.3 C',     '22.1 C',     '22.4 C'],
+        ['PRECIPITATION',          '303 MM',     '352 MM',     '277 MM'],
+        ['NPP',                    '537',        '621',        '498'],
+        ['MEDIAN ELEVATION',       '620 M',      '90 M',       '630 M'],
+        ['TRUE DESERT (BW)',       '34.7%',      '10.3%',      '40.2%'],
+        ['GREAT LAKES',            '3',          '0',          '3'],
+        ['DEEPEST LAKE',           '821 M',      '44 M',       '14 M'],
+    ],
+});
 
 for (const [key, cfg] of Object.entries(PLATES)) {
     if (only && only !== key) continue;
     plateProvince(cfg); plateDetail(cfg); plateEcotone(cfg);
 }
-if (!only) plateMirror();
+if (!only) { plateMirror(); plateDeserts(); }

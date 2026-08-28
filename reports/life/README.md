@@ -25,6 +25,15 @@ describe the same partition.
 | [`plate-v3-03-ecotone.png`](maps/plate-v3-03-ecotone.png) | The V3/V1b interdigitation — 60.8 % mixed, against M3/M4's 49.6 % |
 | [`plate-m3-v3-mirror.png`](maps/plate-m3-v3-mirror.png) | The homologous pair at identical scale, V3 mirrored on the equator so the mirror-image latitude bands align |
 
+## S2 — the Siroccan Arid Heart (doc 06)
+
+| Plate | What it shows |
+|---|---|
+| [`plate-s2-01-province.png`](maps/plate-s2-01-province.png) | S2 within Sirocca, with its three great closed-basin lakes at true area-equivalent radius |
+| [`plate-s2-02-pans.png`](maps/plate-s2-02-pans.png) | The pan country at 3× in Table-18 terrain classes — three great lakes, none deeper than 14 m |
+| [`plate-s2-03-ecotone.png`](maps/plate-s2-03-ecotone.png) | The S2/S1 interdigitation — 52.8 % mixed, *more* than M3/M4's 49.6 % |
+| [`plate-three-deserts.png`](maps/plate-three-deserts.png) | M3, V3 and S2 at identical scale, southern panels mirrored — the two that look alike are the two that are not kin |
+
 Every figure in a plate legend is tallied **per cell over the whole export**,
 before any cropping or rasterisation, so the plates agree exactly with
 `tools/province-ecology/main.mjs` and with the numbers in the documents (M3

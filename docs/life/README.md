@@ -17,7 +17,8 @@ to each other correctly.
 | 03 | [`03_HUMANOID_ANCESTRY.md`](03_HUMANOID_ANCESTRY.md) | The Meridian Aulacines: which Zoan lineage, in which basin, becomes the peoples of Phase 5 — and the dispersal asymmetry that follows | **done** |
 | 04 | [`04_MERIDIAN_ARID_INTERIOR.md`](04_MERIDIAN_ARID_INTERIOR.md) | The first regional ecology: **M3**, the peoples' homeland — the three-lake basin system, the xeric flora, the ectotherm-dominated fauna, and the two domestication lines | **done** |
 | 05 | [`05_SELVANAN_INTERIOR_DRY_BASIN.md`](05_SELVANAN_INTERIOR_DRY_BASIN.md) | **V3**, M3's homologous mirror: climate twins at mirror-image latitudes from one xeric stem, diverging on relief, seasonality, uniformity and water — and the control showing the cradle needed geology, not climate | **done** |
-| 06+ | *Regional ecologies* | The remaining provinces — the T-0 cross-section of doc 02, briefed by doc 03 §8. Next: **S2**, Sirocca's Arid Heart, the convergent trap and the third leg of the desert experiment | planned |
+| 06 | [`06_SIROCCAN_ARID_HEART.md`](06_SIROCCAN_ARID_HEART.md) | **S2**, the convergent stranger — and on six structural axes M3's nearest twin, closer than its actual cousin. Three great lakes, deepest 14 m: a speciation pump with no refuge. No endotherms at all | **done** |
+| 07+ | *Regional ecologies* | The wet and cold provinces, where the framework is least tested. Next: **B1**, which carries the largest partition correction (−21 %) and has no Borean ecology behind it | planned |
 
 Regional ecologies are written **one province at a time**, on the province
 partition of `../culture/00_PROVINCE_CONSTRAINT_VECTORS.md` §2 rather than on

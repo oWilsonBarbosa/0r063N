@@ -199,9 +199,12 @@ The peoples are **Meridian** (west-flank branch), originating in the **AU1
 aulacogen and salt-sea basin** of Meridia's southeastern interior (~15–28 °N)
 on the M3/M4 ecotone — a **modern-icehouse event (T-50 → T-0)** driven by O5's
 young rain shadow and an orbital lake-basin speciation pump, not a deep-time
-one. The lineage is `Zoa → Thermozoa → Dendrozoa → Aulacines → crown Aulacine`,
-with **iron-red blood** derived from the cradle's heat in an otherwise
-copper-blue world. There is **exactly one sapient species**, planet-wide, with
+one. The lineage is `Zoa → Thermozoa → Dendrozoa → Aulacines → crown Aulacine`.
+**Iron-red blood is a west-flank invention** — the Thermozoa arose on the
+west-flank stem between the T-450 and T-400 rifts, so Meridia and Selvana
+inherit endothermy and **Sirocca and Borea never do: the entire core branch is
+copper-blue and ectothermic.** The cradle's permanent heat is what made the
+inherited trait decisive, not what minted it. There is **exactly one sapient species**, planet-wide, with
 deep internal population structure and **no sister species** — the conservative
 triplet code and the refilling basin prevented every split. Dispersal is
 asymmetric: **Selvana** is both near and deep kin (cheap expansion — the
@@ -244,6 +247,28 @@ there even though the crops transfer; and **V3 could not have produced the
 peoples** — it has the climate and the stock but none of doc 03 §2's three
 geological requirements, which is what makes the cradle's geology, not its
 climate, responsible.
+
+The **third regional ecology** is written: `docs/life/06_SIROCCAN_ARID_HEART.md`
+covers **S2**, the convergent stranger — and returns the framework's sharpest
+result. On six structural axes (annual range, median and p95 elevation, scrub
+share, desert share, interdigitation) **S2 is M3's nearest twin, closer than
+M3's actual cousin V3**: median elevation 630 m vs M3's 620 (V3: 90), range
+9.5 vs 9.1 (V3: 14.3), 52.8 % mixed bins vs 49.6 % (V3: 60.8 %). Kinship is not
+readable from appearance — the two deserts that look alike are the two that are
+not related. S2 is also the largest, driest and least productive of the three
+(12.08 Mkm², 277 mm, NPP 498, BW 40.2 %). It holds **three great lakes, deepest
+14 m** against the cradle's 821 m — a speciation pump with **no refuge**, giving
+high richness, **no relicts**, and survival banked in desiccation-resistant
+propagules. The convergent set is **Thornmat · Sparkgrass · Ashen-root ·
+Bloatstem · Panmat · Dustbacks**, with **Ashen-root** (a Sun-tuber look-alike
+defended by a bitter alkaloid) the single most dangerous object in the province
+to a Meridian forager. And **S2 has no endotherms at all**, so nothing follows
+the rain and the peoples' own red blood is the wrong colour for the continent.
+
+This completes the desert experiment (M3 · V3 · S2). Note also a correction it
+forced on doc 03 §1: Sirocca was originally dismissed as "aridity without the
+mosaic", which the data contradicts — Sirocca has the climate, relief, ecotone
+and scale, and loses only on **permanent deep water**.
 
 **Partition caveat** (doc 05 §7): the longitude-based continent proxy behind the
 published constraint vectors drops 1.80 Mkm² of land (1.69 % of all land) and
@@ -289,10 +314,12 @@ Everything lives in repository `oWilsonBarbosa/0r063N`:
   realm map (`01`), the deep-time paleobiology that runs the biology forward
   era by era from origin to the present realms (`02`), the humanoid
   ancestry that seats the peoples in Meridia's AU1 trough (`03`), and the
-  first regional ecology, **M3 the Meridian Arid Interior** (`04`). Start here
-  before designing any flora, fauna, or people. Regional ecologies are the T-0
-  cross-section of the doc-02 history, written one province at a time with
-  `03` §8 as the design brief; `05+` are still open (next: V3, then S2).
+  three regional ecologies — **M3** (`04`), **V3** (`05`) and **S2** (`06`),
+  the planet's three great deserts. Start here before designing any flora,
+  fauna, or people. Regional ecologies are the T-0 cross-section of the doc-02
+  history, written one province at a time with `03` §8 as the design brief;
+  `07+` are still open (next: B1, the largest partition correction and no
+  Borean ecology behind it).
 - **Province profiler** — `tools/province-ecology/main.mjs <PROVINCE>` streams
   the raw export and reports any province's Köppen/terrain composition,
   seasonal water and temperature regime, frost-free share, NPP and elevation

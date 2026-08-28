@@ -28,8 +28,12 @@ pack-and-milk animal's).
 adds **V3**, where those two lines have usable congeners — so a Meridian
 agricultural toolkit crosses the Equatorial Western Sea intact, but its
 **planting calendar does not**: V3 plants time on cooling as well as wetting,
-a cue the Meridian homeland (2.4 °C annual range) never taught. The remaining
-provinces (`../life/06+`) are still outstanding.
+a cue the Meridian homeland (2.4 °C annual range) never taught.
+[`../life/06_SIROCCAN_ARID_HEART.md`](../life/06_SIROCCAN_ARID_HEART.md) closes
+the desert set with **S2**, where the toolkit fails instead: same climate, same
+landscape, no shared lineage, and **no endotherms at all** — the Thermozoa are a
+west-flank invention, so Sirocca and Borea are copper-blue worlds. The remaining
+provinces (`../life/07+`) are still outstanding.
 
 ## The partition correction, adopted
 
