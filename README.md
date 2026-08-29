@@ -54,7 +54,7 @@ reconstructed **750-million-year geological + climate history**.
 | `tools/province-vectors/` | Zero-dependency **Node.js** script that derives the per-province constraint vectors in `docs/culture/`, plus `validate-continents.mjs`, which reports the per-province delta between the published longitude proxy and the corrected connected-landmass partition. |
 | `tools/continents.mjs` | Connected-landmass continent membership for the Node tools — a port of the tectonics pipeline's `lib/continents.py`, reproducing the authoritative `inventory.json` areas to within 0.27 Mkm². |
 | `tools/province-ecology/` | Zero-dependency **Node.js** province profiler and map renderer behind the `docs/life/04+` regional ecologies: Köppen/terrain composition, seasonal water and temperature regime, NPP and relief, for any province or sub-region — plus the plates in `reports/life/`. |
-| `reports/life/` | Map plates for the regional ecologies (province context, cradle terrain, ecotone bins). Built by `tools/province-ecology/render.mjs`. |
+| `reports/life/` | Map plates for the regional ecologies (province context, detail terrain, ecotone bins, seasonality). Built by `tools/province-ecology/render.mjs`. |
 | `tools/tectonics-pipeline/` | **Python** pipeline that reconstructs the tectonic history and paleoclimate. |
 | `scripts/` | Dependency-free dataset helpers — verify checksums, reassemble the parts. |
 | `third_party/planet_heightmap_generation/` | A pinned snapshot of the World Orogen generator (GPL-v3) that produced the data — kept for reproducibility and attribution. |

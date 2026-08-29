@@ -32,8 +32,14 @@ a cue the Meridian homeland (2.4 °C annual range) never taught.
 [`../life/06_SIROCCAN_ARID_HEART.md`](../life/06_SIROCCAN_ARID_HEART.md) closes
 the desert set with **S2**, where the toolkit fails instead: same climate, same
 landscape, no shared lineage, and **no endotherms at all** — the Thermozoa are a
-west-flank invention, so Sirocca and Borea are copper-blue worlds. The remaining
-provinces (`../life/07+`) are still outstanding.
+west-flank invention, so Sirocca and Borea are copper-blue worlds.
+[`../life/07_BOREAN_SOUTHERN_MARITIME_COAST.md`](../life/07_BOREAN_SOUTHERN_MARITIME_COAST.md)
+opens the cold set with **B1**, and hands this layer a **second, independent
+cereal cradle** — a winter-wet Mediterranean two-thirds that manufactures
+storable winter annuals — together with the constraint that no animal can be
+paired with it anywhere on the continent. It also corrected four figures in
+doc 00's own B1 block (see §4 there). The remaining provinces
+(`../life/08+`) are still outstanding.
 
 ## The partition correction, adopted
 

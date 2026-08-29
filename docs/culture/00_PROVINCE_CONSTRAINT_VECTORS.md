@@ -379,16 +379,32 @@ province.
   thin margin). NPP 926 permits either.
 
 ### B1 · Southern Maritime Coast
-`Bio1 15–20 · Bio12 800–1050 · NPP ~955 · Köppen Cfa · frost-free 100 %`
+`Bio1 15–20 · Bio12 800–1050 · NPP ~950 · Köppen Csa/Cfa · frost-free 100 %`
 
-Borea's warm refuge — 26–45 °N, never freezes, summer-wet, 19.4 % coastal. On
-a continent that is 81 % D+E, this is the anomaly that will hold most of its
-people.
+Borea's warm refuge — 26–45 °N, never freezes, **winter-wet**, 13.1 % coastal
+(the highest of any mainland province). On a continent that is 84.1 % D+E, this
+is the anomaly that will hold most of its people: it is **15.6 % of Borea and
+holds 98.7 % of its frost-free land**.
 
-- **eHRAF**: Jōmon and Yayoi · Southeast Chinese Neolithic (Hemudu, Liangzhu) ·
-  Southeastern US Woodland/Mississippian
-- **Invariants**: the only part of Borea where agriculture is easy; a
-  population sink for the whole continent; sharp gradient inland.
+Not one climate but two, flipping at about 32 °N: a winter-wet Mediterranean
+north (67.6 % of the province, `Csa`-dominant, 91–98 % of cells winter-wet) and
+a summer-wet subtropical south (20.6 %, `Cfa`/`Cwa`). Design the planting
+calendar for whichever half you are in — they are six months out of phase.
+
+- **eHRAF**: **Mediterranean California (Chumash, Ohlone)** — the closest
+  structural analogue, see the invariants · Aegean and Anatolian Neolithic ·
+  Levantine (Natufian, PPNA) · Iberian · and, for the summer-wet southern
+  fifth only, Jōmon and the Southeast Chinese Neolithic (Hemudu, Liangzhu)
+- **Invariants**: the best cereal-domestication setting on the planet — a
+  Mediterranean summer drought manufactures large-seeded storable winter
+  annuals ([`../life/07`](../life/07_BOREAN_SOUTHERN_MARITIME_COAST.md) names
+  the plant **Winterseed**) — **and no animal to pair with it**: Borea has no
+  endotherms at all, so no pack, milk, traction or wool animal exists. No
+  plough without an import, therefore hoe-capped field size; no pastoral
+  neighbours anywhere on the continent; but ectotherm browsers are nearly free
+  to keep penned, so expect **husbandry as a larder, not as a herd**. A
+  population sink for the whole continent, behind the planet's hardest
+  ecological border.
 - **Variance axis**: whether it is Borea's core or Borea's frontier — is the
   cold interior a hinterland this coast exploits, or a rival that raids it?
 

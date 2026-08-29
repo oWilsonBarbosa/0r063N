@@ -48,7 +48,7 @@ measured numbers.
 | Realm | The case against | MEASURED |
 |---|---|---|
 | **Selvana** | The richest and the flattest — and therefore the *least* selective. A 40 %, NPP 1594 in the Tropical North, 5.2 % of land above 2 km. Abundance without structure; no barrier to sharpen a lineage against. | mean elev 0.49 km · A 40 % |
-| **Borea** | Cold-limited to the point of exclusion. D+E = 84 %, mean 0.4 °C, and its interior province is frost-free **1 %** of the year. A cold specialist can live here; a naked-skinned endurance forager cannot originate here. | B2 frost-free 1 % · NPP 768 |
+| **Borea** | Cold-limited to the point of exclusion. D+E = 84 %, mean 0.4 °C, and its interior province is frost-free over **0.2 %** of its area. A cold specialist can live here; a naked-skinned endurance forager cannot originate here. | B2 frost-free 0.2 % · NPP 761 |
 | **Sirocca** | The genuine rival, and it loses on one axis only — see the note below. | S2 277 mm · NPP 498 · B 44 % |
 | **Meridia** | **The mosaic continent.** The greatest relief on the planet, the youngest major orogen, a hard rain shadow behind it, and a 9.5 Mkm² arid plateau lying directly against a 9.5 Mkm² tropical lowland at more than double the productivity. | see below |
 
@@ -330,8 +330,11 @@ what is food, what is medicine, and what is poison silently stops applying.**
 
 **Borea — cross-branch, far, and cold.** All three wrong: core-branch biota,
 the hard crossing, and a climate the cradle disqualifies the body for (B2 is
-frost-free **1 %** of the year). Borea is a late, deliberate,
-technologically-mediated arrival, not a dispersal.
+frost-free over **0.2 %** of its area). Borea is a late, deliberate,
+technologically-mediated arrival, not a dispersal — and when it happens, it
+happens onto **B1**, the one province in reach of a body built in the tropics
+([`07`](07_BOREAN_SOUTHERN_MARITIME_COAST.md)): 15.6 % of the continent,
+holding 98.7 % of its frost-free land.
 
 The asymmetry is the engine:
 

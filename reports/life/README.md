@@ -34,6 +34,19 @@ describe the same partition.
 | [`plate-s2-03-ecotone.png`](maps/plate-s2-03-ecotone.png) | The S2/S1 interdigitation — 52.8 % mixed, *more* than M3/M4's 49.6 % |
 | [`plate-three-deserts.png`](maps/plate-three-deserts.png) | M3, V3 and S2 at identical scale, southern panels mirrored — the two that look alike are the two that are not kin |
 
+## B1 — the Borean Southern Maritime Coast (doc 07)
+
+| Plate | What it shows |
+|---|---|
+| [`plate-b1-01-province.png`](maps/plate-b1-01-province.png) | B1 as a thin southern rim on a very large cold continent — B2's interior four times its size, B3's range and ice larger still. No lake rings: Borea holds none of the planet's ten |
+| [`plate-b1-02-border.png`](maps/plate-b1-02-border.png) | The B1/B2 line traced in red over Table-18 terrain classes — scrub and forest run straight through a boundary the climate treats as absolute |
+| [`plate-b1-03-ecotone.png`](maps/plate-b1-03-ecotone.png) | The B1/B2 interdigitation — 5.0 % mixed, and 31.7 % of B1's own bins, against 70–80 % for all three deserts |
+| [`plate-b1-04-seasons.png`](maps/plate-b1-04-seasons.png) | Which half-year carries the rain, over B1 and B2 — the seasonality inversion that makes the border hard, at its maximum along the line |
+
+The seasonality plate states its question **hemisphere-independently** — *is the
+wetter half-year also the colder half-year?* — rather than in calendar months,
+so a northern and a southern province read the same way on it.
+
 Every figure in a plate legend is tallied **per cell over the whole export**,
 before any cropping or rasterisation, so the plates agree exactly with
 `tools/province-ecology/main.mjs` and with the numbers in the documents (M3

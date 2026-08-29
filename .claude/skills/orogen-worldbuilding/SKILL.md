@@ -270,18 +270,44 @@ forced on doc 03 §1: Sirocca was originally dismissed as "aridity without the
 mosaic", which the data contradicts — Sirocca has the climate, relief, ecotone
 and scale, and loses only on **permanent deep water**.
 
-**Partition caveat** (doc 05 §7): the longitude-based continent proxy behind the
-published constraint vectors drops 1.80 Mkm² of land (1.69 % of all land) and
-undercounts **Selvana by 5.1 %** against `reports/tectonics/inventory.json`.
-A corrected connected-landmass assignment now exists —
-`tools/continents.mjs`, a port of the tectonics pipeline's own
-`lib/continents.py`, reproducing the authoritative areas to within 0.27 Mkm².
-Both Node tools take `--continents connected`, and
-`node tools/province-vectors/validate-continents.mjs` prints the per-province
-delta. The **published vectors still use the proxy**, so everything downstream
-stays consistent; treat absolute areas as approximate, most of all for **B1
-(−21 %)**, V4 (+15.2 %) and M4 (−9.6 %). The documented provinces M3 and V3
-move by ≤ 2.3 % and no climate figure in docs 04–05 changes.
+The **fourth regional ecology** is written:
+`docs/life/07_BOREAN_SOUTHERN_MARITIME_COAST.md` covers **B1**, the first
+non-desert and first core-branch cold province, and finds **the hardest
+ecological line on the planet**: only **31.7 %** of B1's 2° bins also hold its
+neighbour B2, against 70.2 / 79.6 / 72.9 % for M3 / V3 / S2 (symmetric share
+5.0 % vs 49.6–60.8 %). There is **no wall on it** — the border band averages
+380 m and 2.2 % mountain cells. The mechanism is instead **phenological**: a
+Köppen C/D thermal threshold (frost-free **100 % → 0.2 %** across one bin)
+compounded by a **seasonality inversion** (winter-wet **72.0 % → 28.3 %**)
+that is at its maximum exactly along the line, so a lineage crossing it arrives
+with its dormancy timed to the wrong half of the year. B1 also contains its own
+reversal at ~32 °N — a winter-wet Mediterranean north (67.6 %) against a
+summer-wet subtropical south (20.6 %). It is **15.6 % of Borea holding 98.7 %
+of its frost-free land**, which makes it the **ancestral** refuge and B2/B3 the
+**derived** provinces, holding the continent's real innovation: freeze
+tolerance, in a world with no endotherms. Set: **Hardleaf · Coastwood ·
+Winterseed · Drybulb · Tidemat · Leafbacks · Duskrunners · Winterspawn**, plus
+**Frostbacks** across the line, on a **bimodal annual cycle** (two dormancies a
+year) unique to this province. For the culture layer it is a **second,
+independent cereal cradle** (Winterseed) with **no animal to pair with it**:
+husbandry as larder, not as herd, and no plough without an import. It corrected
+four figures in `docs/culture/00` §4's B1 block and the stale B2 frost-free
+figure in doc 03.
+
+**Partition correction — adopted** (doc 05 §7 found it; `docs/culture/README.md`
+records the adoption). The old longitude-based continent proxy dropped
+1.80 Mkm² of land (1.69 % of all land) and undercounted **Selvana by 5.1 %**
+against `reports/tectonics/inventory.json`. It has been **replaced** by a
+connected-landmass assignment — `tools/continents.mjs`, a port of the tectonics
+pipeline's own `lib/continents.py`, reproducing the authoritative areas to
+within 0.27 Mkm² — which is now the **default** in both Node tools and the
+basis of the **regenerated** master table. `--continents proxy` reproduces the
+superseded table, and `node tools/province-vectors/validate-continents.mjs`
+prints the per-province delta. The whole repository now partitions the planet
+one way. The correction moved **B1 −21 %** (the largest on the planet),
+V4 +15.2 %, M4 −9.6 %; M3 and V3 moved ≤ 2.3 % and no climate figure in
+docs 04–05 changed. The table also gained an **Islands** accounting row
+(4.03 Mkm²) which is explicitly *not* a design envelope.
 
 ### Open (Phase 5 creative space — fully yours to invent)
 Planet name · continent names (Meridia/Sirocca/Selvana/Borea are provisional working labels) · all societies, cultures, languages · cities and settlements · human history and mythology · calendar, day length, moon system, gravity · concrete regional ecologies (grounded in `docs/life/`) · any minor rivers and local geography
@@ -314,12 +340,13 @@ Everything lives in repository `oWilsonBarbosa/0r063N`:
   realm map (`01`), the deep-time paleobiology that runs the biology forward
   era by era from origin to the present realms (`02`), the humanoid
   ancestry that seats the peoples in Meridia's AU1 trough (`03`), and the
-  three regional ecologies — **M3** (`04`), **V3** (`05`) and **S2** (`06`),
-  the planet's three great deserts. Start here before designing any flora,
-  fauna, or people. Regional ecologies are the T-0 cross-section of the doc-02
-  history, written one province at a time with `03` §8 as the design brief;
-  `07+` are still open (next: B1, the largest partition correction and no
-  Borean ecology behind it).
+  four regional ecologies — the planet's three great deserts, **M3** (`04`),
+  **V3** (`05`) and **S2** (`06`), and the first cold province, **B1** (`07`).
+  Start here before designing any flora, fauna, or people. Regional ecologies
+  are the T-0 cross-section of the doc-02 history, written one province at a
+  time with `03` §8 as the design brief; `08+` are still open (next: **B2**,
+  which `07` runs up a debt to, or **M4**, the peoples' own neighbour and the
+  culture layer's stronger claim).
 - **Province profiler** — `tools/province-ecology/main.mjs <PROVINCE>` streams
   the raw export and reports any province's Köppen/terrain composition,
   seasonal water and temperature regime, frost-free share, NPP and elevation

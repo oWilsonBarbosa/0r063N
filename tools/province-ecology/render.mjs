@@ -9,9 +9,14 @@
 //                               colour-coded, optional sub-box outlined, and
 //                               any annotated lakes at true area-equivalent
 //                               radius
-//   plate-<p>-02-<detail>.png   a detail crop in Table-18 terrain classes
+//   plate-<p>-02-<detail>.png   a detail crop in Table-18 terrain classes,
+//                               optionally with the province line traced over
+//                               it (detail.traceBorder)
 //   plate-<p>-03-ecotone.png    interdigitation with the neighbour province,
 //                               in 2-degree bins
+//   plate-<p>-04-seasons.png    which half-year carries the rain — the colder
+//                               or the warmer — over the province and its
+//                               neighbour; only where `seasons` is configured
 //
 // and, for the homologous desert pair, one comparison plate:
 //
@@ -77,6 +82,40 @@ const PLATES = {
             slug: 'cradle', zoom: 4,
             title: 'THE CRADLE  AU1 TROUGH AND THE THREE LAKES',
             lat0: 11, lat1: 32, lon0: -116, lon1: -82,
+        },
+    },
+    B1: {
+        hero: 'B1', neighbour: 'B2', slug: 'b1',
+        title: 'B1  BOREAN SOUTHERN MARITIME COAST',
+        crop: { lat0: 12, lat1: 85, lon0: 25, lon1: 175 },
+        // B1 is not a desert, so it does not take the shared ARID hero colour:
+        // warm ochre against a cold sage interior and an ice-white north.
+        palette: { B1: [206, 148, 84], B2: [104, 132, 108], B3: [222, 228, 236] },
+        legend: [
+            ['B1', 'B1 S. MARITIME COAST    3.1 MKM2'],
+            ['B2', 'B2 SUBARCTIC INTERIOR  12.6 MKM2'],
+            ['B3', 'B3 E. RANGE & ICE      4.3 MKM2'],
+        ],
+        // Borea holds none of the planet's ten great closed-basin lakes.
+        lakes: [],
+        notes: [
+            'NO GREAT CLOSED-BASIN LAKE IN BOREA.',
+            'THE B1/B2 EDGE IS A THERMAL THRESHOLD,',
+            'NOT A RAINFALL GRADIENT: 5% MIXED BINS',
+        ],
+        // Framed on B1s own land (core lon 75-120, lat 23-47), not on the
+        // continent: the border it is named for runs along the northern edge.
+        detail: {
+            slug: 'border', zoom: 2, traceBorder: true,
+            title: 'FOREST CROSSES THE B1/B2 LINE. FROST DOES NOT.',
+            lat0: 22, lat1: 50, lon0: 76, lon1: 124,
+        },
+        // The mechanism behind the hard border: the two provinces carry their
+        // rain in opposite halves of the year, and the inversion is sharpest
+        // exactly along the line.
+        seasons: {
+            title: 'THE SEASONS INVERT AT THE LINE',
+            crop: { lat0: 18, lat1: 80, lon0: 28, lon1: 170 },
         },
     },
     S2: {
@@ -165,6 +204,10 @@ const terr = new Int16Array(W * H).fill(-1);
 const elev = new Float32Array(W * H);
 const land = new Uint8Array(W * H);
 const seen = new Uint8Array(W * H);
+// 1 = the wetter half-year is the colder half-year, 0 = the warmer one. Stated
+// hemisphere-independently, so north and south provinces stay comparable.
+const winterWet = new Int8Array(W * H).fill(-1);
+const seasonOf = new Map();                      // province -> [winterWetCells, all]
 const bins = new Map();                          // key -> Set(province)
 const terrainOf = new Map();                     // province -> Map(terrainIdx -> cells)
 const binKey = (lat, lon) => `${Math.floor(lat / 2)},${Math.floor(lon / 2)}`;
@@ -192,13 +235,20 @@ for (const part of fs.readdirSync(DATA).filter(f => f.endsWith('.csv.gz')).sort(
         // Tally per cell, globally, *before* any crop test — counting dilated
         // raster pixels inside a crop would change both the denominator and the
         // projection weighting, and would disagree with ./main.mjs.
-        let pv = null, tc = -1;
+        let pv = null, tc = -1, ww = -1;
         if (isLand) {
             const h = elevToHeightKm(+f[idx.elev]);
             const k = +f[idx.koppen];
             const code = (KOPPEN_CLASSES[k] || {}).code || '??';
             pv = provinceOf(continentAt(lat, lon), h, lat, code);
             tc = classifyTerrain(k, h, precipAnnualMm(+f[idx.pS], +f[idx.pW]), +f[idx.isSurfaceCoast] === 1);
+            const pS = +f[idx.pS], pW = +f[idx.pW];
+            const warmIsS = +f[idx.tS] >= +f[idx.tW];
+            ww = (warmIsS ? pW : pS) > (warmIsS ? pS : pW) ? 1 : 0;
+            if (pv) {
+                if (!seasonOf.has(pv)) seasonOf.set(pv, [0, 0]);
+                const s = seasonOf.get(pv); s[0] += ww; s[1]++;
+            }
             if (HEROES.has(pv)) {
                 const b = binKey(lat, lon);
                 if (!bins.has(b)) bins.set(b, new Set());
@@ -212,7 +262,7 @@ for (const part of fs.readdirSync(DATA).filter(f => f.endsWith('.csv.gz')).sort(
         if (p < 0) continue;
         if (!seen[p] || isLand) {
             seen[p] = 1; elev[p] = +f[idx.elev_km]; land[p] = isLand ? 1 : 0;
-            prov[p] = pv; terr[p] = tc;
+            prov[p] = pv; terr[p] = tc; winterWet[p] = ww;
         }
     }
 }
@@ -240,7 +290,7 @@ for (const part of fs.readdirSync(DATA).filter(f => f.endsWith('.csv.gz')).sort(
             if (src >= 0) writes.push([i, src]); else next.push(i);
         }
         if (!writes.length) break;
-        for (const [i, src] of writes) { elev[i] = elev[src]; land[i] = land[src]; prov[i] = prov[src]; terr[i] = terr[src]; }
+        for (const [i, src] of writes) { elev[i] = elev[src]; land[i] = land[src]; prov[i] = prov[src]; terr[i] = terr[src]; winterWet[i] = winterWet[src]; }
         for (const [i] of writes) seen[i] = 1;
         pending = next;
     }
@@ -333,9 +383,9 @@ function plateProvince(cfg) {
         drawText(cv, Math.max(4, x - textWidth(cfg.ruleCut.label, 1) - 6), HEADER_H + h - 16, cfg.ruleCut.label, ACCENT, 1);
     }
     const rows = cfg.legend.map(([k, label]) => [cfg.palette[k], label]).concat([[OTHER_LAND, 'OTHER CONTINENTS']]);
-    const notes = cfg.lakes.length
+    const notes = cfg.notes || (cfg.lakes.length
         ? ['RINGS: GREAT CLOSED-BASIN LAKES,', 'AT TRUE AREA-EQUIVALENT RADIUS']
-        : ['NO GREAT CLOSED-BASIN LAKE HERE:', 'SELVANA HOLDS NONE OF THE PLANET TEN', 'LARGEST IS 6,001 KM2, 44 M DEEP'];
+        : ['NO GREAT CLOSED-BASIN LAKE HERE:', 'SELVANA HOLDS NONE OF THE PLANET TEN', 'LARGEST IS 6,001 KM2, 44 M DEEP']);
     const pw2 = Math.max(...rows.map(r => textWidth(r[1], 1)), ...notes.map(t => textWidth(t, 1))) + 34;
     panel(cv, 6, HEADER_H + 6, pw2, rows.length * 16 + notes.length * 12 + 16);
     const ly = legend(cv, 12, HEADER_H + 12, rows);
@@ -355,6 +405,23 @@ function plateDetail(cfg) {
             c = c.map(v => Math.min(226, ((v * 2 + 255) / 3) | 0));   // gentle mute
         }
         put(cv, x, y + HEADER_H, c);
+    }
+    // Optional: trace the hero/neighbour province line over the terrain. Used
+    // where the point of the plate is that the two disagree — the terrain
+    // classes run straight across a boundary the climate treats as absolute.
+    if (d.traceBorder) {
+        const pv = (x, y) => {
+            const p = at(d.lat1 - (y / Z) * RES, d.lon0 + (x / Z) * RES);
+            return p < 0 || !land[p] ? null : prov[p];
+        };
+        for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+            if (pv(x, y) !== cfg.hero) continue;
+            if (pv(x + 1, y) === cfg.neighbour || pv(x, y + 1) === cfg.neighbour ||
+                pv(x - 1, y) === cfg.neighbour || pv(x, y - 1) === cfg.neighbour) {
+                put(cv, x, y + HEADER_H, ACCENT);
+                put(cv, x, y + HEADER_H + 1, ACCENT);
+            }
+        }
     }
     for (const L of cfg.lakes) {
         const x = Math.round((L.lon - d.lon0) / RES) * Z, y = Math.round((d.lat1 - L.lat) / RES) * Z + HEADER_H;
@@ -412,6 +479,40 @@ function plateEcotone(cfg) {
     const ly = legend(cv, 12, HEADER_H + 12, erows);
     drawText(cv, 12, ly + 2, note, INK, 1);
     write(`plate-${cfg.slug}-03-ecotone.png`, cv);
+}
+
+// Which half-year carries the rain — the colder one or the warmer one — over
+// the hero and its neighbour. Stated hemisphere-independently, so it reads the
+// same north or south. Used where the boundary between two provinces is a
+// phenological inversion rather than a productivity step.
+function plateSeasons(cfg) {
+    const s = cfg.seasons, crop = s.crop || cfg.crop;
+    const w = Math.round((crop.lon1 - crop.lon0) / RES), h = Math.round((crop.lat1 - crop.lat0) / RES);
+    const cv = plate(s.title, 'WHICH HALF-YEAR CARRIES THE RAIN', w, h);
+    const WINTER_WET = [72, 116, 170], SUMMER_WET = [214, 152, 70];
+    const shown = new Set(s.provinces || [cfg.hero, cfg.neighbour]);
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+        const p = at(crop.lat1 - y * RES, crop.lon0 + x * RES);
+        if (p < 0) continue;
+        let c;
+        if (!land[p]) c = oceanColor(elev[p]);
+        else if (!shown.has(prov[p]) || winterWet[p] < 0) c = [226, 224, 218];
+        else c = winterWet[p] ? WINTER_WET : SUMMER_WET;
+        put(cv, x, y + HEADER_H, c);
+    }
+    // The province shares go in as plain text, not swatches: a swatch here
+    // would read as a third season colour.
+    const stats = [...shown].filter(k => seasonOf.has(k)).map(k => {
+        const [ww, n] = seasonOf.get(k);
+        return `${k}: WINTER-WET IN ${(100 * ww / n).toFixed(1)}% OF CELLS`;
+    });
+    const key = [[WINTER_WET, 'WETTER HALF IS THE COLDER HALF'], [SUMMER_WET, 'WETTER HALF IS THE WARMER HALF'],
+        [[226, 224, 218], 'OTHER LAND']];
+    const pw2 = Math.max(...key.map(r => textWidth(r[1], 1)) , ...stats.map(t => textWidth(t, 1))) + 34;
+    panel(cv, 6, HEADER_H + 6, pw2, key.length * 16 + stats.length * 12 + 16);
+    const ly = legend(cv, 12, HEADER_H + 12, key);
+    stats.forEach((t, i) => drawText(cv, 12, ly + 2 + i * 12, t, INK, 1));
+    write(`plate-${cfg.slug}-04-seasons.png`, cv);
 }
 
 // Side-by-side desert panels at identical scale, southern provinces mirrored on
@@ -499,5 +600,6 @@ const plateDeserts = () => platePanels({
 for (const [key, cfg] of Object.entries(PLATES)) {
     if (only && only !== key) continue;
     plateProvince(cfg); plateDetail(cfg); plateEcotone(cfg);
+    if (cfg.seasons) plateSeasons(cfg);
 }
 if (!only) { plateMirror(); plateDeserts(); }

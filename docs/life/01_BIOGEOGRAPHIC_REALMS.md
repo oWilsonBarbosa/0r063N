@@ -96,8 +96,9 @@ Sirocca's **deep sister**. Provinces:
 
 | Province | Isolating barrier (MEASURED) |
 |---|---|
-| Southern Maritime Coast | the warm C-group refuge, walled off inland |
+| Southern Maritime Coast | the warm C-group refuge — 98.7 % of the continent's frost-free land, sealed by a thermal threshold and a seasonality inversion rather than by any relief ([`07`](07_BOREAN_SOUTHERN_MARITIME_COAST.md)) |
 | Subarctic Interior | the taiga belt |
+| E. Range & N. Ice Highlands | the ≥1.5 km ranges and the `EF` ice cap (75.1 % glacier) |
 | Eastern Range & Northern Ice Highlands | 6.12 km range; polar ice |
 
 ---
