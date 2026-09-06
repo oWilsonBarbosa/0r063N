@@ -215,6 +215,28 @@ to the Meridian homeland — 22.4 °C / 278 mm / 98 % frost-free against M3's
 medicine and poison silently stops applying), **Borea** is last. The peoples'
 endonym and everything cultural remain open.
 
+The **chronology** is now written too: `docs/life/08_CHRONOLOGY.md` dates all of
+the above. The cradle keeps a finer record than the planet does — tephra from
+P5's H13–H15 field, **The Shallow** (36 m) as a cycle counter, **The Deep**
+(821 m, never empties) as a continuous reference, **The Sump**'s rising salinity
+as a one-way ratchet, O5's still-rising uplift as the arrow, and ice-volume
+lowstands plus the age-progressive H-chains as the gate on sea crossings. All
+invention is isolated into **one free parameter**, the *basin cycle*, proposed
+at **100 kyr**; every date is also given in cycles so the set rescales from that
+one number. Two one-way trends give two events: **the Failure (~800 kyr)**, when
+O5's deepening rain shadow stops The Shallow refilling, ends 49 Myr of pumping
+and **fuses** its isolates on the two surviving waters — this is the origin of
+the crown species, and it is the *opposite* of a bottleneck, so the founding
+population is the most diverse the planet has held and no "handful of survivors"
+story is correct; and **the Surge (~200 kyr)**, when the Sump's salinity makes
+the basin unusable and dispersal begins as an **expulsion**, not an achievement.
+Crossings: **Selvana ~90 kyr · Sirocca ~30 kyr · Borea (onto B1) ~10 kyr.**
+The load-bearing result is an inversion of Earth's shape: **regional difference
+is older than continental difference** — two Meridian peoples can be more
+distantly related to each other than either is to anyone in Borea. This moved
+one published figure: doc 03 §4's crown species now begins at **~800 kyr**, not
+T-8 Myr. The origin window (T-50 → T-0) and the lineage order did not move.
+
 The **first regional ecology** is written: see
 `docs/life/04_MERIDIAN_ARID_INTERIOR.md` for **M3**, the peoples' homeland.
 Fixed points: M3 is **two-thirds steppe, not desert** (BSh 53.3 %, scrub is the
@@ -344,9 +366,11 @@ Everything lives in repository `oWilsonBarbosa/0r063N`:
   **V3** (`05`) and **S2** (`06`), and the first cold province, **B1** (`07`).
   Start here before designing any flora, fauna, or people. Regional ecologies
   are the T-0 cross-section of the doc-02 history, written one province at a
-  time with `03` §8 as the design brief; `08+` are still open (next: **B2**,
-  which `07` runs up a debt to, or **M4**, the peoples' own neighbour and the
-  culture layer's stronger claim).
+  time with `03` §8 as the design brief. **`08` is the chronology** — not a
+  regional ecology, but the dating framework and the peoples' history on it
+  (the Failure at ~800 kyr, the Surge at ~200 kyr, the crossings at ~90 / ~30 /
+  ~10 kyr). `09+` are still open (next: **B2**, which `07` runs up a debt to, or
+  **M4**, the peoples' own neighbour and the culture layer's stronger claim).
 - **Province profiler** — `tools/province-ecology/main.mjs <PROVINCE>` streams
   the raw export and reports any province's Köppen/terrain composition,
   seasonal water and temperature regime, frost-free share, NPP and elevation

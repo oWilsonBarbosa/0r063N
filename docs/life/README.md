@@ -19,7 +19,15 @@ to each other correctly.
 | 05 | [`05_SELVANAN_INTERIOR_DRY_BASIN.md`](05_SELVANAN_INTERIOR_DRY_BASIN.md) | **V3**, M3's homologous mirror: climate twins at mirror-image latitudes from one xeric stem, diverging on relief, seasonality, uniformity and water — and the control showing the cradle needed geology, not climate | **done** |
 | 06 | [`06_SIROCCAN_ARID_HEART.md`](06_SIROCCAN_ARID_HEART.md) | **S2**, the convergent stranger — and on six structural axes M3's nearest twin, closer than its actual cousin. Three great lakes, deepest 14 m: a speciation pump with no refuge. No endotherms at all | **done** |
 | 07 | [`07_BOREAN_SOUTHERN_MARITIME_COAST.md`](07_BOREAN_SOUTHERN_MARITIME_COAST.md) | **B1**, the hardest ecological line on the planet — and no wall on it. A thermal threshold compounded by a seasonality inversion, sealing the refuge that holds 98.7 % of Borea's frost-free land on 15.6 % of its area | **done** |
-| 08+ | *Regional ecologies* | The rest of the wet and cold provinces. Next: **B2**, which doc 07 runs up a debt to (freeze tolerance, the Frostbacks), or **M4**, the peoples' own neighbour and the culture layer's stronger claim | planned |
+| 08 | [`08_CHRONOLOGY.md`](08_CHRONOLOGY.md) | **When.** The cradle dated from its own tephra, lake stratigraphy and salinity ratchet — then the history that follows: the Failure (~800 kyr) that stops the pump and fuses its isolates into the crown species, the Surge (~200 kyr) that expels them, and the crossings at ~90 / ~30 / ~10 kyr | **done** |
+| 09+ | *Regional ecologies* | The rest of the wet and cold provinces. Next: **B2**, which doc 07 runs up a debt to (freeze tolerance, the Frostbacks), or **M4**, the peoples' own neighbour and the culture layer's stronger claim | planned |
+
+**Doc 08 is not a regional ecology** and does not belong to that sequence. It
+answers the one question docs 00–07 all defer — *when* — by showing that the
+cradle keeps a finer record than the planet does, and it isolates its invention
+into a single stated parameter (the **basin cycle**, proposed at 100 kyr) so the
+whole chronology can be rescaled or rejected as one piece. It moved one figure
+in doc 03 §4: the crown species now begins at ~800 kyr rather than T-8 Myr.
 
 Regional ecologies are written **one province at a time**, on the province
 partition of `../culture/00_PROVINCE_CONSTRAINT_VECTORS.md` §2 rather than on

@@ -36,6 +36,11 @@ at a resolution the physical record does not possess. That is a deliberate
 choice, not an oversight: the events that make a person are fast, and the
 record is slow.
 
+[`08`](08_CHRONOLOGY.md) takes that caveat as its brief. It does not improve the
+global record — nothing can — but it shows that the *cradle* keeps a finer one
+of its own, in ash falls, lake couplets and a salinity ratchet, and hangs a
+dated history on it.
+
 ---
 
 ## 1. Why Meridia — the case from the physical record
@@ -177,12 +182,18 @@ Zoa  (hothouse shelves, T-550…T-350 — bilaterian, internal skeleton,
       └── Dendrozoa  (Meridian, pre-T-50)
            │    arboreal generalists of eastern Meridia's continuous forest
            │
-           └── Aulacines  (T-50…T-8, the AU1 trough)
+           └── Aulacines  (T-50…T-800 kyr, the AU1 trough)
                 │    ground-living mosaic foragers; the pump's population
                 │
-                └── the crown Aulacine  (T-8…T-0)
+                └── the crown Aulacine  (T-800 kyr…T-0)
                        one species · the peoples of Phase 5
 ```
+
+The boundary between the last two is **the Failure** — the drying that finally
+stops the speciation pump — and it is dated, with the rest of the peoples'
+history, in [`08`](08_CHRONOLOGY.md). It falls below this document's stated
+resolution, so read it as a consequence of that document's one free parameter
+rather than as a figure of the same standing as T-50.
 
 **Thermozoa** — the red-blooded endothermic grade. Doc 00 §8 fixes copper-blue
 blood as ancestral and "an iron-red variant derived later in the most active
@@ -276,6 +287,17 @@ Three things follow, and the culture layer should hold all three:
   can and did merge with it. This world never had a second sapient species to
   meet, mourn, or mythologise. It came close, many times, and the water always
   came back.
+
+**And then, once, it did not.** This section describes a pump running in the
+present tense, which leaves the obvious question unasked: if every divergence is
+reabsorbed, why are the peoples here at all? [`08`](08_CHRONOLOGY.md) answers it
+from two trends that run one way only — O5's deepening rain shadow, and the
+Sump's rising salinity. The first eventually stops the pump, throwing 49 Myr of
+repeatedly-partitioned variation together on the two waters that remain; that
+**fusion** is the crown Aulacine, and it is the opposite of a bottleneck. The
+second eventually makes the basin unusable, and the dispersal of §7 begins as an
+**expulsion**. The pump never completed a split — and then it stopped, and the
+stopping is what made the peoples.
 
 ---
 
@@ -414,3 +436,8 @@ direction — what the regional ecologies (`04+`) now **must** supply:
   history, mythology, calendar. Phase 5 creative space, untouched here by
   design. This document says what walked out of the trough; it says nothing
   about who they became.
+- **When any of it happened** — answered since, in [`08`](08_CHRONOLOGY.md),
+  which dates the cradle from its own tephra and lake stratigraphy and puts the
+  crown species at ~800 kyr, the dispersal at ~200 kyr, and Borea at ~10 kyr.
+  Those figures rest on one stated free parameter and are open to revision as a
+  set; the spine above does not depend on them.

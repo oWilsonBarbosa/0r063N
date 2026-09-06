@@ -39,7 +39,21 @@ cereal cradle** — a winter-wet Mediterranean two-thirds that manufactures
 storable winter annuals — together with the constraint that no animal can be
 paired with it anywhere on the continent. It also corrected four figures in
 doc 00's own B1 block (see §4 there). The remaining provinces
-(`../life/08+`) are still outstanding.
+(`../life/09+`) are still outstanding.
+
+[`../life/08_CHRONOLOGY.md`](../life/08_CHRONOLOGY.md) then supplies the axis
+this layer has been working without: **when**. Four of its results bear directly
+on culture. Dispersal begins as an **expulsion** (~200 kyr, when the cradle's
+salt sea becomes unusable) rather than an achievement, so no founding myth of a
+chosen departure is correct. The founding population is a **fusion, not a
+bottleneck** — the most diverse the planet has ever held — so "a handful of
+survivors" is backwards, and regional variation among the peoples is ancestral
+variation being re-sorted rather than drift after dispersal. **Regional
+difference is older than continental difference**: two Meridian peoples can be
+more distantly related to each other than either is to anyone in Borea. And
+Borea is settled at **~10 kyr**, on top of the agricultural window — so B1's
+independent cereal cradle is roughly contemporaneous with arrival rather than
+long predating it.
 
 ## The partition correction, adopted
 
