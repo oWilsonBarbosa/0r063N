@@ -20,14 +20,20 @@ to each other correctly.
 | 06 | [`06_SIROCCAN_ARID_HEART.md`](06_SIROCCAN_ARID_HEART.md) | **S2**, the convergent stranger — and on six structural axes M3's nearest twin, closer than its actual cousin. Three great lakes, deepest 14 m: a speciation pump with no refuge. No endotherms at all | **done** |
 | 07 | [`07_BOREAN_SOUTHERN_MARITIME_COAST.md`](07_BOREAN_SOUTHERN_MARITIME_COAST.md) | **B1**, the hardest ecological line on the planet — and no wall on it. A thermal threshold compounded by a seasonality inversion, sealing the refuge that holds 98.7 % of Borea's frost-free land on 15.6 % of its area | **done** |
 | 08 | [`08_CHRONOLOGY.md`](08_CHRONOLOGY.md) | **When.** The cradle dated from its own tephra, lake stratigraphy and salinity ratchet — then the history that follows: the Failure (~800 kyr) that stops the pump and fuses its isolates into the crown species, the Surge (~200 kyr) that expels them, and the crossings at ~90 / ~30 / ~10 kyr | **done** |
-| 09+ | *Regional ecologies* | The rest of the wet and cold provinces. Next: **B2**, which doc 07 runs up a debt to (freeze tolerance, the Frostbacks), or **M4**, the peoples' own neighbour and the culture layer's stronger claim | planned |
+| 09 | [`09_THE_MERIDIAN_INTERVAL.md`](09_THE_MERIDIAN_INTERVAL.md) | **Where, and what they did there.** The 710 kyr — 89 % of the species' existence — between the Failure and the Selvanan crossing: 600 kyr on 2.24 Mkm², then the road out. Finds the throat at 27.5 °N (75 km in hops, not 213), a 1.31 km pass where a 7.66 km wall was assumed, and that the founders come from the continent's margin, not its core | **done** |
+| 10+ | *Regional ecologies* | The rest of the wet and cold provinces. Next: **V1a**, the richest province on the planet and the far side of doc 09's crossing; then **B2**, which doc 07 runs up a debt to, or **M4**, the peoples' own neighbour | planned |
 
-**Doc 08 is not a regional ecology** and does not belong to that sequence. It
-answers the one question docs 00–07 all defer — *when* — by showing that the
-cradle keeps a finer record than the planet does, and it isolates its invention
-into a single stated parameter (the **basin cycle**, proposed at 100 kyr) so the
-whole chronology can be rescaled or rejected as one piece. It moved one figure
-in doc 03 §4: the crown species now begins at ~800 kyr rather than T-8 Myr.
+**Docs 08 and 09 are not regional ecologies** and do not belong to that
+sequence. **08** answers the question docs 00–07 all defer — *when* — by showing
+that the cradle keeps a finer record than the planet does, and it isolates its
+invention into a single stated parameter (the **basin cycle**, proposed at
+100 kyr) so the whole chronology can be rescaled or rejected as one piece. It
+moved one figure in doc 03 §4: the crown species now begins at ~800 kyr rather
+than T-8 Myr. **09** then occupies the largest interval that chronology creates
+— the 710 kyr on Meridia — and measures the road out with
+[`tools/crossings/`](../../tools/crossings/main.mjs); it annotated doc 01 §5,
+whose "Equatorial Western Sea" turns out to name the rift's old latitude rather
+than the present water's narrow point.
 
 Regional ecologies are written **one province at a time**, on the province
 partition of `../culture/00_PROVINCE_CONSTRAINT_VECTORS.md` §2 rather than on

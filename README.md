@@ -54,6 +54,7 @@ reconstructed **750-million-year geological + climate history**.
 | `tools/province-vectors/` | Zero-dependency **Node.js** script that derives the per-province constraint vectors in `docs/culture/`, plus `validate-continents.mjs`, which reports the per-province delta between the published longitude proxy and the corrected connected-landmass partition. |
 | `tools/continents.mjs` | Connected-landmass continent membership for the Node tools — a port of the tectonics pipeline's `lib/continents.py`, reproducing the authoritative `inventory.json` areas to within 0.27 Mkm². |
 | `tools/province-ecology/` | Zero-dependency **Node.js** province profiler and map renderer behind the `docs/life/04+` regional ecologies: Köppen/terrain composition, seasonal water and temperature regime, NPP and relief, for any province or sub-region — plus the plates in `reports/life/`. |
+| `tools/crossings/` | Zero-dependency **Node.js** tool describing the water *between* landmasses, behind `docs/life/09`: narrowest coast-to-coast gap and its latitude breakdown, stepping-stone routes solved to minimise the longest single open-water leg, land corridors under a height ceiling (finding the pass), and departure-shore climate. |
 | `reports/life/` | Map plates for the regional ecologies (province context, detail terrain, ecotone bins, seasonality). Built by `tools/province-ecology/render.mjs`. |
 | `tools/tectonics-pipeline/` | **Python** pipeline that reconstructs the tectonic history and paleoclimate. |
 | `scripts/` | Dependency-free dataset helpers — verify checksums, reassemble the parts. |
@@ -135,6 +136,10 @@ node tools/province-vectors/validate-continents.mjs  # continent-partition delta
 # Province ecology profiles + plates (Node.js, zero dependencies) -> docs/life/04+
 node tools/province-ecology/main.mjs M3 --box 15,28,-110,-85 --label cradle --compare M4
 node tools/province-ecology/render.mjs    # -> reports/life/maps/
+
+# Crossings: the water between landmasses (Node.js, zero dependencies) -> docs/life/09
+node tools/crossings/main.mjs --pair Meridia,Selvana --hops --frame 20,36,-160,-140
+node tools/crossings/main.mjs --pair Meridia,Selvana --corridor --from 21,-97 --to 27.5,-148.4
 
 # Geological history + paleoclimate (Python)
 pip install -r tools/tectonics-pipeline/requirements.txt

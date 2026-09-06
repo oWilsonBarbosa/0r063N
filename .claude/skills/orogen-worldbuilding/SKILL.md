@@ -237,6 +237,29 @@ distantly related to each other than either is to anyone in Borea. This moved
 one published figure: doc 03 §4's crown species now begins at **~800 kyr**, not
 T-8 Myr. The origin window (T-50 → T-0) and the lineage order did not move.
 
+The **Meridian interval** is written: `docs/life/09_THE_MERIDIAN_INTERVAL.md`
+occupies the 710 kyr — **89 % of the crown species' existence** — between the
+Failure and the Selvanan crossing. **600 kyr of it (75 %) is spent on
+2.24 Mkm²**: 8 % of one continent, ~2 % of the planet's land, at 100 % frost-free
+and an annual range of **2.4 °C**. The Failure leaves two waters **1,362 km and
+1,843 m apart** — the saline Sump and the high fresh Deep — so **long vertical
+transhumance is ancestral, not invented**, and sedentism is the later novelty;
+the peoples also live alongside Flushgrass and the Rainherds for 6,000 cycles
+before domesticating anything. Three MEASURED results about the road out, from
+the new `tools/crossings/` (gaps, stepping-stone routes, land corridors under a
+height ceiling): the crossing throat is at **27.5 °N, 148.4 °W**, not the equator
+— **213 km** direct but **75 km as the longest leg** once the strait's islands
+are used, so the exit technology is *repeatable short-water craft*, not
+seafaring; there is **no wall**, the connected low route from cradle to coast
+tops out at **~1.31 km** and never enters M1, while **The Deep at 2,090 m stands
+790 m higher**, so the homeland over-equipped them for their own exit; and the
+departure shore is **62 % true desert**, facing V1a at NPP 1,578. The
+load-bearing asymmetry: **the core goes east** into M4 (NPP 537 → 1,353, a
+49.6 %-mixed ecotone) while **the founders of every other continent come from the
+arid western fringe**, 5,225 km away. This annotated doc 01 §5 — "Equatorial
+Western Sea" names the R3 rift's T-400 latitude, not the present water, which is
+*widest* at the equator.
+
 The **first regional ecology** is written: see
 `docs/life/04_MERIDIAN_ARID_INTERIOR.md` for **M3**, the peoples' homeland.
 Fixed points: M3 is **two-thirds steppe, not desert** (BSh 53.3 %, scrub is the
@@ -366,16 +389,26 @@ Everything lives in repository `oWilsonBarbosa/0r063N`:
   **V3** (`05`) and **S2** (`06`), and the first cold province, **B1** (`07`).
   Start here before designing any flora, fauna, or people. Regional ecologies
   are the T-0 cross-section of the doc-02 history, written one province at a
-  time with `03` §8 as the design brief. **`08` is the chronology** — not a
-  regional ecology, but the dating framework and the peoples' history on it
-  (the Failure at ~800 kyr, the Surge at ~200 kyr, the crossings at ~90 / ~30 /
-  ~10 kyr). `09+` are still open (next: **B2**, which `07` runs up a debt to, or
-  **M4**, the peoples' own neighbour and the culture layer's stronger claim).
+  time with `03` §8 as the design brief. **`08` and `09` are not regional
+  ecologies**: `08` is the chronology (the Failure at ~800 kyr, the Surge at
+  ~200 kyr, the crossings at ~90 / ~30 / ~10 kyr) and `09` is the Meridian
+  interval — the 710 kyr before the first crossing, and the measured road out.
+  `10+` are still open (next: **V1a**, the planet's richest province and the far
+  side of `09`'s crossing; then **B2**, which `07` runs up a debt to, or **M4**).
 - **Province profiler** — `tools/province-ecology/main.mjs <PROVINCE>` streams
   the raw export and reports any province's Köppen/terrain composition,
   seasonal water and temperature regime, frost-free share, NPP and elevation
   spread (`--box` for a sub-region, `--compare` for interdigitation with a
   neighbour). Run it before writing any new regional ecology.
+- **Crossings** — `tools/crossings/main.mjs --pair A,B` describes the *water*
+  between landmasses, which is what gates dispersal: the narrowest coast-to-coast
+  gap and where it is, that gap by latitude (so a "narrow sea" can be checked
+  against the latitude its name claims), `--hops` to re-solve the crossing with
+  islands as stepping stones **minimising the longest single leg** rather than
+  total distance, `--corridor --from --to` to test whether two points are joined
+  by land under a height ceiling and find the pass, and `--shore` for a departure
+  coast's Köppen. Run it before asserting that anything is near, far, walled off,
+  or reachable.
 - **Data caveats** — `reports/audit/README.md`. The ones that matter for
   worldbuilding: `pS/pW`, `wsS/wsW`, `ocSpeed*` are p95-capped indices (1
   means "at or above the 95th percentile", so extreme rainfall/wind figures

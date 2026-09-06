@@ -362,6 +362,11 @@ or any figure in docs 04–07.
 - **The behavioural package is still unwritten.** This document dates the Surge
   and says what pushed it; it does not say what fire, language, or seafaring
   looked like, or in what order they arrived across the 2,000 cycles.
+  [`09`](09_THE_MERIDIAN_INTERVAL.md) has since occupied the interval — the
+  600 kyr in the basin and the 110 kyr across the continent — and narrowed the
+  seafaring question sharply: the Selvanan crossing needs only **repeatable
+  short-water craft** (75 km as the longest leg, island-hopped), not blue-water
+  capability. That is still owed for Sirocca at ~30 kyr.
 - **The relict populations have dates now but no ecology.** Doc 07 §4 predicts
   B1 is Borea's endemism reservoir; the same logic applied to the pre-Failure
   isolates of the cradle predicts Meridian relict *peoples*, and the deep-time

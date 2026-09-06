@@ -39,7 +39,7 @@ cereal cradle** — a winter-wet Mediterranean two-thirds that manufactures
 storable winter annuals — together with the constraint that no animal can be
 paired with it anywhere on the continent. It also corrected four figures in
 doc 00's own B1 block (see §4 there). The remaining provinces
-(`../life/09+`) are still outstanding.
+(`../life/10+`) are still outstanding.
 
 [`../life/08_CHRONOLOGY.md`](../life/08_CHRONOLOGY.md) then supplies the axis
 this layer has been working without: **when**. Four of its results bear directly
@@ -54,6 +54,22 @@ more distantly related to each other than either is to anyone in Borea. And
 Borea is settled at **~10 kyr**, on top of the agricultural window — so B1's
 independent cereal cradle is roughly contemporaneous with arrival rather than
 long predating it.
+
+[`../life/09_THE_MERIDIAN_INTERVAL.md`](../life/09_THE_MERIDIAN_INTERVAL.md)
+then occupies the 710 kyr before the first crossing, and hands this layer four
+things. **Mobility is the baseline and sedentism the innovation** — the founding
+habit is a long vertical annual circuit between two waters 1,362 km and 1,843 m
+apart, because only a lineage working both survived the Failure. **The
+domestication relationship predates the dispersal by 600 kyr**: Flushgrass and
+the Rainherds are lived with for 6,000 cycles before anything is domesticated,
+so domestication formalises an acquaintance rather than making a discovery.
+**The exit technology is repeatable short-water craft, not seafaring** — the
+Selvanan crossing is 75 km as its longest leg once the strait's islands are
+counted; save blue-water capability for the Eastern Ocean at ~30 kyr. And the
+structural one: **the founders are not from the core.** Meridia's population
+settles east into M4's lowlands (NPP 537 → 1,353), while the thread that reaches
+Selvana runs 5,225 km west to a shore that is 62 % true desert. Every other
+continent is peopled from a marginal fringe of the continent that stayed.
 
 ## The partition correction, adopted
 

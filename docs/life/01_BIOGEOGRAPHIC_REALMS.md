@@ -218,6 +218,16 @@ and each is a distinct kind of biological event:
   traffic is heavy and the arrivals are pre-adapted, which makes this the
   planet's busiest interchange and its weakest filter. Expect shared genera
   either side, secondary contact, and hybrid zones — not novelty.
+
+  > **The name is the rift's, not the water's.** R3 opened at `[-5, -42]`, and
+  > *was* equatorial at T-400. After 400 Myr of drift the sea it left is
+  > **widest at the equator and narrowest in the subtropics**: 3,911–4,169 km
+  > at 20–0 °S, 2,572 km at 0–10 °N, and **213 km at 27.5 °N, 148.4 °W** — with
+  > a longest single open-water leg of **75 km** once the strait's islands are
+  > counted ([`09`](09_THE_MERIDIAN_INTERVAL.md) §3;
+  > `node tools/crossings/main.mjs --pair Meridia,Selvana --hops`). The name is
+  > kept because the rift is what makes this a reunion rather than an
+  > introduction; the latitude in it is not present-day geography.
 - **The Eastern tropical ocean** (Sirocca ↔ Borea). The core branch's own
   reunion front, but harsher and climatically opposed (arid meets cold), so the
   interchange is thinner and far more filtered despite the same shared ancestry.
