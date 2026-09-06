@@ -39,7 +39,7 @@ cereal cradle** — a winter-wet Mediterranean two-thirds that manufactures
 storable winter annuals — together with the constraint that no animal can be
 paired with it anywhere on the continent. It also corrected four figures in
 doc 00's own B1 block (see §4 there). The remaining provinces
-(`../life/10+`) are still outstanding.
+(`../life/11+`) are still outstanding.
 
 [`../life/08_CHRONOLOGY.md`](../life/08_CHRONOLOGY.md) then supplies the axis
 this layer has been working without: **when**. Four of its results bear directly
@@ -70,6 +70,23 @@ structural one: **the founders are not from the core.** Meridia's population
 settles east into M4's lowlands (NPP 537 → 1,353), while the thread that reaches
 Selvana runs 5,225 km west to a shore that is 62 % true desert. Every other
 continent is peopled from a marginal fringe of the continent that stayed.
+
+[`../life/10_SELVANAN_TROPICAL_NORTH.md`](../life/10_SELVANAN_TROPICAL_NORTH.md)
+profiles **V1a**, this layer's own top-ranked province, and complicates the
+ranking. **The wet core cannot make a cereal**: a seed crop is manufactured by a
+dry season, and the `Af` core has none, so its staple (**Vine-tuber**) is
+vegetative and **not storable**. That removes the usual route from surplus to
+hierarchy — a tuber left in the ground is a bank that cannot be taxed, raided or
+requisitioned in one visit — while leaving food security trivial at NPP 1,596
+with no hungry month. Grain, herds (**Bandherds**) and storage live instead in
+the **savanna band**, so V1a is two economies split by latitude, and the richest
+ground on the planet should hold its *least* politically concentrated societies.
+It also corrected the arrival: the peoples land in V1a's **arid northern tip**,
+0 % rainforest and NPP 846, drier than the cradle they left — 680 km short of
+the rainforest and 4,715 km short of doc 05's V3 congeners. Doc 00 §2's warning
+that **V1b is an operational zone** is now shown to cost more than a blurred
+vector: it makes the V1a/V1b ecotone meaningless, and Selvana's subtropical belt
+needs a real boundary before anything is designed against it.
 
 ## The partition correction, adopted
 

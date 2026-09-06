@@ -376,7 +376,11 @@ partition, along with B2's NPP (768 → **761**).
   planet.
 - Its boundary with B2 is **the hardest ecological line on the planet**: 31.7 %
   of B1's bins mixed, against 70–80 % for all three deserts — and it sits on
-  ground averaging **380 m**, with no wall of any kind.
+  ground averaging **380 m**, with no wall of any kind. *(Qualified since by
+  [`10`](10_SELVANAN_TROPICAL_NORTH.md) §2. V1a/V1b measures lower still —
+  3.9 % — but that pair is separated by a bare `lat ≤ -15` cut with no physical
+  criterion in its rule, so it measures the ruler, not an ecology. B1/B2 remains
+  the hardest boundary **that is a boundary**.)*
 - The mechanism is **phenological, not topographic**: a Köppen C/D thermal
   threshold (frost-free 100 % → 0.2 %) compounded by a **seasonality
   inversion** (winter-wet 72.0 % → 28.3 %) that is at its maximum exactly along

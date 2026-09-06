@@ -43,9 +43,24 @@ describe the same partition.
 | [`plate-b1-03-ecotone.png`](maps/plate-b1-03-ecotone.png) | The B1/B2 interdigitation — 5.0 % mixed, and 31.7 % of B1's own bins, against 70–80 % for all three deserts |
 | [`plate-b1-04-seasons.png`](maps/plate-b1-04-seasons.png) | Which half-year carries the rain, over B1 and B2 — the seasonality inversion that makes the border hard, at its maximum along the line |
 
+## V1a — the Selvanan Tropical North (doc 10)
+
+| Plate | What it shows |
+|---|---|
+| [`plate-v1a-01-province.png`](maps/plate-v1a-01-province.png) | V1a within Selvana, speckled with V2's sky-islands, the landing zone boxed — and its southern boundary drawn as what it is: a dead-straight latitude cut across the continent |
+| [`plate-v1a-02-landing.png`](maps/plate-v1a-02-landing.png) | Both shores of the 75 km crossing in Table-18 terrain classes. The legend is tallied over the landing box only, not the province — the landing zone holds none of V1a's jungle |
+| [`plate-v1a-03-ecotone.png`](maps/plate-v1a-03-ecotone.png) | V1a/V2 — not an edge but an embedding: 66 bins hold both, and only **8** hold V2 alone |
+
 The seasonality plate states its question **hemisphere-independently** — *is the
 wetter half-year also the colder half-year?* — rather than in calendar months,
-so a northern and a southern province read the same way on it.
+so a northern and a southern province read the same way on it. It is configured
+per province and deliberately omitted where it would render noise: V1a's annual
+range is 2.3 °C, so its "colder half-year" is a 1.15 °C difference.
+
+A detail plate normally legends the **whole province's** terrain. Where the
+subject is a corner of the province instead — V1a's landing zone — `detail.box`
+restricts the tally to that box while the crop stays wide enough for context, so
+the legend describes the place the plate is actually about.
 
 Every figure in a plate legend is tallied **per cell over the whole export**,
 before any cropping or rasterisation, so the plates agree exactly with

@@ -141,6 +141,44 @@ const PLATES = {
             lat0: -38, lat1: -18, lon0: 32, lon1: 62,
         },
     },
+    V1a: {
+        // The neighbour is V2, not V1b: the V1a/V1b line is a pure latitude cut
+        // at 15 S with no physical criterion in it, so interdigitating against
+        // it measures the ruler. V2 is the real edge — and it is embedded in
+        // V1a rather than adjacent to it.
+        hero: 'V1a', neighbour: 'V2', slug: 'v1a',
+        title: 'V1A  SELVANAN TROPICAL NORTH',
+        crop: { lat0: -30, lat1: 40, lon0: -180, lon1: -110 },
+        palette: {
+            V1a: [38, 122, 72], V1b: [120, 158, 96], V2: [232, 236, 240],
+            V3: ARID, V4: [130, 148, 160],
+        },
+        legend: [
+            ['V1a', 'V1A TROPICAL NORTH      9.9 MKM2'],
+            ['V2',  'V2 EQUATORIAL RANGES    0.8 MKM2'],
+            ['V1b', 'V1B SUBTROPICAL BELT    5.1 MKM2'],
+            ['V3',  'V3 INTERIOR DRY BASIN'],
+            ['V4',  'V4 SOUTHERN CORDILLERA'],
+        ],
+        lakes: [],
+        notes: [
+            'HIGHEST NPP ON THE PLANET: 1578.',
+            'ANNUAL TEMPERATURE RANGE 2.3 C,',
+            'THE LOWEST MEASURED ANYWHERE.',
+        ],
+        subBox: { label: 'THE LANDING ZONE', lat0: 22, lat1: 32, lon0: -155, lon1: -145 },
+        // Drawn wide enough to hold both shores of the 75 km crossing; tallied
+        // only over the profiled landing box, so the legend reproduces
+        //   main.mjs V1a --box 22,32,-155,-145
+        detail: {
+            slug: 'landing', zoom: 3, tallyBox: true,
+            title: 'THE LANDING ZONE  48% ARID, NO RAINFOREST',
+            lat0: 20, lat1: 33, lon0: -158, lon1: -142,
+            box: { lat0: 22, lat1: 32, lon0: -155, lon1: -145 },
+        },
+        // No seasons plate: at a 2.3 C annual range the "colder half-year" is a
+        // 1.15 C difference, so the winter-wet test would render noise.
+    },
     V3: {
         hero: 'V3', neighbour: 'V1b', slug: 'v3',
         title: 'V3  SELVANAN INTERIOR DRY BASIN',
@@ -210,6 +248,11 @@ const winterWet = new Int8Array(W * H).fill(-1);
 const seasonOf = new Map();                      // province -> [winterWetCells, all]
 const bins = new Map();                          // key -> Set(province)
 const terrainOf = new Map();                     // province -> Map(terrainIdx -> cells)
+// Same tally restricted to a detail crop, for plates whose subject is a corner
+// of the province rather than the province: a landing-zone plate legended with
+// the whole province's terrain would describe the wrong place.
+const boxTerrainOf = new Map();                  // plate key -> Map(terrainIdx -> cells)
+const BOXED = Object.entries(PLATES).filter(([, p]) => p.detail && p.detail.tallyBox);
 const binKey = (lat, lon) => `${Math.floor(lat / 2)},${Math.floor(lon / 2)}`;
 const HEROES = new Set(Object.values(PLATES).flatMap(p => [p.hero, p.neighbour]));
 
@@ -248,6 +291,15 @@ for (const part of fs.readdirSync(DATA).filter(f => f.endsWith('.csv.gz')).sort(
             if (pv) {
                 if (!seasonOf.has(pv)) seasonOf.set(pv, [0, 0]);
                 const s = seasonOf.get(pv); s[0] += ww; s[1]++;
+            }
+            for (const [, p] of BOXED) {
+                // `detail.box` is what gets tallied; the detail crop is only what
+                // gets drawn, and is usually wider so the subject has context.
+                const b = p.detail.box || p.detail;
+                if (pv !== p.hero || lat < b.lat0 || lat > b.lat1 || lon < b.lon0 || lon > b.lon1) continue;
+                if (!boxTerrainOf.has(p.hero)) boxTerrainOf.set(p.hero, new Map());
+                const m = boxTerrainOf.get(p.hero);
+                m.set(tc, (m.get(tc) || 0) + 1);
             }
             if (HEROES.has(pv)) {
                 const b = binKey(lat, lon);
@@ -437,8 +489,10 @@ function plateDetail(cfg) {
         for (let y = HEADER_H; y < HEADER_H + h; y++) if (((y / 6) | 0) % 2 === 0) { put(cv, x, y, ACCENT); put(cv, x + 1, y, ACCENT); }
         drawText(cv, Math.max(4, x - textWidth(cfg.ruleCut.label, 1) - 8), HEADER_H + 14, cfg.ruleCut.label, ACCENT, 1);
     }
-    const trows = pctOf(terrainOf.get(cfg.hero)).slice(0, 6)
-        .map(([t, p]) => [TERRAIN_CLASSES[t].color, `${TERRAIN_CLASSES[t].name.toUpperCase()}  ${p.toFixed(1)}% OF ${cfg.hero}`]);
+    const boxed = d.tallyBox && boxTerrainOf.get(cfg.hero);
+    const scope = boxed ? 'OF THE BOX' : `OF ${cfg.hero}`;
+    const trows = pctOf(boxed || terrainOf.get(cfg.hero)).slice(0, 6)
+        .map(([t, p]) => [TERRAIN_CLASSES[t].color, `${TERRAIN_CLASSES[t].name.toUpperCase()}  ${p.toFixed(1)}% ${scope}`]);
     panel(cv, 6, HEADER_H + 6, Math.max(...trows.map(r => textWidth(r[1], 1))) + 34, trows.length * 16 + 8);
     legend(cv, 12, HEADER_H + 12, trows);
     write(`plate-${cfg.slug}-02-${d.slug}.png`, cv);

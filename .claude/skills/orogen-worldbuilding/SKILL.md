@@ -260,6 +260,31 @@ arid western fringe**, 5,225 km away. This annotated doc 01 §5 — "Equatorial
 Western Sea" names the R3 rift's T-400 latitude, not the present water, which is
 *widest* at the equator.
 
+The **fifth regional ecology** is written: `docs/life/10_SELVANAN_TROPICAL_NORTH.md`
+covers **V1a**, the planet's most productive province (9.91 Mkm², **NPP 1,578**)
+and the far side of doc 09's crossing. Its **annual temperature range is 2.3 °C,
+the lowest measured anywhere** — all its variation is water (precipitation spans
+**eightfold**, 201–1,627 mm) in a clean latitudinal band: an **89 % rainforest
+core** just south of the equator, savanna flanks, semi-desert tips. Two results
+matter beyond the province. **Its southern boundary is not a boundary** — V1a/V1b
+is a bare `lat ≤ -15` cut with no physical criterion, so its 2.3 % (3.9 %
+hero-relative) interdigitation measures the ruler; doc 07's "hardest ecological
+line" survives as *the hardest boundary that is a boundary*, and both docs are
+annotated. **The real edge is vertical and it is an embedding**: 89.2 % of V2's
+bins also hold V1a, so V1a has vast **shallow** diversity and V2's sky-islands
+(0.75 Mkm², 18 °C colder, 9.8 % glacier) hold the **deep** endemism on 7.6 % of
+the area. V1a is also the only documented province with **no dormant season at
+all**, which is why NPP is 1,578. Set: **Crownwood · Airroot · Shadeleaf ·
+Bandgrass · Vine-tuber · Reedmat · Vinebacks · Bandherds · Limbstalkers**, plus
+**Frostcrown** on the V2 tops. And it corrected doc 09: the peoples land at
+27 °N in V1a's **arid tip — 0 % rainforest, 48 % arid, NPP 846** — on ground
+running **376 mm against the cradle's 386**. **The crossing is desert to
+desert**; the rainforest is 680 km further and doc 05's V3 congeners 4,715 km
+further still. For the culture layer: the wet core **cannot make a cereal** (no
+dry season to select a hard storable seed), so its staple is vegetative and
+unstorable — abundance without concentration — while grain, herds and storage
+live in the savanna band. One province, two economies, split by latitude.
+
 The **first regional ecology** is written: see
 `docs/life/04_MERIDIAN_ARID_INTERIOR.md` for **M3**, the peoples' homeland.
 Fixed points: M3 is **two-thirds steppe, not desert** (BSh 53.3 %, scrub is the
@@ -393,8 +418,10 @@ Everything lives in repository `oWilsonBarbosa/0r063N`:
   ecologies**: `08` is the chronology (the Failure at ~800 kyr, the Surge at
   ~200 kyr, the crossings at ~90 / ~30 / ~10 kyr) and `09` is the Meridian
   interval — the 710 kyr before the first crossing, and the measured road out.
-  `10+` are still open (next: **V1a**, the planet's richest province and the far
-  side of `09`'s crossing; then **B2**, which `07` runs up a debt to, or **M4**).
+  `10` returns to regional ecology with **V1a**, the planet's richest province
+  and the far side of that crossing. `11+` are still open (next: **M4**, where
+  most of Meridia's people live, or **B2**, which `07` runs up a debt to; **V2**
+  is blocked on doc 00 §2.2's tropical-alpine data caveat).
 - **Province profiler** — `tools/province-ecology/main.mjs <PROVINCE>` streams
   the raw export and reports any province's Köppen/terrain composition,
   seasonal water and temperature regime, frost-free share, NPP and elevation

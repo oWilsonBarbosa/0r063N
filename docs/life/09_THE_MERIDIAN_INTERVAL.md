@@ -199,8 +199,18 @@ The throat shore, 25–30 °N and 152–144 °W, in Köppen:
 edge. Read it as the wall standing behind the beach, which is what it is.
 
 On the far side is **V1a**, Selvana's Tropical North, **NPP 1578** — the most
-productive province on the planet. The crossing runs from the driest coast on
-Meridia to the richest ground in the world, across 75 km of island water.
+productive province on the planet.
+
+> **Corrected by [`10`](10_SELVANAN_TROPICAL_NORTH.md) §5.** This section
+> originally closed: *"The crossing runs from the driest coast on Meridia to the
+> richest ground in the world, across 75 km of island water."* The second half is
+> false. V1a's riches are equatorial, and the landing is at **27 °N**, in the
+> province's arid northern tip: **0 % rainforest, 48 % arid, NPP 846**, and a
+> 25–30 °N band running **376 mm** against the Meridian cradle's **386 mm**.
+> **They cross 75 km of water onto ground drier than the desert they left.** The
+> nearest rainforest is **680 km** further; doc 05's V3 congeners are
+> **4,715 km** further still. The crossing is desert to desert, and the richest
+> ground in the world is a later migration.
 
 ---
 

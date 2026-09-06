@@ -220,6 +220,16 @@ crops, herds, pharmacopoeia, the whole inherited sense of what is food — works
 here. This is why the western hemisphere becomes one connected human world
 early.
 
+> **What it costs to get here, added by [`10`](10_SELVANAN_TROPICAL_NORTH.md)
+> §5.** "Crosses intact" turns out to be much more expensive than this section
+> could know. The Meridians land at **27 °N in V1a's arid tip**
+> ([`09`](09_THE_MERIDIAN_INTERVAL.md) §3), and the nearest V3 cell is
+> **4,715 km** from that beach. Between the two lie 9.67 Mkm² of rainforest and
+> savanna at NPP 1,596 where an arid toolkit is not wrong so much as irrelevant.
+> The toolkit survives the water; then it has to survive the continent. And the
+> calendar problem below starts earlier than this document places it — the
+> landing zone's annual range is already **10.0 °C**, against the cradle's 2.4.
+
 **What does not, and this is the specific and usable part.** A Meridian
 planting calendar is keyed to **rain alone**, because the cradle has no
 temperature season to key to (2.4 °C annual range). Coldflush germinates on
